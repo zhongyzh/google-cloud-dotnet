@@ -1,0 +1,2996 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.WellKnownTypes.Duration
+  commentId: T:Google.Protobuf.WellKnownTypes.Duration
+  id: Duration
+  parent: Google.Protobuf.WellKnownTypes
+  children:
+  - Google.Protobuf.WellKnownTypes.Duration.#ctor
+  - Google.Protobuf.WellKnownTypes.Duration.#ctor(Google.Protobuf.WellKnownTypes.Duration)
+  - Google.Protobuf.WellKnownTypes.Duration.CalculateSize
+  - Google.Protobuf.WellKnownTypes.Duration.Clone
+  - Google.Protobuf.WellKnownTypes.Duration.Descriptor
+  - Google.Protobuf.WellKnownTypes.Duration.Equals(Google.Protobuf.WellKnownTypes.Duration)
+  - Google.Protobuf.WellKnownTypes.Duration.Equals(System.Object)
+  - Google.Protobuf.WellKnownTypes.Duration.FromTimeSpan(System.TimeSpan)
+  - Google.Protobuf.WellKnownTypes.Duration.GetHashCode
+  - Google.Protobuf.WellKnownTypes.Duration.Google#Protobuf#IMessage#Descriptor
+  - Google.Protobuf.WellKnownTypes.Duration.MaxSeconds
+  - Google.Protobuf.WellKnownTypes.Duration.MergeFrom(Google.Protobuf.CodedInputStream)
+  - Google.Protobuf.WellKnownTypes.Duration.MergeFrom(Google.Protobuf.WellKnownTypes.Duration)
+  - Google.Protobuf.WellKnownTypes.Duration.MinSeconds
+  - Google.Protobuf.WellKnownTypes.Duration.Nanos
+  - Google.Protobuf.WellKnownTypes.Duration.NanosecondsPerSecond
+  - Google.Protobuf.WellKnownTypes.Duration.NanosecondsPerTick
+  - Google.Protobuf.WellKnownTypes.Duration.NanosFieldNumber
+  - Google.Protobuf.WellKnownTypes.Duration.op_Addition(Google.Protobuf.WellKnownTypes.Duration,Google.Protobuf.WellKnownTypes.Duration)
+  - Google.Protobuf.WellKnownTypes.Duration.op_Subtraction(Google.Protobuf.WellKnownTypes.Duration,Google.Protobuf.WellKnownTypes.Duration)
+  - Google.Protobuf.WellKnownTypes.Duration.op_UnaryNegation(Google.Protobuf.WellKnownTypes.Duration)
+  - Google.Protobuf.WellKnownTypes.Duration.Parser
+  - Google.Protobuf.WellKnownTypes.Duration.Seconds
+  - Google.Protobuf.WellKnownTypes.Duration.SecondsFieldNumber
+  - Google.Protobuf.WellKnownTypes.Duration.ToDiagnosticString
+  - Google.Protobuf.WellKnownTypes.Duration.ToString
+  - Google.Protobuf.WellKnownTypes.Duration.ToTimeSpan
+  - Google.Protobuf.WellKnownTypes.Duration.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: Duration
+  nameWithType: Duration
+  fullName: Google.Protobuf.WellKnownTypes.Duration
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Duration
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 40
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nA Duration represents a signed, fixed-length span of time represented\nas a count of seconds and fractions of seconds at nanosecond\nresolution. It is independent of any calendar and concepts like \"day\"\nor \"month\". It is related to Timestamp in that the difference between\ntwo Timestamp values is a Duration and it can be added or subtracted\nfrom a Timestamp. Range is approximately +-10,000 years.\n\nExample 1: Compute Duration from two Timestamps in pseudo code.\n\nTimestamp start = ...;\nTimestamp end = ...;\nDuration duration = ...;\n\nduration.seconds = end.seconds - start.seconds;\nduration.nanos = end.nanos - start.nanos;\n\nif (duration.seconds &lt; 0 &amp;&amp; duration.nanos &gt; 0) {\n duration.seconds += 1;\n duration.nanos -= 1000000000;\n} else if (durations.seconds &gt; 0 &amp;&amp; duration.nanos &lt; 0) {\n duration.seconds -= 1;\n duration.nanos += 1000000000;\n}\n\nExample 2: Compute Timestamp from Timestamp + Duration in pseudo code.\n\nTimestamp start = ...;\nDuration duration = ...;\nTimestamp end = ...;\n\nend.seconds = start.seconds + duration.seconds;\nend.nanos = start.nanos + duration.nanos;\n\nif (end.nanos &lt; 0) {\n end.seconds -= 1;\n end.nanos += 1000000000;\n} else if (end.nanos &gt;= 1000000000) {\n end.seconds += 1;\n end.nanos -= 1000000000;\n}\n\nExample 3: Compute Duration from datetime.timedelta in Python.\n\ntd = datetime.timedelta(days=3, minutes=10)\nduration = Duration()\nduration.FromTimedelta(td)\n"
+  example: []
+  syntax:
+    content: 'public sealed class Duration : IMessage<Duration>, IEquatable<Duration>, IDeepCloneable<Duration>, ICustomDiagnosticMessage, IMessage'
+    content.vb: >-
+      Public NotInheritable Class Duration
+          Implements IMessage(Of Duration), IEquatable(Of Duration), IDeepCloneable(Of Duration), ICustomDiagnosticMessage, IMessage
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Duration}
+  - System.IEquatable{Google.Protobuf.WellKnownTypes.Duration}
+  - Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Duration}
+  - Google.Protobuf.ICustomDiagnosticMessage
+  - Google.Protobuf.IMessage
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteArray
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.WellKnownTypes.Duration.Parser
+  commentId: P:Google.Protobuf.WellKnownTypes.Duration.Parser
+  id: Parser
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: Duration.Parser
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Parser
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Parser
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 90
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public static MessageParser<Duration> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{Google.Protobuf.WellKnownTypes.Duration}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of Duration)
+  overload: Google.Protobuf.WellKnownTypes.Duration.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Protobuf.WellKnownTypes.Duration.Descriptor
+  commentId: P:Google.Protobuf.WellKnownTypes.Duration.Descriptor
+  id: Descriptor
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: Duration.Descriptor
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Descriptor
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Descriptor
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 93
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: Google.Protobuf.WellKnownTypes.Duration.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Protobuf.WellKnownTypes.Duration.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Protobuf.WellKnownTypes.Duration.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: Duration.IMessage.Descriptor
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 98
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Protobuf.WellKnownTypes.Duration.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Duration.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Protobuf.WellKnownTypes.Duration.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.WellKnownTypes.Duration.#ctor
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.#ctor
+  id: '#ctor'
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Duration()
+  nameWithType: Duration.Duration()
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Duration()
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 103
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public Duration()
+    content.vb: Public Sub New
+  overload: Google.Protobuf.WellKnownTypes.Duration.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.#ctor(Google.Protobuf.WellKnownTypes.Duration)
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.#ctor(Google.Protobuf.WellKnownTypes.Duration)
+  id: '#ctor(Google.Protobuf.WellKnownTypes.Duration)'
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Duration(Duration)
+  nameWithType: Duration.Duration(Duration)
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Duration(Google.Protobuf.WellKnownTypes.Duration)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 110
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public Duration(Duration other)
+    parameters:
+    - id: other
+      type: Google.Protobuf.WellKnownTypes.Duration
+    content.vb: Public Sub New(other As Duration)
+  overload: Google.Protobuf.WellKnownTypes.Duration.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.Clone
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.Clone
+  id: Clone
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Duration.Clone()
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Clone()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Clone
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 116
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public Duration Clone()
+    return:
+      type: Google.Protobuf.WellKnownTypes.Duration
+    content.vb: Public Function Clone As Duration
+  overload: Google.Protobuf.WellKnownTypes.Duration.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Duration}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.SecondsFieldNumber
+  commentId: F:Google.Protobuf.WellKnownTypes.Duration.SecondsFieldNumber
+  id: SecondsFieldNumber
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: SecondsFieldNumber
+  nameWithType: Duration.SecondsFieldNumber
+  fullName: Google.Protobuf.WellKnownTypes.Duration.SecondsFieldNumber
+  type: Field
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: SecondsFieldNumber
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 122
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: Field number for the "seconds" field.
+  example: []
+  syntax:
+    content: public const int SecondsFieldNumber = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const SecondsFieldNumber As Integer = 1
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Protobuf.WellKnownTypes.Duration.Seconds
+  commentId: P:Google.Protobuf.WellKnownTypes.Duration.Seconds
+  id: Seconds
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Seconds
+  nameWithType: Duration.Seconds
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Seconds
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Seconds
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 128
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nSigned seconds of the span of time. Must be from -315,576,000,000\nto +315,576,000,000 inclusive.\n"
+  example: []
+  syntax:
+    content: public long Seconds { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property Seconds As Long
+  overload: Google.Protobuf.WellKnownTypes.Duration.Seconds*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.NanosFieldNumber
+  commentId: F:Google.Protobuf.WellKnownTypes.Duration.NanosFieldNumber
+  id: NanosFieldNumber
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: NanosFieldNumber
+  nameWithType: Duration.NanosFieldNumber
+  fullName: Google.Protobuf.WellKnownTypes.Duration.NanosFieldNumber
+  type: Field
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: NanosFieldNumber
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 137
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: Field number for the "nanos" field.
+  example: []
+  syntax:
+    content: public const int NanosFieldNumber = 2
+    return:
+      type: System.Int32
+    content.vb: Public Const NanosFieldNumber As Integer = 2
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Protobuf.WellKnownTypes.Duration.Nanos
+  commentId: P:Google.Protobuf.WellKnownTypes.Duration.Nanos
+  id: Nanos
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Nanos
+  nameWithType: Duration.Nanos
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Nanos
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Nanos
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 147
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nSigned fractions of a second at nanosecond resolution of the span\nof time. Durations less than one second are represented with a 0\n`seconds` field and a positive or negative `nanos` field. For durations\nof one second or more, a non-zero value for the `nanos` field must be\nof the same sign as the `seconds` field. Must be from -999,999,999\nto +999,999,999 inclusive.\n"
+  example: []
+  syntax:
+    content: public int Nanos { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Nanos As Integer
+  overload: Google.Protobuf.WellKnownTypes.Duration.Nanos*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.Equals(System.Object)
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Duration.Equals(Object)
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Equals
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 155
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Protobuf.WellKnownTypes.Duration.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Protobuf.WellKnownTypes.Duration.Equals(Google.Protobuf.WellKnownTypes.Duration)
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.Equals(Google.Protobuf.WellKnownTypes.Duration)
+  id: Equals(Google.Protobuf.WellKnownTypes.Duration)
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Equals(Duration)
+  nameWithType: Duration.Equals(Duration)
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Equals(Google.Protobuf.WellKnownTypes.Duration)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Equals
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 160
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public bool Equals(Duration other)
+    parameters:
+    - id: other
+      type: Google.Protobuf.WellKnownTypes.Duration
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As Duration) As Boolean
+  overload: Google.Protobuf.WellKnownTypes.Duration.Equals*
+  implements:
+  - System.IEquatable{Google.Protobuf.WellKnownTypes.Duration}.Equals(Google.Protobuf.WellKnownTypes.Duration)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.GetHashCode
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.GetHashCode
+  id: GetHashCode
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Duration.GetHashCode()
+  fullName: Google.Protobuf.WellKnownTypes.Duration.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: GetHashCode
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 173
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Protobuf.WellKnownTypes.Duration.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Protobuf.WellKnownTypes.Duration.ToString
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.ToString
+  id: ToString
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Duration.ToString()
+  fullName: Google.Protobuf.WellKnownTypes.Duration.ToString()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToString
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 181
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Protobuf.WellKnownTypes.Duration.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Protobuf.WellKnownTypes.Duration.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: Duration.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.WellKnownTypes.Duration.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteTo
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 186
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: Google.Protobuf.WellKnownTypes.Duration.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.CalculateSize
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.CalculateSize
+  id: CalculateSize
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: Duration.CalculateSize()
+  fullName: Google.Protobuf.WellKnownTypes.Duration.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CalculateSize
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 198
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: Google.Protobuf.WellKnownTypes.Duration.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.MergeFrom(Google.Protobuf.WellKnownTypes.Duration)
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.MergeFrom(Google.Protobuf.WellKnownTypes.Duration)
+  id: MergeFrom(Google.Protobuf.WellKnownTypes.Duration)
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(Duration)
+  nameWithType: Duration.MergeFrom(Duration)
+  fullName: Google.Protobuf.WellKnownTypes.Duration.MergeFrom(Google.Protobuf.WellKnownTypes.Duration)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MergeFrom
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 210
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public void MergeFrom(Duration other)
+    parameters:
+    - id: other
+      type: Google.Protobuf.WellKnownTypes.Duration
+    content.vb: Public Sub MergeFrom(other As Duration)
+  overload: Google.Protobuf.WellKnownTypes.Duration.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Duration}.MergeFrom(Google.Protobuf.WellKnownTypes.Duration)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: Duration.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.WellKnownTypes.Duration.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MergeFrom
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Duration.cs
+    startLine: 223
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: Google.Protobuf.WellKnownTypes.Duration.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.NanosecondsPerSecond
+  commentId: F:Google.Protobuf.WellKnownTypes.Duration.NanosecondsPerSecond
+  id: NanosecondsPerSecond
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: NanosecondsPerSecond
+  nameWithType: Duration.NanosecondsPerSecond
+  fullName: Google.Protobuf.WellKnownTypes.Duration.NanosecondsPerSecond
+  type: Field
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: NanosecondsPerSecond
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 45
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nThe number of nanoseconds in a second.\n"
+  example: []
+  syntax:
+    content: public const int NanosecondsPerSecond = 1000000000
+    return:
+      type: System.Int32
+    content.vb: Public Const NanosecondsPerSecond As Integer = 1000000000
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Protobuf.WellKnownTypes.Duration.NanosecondsPerTick
+  commentId: F:Google.Protobuf.WellKnownTypes.Duration.NanosecondsPerTick
+  id: NanosecondsPerTick
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: NanosecondsPerTick
+  nameWithType: Duration.NanosecondsPerTick
+  fullName: Google.Protobuf.WellKnownTypes.Duration.NanosecondsPerTick
+  type: Field
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: NanosecondsPerTick
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 49
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nThe number of nanoseconds in a BCL tick (as used by <xref href=\"System.TimeSpan\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"System.DateTime\" data-throw-if-not-resolved=\"false\"></xref>).\n"
+  example: []
+  syntax:
+    content: public const int NanosecondsPerTick = 100
+    return:
+      type: System.Int32
+    content.vb: Public Const NanosecondsPerTick As Integer = 100
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Protobuf.WellKnownTypes.Duration.MaxSeconds
+  commentId: F:Google.Protobuf.WellKnownTypes.Duration.MaxSeconds
+  id: MaxSeconds
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: MaxSeconds
+  nameWithType: Duration.MaxSeconds
+  fullName: Google.Protobuf.WellKnownTypes.Duration.MaxSeconds
+  type: Field
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MaxSeconds
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 54
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nThe maximum permitted number of seconds.\n"
+  example: []
+  syntax:
+    content: public const long MaxSeconds = 315576000000L
+    return:
+      type: System.Int64
+    content.vb: Public Const MaxSeconds As Long = 315576000000L
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Protobuf.WellKnownTypes.Duration.MinSeconds
+  commentId: F:Google.Protobuf.WellKnownTypes.Duration.MinSeconds
+  id: MinSeconds
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: MinSeconds
+  nameWithType: Duration.MinSeconds
+  fullName: Google.Protobuf.WellKnownTypes.Duration.MinSeconds
+  type: Field
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MinSeconds
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 59
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nThe minimum permitted number of seconds.\n"
+  example: []
+  syntax:
+    content: public const long MinSeconds = -315576000000L
+    return:
+      type: System.Int64
+    content.vb: Public Const MinSeconds As Long = -315576000000L
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Protobuf.WellKnownTypes.Duration.ToTimeSpan
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.ToTimeSpan
+  id: ToTimeSpan
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: ToTimeSpan()
+  nameWithType: Duration.ToTimeSpan()
+  fullName: Google.Protobuf.WellKnownTypes.Duration.ToTimeSpan()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToTimeSpan
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 84
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nConverts this <xref href=\"Google.Protobuf.WellKnownTypes.Duration\" data-throw-if-not-resolved=\"false\"></xref> to a <xref href=\"System.TimeSpan\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: If the duration is not a precise number of ticks, it is truncated towards 0.
+  example: []
+  syntax:
+    content: public TimeSpan ToTimeSpan()
+    return:
+      type: System.TimeSpan
+      description: The value of this duration, as a <code>TimeSpan</code>.
+    content.vb: Public Function ToTimeSpan As TimeSpan
+  overload: Google.Protobuf.WellKnownTypes.Duration.ToTimeSpan*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: >-
+      This value isn't a valid normalized duration, as
+
+      described in the documentation.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Duration.FromTimeSpan(System.TimeSpan)
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.FromTimeSpan(System.TimeSpan)
+  id: FromTimeSpan(System.TimeSpan)
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: FromTimeSpan(TimeSpan)
+  nameWithType: Duration.FromTimeSpan(TimeSpan)
+  fullName: Google.Protobuf.WellKnownTypes.Duration.FromTimeSpan(System.TimeSpan)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FromTimeSpan
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 102
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nConverts the given <xref href=\"System.TimeSpan\" data-throw-if-not-resolved=\"false\"></xref> to a <xref href=\"Google.Protobuf.WellKnownTypes.Duration\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static Duration FromTimeSpan(TimeSpan timeSpan)
+    parameters:
+    - id: timeSpan
+      type: System.TimeSpan
+      description: The <code>TimeSpan</code> to convert.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The value of the given <code>TimeSpan</code>, as a <code>Duration</code>.
+    content.vb: Public Shared Function FromTimeSpan(timeSpan As TimeSpan) As Duration
+  overload: Google.Protobuf.WellKnownTypes.Duration.FromTimeSpan*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.Duration.op_UnaryNegation(Google.Protobuf.WellKnownTypes.Duration)
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.op_UnaryNegation(Google.Protobuf.WellKnownTypes.Duration)
+  id: op_UnaryNegation(Google.Protobuf.WellKnownTypes.Duration)
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: UnaryNegation(Duration)
+  nameWithType: Duration.UnaryNegation(Duration)
+  fullName: Google.Protobuf.WellKnownTypes.Duration.UnaryNegation(Google.Protobuf.WellKnownTypes.Duration)
+  type: Operator
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: op_UnaryNegation
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 118
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nReturns the result of negating the duration. For example, the negation of 5 minutes is -5 minutes.\n"
+  example: []
+  syntax:
+    content: public static Duration operator -(Duration value)
+    parameters:
+    - id: value
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The duration to negate. Must not be null.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The negated value of this duration.
+    content.vb: Public Shared Operator -(value As Duration) As Duration
+  overload: Google.Protobuf.WellKnownTypes.Duration.op_UnaryNegation*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.Duration.op_Addition(Google.Protobuf.WellKnownTypes.Duration,Google.Protobuf.WellKnownTypes.Duration)
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.op_Addition(Google.Protobuf.WellKnownTypes.Duration,Google.Protobuf.WellKnownTypes.Duration)
+  id: op_Addition(Google.Protobuf.WellKnownTypes.Duration,Google.Protobuf.WellKnownTypes.Duration)
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Addition(Duration, Duration)
+  nameWithType: Duration.Addition(Duration, Duration)
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Addition(Google.Protobuf.WellKnownTypes.Duration, Google.Protobuf.WellKnownTypes.Duration)
+  type: Operator
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: op_Addition
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 133
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nAdds the two specified <xref href=\"Google.Protobuf.WellKnownTypes.Duration\" data-throw-if-not-resolved=\"false\"></xref> values together.\n"
+  example: []
+  syntax:
+    content: public static Duration operator +(Duration lhs, Duration rhs)
+    parameters:
+    - id: lhs
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The first value to add. Must not be null.
+    - id: rhs
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The second value to add. Must not be null.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: ''
+    content.vb: Public Shared Operator +(lhs As Duration, rhs As Duration) As Duration
+  overload: Google.Protobuf.WellKnownTypes.Duration.op_Addition*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.Duration.op_Subtraction(Google.Protobuf.WellKnownTypes.Duration,Google.Protobuf.WellKnownTypes.Duration)
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.op_Subtraction(Google.Protobuf.WellKnownTypes.Duration,Google.Protobuf.WellKnownTypes.Duration)
+  id: op_Subtraction(Google.Protobuf.WellKnownTypes.Duration,Google.Protobuf.WellKnownTypes.Duration)
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: Subtraction(Duration, Duration)
+  nameWithType: Duration.Subtraction(Duration, Duration)
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Subtraction(Google.Protobuf.WellKnownTypes.Duration, Google.Protobuf.WellKnownTypes.Duration)
+  type: Operator
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: op_Subtraction
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 149
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nSubtracts one <xref href=\"Google.Protobuf.WellKnownTypes.Duration\" data-throw-if-not-resolved=\"false\"></xref> from another.\n"
+  example: []
+  syntax:
+    content: public static Duration operator -(Duration lhs, Duration rhs)
+    parameters:
+    - id: lhs
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The duration to subtract from. Must not be null.
+    - id: rhs
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The duration to subtract. Must not be null.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The difference between the two specified durations.
+    content.vb: Public Shared Operator -(lhs As Duration, rhs As Duration) As Duration
+  overload: Google.Protobuf.WellKnownTypes.Duration.op_Subtraction*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.Duration.ToDiagnosticString
+  commentId: M:Google.Protobuf.WellKnownTypes.Duration.ToDiagnosticString
+  id: ToDiagnosticString
+  parent: Google.Protobuf.WellKnownTypes.Duration
+  langs:
+  - csharp
+  - vb
+  name: ToDiagnosticString()
+  nameWithType: Duration.ToDiagnosticString()
+  fullName: Google.Protobuf.WellKnownTypes.Duration.ToDiagnosticString()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToDiagnosticString
+    path: csharp/src/Google.Protobuf/WellKnownTypes/DurationPartial.cs
+    startLine: 238
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nReturns a string representation of this <xref href=\"Google.Protobuf.WellKnownTypes.Duration\" data-throw-if-not-resolved=\"false\"></xref> for diagnostic purposes.\n"
+  remarks: "\nNormally the returned value will be a JSON string value (including leading and trailing quotes) but\nwhen the value is non-normalized or out of range, a JSON object representation will be returned\ninstead, including a warning. This is to avoid exceptions being thrown when trying to\ndiagnose problems - the regular JSON formatter will still throw an exception for non-normalized\nvalues.\n"
+  example: []
+  syntax:
+    content: public string ToDiagnosticString()
+    return:
+      type: System.String
+      description: A string representation of this value.
+    content.vb: Public Function ToDiagnosticString As String
+  overload: Google.Protobuf.WellKnownTypes.Duration.ToDiagnosticString*
+  implements:
+  - Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Protobuf.WellKnownTypes
+  commentId: N:Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Google.Protobuf.WellKnownTypes
+  nameWithType: Google.Protobuf.WellKnownTypes
+  fullName: Google.Protobuf.WellKnownTypes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Duration}
+  commentId: T:Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Duration}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<Duration>
+  nameWithType: IMessage<Duration>
+  fullName: Google.Protobuf.IMessage<Google.Protobuf.WellKnownTypes.Duration>
+  nameWithType.vb: IMessage(Of Duration)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Protobuf.WellKnownTypes.Duration)
+  name.vb: IMessage(Of Duration)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable{Google.Protobuf.WellKnownTypes.Duration}
+  commentId: T:System.IEquatable{Google.Protobuf.WellKnownTypes.Duration}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Duration>
+  nameWithType: IEquatable<Duration>
+  fullName: System.IEquatable<Google.Protobuf.WellKnownTypes.Duration>
+  nameWithType.vb: IEquatable(Of Duration)
+  fullName.vb: System.IEquatable(Of Google.Protobuf.WellKnownTypes.Duration)
+  name.vb: IEquatable(Of Duration)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Duration}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Duration}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<Duration>
+  nameWithType: IDeepCloneable<Duration>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Protobuf.WellKnownTypes.Duration>
+  nameWithType.vb: IDeepCloneable(Of Duration)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Protobuf.WellKnownTypes.Duration)
+  name.vb: IDeepCloneable(Of Duration)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.ICustomDiagnosticMessage
+  commentId: T:Google.Protobuf.ICustomDiagnosticMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: ICustomDiagnosticMessage
+  nameWithType: ICustomDiagnosticMessage
+  fullName: Google.Protobuf.ICustomDiagnosticMessage
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  name: MergeFrom(Byte[])
+  nameWithType: MessageExtensions.MergeFrom(Byte[])
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+  nameWithType.vb: MessageExtensions.MergeFrom(Byte())
+  fullName.vb: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte())
+  name.vb: MergeFrom(Byte())
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  name: MergeFrom(ByteString)
+  nameWithType: MessageExtensions.MergeFrom(ByteString)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  name: MergeFrom(Stream)
+  nameWithType: MessageExtensions.MergeFrom(Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  name: MergeDelimitedFrom(Stream)
+  nameWithType: MessageExtensions.MergeDelimitedFrom(Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteArray
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  name: ToByteArray()
+  nameWithType: MessageExtensions.ToByteArray()
+  fullName: Google.Protobuf.MessageExtensions.ToByteArray()
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  name: WriteTo(Stream)
+  nameWithType: MessageExtensions.WriteTo(Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  name: WriteDelimitedTo(Stream)
+  nameWithType: MessageExtensions.WriteDelimitedTo(Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteString
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  name: ToByteString()
+  nameWithType: MessageExtensions.ToByteString()
+  fullName: Google.Protobuf.MessageExtensions.ToByteString()
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: false
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: false
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  isExternal: true
+  name: MergeFrom(IMessage, Byte[])
+  nameWithType: MessageExtensions.MergeFrom(IMessage, Byte[])
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, System.Byte[])
+  nameWithType.vb: MessageExtensions.MergeFrom(IMessage, Byte())
+  fullName.vb: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, System.Byte())
+  name.vb: MergeFrom(IMessage, Byte())
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions
+  commentId: T:Google.Protobuf.MessageExtensions
+  parent: Google.Protobuf
+  isExternal: false
+  name: MessageExtensions
+  nameWithType: MessageExtensions
+  fullName: Google.Protobuf.MessageExtensions
+- uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  isExternal: false
+  name: MergeFrom(IMessage, ByteString)
+  nameWithType: MessageExtensions.MergeFrom(IMessage, ByteString)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, Google.Protobuf.ByteString)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: MergeFrom(IMessage, Stream)
+  nameWithType: MessageExtensions.MergeFrom(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: MergeDelimitedFrom(IMessage, Stream)
+  nameWithType: MessageExtensions.MergeDelimitedFrom(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  isExternal: false
+  name: ToByteArray(IMessage)
+  nameWithType: MessageExtensions.ToByteArray(IMessage)
+  fullName: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: WriteTo(IMessage, Stream)
+  nameWithType: MessageExtensions.WriteTo(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: WriteDelimitedTo(IMessage, Stream)
+  nameWithType: MessageExtensions.WriteDelimitedTo(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  isExternal: false
+  name: ToByteString(IMessage)
+  nameWithType: MessageExtensions.ToByteString(IMessage)
+  fullName: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Duration.Parser*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.Parser
+  isExternal: false
+  name: Parser
+  nameWithType: Duration.Parser
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Parser
+- uid: Google.Protobuf.MessageParser{Google.Protobuf.WellKnownTypes.Duration}
+  commentId: T:Google.Protobuf.MessageParser{Google.Protobuf.WellKnownTypes.Duration}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<Duration>
+  nameWithType: MessageParser<Duration>
+  fullName: Google.Protobuf.MessageParser<Google.Protobuf.WellKnownTypes.Duration>
+  nameWithType.vb: MessageParser(Of Duration)
+  fullName.vb: Google.Protobuf.MessageParser(Of Google.Protobuf.WellKnownTypes.Duration)
+  name.vb: MessageParser(Of Duration)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: false
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Duration.Descriptor*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.Descriptor
+  isExternal: false
+  name: Descriptor
+  nameWithType: Duration.Descriptor
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Protobuf.WellKnownTypes.Duration.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: Duration.IMessage.Descriptor
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Duration.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Protobuf.WellKnownTypes.Duration.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.WellKnownTypes.Duration.#ctor*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.#ctor
+  isExternal: false
+  name: Duration
+  nameWithType: Duration.Duration
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Duration
+- uid: Google.Protobuf.WellKnownTypes.Duration
+  commentId: T:Google.Protobuf.WellKnownTypes.Duration
+  parent: Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Duration
+  nameWithType: Duration
+  fullName: Google.Protobuf.WellKnownTypes.Duration
+- uid: Google.Protobuf.WellKnownTypes.Duration.Clone*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: Duration.Clone
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Duration}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Duration}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Duration}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<Duration>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Protobuf.WellKnownTypes.Duration>.Clone()
+  nameWithType.vb: IDeepCloneable(Of Duration).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Protobuf.WellKnownTypes.Duration).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<Duration>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Protobuf.WellKnownTypes.Duration>.Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of Duration).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Protobuf.WellKnownTypes.Duration).Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: false
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Protobuf.WellKnownTypes.Duration.Seconds*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.Seconds
+  isExternal: false
+  name: Seconds
+  nameWithType: Duration.Seconds
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Seconds
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Google.Protobuf.WellKnownTypes.Duration.Nanos*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.Nanos
+  isExternal: false
+  name: Nanos
+  nameWithType: Duration.Nanos
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Nanos
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Duration.Equals*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: Duration.Equals
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{Google.Protobuf.WellKnownTypes.Duration}.Equals(Google.Protobuf.WellKnownTypes.Duration)
+  commentId: M:System.IEquatable{Google.Protobuf.WellKnownTypes.Duration}.Equals(Google.Protobuf.WellKnownTypes.Duration)
+  parent: System.IEquatable{Google.Protobuf.WellKnownTypes.Duration}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Duration)
+  nameWithType: IEquatable<Duration>.Equals(Duration)
+  fullName: System.IEquatable<Google.Protobuf.WellKnownTypes.Duration>.Equals(Google.Protobuf.WellKnownTypes.Duration)
+  nameWithType.vb: IEquatable(Of Duration).Equals(Duration)
+  fullName.vb: System.IEquatable(Of Google.Protobuf.WellKnownTypes.Duration).Equals(Google.Protobuf.WellKnownTypes.Duration)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Duration>.Equals
+    fullName: System.IEquatable<Google.Protobuf.WellKnownTypes.Duration>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Duration).Equals
+    fullName: System.IEquatable(Of Google.Protobuf.WellKnownTypes.Duration).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Duration.GetHashCode*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: Duration.GetHashCode
+  fullName: Google.Protobuf.WellKnownTypes.Duration.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Duration.ToString*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: Duration.ToString
+  fullName: Google.Protobuf.WellKnownTypes.Duration.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.WellKnownTypes.Duration.WriteTo*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: Duration.WriteTo
+  fullName: Google.Protobuf.WellKnownTypes.Duration.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: Google.Protobuf.WellKnownTypes.Duration.CalculateSize*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.CalculateSize
+  isExternal: false
+  name: CalculateSize
+  nameWithType: Duration.CalculateSize
+  fullName: Google.Protobuf.WellKnownTypes.Duration.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Duration.MergeFrom*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.MergeFrom
+  isExternal: false
+  name: MergeFrom
+  nameWithType: Duration.MergeFrom
+  fullName: Google.Protobuf.WellKnownTypes.Duration.MergeFrom
+- uid: Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Duration}.MergeFrom(Google.Protobuf.WellKnownTypes.Duration)
+  commentId: M:Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Duration}.MergeFrom(Google.Protobuf.WellKnownTypes.Duration)
+  parent: Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Duration}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(Duration)
+  nameWithType: IMessage<Duration>.MergeFrom(Duration)
+  fullName: Google.Protobuf.IMessage<Google.Protobuf.WellKnownTypes.Duration>.MergeFrom(Google.Protobuf.WellKnownTypes.Duration)
+  nameWithType.vb: IMessage(Of Duration).MergeFrom(Duration)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Protobuf.WellKnownTypes.Duration).MergeFrom(Google.Protobuf.WellKnownTypes.Duration)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<Duration>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Protobuf.WellKnownTypes.Duration>.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of Duration).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Protobuf.WellKnownTypes.Duration).MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WellKnownTypes.Duration
+    name: Duration
+    nameWithType: Duration
+    fullName: Google.Protobuf.WellKnownTypes.Duration
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: false
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: Google.Protobuf.WellKnownTypes.Duration.ToTimeSpan*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.ToTimeSpan
+  isExternal: false
+  name: ToTimeSpan
+  nameWithType: Duration.ToTimeSpan
+  fullName: Google.Protobuf.WellKnownTypes.Duration.ToTimeSpan
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+- uid: Google.Protobuf.WellKnownTypes.Duration.FromTimeSpan*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.FromTimeSpan
+  isExternal: false
+  name: FromTimeSpan
+  nameWithType: Duration.FromTimeSpan
+  fullName: Google.Protobuf.WellKnownTypes.Duration.FromTimeSpan
+- uid: Google.Protobuf.WellKnownTypes.Duration.op_UnaryNegation*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.op_UnaryNegation
+  isExternal: false
+  name: UnaryNegation
+  nameWithType: Duration.UnaryNegation
+  fullName: Google.Protobuf.WellKnownTypes.Duration.UnaryNegation
+- uid: Google.Protobuf.WellKnownTypes.Duration.op_Addition*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.op_Addition
+  isExternal: false
+  name: Addition
+  nameWithType: Duration.Addition
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Addition
+- uid: Google.Protobuf.WellKnownTypes.Duration.op_Subtraction*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.op_Subtraction
+  isExternal: false
+  name: Subtraction
+  nameWithType: Duration.Subtraction
+  fullName: Google.Protobuf.WellKnownTypes.Duration.Subtraction
+- uid: Google.Protobuf.WellKnownTypes.Duration.ToDiagnosticString*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Duration.ToDiagnosticString
+  isExternal: false
+  name: ToDiagnosticString
+  nameWithType: Duration.ToDiagnosticString
+  fullName: Google.Protobuf.WellKnownTypes.Duration.ToDiagnosticString
+- uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  commentId: M:Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  parent: Google.Protobuf.ICustomDiagnosticMessage
+  isExternal: false
+  name: ToDiagnosticString()
+  nameWithType: ICustomDiagnosticMessage.ToDiagnosticString()
+  fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString()
+  spec.csharp:
+  - uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+    name: ToDiagnosticString
+    nameWithType: ICustomDiagnosticMessage.ToDiagnosticString
+    fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+    name: ToDiagnosticString
+    nameWithType: ICustomDiagnosticMessage.ToDiagnosticString
+    fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

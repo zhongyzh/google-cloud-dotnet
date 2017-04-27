@@ -1,0 +1,836 @@
+### YamlMime:ManagedReference
+items:
+- uid: Grpc.Core.Server.ServerPortCollection
+  commentId: T:Grpc.Core.Server.ServerPortCollection
+  id: Server.ServerPortCollection
+  parent: Grpc.Core
+  children:
+  - Grpc.Core.Server.ServerPortCollection.Add(Grpc.Core.ServerPort)
+  - Grpc.Core.Server.ServerPortCollection.Add(System.String,System.Int32,Grpc.Core.ServerCredentials)
+  - Grpc.Core.Server.ServerPortCollection.GetEnumerator
+  - Grpc.Core.Server.ServerPortCollection.System#Collections#IEnumerable#GetEnumerator
+  langs:
+  - csharp
+  - vb
+  name: Server.ServerPortCollection
+  nameWithType: Server.ServerPortCollection
+  fullName: Grpc.Core.Server.ServerPortCollection
+  type: Class
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ServerPortCollection
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 428
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nCollection of server ports.\n"
+  example: []
+  syntax:
+    content: 'public class ServerPortCollection : IEnumerable<ServerPort>, IEnumerable'
+    content.vb: >-
+      Public Class ServerPortCollection
+          Implements IEnumerable(Of ServerPort), IEnumerable
+  inheritance:
+  - System.Object
+  implements:
+  - System.Collections.Generic.IEnumerable{Grpc.Core.ServerPort}
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Grpc.Core.Server.ServerPortCollection.Add(Grpc.Core.ServerPort)
+  commentId: M:Grpc.Core.Server.ServerPortCollection.Add(Grpc.Core.ServerPort)
+  id: Add(Grpc.Core.ServerPort)
+  parent: Grpc.Core.Server.ServerPortCollection
+  langs:
+  - csharp
+  - vb
+  name: Add(ServerPort)
+  nameWithType: Server.ServerPortCollection.Add(ServerPort)
+  fullName: Grpc.Core.Server.ServerPortCollection.Add(Grpc.Core.ServerPort)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Add
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 442
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nAdds a new port on which server should listen.\nOnly call this before Start().\n<returns>The port on which server will be listening.</returns>\n"
+  example: []
+  syntax:
+    content: public int Add(ServerPort serverPort)
+    parameters:
+    - id: serverPort
+      type: Grpc.Core.ServerPort
+    return:
+      type: System.Int32
+    content.vb: Public Function Add(serverPort As ServerPort) As Integer
+  overload: Grpc.Core.Server.ServerPortCollection.Add*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Server.ServerPortCollection.Add(System.String,System.Int32,Grpc.Core.ServerCredentials)
+  commentId: M:Grpc.Core.Server.ServerPortCollection.Add(System.String,System.Int32,Grpc.Core.ServerCredentials)
+  id: Add(System.String,System.Int32,Grpc.Core.ServerCredentials)
+  parent: Grpc.Core.Server.ServerPortCollection
+  langs:
+  - csharp
+  - vb
+  name: Add(String, Int32, ServerCredentials)
+  nameWithType: Server.ServerPortCollection.Add(String, Int32, ServerCredentials)
+  fullName: Grpc.Core.Server.ServerPortCollection.Add(System.String, System.Int32, Grpc.Core.ServerCredentials)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Add
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 454
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nAdds a new port on which server should listen.\n<returns>The port on which server will be listening.</returns>\n"
+  example: []
+  syntax:
+    content: public int Add(string host, int port, ServerCredentials credentials)
+    parameters:
+    - id: host
+      type: System.String
+      description: the host
+    - id: port
+      type: System.Int32
+      description: the port. If zero, an unused port is chosen automatically.
+    - id: credentials
+      type: Grpc.Core.ServerCredentials
+      description: credentials to use to secure this port.
+    return:
+      type: System.Int32
+    content.vb: Public Function Add(host As String, port As Integer, credentials As ServerCredentials) As Integer
+  overload: Grpc.Core.Server.ServerPortCollection.Add*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Server.ServerPortCollection.GetEnumerator
+  commentId: M:Grpc.Core.Server.ServerPortCollection.GetEnumerator
+  id: GetEnumerator
+  parent: Grpc.Core.Server.ServerPortCollection
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: Server.ServerPortCollection.GetEnumerator()
+  fullName: Grpc.Core.Server.ServerPortCollection.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: GetEnumerator
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 462
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nGets enumerator for this collection.\n"
+  example: []
+  syntax:
+    content: public IEnumerator<ServerPort> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{Grpc.Core.ServerPort}
+    content.vb: Public Function GetEnumerator As IEnumerator(Of ServerPort)
+  overload: Grpc.Core.Server.ServerPortCollection.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{Grpc.Core.ServerPort}.GetEnumerator
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Server.ServerPortCollection.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:Grpc.Core.Server.ServerPortCollection.System#Collections#IEnumerable#GetEnumerator
+  id: System#Collections#IEnumerable#GetEnumerator
+  isEii: true
+  parent: Grpc.Core.Server.ServerPortCollection
+  langs:
+  - csharp
+  - vb
+  name: IEnumerable.GetEnumerator()
+  nameWithType: Server.ServerPortCollection.IEnumerable.GetEnumerator()
+  fullName: Grpc.Core.Server.ServerPortCollection.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: System.Collections.IEnumerable.GetEnumerator
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 467
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  syntax:
+    content: IEnumerator IEnumerable.GetEnumerator()
+    return:
+      type: System.Collections.IEnumerator
+    content.vb: Function System.Collections.IEnumerable.GetEnumerator As IEnumerator Implements IEnumerable.GetEnumerator
+  overload: Grpc.Core.Server.ServerPortCollection.System#Collections#IEnumerable#GetEnumerator*
+  implements:
+  - System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: Server.ServerPortCollection.System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+references:
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Collections.Generic.IEnumerable{Grpc.Core.ServerPort}
+  commentId: T:System.Collections.Generic.IEnumerable{Grpc.Core.ServerPort}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<ServerPort>
+  nameWithType: IEnumerable<ServerPort>
+  fullName: System.Collections.Generic.IEnumerable<Grpc.Core.ServerPort>
+  nameWithType.vb: IEnumerable(Of ServerPort)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Grpc.Core.ServerPort)
+  name.vb: IEnumerable(Of ServerPort)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Grpc.Core.ServerPort
+    name: ServerPort
+    nameWithType: ServerPort
+    fullName: Grpc.Core.ServerPort
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Grpc.Core.ServerPort
+    name: ServerPort
+    nameWithType: ServerPort
+    fullName: Grpc.Core.ServerPort
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: false
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: Grpc.Core.Server.ServerPortCollection.Add*
+  commentId: Overload:Grpc.Core.Server.ServerPortCollection.Add
+  isExternal: false
+  name: Add
+  nameWithType: Server.ServerPortCollection.Add
+  fullName: Grpc.Core.Server.ServerPortCollection.Add
+- uid: Grpc.Core.ServerPort
+  commentId: T:Grpc.Core.ServerPort
+  parent: Grpc.Core
+  isExternal: false
+  name: ServerPort
+  nameWithType: ServerPort
+  fullName: Grpc.Core.ServerPort
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Grpc.Core.ServerCredentials
+  commentId: T:Grpc.Core.ServerCredentials
+  parent: Grpc.Core
+  isExternal: false
+  name: ServerCredentials
+  nameWithType: ServerCredentials
+  fullName: Grpc.Core.ServerCredentials
+- uid: Grpc.Core.Server.ServerPortCollection.GetEnumerator*
+  commentId: Overload:Grpc.Core.Server.ServerPortCollection.GetEnumerator
+  isExternal: false
+  name: GetEnumerator
+  nameWithType: Server.ServerPortCollection.GetEnumerator
+  fullName: Grpc.Core.Server.ServerPortCollection.GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{Grpc.Core.ServerPort}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{Grpc.Core.ServerPort}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{Grpc.Core.ServerPort}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<ServerPort>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<Grpc.Core.ServerPort>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of ServerPort).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Grpc.Core.ServerPort).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<ServerPort>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<Grpc.Core.ServerPort>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of ServerPort).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of Grpc.Core.ServerPort).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator{Grpc.Core.ServerPort}
+  commentId: T:System.Collections.Generic.IEnumerator{Grpc.Core.ServerPort}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<ServerPort>
+  nameWithType: IEnumerator<ServerPort>
+  fullName: System.Collections.Generic.IEnumerator<Grpc.Core.ServerPort>
+  nameWithType.vb: IEnumerator(Of ServerPort)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of Grpc.Core.ServerPort)
+  name.vb: IEnumerator(Of ServerPort)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Grpc.Core.ServerPort
+    name: ServerPort
+    nameWithType: ServerPort
+    fullName: Grpc.Core.ServerPort
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Grpc.Core.ServerPort
+    name: ServerPort
+    nameWithType: ServerPort
+    fullName: Grpc.Core.ServerPort
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.Server.ServerPortCollection.System#Collections#IEnumerable#GetEnumerator*
+  commentId: Overload:Grpc.Core.Server.ServerPortCollection.System#Collections#IEnumerable#GetEnumerator
+  isExternal: false
+  name: IEnumerable.GetEnumerator
+  nameWithType: Server.ServerPortCollection.IEnumerable.GetEnumerator
+  fullName: Grpc.Core.Server.ServerPortCollection.System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: Server.ServerPortCollection.System.Collections.IEnumerable.GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+- uid: System.Collections.IEnumerable.GetEnumerator
+  commentId: M:System.Collections.IEnumerable.GetEnumerator
+  parent: System.Collections.IEnumerable
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable.GetEnumerator()
+  fullName: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator

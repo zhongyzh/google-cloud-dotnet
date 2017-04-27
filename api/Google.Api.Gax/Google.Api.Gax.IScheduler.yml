@@ -1,0 +1,262 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.IScheduler
+  commentId: T:Google.Api.Gax.IScheduler
+  id: IScheduler
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.IScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: IScheduler
+  nameWithType: IScheduler
+  fullName: Google.Api.Gax.IScheduler
+  type: Interface
+  source:
+    remote:
+      path: src/Google.Api.Gax/IScheduler.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: IScheduler
+    path: src/Google.Api.Gax/IScheduler.cs
+    startLine: 20
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nAbstraction of scheduler-like operations, used for testability.\n"
+  remarks: "\nNote that this is different to <xref href=\"System.Threading.Tasks.TaskScheduler\" data-throw-if-not-resolved=\"false\"></xref>, which is really involved\nwith assigning tasks to threads rather than any sort of delay.\n"
+  example: []
+  syntax:
+    content: public interface IScheduler
+    content.vb: Public Interface IScheduler
+  extensionMethods:
+  - Google.Api.Gax.IScheduler.Google.Api.Gax.SchedulerExtensions.Sleep(System.TimeSpan,System.Threading.CancellationToken)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: Google.Api.Gax.IScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.IScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+  id: Delay(System.TimeSpan,System.Threading.CancellationToken)
+  parent: Google.Api.Gax.IScheduler
+  langs:
+  - csharp
+  - vb
+  name: Delay(TimeSpan, CancellationToken)
+  nameWithType: IScheduler.Delay(TimeSpan, CancellationToken)
+  fullName: Google.Api.Gax.IScheduler.Delay(System.TimeSpan, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/IScheduler.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Delay
+    path: src/Google.Api.Gax/IScheduler.cs
+    startLine: 30
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nReturns a task which will complete after the given delay. Whether the returned\nawaitable is configured to capture the current context or not is implementation-specific.\n(A test implementation may capture the current context to enable reliable testing.)\n"
+  example: []
+  syntax:
+    content: Task Delay(TimeSpan delay, CancellationToken cancellationToken)
+    parameters:
+    - id: delay
+      type: System.TimeSpan
+      description: Time to delay for. Must not be negative.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token that will be checked prior to completing the returned task.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task which will complete after the given delay.
+    content.vb: Function Delay(delay As TimeSpan, cancellationToken As CancellationToken) As Task
+  overload: Google.Api.Gax.IScheduler.Delay*
+references:
+- uid: System.Threading.Tasks.TaskScheduler
+  commentId: T:System.Threading.Tasks.TaskScheduler
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: Google.Api.Gax.IScheduler.Google.Api.Gax.SchedulerExtensions.Sleep(System.TimeSpan,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+  parent: Google.Api.Gax.SchedulerExtensions
+  definition: Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+  name: Sleep(TimeSpan, CancellationToken)
+  nameWithType: SchedulerExtensions.Sleep(TimeSpan, CancellationToken)
+  fullName: Google.Api.Gax.SchedulerExtensions.Sleep(System.TimeSpan, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Api.Gax.SchedulerExtensions.Sleep(System.TimeSpan,System.Threading.CancellationToken)
+    name: Sleep
+    nameWithType: SchedulerExtensions.Sleep
+    fullName: Google.Api.Gax.SchedulerExtensions.Sleep
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.SchedulerExtensions.Sleep(System.TimeSpan,System.Threading.CancellationToken)
+    name: Sleep
+    nameWithType: SchedulerExtensions.Sleep
+    fullName: Google.Api.Gax.SchedulerExtensions.Sleep
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+  isExternal: true
+  name: Sleep(IScheduler, TimeSpan, CancellationToken)
+  nameWithType: SchedulerExtensions.Sleep(IScheduler, TimeSpan, CancellationToken)
+  fullName: Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler, System.TimeSpan, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+    name: Sleep
+    nameWithType: SchedulerExtensions.Sleep
+    fullName: Google.Api.Gax.SchedulerExtensions.Sleep
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Gax.IScheduler
+    name: IScheduler
+    nameWithType: IScheduler
+    fullName: Google.Api.Gax.IScheduler
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+    name: Sleep
+    nameWithType: SchedulerExtensions.Sleep
+    fullName: Google.Api.Gax.SchedulerExtensions.Sleep
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Gax.IScheduler
+    name: IScheduler
+    nameWithType: IScheduler
+    fullName: Google.Api.Gax.IScheduler
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.SchedulerExtensions
+  commentId: T:Google.Api.Gax.SchedulerExtensions
+  parent: Google.Api.Gax
+  isExternal: false
+  name: SchedulerExtensions
+  nameWithType: SchedulerExtensions
+  fullName: Google.Api.Gax.SchedulerExtensions
+- uid: Google.Api.Gax.IScheduler.Delay*
+  commentId: Overload:Google.Api.Gax.IScheduler.Delay
+  isExternal: false
+  name: Delay
+  nameWithType: IScheduler.Delay
+  fullName: Google.Api.Gax.IScheduler.Delay
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: false
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

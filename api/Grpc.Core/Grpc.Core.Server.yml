@@ -1,0 +1,844 @@
+### YamlMime:ManagedReference
+items:
+- uid: Grpc.Core.Server
+  commentId: T:Grpc.Core.Server
+  id: Server
+  parent: Grpc.Core
+  children:
+  - Grpc.Core.Server.#ctor
+  - Grpc.Core.Server.#ctor(System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})
+  - Grpc.Core.Server.KillAsync
+  - Grpc.Core.Server.Ports
+  - Grpc.Core.Server.RequestCallTokensPerCompletionQueue
+  - Grpc.Core.Server.Services
+  - Grpc.Core.Server.ShutdownAsync
+  - Grpc.Core.Server.ShutdownTask
+  - Grpc.Core.Server.Start
+  langs:
+  - csharp
+  - vb
+  name: Server
+  nameWithType: Server
+  fullName: Grpc.Core.Server
+  type: Class
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Server
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 47
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\ngRPC server. A single server can server arbitrary number of services and can listen on more than one ports.\n"
+  example: []
+  syntax:
+    content: public class Server
+    content.vb: Public Class Server
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Grpc.Core.Server.#ctor
+  commentId: M:Grpc.Core.Server.#ctor
+  id: '#ctor'
+  parent: Grpc.Core.Server
+  langs:
+  - csharp
+  - vb
+  name: Server()
+  nameWithType: Server.Server()
+  fullName: Grpc.Core.Server.Server()
+  type: Constructor
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: .ctor
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 73
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nCreates a new server.\n"
+  example: []
+  syntax:
+    content: public Server()
+    content.vb: Public Sub New
+  overload: Grpc.Core.Server.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Server.#ctor(System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})
+  commentId: M:Grpc.Core.Server.#ctor(System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})
+  id: '#ctor(System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})'
+  parent: Grpc.Core.Server
+  langs:
+  - csharp
+  - vb
+  name: Server(IEnumerable<ChannelOption>)
+  nameWithType: Server.Server(IEnumerable<ChannelOption>)
+  fullName: Grpc.Core.Server.Server(System.Collections.Generic.IEnumerable<Grpc.Core.ChannelOption>)
+  type: Constructor
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: .ctor
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 81
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nCreates a new server.\n"
+  example: []
+  syntax:
+    content: public Server(IEnumerable<ChannelOption> options)
+    parameters:
+    - id: options
+      type: System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption}
+      description: Channel options.
+    content.vb: Public Sub New(options As IEnumerable(Of ChannelOption))
+  overload: Grpc.Core.Server.#ctor*
+  nameWithType.vb: Server.Server(IEnumerable(Of ChannelOption))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.Server.Server(System.Collections.Generic.IEnumerable(Of Grpc.Core.ChannelOption))
+  name.vb: Server(IEnumerable(Of ChannelOption))
+- uid: Grpc.Core.Server.Services
+  commentId: P:Grpc.Core.Server.Services
+  id: Services
+  parent: Grpc.Core.Server
+  langs:
+  - csharp
+  - vb
+  name: Services
+  nameWithType: Server.Services
+  fullName: Grpc.Core.Server.Services
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Services
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 103
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nServices that will be exported by the server once started. Register a service with this\nserver by adding its definition to this collection.\n"
+  example: []
+  syntax:
+    content: public Server.ServiceDefinitionCollection Services { get; }
+    parameters: []
+    return:
+      type: Grpc.Core.Server.ServiceDefinitionCollection
+    content.vb: Public ReadOnly Property Services As Server.ServiceDefinitionCollection
+  overload: Grpc.Core.Server.Services*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Grpc.Core.Server.Ports
+  commentId: P:Grpc.Core.Server.Ports
+  id: Ports
+  parent: Grpc.Core.Server
+  langs:
+  - csharp
+  - vb
+  name: Ports
+  nameWithType: Server.Ports
+  fullName: Grpc.Core.Server.Ports
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Ports
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 115
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nPorts on which the server will listen once started. Register a port with this\nserver by adding its definition to this collection.\n"
+  example: []
+  syntax:
+    content: public Server.ServerPortCollection Ports { get; }
+    parameters: []
+    return:
+      type: Grpc.Core.Server.ServerPortCollection
+    content.vb: Public ReadOnly Property Ports As Server.ServerPortCollection
+  overload: Grpc.Core.Server.Ports*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Grpc.Core.Server.ShutdownTask
+  commentId: P:Grpc.Core.Server.ShutdownTask
+  id: ShutdownTask
+  parent: Grpc.Core.Server
+  langs:
+  - csharp
+  - vb
+  name: ShutdownTask
+  nameWithType: Server.ShutdownTask
+  fullName: Grpc.Core.Server.ShutdownTask
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ShutdownTask
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 126
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nTo allow awaiting termination of the server.\n"
+  example: []
+  syntax:
+    content: public Task ShutdownTask { get; }
+    parameters: []
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public ReadOnly Property ShutdownTask As Task
+  overload: Grpc.Core.Server.ShutdownTask*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Grpc.Core.Server.RequestCallTokensPerCompletionQueue
+  commentId: P:Grpc.Core.Server.RequestCallTokensPerCompletionQueue
+  id: RequestCallTokensPerCompletionQueue
+  parent: Grpc.Core.Server
+  langs:
+  - csharp
+  - vb
+  name: RequestCallTokensPerCompletionQueue
+  nameWithType: Server.RequestCallTokensPerCompletionQueue
+  fullName: Grpc.Core.Server.RequestCallTokensPerCompletionQueue
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: RequestCallTokensPerCompletionQueue
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 138
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nExperimental API. Might anytime change without prior notice.\nNumber or calls requested via grpc_server_request_call at any given time for each completion queue.\n"
+  example: []
+  syntax:
+    content: public int RequestCallTokensPerCompletionQueue { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property RequestCallTokensPerCompletionQueue As Integer
+  overload: Grpc.Core.Server.RequestCallTokensPerCompletionQueue*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Server.Start
+  commentId: M:Grpc.Core.Server.Start
+  id: Start
+  parent: Grpc.Core.Server
+  langs:
+  - csharp
+  - vb
+  name: Start()
+  nameWithType: Server.Start()
+  fullName: Grpc.Core.Server.Start()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Start
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 158
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nStarts the server.\n"
+  example: []
+  syntax:
+    content: public void Start()
+    content.vb: Public Sub Start
+  overload: Grpc.Core.Server.Start*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Server.ShutdownAsync
+  commentId: M:Grpc.Core.Server.ShutdownAsync
+  id: ShutdownAsync
+  parent: Grpc.Core.Server
+  langs:
+  - csharp
+  - vb
+  name: ShutdownAsync()
+  nameWithType: Server.ShutdownAsync()
+  fullName: Grpc.Core.Server.ShutdownAsync()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ShutdownAsync
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 186
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nRequests server shutdown and when there are no more calls being serviced,\ncleans up used resources. The returned task finishes when shutdown procedure\nis complete.\n"
+  remarks: "\nIt is strongly recommended to shutdown all previously created servers before exiting from the process.\n"
+  example: []
+  syntax:
+    content: public Task ShutdownAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ShutdownAsync As Task
+  overload: Grpc.Core.Server.ShutdownAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Server.KillAsync
+  commentId: M:Grpc.Core.Server.KillAsync
+  id: KillAsync
+  parent: Grpc.Core.Server
+  langs:
+  - csharp
+  - vb
+  name: KillAsync()
+  nameWithType: Server.KillAsync()
+  fullName: Grpc.Core.Server.KillAsync()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Server.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: KillAsync
+    path: src/csharp/Grpc.Core/Server.cs
+    startLine: 198
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nRequests server shutdown while cancelling all the in-progress calls.\nThe returned task finishes when shutdown procedure is complete.\n"
+  remarks: "\nIt is strongly recommended to shutdown all previously created servers before exiting from the process.\n"
+  example: []
+  syntax:
+    content: public Task KillAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function KillAsync As Task
+  overload: Grpc.Core.Server.KillAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Grpc.Core.Server.#ctor*
+  commentId: Overload:Grpc.Core.Server.#ctor
+  isExternal: false
+  name: Server
+  nameWithType: Server.Server
+  fullName: Grpc.Core.Server.Server
+- uid: System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption}
+  commentId: T:System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<ChannelOption>
+  nameWithType: IEnumerable<ChannelOption>
+  fullName: System.Collections.Generic.IEnumerable<Grpc.Core.ChannelOption>
+  nameWithType.vb: IEnumerable(Of ChannelOption)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Grpc.Core.ChannelOption)
+  name.vb: IEnumerable(Of ChannelOption)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Grpc.Core.ChannelOption
+    name: ChannelOption
+    nameWithType: ChannelOption
+    fullName: Grpc.Core.ChannelOption
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Grpc.Core.ChannelOption
+    name: ChannelOption
+    nameWithType: ChannelOption
+    fullName: Grpc.Core.ChannelOption
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Grpc.Core.Server.Services*
+  commentId: Overload:Grpc.Core.Server.Services
+  isExternal: false
+  name: Services
+  nameWithType: Server.Services
+  fullName: Grpc.Core.Server.Services
+- uid: Grpc.Core.Server.ServiceDefinitionCollection
+  commentId: T:Grpc.Core.Server.ServiceDefinitionCollection
+  parent: Grpc.Core
+  isExternal: false
+  name: Server.ServiceDefinitionCollection
+  nameWithType: Server.ServiceDefinitionCollection
+  fullName: Grpc.Core.Server.ServiceDefinitionCollection
+- uid: Grpc.Core.Server.Ports*
+  commentId: Overload:Grpc.Core.Server.Ports
+  isExternal: false
+  name: Ports
+  nameWithType: Server.Ports
+  fullName: Grpc.Core.Server.Ports
+- uid: Grpc.Core.Server.ServerPortCollection
+  commentId: T:Grpc.Core.Server.ServerPortCollection
+  parent: Grpc.Core
+  isExternal: false
+  name: Server.ServerPortCollection
+  nameWithType: Server.ServerPortCollection
+  fullName: Grpc.Core.Server.ServerPortCollection
+- uid: Grpc.Core.Server.ShutdownTask*
+  commentId: Overload:Grpc.Core.Server.ShutdownTask
+  isExternal: false
+  name: ShutdownTask
+  nameWithType: Server.ShutdownTask
+  fullName: Grpc.Core.Server.ShutdownTask
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Grpc.Core.Server.RequestCallTokensPerCompletionQueue*
+  commentId: Overload:Grpc.Core.Server.RequestCallTokensPerCompletionQueue
+  isExternal: false
+  name: RequestCallTokensPerCompletionQueue
+  nameWithType: Server.RequestCallTokensPerCompletionQueue
+  fullName: Grpc.Core.Server.RequestCallTokensPerCompletionQueue
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Grpc.Core.Server.Start*
+  commentId: Overload:Grpc.Core.Server.Start
+  isExternal: false
+  name: Start
+  nameWithType: Server.Start
+  fullName: Grpc.Core.Server.Start
+- uid: Grpc.Core.Server.ShutdownAsync*
+  commentId: Overload:Grpc.Core.Server.ShutdownAsync
+  isExternal: false
+  name: ShutdownAsync
+  nameWithType: Server.ShutdownAsync
+  fullName: Grpc.Core.Server.ShutdownAsync
+- uid: Grpc.Core.Server.KillAsync*
+  commentId: Overload:Grpc.Core.Server.KillAsync
+  isExternal: false
+  name: KillAsync
+  nameWithType: Server.KillAsync
+  fullName: Grpc.Core.Server.KillAsync

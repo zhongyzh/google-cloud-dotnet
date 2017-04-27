@@ -1,0 +1,789 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.Reflection.EnumDescriptor
+  commentId: T:Google.Protobuf.Reflection.EnumDescriptor
+  id: EnumDescriptor
+  parent: Google.Protobuf.Reflection
+  children:
+  - Google.Protobuf.Reflection.EnumDescriptor.ClrType
+  - Google.Protobuf.Reflection.EnumDescriptor.ContainingType
+  - Google.Protobuf.Reflection.EnumDescriptor.FindValueByName(System.String)
+  - Google.Protobuf.Reflection.EnumDescriptor.FindValueByNumber(System.Int32)
+  - Google.Protobuf.Reflection.EnumDescriptor.Name
+  - Google.Protobuf.Reflection.EnumDescriptor.Values
+  langs:
+  - csharp
+  - vb
+  name: EnumDescriptor
+  nameWithType: EnumDescriptor
+  fullName: Google.Protobuf.Reflection.EnumDescriptor
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: EnumDescriptor
+    path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+    startLine: 40
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nDescriptor for an enum type in a .proto file.\n"
+  example: []
+  syntax:
+    content: 'public sealed class EnumDescriptor : DescriptorBase, IDescriptor'
+    content.vb: >-
+      Public NotInheritable Class EnumDescriptor
+          Inherits DescriptorBase
+          Implements IDescriptor
+  inheritance:
+  - System.Object
+  - Google.Protobuf.Reflection.DescriptorBase
+  implements:
+  - Google.Protobuf.Reflection.IDescriptor
+  inheritedMembers:
+  - Google.Protobuf.Reflection.DescriptorBase.Index
+  - Google.Protobuf.Reflection.DescriptorBase.FullName
+  - Google.Protobuf.Reflection.DescriptorBase.File
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.Reflection.EnumDescriptor.Name
+  commentId: P:Google.Protobuf.Reflection.EnumDescriptor.Name
+  id: Name
+  parent: Google.Protobuf.Reflection.EnumDescriptor
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: EnumDescriptor.Name
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.Name
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Name
+    path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+    startLine: 72
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nThe brief name of the descriptor's target.\n"
+  example: []
+  syntax:
+    content: public override string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Name As String
+  overridden: Google.Protobuf.Reflection.DescriptorBase.Name
+  overload: Google.Protobuf.Reflection.EnumDescriptor.Name*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.EnumDescriptor.ClrType
+  commentId: P:Google.Protobuf.Reflection.EnumDescriptor.ClrType
+  id: ClrType
+  parent: Google.Protobuf.Reflection.EnumDescriptor
+  langs:
+  - csharp
+  - vb
+  name: ClrType
+  nameWithType: EnumDescriptor.ClrType
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.ClrType
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ClrType
+    path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+    startLine: 77
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nThe CLR type for this enum. For generated code, this will be a CLR enum type.\n"
+  example: []
+  syntax:
+    content: public Type ClrType { get; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public ReadOnly Property ClrType As Type
+  overload: Google.Protobuf.Reflection.EnumDescriptor.ClrType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.EnumDescriptor.ContainingType
+  commentId: P:Google.Protobuf.Reflection.EnumDescriptor.ContainingType
+  id: ContainingType
+  parent: Google.Protobuf.Reflection.EnumDescriptor
+  langs:
+  - csharp
+  - vb
+  name: ContainingType
+  nameWithType: EnumDescriptor.ContainingType
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.ContainingType
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ContainingType
+    path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+    startLine: 82
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  example: []
+  syntax:
+    content: public MessageDescriptor ContainingType { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+      description: "\nIf this is a nested type, get the outer descriptor, otherwise null.\n"
+    content.vb: Public ReadOnly Property ContainingType As MessageDescriptor
+  overload: Google.Protobuf.Reflection.EnumDescriptor.ContainingType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.EnumDescriptor.Values
+  commentId: P:Google.Protobuf.Reflection.EnumDescriptor.Values
+  id: Values
+  parent: Google.Protobuf.Reflection.EnumDescriptor
+  langs:
+  - csharp
+  - vb
+  name: Values
+  nameWithType: EnumDescriptor.Values
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.Values
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Values
+    path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+    startLine: 90
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  example: []
+  syntax:
+    content: public IList<EnumValueDescriptor> Values { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{Google.Protobuf.Reflection.EnumValueDescriptor}
+      description: "\nAn unmodifiable list of defined value descriptors for this enum.\n"
+    content.vb: Public ReadOnly Property Values As IList(Of EnumValueDescriptor)
+  overload: Google.Protobuf.Reflection.EnumDescriptor.Values*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.EnumDescriptor.FindValueByNumber(System.Int32)
+  commentId: M:Google.Protobuf.Reflection.EnumDescriptor.FindValueByNumber(System.Int32)
+  id: FindValueByNumber(System.Int32)
+  parent: Google.Protobuf.Reflection.EnumDescriptor
+  langs:
+  - csharp
+  - vb
+  name: FindValueByNumber(Int32)
+  nameWithType: EnumDescriptor.FindValueByNumber(Int32)
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.FindValueByNumber(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FindValueByNumber
+    path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+    startLine: 100
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nFinds an enum value by number. If multiple enum values have the\nsame number, this returns the first defined value with that number.\nIf there is no value for the given number, this returns <code>null</code>.\n"
+  example: []
+  syntax:
+    content: public EnumValueDescriptor FindValueByNumber(int number)
+    parameters:
+    - id: number
+      type: System.Int32
+    return:
+      type: Google.Protobuf.Reflection.EnumValueDescriptor
+    content.vb: Public Function FindValueByNumber(number As Integer) As EnumValueDescriptor
+  overload: Google.Protobuf.Reflection.EnumDescriptor.FindValueByNumber*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.Reflection.EnumDescriptor.FindValueByName(System.String)
+  commentId: M:Google.Protobuf.Reflection.EnumDescriptor.FindValueByName(System.String)
+  id: FindValueByName(System.String)
+  parent: Google.Protobuf.Reflection.EnumDescriptor
+  langs:
+  - csharp
+  - vb
+  name: FindValueByName(String)
+  nameWithType: EnumDescriptor.FindValueByName(String)
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.FindValueByName(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FindValueByName
+    path: csharp/src/Google.Protobuf/Reflection/EnumDescriptor.cs
+    startLine: 110
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nFinds an enum value by name.\n"
+  example: []
+  syntax:
+    content: public EnumValueDescriptor FindValueByName(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The unqualified name of the value (e.g. "FOO").
+    return:
+      type: Google.Protobuf.Reflection.EnumValueDescriptor
+      description: The value's descriptor, or null if not found.
+    content.vb: Public Function FindValueByName(name As String) As EnumValueDescriptor
+  overload: Google.Protobuf.Reflection.EnumDescriptor.FindValueByName*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.Reflection.DescriptorBase
+  commentId: T:Google.Protobuf.Reflection.DescriptorBase
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: DescriptorBase
+  nameWithType: DescriptorBase
+  fullName: Google.Protobuf.Reflection.DescriptorBase
+- uid: Google.Protobuf.Reflection.IDescriptor
+  commentId: T:Google.Protobuf.Reflection.IDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: IDescriptor
+  nameWithType: IDescriptor
+  fullName: Google.Protobuf.Reflection.IDescriptor
+- uid: Google.Protobuf.Reflection.DescriptorBase.Index
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.Index
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: Index
+  nameWithType: DescriptorBase.Index
+  fullName: Google.Protobuf.Reflection.DescriptorBase.Index
+- uid: Google.Protobuf.Reflection.DescriptorBase.FullName
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.FullName
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: FullName
+  nameWithType: DescriptorBase.FullName
+  fullName: Google.Protobuf.Reflection.DescriptorBase.FullName
+- uid: Google.Protobuf.Reflection.DescriptorBase.File
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.File
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: File
+  nameWithType: DescriptorBase.File
+  fullName: Google.Protobuf.Reflection.DescriptorBase.File
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.Reflection.DescriptorBase.Name
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.Name
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: Name
+  nameWithType: DescriptorBase.Name
+  fullName: Google.Protobuf.Reflection.DescriptorBase.Name
+- uid: Google.Protobuf.Reflection.EnumDescriptor.Name*
+  commentId: Overload:Google.Protobuf.Reflection.EnumDescriptor.Name
+  isExternal: false
+  name: Name
+  nameWithType: EnumDescriptor.Name
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.Reflection.EnumDescriptor.ClrType*
+  commentId: Overload:Google.Protobuf.Reflection.EnumDescriptor.ClrType
+  isExternal: false
+  name: ClrType
+  nameWithType: EnumDescriptor.ClrType
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.ClrType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: Google.Protobuf.Reflection.EnumDescriptor.ContainingType*
+  commentId: Overload:Google.Protobuf.Reflection.EnumDescriptor.ContainingType
+  isExternal: false
+  name: ContainingType
+  nameWithType: EnumDescriptor.ContainingType
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.ContainingType
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection.EnumDescriptor.Values*
+  commentId: Overload:Google.Protobuf.Reflection.EnumDescriptor.Values
+  isExternal: false
+  name: Values
+  nameWithType: EnumDescriptor.Values
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.Values
+- uid: System.Collections.Generic.IList{Google.Protobuf.Reflection.EnumValueDescriptor}
+  commentId: T:System.Collections.Generic.IList{Google.Protobuf.Reflection.EnumValueDescriptor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<EnumValueDescriptor>
+  nameWithType: IList<EnumValueDescriptor>
+  fullName: System.Collections.Generic.IList<Google.Protobuf.Reflection.EnumValueDescriptor>
+  nameWithType.vb: IList(Of EnumValueDescriptor)
+  fullName.vb: System.Collections.Generic.IList(Of Google.Protobuf.Reflection.EnumValueDescriptor)
+  name.vb: IList(Of EnumValueDescriptor)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.Reflection.EnumValueDescriptor
+    name: EnumValueDescriptor
+    nameWithType: EnumValueDescriptor
+    fullName: Google.Protobuf.Reflection.EnumValueDescriptor
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.Reflection.EnumValueDescriptor
+    name: EnumValueDescriptor
+    nameWithType: EnumValueDescriptor
+    fullName: Google.Protobuf.Reflection.EnumValueDescriptor
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Google.Protobuf.Reflection.EnumDescriptor.FindValueByNumber*
+  commentId: Overload:Google.Protobuf.Reflection.EnumDescriptor.FindValueByNumber
+  isExternal: false
+  name: FindValueByNumber
+  nameWithType: EnumDescriptor.FindValueByNumber
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.FindValueByNumber
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Protobuf.Reflection.EnumValueDescriptor
+  commentId: T:Google.Protobuf.Reflection.EnumValueDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: EnumValueDescriptor
+  nameWithType: EnumValueDescriptor
+  fullName: Google.Protobuf.Reflection.EnumValueDescriptor
+- uid: Google.Protobuf.Reflection.EnumDescriptor.FindValueByName*
+  commentId: Overload:Google.Protobuf.Reflection.EnumDescriptor.FindValueByName
+  isExternal: false
+  name: FindValueByName
+  nameWithType: EnumDescriptor.FindValueByName
+  fullName: Google.Protobuf.Reflection.EnumDescriptor.FindValueByName

@@ -1,0 +1,1353 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3
+  commentId: T:Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3
+  id: GrpcPagedAsyncEnumerable`3
+  parent: Google.Api.Gax.Grpc
+  children:
+  - Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.#ctor(Google.Api.Gax.Grpc.ApiCall{`0,`1},`0,Google.Api.Gax.Grpc.CallSettings)
+  - Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.AsRawResponses
+  - Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.GetEnumerator
+  - Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>
+  nameWithType: GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>
+  fullName: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/GrpcPagedAsyncEnumerable.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GrpcPagedAsyncEnumerable
+    path: src/Google.Api.Gax.Grpc/GrpcPagedAsyncEnumerable.cs
+    startLine: 26
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nAn asynchronous sequence of resources, obtained lazily via API operations which retrieve a page at a time.\n"
+  example: []
+  syntax:
+    content: 'public sealed class GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource> : PagedAsyncEnumerable<TResponse, TResource>, IAsyncEnumerable<TResource> where TRequest : class, IPageRequest, IMessage<TRequest> where TResponse : class, IPageResponse<TResource>, IMessage<TResponse>'
+    typeParameters:
+    - id: TRequest
+      description: The API request type.
+    - id: TResponse
+      description: The API response type. Each response contains a page of resources.
+    - id: TResource
+      description: The resource type contained within the response.
+    content.vb: >-
+      Public NotInheritable Class GrpcPagedAsyncEnumerable(Of TRequest As {Class, IPageRequest, IMessage(Of TRequest)}, TResponse As {Class, IPageResponse(Of TResource), IMessage(Of TResponse)}, TResource)
+          Inherits PagedAsyncEnumerable(Of TResponse, TResource)
+          Implements IAsyncEnumerable(Of TResource)
+  inheritance:
+  - System.Object
+  - Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}
+  implements:
+  - System.Collections.Generic.IAsyncEnumerable{{TResource}}
+  inheritedMembers:
+  - Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}.AsRawResponses
+  - Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  - Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}.GetEnumerator
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource)
+  name.vb: GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource)
+- uid: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.#ctor(Google.Api.Gax.Grpc.ApiCall{`0,`1},`0,Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.#ctor(Google.Api.Gax.Grpc.ApiCall{`0,`1},`0,Google.Api.Gax.Grpc.CallSettings)
+  id: '#ctor(Google.Api.Gax.Grpc.ApiCall{`0,`1},`0,Google.Api.Gax.Grpc.CallSettings)'
+  parent: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3
+  langs:
+  - csharp
+  - vb
+  name: GrpcPagedAsyncEnumerable(ApiCall<TRequest, TResponse>, TRequest, CallSettings)
+  nameWithType: GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.GrpcPagedAsyncEnumerable(ApiCall<TRequest, TResponse>, TRequest, CallSettings)
+  fullName: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.GrpcPagedAsyncEnumerable(Google.Api.Gax.Grpc.ApiCall<TRequest, TResponse>, TRequest, Google.Api.Gax.Grpc.CallSettings)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/GrpcPagedAsyncEnumerable.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.Gax.Grpc/GrpcPagedAsyncEnumerable.cs
+    startLine: 39
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nCreates a new lazily-evaluated asynchronous sequence from the given API call, initial request, and call settings.\n"
+  remarks: The request is cloned each time the sequence is evaluated.
+  example: []
+  syntax:
+    content: public GrpcPagedAsyncEnumerable(ApiCall<TRequest, TResponse> apiCall, TRequest request, CallSettings callSettings)
+    parameters:
+    - id: apiCall
+      type: Google.Api.Gax.Grpc.ApiCall{{TRequest},{TResponse}}
+      description: The API call made each time a page is required.
+    - id: request
+      type: '{TRequest}'
+      description: The initial request.
+    - id: callSettings
+      type: Google.Api.Gax.Grpc.CallSettings
+      description: The settings to apply to each API call.
+    content.vb: Public Sub New(apiCall As ApiCall(Of TRequest, TResponse), request As TRequest, callSettings As CallSettings)
+  overload: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.#ctor*
+  nameWithType.vb: GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).GrpcPagedAsyncEnumerable(ApiCall(Of TRequest, TResponse), TRequest, CallSettings)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).GrpcPagedAsyncEnumerable(Google.Api.Gax.Grpc.ApiCall(Of TRequest, TResponse), TRequest, Google.Api.Gax.Grpc.CallSettings)
+  name.vb: GrpcPagedAsyncEnumerable(ApiCall(Of TRequest, TResponse), TRequest, CallSettings)
+- uid: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.AsRawResponses
+  commentId: M:Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.AsRawResponses
+  id: AsRawResponses
+  parent: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3
+  langs:
+  - csharp
+  - vb
+  name: AsRawResponses()
+  nameWithType: GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.AsRawResponses()
+  fullName: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.AsRawResponses()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/GrpcPagedAsyncEnumerable.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: AsRawResponses
+    path: src/Google.Api.Gax.Grpc/GrpcPagedAsyncEnumerable.cs
+    startLine: 46
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  example: []
+  syntax:
+    content: public override IAsyncEnumerable<TResponse> AsRawResponses()
+    return:
+      type: System.Collections.Generic.IAsyncEnumerable{{TResponse}}
+    content.vb: Public Overrides Function AsRawResponses As IAsyncEnumerable(Of TResponse)
+  overridden: Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}.AsRawResponses
+  overload: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.AsRawResponses*
+  nameWithType.vb: GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).AsRawResponses()
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).AsRawResponses()
+- uid: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  id: ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3
+  langs:
+  - csharp
+  - vb
+  name: ReadPageAsync(Int32, CancellationToken)
+  nameWithType: GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.ReadPageAsync(Int32, CancellationToken)
+  fullName: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.ReadPageAsync(System.Int32, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/GrpcPagedAsyncEnumerable.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ReadPageAsync
+    path: src/Google.Api.Gax.Grpc/GrpcPagedAsyncEnumerable.cs
+    startLine: 49
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  example: []
+  syntax:
+    content: public override Task<Page<TResource>> ReadPageAsync(int pageSize, CancellationToken cancellationToken = null)
+    parameters:
+    - id: pageSize
+      type: System.Int32
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Google.Api.Gax.Page{{TResource}}}
+    content.vb: Public Overrides Function ReadPageAsync(pageSize As Integer, cancellationToken As CancellationToken = Nothing) As Task(Of Page(Of TResource))
+  overridden: Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  overload: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.ReadPageAsync*
+  nameWithType.vb: GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).ReadPageAsync(Int32, CancellationToken)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).ReadPageAsync(System.Int32, System.Threading.CancellationToken)
+- uid: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.GetEnumerator
+  commentId: M:Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.GetEnumerator
+  id: GetEnumerator
+  parent: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.GetEnumerator()
+  fullName: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/GrpcPagedAsyncEnumerable.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetEnumerator
+    path: src/Google.Api.Gax.Grpc/GrpcPagedAsyncEnumerable.cs
+    startLine: 54
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  example: []
+  syntax:
+    content: public override IAsyncEnumerator<TResource> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IAsyncEnumerator{{TResource}}
+    content.vb: Public Overrides Function GetEnumerator As IAsyncEnumerator(Of TResource)
+  overridden: Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}.GetEnumerator
+  overload: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.GetEnumerator*
+  nameWithType.vb: GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).GetEnumerator()
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).GetEnumerator()
+references:
+- uid: Google.Api.Gax.Grpc
+  commentId: N:Google.Api.Gax.Grpc
+  isExternal: false
+  name: Google.Api.Gax.Grpc
+  nameWithType: Google.Api.Gax.Grpc
+  fullName: Google.Api.Gax.Grpc
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}
+  commentId: T:Google.Api.Gax.PagedAsyncEnumerable{`1,`2}
+  parent: Google.Api.Gax
+  definition: Google.Api.Gax.PagedAsyncEnumerable`2
+  name: PagedAsyncEnumerable<TResponse, TResource>
+  nameWithType: PagedAsyncEnumerable<TResponse, TResource>
+  fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>
+  nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource)
+  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource)
+  name.vb: PagedAsyncEnumerable(Of TResponse, TResource)
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2
+    name: PagedAsyncEnumerable
+    nameWithType: PagedAsyncEnumerable
+    fullName: Google.Api.Gax.PagedAsyncEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2
+    name: PagedAsyncEnumerable
+    nameWithType: PagedAsyncEnumerable
+    fullName: Google.Api.Gax.PagedAsyncEnumerable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IAsyncEnumerable{{TResource}}
+  commentId: T:System.Collections.Generic.IAsyncEnumerable{`2}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IAsyncEnumerable`1
+  name: IAsyncEnumerable<TResource>
+  nameWithType: IAsyncEnumerable<TResource>
+  fullName: System.Collections.Generic.IAsyncEnumerable<TResource>
+  nameWithType.vb: IAsyncEnumerable(Of TResource)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of TResource)
+  name.vb: IAsyncEnumerable(Of TResource)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: System.Collections.Generic.IAsyncEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: System.Collections.Generic.IAsyncEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}.AsRawResponses
+  commentId: M:Google.Api.Gax.PagedAsyncEnumerable{`1,`2}.AsRawResponses
+  parent: Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}
+  definition: Google.Api.Gax.PagedAsyncEnumerable`2.AsRawResponses
+  name: AsRawResponses()
+  nameWithType: PagedAsyncEnumerable<TResponse, TResource>.AsRawResponses()
+  fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.AsRawResponses()
+  nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource).AsRawResponses()
+  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).AsRawResponses()
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.AsRawResponses
+    name: AsRawResponses
+    nameWithType: PagedAsyncEnumerable<TResponse, TResource>.AsRawResponses
+    fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.AsRawResponses
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.AsRawResponses
+    name: AsRawResponses
+    nameWithType: PagedAsyncEnumerable(Of TResponse, TResource).AsRawResponses
+    fullName: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).AsRawResponses
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.PagedAsyncEnumerable{`1,`2}.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  parent: Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}
+  definition: Google.Api.Gax.PagedAsyncEnumerable`2.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  name: ReadPageAsync(Int32, CancellationToken)
+  nameWithType: PagedAsyncEnumerable<TResponse, TResource>.ReadPageAsync(Int32, CancellationToken)
+  fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.ReadPageAsync(System.Int32, System.Threading.CancellationToken)
+  nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource).ReadPageAsync(Int32, CancellationToken)
+  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).ReadPageAsync(System.Int32, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+    name: ReadPageAsync
+    nameWithType: PagedAsyncEnumerable<TResponse, TResource>.ReadPageAsync
+    fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.ReadPageAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+    name: ReadPageAsync
+    nameWithType: PagedAsyncEnumerable(Of TResponse, TResource).ReadPageAsync
+    fullName: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).ReadPageAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}.GetEnumerator
+  commentId: M:Google.Api.Gax.PagedAsyncEnumerable{`1,`2}.GetEnumerator
+  parent: Google.Api.Gax.PagedAsyncEnumerable{{TResponse},{TResource}}
+  definition: Google.Api.Gax.PagedAsyncEnumerable`2.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: PagedAsyncEnumerable<TResponse, TResource>.GetEnumerator()
+  fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.GetEnumerator()
+  nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator()
+  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator()
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.GetEnumerator
+    name: GetEnumerator
+    nameWithType: PagedAsyncEnumerable<TResponse, TResource>.GetEnumerator
+    fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.GetEnumerator
+    name: GetEnumerator
+    nameWithType: PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator
+    fullName: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.PagedAsyncEnumerable`2
+  commentId: T:Google.Api.Gax.PagedAsyncEnumerable`2
+  isExternal: false
+  name: PagedAsyncEnumerable<TResponse, TResource>
+  nameWithType: PagedAsyncEnumerable<TResponse, TResource>
+  fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>
+  nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource)
+  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource)
+  name.vb: PagedAsyncEnumerable(Of TResponse, TResource)
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2
+    name: PagedAsyncEnumerable
+    nameWithType: PagedAsyncEnumerable
+    fullName: Google.Api.Gax.PagedAsyncEnumerable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2
+    name: PagedAsyncEnumerable
+    nameWithType: PagedAsyncEnumerable
+    fullName: Google.Api.Gax.PagedAsyncEnumerable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.Collections.Generic.IAsyncEnumerable`1
+  commentId: T:System.Collections.Generic.IAsyncEnumerable`1
+  isExternal: true
+  name: IAsyncEnumerable<T>
+  nameWithType: IAsyncEnumerable<T>
+  fullName: System.Collections.Generic.IAsyncEnumerable<T>
+  nameWithType.vb: IAsyncEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of T)
+  name.vb: IAsyncEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: System.Collections.Generic.IAsyncEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: System.Collections.Generic.IAsyncEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Google.Api.Gax.PagedAsyncEnumerable`2.AsRawResponses
+  commentId: M:Google.Api.Gax.PagedAsyncEnumerable`2.AsRawResponses
+  isExternal: false
+  name: AsRawResponses()
+  nameWithType: PagedAsyncEnumerable<TResponse, TResource>.AsRawResponses()
+  fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.AsRawResponses()
+  nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource).AsRawResponses()
+  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).AsRawResponses()
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.AsRawResponses
+    name: AsRawResponses
+    nameWithType: PagedAsyncEnumerable<TResponse, TResource>.AsRawResponses
+    fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.AsRawResponses
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.AsRawResponses
+    name: AsRawResponses
+    nameWithType: PagedAsyncEnumerable(Of TResponse, TResource).AsRawResponses
+    fullName: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).AsRawResponses
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PagedAsyncEnumerable`2.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.PagedAsyncEnumerable`2.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+  isExternal: true
+  name: ReadPageAsync(Int32, CancellationToken)
+  nameWithType: PagedAsyncEnumerable<TResponse, TResource>.ReadPageAsync(Int32, CancellationToken)
+  fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.ReadPageAsync(System.Int32, System.Threading.CancellationToken)
+  nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource).ReadPageAsync(Int32, CancellationToken)
+  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).ReadPageAsync(System.Int32, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+    name: ReadPageAsync
+    nameWithType: PagedAsyncEnumerable<TResponse, TResource>.ReadPageAsync
+    fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.ReadPageAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.ReadPageAsync(System.Int32,System.Threading.CancellationToken)
+    name: ReadPageAsync
+    nameWithType: PagedAsyncEnumerable(Of TResponse, TResource).ReadPageAsync
+    fullName: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).ReadPageAsync
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PagedAsyncEnumerable`2.GetEnumerator
+  commentId: M:Google.Api.Gax.PagedAsyncEnumerable`2.GetEnumerator
+  isExternal: false
+  name: GetEnumerator()
+  nameWithType: PagedAsyncEnumerable<TResponse, TResource>.GetEnumerator()
+  fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.GetEnumerator()
+  nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator()
+  fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator()
+  spec.csharp:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.GetEnumerator
+    name: GetEnumerator
+    nameWithType: PagedAsyncEnumerable<TResponse, TResource>.GetEnumerator
+    fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.PagedAsyncEnumerable`2.GetEnumerator
+    name: GetEnumerator
+    nameWithType: PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator
+    fullName: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.#ctor*
+  commentId: Overload:Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.#ctor
+  isExternal: false
+  name: GrpcPagedAsyncEnumerable
+  nameWithType: GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.GrpcPagedAsyncEnumerable
+  fullName: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.GrpcPagedAsyncEnumerable
+  nameWithType.vb: GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).GrpcPagedAsyncEnumerable
+  fullName.vb: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).GrpcPagedAsyncEnumerable
+- uid: Google.Api.Gax.Grpc.ApiCall{{TRequest},{TResponse}}
+  commentId: T:Google.Api.Gax.Grpc.ApiCall{``0,``1}
+  parent: Google.Api.Gax.Grpc
+  definition: Google.Api.Gax.Grpc.ApiCall`2
+  name: ApiCall<TRequest, TResponse>
+  nameWithType: ApiCall<TRequest, TResponse>
+  fullName: Google.Api.Gax.Grpc.ApiCall<TRequest, TResponse>
+  nameWithType.vb: ApiCall(Of TRequest, TResponse)
+  fullName.vb: Google.Api.Gax.Grpc.ApiCall(Of TRequest, TResponse)
+  name.vb: ApiCall(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: Google.Api.Gax.Grpc.ApiCall`2
+    name: ApiCall
+    nameWithType: ApiCall
+    fullName: Google.Api.Gax.Grpc.ApiCall
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.Grpc.ApiCall`2
+    name: ApiCall
+    nameWithType: ApiCall
+    fullName: Google.Api.Gax.Grpc.ApiCall
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{TRequest}'
+  commentId: '!:TRequest'
+  definition: TRequest
+  name: TRequest
+  nameWithType: TRequest
+  fullName: TRequest
+- uid: Google.Api.Gax.Grpc.CallSettings
+  commentId: T:Google.Api.Gax.Grpc.CallSettings
+  parent: Google.Api.Gax.Grpc
+  isExternal: false
+  name: CallSettings
+  nameWithType: CallSettings
+  fullName: Google.Api.Gax.Grpc.CallSettings
+- uid: Google.Api.Gax.Grpc.ApiCall`2
+  commentId: T:Google.Api.Gax.Grpc.ApiCall`2
+  isExternal: false
+  name: ApiCall<TRequest, TResponse>
+  nameWithType: ApiCall<TRequest, TResponse>
+  fullName: Google.Api.Gax.Grpc.ApiCall<TRequest, TResponse>
+  nameWithType.vb: ApiCall(Of TRequest, TResponse)
+  fullName.vb: Google.Api.Gax.Grpc.ApiCall(Of TRequest, TResponse)
+  name.vb: ApiCall(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: Google.Api.Gax.Grpc.ApiCall`2
+    name: ApiCall
+    nameWithType: ApiCall
+    fullName: Google.Api.Gax.Grpc.ApiCall
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.Grpc.ApiCall`2
+    name: ApiCall
+    nameWithType: ApiCall
+    fullName: Google.Api.Gax.Grpc.ApiCall
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TRequest
+  isExternal: false
+  name: TRequest
+  nameWithType: TRequest
+  fullName: TRequest
+- uid: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.AsRawResponses*
+  commentId: Overload:Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.AsRawResponses
+  isExternal: false
+  name: AsRawResponses
+  nameWithType: GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.AsRawResponses
+  fullName: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.AsRawResponses
+  nameWithType.vb: GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).AsRawResponses
+  fullName.vb: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).AsRawResponses
+- uid: System.Collections.Generic.IAsyncEnumerable{{TResponse}}
+  commentId: T:System.Collections.Generic.IAsyncEnumerable{`1}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IAsyncEnumerable`1
+  name: IAsyncEnumerable<TResponse>
+  nameWithType: IAsyncEnumerable<TResponse>
+  fullName: System.Collections.Generic.IAsyncEnumerable<TResponse>
+  nameWithType.vb: IAsyncEnumerable(Of TResponse)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of TResponse)
+  name.vb: IAsyncEnumerable(Of TResponse)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: System.Collections.Generic.IAsyncEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: System.Collections.Generic.IAsyncEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.ReadPageAsync*
+  commentId: Overload:Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.ReadPageAsync
+  isExternal: false
+  name: ReadPageAsync
+  nameWithType: GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.ReadPageAsync
+  fullName: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.ReadPageAsync
+  nameWithType.vb: GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).ReadPageAsync
+  fullName.vb: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).ReadPageAsync
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{Google.Api.Gax.Page{{TResource}}}
+  commentId: T:System.Threading.Tasks.Task{Google.Api.Gax.Page{`2}}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Page<TResource>>
+  nameWithType: Task<Page<TResource>>
+  fullName: System.Threading.Tasks.Task<Google.Api.Gax.Page<TResource>>
+  nameWithType.vb: Task(Of Page(Of TResource))
+  fullName.vb: System.Threading.Tasks.Task(Of Google.Api.Gax.Page(Of TResource))
+  name.vb: Task(Of Page(Of TResource))
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Gax.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: Google.Api.Gax.Page
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Gax.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: Google.Api.Gax.Page
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: false
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.GetEnumerator*
+  commentId: Overload:Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable`3.GetEnumerator
+  isExternal: false
+  name: GetEnumerator
+  nameWithType: GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.GetEnumerator
+  fullName: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable<TRequest, TResponse, TResource>.GetEnumerator
+  nameWithType.vb: GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).GetEnumerator
+  fullName.vb: Google.Api.Gax.Grpc.GrpcPagedAsyncEnumerable(Of TRequest, TResponse, TResource).GetEnumerator
+- uid: System.Collections.Generic.IAsyncEnumerator{{TResource}}
+  commentId: T:System.Collections.Generic.IAsyncEnumerator{`2}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IAsyncEnumerator`1
+  name: IAsyncEnumerator<TResource>
+  nameWithType: IAsyncEnumerator<TResource>
+  fullName: System.Collections.Generic.IAsyncEnumerator<TResource>
+  nameWithType.vb: IAsyncEnumerator(Of TResource)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of TResource)
+  name.vb: IAsyncEnumerator(Of TResource)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
+    name: IAsyncEnumerator
+    nameWithType: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
+    name: IAsyncEnumerator
+    nameWithType: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IAsyncEnumerator`1
+  commentId: T:System.Collections.Generic.IAsyncEnumerator`1
+  isExternal: true
+  name: IAsyncEnumerator<T>
+  nameWithType: IAsyncEnumerator<T>
+  fullName: System.Collections.Generic.IAsyncEnumerator<T>
+  nameWithType.vb: IAsyncEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of T)
+  name.vb: IAsyncEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
+    name: IAsyncEnumerator
+    nameWithType: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
+    name: IAsyncEnumerator
+    nameWithType: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )

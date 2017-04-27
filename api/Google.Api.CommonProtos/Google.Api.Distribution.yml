@@ -1,0 +1,2260 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Distribution
+  commentId: T:Google.Api.Distribution
+  id: Distribution
+  parent: Google.Api
+  children:
+  - Google.Api.Distribution.#ctor
+  - Google.Api.Distribution.#ctor(Google.Api.Distribution)
+  - Google.Api.Distribution.BucketCounts
+  - Google.Api.Distribution.BucketCountsFieldNumber
+  - Google.Api.Distribution.BucketOptions
+  - Google.Api.Distribution.BucketOptionsFieldNumber
+  - Google.Api.Distribution.CalculateSize
+  - Google.Api.Distribution.Clone
+  - Google.Api.Distribution.Count
+  - Google.Api.Distribution.CountFieldNumber
+  - Google.Api.Distribution.Descriptor
+  - Google.Api.Distribution.Equals(Google.Api.Distribution)
+  - Google.Api.Distribution.Equals(System.Object)
+  - Google.Api.Distribution.GetHashCode
+  - Google.Api.Distribution.Google#Protobuf#IMessage#Descriptor
+  - Google.Api.Distribution.Mean
+  - Google.Api.Distribution.MeanFieldNumber
+  - Google.Api.Distribution.MergeFrom(Google.Api.Distribution)
+  - Google.Api.Distribution.MergeFrom(Google.Protobuf.CodedInputStream)
+  - Google.Api.Distribution.Parser
+  - Google.Api.Distribution.Range
+  - Google.Api.Distribution.RangeFieldNumber
+  - Google.Api.Distribution.SumOfSquaredDeviation
+  - Google.Api.Distribution.SumOfSquaredDeviationFieldNumber
+  - Google.Api.Distribution.ToString
+  - Google.Api.Distribution.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: Distribution
+  nameWithType: Distribution
+  fullName: Google.Api.Distribution
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Distribution
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 82
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nDistribution contains summary statistics for a population of values and,\noptionally, a histogram representing the distribution of those values across\na specified set of histogram buckets.\n\nThe summary statistics are the count, mean, sum of the squared deviation from\nthe mean, the minimum, and the maximum of the set of population of values.\n\nThe histogram is based on a sequence of buckets and gives a count of values\nthat fall into each bucket.  The boundaries of the buckets are given either\nexplicitly or by specifying parameters for a method of computing them\n(buckets of fixed width or buckets of exponentially increasing width).\n\nAlthough it is not forbidden, it is generally a bad idea to include\nnon-finite values (infinities or NaNs) in the population of values, as this\nwill render the `mean` and `sum_of_squared_deviation` fields meaningless.\n"
+  example: []
+  syntax:
+    content: 'public sealed class Distribution : IMessage<Distribution>, IMessage, IEquatable<Distribution>, IDeepCloneable<Distribution>'
+    content.vb: >-
+      Public NotInheritable Class Distribution
+          Implements IMessage(Of Distribution), IMessage, IEquatable(Of Distribution), IDeepCloneable(Of Distribution)
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.Distribution}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Api.Distribution}
+  - Google.Protobuf.IDeepCloneable{Google.Api.Distribution}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.Distribution.Parser
+  commentId: P:Google.Api.Distribution.Parser
+  id: Parser
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: Distribution.Parser
+  fullName: Google.Api.Distribution.Parser
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Parser
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 84
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageParser<Distribution> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{Google.Api.Distribution}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of Distribution)
+  overload: Google.Api.Distribution.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.Distribution.Descriptor
+  commentId: P:Google.Api.Distribution.Descriptor
+  id: Descriptor
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: Distribution.Descriptor
+  fullName: Google.Api.Distribution.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Descriptor
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 87
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: Google.Api.Distribution.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.Distribution.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Api.Distribution.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: Distribution.IMessage.Descriptor
+  fullName: Google.Api.Distribution.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 92
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Api.Distribution.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Distribution.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Api.Distribution.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.Distribution.#ctor
+  commentId: M:Google.Api.Distribution.#ctor
+  id: '#ctor'
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: Distribution()
+  nameWithType: Distribution.Distribution()
+  fullName: Google.Api.Distribution.Distribution()
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 97
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Distribution()
+    content.vb: Public Sub New
+  overload: Google.Api.Distribution.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.#ctor(Google.Api.Distribution)
+  commentId: M:Google.Api.Distribution.#ctor(Google.Api.Distribution)
+  id: '#ctor(Google.Api.Distribution)'
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: Distribution(Distribution)
+  nameWithType: Distribution.Distribution(Distribution)
+  fullName: Google.Api.Distribution.Distribution(Google.Api.Distribution)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 104
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Distribution(Distribution other)
+    parameters:
+    - id: other
+      type: Google.Api.Distribution
+    content.vb: Public Sub New(other As Distribution)
+  overload: Google.Api.Distribution.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.Clone
+  commentId: M:Google.Api.Distribution.Clone
+  id: Clone
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Distribution.Clone()
+  fullName: Google.Api.Distribution.Clone()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Clone
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 114
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Distribution Clone()
+    return:
+      type: Google.Api.Distribution
+    content.vb: Public Function Clone As Distribution
+  overload: Google.Api.Distribution.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Api.Distribution}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.CountFieldNumber
+  commentId: F:Google.Api.Distribution.CountFieldNumber
+  id: CountFieldNumber
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: CountFieldNumber
+  nameWithType: Distribution.CountFieldNumber
+  fullName: Google.Api.Distribution.CountFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CountFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 120
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "count" field.
+  example: []
+  syntax:
+    content: public const int CountFieldNumber = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const CountFieldNumber As Integer = 1
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.Distribution.Count
+  commentId: P:Google.Api.Distribution.Count
+  id: Count
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: Distribution.Count
+  fullName: Google.Api.Distribution.Count
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Count
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 125
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nThe number of values in the population. Must be non-negative.\n"
+  example: []
+  syntax:
+    content: public long Count { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property Count As Long
+  overload: Google.Api.Distribution.Count*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.MeanFieldNumber
+  commentId: F:Google.Api.Distribution.MeanFieldNumber
+  id: MeanFieldNumber
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: MeanFieldNumber
+  nameWithType: Distribution.MeanFieldNumber
+  fullName: Google.Api.Distribution.MeanFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MeanFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 134
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "mean" field.
+  example: []
+  syntax:
+    content: public const int MeanFieldNumber = 2
+    return:
+      type: System.Int32
+    content.vb: Public Const MeanFieldNumber As Integer = 2
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.Distribution.Mean
+  commentId: P:Google.Api.Distribution.Mean
+  id: Mean
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: Mean
+  nameWithType: Distribution.Mean
+  fullName: Google.Api.Distribution.Mean
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Mean
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 140
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nThe arithmetic mean of the values in the population. If `count` is zero\nthen this field must be zero.\n"
+  example: []
+  syntax:
+    content: public double Mean { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property Mean As Double
+  overload: Google.Api.Distribution.Mean*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.SumOfSquaredDeviationFieldNumber
+  commentId: F:Google.Api.Distribution.SumOfSquaredDeviationFieldNumber
+  id: SumOfSquaredDeviationFieldNumber
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: SumOfSquaredDeviationFieldNumber
+  nameWithType: Distribution.SumOfSquaredDeviationFieldNumber
+  fullName: Google.Api.Distribution.SumOfSquaredDeviationFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: SumOfSquaredDeviationFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 149
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "sum_of_squared_deviation" field.
+  example: []
+  syntax:
+    content: public const int SumOfSquaredDeviationFieldNumber = 3
+    return:
+      type: System.Int32
+    content.vb: Public Const SumOfSquaredDeviationFieldNumber As Integer = 3
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.Distribution.SumOfSquaredDeviation
+  commentId: P:Google.Api.Distribution.SumOfSquaredDeviation
+  id: SumOfSquaredDeviation
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: SumOfSquaredDeviation
+  nameWithType: Distribution.SumOfSquaredDeviation
+  fullName: Google.Api.Distribution.SumOfSquaredDeviation
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: SumOfSquaredDeviation
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 162
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nThe sum of squared deviations from the mean of the values in the\npopulation.  For values x_i this is:\n\nSum[i=1..n]((x_i - mean)^2)\n\nKnuth, \"The Art of Computer Programming\", Vol. 2, page 323, 3rd edition\ndescribes Welford's method for accumulating this sum in one pass.\n\nIf `count` is zero then this field must be zero.\n"
+  example: []
+  syntax:
+    content: public double SumOfSquaredDeviation { get; set; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public Property SumOfSquaredDeviation As Double
+  overload: Google.Api.Distribution.SumOfSquaredDeviation*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.RangeFieldNumber
+  commentId: F:Google.Api.Distribution.RangeFieldNumber
+  id: RangeFieldNumber
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: RangeFieldNumber
+  nameWithType: Distribution.RangeFieldNumber
+  fullName: Google.Api.Distribution.RangeFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: RangeFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 171
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "range" field.
+  example: []
+  syntax:
+    content: public const int RangeFieldNumber = 4
+    return:
+      type: System.Int32
+    content.vb: Public Const RangeFieldNumber As Integer = 4
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.Distribution.Range
+  commentId: P:Google.Api.Distribution.Range
+  id: Range
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: Range
+  nameWithType: Distribution.Range
+  fullName: Google.Api.Distribution.Range
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Range
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 177
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nIf specified, contains the range of the population values. The field\nmust not be present if the `count` is zero.\n"
+  example: []
+  syntax:
+    content: public Distribution.Types.Range Range { get; set; }
+    parameters: []
+    return:
+      type: Google.Api.Distribution.Types.Range
+    content.vb: Public Property Range As Distribution.Types.Range
+  overload: Google.Api.Distribution.Range*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.BucketOptionsFieldNumber
+  commentId: F:Google.Api.Distribution.BucketOptionsFieldNumber
+  id: BucketOptionsFieldNumber
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: BucketOptionsFieldNumber
+  nameWithType: Distribution.BucketOptionsFieldNumber
+  fullName: Google.Api.Distribution.BucketOptionsFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: BucketOptionsFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 186
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "bucket_options" field.
+  example: []
+  syntax:
+    content: public const int BucketOptionsFieldNumber = 6
+    return:
+      type: System.Int32
+    content.vb: Public Const BucketOptionsFieldNumber As Integer = 6
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.Distribution.BucketOptions
+  commentId: P:Google.Api.Distribution.BucketOptions
+  id: BucketOptions
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: BucketOptions
+  nameWithType: Distribution.BucketOptions
+  fullName: Google.Api.Distribution.BucketOptions
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: BucketOptions
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 191
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nDefines the histogram bucket boundaries.\n"
+  example: []
+  syntax:
+    content: public Distribution.Types.BucketOptions BucketOptions { get; set; }
+    parameters: []
+    return:
+      type: Google.Api.Distribution.Types.BucketOptions
+    content.vb: Public Property BucketOptions As Distribution.Types.BucketOptions
+  overload: Google.Api.Distribution.BucketOptions*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.BucketCountsFieldNumber
+  commentId: F:Google.Api.Distribution.BucketCountsFieldNumber
+  id: BucketCountsFieldNumber
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: BucketCountsFieldNumber
+  nameWithType: Distribution.BucketCountsFieldNumber
+  fullName: Google.Api.Distribution.BucketCountsFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: BucketCountsFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 200
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "bucket_counts" field.
+  example: []
+  syntax:
+    content: public const int BucketCountsFieldNumber = 7
+    return:
+      type: System.Int32
+    content.vb: Public Const BucketCountsFieldNumber As Integer = 7
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.Distribution.BucketCounts
+  commentId: P:Google.Api.Distribution.BucketCounts
+  id: BucketCounts
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: BucketCounts
+  nameWithType: Distribution.BucketCounts
+  fullName: Google.Api.Distribution.BucketCounts
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: BucketCounts
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 218
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nIf `bucket_options` is given, then the sum of the values in `bucket_counts`\nmust equal the value in `count`.  If `bucket_options` is not given, no\n`bucket_counts` fields may be given.\n\nBucket counts are given in order under the numbering scheme described\nabove (the underflow bucket has number 0; the finite buckets, if any,\nhave numbers 1 through N-2; the overflow bucket has number N-1).\n\nThe size of `bucket_counts` must be no greater than N as defined in\n`bucket_options`.\n\nAny suffix of trailing zero bucket_count fields may be omitted.\n"
+  example: []
+  syntax:
+    content: public RepeatedField<long> BucketCounts { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{System.Int64}
+    content.vb: Public ReadOnly Property BucketCounts As RepeatedField(Of Long)
+  overload: Google.Api.Distribution.BucketCounts*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Distribution.Equals(System.Object)
+  commentId: M:Google.Api.Distribution.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Distribution.Equals(Object)
+  fullName: Google.Api.Distribution.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 223
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Api.Distribution.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Distribution.Equals(Google.Api.Distribution)
+  commentId: M:Google.Api.Distribution.Equals(Google.Api.Distribution)
+  id: Equals(Google.Api.Distribution)
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: Equals(Distribution)
+  nameWithType: Distribution.Equals(Distribution)
+  fullName: Google.Api.Distribution.Equals(Google.Api.Distribution)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 228
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public bool Equals(Distribution other)
+    parameters:
+    - id: other
+      type: Google.Api.Distribution
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As Distribution) As Boolean
+  overload: Google.Api.Distribution.Equals*
+  implements:
+  - System.IEquatable{Google.Api.Distribution}.Equals(Google.Api.Distribution)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.GetHashCode
+  commentId: M:Google.Api.Distribution.GetHashCode
+  id: GetHashCode
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Distribution.GetHashCode()
+  fullName: Google.Api.Distribution.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetHashCode
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 245
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Api.Distribution.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Distribution.ToString
+  commentId: M:Google.Api.Distribution.ToString
+  id: ToString
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Distribution.ToString()
+  fullName: Google.Api.Distribution.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ToString
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 257
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Api.Distribution.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Distribution.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Api.Distribution.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: Distribution.WriteTo(CodedOutputStream)
+  fullName: Google.Api.Distribution.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: WriteTo
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 262
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: Google.Api.Distribution.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.CalculateSize
+  commentId: M:Google.Api.Distribution.CalculateSize
+  id: CalculateSize
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: Distribution.CalculateSize()
+  fullName: Google.Api.Distribution.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CalculateSize
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 287
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: Google.Api.Distribution.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.MergeFrom(Google.Api.Distribution)
+  commentId: M:Google.Api.Distribution.MergeFrom(Google.Api.Distribution)
+  id: MergeFrom(Google.Api.Distribution)
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(Distribution)
+  nameWithType: Distribution.MergeFrom(Distribution)
+  fullName: Google.Api.Distribution.MergeFrom(Google.Api.Distribution)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 309
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(Distribution other)
+    parameters:
+    - id: other
+      type: Google.Api.Distribution
+    content.vb: Public Sub MergeFrom(other As Distribution)
+  overload: Google.Api.Distribution.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.Distribution}.MergeFrom(Google.Api.Distribution)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Api.Distribution.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Api.Distribution
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: Distribution.MergeFrom(CodedInputStream)
+  fullName: Google.Api.Distribution.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 338
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: Google.Api.Distribution.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Api
+  commentId: N:Google.Api
+  isExternal: false
+  name: Google.Api
+  nameWithType: Google.Api
+  fullName: Google.Api
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Api.Distribution}
+  commentId: T:Google.Protobuf.IMessage{Google.Api.Distribution}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<Distribution>
+  nameWithType: IMessage<Distribution>
+  fullName: Google.Protobuf.IMessage<Google.Api.Distribution>
+  nameWithType.vb: IMessage(Of Distribution)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.Distribution)
+  name.vb: IMessage(Of Distribution)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Api.Distribution}
+  commentId: T:System.IEquatable{Google.Api.Distribution}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Distribution>
+  nameWithType: IEquatable<Distribution>
+  fullName: System.IEquatable<Google.Api.Distribution>
+  nameWithType.vb: IEquatable(Of Distribution)
+  fullName.vb: System.IEquatable(Of Google.Api.Distribution)
+  name.vb: IEquatable(Of Distribution)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.Distribution}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Api.Distribution}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<Distribution>
+  nameWithType: IDeepCloneable<Distribution>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.Distribution>
+  nameWithType.vb: IDeepCloneable(Of Distribution)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.Distribution)
+  name.vb: IDeepCloneable(Of Distribution)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.Parser*
+  commentId: Overload:Google.Api.Distribution.Parser
+  isExternal: false
+  name: Parser
+  nameWithType: Distribution.Parser
+  fullName: Google.Api.Distribution.Parser
+- uid: Google.Protobuf.MessageParser{Google.Api.Distribution}
+  commentId: T:Google.Protobuf.MessageParser{Google.Api.Distribution}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<Distribution>
+  nameWithType: MessageParser<Distribution>
+  fullName: Google.Protobuf.MessageParser<Google.Api.Distribution>
+  nameWithType.vb: MessageParser(Of Distribution)
+  fullName.vb: Google.Protobuf.MessageParser(Of Google.Api.Distribution)
+  name.vb: MessageParser(Of Distribution)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: true
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.Descriptor*
+  commentId: Overload:Google.Api.Distribution.Descriptor
+  isExternal: false
+  name: Descriptor
+  nameWithType: Distribution.Descriptor
+  fullName: Google.Api.Distribution.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: true
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Api.Distribution.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Api.Distribution.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: Distribution.IMessage.Descriptor
+  fullName: Google.Api.Distribution.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Distribution.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Api.Distribution.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.Distribution.#ctor*
+  commentId: Overload:Google.Api.Distribution.#ctor
+  isExternal: false
+  name: Distribution
+  nameWithType: Distribution.Distribution
+  fullName: Google.Api.Distribution.Distribution
+- uid: Google.Api.Distribution
+  commentId: T:Google.Api.Distribution
+  parent: Google.Api
+  isExternal: false
+  name: Distribution
+  nameWithType: Distribution
+  fullName: Google.Api.Distribution
+- uid: Google.Api.Distribution.Clone*
+  commentId: Overload:Google.Api.Distribution.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: Distribution.Clone
+  fullName: Google.Api.Distribution.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.Distribution}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Api.Distribution}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Api.Distribution}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<Distribution>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.Distribution>.Clone()
+  nameWithType.vb: IDeepCloneable(Of Distribution).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.Distribution).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<Distribution>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Api.Distribution>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of Distribution).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Api.Distribution).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Api.Distribution.Count*
+  commentId: Overload:Google.Api.Distribution.Count
+  isExternal: false
+  name: Count
+  nameWithType: Distribution.Count
+  fullName: Google.Api.Distribution.Count
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Google.Api.Distribution.Mean*
+  commentId: Overload:Google.Api.Distribution.Mean
+  isExternal: false
+  name: Mean
+  nameWithType: Distribution.Mean
+  fullName: Google.Api.Distribution.Mean
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Google.Api.Distribution.SumOfSquaredDeviation*
+  commentId: Overload:Google.Api.Distribution.SumOfSquaredDeviation
+  isExternal: false
+  name: SumOfSquaredDeviation
+  nameWithType: Distribution.SumOfSquaredDeviation
+  fullName: Google.Api.Distribution.SumOfSquaredDeviation
+- uid: Google.Api.Distribution.Range*
+  commentId: Overload:Google.Api.Distribution.Range
+  isExternal: false
+  name: Range
+  nameWithType: Distribution.Range
+  fullName: Google.Api.Distribution.Range
+- uid: Google.Api.Distribution.Types.Range
+  commentId: T:Google.Api.Distribution.Types.Range
+  parent: Google.Api
+  isExternal: false
+  name: Distribution.Types.Range
+  nameWithType: Distribution.Types.Range
+  fullName: Google.Api.Distribution.Types.Range
+- uid: Google.Api.Distribution.BucketOptions*
+  commentId: Overload:Google.Api.Distribution.BucketOptions
+  isExternal: false
+  name: BucketOptions
+  nameWithType: Distribution.BucketOptions
+  fullName: Google.Api.Distribution.BucketOptions
+- uid: Google.Api.Distribution.Types.BucketOptions
+  commentId: T:Google.Api.Distribution.Types.BucketOptions
+  parent: Google.Api
+  isExternal: false
+  name: Distribution.Types.BucketOptions
+  nameWithType: Distribution.Types.BucketOptions
+  fullName: Google.Api.Distribution.Types.BucketOptions
+- uid: Google.Api.Distribution.BucketCounts*
+  commentId: Overload:Google.Api.Distribution.BucketCounts
+  isExternal: false
+  name: BucketCounts
+  nameWithType: Distribution.BucketCounts
+  fullName: Google.Api.Distribution.BucketCounts
+- uid: Google.Protobuf.Collections.RepeatedField{System.Int64}
+  commentId: T:Google.Protobuf.Collections.RepeatedField{System.Int64}
+  parent: Google.Protobuf.Collections
+  definition: Google.Protobuf.Collections.RepeatedField`1
+  name: RepeatedField<Int64>
+  nameWithType: RepeatedField<Int64>
+  fullName: Google.Protobuf.Collections.RepeatedField<System.Int64>
+  nameWithType.vb: RepeatedField(Of Int64)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of System.Int64)
+  name.vb: RepeatedField(Of Int64)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
+  isExternal: true
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.Equals*
+  commentId: Overload:Google.Api.Distribution.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: Distribution.Equals
+  fullName: Google.Api.Distribution.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{Google.Api.Distribution}.Equals(Google.Api.Distribution)
+  commentId: M:System.IEquatable{Google.Api.Distribution}.Equals(Google.Api.Distribution)
+  parent: System.IEquatable{Google.Api.Distribution}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Distribution)
+  nameWithType: IEquatable<Distribution>.Equals(Distribution)
+  fullName: System.IEquatable<Google.Api.Distribution>.Equals(Google.Api.Distribution)
+  nameWithType.vb: IEquatable(Of Distribution).Equals(Distribution)
+  fullName.vb: System.IEquatable(Of Google.Api.Distribution).Equals(Google.Api.Distribution)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Distribution>.Equals
+    fullName: System.IEquatable<Google.Api.Distribution>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Distribution).Equals
+    fullName: System.IEquatable(Of Google.Api.Distribution).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.GetHashCode*
+  commentId: Overload:Google.Api.Distribution.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: Distribution.GetHashCode
+  fullName: Google.Api.Distribution.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.ToString*
+  commentId: Overload:Google.Api.Distribution.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: Distribution.ToString
+  fullName: Google.Api.Distribution.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Api.Distribution.WriteTo*
+  commentId: Overload:Google.Api.Distribution.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: Distribution.WriteTo
+  fullName: Google.Api.Distribution.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: Google.Api.Distribution.CalculateSize*
+  commentId: Overload:Google.Api.Distribution.CalculateSize
+  isExternal: false
+  name: CalculateSize
+  nameWithType: Distribution.CalculateSize
+  fullName: Google.Api.Distribution.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.MergeFrom*
+  commentId: Overload:Google.Api.Distribution.MergeFrom
+  isExternal: false
+  name: MergeFrom
+  nameWithType: Distribution.MergeFrom
+  fullName: Google.Api.Distribution.MergeFrom
+- uid: Google.Protobuf.IMessage{Google.Api.Distribution}.MergeFrom(Google.Api.Distribution)
+  commentId: M:Google.Protobuf.IMessage{Google.Api.Distribution}.MergeFrom(Google.Api.Distribution)
+  parent: Google.Protobuf.IMessage{Google.Api.Distribution}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(Distribution)
+  nameWithType: IMessage<Distribution>.MergeFrom(Distribution)
+  fullName: Google.Protobuf.IMessage<Google.Api.Distribution>.MergeFrom(Google.Api.Distribution)
+  nameWithType.vb: IMessage(Of Distribution).MergeFrom(Distribution)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.Distribution).MergeFrom(Google.Api.Distribution)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<Distribution>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Api.Distribution>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of Distribution).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Api.Distribution).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Distribution
+    name: Distribution
+    nameWithType: Distribution
+    fullName: Google.Api.Distribution
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: true
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream

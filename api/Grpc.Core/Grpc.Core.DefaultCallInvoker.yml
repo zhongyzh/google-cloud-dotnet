@@ -1,0 +1,2414 @@
+### YamlMime:ManagedReference
+items:
+- uid: Grpc.Core.DefaultCallInvoker
+  commentId: T:Grpc.Core.DefaultCallInvoker
+  id: DefaultCallInvoker
+  parent: Grpc.Core
+  children:
+  - Grpc.Core.DefaultCallInvoker.#ctor(Grpc.Core.Channel)
+  - Grpc.Core.DefaultCallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  - Grpc.Core.DefaultCallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  - Grpc.Core.DefaultCallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  - Grpc.Core.DefaultCallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  - Grpc.Core.DefaultCallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  - Grpc.Core.DefaultCallInvoker.CreateCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  langs:
+  - csharp
+  - vb
+  name: DefaultCallInvoker
+  nameWithType: DefaultCallInvoker
+  fullName: Grpc.Core.DefaultCallInvoker
+  type: Class
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: DefaultCallInvoker
+    path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+    startLine: 42
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nInvokes client RPCs using <xref href=\"Grpc.Core.Calls\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public class DefaultCallInvoker : CallInvoker'
+    content.vb: >-
+      Public Class DefaultCallInvoker
+          Inherits CallInvoker
+  inheritance:
+  - System.Object
+  - Grpc.Core.CallInvoker
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Grpc.Core.DefaultCallInvoker.#ctor(Grpc.Core.Channel)
+  commentId: M:Grpc.Core.DefaultCallInvoker.#ctor(Grpc.Core.Channel)
+  id: '#ctor(Grpc.Core.Channel)'
+  parent: Grpc.Core.DefaultCallInvoker
+  langs:
+  - csharp
+  - vb
+  name: DefaultCallInvoker(Channel)
+  nameWithType: DefaultCallInvoker.DefaultCallInvoker(Channel)
+  fullName: Grpc.Core.DefaultCallInvoker.DefaultCallInvoker(Grpc.Core.Channel)
+  type: Constructor
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: .ctor
+    path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+    startLine: 50
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nInitializes a new instance of the <xref href=\"Grpc.Core.DefaultCallInvoker\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public DefaultCallInvoker(Channel channel)
+    parameters:
+    - id: channel
+      type: Grpc.Core.Channel
+      description: Channel to use.
+    content.vb: Public Sub New(channel As Channel)
+  overload: Grpc.Core.DefaultCallInvoker.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.DefaultCallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  commentId: M:Grpc.Core.DefaultCallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  id: BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  parent: Grpc.Core.DefaultCallInvoker
+  langs:
+  - csharp
+  - vb
+  name: BlockingUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  nameWithType: DefaultCallInvoker.BlockingUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  fullName: Grpc.Core.DefaultCallInvoker.BlockingUnaryCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions, TRequest)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: BlockingUnaryCall
+    path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+    startLine: 58
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nInvokes a simple remote call in a blocking fashion.\n"
+  example: []
+  syntax:
+    content: 'public override TResponse BlockingUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse> method, string host, CallOptions options, TRequest request)where TRequest : class where TResponse : class'
+    parameters:
+    - id: method
+      type: Grpc.Core.Method{{TRequest},{TResponse}}
+    - id: host
+      type: System.String
+    - id: options
+      type: Grpc.Core.CallOptions
+    - id: request
+      type: '{TRequest}'
+    typeParameters:
+    - id: TRequest
+    - id: TResponse
+    return:
+      type: '{TResponse}'
+    content.vb: Public Overrides Function BlockingUnaryCall(Of TRequest As Class, TResponse As Class)(method As Method(Of TRequest, TResponse), host As String, options As CallOptions, request As TRequest) As TResponse
+  overridden: Grpc.Core.CallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{{TRequest},{TResponse}},System.String,Grpc.Core.CallOptions,{TRequest})
+  overload: Grpc.Core.DefaultCallInvoker.BlockingUnaryCall*
+  nameWithType.vb: DefaultCallInvoker.BlockingUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Grpc.Core.DefaultCallInvoker.BlockingUnaryCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions, TRequest)
+  name.vb: BlockingUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+- uid: Grpc.Core.DefaultCallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  commentId: M:Grpc.Core.DefaultCallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  id: AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  parent: Grpc.Core.DefaultCallInvoker
+  langs:
+  - csharp
+  - vb
+  name: AsyncUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  nameWithType: DefaultCallInvoker.AsyncUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  fullName: Grpc.Core.DefaultCallInvoker.AsyncUnaryCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions, TRequest)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: AsyncUnaryCall
+    path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+    startLine: 67
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nInvokes a simple remote call asynchronously.\n"
+  example: []
+  syntax:
+    content: 'public override AsyncUnaryCall<TResponse> AsyncUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse> method, string host, CallOptions options, TRequest request)where TRequest : class where TResponse : class'
+    parameters:
+    - id: method
+      type: Grpc.Core.Method{{TRequest},{TResponse}}
+    - id: host
+      type: System.String
+    - id: options
+      type: Grpc.Core.CallOptions
+    - id: request
+      type: '{TRequest}'
+    typeParameters:
+    - id: TRequest
+    - id: TResponse
+    return:
+      type: Grpc.Core.AsyncUnaryCall{{TResponse}}
+    content.vb: Public Overrides Function AsyncUnaryCall(Of TRequest As Class, TResponse As Class)(method As Method(Of TRequest, TResponse), host As String, options As CallOptions, request As TRequest) As AsyncUnaryCall(Of TResponse)
+  overridden: Grpc.Core.CallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{{TRequest},{TResponse}},System.String,Grpc.Core.CallOptions,{TRequest})
+  overload: Grpc.Core.DefaultCallInvoker.AsyncUnaryCall*
+  nameWithType.vb: DefaultCallInvoker.AsyncUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Grpc.Core.DefaultCallInvoker.AsyncUnaryCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions, TRequest)
+  name.vb: AsyncUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+- uid: Grpc.Core.DefaultCallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  commentId: M:Grpc.Core.DefaultCallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  id: AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  parent: Grpc.Core.DefaultCallInvoker
+  langs:
+  - csharp
+  - vb
+  name: AsyncServerStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  nameWithType: DefaultCallInvoker.AsyncServerStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  fullName: Grpc.Core.DefaultCallInvoker.AsyncServerStreamingCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions, TRequest)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: AsyncServerStreamingCall
+    path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+    startLine: 77
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nInvokes a server streaming call asynchronously.\nIn server streaming scenario, client sends on request and server responds with a stream of responses.\n"
+  example: []
+  syntax:
+    content: 'public override AsyncServerStreamingCall<TResponse> AsyncServerStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse> method, string host, CallOptions options, TRequest request)where TRequest : class where TResponse : class'
+    parameters:
+    - id: method
+      type: Grpc.Core.Method{{TRequest},{TResponse}}
+    - id: host
+      type: System.String
+    - id: options
+      type: Grpc.Core.CallOptions
+    - id: request
+      type: '{TRequest}'
+    typeParameters:
+    - id: TRequest
+    - id: TResponse
+    return:
+      type: Grpc.Core.AsyncServerStreamingCall{{TResponse}}
+    content.vb: Public Overrides Function AsyncServerStreamingCall(Of TRequest As Class, TResponse As Class)(method As Method(Of TRequest, TResponse), host As String, options As CallOptions, request As TRequest) As AsyncServerStreamingCall(Of TResponse)
+  overridden: Grpc.Core.CallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{{TRequest},{TResponse}},System.String,Grpc.Core.CallOptions,{TRequest})
+  overload: Grpc.Core.DefaultCallInvoker.AsyncServerStreamingCall*
+  nameWithType.vb: DefaultCallInvoker.AsyncServerStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Grpc.Core.DefaultCallInvoker.AsyncServerStreamingCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions, TRequest)
+  name.vb: AsyncServerStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+- uid: Grpc.Core.DefaultCallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  commentId: M:Grpc.Core.DefaultCallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  id: AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  parent: Grpc.Core.DefaultCallInvoker
+  langs:
+  - csharp
+  - vb
+  name: AsyncClientStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  nameWithType: DefaultCallInvoker.AsyncClientStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  fullName: Grpc.Core.DefaultCallInvoker.AsyncClientStreamingCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: AsyncClientStreamingCall
+    path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+    startLine: 87
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nInvokes a client streaming call asynchronously.\nIn client streaming scenario, client sends a stream of requests and server responds with a single response.\n"
+  example: []
+  syntax:
+    content: 'public override AsyncClientStreamingCall<TRequest, TResponse> AsyncClientStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse> method, string host, CallOptions options)where TRequest : class where TResponse : class'
+    parameters:
+    - id: method
+      type: Grpc.Core.Method{{TRequest},{TResponse}}
+    - id: host
+      type: System.String
+    - id: options
+      type: Grpc.Core.CallOptions
+    typeParameters:
+    - id: TRequest
+    - id: TResponse
+    return:
+      type: Grpc.Core.AsyncClientStreamingCall{{TRequest},{TResponse}}
+    content.vb: Public Overrides Function AsyncClientStreamingCall(Of TRequest As Class, TResponse As Class)(method As Method(Of TRequest, TResponse), host As String, options As CallOptions) As AsyncClientStreamingCall(Of TRequest, TResponse)
+  overridden: Grpc.Core.CallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{{TRequest},{TResponse}},System.String,Grpc.Core.CallOptions)
+  overload: Grpc.Core.DefaultCallInvoker.AsyncClientStreamingCall*
+  nameWithType.vb: DefaultCallInvoker.AsyncClientStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Grpc.Core.DefaultCallInvoker.AsyncClientStreamingCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions)
+  name.vb: AsyncClientStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+- uid: Grpc.Core.DefaultCallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  commentId: M:Grpc.Core.DefaultCallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  id: AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  parent: Grpc.Core.DefaultCallInvoker
+  langs:
+  - csharp
+  - vb
+  name: AsyncDuplexStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  nameWithType: DefaultCallInvoker.AsyncDuplexStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  fullName: Grpc.Core.DefaultCallInvoker.AsyncDuplexStreamingCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: AsyncDuplexStreamingCall
+    path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+    startLine: 98
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nInvokes a duplex streaming call asynchronously.\nIn duplex streaming scenario, client sends a stream of requests and server responds with a stream of responses.\nThe response stream is completely independent and both side can be sending messages at the same time.\n"
+  example: []
+  syntax:
+    content: 'public override AsyncDuplexStreamingCall<TRequest, TResponse> AsyncDuplexStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse> method, string host, CallOptions options)where TRequest : class where TResponse : class'
+    parameters:
+    - id: method
+      type: Grpc.Core.Method{{TRequest},{TResponse}}
+    - id: host
+      type: System.String
+    - id: options
+      type: Grpc.Core.CallOptions
+    typeParameters:
+    - id: TRequest
+    - id: TResponse
+    return:
+      type: Grpc.Core.AsyncDuplexStreamingCall{{TRequest},{TResponse}}
+    content.vb: Public Overrides Function AsyncDuplexStreamingCall(Of TRequest As Class, TResponse As Class)(method As Method(Of TRequest, TResponse), host As String, options As CallOptions) As AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  overridden: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{{TRequest},{TResponse}},System.String,Grpc.Core.CallOptions)
+  overload: Grpc.Core.DefaultCallInvoker.AsyncDuplexStreamingCall*
+  nameWithType.vb: DefaultCallInvoker.AsyncDuplexStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Grpc.Core.DefaultCallInvoker.AsyncDuplexStreamingCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions)
+  name.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+- uid: Grpc.Core.DefaultCallInvoker.CreateCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  commentId: M:Grpc.Core.DefaultCallInvoker.CreateCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  id: CreateCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  parent: Grpc.Core.DefaultCallInvoker
+  langs:
+  - csharp
+  - vb
+  name: CreateCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  nameWithType: DefaultCallInvoker.CreateCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  fullName: Grpc.Core.DefaultCallInvoker.CreateCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: CreateCall
+    path: src/csharp/Grpc.Core/DefaultCallInvoker.cs
+    startLine: 105
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: Creates call invocation details for given method.
+  example: []
+  syntax:
+    content: 'protected virtual CallInvocationDetails<TRequest, TResponse> CreateCall<TRequest, TResponse>(Method<TRequest, TResponse> method, string host, CallOptions options)where TRequest : class where TResponse : class'
+    parameters:
+    - id: method
+      type: Grpc.Core.Method{{TRequest},{TResponse}}
+    - id: host
+      type: System.String
+    - id: options
+      type: Grpc.Core.CallOptions
+    typeParameters:
+    - id: TRequest
+    - id: TResponse
+    return:
+      type: Grpc.Core.CallInvocationDetails{{TRequest},{TResponse}}
+    content.vb: Protected Overridable Function CreateCall(Of TRequest As Class, TResponse As Class)(method As Method(Of TRequest, TResponse), host As String, options As CallOptions) As CallInvocationDetails(Of TRequest, TResponse)
+  overload: Grpc.Core.DefaultCallInvoker.CreateCall*
+  nameWithType.vb: DefaultCallInvoker.CreateCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  modifiers.csharp:
+  - protected
+  - virtual
+  modifiers.vb:
+  - Protected
+  - Overridable
+  fullName.vb: Grpc.Core.DefaultCallInvoker.CreateCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions)
+  name.vb: CreateCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+references:
+- uid: Grpc.Core.Calls
+  commentId: T:Grpc.Core.Calls
+  isExternal: false
+  name: Calls
+  nameWithType: Calls
+  fullName: Grpc.Core.Calls
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Grpc.Core.CallInvoker
+  commentId: T:Grpc.Core.CallInvoker
+  parent: Grpc.Core
+  isExternal: false
+  name: CallInvoker
+  nameWithType: CallInvoker
+  fullName: Grpc.Core.CallInvoker
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Grpc.Core.DefaultCallInvoker
+  commentId: T:Grpc.Core.DefaultCallInvoker
+  isExternal: false
+  name: DefaultCallInvoker
+  nameWithType: DefaultCallInvoker
+  fullName: Grpc.Core.DefaultCallInvoker
+- uid: Grpc.Core.DefaultCallInvoker.#ctor*
+  commentId: Overload:Grpc.Core.DefaultCallInvoker.#ctor
+  isExternal: false
+  name: DefaultCallInvoker
+  nameWithType: DefaultCallInvoker.DefaultCallInvoker
+  fullName: Grpc.Core.DefaultCallInvoker.DefaultCallInvoker
+- uid: Grpc.Core.Channel
+  commentId: T:Grpc.Core.Channel
+  parent: Grpc.Core
+  isExternal: false
+  name: Channel
+  nameWithType: Channel
+  fullName: Grpc.Core.Channel
+- uid: Grpc.Core.CallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{{TRequest},{TResponse}},System.String,Grpc.Core.CallOptions,{TRequest})
+  commentId: M:Grpc.Core.CallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  parent: Grpc.Core.CallInvoker
+  definition: Grpc.Core.CallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  name: BlockingUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  nameWithType: CallInvoker.BlockingUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  fullName: Grpc.Core.CallInvoker.BlockingUnaryCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions, TRequest)
+  nameWithType.vb: CallInvoker.BlockingUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  fullName.vb: Grpc.Core.CallInvoker.BlockingUnaryCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions, TRequest)
+  name.vb: BlockingUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: BlockingUnaryCall<TRequest, TResponse>
+    nameWithType: CallInvoker.BlockingUnaryCall<TRequest, TResponse>
+    fullName: Grpc.Core.CallInvoker.BlockingUnaryCall<TRequest, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.CallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: BlockingUnaryCall(Of TRequest, TResponse)
+    nameWithType: CallInvoker.BlockingUnaryCall(Of TRequest, TResponse)
+    fullName: Grpc.Core.CallInvoker.BlockingUnaryCall(Of TRequest, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.DefaultCallInvoker.BlockingUnaryCall*
+  commentId: Overload:Grpc.Core.DefaultCallInvoker.BlockingUnaryCall
+  isExternal: false
+  name: BlockingUnaryCall
+  nameWithType: DefaultCallInvoker.BlockingUnaryCall
+  fullName: Grpc.Core.DefaultCallInvoker.BlockingUnaryCall
+- uid: Grpc.Core.Method{{TRequest},{TResponse}}
+  commentId: T:Grpc.Core.Method{`0,`1}
+  parent: Grpc.Core
+  definition: Grpc.Core.Method`2
+  name: Method<TRequest, TResponse>
+  nameWithType: Method<TRequest, TResponse>
+  fullName: Grpc.Core.Method<TRequest, TResponse>
+  nameWithType.vb: Method(Of TRequest, TResponse)
+  fullName.vb: Grpc.Core.Method(Of TRequest, TResponse)
+  name.vb: Method(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Grpc.Core.CallOptions
+  commentId: T:Grpc.Core.CallOptions
+  parent: Grpc.Core
+  isExternal: false
+  name: CallOptions
+  nameWithType: CallOptions
+  fullName: Grpc.Core.CallOptions
+- uid: '{TRequest}'
+  commentId: '!:TRequest'
+  definition: TRequest
+  name: TRequest
+  nameWithType: TRequest
+  fullName: TRequest
+- uid: '{TResponse}'
+  commentId: '!:TResponse'
+  definition: TResponse
+  name: TResponse
+  nameWithType: TResponse
+  fullName: TResponse
+- uid: Grpc.Core.CallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  commentId: M:Grpc.Core.CallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  isExternal: true
+  name: BlockingUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  nameWithType: CallInvoker.BlockingUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  fullName: Grpc.Core.CallInvoker.BlockingUnaryCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions, TRequest)
+  nameWithType.vb: CallInvoker.BlockingUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  fullName.vb: Grpc.Core.CallInvoker.BlockingUnaryCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions, TRequest)
+  name.vb: BlockingUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: BlockingUnaryCall<TRequest, TResponse>
+    nameWithType: CallInvoker.BlockingUnaryCall<TRequest, TResponse>
+    fullName: Grpc.Core.CallInvoker.BlockingUnaryCall<TRequest, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.CallInvoker.BlockingUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: BlockingUnaryCall(Of TRequest, TResponse)
+    nameWithType: CallInvoker.BlockingUnaryCall(Of TRequest, TResponse)
+    fullName: Grpc.Core.CallInvoker.BlockingUnaryCall(Of TRequest, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.Method`2
+  commentId: T:Grpc.Core.Method`2
+  isExternal: false
+  name: Method<TRequest, TResponse>
+  nameWithType: Method<TRequest, TResponse>
+  fullName: Grpc.Core.Method<TRequest, TResponse>
+  nameWithType.vb: Method(Of TRequest, TResponse)
+  fullName.vb: Grpc.Core.Method(Of TRequest, TResponse)
+  name.vb: Method(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TRequest
+  isExternal: false
+  name: TRequest
+  nameWithType: TRequest
+  fullName: TRequest
+- uid: TResponse
+  isExternal: false
+  name: TResponse
+  nameWithType: TResponse
+  fullName: TResponse
+- uid: Grpc.Core.CallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{{TRequest},{TResponse}},System.String,Grpc.Core.CallOptions,{TRequest})
+  commentId: M:Grpc.Core.CallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  parent: Grpc.Core.CallInvoker
+  definition: Grpc.Core.CallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  name: AsyncUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  nameWithType: CallInvoker.AsyncUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  fullName: Grpc.Core.CallInvoker.AsyncUnaryCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions, TRequest)
+  nameWithType.vb: CallInvoker.AsyncUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  fullName.vb: Grpc.Core.CallInvoker.AsyncUnaryCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions, TRequest)
+  name.vb: AsyncUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: AsyncUnaryCall<TRequest, TResponse>
+    nameWithType: CallInvoker.AsyncUnaryCall<TRequest, TResponse>
+    fullName: Grpc.Core.CallInvoker.AsyncUnaryCall<TRequest, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.CallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: AsyncUnaryCall(Of TRequest, TResponse)
+    nameWithType: CallInvoker.AsyncUnaryCall(Of TRequest, TResponse)
+    fullName: Grpc.Core.CallInvoker.AsyncUnaryCall(Of TRequest, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.DefaultCallInvoker.AsyncUnaryCall*
+  commentId: Overload:Grpc.Core.DefaultCallInvoker.AsyncUnaryCall
+  isExternal: false
+  name: AsyncUnaryCall
+  nameWithType: DefaultCallInvoker.AsyncUnaryCall
+  fullName: Grpc.Core.DefaultCallInvoker.AsyncUnaryCall
+- uid: Grpc.Core.AsyncUnaryCall{{TResponse}}
+  commentId: T:Grpc.Core.AsyncUnaryCall{``1}
+  parent: Grpc.Core
+  definition: Grpc.Core.AsyncUnaryCall`1
+  name: AsyncUnaryCall<TResponse>
+  nameWithType: AsyncUnaryCall<TResponse>
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>
+  nameWithType.vb: AsyncUnaryCall(Of TResponse)
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse)
+  name.vb: AsyncUnaryCall(Of TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.CallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  commentId: M:Grpc.Core.CallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  isExternal: true
+  name: AsyncUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  nameWithType: CallInvoker.AsyncUnaryCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  fullName: Grpc.Core.CallInvoker.AsyncUnaryCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions, TRequest)
+  nameWithType.vb: CallInvoker.AsyncUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  fullName.vb: Grpc.Core.CallInvoker.AsyncUnaryCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions, TRequest)
+  name.vb: AsyncUnaryCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: AsyncUnaryCall<TRequest, TResponse>
+    nameWithType: CallInvoker.AsyncUnaryCall<TRequest, TResponse>
+    fullName: Grpc.Core.CallInvoker.AsyncUnaryCall<TRequest, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.CallInvoker.AsyncUnaryCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: AsyncUnaryCall(Of TRequest, TResponse)
+    nameWithType: CallInvoker.AsyncUnaryCall(Of TRequest, TResponse)
+    fullName: Grpc.Core.CallInvoker.AsyncUnaryCall(Of TRequest, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.AsyncUnaryCall`1
+  commentId: T:Grpc.Core.AsyncUnaryCall`1
+  isExternal: false
+  name: AsyncUnaryCall<TResponse>
+  nameWithType: AsyncUnaryCall<TResponse>
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>
+  nameWithType.vb: AsyncUnaryCall(Of TResponse)
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse)
+  name.vb: AsyncUnaryCall(Of TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncUnaryCall`1
+    name: AsyncUnaryCall
+    nameWithType: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.CallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{{TRequest},{TResponse}},System.String,Grpc.Core.CallOptions,{TRequest})
+  commentId: M:Grpc.Core.CallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  parent: Grpc.Core.CallInvoker
+  definition: Grpc.Core.CallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  name: AsyncServerStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  nameWithType: CallInvoker.AsyncServerStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  fullName: Grpc.Core.CallInvoker.AsyncServerStreamingCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions, TRequest)
+  nameWithType.vb: CallInvoker.AsyncServerStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  fullName.vb: Grpc.Core.CallInvoker.AsyncServerStreamingCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions, TRequest)
+  name.vb: AsyncServerStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: AsyncServerStreamingCall<TRequest, TResponse>
+    nameWithType: CallInvoker.AsyncServerStreamingCall<TRequest, TResponse>
+    fullName: Grpc.Core.CallInvoker.AsyncServerStreamingCall<TRequest, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.CallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: AsyncServerStreamingCall(Of TRequest, TResponse)
+    nameWithType: CallInvoker.AsyncServerStreamingCall(Of TRequest, TResponse)
+    fullName: Grpc.Core.CallInvoker.AsyncServerStreamingCall(Of TRequest, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.DefaultCallInvoker.AsyncServerStreamingCall*
+  commentId: Overload:Grpc.Core.DefaultCallInvoker.AsyncServerStreamingCall
+  isExternal: false
+  name: AsyncServerStreamingCall
+  nameWithType: DefaultCallInvoker.AsyncServerStreamingCall
+  fullName: Grpc.Core.DefaultCallInvoker.AsyncServerStreamingCall
+- uid: Grpc.Core.AsyncServerStreamingCall{{TResponse}}
+  commentId: T:Grpc.Core.AsyncServerStreamingCall{``1}
+  parent: Grpc.Core
+  definition: Grpc.Core.AsyncServerStreamingCall`1
+  name: AsyncServerStreamingCall<TResponse>
+  nameWithType: AsyncServerStreamingCall<TResponse>
+  fullName: Grpc.Core.AsyncServerStreamingCall<TResponse>
+  nameWithType.vb: AsyncServerStreamingCall(Of TResponse)
+  fullName.vb: Grpc.Core.AsyncServerStreamingCall(Of TResponse)
+  name.vb: AsyncServerStreamingCall(Of TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncServerStreamingCall`1
+    name: AsyncServerStreamingCall
+    nameWithType: AsyncServerStreamingCall
+    fullName: Grpc.Core.AsyncServerStreamingCall
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncServerStreamingCall`1
+    name: AsyncServerStreamingCall
+    nameWithType: AsyncServerStreamingCall
+    fullName: Grpc.Core.AsyncServerStreamingCall
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.CallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  commentId: M:Grpc.Core.CallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+  isExternal: true
+  name: AsyncServerStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  nameWithType: CallInvoker.AsyncServerStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions, TRequest)
+  fullName: Grpc.Core.CallInvoker.AsyncServerStreamingCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions, TRequest)
+  nameWithType.vb: CallInvoker.AsyncServerStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  fullName.vb: Grpc.Core.CallInvoker.AsyncServerStreamingCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions, TRequest)
+  name.vb: AsyncServerStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions, TRequest)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: AsyncServerStreamingCall<TRequest, TResponse>
+    nameWithType: CallInvoker.AsyncServerStreamingCall<TRequest, TResponse>
+    fullName: Grpc.Core.CallInvoker.AsyncServerStreamingCall<TRequest, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.CallInvoker.AsyncServerStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions,``0)
+    name: AsyncServerStreamingCall(Of TRequest, TResponse)
+    nameWithType: CallInvoker.AsyncServerStreamingCall(Of TRequest, TResponse)
+    fullName: Grpc.Core.CallInvoker.AsyncServerStreamingCall(Of TRequest, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.AsyncServerStreamingCall`1
+  commentId: T:Grpc.Core.AsyncServerStreamingCall`1
+  isExternal: false
+  name: AsyncServerStreamingCall<TResponse>
+  nameWithType: AsyncServerStreamingCall<TResponse>
+  fullName: Grpc.Core.AsyncServerStreamingCall<TResponse>
+  nameWithType.vb: AsyncServerStreamingCall(Of TResponse)
+  fullName.vb: Grpc.Core.AsyncServerStreamingCall(Of TResponse)
+  name.vb: AsyncServerStreamingCall(Of TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncServerStreamingCall`1
+    name: AsyncServerStreamingCall
+    nameWithType: AsyncServerStreamingCall
+    fullName: Grpc.Core.AsyncServerStreamingCall
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncServerStreamingCall`1
+    name: AsyncServerStreamingCall
+    nameWithType: AsyncServerStreamingCall
+    fullName: Grpc.Core.AsyncServerStreamingCall
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.CallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{{TRequest},{TResponse}},System.String,Grpc.Core.CallOptions)
+  commentId: M:Grpc.Core.CallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  parent: Grpc.Core.CallInvoker
+  definition: Grpc.Core.CallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  name: AsyncClientStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  nameWithType: CallInvoker.AsyncClientStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  fullName: Grpc.Core.CallInvoker.AsyncClientStreamingCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions)
+  nameWithType.vb: CallInvoker.AsyncClientStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  fullName.vb: Grpc.Core.CallInvoker.AsyncClientStreamingCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions)
+  name.vb: AsyncClientStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+    name: AsyncClientStreamingCall<TRequest, TResponse>
+    nameWithType: CallInvoker.AsyncClientStreamingCall<TRequest, TResponse>
+    fullName: Grpc.Core.CallInvoker.AsyncClientStreamingCall<TRequest, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.CallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+    name: AsyncClientStreamingCall(Of TRequest, TResponse)
+    nameWithType: CallInvoker.AsyncClientStreamingCall(Of TRequest, TResponse)
+    fullName: Grpc.Core.CallInvoker.AsyncClientStreamingCall(Of TRequest, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.DefaultCallInvoker.AsyncClientStreamingCall*
+  commentId: Overload:Grpc.Core.DefaultCallInvoker.AsyncClientStreamingCall
+  isExternal: false
+  name: AsyncClientStreamingCall
+  nameWithType: DefaultCallInvoker.AsyncClientStreamingCall
+  fullName: Grpc.Core.DefaultCallInvoker.AsyncClientStreamingCall
+- uid: Grpc.Core.AsyncClientStreamingCall{{TRequest},{TResponse}}
+  commentId: T:Grpc.Core.AsyncClientStreamingCall{``0,``1}
+  parent: Grpc.Core
+  definition: Grpc.Core.AsyncClientStreamingCall`2
+  name: AsyncClientStreamingCall<TRequest, TResponse>
+  nameWithType: AsyncClientStreamingCall<TRequest, TResponse>
+  fullName: Grpc.Core.AsyncClientStreamingCall<TRequest, TResponse>
+  nameWithType.vb: AsyncClientStreamingCall(Of TRequest, TResponse)
+  fullName.vb: Grpc.Core.AsyncClientStreamingCall(Of TRequest, TResponse)
+  name.vb: AsyncClientStreamingCall(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncClientStreamingCall`2
+    name: AsyncClientStreamingCall
+    nameWithType: AsyncClientStreamingCall
+    fullName: Grpc.Core.AsyncClientStreamingCall
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncClientStreamingCall`2
+    name: AsyncClientStreamingCall
+    nameWithType: AsyncClientStreamingCall
+    fullName: Grpc.Core.AsyncClientStreamingCall
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.CallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  commentId: M:Grpc.Core.CallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  isExternal: true
+  name: AsyncClientStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  nameWithType: CallInvoker.AsyncClientStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  fullName: Grpc.Core.CallInvoker.AsyncClientStreamingCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions)
+  nameWithType.vb: CallInvoker.AsyncClientStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  fullName.vb: Grpc.Core.CallInvoker.AsyncClientStreamingCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions)
+  name.vb: AsyncClientStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+    name: AsyncClientStreamingCall<TRequest, TResponse>
+    nameWithType: CallInvoker.AsyncClientStreamingCall<TRequest, TResponse>
+    fullName: Grpc.Core.CallInvoker.AsyncClientStreamingCall<TRequest, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.CallInvoker.AsyncClientStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+    name: AsyncClientStreamingCall(Of TRequest, TResponse)
+    nameWithType: CallInvoker.AsyncClientStreamingCall(Of TRequest, TResponse)
+    fullName: Grpc.Core.CallInvoker.AsyncClientStreamingCall(Of TRequest, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.AsyncClientStreamingCall`2
+  commentId: T:Grpc.Core.AsyncClientStreamingCall`2
+  isExternal: false
+  name: AsyncClientStreamingCall<TRequest, TResponse>
+  nameWithType: AsyncClientStreamingCall<TRequest, TResponse>
+  fullName: Grpc.Core.AsyncClientStreamingCall<TRequest, TResponse>
+  nameWithType.vb: AsyncClientStreamingCall(Of TRequest, TResponse)
+  fullName.vb: Grpc.Core.AsyncClientStreamingCall(Of TRequest, TResponse)
+  name.vb: AsyncClientStreamingCall(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncClientStreamingCall`2
+    name: AsyncClientStreamingCall
+    nameWithType: AsyncClientStreamingCall
+    fullName: Grpc.Core.AsyncClientStreamingCall
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncClientStreamingCall`2
+    name: AsyncClientStreamingCall
+    nameWithType: AsyncClientStreamingCall
+    fullName: Grpc.Core.AsyncClientStreamingCall
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{{TRequest},{TResponse}},System.String,Grpc.Core.CallOptions)
+  commentId: M:Grpc.Core.CallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  parent: Grpc.Core.CallInvoker
+  definition: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  name: AsyncDuplexStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  nameWithType: CallInvoker.AsyncDuplexStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  fullName: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions)
+  nameWithType.vb: CallInvoker.AsyncDuplexStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  fullName.vb: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions)
+  name.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+    name: AsyncDuplexStreamingCall<TRequest, TResponse>
+    nameWithType: CallInvoker.AsyncDuplexStreamingCall<TRequest, TResponse>
+    fullName: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall<TRequest, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+    name: AsyncDuplexStreamingCall(Of TRequest, TResponse)
+    nameWithType: CallInvoker.AsyncDuplexStreamingCall(Of TRequest, TResponse)
+    fullName: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.DefaultCallInvoker.AsyncDuplexStreamingCall*
+  commentId: Overload:Grpc.Core.DefaultCallInvoker.AsyncDuplexStreamingCall
+  isExternal: false
+  name: AsyncDuplexStreamingCall
+  nameWithType: DefaultCallInvoker.AsyncDuplexStreamingCall
+  fullName: Grpc.Core.DefaultCallInvoker.AsyncDuplexStreamingCall
+- uid: Grpc.Core.AsyncDuplexStreamingCall{{TRequest},{TResponse}}
+  commentId: T:Grpc.Core.AsyncDuplexStreamingCall{``0,``1}
+  parent: Grpc.Core
+  definition: Grpc.Core.AsyncDuplexStreamingCall`2
+  name: AsyncDuplexStreamingCall<TRequest, TResponse>
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  name.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncDuplexStreamingCall`2
+    name: AsyncDuplexStreamingCall
+    nameWithType: AsyncDuplexStreamingCall
+    fullName: Grpc.Core.AsyncDuplexStreamingCall
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncDuplexStreamingCall`2
+    name: AsyncDuplexStreamingCall
+    nameWithType: AsyncDuplexStreamingCall
+    fullName: Grpc.Core.AsyncDuplexStreamingCall
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  commentId: M:Grpc.Core.CallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+  isExternal: true
+  name: AsyncDuplexStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  nameWithType: CallInvoker.AsyncDuplexStreamingCall<TRequest, TResponse>(Method<TRequest, TResponse>, String, CallOptions)
+  fullName: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall<TRequest, TResponse>(Grpc.Core.Method<TRequest, TResponse>, System.String, Grpc.Core.CallOptions)
+  nameWithType.vb: CallInvoker.AsyncDuplexStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  fullName.vb: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall(Of TRequest, TResponse)(Grpc.Core.Method(Of TRequest, TResponse), System.String, Grpc.Core.CallOptions)
+  name.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)(Method(Of TRequest, TResponse), String, CallOptions)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+    name: AsyncDuplexStreamingCall<TRequest, TResponse>
+    nameWithType: CallInvoker.AsyncDuplexStreamingCall<TRequest, TResponse>
+    fullName: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall<TRequest, TResponse>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall``2(Grpc.Core.Method{``0,``1},System.String,Grpc.Core.CallOptions)
+    name: AsyncDuplexStreamingCall(Of TRequest, TResponse)
+    nameWithType: CallInvoker.AsyncDuplexStreamingCall(Of TRequest, TResponse)
+    fullName: Grpc.Core.CallInvoker.AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Grpc.Core.Method`2
+    name: Method
+    nameWithType: Method
+    fullName: Grpc.Core.Method
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Grpc.Core.CallOptions
+    name: CallOptions
+    nameWithType: CallOptions
+    fullName: Grpc.Core.CallOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2
+  commentId: T:Grpc.Core.AsyncDuplexStreamingCall`2
+  isExternal: false
+  name: AsyncDuplexStreamingCall<TRequest, TResponse>
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  name.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncDuplexStreamingCall`2
+    name: AsyncDuplexStreamingCall
+    nameWithType: AsyncDuplexStreamingCall
+    fullName: Grpc.Core.AsyncDuplexStreamingCall
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncDuplexStreamingCall`2
+    name: AsyncDuplexStreamingCall
+    nameWithType: AsyncDuplexStreamingCall
+    fullName: Grpc.Core.AsyncDuplexStreamingCall
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.DefaultCallInvoker.CreateCall*
+  commentId: Overload:Grpc.Core.DefaultCallInvoker.CreateCall
+  isExternal: false
+  name: CreateCall
+  nameWithType: DefaultCallInvoker.CreateCall
+  fullName: Grpc.Core.DefaultCallInvoker.CreateCall
+- uid: Grpc.Core.CallInvocationDetails{{TRequest},{TResponse}}
+  commentId: T:Grpc.Core.CallInvocationDetails{``0,``1}
+  parent: Grpc.Core
+  definition: Grpc.Core.CallInvocationDetails`2
+  name: CallInvocationDetails<TRequest, TResponse>
+  nameWithType: CallInvocationDetails<TRequest, TResponse>
+  fullName: Grpc.Core.CallInvocationDetails<TRequest, TResponse>
+  nameWithType.vb: CallInvocationDetails(Of TRequest, TResponse)
+  fullName.vb: Grpc.Core.CallInvocationDetails(Of TRequest, TResponse)
+  name.vb: CallInvocationDetails(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvocationDetails`2
+    name: CallInvocationDetails
+    nameWithType: CallInvocationDetails
+    fullName: Grpc.Core.CallInvocationDetails
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.CallInvocationDetails`2
+    name: CallInvocationDetails
+    nameWithType: CallInvocationDetails
+    fullName: Grpc.Core.CallInvocationDetails
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.CallInvocationDetails`2
+  commentId: T:Grpc.Core.CallInvocationDetails`2
+  parent: Grpc.Core
+  isExternal: false
+  name: CallInvocationDetails<TRequest, TResponse>
+  nameWithType: CallInvocationDetails<TRequest, TResponse>
+  fullName: Grpc.Core.CallInvocationDetails<TRequest, TResponse>
+  nameWithType.vb: CallInvocationDetails(Of TRequest, TResponse)
+  fullName.vb: Grpc.Core.CallInvocationDetails(Of TRequest, TResponse)
+  name.vb: CallInvocationDetails(Of TRequest, TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.CallInvocationDetails`2
+    name: CallInvocationDetails
+    nameWithType: CallInvocationDetails
+    fullName: Grpc.Core.CallInvocationDetails
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.CallInvocationDetails`2
+    name: CallInvocationDetails
+    nameWithType: CallInvocationDetails
+    fullName: Grpc.Core.CallInvocationDetails
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )

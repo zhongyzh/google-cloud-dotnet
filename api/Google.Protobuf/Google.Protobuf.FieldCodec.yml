@@ -1,0 +1,2046 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.FieldCodec
+  commentId: T:Google.Protobuf.FieldCodec
+  id: FieldCodec
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.FieldCodec.ForBool(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForBytes(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForClassWrapper``1(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForDouble(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForEnum``1(System.UInt32,System.Func{``0,System.Int32},System.Func{System.Int32,``0})
+  - Google.Protobuf.FieldCodec.ForFixed32(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForFixed64(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForFloat(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForInt32(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForInt64(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForMessage``1(System.UInt32,Google.Protobuf.MessageParser{``0})
+  - Google.Protobuf.FieldCodec.ForSFixed32(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForSFixed64(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForSInt32(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForSInt64(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForString(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForStructWrapper``1(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForUInt32(System.UInt32)
+  - Google.Protobuf.FieldCodec.ForUInt64(System.UInt32)
+  langs:
+  - csharp
+  - vb
+  name: FieldCodec
+  nameWithType: FieldCodec
+  fullName: Google.Protobuf.FieldCodec
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FieldCodec
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 42
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nFactory methods for <xref href=\"Google.Protobuf.FieldCodec%601\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static class FieldCodec
+    content.vb: Public Module FieldCodec
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Google.Protobuf.FieldCodec.ForString(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForString(System.UInt32)
+  id: ForString(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForString(UInt32)
+  nameWithType: FieldCodec.ForString(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForString(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForString
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 51
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for a string field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<string> ForString(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.String}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForString(tag As UInteger) As FieldCodec(Of String)
+  overload: Google.Protobuf.FieldCodec.ForString*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForBytes(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForBytes(System.UInt32)
+  id: ForBytes(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForBytes(UInt32)
+  nameWithType: FieldCodec.ForBytes(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForBytes(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForBytes
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 61
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for a bytes field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<ByteString> ForBytes(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{Google.Protobuf.ByteString}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForBytes(tag As UInteger) As FieldCodec(Of ByteString)
+  overload: Google.Protobuf.FieldCodec.ForBytes*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForBool(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForBool(System.UInt32)
+  id: ForBool(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForBool(UInt32)
+  nameWithType: FieldCodec.ForBool(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForBool(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForBool
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 71
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for a bool field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<bool> ForBool(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.Boolean}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForBool(tag As UInteger) As FieldCodec(Of Boolean)
+  overload: Google.Protobuf.FieldCodec.ForBool*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForInt32(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForInt32(System.UInt32)
+  id: ForInt32(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForInt32(UInt32)
+  nameWithType: FieldCodec.ForInt32(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForInt32(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForInt32
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 81
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for an int32 field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<int> ForInt32(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.Int32}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForInt32(tag As UInteger) As FieldCodec(Of Integer)
+  overload: Google.Protobuf.FieldCodec.ForInt32*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForSInt32(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForSInt32(System.UInt32)
+  id: ForSInt32(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForSInt32(UInt32)
+  nameWithType: FieldCodec.ForSInt32(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForSInt32(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForSInt32
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 91
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for an sint32 field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<int> ForSInt32(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.Int32}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForSInt32(tag As UInteger) As FieldCodec(Of Integer)
+  overload: Google.Protobuf.FieldCodec.ForSInt32*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForFixed32(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForFixed32(System.UInt32)
+  id: ForFixed32(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForFixed32(UInt32)
+  nameWithType: FieldCodec.ForFixed32(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForFixed32(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForFixed32
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 101
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for a fixed32 field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<uint> ForFixed32(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.UInt32}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForFixed32(tag As UInteger) As FieldCodec(Of UInteger)
+  overload: Google.Protobuf.FieldCodec.ForFixed32*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForSFixed32(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForSFixed32(System.UInt32)
+  id: ForSFixed32(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForSFixed32(UInt32)
+  nameWithType: FieldCodec.ForSFixed32(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForSFixed32(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForSFixed32
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 111
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for an sfixed32 field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<int> ForSFixed32(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.Int32}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForSFixed32(tag As UInteger) As FieldCodec(Of Integer)
+  overload: Google.Protobuf.FieldCodec.ForSFixed32*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForUInt32(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForUInt32(System.UInt32)
+  id: ForUInt32(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForUInt32(UInt32)
+  nameWithType: FieldCodec.ForUInt32(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForUInt32(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForUInt32
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 121
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for a uint32 field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<uint> ForUInt32(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.UInt32}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForUInt32(tag As UInteger) As FieldCodec(Of UInteger)
+  overload: Google.Protobuf.FieldCodec.ForUInt32*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForInt64(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForInt64(System.UInt32)
+  id: ForInt64(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForInt64(UInt32)
+  nameWithType: FieldCodec.ForInt64(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForInt64(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForInt64
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 131
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for an int64 field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<long> ForInt64(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.Int64}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForInt64(tag As UInteger) As FieldCodec(Of Long)
+  overload: Google.Protobuf.FieldCodec.ForInt64*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForSInt64(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForSInt64(System.UInt32)
+  id: ForSInt64(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForSInt64(UInt32)
+  nameWithType: FieldCodec.ForSInt64(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForSInt64(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForSInt64
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 141
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for an sint64 field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<long> ForSInt64(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.Int64}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForSInt64(tag As UInteger) As FieldCodec(Of Long)
+  overload: Google.Protobuf.FieldCodec.ForSInt64*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForFixed64(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForFixed64(System.UInt32)
+  id: ForFixed64(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForFixed64(UInt32)
+  nameWithType: FieldCodec.ForFixed64(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForFixed64(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForFixed64
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 151
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for a fixed64 field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<ulong> ForFixed64(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.UInt64}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForFixed64(tag As UInteger) As FieldCodec(Of ULong)
+  overload: Google.Protobuf.FieldCodec.ForFixed64*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForSFixed64(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForSFixed64(System.UInt32)
+  id: ForSFixed64(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForSFixed64(UInt32)
+  nameWithType: FieldCodec.ForSFixed64(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForSFixed64(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForSFixed64
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 161
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for an sfixed64 field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<long> ForSFixed64(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.Int64}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForSFixed64(tag As UInteger) As FieldCodec(Of Long)
+  overload: Google.Protobuf.FieldCodec.ForSFixed64*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForUInt64(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForUInt64(System.UInt32)
+  id: ForUInt64(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForUInt64(UInt32)
+  nameWithType: FieldCodec.ForUInt64(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForUInt64(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForUInt64
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 171
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for a uint64 field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<ulong> ForUInt64(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.UInt64}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForUInt64(tag As UInteger) As FieldCodec(Of ULong)
+  overload: Google.Protobuf.FieldCodec.ForUInt64*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForFloat(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForFloat(System.UInt32)
+  id: ForFloat(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForFloat(UInt32)
+  nameWithType: FieldCodec.ForFloat(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForFloat(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForFloat
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 181
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for a float field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<float> ForFloat(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.Single}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForFloat(tag As UInteger) As FieldCodec(Of Single)
+  overload: Google.Protobuf.FieldCodec.ForFloat*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForDouble(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForDouble(System.UInt32)
+  id: ForDouble(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForDouble(UInt32)
+  nameWithType: FieldCodec.ForDouble(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForDouble(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForDouble
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 191
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for a double field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<double> ForDouble(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    return:
+      type: Google.Protobuf.FieldCodec{System.Double}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForDouble(tag As UInteger) As FieldCodec(Of Double)
+  overload: Google.Protobuf.FieldCodec.ForDouble*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.FieldCodec.ForEnum``1(System.UInt32,System.Func{``0,System.Int32},System.Func{System.Int32,``0})
+  commentId: M:Google.Protobuf.FieldCodec.ForEnum``1(System.UInt32,System.Func{``0,System.Int32},System.Func{System.Int32,``0})
+  id: ForEnum``1(System.UInt32,System.Func{``0,System.Int32},System.Func{System.Int32,``0})
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForEnum<T>(UInt32, Func<T, Int32>, Func<Int32, T>)
+  nameWithType: FieldCodec.ForEnum<T>(UInt32, Func<T, Int32>, Func<Int32, T>)
+  fullName: Google.Protobuf.FieldCodec.ForEnum<T>(System.UInt32, System.Func<T, System.Int32>, System.Func<System.Int32, T>)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForEnum
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 206
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for an enum field with the given tag.\n"
+  example: []
+  syntax:
+    content: public static FieldCodec<T> ForEnum<T>(uint tag, Func<T, int> toInt32, Func<int, T> fromInt32)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    - id: toInt32
+      type: System.Func{{T},System.Int32}
+      description: A conversion function from <xref href="System.Int32" data-throw-if-not-resolved="false"></xref> to the enum type.
+    - id: fromInt32
+      type: System.Func{System.Int32,{T}}
+      description: A conversion function from the enum type to <xref href="System.Int32" data-throw-if-not-resolved="false"></xref>.
+    typeParameters:
+    - id: T
+    return:
+      type: Google.Protobuf.FieldCodec{{T}}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForEnum(Of T)(tag As UInteger, toInt32 As Func(Of T, Integer), fromInt32 As Func(Of Integer, T)) As FieldCodec(Of T)
+  overload: Google.Protobuf.FieldCodec.ForEnum*
+  nameWithType.vb: FieldCodec.ForEnum(Of T)(UInt32, Func(Of T, Int32), Func(Of Int32, T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Protobuf.FieldCodec.ForEnum(Of T)(System.UInt32, System.Func(Of T, System.Int32), System.Func(Of System.Int32, T))
+  name.vb: ForEnum(Of T)(UInt32, Func(Of T, Int32), Func(Of Int32, T))
+- uid: Google.Protobuf.FieldCodec.ForMessage``1(System.UInt32,Google.Protobuf.MessageParser{``0})
+  commentId: M:Google.Protobuf.FieldCodec.ForMessage``1(System.UInt32,Google.Protobuf.MessageParser{``0})
+  id: ForMessage``1(System.UInt32,Google.Protobuf.MessageParser{``0})
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForMessage<T>(UInt32, MessageParser<T>)
+  nameWithType: FieldCodec.ForMessage<T>(UInt32, MessageParser<T>)
+  fullName: Google.Protobuf.FieldCodec.ForMessage<T>(System.UInt32, Google.Protobuf.MessageParser<T>)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForMessage
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 220
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetrieves a codec suitable for a message field with the given tag.\n"
+  example: []
+  syntax:
+    content: 'public static FieldCodec<T> ForMessage<T>(uint tag, MessageParser<T> parser)where T : IMessage<T>'
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The tag.
+    - id: parser
+      type: Google.Protobuf.MessageParser{{T}}
+      description: A parser to use for the message type.
+    typeParameters:
+    - id: T
+    return:
+      type: Google.Protobuf.FieldCodec{{T}}
+      description: A codec for the given tag.
+    content.vb: Public Shared Function ForMessage(Of T As IMessage(Of T))(tag As UInteger, parser As MessageParser(Of T)) As FieldCodec(Of T)
+  overload: Google.Protobuf.FieldCodec.ForMessage*
+  nameWithType.vb: FieldCodec.ForMessage(Of T)(UInt32, MessageParser(Of T))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Protobuf.FieldCodec.ForMessage(Of T)(System.UInt32, Google.Protobuf.MessageParser(Of T))
+  name.vb: ForMessage(Of T)(UInt32, MessageParser(Of T))
+- uid: Google.Protobuf.FieldCodec.ForClassWrapper``1(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForClassWrapper``1(System.UInt32)
+  id: ForClassWrapper``1(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForClassWrapper<T>(UInt32)
+  nameWithType: FieldCodec.ForClassWrapper<T>(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForClassWrapper<T>(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForClassWrapper
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 229
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a codec for a wrapper type of a class - which must be string or ByteString.\n"
+  example: []
+  syntax:
+    content: 'public static FieldCodec<T> ForClassWrapper<T>(uint tag)where T : class'
+    parameters:
+    - id: tag
+      type: System.UInt32
+    typeParameters:
+    - id: T
+    return:
+      type: Google.Protobuf.FieldCodec{{T}}
+    content.vb: Public Shared Function ForClassWrapper(Of T As Class)(tag As UInteger) As FieldCodec(Of T)
+  overload: Google.Protobuf.FieldCodec.ForClassWrapper*
+  nameWithType.vb: FieldCodec.ForClassWrapper(Of T)(UInt32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Protobuf.FieldCodec.ForClassWrapper(Of T)(System.UInt32)
+  name.vb: ForClassWrapper(Of T)(UInt32)
+- uid: Google.Protobuf.FieldCodec.ForStructWrapper``1(System.UInt32)
+  commentId: M:Google.Protobuf.FieldCodec.ForStructWrapper``1(System.UInt32)
+  id: ForStructWrapper``1(System.UInt32)
+  parent: Google.Protobuf.FieldCodec
+  langs:
+  - csharp
+  - vb
+  name: ForStructWrapper<T>(UInt32)
+  nameWithType: FieldCodec.ForStructWrapper<T>(UInt32)
+  fullName: Google.Protobuf.FieldCodec.ForStructWrapper<T>(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ForStructWrapper
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 244
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a codec for a wrapper type of a struct - which must be Int32, Int64, UInt32, UInt64,\nBool, Single or Double.\n"
+  example: []
+  syntax:
+    content: 'public static FieldCodec<T? > ForStructWrapper<T>(uint tag)where T : struct'
+    parameters:
+    - id: tag
+      type: System.UInt32
+    typeParameters:
+    - id: T
+    return:
+      type: Google.Protobuf.FieldCodec{System.Nullable{{T}}}
+    content.vb: Public Shared Function ForStructWrapper(Of T As Structure)(tag As UInteger) As FieldCodec(Of T?)
+  overload: Google.Protobuf.FieldCodec.ForStructWrapper*
+  nameWithType.vb: FieldCodec.ForStructWrapper(Of T)(UInt32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Protobuf.FieldCodec.ForStructWrapper(Of T)(System.UInt32)
+  name.vb: ForStructWrapper(Of T)(UInt32)
+references:
+- uid: Google.Protobuf.FieldCodec`1
+  commentId: T:Google.Protobuf.FieldCodec`1
+  isExternal: false
+  name: FieldCodec<T>
+  nameWithType: FieldCodec<T>
+  fullName: Google.Protobuf.FieldCodec<T>
+  nameWithType.vb: FieldCodec(Of T)
+  fullName.vb: Google.Protobuf.FieldCodec(Of T)
+  name.vb: FieldCodec(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.FieldCodec.ForString*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForString
+  isExternal: false
+  name: ForString
+  nameWithType: FieldCodec.ForString
+  fullName: Google.Protobuf.FieldCodec.ForString
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: Google.Protobuf.FieldCodec{System.String}
+  commentId: T:Google.Protobuf.FieldCodec{System.String}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<String>
+  nameWithType: FieldCodec<String>
+  fullName: Google.Protobuf.FieldCodec<System.String>
+  nameWithType.vb: FieldCodec(Of String)
+  fullName.vb: Google.Protobuf.FieldCodec(Of System.String)
+  name.vb: FieldCodec(Of String)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec.ForBytes*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForBytes
+  isExternal: false
+  name: ForBytes
+  nameWithType: FieldCodec.ForBytes
+  fullName: Google.Protobuf.FieldCodec.ForBytes
+- uid: Google.Protobuf.FieldCodec{Google.Protobuf.ByteString}
+  commentId: T:Google.Protobuf.FieldCodec{Google.Protobuf.ByteString}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<ByteString>
+  nameWithType: FieldCodec<ByteString>
+  fullName: Google.Protobuf.FieldCodec<Google.Protobuf.ByteString>
+  nameWithType.vb: FieldCodec(Of ByteString)
+  fullName.vb: Google.Protobuf.FieldCodec(Of Google.Protobuf.ByteString)
+  name.vb: FieldCodec(Of ByteString)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec.ForBool*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForBool
+  isExternal: false
+  name: ForBool
+  nameWithType: FieldCodec.ForBool
+  fullName: Google.Protobuf.FieldCodec.ForBool
+- uid: Google.Protobuf.FieldCodec{System.Boolean}
+  commentId: T:Google.Protobuf.FieldCodec{System.Boolean}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<Boolean>
+  nameWithType: FieldCodec<Boolean>
+  fullName: Google.Protobuf.FieldCodec<System.Boolean>
+  nameWithType.vb: FieldCodec(Of Boolean)
+  fullName.vb: Google.Protobuf.FieldCodec(Of System.Boolean)
+  name.vb: FieldCodec(Of Boolean)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec.ForInt32*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForInt32
+  isExternal: false
+  name: ForInt32
+  nameWithType: FieldCodec.ForInt32
+  fullName: Google.Protobuf.FieldCodec.ForInt32
+- uid: Google.Protobuf.FieldCodec{System.Int32}
+  commentId: T:Google.Protobuf.FieldCodec{System.Int32}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<Int32>
+  nameWithType: FieldCodec<Int32>
+  fullName: Google.Protobuf.FieldCodec<System.Int32>
+  nameWithType.vb: FieldCodec(Of Int32)
+  fullName.vb: Google.Protobuf.FieldCodec(Of System.Int32)
+  name.vb: FieldCodec(Of Int32)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec.ForSInt32*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForSInt32
+  isExternal: false
+  name: ForSInt32
+  nameWithType: FieldCodec.ForSInt32
+  fullName: Google.Protobuf.FieldCodec.ForSInt32
+- uid: Google.Protobuf.FieldCodec.ForFixed32*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForFixed32
+  isExternal: false
+  name: ForFixed32
+  nameWithType: FieldCodec.ForFixed32
+  fullName: Google.Protobuf.FieldCodec.ForFixed32
+- uid: Google.Protobuf.FieldCodec{System.UInt32}
+  commentId: T:Google.Protobuf.FieldCodec{System.UInt32}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<UInt32>
+  nameWithType: FieldCodec<UInt32>
+  fullName: Google.Protobuf.FieldCodec<System.UInt32>
+  nameWithType.vb: FieldCodec(Of UInt32)
+  fullName.vb: Google.Protobuf.FieldCodec(Of System.UInt32)
+  name.vb: FieldCodec(Of UInt32)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt32
+    name: UInt32
+    nameWithType: UInt32
+    fullName: System.UInt32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec.ForSFixed32*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForSFixed32
+  isExternal: false
+  name: ForSFixed32
+  nameWithType: FieldCodec.ForSFixed32
+  fullName: Google.Protobuf.FieldCodec.ForSFixed32
+- uid: Google.Protobuf.FieldCodec.ForUInt32*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForUInt32
+  isExternal: false
+  name: ForUInt32
+  nameWithType: FieldCodec.ForUInt32
+  fullName: Google.Protobuf.FieldCodec.ForUInt32
+- uid: Google.Protobuf.FieldCodec.ForInt64*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForInt64
+  isExternal: false
+  name: ForInt64
+  nameWithType: FieldCodec.ForInt64
+  fullName: Google.Protobuf.FieldCodec.ForInt64
+- uid: Google.Protobuf.FieldCodec{System.Int64}
+  commentId: T:Google.Protobuf.FieldCodec{System.Int64}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<Int64>
+  nameWithType: FieldCodec<Int64>
+  fullName: Google.Protobuf.FieldCodec<System.Int64>
+  nameWithType.vb: FieldCodec(Of Int64)
+  fullName.vb: Google.Protobuf.FieldCodec(Of System.Int64)
+  name.vb: FieldCodec(Of Int64)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec.ForSInt64*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForSInt64
+  isExternal: false
+  name: ForSInt64
+  nameWithType: FieldCodec.ForSInt64
+  fullName: Google.Protobuf.FieldCodec.ForSInt64
+- uid: Google.Protobuf.FieldCodec.ForFixed64*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForFixed64
+  isExternal: false
+  name: ForFixed64
+  nameWithType: FieldCodec.ForFixed64
+  fullName: Google.Protobuf.FieldCodec.ForFixed64
+- uid: Google.Protobuf.FieldCodec{System.UInt64}
+  commentId: T:Google.Protobuf.FieldCodec{System.UInt64}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<UInt64>
+  nameWithType: FieldCodec<UInt64>
+  fullName: Google.Protobuf.FieldCodec<System.UInt64>
+  nameWithType.vb: FieldCodec(Of UInt64)
+  fullName.vb: Google.Protobuf.FieldCodec(Of System.UInt64)
+  name.vb: FieldCodec(Of UInt64)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.UInt64
+    name: UInt64
+    nameWithType: UInt64
+    fullName: System.UInt64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec.ForSFixed64*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForSFixed64
+  isExternal: false
+  name: ForSFixed64
+  nameWithType: FieldCodec.ForSFixed64
+  fullName: Google.Protobuf.FieldCodec.ForSFixed64
+- uid: Google.Protobuf.FieldCodec.ForUInt64*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForUInt64
+  isExternal: false
+  name: ForUInt64
+  nameWithType: FieldCodec.ForUInt64
+  fullName: Google.Protobuf.FieldCodec.ForUInt64
+- uid: Google.Protobuf.FieldCodec.ForFloat*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForFloat
+  isExternal: false
+  name: ForFloat
+  nameWithType: FieldCodec.ForFloat
+  fullName: Google.Protobuf.FieldCodec.ForFloat
+- uid: Google.Protobuf.FieldCodec{System.Single}
+  commentId: T:Google.Protobuf.FieldCodec{System.Single}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<Single>
+  nameWithType: FieldCodec<Single>
+  fullName: Google.Protobuf.FieldCodec<System.Single>
+  nameWithType.vb: FieldCodec(Of Single)
+  fullName.vb: Google.Protobuf.FieldCodec(Of System.Single)
+  name.vb: FieldCodec(Of Single)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Single
+    name: Single
+    nameWithType: Single
+    fullName: System.Single
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec.ForDouble*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForDouble
+  isExternal: false
+  name: ForDouble
+  nameWithType: FieldCodec.ForDouble
+  fullName: Google.Protobuf.FieldCodec.ForDouble
+- uid: Google.Protobuf.FieldCodec{System.Double}
+  commentId: T:Google.Protobuf.FieldCodec{System.Double}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<Double>
+  nameWithType: FieldCodec<Double>
+  fullName: Google.Protobuf.FieldCodec<System.Double>
+  nameWithType.vb: FieldCodec(Of Double)
+  fullName.vb: Google.Protobuf.FieldCodec(Of System.Double)
+  name.vb: FieldCodec(Of Double)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Protobuf.FieldCodec.ForEnum*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForEnum
+  isExternal: false
+  name: ForEnum
+  nameWithType: FieldCodec.ForEnum
+  fullName: Google.Protobuf.FieldCodec.ForEnum
+- uid: System.Func{{T},System.Int32}
+  commentId: T:System.Func{``0,System.Int32}
+  parent: System
+  definition: System.Func`2
+  name: Func<T, Int32>
+  nameWithType: Func<T, Int32>
+  fullName: System.Func<T, System.Int32>
+  nameWithType.vb: Func(Of T, Int32)
+  fullName.vb: System.Func(Of T, System.Int32)
+  name.vb: Func(Of T, Int32)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.Int32,{T}}
+  commentId: T:System.Func{System.Int32,``0}
+  parent: System
+  definition: System.Func`2
+  name: Func<Int32, T>
+  nameWithType: Func<Int32, T>
+  fullName: System.Func<System.Int32, T>
+  nameWithType.vb: Func(Of Int32, T)
+  fullName.vb: System.Func(Of System.Int32, T)
+  name.vb: Func(Of Int32, T)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec{{T}}
+  commentId: T:Google.Protobuf.FieldCodec{``0}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<T>
+  nameWithType: FieldCodec<T>
+  fullName: Google.Protobuf.FieldCodec<T>
+  nameWithType.vb: FieldCodec(Of T)
+  fullName.vb: Google.Protobuf.FieldCodec(Of T)
+  name.vb: FieldCodec(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec.ForMessage*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForMessage
+  isExternal: false
+  name: ForMessage
+  nameWithType: FieldCodec.ForMessage
+  fullName: Google.Protobuf.FieldCodec.ForMessage
+- uid: Google.Protobuf.MessageParser{{T}}
+  commentId: T:Google.Protobuf.MessageParser{``0}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: false
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.FieldCodec.ForClassWrapper*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForClassWrapper
+  isExternal: false
+  name: ForClassWrapper
+  nameWithType: FieldCodec.ForClassWrapper
+  fullName: Google.Protobuf.FieldCodec.ForClassWrapper
+- uid: Google.Protobuf.FieldCodec.ForStructWrapper*
+  commentId: Overload:Google.Protobuf.FieldCodec.ForStructWrapper
+  isExternal: false
+  name: ForStructWrapper
+  nameWithType: FieldCodec.ForStructWrapper
+  fullName: Google.Protobuf.FieldCodec.ForStructWrapper
+- uid: Google.Protobuf.FieldCodec{System.Nullable{{T}}}
+  commentId: T:Google.Protobuf.FieldCodec{System.Nullable{``0}}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.FieldCodec`1
+  name: FieldCodec<Nullable<T>>
+  nameWithType: FieldCodec<Nullable<T>>
+  fullName: Google.Protobuf.FieldCodec<System.Nullable<T>>
+  nameWithType.vb: FieldCodec(Of Nullable(Of T))
+  fullName.vb: Google.Protobuf.FieldCodec(Of System.Nullable(Of T))
+  name.vb: FieldCodec(Of Nullable(Of T))
+  spec.csharp:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.FieldCodec`1
+    name: FieldCodec
+    nameWithType: FieldCodec
+    fullName: Google.Protobuf.FieldCodec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )

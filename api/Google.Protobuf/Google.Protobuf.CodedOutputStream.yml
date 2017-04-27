@@ -1,0 +1,3069 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  id: CodedOutputStream
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.CodedOutputStream.#ctor(System.Byte[])
+  - Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream)
+  - Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream,System.Boolean)
+  - Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream,System.Int32)
+  - Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream,System.Int32,System.Boolean)
+  - Google.Protobuf.CodedOutputStream.CheckNoSpaceLeft
+  - Google.Protobuf.CodedOutputStream.ComputeBoolSize(System.Boolean)
+  - Google.Protobuf.CodedOutputStream.ComputeBytesSize(Google.Protobuf.ByteString)
+  - Google.Protobuf.CodedOutputStream.ComputeDoubleSize(System.Double)
+  - Google.Protobuf.CodedOutputStream.ComputeEnumSize(System.Int32)
+  - Google.Protobuf.CodedOutputStream.ComputeFixed32Size(System.UInt32)
+  - Google.Protobuf.CodedOutputStream.ComputeFixed64Size(System.UInt64)
+  - Google.Protobuf.CodedOutputStream.ComputeFloatSize(System.Single)
+  - Google.Protobuf.CodedOutputStream.ComputeGroupSize(Google.Protobuf.IMessage)
+  - Google.Protobuf.CodedOutputStream.ComputeInt32Size(System.Int32)
+  - Google.Protobuf.CodedOutputStream.ComputeInt64Size(System.Int64)
+  - Google.Protobuf.CodedOutputStream.ComputeLengthSize(System.Int32)
+  - Google.Protobuf.CodedOutputStream.ComputeMessageSize(Google.Protobuf.IMessage)
+  - Google.Protobuf.CodedOutputStream.ComputeRawVarint32Size(System.UInt32)
+  - Google.Protobuf.CodedOutputStream.ComputeRawVarint64Size(System.UInt64)
+  - Google.Protobuf.CodedOutputStream.ComputeSFixed32Size(System.Int32)
+  - Google.Protobuf.CodedOutputStream.ComputeSFixed64Size(System.Int64)
+  - Google.Protobuf.CodedOutputStream.ComputeSInt32Size(System.Int32)
+  - Google.Protobuf.CodedOutputStream.ComputeSInt64Size(System.Int64)
+  - Google.Protobuf.CodedOutputStream.ComputeStringSize(System.String)
+  - Google.Protobuf.CodedOutputStream.ComputeTagSize(System.Int32)
+  - Google.Protobuf.CodedOutputStream.ComputeUInt32Size(System.UInt32)
+  - Google.Protobuf.CodedOutputStream.ComputeUInt64Size(System.UInt64)
+  - Google.Protobuf.CodedOutputStream.DefaultBufferSize
+  - Google.Protobuf.CodedOutputStream.Dispose
+  - Google.Protobuf.CodedOutputStream.Flush
+  - Google.Protobuf.CodedOutputStream.Position
+  - Google.Protobuf.CodedOutputStream.SpaceLeft
+  - Google.Protobuf.CodedOutputStream.WriteBool(System.Boolean)
+  - Google.Protobuf.CodedOutputStream.WriteBytes(Google.Protobuf.ByteString)
+  - Google.Protobuf.CodedOutputStream.WriteDouble(System.Double)
+  - Google.Protobuf.CodedOutputStream.WriteEnum(System.Int32)
+  - Google.Protobuf.CodedOutputStream.WriteFixed32(System.UInt32)
+  - Google.Protobuf.CodedOutputStream.WriteFixed64(System.UInt64)
+  - Google.Protobuf.CodedOutputStream.WriteFloat(System.Single)
+  - Google.Protobuf.CodedOutputStream.WriteInt32(System.Int32)
+  - Google.Protobuf.CodedOutputStream.WriteInt64(System.Int64)
+  - Google.Protobuf.CodedOutputStream.WriteLength(System.Int32)
+  - Google.Protobuf.CodedOutputStream.WriteMessage(Google.Protobuf.IMessage)
+  - Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte)
+  - Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte)
+  - Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte,System.Byte)
+  - Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte,System.Byte,System.Byte)
+  - Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte,System.Byte,System.Byte,System.Byte)
+  - Google.Protobuf.CodedOutputStream.WriteSFixed32(System.Int32)
+  - Google.Protobuf.CodedOutputStream.WriteSFixed64(System.Int64)
+  - Google.Protobuf.CodedOutputStream.WriteSInt32(System.Int32)
+  - Google.Protobuf.CodedOutputStream.WriteSInt64(System.Int64)
+  - Google.Protobuf.CodedOutputStream.WriteString(System.String)
+  - Google.Protobuf.CodedOutputStream.WriteTag(System.Int32,Google.Protobuf.WireFormat.WireType)
+  - Google.Protobuf.CodedOutputStream.WriteTag(System.UInt32)
+  - Google.Protobuf.CodedOutputStream.WriteUInt32(System.UInt32)
+  - Google.Protobuf.CodedOutputStream.WriteUInt64(System.UInt64)
+  langs:
+  - csharp
+  - vb
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CodedOutputStream
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 57
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nEncodes and writes protocol message fields.\n"
+  remarks: "\n<p>\nThis class is generally used by generated code to write appropriate\nprimitives to the stream. It effectively encapsulates the lowest\nlevels of protocol buffer format. Unlike some other implementations,\nthis does not include combined \"write tag and value\" methods. Generated\ncode knows the exact byte representations of the tags they're going to write,\nso there's no need to re-encode them each time. Manually-written code calling\nthis class should just call one of the <code>WriteTag</code> overloads before each value.\n</p>\n<p>\nRepeated fields and map fields are not handled by this class; use <code>RepeatedField&lt;T&gt;</code>\nand <code>MapField&lt;TKey, TValue&gt;</code> to serialize such fields.\n</p>\n"
+  example: []
+  syntax:
+    content: 'public sealed class CodedOutputStream : IDisposable'
+    content.vb: >-
+      Public NotInheritable Class CodedOutputStream
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.CodedOutputStream.ComputeDoubleSize(System.Double)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeDoubleSize(System.Double)
+  id: ComputeDoubleSize(System.Double)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeDoubleSize(Double)
+  nameWithType: CodedOutputStream.ComputeDoubleSize(Double)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeDoubleSize(System.Double)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeDoubleSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 48
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\ndouble field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeDoubleSize(double value)
+    parameters:
+    - id: value
+      type: System.Double
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeDoubleSize(value As Double) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeDoubleSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeFloatSize(System.Single)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeFloatSize(System.Single)
+  id: ComputeFloatSize(System.Single)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeFloatSize(Single)
+  nameWithType: CodedOutputStream.ComputeFloatSize(Single)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeFloatSize(System.Single)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeFloatSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 57
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\nfloat field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeFloatSize(float value)
+    parameters:
+    - id: value
+      type: System.Single
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeFloatSize(value As Single) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeFloatSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeUInt64Size(System.UInt64)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeUInt64Size(System.UInt64)
+  id: ComputeUInt64Size(System.UInt64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeUInt64Size(UInt64)
+  nameWithType: CodedOutputStream.ComputeUInt64Size(UInt64)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeUInt64Size(System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeUInt64Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 66
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\nuint64 field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeUInt64Size(ulong value)
+    parameters:
+    - id: value
+      type: System.UInt64
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeUInt64Size(value As ULong) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeUInt64Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeInt64Size(System.Int64)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeInt64Size(System.Int64)
+  id: ComputeInt64Size(System.Int64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeInt64Size(Int64)
+  nameWithType: CodedOutputStream.ComputeInt64Size(Int64)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeInt64Size(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeInt64Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 75
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode an\nint64 field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeInt64Size(long value)
+    parameters:
+    - id: value
+      type: System.Int64
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeInt64Size(value As Long) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeInt64Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeInt32Size(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeInt32Size(System.Int32)
+  id: ComputeInt32Size(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeInt32Size(Int32)
+  nameWithType: CodedOutputStream.ComputeInt32Size(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeInt32Size(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeInt32Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 84
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode an\nint32 field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeInt32Size(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeInt32Size(value As Integer) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeInt32Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeFixed64Size(System.UInt64)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeFixed64Size(System.UInt64)
+  id: ComputeFixed64Size(System.UInt64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeFixed64Size(UInt64)
+  nameWithType: CodedOutputStream.ComputeFixed64Size(UInt64)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeFixed64Size(System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeFixed64Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 101
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\nfixed64 field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeFixed64Size(ulong value)
+    parameters:
+    - id: value
+      type: System.UInt64
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeFixed64Size(value As ULong) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeFixed64Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeFixed32Size(System.UInt32)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeFixed32Size(System.UInt32)
+  id: ComputeFixed32Size(System.UInt32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeFixed32Size(UInt32)
+  nameWithType: CodedOutputStream.ComputeFixed32Size(UInt32)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeFixed32Size(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeFixed32Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 110
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\nfixed32 field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeFixed32Size(uint value)
+    parameters:
+    - id: value
+      type: System.UInt32
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeFixed32Size(value As UInteger) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeFixed32Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeBoolSize(System.Boolean)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeBoolSize(System.Boolean)
+  id: ComputeBoolSize(System.Boolean)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeBoolSize(Boolean)
+  nameWithType: CodedOutputStream.ComputeBoolSize(Boolean)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeBoolSize(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeBoolSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 119
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\nbool field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeBoolSize(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeBoolSize(value As Boolean) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeBoolSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeStringSize(System.String)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeStringSize(System.String)
+  id: ComputeStringSize(System.String)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeStringSize(String)
+  nameWithType: CodedOutputStream.ComputeStringSize(String)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeStringSize(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeStringSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 128
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\nstring field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeStringSize(string value)
+    parameters:
+    - id: value
+      type: System.String
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeStringSize(value As String) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeStringSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeGroupSize(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeGroupSize(Google.Protobuf.IMessage)
+  id: ComputeGroupSize(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeGroupSize(IMessage)
+  nameWithType: CodedOutputStream.ComputeGroupSize(IMessage)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeGroupSize(Google.Protobuf.IMessage)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeGroupSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 138
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\ngroup field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeGroupSize(IMessage value)
+    parameters:
+    - id: value
+      type: Google.Protobuf.IMessage
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeGroupSize(value As IMessage) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeGroupSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeMessageSize(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeMessageSize(Google.Protobuf.IMessage)
+  id: ComputeMessageSize(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeMessageSize(IMessage)
+  nameWithType: CodedOutputStream.ComputeMessageSize(IMessage)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeMessageSize(Google.Protobuf.IMessage)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeMessageSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 147
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode an\nembedded message field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeMessageSize(IMessage value)
+    parameters:
+    - id: value
+      type: Google.Protobuf.IMessage
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeMessageSize(value As IMessage) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeMessageSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeBytesSize(Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeBytesSize(Google.Protobuf.ByteString)
+  id: ComputeBytesSize(Google.Protobuf.ByteString)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeBytesSize(ByteString)
+  nameWithType: CodedOutputStream.ComputeBytesSize(ByteString)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeBytesSize(Google.Protobuf.ByteString)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeBytesSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 157
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\nbytes field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeBytesSize(ByteString value)
+    parameters:
+    - id: value
+      type: Google.Protobuf.ByteString
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeBytesSize(value As ByteString) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeBytesSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeUInt32Size(System.UInt32)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeUInt32Size(System.UInt32)
+  id: ComputeUInt32Size(System.UInt32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeUInt32Size(UInt32)
+  nameWithType: CodedOutputStream.ComputeUInt32Size(UInt32)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeUInt32Size(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeUInt32Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 166
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\nuint32 field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeUInt32Size(uint value)
+    parameters:
+    - id: value
+      type: System.UInt32
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeUInt32Size(value As UInteger) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeUInt32Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeEnumSize(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeEnumSize(System.Int32)
+  id: ComputeEnumSize(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeEnumSize(Int32)
+  nameWithType: CodedOutputStream.ComputeEnumSize(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeEnumSize(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeEnumSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 176
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a\nenum field, including the tag. The caller is responsible for\nconverting the enum value to its numeric value.\n"
+  example: []
+  syntax:
+    content: public static int ComputeEnumSize(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeEnumSize(value As Integer) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeEnumSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeSFixed32Size(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeSFixed32Size(System.Int32)
+  id: ComputeSFixed32Size(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeSFixed32Size(Int32)
+  nameWithType: CodedOutputStream.ComputeSFixed32Size(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeSFixed32Size(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeSFixed32Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 186
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode an\nsfixed32 field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeSFixed32Size(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeSFixed32Size(value As Integer) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeSFixed32Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeSFixed64Size(System.Int64)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeSFixed64Size(System.Int64)
+  id: ComputeSFixed64Size(System.Int64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeSFixed64Size(Int64)
+  nameWithType: CodedOutputStream.ComputeSFixed64Size(Int64)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeSFixed64Size(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeSFixed64Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 195
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode an\nsfixed64 field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeSFixed64Size(long value)
+    parameters:
+    - id: value
+      type: System.Int64
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeSFixed64Size(value As Long) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeSFixed64Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeSInt32Size(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeSInt32Size(System.Int32)
+  id: ComputeSInt32Size(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeSInt32Size(Int32)
+  nameWithType: CodedOutputStream.ComputeSInt32Size(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeSInt32Size(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeSInt32Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 204
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode an\nsint32 field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeSInt32Size(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeSInt32Size(value As Integer) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeSInt32Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeSInt64Size(System.Int64)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeSInt64Size(System.Int64)
+  id: ComputeSInt64Size(System.Int64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeSInt64Size(Int64)
+  nameWithType: CodedOutputStream.ComputeSInt64Size(Int64)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeSInt64Size(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeSInt64Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 213
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode an\nsint64 field, including the tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeSInt64Size(long value)
+    parameters:
+    - id: value
+      type: System.Int64
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeSInt64Size(value As Long) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeSInt64Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeLengthSize(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeLengthSize(System.Int32)
+  id: ComputeLengthSize(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeLengthSize(Int32)
+  nameWithType: CodedOutputStream.ComputeLengthSize(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeLengthSize(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeLengthSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 222
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a length,\nas written by <xref href=\"Google.Protobuf.CodedOutputStream.WriteLength(System.Int32)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static int ComputeLengthSize(int length)
+    parameters:
+    - id: length
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeLengthSize(length As Integer) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeLengthSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeRawVarint32Size(System.UInt32)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeRawVarint32Size(System.UInt32)
+  id: ComputeRawVarint32Size(System.UInt32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeRawVarint32Size(UInt32)
+  nameWithType: CodedOutputStream.ComputeRawVarint32Size(UInt32)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeRawVarint32Size(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeRawVarint32Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 230
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a varint.\n"
+  example: []
+  syntax:
+    content: public static int ComputeRawVarint32Size(uint value)
+    parameters:
+    - id: value
+      type: System.UInt32
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeRawVarint32Size(value As UInteger) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeRawVarint32Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeRawVarint64Size(System.UInt64)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeRawVarint64Size(System.UInt64)
+  id: ComputeRawVarint64Size(System.UInt64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeRawVarint64Size(UInt64)
+  nameWithType: CodedOutputStream.ComputeRawVarint64Size(UInt64)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeRawVarint64Size(System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeRawVarint64Size
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 254
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a varint.\n"
+  example: []
+  syntax:
+    content: public static int ComputeRawVarint64Size(ulong value)
+    parameters:
+    - id: value
+      type: System.UInt64
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeRawVarint64Size(value As ULong) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeRawVarint64Size*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.ComputeTagSize(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.ComputeTagSize(System.Int32)
+  id: ComputeTagSize(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: ComputeTagSize(Int32)
+  nameWithType: CodedOutputStream.ComputeTagSize(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.ComputeTagSize(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ComputeTagSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.ComputeSize.cs
+    startLine: 298
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nComputes the number of bytes that would be needed to encode a tag.\n"
+  example: []
+  syntax:
+    content: public static int ComputeTagSize(int fieldNumber)
+    parameters:
+    - id: fieldNumber
+      type: System.Int32
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function ComputeTagSize(fieldNumber As Integer) As Integer
+  overload: Google.Protobuf.CodedOutputStream.ComputeTagSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedOutputStream.DefaultBufferSize
+  commentId: F:Google.Protobuf.CodedOutputStream.DefaultBufferSize
+  id: DefaultBufferSize
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: DefaultBufferSize
+  nameWithType: CodedOutputStream.DefaultBufferSize
+  fullName: Google.Protobuf.CodedOutputStream.DefaultBufferSize
+  type: Field
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: DefaultBufferSize
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 65
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nThe buffer size used by CreateInstance(Stream).\n"
+  example: []
+  syntax:
+    content: public static readonly int DefaultBufferSize
+    return:
+      type: System.Int32
+    content.vb: Public Shared ReadOnly DefaultBufferSize As Integer
+  modifiers.csharp:
+  - public
+  - static
+  - readonly
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Protobuf.CodedOutputStream.#ctor(System.Byte[])
+  commentId: M:Google.Protobuf.CodedOutputStream.#ctor(System.Byte[])
+  id: '#ctor(System.Byte[])'
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: CodedOutputStream(Byte[])
+  nameWithType: CodedOutputStream.CodedOutputStream(Byte[])
+  fullName: Google.Protobuf.CodedOutputStream.CodedOutputStream(System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 79
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new CodedOutputStream that writes directly to the given\nbyte array. If more bytes are written than fit in the array,\nOutOfSpaceException will be thrown.\n"
+  example: []
+  syntax:
+    content: public CodedOutputStream(byte[] flatArray)
+    parameters:
+    - id: flatArray
+      type: System.Byte[]
+    content.vb: Public Sub New(flatArray As Byte())
+  overload: Google.Protobuf.CodedOutputStream.#ctor*
+  nameWithType.vb: CodedOutputStream.CodedOutputStream(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.CodedOutputStream.CodedOutputStream(System.Byte())
+  name.vb: CodedOutputStream(Byte())
+- uid: Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream)
+  commentId: M:Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream)
+  id: '#ctor(System.IO.Stream)'
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: CodedOutputStream(Stream)
+  nameWithType: CodedOutputStream.CodedOutputStream(Stream)
+  fullName: Google.Protobuf.CodedOutputStream.CodedOutputStream(System.IO.Stream)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 111
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.CodedOutputStream\" data-throw-if-not-resolved=\"false\"></xref> which write to the given stream, and disposes of that\nstream when the returned <code>CodedOutputStream</code> is disposed.\n"
+  example: []
+  syntax:
+    content: public CodedOutputStream(Stream output)
+    parameters:
+    - id: output
+      type: System.IO.Stream
+      description: The stream to write to. It will be disposed when the returned <code>CodedOutputStream is disposed.</code>
+    content.vb: Public Sub New(output As Stream)
+  overload: Google.Protobuf.CodedOutputStream.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream,System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream,System.Int32)
+  id: '#ctor(System.IO.Stream,System.Int32)'
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: CodedOutputStream(Stream, Int32)
+  nameWithType: CodedOutputStream.CodedOutputStream(Stream, Int32)
+  fullName: Google.Protobuf.CodedOutputStream.CodedOutputStream(System.IO.Stream, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 121
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new CodedOutputStream which write to the given stream and uses\nthe specified buffer size.\n"
+  example: []
+  syntax:
+    content: public CodedOutputStream(Stream output, int bufferSize)
+    parameters:
+    - id: output
+      type: System.IO.Stream
+      description: The stream to write to. It will be disposed when the returned <code>CodedOutputStream is disposed.</code>
+    - id: bufferSize
+      type: System.Int32
+      description: The size of buffer to use internally.
+    content.vb: Public Sub New(output As Stream, bufferSize As Integer)
+  overload: Google.Protobuf.CodedOutputStream.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream,System.Boolean)
+  commentId: M:Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream,System.Boolean)
+  id: '#ctor(System.IO.Stream,System.Boolean)'
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: CodedOutputStream(Stream, Boolean)
+  nameWithType: CodedOutputStream.CodedOutputStream(Stream, Boolean)
+  fullName: Google.Protobuf.CodedOutputStream.CodedOutputStream(System.IO.Stream, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 131
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new CodedOutputStream which write to the given stream.\n"
+  example: []
+  syntax:
+    content: public CodedOutputStream(Stream output, bool leaveOpen)
+    parameters:
+    - id: output
+      type: System.IO.Stream
+      description: The stream to write to.
+    - id: leaveOpen
+      type: System.Boolean
+      description: >-
+        If <code>true</code>, <span class="paramref">output</span> is left open when the returned <code>CodedOutputStream</code> is disposed;
+
+        if <code>false</code>, the provided stream is disposed as well.
+    content.vb: Public Sub New(output As Stream, leaveOpen As Boolean)
+  overload: Google.Protobuf.CodedOutputStream.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream,System.Int32,System.Boolean)
+  commentId: M:Google.Protobuf.CodedOutputStream.#ctor(System.IO.Stream,System.Int32,System.Boolean)
+  id: '#ctor(System.IO.Stream,System.Int32,System.Boolean)'
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: CodedOutputStream(Stream, Int32, Boolean)
+  nameWithType: CodedOutputStream.CodedOutputStream(Stream, Int32, Boolean)
+  fullName: Google.Protobuf.CodedOutputStream.CodedOutputStream(System.IO.Stream, System.Int32, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 143
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new CodedOutputStream which write to the given stream and uses\nthe specified buffer size.\n"
+  example: []
+  syntax:
+    content: public CodedOutputStream(Stream output, int bufferSize, bool leaveOpen)
+    parameters:
+    - id: output
+      type: System.IO.Stream
+      description: The stream to write to.
+    - id: bufferSize
+      type: System.Int32
+      description: The size of buffer to use internally.
+    - id: leaveOpen
+      type: System.Boolean
+      description: >-
+        If <code>true</code>, <span class="paramref">output</span> is left open when the returned <code>CodedOutputStream</code> is disposed;
+
+        if <code>false</code>, the provided stream is disposed as well.
+    content.vb: Public Sub New(output As Stream, bufferSize As Integer, leaveOpen As Boolean)
+  overload: Google.Protobuf.CodedOutputStream.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.Position
+  commentId: P:Google.Protobuf.CodedOutputStream.Position
+  id: Position
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: CodedOutputStream.Position
+  fullName: Google.Protobuf.CodedOutputStream.Position
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Position
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 151
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns the current position in the stream, or the position in the output buffer\n"
+  example: []
+  syntax:
+    content: public long Position { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property Position As Long
+  overload: Google.Protobuf.CodedOutputStream.Position*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.CodedOutputStream.WriteDouble(System.Double)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteDouble(System.Double)
+  id: WriteDouble(System.Double)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteDouble(Double)
+  nameWithType: CodedOutputStream.WriteDouble(Double)
+  fullName: Google.Protobuf.CodedOutputStream.WriteDouble(System.Double)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteDouble
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 169
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a double field value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteDouble(double value)
+    parameters:
+    - id: value
+      type: System.Double
+      description: The value to write
+    content.vb: Public Sub WriteDouble(value As Double)
+  overload: Google.Protobuf.CodedOutputStream.WriteDouble*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteFloat(System.Single)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteFloat(System.Single)
+  id: WriteFloat(System.Single)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteFloat(Single)
+  nameWithType: CodedOutputStream.WriteFloat(Single)
+  fullName: Google.Protobuf.CodedOutputStream.WriteFloat(System.Single)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteFloat
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 178
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a float field value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteFloat(float value)
+    parameters:
+    - id: value
+      type: System.Single
+      description: The value to write
+    content.vb: Public Sub WriteFloat(value As Single)
+  overload: Google.Protobuf.CodedOutputStream.WriteFloat*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteUInt64(System.UInt64)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteUInt64(System.UInt64)
+  id: WriteUInt64(System.UInt64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteUInt64(UInt64)
+  nameWithType: CodedOutputStream.WriteUInt64(UInt64)
+  fullName: Google.Protobuf.CodedOutputStream.WriteUInt64(System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteUInt64
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 203
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a uint64 field value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteUInt64(ulong value)
+    parameters:
+    - id: value
+      type: System.UInt64
+      description: The value to write
+    content.vb: Public Sub WriteUInt64(value As ULong)
+  overload: Google.Protobuf.CodedOutputStream.WriteUInt64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteInt64(System.Int64)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteInt64(System.Int64)
+  id: WriteInt64(System.Int64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteInt64(Int64)
+  nameWithType: CodedOutputStream.WriteInt64(Int64)
+  fullName: Google.Protobuf.CodedOutputStream.WriteInt64(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteInt64
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 212
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites an int64 field value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteInt64(long value)
+    parameters:
+    - id: value
+      type: System.Int64
+      description: The value to write
+    content.vb: Public Sub WriteInt64(value As Long)
+  overload: Google.Protobuf.CodedOutputStream.WriteInt64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteInt32(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteInt32(System.Int32)
+  id: WriteInt32(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteInt32(Int32)
+  nameWithType: CodedOutputStream.WriteInt32(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.WriteInt32(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteInt32
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 221
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites an int32 field value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteInt32(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+      description: The value to write
+    content.vb: Public Sub WriteInt32(value As Integer)
+  overload: Google.Protobuf.CodedOutputStream.WriteInt32*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteFixed64(System.UInt64)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteFixed64(System.UInt64)
+  id: WriteFixed64(System.UInt64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteFixed64(UInt64)
+  nameWithType: CodedOutputStream.WriteFixed64(UInt64)
+  fullName: Google.Protobuf.CodedOutputStream.WriteFixed64(System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteFixed64
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 238
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a fixed64 field value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteFixed64(ulong value)
+    parameters:
+    - id: value
+      type: System.UInt64
+      description: The value to write
+    content.vb: Public Sub WriteFixed64(value As ULong)
+  overload: Google.Protobuf.CodedOutputStream.WriteFixed64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteFixed32(System.UInt32)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteFixed32(System.UInt32)
+  id: WriteFixed32(System.UInt32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteFixed32(UInt32)
+  nameWithType: CodedOutputStream.WriteFixed32(UInt32)
+  fullName: Google.Protobuf.CodedOutputStream.WriteFixed32(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteFixed32
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 247
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a fixed32 field value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteFixed32(uint value)
+    parameters:
+    - id: value
+      type: System.UInt32
+      description: The value to write
+    content.vb: Public Sub WriteFixed32(value As UInteger)
+  overload: Google.Protobuf.CodedOutputStream.WriteFixed32*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteBool(System.Boolean)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteBool(System.Boolean)
+  id: WriteBool(System.Boolean)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteBool(Boolean)
+  nameWithType: CodedOutputStream.WriteBool(Boolean)
+  fullName: Google.Protobuf.CodedOutputStream.WriteBool(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteBool
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 256
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a bool field value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteBool(bool value)
+    parameters:
+    - id: value
+      type: System.Boolean
+      description: The value to write
+    content.vb: Public Sub WriteBool(value As Boolean)
+  overload: Google.Protobuf.CodedOutputStream.WriteBool*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteString(System.String)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteString(System.String)
+  id: WriteString(System.String)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteString(String)
+  nameWithType: CodedOutputStream.WriteString(String)
+  fullName: Google.Protobuf.CodedOutputStream.WriteString(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteString
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 266
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a string field value, without a tag, to the stream.\nThe data is length-prefixed.\n"
+  example: []
+  syntax:
+    content: public void WriteString(string value)
+    parameters:
+    - id: value
+      type: System.String
+      description: The value to write
+    content.vb: Public Sub WriteString(value As String)
+  overload: Google.Protobuf.CodedOutputStream.WriteString*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteMessage(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteMessage(Google.Protobuf.IMessage)
+  id: WriteMessage(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteMessage(IMessage)
+  nameWithType: CodedOutputStream.WriteMessage(IMessage)
+  fullName: Google.Protobuf.CodedOutputStream.WriteMessage(Google.Protobuf.IMessage)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteMessage
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 299
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a message, without a tag, to the stream.\nThe data is length-prefixed.\n"
+  example: []
+  syntax:
+    content: public void WriteMessage(IMessage value)
+    parameters:
+    - id: value
+      type: Google.Protobuf.IMessage
+      description: The value to write
+    content.vb: Public Sub WriteMessage(value As IMessage)
+  overload: Google.Protobuf.CodedOutputStream.WriteMessage*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteBytes(Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteBytes(Google.Protobuf.ByteString)
+  id: WriteBytes(Google.Protobuf.ByteString)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteBytes(ByteString)
+  nameWithType: CodedOutputStream.WriteBytes(ByteString)
+  fullName: Google.Protobuf.CodedOutputStream.WriteBytes(Google.Protobuf.ByteString)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteBytes
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 310
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrite a byte string, without a tag, to the stream.\nThe data is length-prefixed.\n"
+  example: []
+  syntax:
+    content: public void WriteBytes(ByteString value)
+    parameters:
+    - id: value
+      type: Google.Protobuf.ByteString
+      description: The value to write
+    content.vb: Public Sub WriteBytes(value As ByteString)
+  overload: Google.Protobuf.CodedOutputStream.WriteBytes*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteUInt32(System.UInt32)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteUInt32(System.UInt32)
+  id: WriteUInt32(System.UInt32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteUInt32(UInt32)
+  nameWithType: CodedOutputStream.WriteUInt32(UInt32)
+  fullName: Google.Protobuf.CodedOutputStream.WriteUInt32(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteUInt32
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 320
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a uint32 value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteUInt32(uint value)
+    parameters:
+    - id: value
+      type: System.UInt32
+      description: The value to write
+    content.vb: Public Sub WriteUInt32(value As UInteger)
+  overload: Google.Protobuf.CodedOutputStream.WriteUInt32*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteEnum(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteEnum(System.Int32)
+  id: WriteEnum(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteEnum(Int32)
+  nameWithType: CodedOutputStream.WriteEnum(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.WriteEnum(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteEnum
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 329
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites an enum value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteEnum(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+      description: The value to write
+    content.vb: Public Sub WriteEnum(value As Integer)
+  overload: Google.Protobuf.CodedOutputStream.WriteEnum*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteSFixed32(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteSFixed32(System.Int32)
+  id: WriteSFixed32(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteSFixed32(Int32)
+  nameWithType: CodedOutputStream.WriteSFixed32(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.WriteSFixed32(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteSFixed32
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 338
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites an sfixed32 value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteSFixed32(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+      description: The value to write.
+    content.vb: Public Sub WriteSFixed32(value As Integer)
+  overload: Google.Protobuf.CodedOutputStream.WriteSFixed32*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteSFixed64(System.Int64)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteSFixed64(System.Int64)
+  id: WriteSFixed64(System.Int64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteSFixed64(Int64)
+  nameWithType: CodedOutputStream.WriteSFixed64(Int64)
+  fullName: Google.Protobuf.CodedOutputStream.WriteSFixed64(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteSFixed64
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 347
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites an sfixed64 value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteSFixed64(long value)
+    parameters:
+    - id: value
+      type: System.Int64
+      description: The value to write
+    content.vb: Public Sub WriteSFixed64(value As Long)
+  overload: Google.Protobuf.CodedOutputStream.WriteSFixed64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteSInt32(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteSInt32(System.Int32)
+  id: WriteSInt32(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteSInt32(Int32)
+  nameWithType: CodedOutputStream.WriteSInt32(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.WriteSInt32(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteSInt32
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 356
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites an sint32 value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteSInt32(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+      description: The value to write
+    content.vb: Public Sub WriteSInt32(value As Integer)
+  overload: Google.Protobuf.CodedOutputStream.WriteSInt32*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteSInt64(System.Int64)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteSInt64(System.Int64)
+  id: WriteSInt64(System.Int64)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteSInt64(Int64)
+  nameWithType: CodedOutputStream.WriteSInt64(Int64)
+  fullName: Google.Protobuf.CodedOutputStream.WriteSInt64(System.Int64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteSInt64
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 365
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites an sint64 value, without a tag, to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteSInt64(long value)
+    parameters:
+    - id: value
+      type: System.Int64
+      description: The value to write
+    content.vb: Public Sub WriteSInt64(value As Long)
+  overload: Google.Protobuf.CodedOutputStream.WriteSInt64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteLength(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteLength(System.Int32)
+  id: WriteLength(System.Int32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteLength(Int32)
+  nameWithType: CodedOutputStream.WriteLength(Int32)
+  fullName: Google.Protobuf.CodedOutputStream.WriteLength(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteLength
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 377
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a length (in bytes) for length-delimited data.\n"
+  remarks: "\nThis method simply writes a rawint, but exists for clarity in calling code.\n"
+  example: []
+  syntax:
+    content: public void WriteLength(int length)
+    parameters:
+    - id: length
+      type: System.Int32
+      description: Length value, in bytes.
+    content.vb: Public Sub WriteLength(length As Integer)
+  overload: Google.Protobuf.CodedOutputStream.WriteLength*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteTag(System.Int32,Google.Protobuf.WireFormat.WireType)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteTag(System.Int32,Google.Protobuf.WireFormat.WireType)
+  id: WriteTag(System.Int32,Google.Protobuf.WireFormat.WireType)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteTag(Int32, WireFormat.WireType)
+  nameWithType: CodedOutputStream.WriteTag(Int32, WireFormat.WireType)
+  fullName: Google.Protobuf.CodedOutputStream.WriteTag(System.Int32, Google.Protobuf.WireFormat.WireType)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteTag
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 390
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nEncodes and writes a tag.\n"
+  example: []
+  syntax:
+    content: public void WriteTag(int fieldNumber, WireFormat.WireType type)
+    parameters:
+    - id: fieldNumber
+      type: System.Int32
+      description: The number of the field to write the tag for
+    - id: type
+      type: Google.Protobuf.WireFormat.WireType
+      description: The wire format type of the tag to write
+    content.vb: Public Sub WriteTag(fieldNumber As Integer, type As WireFormat.WireType)
+  overload: Google.Protobuf.CodedOutputStream.WriteTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteTag(System.UInt32)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteTag(System.UInt32)
+  id: WriteTag(System.UInt32)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteTag(UInt32)
+  nameWithType: CodedOutputStream.WriteTag(UInt32)
+  fullName: Google.Protobuf.CodedOutputStream.WriteTag(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteTag
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 399
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites an already-encoded tag.\n"
+  example: []
+  syntax:
+    content: public void WriteTag(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+      description: The encoded tag
+    content.vb: Public Sub WriteTag(tag As UInteger)
+  overload: Google.Protobuf.CodedOutputStream.WriteTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte)
+  id: WriteRawTag(System.Byte)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteRawTag(Byte)
+  nameWithType: CodedOutputStream.WriteRawTag(Byte)
+  fullName: Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteRawTag
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 408
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites the given single-byte tag directly to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteRawTag(byte b1)
+    parameters:
+    - id: b1
+      type: System.Byte
+      description: The encoded tag
+    content.vb: Public Sub WriteRawTag(b1 As Byte)
+  overload: Google.Protobuf.CodedOutputStream.WriteRawTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte)
+  id: WriteRawTag(System.Byte,System.Byte)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteRawTag(Byte, Byte)
+  nameWithType: CodedOutputStream.WriteRawTag(Byte, Byte)
+  fullName: Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte, System.Byte)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteRawTag
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 418
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites the given two-byte tag directly to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteRawTag(byte b1, byte b2)
+    parameters:
+    - id: b1
+      type: System.Byte
+      description: The first byte of the encoded tag
+    - id: b2
+      type: System.Byte
+      description: The second byte of the encoded tag
+    content.vb: Public Sub WriteRawTag(b1 As Byte, b2 As Byte)
+  overload: Google.Protobuf.CodedOutputStream.WriteRawTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte,System.Byte)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte,System.Byte)
+  id: WriteRawTag(System.Byte,System.Byte,System.Byte)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteRawTag(Byte, Byte, Byte)
+  nameWithType: CodedOutputStream.WriteRawTag(Byte, Byte, Byte)
+  fullName: Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte, System.Byte, System.Byte)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteRawTag
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 430
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites the given three-byte tag directly to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteRawTag(byte b1, byte b2, byte b3)
+    parameters:
+    - id: b1
+      type: System.Byte
+      description: The first byte of the encoded tag
+    - id: b2
+      type: System.Byte
+      description: The second byte of the encoded tag
+    - id: b3
+      type: System.Byte
+      description: The third byte of the encoded tag
+    content.vb: Public Sub WriteRawTag(b1 As Byte, b2 As Byte, b3 As Byte)
+  overload: Google.Protobuf.CodedOutputStream.WriteRawTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte,System.Byte,System.Byte)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte,System.Byte,System.Byte)
+  id: WriteRawTag(System.Byte,System.Byte,System.Byte,System.Byte)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteRawTag(Byte, Byte, Byte, Byte)
+  nameWithType: CodedOutputStream.WriteRawTag(Byte, Byte, Byte, Byte)
+  fullName: Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte, System.Byte, System.Byte, System.Byte)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteRawTag
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 444
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites the given four-byte tag directly to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteRawTag(byte b1, byte b2, byte b3, byte b4)
+    parameters:
+    - id: b1
+      type: System.Byte
+      description: The first byte of the encoded tag
+    - id: b2
+      type: System.Byte
+      description: The second byte of the encoded tag
+    - id: b3
+      type: System.Byte
+      description: The third byte of the encoded tag
+    - id: b4
+      type: System.Byte
+      description: The fourth byte of the encoded tag
+    content.vb: Public Sub WriteRawTag(b1 As Byte, b2 As Byte, b3 As Byte, b4 As Byte)
+  overload: Google.Protobuf.CodedOutputStream.WriteRawTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte,System.Byte,System.Byte,System.Byte)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte,System.Byte,System.Byte,System.Byte,System.Byte)
+  id: WriteRawTag(System.Byte,System.Byte,System.Byte,System.Byte,System.Byte)
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: WriteRawTag(Byte, Byte, Byte, Byte, Byte)
+  nameWithType: CodedOutputStream.WriteRawTag(Byte, Byte, Byte, Byte, Byte)
+  fullName: Google.Protobuf.CodedOutputStream.WriteRawTag(System.Byte, System.Byte, System.Byte, System.Byte, System.Byte)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteRawTag
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 460
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites the given five-byte tag directly to the stream.\n"
+  example: []
+  syntax:
+    content: public void WriteRawTag(byte b1, byte b2, byte b3, byte b4, byte b5)
+    parameters:
+    - id: b1
+      type: System.Byte
+      description: The first byte of the encoded tag
+    - id: b2
+      type: System.Byte
+      description: The second byte of the encoded tag
+    - id: b3
+      type: System.Byte
+      description: The third byte of the encoded tag
+    - id: b4
+      type: System.Byte
+      description: The fourth byte of the encoded tag
+    - id: b5
+      type: System.Byte
+      description: The fifth byte of the encoded tag
+    content.vb: Public Sub WriteRawTag(b1 As Byte, b2 As Byte, b3 As Byte, b4 As Byte, b5 As Byte)
+  overload: Google.Protobuf.CodedOutputStream.WriteRawTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.Dispose
+  commentId: M:Google.Protobuf.CodedOutputStream.Dispose
+  id: Dispose
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: CodedOutputStream.Dispose()
+  fullName: Google.Protobuf.CodedOutputStream.Dispose()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Dispose
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 705
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nFlushes any buffered data and optionally closes the underlying stream, if any.\n"
+  remarks: "\n<p>\nBy default, any underlying stream is closed by this method. To configure this behaviour,\nuse a constructor overload with a <code>leaveOpen</code> parameter. If this instance does not\nhave an underlying stream, this method does nothing.\n</p>\n<p>\nFor the sake of efficiency, calling this method does not prevent future write calls - but\nif a later write ends up writing to a stream which has been disposed, that is likely to\nfail. It is recommend that you not call any other methods after this.\n</p>\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Google.Protobuf.CodedOutputStream.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.Flush
+  commentId: M:Google.Protobuf.CodedOutputStream.Flush
+  id: Flush
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: Flush()
+  nameWithType: CodedOutputStream.Flush()
+  fullName: Google.Protobuf.CodedOutputStream.Flush()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Flush
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 717
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nFlushes any buffered data to the underlying stream (if there is one).\n"
+  example: []
+  syntax:
+    content: public void Flush()
+    content.vb: Public Sub Flush
+  overload: Google.Protobuf.CodedOutputStream.Flush*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.CheckNoSpaceLeft
+  commentId: M:Google.Protobuf.CodedOutputStream.CheckNoSpaceLeft
+  id: CheckNoSpaceLeft
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: CheckNoSpaceLeft()
+  nameWithType: CodedOutputStream.CheckNoSpaceLeft()
+  fullName: Google.Protobuf.CodedOutputStream.CheckNoSpaceLeft()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CheckNoSpaceLeft
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 731
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nVerifies that SpaceLeft returns zero. It's common to create a byte array\nthat is exactly big enough to hold a message, then write to it with\na CodedOutputStream. Calling CheckNoSpaceLeft after writing verifies that\nthe message was actually as big as expected, which can help bugs.\n"
+  example: []
+  syntax:
+    content: public void CheckNoSpaceLeft()
+    content.vb: Public Sub CheckNoSpaceLeft
+  overload: Google.Protobuf.CodedOutputStream.CheckNoSpaceLeft*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedOutputStream.SpaceLeft
+  commentId: P:Google.Protobuf.CodedOutputStream.SpaceLeft
+  id: SpaceLeft
+  parent: Google.Protobuf.CodedOutputStream
+  langs:
+  - csharp
+  - vb
+  name: SpaceLeft
+  nameWithType: CodedOutputStream.SpaceLeft
+  fullName: Google.Protobuf.CodedOutputStream.SpaceLeft
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: SpaceLeft
+    path: csharp/src/Google.Protobuf/CodedOutputStream.cs
+    startLine: 743
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nIf writing to a flat array, returns the space left in the array. Otherwise,\nthrows an InvalidOperationException.\n"
+  example: []
+  syntax:
+    content: public int SpaceLeft { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property SpaceLeft As Integer
+  overload: Google.Protobuf.CodedOutputStream.SpaceLeft*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.CodedOutputStream.ComputeDoubleSize*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeDoubleSize
+  isExternal: false
+  name: ComputeDoubleSize
+  nameWithType: CodedOutputStream.ComputeDoubleSize
+  fullName: Google.Protobuf.CodedOutputStream.ComputeDoubleSize
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Protobuf.CodedOutputStream.ComputeFloatSize*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeFloatSize
+  isExternal: false
+  name: ComputeFloatSize
+  nameWithType: CodedOutputStream.ComputeFloatSize
+  fullName: Google.Protobuf.CodedOutputStream.ComputeFloatSize
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Google.Protobuf.CodedOutputStream.ComputeUInt64Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeUInt64Size
+  isExternal: false
+  name: ComputeUInt64Size
+  nameWithType: CodedOutputStream.ComputeUInt64Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeUInt64Size
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: Google.Protobuf.CodedOutputStream.ComputeInt64Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeInt64Size
+  isExternal: false
+  name: ComputeInt64Size
+  nameWithType: CodedOutputStream.ComputeInt64Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeInt64Size
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Google.Protobuf.CodedOutputStream.ComputeInt32Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeInt32Size
+  isExternal: false
+  name: ComputeInt32Size
+  nameWithType: CodedOutputStream.ComputeInt32Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeInt32Size
+- uid: Google.Protobuf.CodedOutputStream.ComputeFixed64Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeFixed64Size
+  isExternal: false
+  name: ComputeFixed64Size
+  nameWithType: CodedOutputStream.ComputeFixed64Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeFixed64Size
+- uid: Google.Protobuf.CodedOutputStream.ComputeFixed32Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeFixed32Size
+  isExternal: false
+  name: ComputeFixed32Size
+  nameWithType: CodedOutputStream.ComputeFixed32Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeFixed32Size
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: Google.Protobuf.CodedOutputStream.ComputeBoolSize*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeBoolSize
+  isExternal: false
+  name: ComputeBoolSize
+  nameWithType: CodedOutputStream.ComputeBoolSize
+  fullName: Google.Protobuf.CodedOutputStream.ComputeBoolSize
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Google.Protobuf.CodedOutputStream.ComputeStringSize*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeStringSize
+  isExternal: false
+  name: ComputeStringSize
+  nameWithType: CodedOutputStream.ComputeStringSize
+  fullName: Google.Protobuf.CodedOutputStream.ComputeStringSize
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.CodedOutputStream.ComputeGroupSize*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeGroupSize
+  isExternal: false
+  name: ComputeGroupSize
+  nameWithType: CodedOutputStream.ComputeGroupSize
+  fullName: Google.Protobuf.CodedOutputStream.ComputeGroupSize
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: Google.Protobuf.CodedOutputStream.ComputeMessageSize*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeMessageSize
+  isExternal: false
+  name: ComputeMessageSize
+  nameWithType: CodedOutputStream.ComputeMessageSize
+  fullName: Google.Protobuf.CodedOutputStream.ComputeMessageSize
+- uid: Google.Protobuf.CodedOutputStream.ComputeBytesSize*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeBytesSize
+  isExternal: false
+  name: ComputeBytesSize
+  nameWithType: CodedOutputStream.ComputeBytesSize
+  fullName: Google.Protobuf.CodedOutputStream.ComputeBytesSize
+- uid: Google.Protobuf.ByteString
+  commentId: T:Google.Protobuf.ByteString
+  parent: Google.Protobuf
+  isExternal: false
+  name: ByteString
+  nameWithType: ByteString
+  fullName: Google.Protobuf.ByteString
+- uid: Google.Protobuf.CodedOutputStream.ComputeUInt32Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeUInt32Size
+  isExternal: false
+  name: ComputeUInt32Size
+  nameWithType: CodedOutputStream.ComputeUInt32Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeUInt32Size
+- uid: Google.Protobuf.CodedOutputStream.ComputeEnumSize*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeEnumSize
+  isExternal: false
+  name: ComputeEnumSize
+  nameWithType: CodedOutputStream.ComputeEnumSize
+  fullName: Google.Protobuf.CodedOutputStream.ComputeEnumSize
+- uid: Google.Protobuf.CodedOutputStream.ComputeSFixed32Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeSFixed32Size
+  isExternal: false
+  name: ComputeSFixed32Size
+  nameWithType: CodedOutputStream.ComputeSFixed32Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeSFixed32Size
+- uid: Google.Protobuf.CodedOutputStream.ComputeSFixed64Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeSFixed64Size
+  isExternal: false
+  name: ComputeSFixed64Size
+  nameWithType: CodedOutputStream.ComputeSFixed64Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeSFixed64Size
+- uid: Google.Protobuf.CodedOutputStream.ComputeSInt32Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeSInt32Size
+  isExternal: false
+  name: ComputeSInt32Size
+  nameWithType: CodedOutputStream.ComputeSInt32Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeSInt32Size
+- uid: Google.Protobuf.CodedOutputStream.ComputeSInt64Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeSInt64Size
+  isExternal: false
+  name: ComputeSInt64Size
+  nameWithType: CodedOutputStream.ComputeSInt64Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeSInt64Size
+- uid: Google.Protobuf.CodedOutputStream.WriteLength(System.Int32)
+  commentId: M:Google.Protobuf.CodedOutputStream.WriteLength(System.Int32)
+- uid: Google.Protobuf.CodedOutputStream.ComputeLengthSize*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeLengthSize
+  isExternal: false
+  name: ComputeLengthSize
+  nameWithType: CodedOutputStream.ComputeLengthSize
+  fullName: Google.Protobuf.CodedOutputStream.ComputeLengthSize
+- uid: Google.Protobuf.CodedOutputStream.ComputeRawVarint32Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeRawVarint32Size
+  isExternal: false
+  name: ComputeRawVarint32Size
+  nameWithType: CodedOutputStream.ComputeRawVarint32Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeRawVarint32Size
+- uid: Google.Protobuf.CodedOutputStream.ComputeRawVarint64Size*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeRawVarint64Size
+  isExternal: false
+  name: ComputeRawVarint64Size
+  nameWithType: CodedOutputStream.ComputeRawVarint64Size
+  fullName: Google.Protobuf.CodedOutputStream.ComputeRawVarint64Size
+- uid: Google.Protobuf.CodedOutputStream.ComputeTagSize*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.ComputeTagSize
+  isExternal: false
+  name: ComputeTagSize
+  nameWithType: CodedOutputStream.ComputeTagSize
+  fullName: Google.Protobuf.CodedOutputStream.ComputeTagSize
+- uid: Google.Protobuf.CodedOutputStream.#ctor*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.#ctor
+  isExternal: false
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream.CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream.CodedOutputStream
+- uid: System.Byte[]
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: false
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+- uid: Google.Protobuf.CodedOutputStream.Position*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.Position
+  isExternal: false
+  name: Position
+  nameWithType: CodedOutputStream.Position
+  fullName: Google.Protobuf.CodedOutputStream.Position
+- uid: Google.Protobuf.CodedOutputStream.WriteDouble*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteDouble
+  isExternal: false
+  name: WriteDouble
+  nameWithType: CodedOutputStream.WriteDouble
+  fullName: Google.Protobuf.CodedOutputStream.WriteDouble
+- uid: Google.Protobuf.CodedOutputStream.WriteFloat*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteFloat
+  isExternal: false
+  name: WriteFloat
+  nameWithType: CodedOutputStream.WriteFloat
+  fullName: Google.Protobuf.CodedOutputStream.WriteFloat
+- uid: Google.Protobuf.CodedOutputStream.WriteUInt64*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteUInt64
+  isExternal: false
+  name: WriteUInt64
+  nameWithType: CodedOutputStream.WriteUInt64
+  fullName: Google.Protobuf.CodedOutputStream.WriteUInt64
+- uid: Google.Protobuf.CodedOutputStream.WriteInt64*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteInt64
+  isExternal: false
+  name: WriteInt64
+  nameWithType: CodedOutputStream.WriteInt64
+  fullName: Google.Protobuf.CodedOutputStream.WriteInt64
+- uid: Google.Protobuf.CodedOutputStream.WriteInt32*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteInt32
+  isExternal: false
+  name: WriteInt32
+  nameWithType: CodedOutputStream.WriteInt32
+  fullName: Google.Protobuf.CodedOutputStream.WriteInt32
+- uid: Google.Protobuf.CodedOutputStream.WriteFixed64*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteFixed64
+  isExternal: false
+  name: WriteFixed64
+  nameWithType: CodedOutputStream.WriteFixed64
+  fullName: Google.Protobuf.CodedOutputStream.WriteFixed64
+- uid: Google.Protobuf.CodedOutputStream.WriteFixed32*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteFixed32
+  isExternal: false
+  name: WriteFixed32
+  nameWithType: CodedOutputStream.WriteFixed32
+  fullName: Google.Protobuf.CodedOutputStream.WriteFixed32
+- uid: Google.Protobuf.CodedOutputStream.WriteBool*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteBool
+  isExternal: false
+  name: WriteBool
+  nameWithType: CodedOutputStream.WriteBool
+  fullName: Google.Protobuf.CodedOutputStream.WriteBool
+- uid: Google.Protobuf.CodedOutputStream.WriteString*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteString
+  isExternal: false
+  name: WriteString
+  nameWithType: CodedOutputStream.WriteString
+  fullName: Google.Protobuf.CodedOutputStream.WriteString
+- uid: Google.Protobuf.CodedOutputStream.WriteMessage*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteMessage
+  isExternal: false
+  name: WriteMessage
+  nameWithType: CodedOutputStream.WriteMessage
+  fullName: Google.Protobuf.CodedOutputStream.WriteMessage
+- uid: Google.Protobuf.CodedOutputStream.WriteBytes*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteBytes
+  isExternal: false
+  name: WriteBytes
+  nameWithType: CodedOutputStream.WriteBytes
+  fullName: Google.Protobuf.CodedOutputStream.WriteBytes
+- uid: Google.Protobuf.CodedOutputStream.WriteUInt32*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteUInt32
+  isExternal: false
+  name: WriteUInt32
+  nameWithType: CodedOutputStream.WriteUInt32
+  fullName: Google.Protobuf.CodedOutputStream.WriteUInt32
+- uid: Google.Protobuf.CodedOutputStream.WriteEnum*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteEnum
+  isExternal: false
+  name: WriteEnum
+  nameWithType: CodedOutputStream.WriteEnum
+  fullName: Google.Protobuf.CodedOutputStream.WriteEnum
+- uid: Google.Protobuf.CodedOutputStream.WriteSFixed32*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteSFixed32
+  isExternal: false
+  name: WriteSFixed32
+  nameWithType: CodedOutputStream.WriteSFixed32
+  fullName: Google.Protobuf.CodedOutputStream.WriteSFixed32
+- uid: Google.Protobuf.CodedOutputStream.WriteSFixed64*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteSFixed64
+  isExternal: false
+  name: WriteSFixed64
+  nameWithType: CodedOutputStream.WriteSFixed64
+  fullName: Google.Protobuf.CodedOutputStream.WriteSFixed64
+- uid: Google.Protobuf.CodedOutputStream.WriteSInt32*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteSInt32
+  isExternal: false
+  name: WriteSInt32
+  nameWithType: CodedOutputStream.WriteSInt32
+  fullName: Google.Protobuf.CodedOutputStream.WriteSInt32
+- uid: Google.Protobuf.CodedOutputStream.WriteSInt64*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteSInt64
+  isExternal: false
+  name: WriteSInt64
+  nameWithType: CodedOutputStream.WriteSInt64
+  fullName: Google.Protobuf.CodedOutputStream.WriteSInt64
+- uid: Google.Protobuf.CodedOutputStream.WriteLength*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteLength
+  isExternal: false
+  name: WriteLength
+  nameWithType: CodedOutputStream.WriteLength
+  fullName: Google.Protobuf.CodedOutputStream.WriteLength
+- uid: Google.Protobuf.CodedOutputStream.WriteTag*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteTag
+  isExternal: false
+  name: WriteTag
+  nameWithType: CodedOutputStream.WriteTag
+  fullName: Google.Protobuf.CodedOutputStream.WriteTag
+- uid: Google.Protobuf.WireFormat.WireType
+  commentId: T:Google.Protobuf.WireFormat.WireType
+  parent: Google.Protobuf
+  isExternal: false
+  name: WireFormat.WireType
+  nameWithType: WireFormat.WireType
+  fullName: Google.Protobuf.WireFormat.WireType
+- uid: Google.Protobuf.CodedOutputStream.WriteRawTag*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.WriteRawTag
+  isExternal: false
+  name: WriteRawTag
+  nameWithType: CodedOutputStream.WriteRawTag
+  fullName: Google.Protobuf.CodedOutputStream.WriteRawTag
+- uid: System.Byte
+  commentId: T:System.Byte
+  parent: System
+  isExternal: true
+  name: Byte
+  nameWithType: Byte
+  fullName: System.Byte
+- uid: Google.Protobuf.CodedOutputStream.Dispose*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: CodedOutputStream.Dispose
+  fullName: Google.Protobuf.CodedOutputStream.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream.Flush*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.Flush
+  isExternal: false
+  name: Flush
+  nameWithType: CodedOutputStream.Flush
+  fullName: Google.Protobuf.CodedOutputStream.Flush
+- uid: Google.Protobuf.CodedOutputStream.CheckNoSpaceLeft*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.CheckNoSpaceLeft
+  isExternal: false
+  name: CheckNoSpaceLeft
+  nameWithType: CodedOutputStream.CheckNoSpaceLeft
+  fullName: Google.Protobuf.CodedOutputStream.CheckNoSpaceLeft
+- uid: Google.Protobuf.CodedOutputStream.SpaceLeft*
+  commentId: Overload:Google.Protobuf.CodedOutputStream.SpaceLeft
+  isExternal: false
+  name: SpaceLeft
+  nameWithType: CodedOutputStream.SpaceLeft
+  fullName: Google.Protobuf.CodedOutputStream.SpaceLeft

@@ -1,0 +1,1068 @@
+### YamlMime:ManagedReference
+items:
+- uid: Grpc.Core.Channel
+  commentId: T:Grpc.Core.Channel
+  id: Channel
+  parent: Grpc.Core
+  children:
+  - Grpc.Core.Channel.#ctor(System.String,Grpc.Core.ChannelCredentials)
+  - Grpc.Core.Channel.#ctor(System.String,Grpc.Core.ChannelCredentials,System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})
+  - Grpc.Core.Channel.#ctor(System.String,System.Int32,Grpc.Core.ChannelCredentials)
+  - Grpc.Core.Channel.#ctor(System.String,System.Int32,Grpc.Core.ChannelCredentials,System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})
+  - Grpc.Core.Channel.ConnectAsync(System.Nullable{System.DateTime})
+  - Grpc.Core.Channel.ResolvedTarget
+  - Grpc.Core.Channel.ShutdownAsync
+  - Grpc.Core.Channel.ShutdownToken
+  - Grpc.Core.Channel.State
+  - Grpc.Core.Channel.Target
+  - Grpc.Core.Channel.WaitForStateChangedAsync(Grpc.Core.ChannelState,System.Nullable{System.DateTime})
+  langs:
+  - csharp
+  - vb
+  name: Channel
+  nameWithType: Channel
+  fullName: Grpc.Core.Channel
+  type: Class
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Channel
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 47
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nRepresents a gRPC channel. Channels are an abstraction of long-lived connections to remote servers.\nMore client objects can reuse the same channel. Creating a channel is an expensive operation compared to invoking\na remote call so in general you should reuse a single channel for as many calls as possible.\n"
+  example: []
+  syntax:
+    content: public class Channel
+    content.vb: Public Class Channel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Grpc.Core.Channel.#ctor(System.String,Grpc.Core.ChannelCredentials)
+  commentId: M:Grpc.Core.Channel.#ctor(System.String,Grpc.Core.ChannelCredentials)
+  id: '#ctor(System.String,Grpc.Core.ChannelCredentials)'
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: Channel(String, ChannelCredentials)
+  nameWithType: Channel.Channel(String, ChannelCredentials)
+  fullName: Grpc.Core.Channel.Channel(System.String, Grpc.Core.ChannelCredentials)
+  type: Constructor
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: .ctor
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 69
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nCreates a channel that connects to a specific host.\nPort will default to 80 for an unsecure channel and to 443 for a secure channel.\n"
+  example: []
+  syntax:
+    content: public Channel(string target, ChannelCredentials credentials)
+    parameters:
+    - id: target
+      type: System.String
+      description: Target of the channel.
+    - id: credentials
+      type: Grpc.Core.ChannelCredentials
+      description: Credentials to secure the channel.
+    content.vb: Public Sub New(target As String, credentials As ChannelCredentials)
+  overload: Grpc.Core.Channel.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Channel.#ctor(System.String,Grpc.Core.ChannelCredentials,System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})
+  commentId: M:Grpc.Core.Channel.#ctor(System.String,Grpc.Core.ChannelCredentials,System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})
+  id: '#ctor(System.String,Grpc.Core.ChannelCredentials,System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})'
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: Channel(String, ChannelCredentials, IEnumerable<ChannelOption>)
+  nameWithType: Channel.Channel(String, ChannelCredentials, IEnumerable<ChannelOption>)
+  fullName: Grpc.Core.Channel.Channel(System.String, Grpc.Core.ChannelCredentials, System.Collections.Generic.IEnumerable<Grpc.Core.ChannelOption>)
+  type: Constructor
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: .ctor
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 81
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nCreates a channel that connects to a specific host.\nPort will default to 80 for an unsecure channel and to 443 for a secure channel.\n"
+  example: []
+  syntax:
+    content: public Channel(string target, ChannelCredentials credentials, IEnumerable<ChannelOption> options)
+    parameters:
+    - id: target
+      type: System.String
+      description: Target of the channel.
+    - id: credentials
+      type: Grpc.Core.ChannelCredentials
+      description: Credentials to secure the channel.
+    - id: options
+      type: System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption}
+      description: Channel options.
+    content.vb: Public Sub New(target As String, credentials As ChannelCredentials, options As IEnumerable(Of ChannelOption))
+  overload: Grpc.Core.Channel.#ctor*
+  nameWithType.vb: Channel.Channel(String, ChannelCredentials, IEnumerable(Of ChannelOption))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.Channel.Channel(System.String, Grpc.Core.ChannelCredentials, System.Collections.Generic.IEnumerable(Of Grpc.Core.ChannelOption))
+  name.vb: Channel(String, ChannelCredentials, IEnumerable(Of ChannelOption))
+- uid: Grpc.Core.Channel.#ctor(System.String,System.Int32,Grpc.Core.ChannelCredentials)
+  commentId: M:Grpc.Core.Channel.#ctor(System.String,System.Int32,Grpc.Core.ChannelCredentials)
+  id: '#ctor(System.String,System.Int32,Grpc.Core.ChannelCredentials)'
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: Channel(String, Int32, ChannelCredentials)
+  nameWithType: Channel.Channel(String, Int32, ChannelCredentials)
+  fullName: Grpc.Core.Channel.Channel(System.String, System.Int32, Grpc.Core.ChannelCredentials)
+  type: Constructor
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: .ctor
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 110
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nCreates a channel that connects to a specific host and port.\n"
+  example: []
+  syntax:
+    content: public Channel(string host, int port, ChannelCredentials credentials)
+    parameters:
+    - id: host
+      type: System.String
+      description: The name or IP address of the host.
+    - id: port
+      type: System.Int32
+      description: The port.
+    - id: credentials
+      type: Grpc.Core.ChannelCredentials
+      description: Credentials to secure the channel.
+    content.vb: Public Sub New(host As String, port As Integer, credentials As ChannelCredentials)
+  overload: Grpc.Core.Channel.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Channel.#ctor(System.String,System.Int32,Grpc.Core.ChannelCredentials,System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})
+  commentId: M:Grpc.Core.Channel.#ctor(System.String,System.Int32,Grpc.Core.ChannelCredentials,System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})
+  id: '#ctor(System.String,System.Int32,Grpc.Core.ChannelCredentials,System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption})'
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: Channel(String, Int32, ChannelCredentials, IEnumerable<ChannelOption>)
+  nameWithType: Channel.Channel(String, Int32, ChannelCredentials, IEnumerable<ChannelOption>)
+  fullName: Grpc.Core.Channel.Channel(System.String, System.Int32, Grpc.Core.ChannelCredentials, System.Collections.Generic.IEnumerable<Grpc.Core.ChannelOption>)
+  type: Constructor
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: .ctor
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 122
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nCreates a channel that connects to a specific host and port.\n"
+  example: []
+  syntax:
+    content: public Channel(string host, int port, ChannelCredentials credentials, IEnumerable<ChannelOption> options)
+    parameters:
+    - id: host
+      type: System.String
+      description: The name or IP address of the host.
+    - id: port
+      type: System.Int32
+      description: The port.
+    - id: credentials
+      type: Grpc.Core.ChannelCredentials
+      description: Credentials to secure the channel.
+    - id: options
+      type: System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption}
+      description: Channel options.
+    content.vb: Public Sub New(host As String, port As Integer, credentials As ChannelCredentials, options As IEnumerable(Of ChannelOption))
+  overload: Grpc.Core.Channel.#ctor*
+  nameWithType.vb: Channel.Channel(String, Int32, ChannelCredentials, IEnumerable(Of ChannelOption))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.Channel.Channel(System.String, System.Int32, Grpc.Core.ChannelCredentials, System.Collections.Generic.IEnumerable(Of Grpc.Core.ChannelOption))
+  name.vb: Channel(String, Int32, ChannelCredentials, IEnumerable(Of ChannelOption))
+- uid: Grpc.Core.Channel.State
+  commentId: P:Grpc.Core.Channel.State
+  id: State
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: Channel.State
+  fullName: Grpc.Core.Channel.State
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: State
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 131
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nGets current connectivity state of this channel.\nAfter channel is has been shutdown, <code>ChannelState.Shutdown</code> will be returned.\n"
+  example: []
+  syntax:
+    content: public ChannelState State { get; }
+    parameters: []
+    return:
+      type: Grpc.Core.ChannelState
+    content.vb: Public ReadOnly Property State As ChannelState
+  overload: Grpc.Core.Channel.State*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Grpc.Core.Channel.WaitForStateChangedAsync(Grpc.Core.ChannelState,System.Nullable{System.DateTime})
+  commentId: M:Grpc.Core.Channel.WaitForStateChangedAsync(Grpc.Core.ChannelState,System.Nullable{System.DateTime})
+  id: WaitForStateChangedAsync(Grpc.Core.ChannelState,System.Nullable{System.DateTime})
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: WaitForStateChangedAsync(ChannelState, Nullable<DateTime>)
+  nameWithType: Channel.WaitForStateChangedAsync(ChannelState, Nullable<DateTime>)
+  fullName: Grpc.Core.Channel.WaitForStateChangedAsync(Grpc.Core.ChannelState, System.Nullable<System.DateTime>)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: WaitForStateChangedAsync
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 144
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nReturned tasks completes once channel state has become different from \ngiven lastObservedState. \nIf deadline is reached or and error occurs, returned task is cancelled.\n"
+  example: []
+  syntax:
+    content: public Task WaitForStateChangedAsync(ChannelState lastObservedState, DateTime? deadline = null)
+    parameters:
+    - id: lastObservedState
+      type: Grpc.Core.ChannelState
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function WaitForStateChangedAsync(lastObservedState As ChannelState, deadline As Date? = Nothing) As Task
+  overload: Grpc.Core.Channel.WaitForStateChangedAsync*
+  nameWithType.vb: Channel.WaitForStateChangedAsync(ChannelState, Nullable(Of DateTime))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.Channel.WaitForStateChangedAsync(Grpc.Core.ChannelState, System.Nullable(Of System.DateTime))
+  name.vb: WaitForStateChangedAsync(ChannelState, Nullable(Of DateTime))
+- uid: Grpc.Core.Channel.ResolvedTarget
+  commentId: P:Grpc.Core.Channel.ResolvedTarget
+  id: ResolvedTarget
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: ResolvedTarget
+  nameWithType: Channel.ResolvedTarget
+  fullName: Grpc.Core.Channel.ResolvedTarget
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ResolvedTarget
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 166
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: Resolved address of the remote endpoint in URI format.
+  example: []
+  syntax:
+    content: public string ResolvedTarget { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ResolvedTarget As String
+  overload: Grpc.Core.Channel.ResolvedTarget*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Grpc.Core.Channel.Target
+  commentId: P:Grpc.Core.Channel.Target
+  id: Target
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: Target
+  nameWithType: Channel.Target
+  fullName: Grpc.Core.Channel.Target
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Target
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 175
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: The original target used to create the channel.
+  example: []
+  syntax:
+    content: public string Target { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Target As String
+  overload: Grpc.Core.Channel.Target*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Grpc.Core.Channel.ShutdownToken
+  commentId: P:Grpc.Core.Channel.ShutdownToken
+  id: ShutdownToken
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: ShutdownToken
+  nameWithType: Channel.ShutdownToken
+  fullName: Grpc.Core.Channel.ShutdownToken
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ShutdownToken
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 186
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nReturns a token that gets cancelled once <code>ShutdownAsync</code> is invoked.\n"
+  example: []
+  syntax:
+    content: public CancellationToken ShutdownToken { get; }
+    parameters: []
+    return:
+      type: System.Threading.CancellationToken
+    content.vb: Public ReadOnly Property ShutdownToken As CancellationToken
+  overload: Grpc.Core.Channel.ShutdownToken*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Grpc.Core.Channel.ConnectAsync(System.Nullable{System.DateTime})
+  commentId: M:Grpc.Core.Channel.ConnectAsync(System.Nullable{System.DateTime})
+  id: ConnectAsync(System.Nullable{System.DateTime})
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: ConnectAsync(Nullable<DateTime>)
+  nameWithType: Channel.ConnectAsync(Nullable<DateTime>)
+  fullName: Grpc.Core.Channel.ConnectAsync(System.Nullable<System.DateTime>)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ConnectAsync
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 202
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nAllows explicitly requesting channel to connect without starting an RPC.\nReturned task completes once state Ready was seen. If the deadline is reached,\nor channel enters the Shutdown state, the task is cancelled.\nThere is no need to call this explicitly unless your use case requires that.\nStarting an RPC on a new channel will request connection implicitly.\n"
+  example: []
+  syntax:
+    content: public Task ConnectAsync(DateTime? deadline = null)
+    parameters:
+    - id: deadline
+      type: System.Nullable{System.DateTime}
+      description: The deadline. <code>null</code> indicates no deadline.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ConnectAsync(deadline As Date? = Nothing) As Task
+  overload: Grpc.Core.Channel.ConnectAsync*
+  nameWithType.vb: Channel.ConnectAsync(Nullable(Of DateTime))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.Channel.ConnectAsync(System.Nullable(Of System.DateTime))
+  name.vb: ConnectAsync(Nullable(Of DateTime))
+- uid: Grpc.Core.Channel.ShutdownAsync
+  commentId: M:Grpc.Core.Channel.ShutdownAsync
+  id: ShutdownAsync
+  parent: Grpc.Core.Channel
+  langs:
+  - csharp
+  - vb
+  name: ShutdownAsync()
+  nameWithType: Channel.ShutdownAsync()
+  fullName: Grpc.Core.Channel.ShutdownAsync()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Channel.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ShutdownAsync
+    path: src/csharp/Grpc.Core/Channel.cs
+    startLine: 227
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nShuts down the channel cleanly. It is strongly recommended to shutdown\nall previously created channels before exiting from the process.\n"
+  remarks: "\nThis method doesn't wait for all calls on this channel to finish (nor does\nit explicitly cancel all outstanding calls). It is user's responsibility to make sure\nall the calls on this channel have finished (successfully or with an error)\nbefore shutting down the channel to ensure channel shutdown won't impact\nthe outcome of those remote calls.\n"
+  example: []
+  syntax:
+    content: public Task ShutdownAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function ShutdownAsync As Task
+  overload: Grpc.Core.Channel.ShutdownAsync*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Grpc.Core.Channel.#ctor*
+  commentId: Overload:Grpc.Core.Channel.#ctor
+  isExternal: false
+  name: Channel
+  nameWithType: Channel.Channel
+  fullName: Grpc.Core.Channel.Channel
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Grpc.Core.ChannelCredentials
+  commentId: T:Grpc.Core.ChannelCredentials
+  parent: Grpc.Core
+  isExternal: false
+  name: ChannelCredentials
+  nameWithType: ChannelCredentials
+  fullName: Grpc.Core.ChannelCredentials
+- uid: System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption}
+  commentId: T:System.Collections.Generic.IEnumerable{Grpc.Core.ChannelOption}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<ChannelOption>
+  nameWithType: IEnumerable<ChannelOption>
+  fullName: System.Collections.Generic.IEnumerable<Grpc.Core.ChannelOption>
+  nameWithType.vb: IEnumerable(Of ChannelOption)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Grpc.Core.ChannelOption)
+  name.vb: IEnumerable(Of ChannelOption)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Grpc.Core.ChannelOption
+    name: ChannelOption
+    nameWithType: ChannelOption
+    fullName: Grpc.Core.ChannelOption
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Grpc.Core.ChannelOption
+    name: ChannelOption
+    nameWithType: ChannelOption
+    fullName: Grpc.Core.ChannelOption
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Grpc.Core.Channel.State*
+  commentId: Overload:Grpc.Core.Channel.State
+  isExternal: false
+  name: State
+  nameWithType: Channel.State
+  fullName: Grpc.Core.Channel.State
+- uid: Grpc.Core.ChannelState
+  commentId: T:Grpc.Core.ChannelState
+  parent: Grpc.Core
+  isExternal: false
+  name: ChannelState
+  nameWithType: ChannelState
+  fullName: Grpc.Core.ChannelState
+- uid: Grpc.Core.Channel.WaitForStateChangedAsync*
+  commentId: Overload:Grpc.Core.Channel.WaitForStateChangedAsync
+  isExternal: false
+  name: WaitForStateChangedAsync
+  nameWithType: Channel.WaitForStateChangedAsync
+  fullName: Grpc.Core.Channel.WaitForStateChangedAsync
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<DateTime>
+  nameWithType: Nullable<DateTime>
+  fullName: System.Nullable<System.DateTime>
+  nameWithType.vb: Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of System.DateTime)
+  name.vb: Nullable(Of DateTime)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Grpc.Core.Channel.ResolvedTarget*
+  commentId: Overload:Grpc.Core.Channel.ResolvedTarget
+  isExternal: false
+  name: ResolvedTarget
+  nameWithType: Channel.ResolvedTarget
+  fullName: Grpc.Core.Channel.ResolvedTarget
+- uid: Grpc.Core.Channel.Target*
+  commentId: Overload:Grpc.Core.Channel.Target
+  isExternal: false
+  name: Target
+  nameWithType: Channel.Target
+  fullName: Grpc.Core.Channel.Target
+- uid: Grpc.Core.Channel.ShutdownToken*
+  commentId: Overload:Grpc.Core.Channel.ShutdownToken
+  isExternal: false
+  name: ShutdownToken
+  nameWithType: Channel.ShutdownToken
+  fullName: Grpc.Core.Channel.ShutdownToken
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: false
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: Grpc.Core.Channel.ConnectAsync*
+  commentId: Overload:Grpc.Core.Channel.ConnectAsync
+  isExternal: false
+  name: ConnectAsync
+  nameWithType: Channel.ConnectAsync
+  fullName: Grpc.Core.Channel.ConnectAsync
+- uid: Grpc.Core.Channel.ShutdownAsync*
+  commentId: Overload:Grpc.Core.Channel.ShutdownAsync
+  isExternal: false
+  name: ShutdownAsync
+  nameWithType: Channel.ShutdownAsync
+  fullName: Grpc.Core.Channel.ShutdownAsync

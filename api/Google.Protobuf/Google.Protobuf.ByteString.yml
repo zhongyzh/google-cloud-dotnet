@@ -1,0 +1,1937 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.ByteString
+  commentId: T:Google.Protobuf.ByteString
+  id: ByteString
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.ByteString.CopyFrom(System.Byte[])
+  - Google.Protobuf.ByteString.CopyFrom(System.Byte[],System.Int32,System.Int32)
+  - Google.Protobuf.ByteString.CopyFrom(System.String,System.Text.Encoding)
+  - Google.Protobuf.ByteString.CopyFromUtf8(System.String)
+  - Google.Protobuf.ByteString.CopyTo(System.Byte[],System.Int32)
+  - Google.Protobuf.ByteString.CreateCodedInput
+  - Google.Protobuf.ByteString.Empty
+  - Google.Protobuf.ByteString.Equals(Google.Protobuf.ByteString)
+  - Google.Protobuf.ByteString.Equals(System.Object)
+  - Google.Protobuf.ByteString.FromBase64(System.String)
+  - Google.Protobuf.ByteString.GetEnumerator
+  - Google.Protobuf.ByteString.GetHashCode
+  - Google.Protobuf.ByteString.IsEmpty
+  - Google.Protobuf.ByteString.Item(System.Int32)
+  - Google.Protobuf.ByteString.Length
+  - Google.Protobuf.ByteString.op_Equality(Google.Protobuf.ByteString,Google.Protobuf.ByteString)
+  - Google.Protobuf.ByteString.op_Inequality(Google.Protobuf.ByteString,Google.Protobuf.ByteString)
+  - Google.Protobuf.ByteString.System#Collections#IEnumerable#GetEnumerator
+  - Google.Protobuf.ByteString.ToBase64
+  - Google.Protobuf.ByteString.ToByteArray
+  - Google.Protobuf.ByteString.ToString(System.Text.Encoding)
+  - Google.Protobuf.ByteString.ToStringUtf8
+  - Google.Protobuf.ByteString.WriteTo(System.IO.Stream)
+  langs:
+  - csharp
+  - vb
+  name: ByteString
+  nameWithType: ByteString
+  fullName: Google.Protobuf.ByteString
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ByteString
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 43
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nImmutable array of bytes.\n"
+  example: []
+  syntax:
+    content: 'public sealed class ByteString : IEnumerable<byte>, IEnumerable, IEquatable<ByteString>'
+    content.vb: >-
+      Public NotInheritable Class ByteString
+          Implements IEnumerable(Of Byte), IEnumerable, IEquatable(Of ByteString)
+  inheritance:
+  - System.Object
+  implements:
+  - System.Collections.Generic.IEnumerable{System.Byte}
+  - System.Collections.IEnumerable
+  - System.IEquatable{Google.Protobuf.ByteString}
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.ByteString.Empty
+  commentId: P:Google.Protobuf.ByteString.Empty
+  id: Empty
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: Empty
+  nameWithType: ByteString.Empty
+  fullName: Google.Protobuf.ByteString.Empty
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Empty
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 93
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns an empty ByteString.\n"
+  example: []
+  syntax:
+    content: public static ByteString Empty { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.ByteString
+    content.vb: Public Shared ReadOnly Property Empty As ByteString
+  overload: Google.Protobuf.ByteString.Empty*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Protobuf.ByteString.Length
+  commentId: P:Google.Protobuf.ByteString.Length
+  id: Length
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: ByteString.Length
+  fullName: Google.Protobuf.ByteString.Length
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Length
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 101
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns the length of this ByteString in bytes.\n"
+  example: []
+  syntax:
+    content: public int Length { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Length As Integer
+  overload: Google.Protobuf.ByteString.Length*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.ByteString.IsEmpty
+  commentId: P:Google.Protobuf.ByteString.IsEmpty
+  id: IsEmpty
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: IsEmpty
+  nameWithType: ByteString.IsEmpty
+  fullName: Google.Protobuf.ByteString.IsEmpty
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: IsEmpty
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 109
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns <code>true</code> if this byte string is empty, <code>false</code> otherwise.\n"
+  example: []
+  syntax:
+    content: public bool IsEmpty { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsEmpty As Boolean
+  overload: Google.Protobuf.ByteString.IsEmpty*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.ByteString.ToByteArray
+  commentId: M:Google.Protobuf.ByteString.ToByteArray
+  id: ToByteArray
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: ToByteArray()
+  nameWithType: ByteString.ToByteArray()
+  fullName: Google.Protobuf.ByteString.ToByteArray()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToByteArray
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 119
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nConverts this <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> into a byte array.\n"
+  remarks: The data is copied - changes to the returned array will not be reflected in this <code>ByteString</code>.
+  example: []
+  syntax:
+    content: public byte[] ToByteArray()
+    return:
+      type: System.Byte[]
+      description: A byte array with the same data as this <code>ByteString</code>.
+    content.vb: Public Function ToByteArray As Byte()
+  overload: Google.Protobuf.ByteString.ToByteArray*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.ByteString.ToBase64
+  commentId: M:Google.Protobuf.ByteString.ToBase64
+  id: ToBase64
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: ToBase64()
+  nameWithType: ByteString.ToBase64()
+  fullName: Google.Protobuf.ByteString.ToBase64()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToBase64
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 128
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nConverts this <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> into a standard base64 representation.\n"
+  example: []
+  syntax:
+    content: public string ToBase64()
+    return:
+      type: System.String
+      description: A base64 representation of this <code>ByteString</code>.
+    content.vb: Public Function ToBase64 As String
+  overload: Google.Protobuf.ByteString.ToBase64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.ByteString.FromBase64(System.String)
+  commentId: M:Google.Protobuf.ByteString.FromBase64(System.String)
+  id: FromBase64(System.String)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: FromBase64(String)
+  nameWithType: ByteString.FromBase64(String)
+  fullName: Google.Protobuf.ByteString.FromBase64(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FromBase64
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 136
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nConstructs a <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> from the Base64 Encoded String.\n"
+  example: []
+  syntax:
+    content: public static ByteString FromBase64(string bytes)
+    parameters:
+    - id: bytes
+      type: System.String
+    return:
+      type: Google.Protobuf.ByteString
+    content.vb: Public Shared Function FromBase64(bytes As String) As ByteString
+  overload: Google.Protobuf.ByteString.FromBase64*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.ByteString.CopyFrom(System.Byte[])
+  commentId: M:Google.Protobuf.ByteString.CopyFrom(System.Byte[])
+  id: CopyFrom(System.Byte[])
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: CopyFrom(Byte[])
+  nameWithType: ByteString.CopyFrom(Byte[])
+  fullName: Google.Protobuf.ByteString.CopyFrom(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CopyFrom
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 150
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nConstructs a <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> from the given array. The contents\nare copied, so further modifications to the array will not\nbe reflected in the returned ByteString.\nThis method can also be invoked in <code>ByteString.CopyFrom(0xaa, 0xbb, ...)</code> form\nwhich is primarily useful for testing.\n"
+  example: []
+  syntax:
+    content: public static ByteString CopyFrom(params byte[] bytes)
+    parameters:
+    - id: bytes
+      type: System.Byte[]
+    return:
+      type: Google.Protobuf.ByteString
+    content.vb: Public Shared Function CopyFrom(ParamArray bytes As Byte()) As ByteString
+  overload: Google.Protobuf.ByteString.CopyFrom*
+  nameWithType.vb: ByteString.CopyFrom(Byte())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Protobuf.ByteString.CopyFrom(System.Byte())
+  name.vb: CopyFrom(Byte())
+- uid: Google.Protobuf.ByteString.CopyFrom(System.Byte[],System.Int32,System.Int32)
+  commentId: M:Google.Protobuf.ByteString.CopyFrom(System.Byte[],System.Int32,System.Int32)
+  id: CopyFrom(System.Byte[],System.Int32,System.Int32)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: CopyFrom(Byte[], Int32, Int32)
+  nameWithType: ByteString.CopyFrom(Byte[], Int32, Int32)
+  fullName: Google.Protobuf.ByteString.CopyFrom(System.Byte[], System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CopyFrom
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 158
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nConstructs a <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> from a portion of a byte array.\n"
+  example: []
+  syntax:
+    content: public static ByteString CopyFrom(byte[] bytes, int offset, int count)
+    parameters:
+    - id: bytes
+      type: System.Byte[]
+    - id: offset
+      type: System.Int32
+    - id: count
+      type: System.Int32
+    return:
+      type: Google.Protobuf.ByteString
+    content.vb: Public Shared Function CopyFrom(bytes As Byte(), offset As Integer, count As Integer) As ByteString
+  overload: Google.Protobuf.ByteString.CopyFrom*
+  nameWithType.vb: ByteString.CopyFrom(Byte(), Int32, Int32)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Protobuf.ByteString.CopyFrom(System.Byte(), System.Int32, System.Int32)
+  name.vb: CopyFrom(Byte(), Int32, Int32)
+- uid: Google.Protobuf.ByteString.CopyFrom(System.String,System.Text.Encoding)
+  commentId: M:Google.Protobuf.ByteString.CopyFrom(System.String,System.Text.Encoding)
+  id: CopyFrom(System.String,System.Text.Encoding)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: CopyFrom(String, Encoding)
+  nameWithType: ByteString.CopyFrom(String, Encoding)
+  fullName: Google.Protobuf.ByteString.CopyFrom(System.String, System.Text.Encoding)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CopyFrom
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 169
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> by encoding the specified text with\nthe given encoding.\n"
+  example: []
+  syntax:
+    content: public static ByteString CopyFrom(string text, Encoding encoding)
+    parameters:
+    - id: text
+      type: System.String
+    - id: encoding
+      type: System.Text.Encoding
+    return:
+      type: Google.Protobuf.ByteString
+    content.vb: Public Shared Function CopyFrom(text As String, encoding As Encoding) As ByteString
+  overload: Google.Protobuf.ByteString.CopyFrom*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.ByteString.CopyFromUtf8(System.String)
+  commentId: M:Google.Protobuf.ByteString.CopyFromUtf8(System.String)
+  id: CopyFromUtf8(System.String)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: CopyFromUtf8(String)
+  nameWithType: ByteString.CopyFromUtf8(String)
+  fullName: Google.Protobuf.ByteString.CopyFromUtf8(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CopyFromUtf8
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 177
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> by encoding the specified text in UTF-8.\n"
+  example: []
+  syntax:
+    content: public static ByteString CopyFromUtf8(string text)
+    parameters:
+    - id: text
+      type: System.String
+    return:
+      type: Google.Protobuf.ByteString
+    content.vb: Public Shared Function CopyFromUtf8(text As String) As ByteString
+  overload: Google.Protobuf.ByteString.CopyFromUtf8*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.ByteString.Item(System.Int32)
+  commentId: P:Google.Protobuf.ByteString.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: Item[Int32]
+  nameWithType: ByteString.Item[Int32]
+  fullName: Google.Protobuf.ByteString.Item[System.Int32]
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: this[]
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 185
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nRetuns the byte at the given index.\n"
+  example: []
+  syntax:
+    content: public byte this[int index] { get; }
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: System.Byte
+    content.vb: Public ReadOnly Property Item(index As Integer) As Byte
+  overload: Google.Protobuf.ByteString.Item*
+  nameWithType.vb: ByteString.Item(Int32)
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Google.Protobuf.ByteString.Item(System.Int32)
+  name.vb: Item(Int32)
+- uid: Google.Protobuf.ByteString.ToString(System.Text.Encoding)
+  commentId: M:Google.Protobuf.ByteString.ToString(System.Text.Encoding)
+  id: ToString(System.Text.Encoding)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: ToString(Encoding)
+  nameWithType: ByteString.ToString(Encoding)
+  fullName: Google.Protobuf.ByteString.ToString(System.Text.Encoding)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToString
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 199
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nConverts this <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> into a string by applying the given encoding.\n"
+  remarks: "\nThis method should only be used to convert binary data which was the result of encoding\ntext with the given encoding.\n"
+  example: []
+  syntax:
+    content: public string ToString(Encoding encoding)
+    parameters:
+    - id: encoding
+      type: System.Text.Encoding
+      description: The encoding to use to decode the binary data into text.
+    return:
+      type: System.String
+      description: The result of decoding the binary data with the given decoding.
+    content.vb: Public Function ToString(encoding As Encoding) As String
+  overload: Google.Protobuf.ByteString.ToString*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.ByteString.ToStringUtf8
+  commentId: M:Google.Protobuf.ByteString.ToStringUtf8
+  id: ToStringUtf8
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: ToStringUtf8()
+  nameWithType: ByteString.ToStringUtf8()
+  fullName: Google.Protobuf.ByteString.ToStringUtf8()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToStringUtf8
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 212
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nConverts this <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> into a string by applying the UTF-8 encoding.\n"
+  remarks: "\nThis method should only be used to convert binary data which was the result of encoding\ntext with UTF-8.\n"
+  example: []
+  syntax:
+    content: public string ToStringUtf8()
+    return:
+      type: System.String
+      description: The result of decoding the binary data with the given decoding.
+    content.vb: Public Function ToStringUtf8 As String
+  overload: Google.Protobuf.ByteString.ToStringUtf8*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.ByteString.GetEnumerator
+  commentId: M:Google.Protobuf.ByteString.GetEnumerator
+  id: GetEnumerator
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: ByteString.GetEnumerator()
+  fullName: Google.Protobuf.ByteString.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: GetEnumerator
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 221
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns an iterator over the bytes in this <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public IEnumerator<byte> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{System.Byte}
+      description: An iterator over the bytes in this object.
+    content.vb: Public Function GetEnumerator As IEnumerator(Of Byte)
+  overload: Google.Protobuf.ByteString.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{System.Byte}.GetEnumerator
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.ByteString.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:Google.Protobuf.ByteString.System#Collections#IEnumerable#GetEnumerator
+  id: System#Collections#IEnumerable#GetEnumerator
+  isEii: true
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: IEnumerable.GetEnumerator()
+  nameWithType: ByteString.IEnumerable.GetEnumerator()
+  fullName: Google.Protobuf.ByteString.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.IEnumerable.GetEnumerator
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 230
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns an iterator over the bytes in this <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: IEnumerator IEnumerable.GetEnumerator()
+    return:
+      type: System.Collections.IEnumerator
+      description: An iterator over the bytes in this object.
+    content.vb: Function System.Collections.IEnumerable.GetEnumerator As IEnumerator Implements IEnumerable.GetEnumerator
+  overload: Google.Protobuf.ByteString.System#Collections#IEnumerable#GetEnumerator*
+  implements:
+  - System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: ByteString.System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+- uid: Google.Protobuf.ByteString.CreateCodedInput
+  commentId: M:Google.Protobuf.ByteString.CreateCodedInput
+  id: CreateCodedInput
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: CreateCodedInput()
+  nameWithType: ByteString.CreateCodedInput()
+  fullName: Google.Protobuf.ByteString.CreateCodedInput()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CreateCodedInput
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 238
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a CodedInputStream from this ByteString's data.\n"
+  example: []
+  syntax:
+    content: public CodedInputStream CreateCodedInput()
+    return:
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Function CreateCodedInput As CodedInputStream
+  overload: Google.Protobuf.ByteString.CreateCodedInput*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.ByteString.op_Equality(Google.Protobuf.ByteString,Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.ByteString.op_Equality(Google.Protobuf.ByteString,Google.Protobuf.ByteString)
+  id: op_Equality(Google.Protobuf.ByteString,Google.Protobuf.ByteString)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: Equality(ByteString, ByteString)
+  nameWithType: ByteString.Equality(ByteString, ByteString)
+  fullName: Google.Protobuf.ByteString.Equality(Google.Protobuf.ByteString, Google.Protobuf.ByteString)
+  type: Operator
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: op_Equality
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 250
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCompares two byte strings for equality.\n"
+  example: []
+  syntax:
+    content: public static bool operator ==(ByteString lhs, ByteString rhs)
+    parameters:
+    - id: lhs
+      type: Google.Protobuf.ByteString
+      description: The first byte string to compare.
+    - id: rhs
+      type: Google.Protobuf.ByteString
+      description: The second byte string to compare.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the byte strings are equal; false otherwise.
+    content.vb: Public Shared Operator =(lhs As ByteString, rhs As ByteString) As Boolean
+  overload: Google.Protobuf.ByteString.op_Equality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.ByteString.op_Inequality(Google.Protobuf.ByteString,Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.ByteString.op_Inequality(Google.Protobuf.ByteString,Google.Protobuf.ByteString)
+  id: op_Inequality(Google.Protobuf.ByteString,Google.Protobuf.ByteString)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: Inequality(ByteString, ByteString)
+  nameWithType: ByteString.Inequality(ByteString, ByteString)
+  fullName: Google.Protobuf.ByteString.Inequality(Google.Protobuf.ByteString, Google.Protobuf.ByteString)
+  type: Operator
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: op_Inequality
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 280
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCompares two byte strings for inequality.\n"
+  example: []
+  syntax:
+    content: public static bool operator !=(ByteString lhs, ByteString rhs)
+    parameters:
+    - id: lhs
+      type: Google.Protobuf.ByteString
+      description: The first byte string to compare.
+    - id: rhs
+      type: Google.Protobuf.ByteString
+      description: The second byte string to compare.
+    return:
+      type: System.Boolean
+      description: <code>false</code> if the byte strings are equal; true otherwise.
+    content.vb: Public Shared Operator <>(lhs As ByteString, rhs As ByteString) As Boolean
+  overload: Google.Protobuf.ByteString.op_Inequality*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.ByteString.Equals(System.Object)
+  commentId: M:Google.Protobuf.ByteString.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: ByteString.Equals(Object)
+  fullName: Google.Protobuf.ByteString.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Equals
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 290
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCompares this byte string with another object.\n"
+  example: []
+  syntax:
+    content: public override bool Equals(object obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare this with.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if <span class="paramref">obj</span> refers to an equal <xref href="Google.Protobuf.ByteString" data-throw-if-not-resolved="false"></xref>; <code>false</code> otherwise.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Protobuf.ByteString.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Protobuf.ByteString.GetHashCode
+  commentId: M:Google.Protobuf.ByteString.GetHashCode
+  id: GetHashCode
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: ByteString.GetHashCode()
+  fullName: Google.Protobuf.ByteString.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: GetHashCode
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 300
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns a hash code for this object. Two equal byte strings\nwill return the same hash code.\n"
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: A hash code for this object.
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Protobuf.ByteString.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Protobuf.ByteString.Equals(Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.ByteString.Equals(Google.Protobuf.ByteString)
+  id: Equals(Google.Protobuf.ByteString)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: Equals(ByteString)
+  nameWithType: ByteString.Equals(ByteString)
+  fullName: Google.Protobuf.ByteString.Equals(Google.Protobuf.ByteString)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Equals
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 315
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCompares this byte string with another.\n"
+  example: []
+  syntax:
+    content: public bool Equals(ByteString other)
+    parameters:
+    - id: other
+      type: Google.Protobuf.ByteString
+      description: The <xref href="Google.Protobuf.ByteString" data-throw-if-not-resolved="false"></xref> to compare this with.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if <span class="paramref">other</span> refers to an equal byte string; <code>false</code> otherwise.
+    content.vb: Public Function Equals(other As ByteString) As Boolean
+  overload: Google.Protobuf.ByteString.Equals*
+  implements:
+  - System.IEquatable{Google.Protobuf.ByteString}.Equals(Google.Protobuf.ByteString)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.ByteString.CopyTo(System.Byte[],System.Int32)
+  commentId: M:Google.Protobuf.ByteString.CopyTo(System.Byte[],System.Int32)
+  id: CopyTo(System.Byte[],System.Int32)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: CopyTo(Byte[], Int32)
+  nameWithType: ByteString.CopyTo(Byte[], Int32)
+  fullName: Google.Protobuf.ByteString.CopyTo(System.Byte[], System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CopyTo
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 331
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCopies the entire byte array to the destination array provided at the offset specified.\n"
+  example: []
+  syntax:
+    content: public void CopyTo(byte[] array, int position)
+    parameters:
+    - id: array
+      type: System.Byte[]
+    - id: position
+      type: System.Int32
+    content.vb: Public Sub CopyTo(array As Byte(), position As Integer)
+  overload: Google.Protobuf.ByteString.CopyTo*
+  nameWithType.vb: ByteString.CopyTo(Byte(), Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.ByteString.CopyTo(System.Byte(), System.Int32)
+  name.vb: CopyTo(Byte(), Int32)
+- uid: Google.Protobuf.ByteString.WriteTo(System.IO.Stream)
+  commentId: M:Google.Protobuf.ByteString.WriteTo(System.IO.Stream)
+  id: WriteTo(System.IO.Stream)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(Stream)
+  nameWithType: ByteString.WriteTo(Stream)
+  fullName: Google.Protobuf.ByteString.WriteTo(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteTo
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 339
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites the entire byte array to the provided stream\n"
+  example: []
+  syntax:
+    content: public void WriteTo(Stream outputStream)
+    parameters:
+    - id: outputStream
+      type: System.IO.Stream
+    content.vb: Public Sub WriteTo(outputStream As Stream)
+  overload: Google.Protobuf.ByteString.WriteTo*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Collections.Generic.IEnumerable{System.Byte}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Byte}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Byte>
+  nameWithType: IEnumerable<Byte>
+  fullName: System.Collections.Generic.IEnumerable<System.Byte>
+  nameWithType.vb: IEnumerable(Of Byte)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Byte)
+  name.vb: IEnumerable(Of Byte)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.IEquatable{Google.Protobuf.ByteString}
+  commentId: T:System.IEquatable{Google.Protobuf.ByteString}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<ByteString>
+  nameWithType: IEquatable<ByteString>
+  fullName: System.IEquatable<Google.Protobuf.ByteString>
+  nameWithType.vb: IEquatable(Of ByteString)
+  fullName.vb: System.IEquatable(Of Google.Protobuf.ByteString)
+  name.vb: IEquatable(Of ByteString)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: false
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.ByteString.Empty*
+  commentId: Overload:Google.Protobuf.ByteString.Empty
+  isExternal: false
+  name: Empty
+  nameWithType: ByteString.Empty
+  fullName: Google.Protobuf.ByteString.Empty
+- uid: Google.Protobuf.ByteString
+  commentId: T:Google.Protobuf.ByteString
+  parent: Google.Protobuf
+  isExternal: false
+  name: ByteString
+  nameWithType: ByteString
+  fullName: Google.Protobuf.ByteString
+- uid: Google.Protobuf.ByteString.Length*
+  commentId: Overload:Google.Protobuf.ByteString.Length
+  isExternal: false
+  name: Length
+  nameWithType: ByteString.Length
+  fullName: Google.Protobuf.ByteString.Length
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Protobuf.ByteString.IsEmpty*
+  commentId: Overload:Google.Protobuf.ByteString.IsEmpty
+  isExternal: false
+  name: IsEmpty
+  nameWithType: ByteString.IsEmpty
+  fullName: Google.Protobuf.ByteString.IsEmpty
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Google.Protobuf.ByteString.ToByteArray*
+  commentId: Overload:Google.Protobuf.ByteString.ToByteArray
+  isExternal: false
+  name: ToByteArray
+  nameWithType: ByteString.ToByteArray
+  fullName: Google.Protobuf.ByteString.ToByteArray
+- uid: System.Byte[]
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Google.Protobuf.ByteString.ToBase64*
+  commentId: Overload:Google.Protobuf.ByteString.ToBase64
+  isExternal: false
+  name: ToBase64
+  nameWithType: ByteString.ToBase64
+  fullName: Google.Protobuf.ByteString.ToBase64
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.ByteString.FromBase64*
+  commentId: Overload:Google.Protobuf.ByteString.FromBase64
+  isExternal: false
+  name: FromBase64
+  nameWithType: ByteString.FromBase64
+  fullName: Google.Protobuf.ByteString.FromBase64
+- uid: Google.Protobuf.ByteString.CopyFrom*
+  commentId: Overload:Google.Protobuf.ByteString.CopyFrom
+  isExternal: false
+  name: CopyFrom
+  nameWithType: ByteString.CopyFrom
+  fullName: Google.Protobuf.ByteString.CopyFrom
+- uid: System.Text.Encoding
+  commentId: T:System.Text.Encoding
+  parent: System.Text
+  isExternal: true
+  name: Encoding
+  nameWithType: Encoding
+  fullName: System.Text.Encoding
+- uid: System.Text
+  commentId: N:System.Text
+  isExternal: false
+  name: System.Text
+  nameWithType: System.Text
+  fullName: System.Text
+- uid: Google.Protobuf.ByteString.CopyFromUtf8*
+  commentId: Overload:Google.Protobuf.ByteString.CopyFromUtf8
+  isExternal: false
+  name: CopyFromUtf8
+  nameWithType: ByteString.CopyFromUtf8
+  fullName: Google.Protobuf.ByteString.CopyFromUtf8
+- uid: Google.Protobuf.ByteString.Item*
+  commentId: Overload:Google.Protobuf.ByteString.Item
+  isExternal: false
+  name: Item
+  nameWithType: ByteString.Item
+  fullName: Google.Protobuf.ByteString.Item
+- uid: System.Byte
+  commentId: T:System.Byte
+  parent: System
+  isExternal: true
+  name: Byte
+  nameWithType: Byte
+  fullName: System.Byte
+- uid: Google.Protobuf.ByteString.ToString*
+  commentId: Overload:Google.Protobuf.ByteString.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: ByteString.ToString
+  fullName: Google.Protobuf.ByteString.ToString
+- uid: Google.Protobuf.ByteString.ToStringUtf8*
+  commentId: Overload:Google.Protobuf.ByteString.ToStringUtf8
+  isExternal: false
+  name: ToStringUtf8
+  nameWithType: ByteString.ToStringUtf8
+  fullName: Google.Protobuf.ByteString.ToStringUtf8
+- uid: Google.Protobuf.ByteString.GetEnumerator*
+  commentId: Overload:Google.Protobuf.ByteString.GetEnumerator
+  isExternal: false
+  name: GetEnumerator
+  nameWithType: ByteString.GetEnumerator
+  fullName: Google.Protobuf.ByteString.GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{System.Byte}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{System.Byte}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{System.Byte}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<Byte>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<System.Byte>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of Byte).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Byte).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<Byte>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<System.Byte>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of Byte).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of System.Byte).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator{System.Byte}
+  commentId: T:System.Collections.Generic.IEnumerator{System.Byte}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<Byte>
+  nameWithType: IEnumerator<Byte>
+  fullName: System.Collections.Generic.IEnumerator<System.Byte>
+  nameWithType.vb: IEnumerator(Of Byte)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of System.Byte)
+  name.vb: IEnumerator(Of Byte)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.ByteString.System#Collections#IEnumerable#GetEnumerator*
+  commentId: Overload:Google.Protobuf.ByteString.System#Collections#IEnumerable#GetEnumerator
+  isExternal: false
+  name: IEnumerable.GetEnumerator
+  nameWithType: ByteString.IEnumerable.GetEnumerator
+  fullName: Google.Protobuf.ByteString.System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: ByteString.System.Collections.IEnumerable.GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+- uid: System.Collections.IEnumerable.GetEnumerator
+  commentId: M:System.Collections.IEnumerable.GetEnumerator
+  parent: System.Collections.IEnumerable
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable.GetEnumerator()
+  fullName: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: Google.Protobuf.ByteString.CreateCodedInput*
+  commentId: Overload:Google.Protobuf.ByteString.CreateCodedInput
+  isExternal: false
+  name: CreateCodedInput
+  nameWithType: ByteString.CreateCodedInput
+  fullName: Google.Protobuf.ByteString.CreateCodedInput
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+- uid: Google.Protobuf.ByteString.op_Equality*
+  commentId: Overload:Google.Protobuf.ByteString.op_Equality
+  isExternal: false
+  name: Equality
+  nameWithType: ByteString.Equality
+  fullName: Google.Protobuf.ByteString.Equality
+- uid: Google.Protobuf.ByteString.op_Inequality*
+  commentId: Overload:Google.Protobuf.ByteString.op_Inequality
+  isExternal: false
+  name: Inequality
+  nameWithType: ByteString.Inequality
+  fullName: Google.Protobuf.ByteString.Inequality
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.ByteString.Equals*
+  commentId: Overload:Google.Protobuf.ByteString.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: ByteString.Equals
+  fullName: Google.Protobuf.ByteString.Equals
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.ByteString.GetHashCode*
+  commentId: Overload:Google.Protobuf.ByteString.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: ByteString.GetHashCode
+  fullName: Google.Protobuf.ByteString.GetHashCode
+- uid: System.IEquatable{Google.Protobuf.ByteString}.Equals(Google.Protobuf.ByteString)
+  commentId: M:System.IEquatable{Google.Protobuf.ByteString}.Equals(Google.Protobuf.ByteString)
+  parent: System.IEquatable{Google.Protobuf.ByteString}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(ByteString)
+  nameWithType: IEquatable<ByteString>.Equals(ByteString)
+  fullName: System.IEquatable<Google.Protobuf.ByteString>.Equals(Google.Protobuf.ByteString)
+  nameWithType.vb: IEquatable(Of ByteString).Equals(ByteString)
+  fullName.vb: System.IEquatable(Of Google.Protobuf.ByteString).Equals(Google.Protobuf.ByteString)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<ByteString>.Equals
+    fullName: System.IEquatable<Google.Protobuf.ByteString>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of ByteString).Equals
+    fullName: System.IEquatable(Of Google.Protobuf.ByteString).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.ByteString.CopyTo*
+  commentId: Overload:Google.Protobuf.ByteString.CopyTo
+  isExternal: false
+  name: CopyTo
+  nameWithType: ByteString.CopyTo
+  fullName: Google.Protobuf.ByteString.CopyTo
+- uid: Google.Protobuf.ByteString.WriteTo*
+  commentId: Overload:Google.Protobuf.ByteString.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: ByteString.WriteTo
+  fullName: Google.Protobuf.ByteString.WriteTo
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: false
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO

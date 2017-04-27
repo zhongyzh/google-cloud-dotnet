@@ -1,0 +1,928 @@
+### YamlMime:ManagedReference
+items:
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2
+  commentId: T:Grpc.Core.AsyncDuplexStreamingCall`2
+  id: AsyncDuplexStreamingCall`2
+  parent: Grpc.Core
+  children:
+  - Grpc.Core.AsyncDuplexStreamingCall`2.Dispose
+  - Grpc.Core.AsyncDuplexStreamingCall`2.GetStatus
+  - Grpc.Core.AsyncDuplexStreamingCall`2.GetTrailers
+  - Grpc.Core.AsyncDuplexStreamingCall`2.RequestStream
+  - Grpc.Core.AsyncDuplexStreamingCall`2.ResponseHeadersAsync
+  - Grpc.Core.AsyncDuplexStreamingCall`2.ResponseStream
+  langs:
+  - csharp
+  - vb
+  name: AsyncDuplexStreamingCall<TRequest, TResponse>
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>
+  type: Class
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: AsyncDuplexStreamingCall
+    path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+    startLine: 43
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nReturn type for bidirectional streaming calls.\n"
+  example: []
+  syntax:
+    content: 'public sealed class AsyncDuplexStreamingCall<TRequest, TResponse> : IDisposable'
+    typeParameters:
+    - id: TRequest
+      description: Request message type for this call.
+    - id: TResponse
+      description: Response message type for this call.
+    content.vb: >-
+      Public NotInheritable Class AsyncDuplexStreamingCall(Of TRequest, TResponse)
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  name.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.ResponseStream
+  commentId: P:Grpc.Core.AsyncDuplexStreamingCall`2.ResponseStream
+  id: ResponseStream
+  parent: Grpc.Core.AsyncDuplexStreamingCall`2
+  langs:
+  - csharp
+  - vb
+  name: ResponseStream
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.ResponseStream
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.ResponseStream
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ResponseStream
+    path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+    startLine: 65
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nAsync stream to read streaming responses.\n"
+  example: []
+  syntax:
+    content: public IAsyncStreamReader<TResponse> ResponseStream { get; }
+    parameters: []
+    return:
+      type: Grpc.Core.IAsyncStreamReader{{TResponse}}
+    content.vb: Public ReadOnly Property ResponseStream As IAsyncStreamReader(Of TResponse)
+  overload: Grpc.Core.AsyncDuplexStreamingCall`2.ResponseStream*
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).ResponseStream
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).ResponseStream
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.RequestStream
+  commentId: P:Grpc.Core.AsyncDuplexStreamingCall`2.RequestStream
+  id: RequestStream
+  parent: Grpc.Core.AsyncDuplexStreamingCall`2
+  langs:
+  - csharp
+  - vb
+  name: RequestStream
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.RequestStream
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.RequestStream
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: RequestStream
+    path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+    startLine: 76
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nAsync stream to send streaming requests.\n"
+  example: []
+  syntax:
+    content: public IClientStreamWriter<TRequest> RequestStream { get; }
+    parameters: []
+    return:
+      type: Grpc.Core.IClientStreamWriter{{TRequest}}
+    content.vb: Public ReadOnly Property RequestStream As IClientStreamWriter(Of TRequest)
+  overload: Grpc.Core.AsyncDuplexStreamingCall`2.RequestStream*
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).RequestStream
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).RequestStream
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.ResponseHeadersAsync
+  commentId: P:Grpc.Core.AsyncDuplexStreamingCall`2.ResponseHeadersAsync
+  id: ResponseHeadersAsync
+  parent: Grpc.Core.AsyncDuplexStreamingCall`2
+  langs:
+  - csharp
+  - vb
+  name: ResponseHeadersAsync
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.ResponseHeadersAsync
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.ResponseHeadersAsync
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ResponseHeadersAsync
+    path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+    startLine: 87
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nAsynchronous access to response headers.\n"
+  example: []
+  syntax:
+    content: public Task<Metadata> ResponseHeadersAsync { get; }
+    parameters: []
+    return:
+      type: System.Threading.Tasks.Task{Grpc.Core.Metadata}
+    content.vb: Public ReadOnly Property ResponseHeadersAsync As Task(Of Metadata)
+  overload: Grpc.Core.AsyncDuplexStreamingCall`2.ResponseHeadersAsync*
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).ResponseHeadersAsync
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).ResponseHeadersAsync
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.GetStatus
+  commentId: M:Grpc.Core.AsyncDuplexStreamingCall`2.GetStatus
+  id: GetStatus
+  parent: Grpc.Core.AsyncDuplexStreamingCall`2
+  langs:
+  - csharp
+  - vb
+  name: GetStatus()
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.GetStatus()
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.GetStatus()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: GetStatus
+    path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+    startLine: 99
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nGets the call status if the call has already finished.\nThrows InvalidOperationException otherwise.\n"
+  example: []
+  syntax:
+    content: public Status GetStatus()
+    return:
+      type: Grpc.Core.Status
+    content.vb: Public Function GetStatus As Status
+  overload: Grpc.Core.AsyncDuplexStreamingCall`2.GetStatus*
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).GetStatus()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).GetStatus()
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.GetTrailers
+  commentId: M:Grpc.Core.AsyncDuplexStreamingCall`2.GetTrailers
+  id: GetTrailers
+  parent: Grpc.Core.AsyncDuplexStreamingCall`2
+  langs:
+  - csharp
+  - vb
+  name: GetTrailers()
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.GetTrailers()
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.GetTrailers()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: GetTrailers
+    path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+    startLine: 108
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nGets the call trailing metadata if the call has already finished.\nThrows InvalidOperationException otherwise.\n"
+  example: []
+  syntax:
+    content: public Metadata GetTrailers()
+    return:
+      type: Grpc.Core.Metadata
+    content.vb: Public Function GetTrailers As Metadata
+  overload: Grpc.Core.AsyncDuplexStreamingCall`2.GetTrailers*
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).GetTrailers()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).GetTrailers()
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.Dispose
+  commentId: M:Grpc.Core.AsyncDuplexStreamingCall`2.Dispose
+  id: Dispose
+  parent: Grpc.Core.AsyncDuplexStreamingCall`2
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.Dispose()
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Dispose
+    path: src/csharp/Grpc.Core/AsyncDuplexStreamingCall.cs
+    startLine: 123
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nProvides means to cleanup after the call.\nIf the call has already finished normally (request stream has been completed and response stream has been fully read), doesn't do anything.\nOtherwise, requests cancellation of the call which should terminate all pending async operations associated with the call.\nAs a result, all resources being used by the call should be released eventually.\n"
+  remarks: "\nNormally, there is no need for you to dispose the call unless you want to utilize the\n\"Cancel\" semantics of invoking <code>Dispose</code>.\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Grpc.Core.AsyncDuplexStreamingCall`2.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).Dispose()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).Dispose()
+references:
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.ResponseStream*
+  commentId: Overload:Grpc.Core.AsyncDuplexStreamingCall`2.ResponseStream
+  isExternal: false
+  name: ResponseStream
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.ResponseStream
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.ResponseStream
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).ResponseStream
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).ResponseStream
+- uid: Grpc.Core.IAsyncStreamReader{{TResponse}}
+  commentId: T:Grpc.Core.IAsyncStreamReader{`1}
+  parent: Grpc.Core
+  definition: Grpc.Core.IAsyncStreamReader`1
+  name: IAsyncStreamReader<TResponse>
+  nameWithType: IAsyncStreamReader<TResponse>
+  fullName: Grpc.Core.IAsyncStreamReader<TResponse>
+  nameWithType.vb: IAsyncStreamReader(Of TResponse)
+  fullName.vb: Grpc.Core.IAsyncStreamReader(Of TResponse)
+  name.vb: IAsyncStreamReader(Of TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.IAsyncStreamReader`1
+    name: IAsyncStreamReader
+    nameWithType: IAsyncStreamReader
+    fullName: Grpc.Core.IAsyncStreamReader
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.IAsyncStreamReader`1
+    name: IAsyncStreamReader
+    nameWithType: IAsyncStreamReader
+    fullName: Grpc.Core.IAsyncStreamReader
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.IAsyncStreamReader`1
+  commentId: T:Grpc.Core.IAsyncStreamReader`1
+  isExternal: false
+  name: IAsyncStreamReader<T>
+  nameWithType: IAsyncStreamReader<T>
+  fullName: Grpc.Core.IAsyncStreamReader<T>
+  nameWithType.vb: IAsyncStreamReader(Of T)
+  fullName.vb: Grpc.Core.IAsyncStreamReader(Of T)
+  name.vb: IAsyncStreamReader(Of T)
+  spec.csharp:
+  - uid: Grpc.Core.IAsyncStreamReader`1
+    name: IAsyncStreamReader
+    nameWithType: IAsyncStreamReader
+    fullName: Grpc.Core.IAsyncStreamReader
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.IAsyncStreamReader`1
+    name: IAsyncStreamReader
+    nameWithType: IAsyncStreamReader
+    fullName: Grpc.Core.IAsyncStreamReader
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.RequestStream*
+  commentId: Overload:Grpc.Core.AsyncDuplexStreamingCall`2.RequestStream
+  isExternal: false
+  name: RequestStream
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.RequestStream
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.RequestStream
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).RequestStream
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).RequestStream
+- uid: Grpc.Core.IClientStreamWriter{{TRequest}}
+  commentId: T:Grpc.Core.IClientStreamWriter{`0}
+  parent: Grpc.Core
+  definition: Grpc.Core.IClientStreamWriter`1
+  name: IClientStreamWriter<TRequest>
+  nameWithType: IClientStreamWriter<TRequest>
+  fullName: Grpc.Core.IClientStreamWriter<TRequest>
+  nameWithType.vb: IClientStreamWriter(Of TRequest)
+  fullName.vb: Grpc.Core.IClientStreamWriter(Of TRequest)
+  name.vb: IClientStreamWriter(Of TRequest)
+  spec.csharp:
+  - uid: Grpc.Core.IClientStreamWriter`1
+    name: IClientStreamWriter
+    nameWithType: IClientStreamWriter
+    fullName: Grpc.Core.IClientStreamWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.IClientStreamWriter`1
+    name: IClientStreamWriter
+    nameWithType: IClientStreamWriter
+    fullName: Grpc.Core.IClientStreamWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.IClientStreamWriter`1
+  commentId: T:Grpc.Core.IClientStreamWriter`1
+  isExternal: false
+  name: IClientStreamWriter<T>
+  nameWithType: IClientStreamWriter<T>
+  fullName: Grpc.Core.IClientStreamWriter<T>
+  nameWithType.vb: IClientStreamWriter(Of T)
+  fullName.vb: Grpc.Core.IClientStreamWriter(Of T)
+  name.vb: IClientStreamWriter(Of T)
+  spec.csharp:
+  - uid: Grpc.Core.IClientStreamWriter`1
+    name: IClientStreamWriter
+    nameWithType: IClientStreamWriter
+    fullName: Grpc.Core.IClientStreamWriter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.IClientStreamWriter`1
+    name: IClientStreamWriter
+    nameWithType: IClientStreamWriter
+    fullName: Grpc.Core.IClientStreamWriter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.ResponseHeadersAsync*
+  commentId: Overload:Grpc.Core.AsyncDuplexStreamingCall`2.ResponseHeadersAsync
+  isExternal: false
+  name: ResponseHeadersAsync
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.ResponseHeadersAsync
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.ResponseHeadersAsync
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).ResponseHeadersAsync
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).ResponseHeadersAsync
+- uid: System.Threading.Tasks.Task{Grpc.Core.Metadata}
+  commentId: T:System.Threading.Tasks.Task{Grpc.Core.Metadata}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Metadata>
+  nameWithType: Task<Metadata>
+  fullName: System.Threading.Tasks.Task<Grpc.Core.Metadata>
+  nameWithType.vb: Task(Of Metadata)
+  fullName.vb: System.Threading.Tasks.Task(Of Grpc.Core.Metadata)
+  name.vb: Task(Of Metadata)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Grpc.Core.Metadata
+    name: Metadata
+    nameWithType: Metadata
+    fullName: Grpc.Core.Metadata
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Grpc.Core.Metadata
+    name: Metadata
+    nameWithType: Metadata
+    fullName: Grpc.Core.Metadata
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.GetStatus*
+  commentId: Overload:Grpc.Core.AsyncDuplexStreamingCall`2.GetStatus
+  isExternal: false
+  name: GetStatus
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.GetStatus
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.GetStatus
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).GetStatus
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).GetStatus
+- uid: Grpc.Core.Status
+  commentId: T:Grpc.Core.Status
+  parent: Grpc.Core
+  isExternal: false
+  name: Status
+  nameWithType: Status
+  fullName: Grpc.Core.Status
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.GetTrailers*
+  commentId: Overload:Grpc.Core.AsyncDuplexStreamingCall`2.GetTrailers
+  isExternal: false
+  name: GetTrailers
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.GetTrailers
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.GetTrailers
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).GetTrailers
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).GetTrailers
+- uid: Grpc.Core.Metadata
+  commentId: T:Grpc.Core.Metadata
+  parent: Grpc.Core
+  isExternal: false
+  name: Metadata
+  nameWithType: Metadata
+  fullName: Grpc.Core.Metadata
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2.Dispose*
+  commentId: Overload:Grpc.Core.AsyncDuplexStreamingCall`2.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>.Dispose
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>.Dispose
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse).Dispose
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse).Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

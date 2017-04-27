@@ -1,0 +1,1152 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  id: MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  children:
+  - Google.Protobuf.Reflection.MessageDescriptor.ClrType
+  - Google.Protobuf.Reflection.MessageDescriptor.ContainingType
+  - Google.Protobuf.Reflection.MessageDescriptor.EnumTypes
+  - Google.Protobuf.Reflection.MessageDescriptor.Fields
+  - Google.Protobuf.Reflection.MessageDescriptor.FindDescriptor``1(System.String)
+  - Google.Protobuf.Reflection.MessageDescriptor.FindFieldByName(System.String)
+  - Google.Protobuf.Reflection.MessageDescriptor.FindFieldByNumber(System.Int32)
+  - Google.Protobuf.Reflection.MessageDescriptor.Name
+  - Google.Protobuf.Reflection.MessageDescriptor.NestedTypes
+  - Google.Protobuf.Reflection.MessageDescriptor.Oneofs
+  - Google.Protobuf.Reflection.MessageDescriptor.Parser
+  langs:
+  - csharp
+  - vb
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MessageDescriptor
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 46
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nDescribes a message type.\n"
+  example: []
+  syntax:
+    content: 'public sealed class MessageDescriptor : DescriptorBase, IDescriptor'
+    content.vb: >-
+      Public NotInheritable Class MessageDescriptor
+          Inherits DescriptorBase
+          Implements IDescriptor
+  inheritance:
+  - System.Object
+  - Google.Protobuf.Reflection.DescriptorBase
+  implements:
+  - Google.Protobuf.Reflection.IDescriptor
+  inheritedMembers:
+  - Google.Protobuf.Reflection.DescriptorBase.Index
+  - Google.Protobuf.Reflection.DescriptorBase.FullName
+  - Google.Protobuf.Reflection.DescriptorBase.File
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.Reflection.MessageDescriptor.Name
+  commentId: P:Google.Protobuf.Reflection.MessageDescriptor.Name
+  id: Name
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: MessageDescriptor.Name
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.Name
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Name
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 117
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nThe brief name of the descriptor's target.\n"
+  example: []
+  syntax:
+    content: public override string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Name As String
+  overridden: Google.Protobuf.Reflection.DescriptorBase.Name
+  overload: Google.Protobuf.Reflection.MessageDescriptor.Name*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.MessageDescriptor.ClrType
+  commentId: P:Google.Protobuf.Reflection.MessageDescriptor.ClrType
+  id: ClrType
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: ClrType
+  nameWithType: MessageDescriptor.ClrType
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.ClrType
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ClrType
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 138
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nThe CLR type used to represent message instances from this descriptor.\n"
+  remarks: "\n<p>\nThe value returned by this property will be non-null for all regular fields. However,\nif a message containing a map field is introspected, the list of nested messages will include\nan auto-generated nested key/value pair message for the field. This is not represented in any\ngenerated type, so this property will return null in such cases.\n</p>\n<p>\nFor wrapper types (<xref href=\"Google.Protobuf.WellKnownTypes.StringValue\" data-throw-if-not-resolved=\"false\"></xref> and the like), the type returned here\nwill be the generated message type, not the native type used by reflection for fields of those types. Code\nusing reflection should call <xref href=\"Google.Protobuf.Reflection.MessageDescriptor.IsWrapperType\" data-throw-if-not-resolved=\"false\"></xref> to determine whether a message descriptor represents\na wrapper type, and handle the result appropriately.\n</p>\n"
+  example: []
+  syntax:
+    content: public Type ClrType { get; }
+    parameters: []
+    return:
+      type: System.Type
+    content.vb: Public ReadOnly Property ClrType As Type
+  overload: Google.Protobuf.Reflection.MessageDescriptor.ClrType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.MessageDescriptor.Parser
+  commentId: P:Google.Protobuf.Reflection.MessageDescriptor.Parser
+  id: Parser
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: MessageDescriptor.Parser
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.Parser
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Parser
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 161
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nA parser for this message type.\n"
+  remarks: "\n<p>\nAs <xref href=\"Google.Protobuf.Reflection.MessageDescriptor\" data-throw-if-not-resolved=\"false\"></xref> is not generic, this cannot be statically\ntyped to the relevant type, but it should produce objects of a type compatible with <xref href=\"Google.Protobuf.Reflection.MessageDescriptor.ClrType\" data-throw-if-not-resolved=\"false\"></xref>.\n</p>\n<p>\nThe value returned by this property will be non-null for all regular fields. However,\nif a message containing a map field is introspected, the list of nested messages will include\nan auto-generated nested key/value pair message for the field. No message parser object is created for\nsuch messages, so this property will return null in such cases.\n</p>\n<p>\nFor wrapper types (<xref href=\"Google.Protobuf.WellKnownTypes.StringValue\" data-throw-if-not-resolved=\"false\"></xref> and the like), the parser returned here\nwill be the generated message type, not the native type used by reflection for fields of those types. Code\nusing reflection should call <xref href=\"Google.Protobuf.Reflection.MessageDescriptor.IsWrapperType\" data-throw-if-not-resolved=\"false\"></xref> to determine whether a message descriptor represents\na wrapper type, and handle the result appropriately.\n</p>\n"
+  example: []
+  syntax:
+    content: public MessageParser Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser
+    content.vb: Public ReadOnly Property Parser As MessageParser
+  overload: Google.Protobuf.Reflection.MessageDescriptor.Parser*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.MessageDescriptor.ContainingType
+  commentId: P:Google.Protobuf.Reflection.MessageDescriptor.ContainingType
+  id: ContainingType
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: ContainingType
+  nameWithType: MessageDescriptor.ContainingType
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.ContainingType
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ContainingType
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 177
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  example: []
+  syntax:
+    content: public MessageDescriptor ContainingType { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+      description: "\nIf this is a nested type, get the outer descriptor, otherwise null.\n"
+    content.vb: Public ReadOnly Property ContainingType As MessageDescriptor
+  overload: Google.Protobuf.Reflection.MessageDescriptor.ContainingType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.MessageDescriptor.Fields
+  commentId: P:Google.Protobuf.Reflection.MessageDescriptor.Fields
+  id: Fields
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: Fields
+  nameWithType: MessageDescriptor.Fields
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.Fields
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Fields
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 182
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  example: []
+  syntax:
+    content: public MessageDescriptor.FieldCollection Fields { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor.FieldCollection
+      description: "\nA collection of fields, which can be retrieved by name or field number.\n"
+    content.vb: Public ReadOnly Property Fields As MessageDescriptor.FieldCollection
+  overload: Google.Protobuf.Reflection.MessageDescriptor.Fields*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.MessageDescriptor.NestedTypes
+  commentId: P:Google.Protobuf.Reflection.MessageDescriptor.NestedTypes
+  id: NestedTypes
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: NestedTypes
+  nameWithType: MessageDescriptor.NestedTypes
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.NestedTypes
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: NestedTypes
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 187
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  example: []
+  syntax:
+    content: public IList<MessageDescriptor> NestedTypes { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{Google.Protobuf.Reflection.MessageDescriptor}
+      description: "\nAn unmodifiable list of this message type's nested types.\n"
+    content.vb: Public ReadOnly Property NestedTypes As IList(Of MessageDescriptor)
+  overload: Google.Protobuf.Reflection.MessageDescriptor.NestedTypes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.MessageDescriptor.EnumTypes
+  commentId: P:Google.Protobuf.Reflection.MessageDescriptor.EnumTypes
+  id: EnumTypes
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: EnumTypes
+  nameWithType: MessageDescriptor.EnumTypes
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.EnumTypes
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: EnumTypes
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 192
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  example: []
+  syntax:
+    content: public IList<EnumDescriptor> EnumTypes { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{Google.Protobuf.Reflection.EnumDescriptor}
+      description: "\nAn unmodifiable list of this message type's enum types.\n"
+    content.vb: Public ReadOnly Property EnumTypes As IList(Of EnumDescriptor)
+  overload: Google.Protobuf.Reflection.MessageDescriptor.EnumTypes*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.MessageDescriptor.Oneofs
+  commentId: P:Google.Protobuf.Reflection.MessageDescriptor.Oneofs
+  id: Oneofs
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: Oneofs
+  nameWithType: MessageDescriptor.Oneofs
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.Oneofs
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Oneofs
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 197
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  example: []
+  syntax:
+    content: public IList<OneofDescriptor> Oneofs { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{Google.Protobuf.Reflection.OneofDescriptor}
+      description: "\nAn unmodifiable list of the \"oneof\" field collections in this message type.\n"
+    content.vb: Public ReadOnly Property Oneofs As IList(Of OneofDescriptor)
+  overload: Google.Protobuf.Reflection.MessageDescriptor.Oneofs*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.MessageDescriptor.FindFieldByName(System.String)
+  commentId: M:Google.Protobuf.Reflection.MessageDescriptor.FindFieldByName(System.String)
+  id: FindFieldByName(System.String)
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: FindFieldByName(String)
+  nameWithType: MessageDescriptor.FindFieldByName(String)
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.FindFieldByName(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FindFieldByName
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 204
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nFinds a field by field name.\n"
+  example: []
+  syntax:
+    content: public FieldDescriptor FindFieldByName(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The unqualified name of the field (e.g. "foo").
+    return:
+      type: Google.Protobuf.Reflection.FieldDescriptor
+      description: The field's descriptor, or null if not found.
+    content.vb: Public Function FindFieldByName(name As String) As FieldDescriptor
+  overload: Google.Protobuf.Reflection.MessageDescriptor.FindFieldByName*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.Reflection.MessageDescriptor.FindFieldByNumber(System.Int32)
+  commentId: M:Google.Protobuf.Reflection.MessageDescriptor.FindFieldByNumber(System.Int32)
+  id: FindFieldByNumber(System.Int32)
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: FindFieldByNumber(Int32)
+  nameWithType: MessageDescriptor.FindFieldByNumber(Int32)
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.FindFieldByNumber(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FindFieldByNumber
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 211
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nFinds a field by field number.\n"
+  example: []
+  syntax:
+    content: public FieldDescriptor FindFieldByNumber(int number)
+    parameters:
+    - id: number
+      type: System.Int32
+      description: The field number within this message type.
+    return:
+      type: Google.Protobuf.Reflection.FieldDescriptor
+      description: The field's descriptor, or null if not found.
+    content.vb: Public Function FindFieldByNumber(number As Integer) As FieldDescriptor
+  overload: Google.Protobuf.Reflection.MessageDescriptor.FindFieldByNumber*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.Reflection.MessageDescriptor.FindDescriptor``1(System.String)
+  commentId: M:Google.Protobuf.Reflection.MessageDescriptor.FindDescriptor``1(System.String)
+  id: FindDescriptor``1(System.String)
+  parent: Google.Protobuf.Reflection.MessageDescriptor
+  langs:
+  - csharp
+  - vb
+  name: FindDescriptor<T>(String)
+  nameWithType: MessageDescriptor.FindDescriptor<T>(String)
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.FindDescriptor<T>(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FindDescriptor
+    path: csharp/src/Google.Protobuf/Reflection/MessageDescriptor.cs
+    startLine: 219
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nFinds a nested descriptor by name. The is valid for fields, nested\nmessage types, oneofs and enums.\n"
+  example: []
+  syntax:
+    content: 'public T FindDescriptor<T>(string name)where T : class, IDescriptor'
+    parameters:
+    - id: name
+      type: System.String
+      description: The unqualified name of the descriptor, e.g. "Foo"
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+      description: The descriptor, or null if not found.
+    content.vb: Public Function FindDescriptor(Of T As {Class, IDescriptor})(name As String) As T
+  overload: Google.Protobuf.Reflection.MessageDescriptor.FindDescriptor*
+  nameWithType.vb: MessageDescriptor.FindDescriptor(Of T)(String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.MessageDescriptor.FindDescriptor(Of T)(System.String)
+  name.vb: FindDescriptor(Of T)(String)
+references:
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.Reflection.DescriptorBase
+  commentId: T:Google.Protobuf.Reflection.DescriptorBase
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: DescriptorBase
+  nameWithType: DescriptorBase
+  fullName: Google.Protobuf.Reflection.DescriptorBase
+- uid: Google.Protobuf.Reflection.IDescriptor
+  commentId: T:Google.Protobuf.Reflection.IDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: IDescriptor
+  nameWithType: IDescriptor
+  fullName: Google.Protobuf.Reflection.IDescriptor
+- uid: Google.Protobuf.Reflection.DescriptorBase.Index
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.Index
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: Index
+  nameWithType: DescriptorBase.Index
+  fullName: Google.Protobuf.Reflection.DescriptorBase.Index
+- uid: Google.Protobuf.Reflection.DescriptorBase.FullName
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.FullName
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: FullName
+  nameWithType: DescriptorBase.FullName
+  fullName: Google.Protobuf.Reflection.DescriptorBase.FullName
+- uid: Google.Protobuf.Reflection.DescriptorBase.File
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.File
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: File
+  nameWithType: DescriptorBase.File
+  fullName: Google.Protobuf.Reflection.DescriptorBase.File
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.Reflection.DescriptorBase.Name
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.Name
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: Name
+  nameWithType: DescriptorBase.Name
+  fullName: Google.Protobuf.Reflection.DescriptorBase.Name
+- uid: Google.Protobuf.Reflection.MessageDescriptor.Name*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.Name
+  isExternal: false
+  name: Name
+  nameWithType: MessageDescriptor.Name
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.WellKnownTypes.StringValue
+  commentId: T:Google.Protobuf.WellKnownTypes.StringValue
+  parent: Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: StringValue
+  nameWithType: StringValue
+  fullName: Google.Protobuf.WellKnownTypes.StringValue
+- uid: Google.Protobuf.Reflection.MessageDescriptor.IsWrapperType
+  commentId: P:Google.Protobuf.Reflection.MessageDescriptor.IsWrapperType
+- uid: Google.Protobuf.Reflection.MessageDescriptor.ClrType*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.ClrType
+  isExternal: false
+  name: ClrType
+  nameWithType: MessageDescriptor.ClrType
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.ClrType
+- uid: System.Type
+  commentId: T:System.Type
+  parent: System
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: System.Type
+- uid: Google.Protobuf.WellKnownTypes
+  commentId: N:Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Google.Protobuf.WellKnownTypes
+  nameWithType: Google.Protobuf.WellKnownTypes
+  fullName: Google.Protobuf.WellKnownTypes
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor.ClrType
+  commentId: P:Google.Protobuf.Reflection.MessageDescriptor.ClrType
+- uid: Google.Protobuf.Reflection.MessageDescriptor.Parser*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.Parser
+  isExternal: false
+  name: Parser
+  nameWithType: MessageDescriptor.Parser
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.Parser
+- uid: Google.Protobuf.MessageParser
+  commentId: T:Google.Protobuf.MessageParser
+  parent: Google.Protobuf
+  isExternal: false
+  name: MessageParser
+  nameWithType: MessageParser
+  fullName: Google.Protobuf.MessageParser
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: Google.Protobuf.Reflection.MessageDescriptor.ContainingType*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.ContainingType
+  isExternal: false
+  name: ContainingType
+  nameWithType: MessageDescriptor.ContainingType
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.ContainingType
+- uid: Google.Protobuf.Reflection.MessageDescriptor.Fields*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.Fields
+  isExternal: false
+  name: Fields
+  nameWithType: MessageDescriptor.Fields
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.Fields
+- uid: Google.Protobuf.Reflection.MessageDescriptor.FieldCollection
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor.FieldCollection
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: MessageDescriptor.FieldCollection
+  nameWithType: MessageDescriptor.FieldCollection
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.FieldCollection
+- uid: Google.Protobuf.Reflection.MessageDescriptor.NestedTypes*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.NestedTypes
+  isExternal: false
+  name: NestedTypes
+  nameWithType: MessageDescriptor.NestedTypes
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.NestedTypes
+- uid: System.Collections.Generic.IList{Google.Protobuf.Reflection.MessageDescriptor}
+  commentId: T:System.Collections.Generic.IList{Google.Protobuf.Reflection.MessageDescriptor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<MessageDescriptor>
+  nameWithType: IList<MessageDescriptor>
+  fullName: System.Collections.Generic.IList<Google.Protobuf.Reflection.MessageDescriptor>
+  nameWithType.vb: IList(Of MessageDescriptor)
+  fullName.vb: System.Collections.Generic.IList(Of Google.Protobuf.Reflection.MessageDescriptor)
+  name.vb: IList(Of MessageDescriptor)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.Reflection.MessageDescriptor
+    name: MessageDescriptor
+    nameWithType: MessageDescriptor
+    fullName: Google.Protobuf.Reflection.MessageDescriptor
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.Reflection.MessageDescriptor
+    name: MessageDescriptor
+    nameWithType: MessageDescriptor
+    fullName: Google.Protobuf.Reflection.MessageDescriptor
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Google.Protobuf.Reflection.MessageDescriptor.EnumTypes*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.EnumTypes
+  isExternal: false
+  name: EnumTypes
+  nameWithType: MessageDescriptor.EnumTypes
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.EnumTypes
+- uid: System.Collections.Generic.IList{Google.Protobuf.Reflection.EnumDescriptor}
+  commentId: T:System.Collections.Generic.IList{Google.Protobuf.Reflection.EnumDescriptor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<EnumDescriptor>
+  nameWithType: IList<EnumDescriptor>
+  fullName: System.Collections.Generic.IList<Google.Protobuf.Reflection.EnumDescriptor>
+  nameWithType.vb: IList(Of EnumDescriptor)
+  fullName.vb: System.Collections.Generic.IList(Of Google.Protobuf.Reflection.EnumDescriptor)
+  name.vb: IList(Of EnumDescriptor)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.Reflection.EnumDescriptor
+    name: EnumDescriptor
+    nameWithType: EnumDescriptor
+    fullName: Google.Protobuf.Reflection.EnumDescriptor
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.Reflection.EnumDescriptor
+    name: EnumDescriptor
+    nameWithType: EnumDescriptor
+    fullName: Google.Protobuf.Reflection.EnumDescriptor
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Reflection.MessageDescriptor.Oneofs*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.Oneofs
+  isExternal: false
+  name: Oneofs
+  nameWithType: MessageDescriptor.Oneofs
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.Oneofs
+- uid: System.Collections.Generic.IList{Google.Protobuf.Reflection.OneofDescriptor}
+  commentId: T:System.Collections.Generic.IList{Google.Protobuf.Reflection.OneofDescriptor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<OneofDescriptor>
+  nameWithType: IList<OneofDescriptor>
+  fullName: System.Collections.Generic.IList<Google.Protobuf.Reflection.OneofDescriptor>
+  nameWithType.vb: IList(Of OneofDescriptor)
+  fullName.vb: System.Collections.Generic.IList(Of Google.Protobuf.Reflection.OneofDescriptor)
+  name.vb: IList(Of OneofDescriptor)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.Reflection.OneofDescriptor
+    name: OneofDescriptor
+    nameWithType: OneofDescriptor
+    fullName: Google.Protobuf.Reflection.OneofDescriptor
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.Reflection.OneofDescriptor
+    name: OneofDescriptor
+    nameWithType: OneofDescriptor
+    fullName: Google.Protobuf.Reflection.OneofDescriptor
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Reflection.MessageDescriptor.FindFieldByName*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.FindFieldByName
+  isExternal: false
+  name: FindFieldByName
+  nameWithType: MessageDescriptor.FindFieldByName
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.FindFieldByName
+- uid: Google.Protobuf.Reflection.FieldDescriptor
+  commentId: T:Google.Protobuf.Reflection.FieldDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: FieldDescriptor
+  nameWithType: FieldDescriptor
+  fullName: Google.Protobuf.Reflection.FieldDescriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor.FindFieldByNumber*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.FindFieldByNumber
+  isExternal: false
+  name: FindFieldByNumber
+  nameWithType: MessageDescriptor.FindFieldByNumber
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.FindFieldByNumber
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Protobuf.Reflection.MessageDescriptor.FindDescriptor*
+  commentId: Overload:Google.Protobuf.Reflection.MessageDescriptor.FindDescriptor
+  isExternal: false
+  name: FindDescriptor
+  nameWithType: MessageDescriptor.FindDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor.FindDescriptor
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T

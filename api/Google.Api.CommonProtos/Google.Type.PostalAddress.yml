@@ -1,0 +1,2632 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Type.PostalAddress
+  commentId: T:Google.Type.PostalAddress
+  id: PostalAddress
+  parent: Google.Type
+  children:
+  - Google.Type.PostalAddress.#ctor
+  - Google.Type.PostalAddress.#ctor(Google.Type.PostalAddress)
+  - Google.Type.PostalAddress.AddressLines
+  - Google.Type.PostalAddress.AddressLinesFieldNumber
+  - Google.Type.PostalAddress.AdministrativeArea
+  - Google.Type.PostalAddress.AdministrativeAreaFieldNumber
+  - Google.Type.PostalAddress.CalculateSize
+  - Google.Type.PostalAddress.Clone
+  - Google.Type.PostalAddress.Descriptor
+  - Google.Type.PostalAddress.Equals(Google.Type.PostalAddress)
+  - Google.Type.PostalAddress.Equals(System.Object)
+  - Google.Type.PostalAddress.GetHashCode
+  - Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor
+  - Google.Type.PostalAddress.LanguageCode
+  - Google.Type.PostalAddress.LanguageCodeFieldNumber
+  - Google.Type.PostalAddress.Locality
+  - Google.Type.PostalAddress.LocalityFieldNumber
+  - Google.Type.PostalAddress.MergeFrom(Google.Protobuf.CodedInputStream)
+  - Google.Type.PostalAddress.MergeFrom(Google.Type.PostalAddress)
+  - Google.Type.PostalAddress.Organization
+  - Google.Type.PostalAddress.OrganizationFieldNumber
+  - Google.Type.PostalAddress.Parser
+  - Google.Type.PostalAddress.PostalCode
+  - Google.Type.PostalAddress.PostalCodeFieldNumber
+  - Google.Type.PostalAddress.Recipients
+  - Google.Type.PostalAddress.RecipientsFieldNumber
+  - Google.Type.PostalAddress.RegionCode
+  - Google.Type.PostalAddress.RegionCodeFieldNumber
+  - Google.Type.PostalAddress.Revision
+  - Google.Type.PostalAddress.RevisionFieldNumber
+  - Google.Type.PostalAddress.SortingCode
+  - Google.Type.PostalAddress.SortingCodeFieldNumber
+  - Google.Type.PostalAddress.Sublocality
+  - Google.Type.PostalAddress.SublocalityFieldNumber
+  - Google.Type.PostalAddress.ToString
+  - Google.Type.PostalAddress.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: PostalAddress
+  nameWithType: PostalAddress
+  fullName: Google.Type.PostalAddress
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PostalAddress
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 70
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nRepresents a postal address, e.g. for postal delivery or payments addresses.\nGiven a postal address, a postal service can deliver items to a premise, P.O.\nBox or similar.\nIt is not intended to model geographical locations (roads, towns,\nmountains).\n\nIn typical usage an address would be created via user input or from importing\nexisting data, depending on the type of process.\n\nAdvice on address input / editing:\n- Use an i18n-ready address widget such as\nhttps://github.com/googlei18n/libaddressinput)\n- Users should not be presented with UI elements for input or editing of\nfields outside countries where that field is used.\n\nFor more guidance on how to use this schema, please see:\nhttps://support.google.com/business/answer/6397478\n"
+  example: []
+  syntax:
+    content: 'public sealed class PostalAddress : IMessage<PostalAddress>, IMessage, IEquatable<PostalAddress>, IDeepCloneable<PostalAddress>'
+    content.vb: >-
+      Public NotInheritable Class PostalAddress
+          Implements IMessage(Of PostalAddress), IMessage, IEquatable(Of PostalAddress), IDeepCloneable(Of PostalAddress)
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Type.PostalAddress}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Type.PostalAddress}
+  - Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Type.PostalAddress.Parser
+  commentId: P:Google.Type.PostalAddress.Parser
+  id: Parser
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: PostalAddress.Parser
+  fullName: Google.Type.PostalAddress.Parser
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Parser
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 72
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public static MessageParser<PostalAddress> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{Google.Type.PostalAddress}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of PostalAddress)
+  overload: Google.Type.PostalAddress.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Type.PostalAddress.Descriptor
+  commentId: P:Google.Type.PostalAddress.Descriptor
+  id: Descriptor
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: PostalAddress.Descriptor
+  fullName: Google.Type.PostalAddress.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Descriptor
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 75
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: Google.Type.PostalAddress.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: PostalAddress.IMessage.Descriptor
+  fullName: Google.Type.PostalAddress.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 80
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: PostalAddress.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Type.PostalAddress.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Type.PostalAddress.#ctor
+  commentId: M:Google.Type.PostalAddress.#ctor
+  id: '#ctor'
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: PostalAddress()
+  nameWithType: PostalAddress.PostalAddress()
+  fullName: Google.Type.PostalAddress.PostalAddress()
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 85
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public PostalAddress()
+    content.vb: Public Sub New
+  overload: Google.Type.PostalAddress.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.#ctor(Google.Type.PostalAddress)
+  commentId: M:Google.Type.PostalAddress.#ctor(Google.Type.PostalAddress)
+  id: '#ctor(Google.Type.PostalAddress)'
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: PostalAddress(PostalAddress)
+  nameWithType: PostalAddress.PostalAddress(PostalAddress)
+  fullName: Google.Type.PostalAddress.PostalAddress(Google.Type.PostalAddress)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 92
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public PostalAddress(PostalAddress other)
+    parameters:
+    - id: other
+      type: Google.Type.PostalAddress
+    content.vb: Public Sub New(other As PostalAddress)
+  overload: Google.Type.PostalAddress.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.Clone
+  commentId: M:Google.Type.PostalAddress.Clone
+  id: Clone
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: PostalAddress.Clone()
+  fullName: Google.Type.PostalAddress.Clone()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Clone
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 107
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public PostalAddress Clone()
+    return:
+      type: Google.Type.PostalAddress
+    content.vb: Public Function Clone As PostalAddress
+  overload: Google.Type.PostalAddress.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.RevisionFieldNumber
+  commentId: F:Google.Type.PostalAddress.RevisionFieldNumber
+  id: RevisionFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: RevisionFieldNumber
+  nameWithType: PostalAddress.RevisionFieldNumber
+  fullName: Google.Type.PostalAddress.RevisionFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: RevisionFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 113
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "revision" field.
+  example: []
+  syntax:
+    content: public const int RevisionFieldNumber = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const RevisionFieldNumber As Integer = 1
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.Revision
+  commentId: P:Google.Type.PostalAddress.Revision
+  id: Revision
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: Revision
+  nameWithType: PostalAddress.Revision
+  fullName: Google.Type.PostalAddress.Revision
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Revision
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 119
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nThe schema revision of the `PostalAddress`.\nAll new revisions **must** be backward compatible with old revisions.\n"
+  example: []
+  syntax:
+    content: public int Revision { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Revision As Integer
+  overload: Google.Type.PostalAddress.Revision*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.RegionCodeFieldNumber
+  commentId: F:Google.Type.PostalAddress.RegionCodeFieldNumber
+  id: RegionCodeFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: RegionCodeFieldNumber
+  nameWithType: PostalAddress.RegionCodeFieldNumber
+  fullName: Google.Type.PostalAddress.RegionCodeFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: RegionCodeFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 128
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "region_code" field.
+  example: []
+  syntax:
+    content: public const int RegionCodeFieldNumber = 2
+    return:
+      type: System.Int32
+    content.vb: Public Const RegionCodeFieldNumber As Integer = 2
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.RegionCode
+  commentId: P:Google.Type.PostalAddress.RegionCode
+  id: RegionCode
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: RegionCode
+  nameWithType: PostalAddress.RegionCode
+  fullName: Google.Type.PostalAddress.RegionCode
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: RegionCode
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 137
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nRequired. CLDR region code of the country/region of the address. This\nis never inferred and it is up to the user to ensure the value is\ncorrect. See http://cldr.unicode.org/ and\nhttp://www.unicode.org/cldr/charts/30/supplemental/territory_information.html\nfor details. Example: \"CH\" for Switzerland.\n"
+  example: []
+  syntax:
+    content: public string RegionCode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property RegionCode As String
+  overload: Google.Type.PostalAddress.RegionCode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.LanguageCodeFieldNumber
+  commentId: F:Google.Type.PostalAddress.LanguageCodeFieldNumber
+  id: LanguageCodeFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: LanguageCodeFieldNumber
+  nameWithType: PostalAddress.LanguageCodeFieldNumber
+  fullName: Google.Type.PostalAddress.LanguageCodeFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: LanguageCodeFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 146
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "language_code" field.
+  example: []
+  syntax:
+    content: public const int LanguageCodeFieldNumber = 3
+    return:
+      type: System.Int32
+    content.vb: Public Const LanguageCodeFieldNumber As Integer = 3
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.LanguageCode
+  commentId: P:Google.Type.PostalAddress.LanguageCode
+  id: LanguageCode
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: LanguageCode
+  nameWithType: PostalAddress.LanguageCode
+  fullName: Google.Type.PostalAddress.LanguageCode
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: LanguageCode
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 162
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nOptional. BCP-47 language code of the contents of this address (if\nknown). This is often the UI language of the input form or is expected\nto match one of the languages used in the address' country/region, or their\ntransliterated equivalents.\nThis can affect formatting in certain countries, but is not critical\nto the correctness of the data and will never affect any validation or\nother non-formatting related operations.\n\nIf this value is not known, it should be omitted (rather than specifying a\npossibly incorrect default).\n\nExamples: \"zh-Hant\", \"ja\", \"ja-Latn\", \"en\".\n"
+  example: []
+  syntax:
+    content: public string LanguageCode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property LanguageCode As String
+  overload: Google.Type.PostalAddress.LanguageCode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.PostalCodeFieldNumber
+  commentId: F:Google.Type.PostalAddress.PostalCodeFieldNumber
+  id: PostalCodeFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: PostalCodeFieldNumber
+  nameWithType: PostalAddress.PostalCodeFieldNumber
+  fullName: Google.Type.PostalAddress.PostalCodeFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PostalCodeFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 171
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "postal_code" field.
+  example: []
+  syntax:
+    content: public const int PostalCodeFieldNumber = 4
+    return:
+      type: System.Int32
+    content.vb: Public Const PostalCodeFieldNumber As Integer = 4
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.PostalCode
+  commentId: P:Google.Type.PostalAddress.PostalCode
+  id: PostalCode
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: PostalCode
+  nameWithType: PostalAddress.PostalCode
+  fullName: Google.Type.PostalAddress.PostalCode
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PostalCode
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 179
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nOptional. Postal code of the address. Not all countries use or require\npostal codes to be present, but where they are used, they may trigger\nadditional validation with other parts of the address (e.g. state/zip\nvalidation in the U.S.A.).\n"
+  example: []
+  syntax:
+    content: public string PostalCode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PostalCode As String
+  overload: Google.Type.PostalAddress.PostalCode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.SortingCodeFieldNumber
+  commentId: F:Google.Type.PostalAddress.SortingCodeFieldNumber
+  id: SortingCodeFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: SortingCodeFieldNumber
+  nameWithType: PostalAddress.SortingCodeFieldNumber
+  fullName: Google.Type.PostalAddress.SortingCodeFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: SortingCodeFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 188
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "sorting_code" field.
+  example: []
+  syntax:
+    content: public const int SortingCodeFieldNumber = 5
+    return:
+      type: System.Int32
+    content.vb: Public Const SortingCodeFieldNumber As Integer = 5
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.SortingCode
+  commentId: P:Google.Type.PostalAddress.SortingCode
+  id: SortingCode
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: SortingCode
+  nameWithType: PostalAddress.SortingCode
+  fullName: Google.Type.PostalAddress.SortingCode
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: SortingCode
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 197
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nOptional. Additional, country-specific, sorting code. This is not used\nin most regions. Where it is used, the value is either a string like\n\"CEDEX\", optionally followed by a number (e.g. \"CEDEX 7\"), or just a number\nalone, representing the \"sector code\" (Jamaica), \"delivery area indicator\"\n(Malawi) or \"post office indicator\" (e.g. Côte d'Ivoire).\n"
+  example: []
+  syntax:
+    content: public string SortingCode { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SortingCode As String
+  overload: Google.Type.PostalAddress.SortingCode*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.AdministrativeAreaFieldNumber
+  commentId: F:Google.Type.PostalAddress.AdministrativeAreaFieldNumber
+  id: AdministrativeAreaFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: AdministrativeAreaFieldNumber
+  nameWithType: PostalAddress.AdministrativeAreaFieldNumber
+  fullName: Google.Type.PostalAddress.AdministrativeAreaFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: AdministrativeAreaFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 206
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "administrative_area" field.
+  example: []
+  syntax:
+    content: public const int AdministrativeAreaFieldNumber = 6
+    return:
+      type: System.Int32
+    content.vb: Public Const AdministrativeAreaFieldNumber As Integer = 6
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.AdministrativeArea
+  commentId: P:Google.Type.PostalAddress.AdministrativeArea
+  id: AdministrativeArea
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: AdministrativeArea
+  nameWithType: PostalAddress.AdministrativeArea
+  fullName: Google.Type.PostalAddress.AdministrativeArea
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: AdministrativeArea
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 217
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nOptional. Highest administrative subdivision which is used for postal\naddresses of a country or region.\nFor example, this can be a state, a province, an oblast, or a prefecture.\nSpecifically, for Spain this is the province and not the autonomous\ncommunity (e.g. \"Barcelona\" and not \"Catalonia\").\nMany countries don't use an administrative area in postal addresses. E.g.\nin Switzerland this should be left unpopulated.\n"
+  example: []
+  syntax:
+    content: public string AdministrativeArea { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property AdministrativeArea As String
+  overload: Google.Type.PostalAddress.AdministrativeArea*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.LocalityFieldNumber
+  commentId: F:Google.Type.PostalAddress.LocalityFieldNumber
+  id: LocalityFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: LocalityFieldNumber
+  nameWithType: PostalAddress.LocalityFieldNumber
+  fullName: Google.Type.PostalAddress.LocalityFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: LocalityFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 226
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "locality" field.
+  example: []
+  syntax:
+    content: public const int LocalityFieldNumber = 7
+    return:
+      type: System.Int32
+    content.vb: Public Const LocalityFieldNumber As Integer = 7
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.Locality
+  commentId: P:Google.Type.PostalAddress.Locality
+  id: Locality
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: Locality
+  nameWithType: PostalAddress.Locality
+  fullName: Google.Type.PostalAddress.Locality
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Locality
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 234
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nOptional. Generally refers to the city/town portion of the address.\nExamples: US city, IT comune, UK post town.\nIn regions of the world where localities are not well defined or do not fit\ninto this structure well, leave locality empty and use address_lines.\n"
+  example: []
+  syntax:
+    content: public string Locality { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Locality As String
+  overload: Google.Type.PostalAddress.Locality*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.SublocalityFieldNumber
+  commentId: F:Google.Type.PostalAddress.SublocalityFieldNumber
+  id: SublocalityFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: SublocalityFieldNumber
+  nameWithType: PostalAddress.SublocalityFieldNumber
+  fullName: Google.Type.PostalAddress.SublocalityFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: SublocalityFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 243
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "sublocality" field.
+  example: []
+  syntax:
+    content: public const int SublocalityFieldNumber = 8
+    return:
+      type: System.Int32
+    content.vb: Public Const SublocalityFieldNumber As Integer = 8
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.Sublocality
+  commentId: P:Google.Type.PostalAddress.Sublocality
+  id: Sublocality
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: Sublocality
+  nameWithType: PostalAddress.Sublocality
+  fullName: Google.Type.PostalAddress.Sublocality
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Sublocality
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 249
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nOptional. Sublocality of the address.\nFor example, this can be neighborhoods, boroughs, districts.\n"
+  example: []
+  syntax:
+    content: public string Sublocality { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Sublocality As String
+  overload: Google.Type.PostalAddress.Sublocality*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.AddressLinesFieldNumber
+  commentId: F:Google.Type.PostalAddress.AddressLinesFieldNumber
+  id: AddressLinesFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: AddressLinesFieldNumber
+  nameWithType: PostalAddress.AddressLinesFieldNumber
+  fullName: Google.Type.PostalAddress.AddressLinesFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: AddressLinesFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 258
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "address_lines" field.
+  example: []
+  syntax:
+    content: public const int AddressLinesFieldNumber = 9
+    return:
+      type: System.Int32
+    content.vb: Public Const AddressLinesFieldNumber As Integer = 9
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.AddressLines
+  commentId: P:Google.Type.PostalAddress.AddressLines
+  id: AddressLines
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: AddressLines
+  nameWithType: PostalAddress.AddressLines
+  fullName: Google.Type.PostalAddress.AddressLines
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: AddressLines
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 286
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nUnstructured address lines describing the lower levels of an address.\n\nBecause values in address_lines do not have type information and may\nsometimes contain multiple values in a single field (e.g.\n\"Austin, TX\"), it is important that the line order is clear. The order of\naddress lines should be \"envelope order\" for the country/region of the\naddress. In places where this can vary (e.g. Japan), address_language is\nused to make it explicit (e.g. \"ja\" for large-to-small ordering and\n\"ja-Latn\" or \"en\" for small-to-large). This way, the most specific line of\nan address can be selected based on the language.\n\nThe minimum permitted structural representation of an address consists\nof a region_code with all remaining information placed in the\naddress_lines. It would be possible to format such an address very\napproximately without geocoding, but no semantic reasoning could be\nmade about any of the address components until it was at least\npartially resolved.\n\nCreating an address only containing a region_code and address_lines, and\nthen geocoding is the recommended way to handle completely unstructured\naddresses (as opposed to guessing which parts of the address should be\nlocalities or administrative areas).\n"
+  example: []
+  syntax:
+    content: public RepeatedField<string> AddressLines { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{System.String}
+    content.vb: Public ReadOnly Property AddressLines As RepeatedField(Of String)
+  overload: Google.Type.PostalAddress.AddressLines*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Type.PostalAddress.RecipientsFieldNumber
+  commentId: F:Google.Type.PostalAddress.RecipientsFieldNumber
+  id: RecipientsFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: RecipientsFieldNumber
+  nameWithType: PostalAddress.RecipientsFieldNumber
+  fullName: Google.Type.PostalAddress.RecipientsFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: RecipientsFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 292
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "recipients" field.
+  example: []
+  syntax:
+    content: public const int RecipientsFieldNumber = 10
+    return:
+      type: System.Int32
+    content.vb: Public Const RecipientsFieldNumber As Integer = 10
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.Recipients
+  commentId: P:Google.Type.PostalAddress.Recipients
+  id: Recipients
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: Recipients
+  nameWithType: PostalAddress.Recipients
+  fullName: Google.Type.PostalAddress.Recipients
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Recipients
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 301
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nOptional. The recipient at the address.\nThis field may, under certain circumstances, contain multiline information.\nFor example, it might contain \"care of\" information.\n"
+  example: []
+  syntax:
+    content: public RepeatedField<string> Recipients { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{System.String}
+    content.vb: Public ReadOnly Property Recipients As RepeatedField(Of String)
+  overload: Google.Type.PostalAddress.Recipients*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Type.PostalAddress.OrganizationFieldNumber
+  commentId: F:Google.Type.PostalAddress.OrganizationFieldNumber
+  id: OrganizationFieldNumber
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: OrganizationFieldNumber
+  nameWithType: PostalAddress.OrganizationFieldNumber
+  fullName: Google.Type.PostalAddress.OrganizationFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: OrganizationFieldNumber
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 307
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: Field number for the "organization" field.
+  example: []
+  syntax:
+    content: public const int OrganizationFieldNumber = 11
+    return:
+      type: System.Int32
+    content.vb: Public Const OrganizationFieldNumber As Integer = 11
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Type.PostalAddress.Organization
+  commentId: P:Google.Type.PostalAddress.Organization
+  id: Organization
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: Organization
+  nameWithType: PostalAddress.Organization
+  fullName: Google.Type.PostalAddress.Organization
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Organization
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 312
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  summary: "\nOptional. The name of the organization at the address.\n"
+  example: []
+  syntax:
+    content: public string Organization { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Organization As String
+  overload: Google.Type.PostalAddress.Organization*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.Equals(System.Object)
+  commentId: M:Google.Type.PostalAddress.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: PostalAddress.Equals(Object)
+  fullName: Google.Type.PostalAddress.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 320
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Type.PostalAddress.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Type.PostalAddress.Equals(Google.Type.PostalAddress)
+  commentId: M:Google.Type.PostalAddress.Equals(Google.Type.PostalAddress)
+  id: Equals(Google.Type.PostalAddress)
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: Equals(PostalAddress)
+  nameWithType: PostalAddress.Equals(PostalAddress)
+  fullName: Google.Type.PostalAddress.Equals(Google.Type.PostalAddress)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 325
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public bool Equals(PostalAddress other)
+    parameters:
+    - id: other
+      type: Google.Type.PostalAddress
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As PostalAddress) As Boolean
+  overload: Google.Type.PostalAddress.Equals*
+  implements:
+  - System.IEquatable{Google.Type.PostalAddress}.Equals(Google.Type.PostalAddress)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.GetHashCode
+  commentId: M:Google.Type.PostalAddress.GetHashCode
+  id: GetHashCode
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: PostalAddress.GetHashCode()
+  fullName: Google.Type.PostalAddress.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetHashCode
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 347
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Type.PostalAddress.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Type.PostalAddress.ToString
+  commentId: M:Google.Type.PostalAddress.ToString
+  id: ToString
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: PostalAddress.ToString()
+  fullName: Google.Type.PostalAddress.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ToString
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 364
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Type.PostalAddress.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Type.PostalAddress.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Type.PostalAddress.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: PostalAddress.WriteTo(CodedOutputStream)
+  fullName: Google.Type.PostalAddress.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: WriteTo
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 369
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: Google.Type.PostalAddress.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.CalculateSize
+  commentId: M:Google.Type.PostalAddress.CalculateSize
+  id: CalculateSize
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: PostalAddress.CalculateSize()
+  fullName: Google.Type.PostalAddress.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CalculateSize
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 411
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: Google.Type.PostalAddress.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.MergeFrom(Google.Type.PostalAddress)
+  commentId: M:Google.Type.PostalAddress.MergeFrom(Google.Type.PostalAddress)
+  id: MergeFrom(Google.Type.PostalAddress)
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(PostalAddress)
+  nameWithType: PostalAddress.MergeFrom(PostalAddress)
+  fullName: Google.Type.PostalAddress.MergeFrom(Google.Type.PostalAddress)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 446
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public void MergeFrom(PostalAddress other)
+    parameters:
+    - id: other
+      type: Google.Type.PostalAddress
+    content.vb: Public Sub MergeFrom(other As PostalAddress)
+  overload: Google.Type.PostalAddress.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Type.PostalAddress}.MergeFrom(Google.Type.PostalAddress)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Type.PostalAddress.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Type.PostalAddress.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Type.PostalAddress
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: PostalAddress.MergeFrom(CodedInputStream)
+  fullName: Google.Type.PostalAddress.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
+    startLine: 482
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: Google.Type.PostalAddress.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Type
+  commentId: N:Google.Type
+  isExternal: false
+  name: Google.Type
+  nameWithType: Google.Type
+  fullName: Google.Type
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Type.PostalAddress}
+  commentId: T:Google.Protobuf.IMessage{Google.Type.PostalAddress}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<PostalAddress>
+  nameWithType: IMessage<PostalAddress>
+  fullName: Google.Protobuf.IMessage<Google.Type.PostalAddress>
+  nameWithType.vb: IMessage(Of PostalAddress)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Type.PostalAddress)
+  name.vb: IMessage(Of PostalAddress)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Type.PostalAddress}
+  commentId: T:System.IEquatable{Google.Type.PostalAddress}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<PostalAddress>
+  nameWithType: IEquatable<PostalAddress>
+  fullName: System.IEquatable<Google.Type.PostalAddress>
+  nameWithType.vb: IEquatable(Of PostalAddress)
+  fullName.vb: System.IEquatable(Of Google.Type.PostalAddress)
+  name.vb: IEquatable(Of PostalAddress)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<PostalAddress>
+  nameWithType: IDeepCloneable<PostalAddress>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Type.PostalAddress>
+  nameWithType.vb: IDeepCloneable(Of PostalAddress)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Type.PostalAddress)
+  name.vb: IDeepCloneable(Of PostalAddress)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Type.PostalAddress.Parser*
+  commentId: Overload:Google.Type.PostalAddress.Parser
+  isExternal: false
+  name: Parser
+  nameWithType: PostalAddress.Parser
+  fullName: Google.Type.PostalAddress.Parser
+- uid: Google.Protobuf.MessageParser{Google.Type.PostalAddress}
+  commentId: T:Google.Protobuf.MessageParser{Google.Type.PostalAddress}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<PostalAddress>
+  nameWithType: MessageParser<PostalAddress>
+  fullName: Google.Protobuf.MessageParser<Google.Type.PostalAddress>
+  nameWithType.vb: MessageParser(Of PostalAddress)
+  fullName.vb: Google.Protobuf.MessageParser(Of Google.Type.PostalAddress)
+  name.vb: MessageParser(Of PostalAddress)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: true
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Type.PostalAddress.Descriptor*
+  commentId: Overload:Google.Type.PostalAddress.Descriptor
+  isExternal: false
+  name: Descriptor
+  nameWithType: PostalAddress.Descriptor
+  fullName: Google.Type.PostalAddress.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: true
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: PostalAddress.IMessage.Descriptor
+  fullName: Google.Type.PostalAddress.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: PostalAddress.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Type.PostalAddress.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: Google.Type.PostalAddress.#ctor*
+  commentId: Overload:Google.Type.PostalAddress.#ctor
+  isExternal: false
+  name: PostalAddress
+  nameWithType: PostalAddress.PostalAddress
+  fullName: Google.Type.PostalAddress.PostalAddress
+- uid: Google.Type.PostalAddress
+  commentId: T:Google.Type.PostalAddress
+  parent: Google.Type
+  isExternal: false
+  name: PostalAddress
+  nameWithType: PostalAddress
+  fullName: Google.Type.PostalAddress
+- uid: Google.Type.PostalAddress.Clone*
+  commentId: Overload:Google.Type.PostalAddress.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: PostalAddress.Clone
+  fullName: Google.Type.PostalAddress.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<PostalAddress>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Type.PostalAddress>.Clone()
+  nameWithType.vb: IDeepCloneable(Of PostalAddress).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Type.PostalAddress).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<PostalAddress>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Type.PostalAddress>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of PostalAddress).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Type.PostalAddress).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Type.PostalAddress.Revision*
+  commentId: Overload:Google.Type.PostalAddress.Revision
+  isExternal: false
+  name: Revision
+  nameWithType: PostalAddress.Revision
+  fullName: Google.Type.PostalAddress.Revision
+- uid: Google.Type.PostalAddress.RegionCode*
+  commentId: Overload:Google.Type.PostalAddress.RegionCode
+  isExternal: false
+  name: RegionCode
+  nameWithType: PostalAddress.RegionCode
+  fullName: Google.Type.PostalAddress.RegionCode
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Type.PostalAddress.LanguageCode*
+  commentId: Overload:Google.Type.PostalAddress.LanguageCode
+  isExternal: false
+  name: LanguageCode
+  nameWithType: PostalAddress.LanguageCode
+  fullName: Google.Type.PostalAddress.LanguageCode
+- uid: Google.Type.PostalAddress.PostalCode*
+  commentId: Overload:Google.Type.PostalAddress.PostalCode
+  isExternal: false
+  name: PostalCode
+  nameWithType: PostalAddress.PostalCode
+  fullName: Google.Type.PostalAddress.PostalCode
+- uid: Google.Type.PostalAddress.SortingCode*
+  commentId: Overload:Google.Type.PostalAddress.SortingCode
+  isExternal: false
+  name: SortingCode
+  nameWithType: PostalAddress.SortingCode
+  fullName: Google.Type.PostalAddress.SortingCode
+- uid: Google.Type.PostalAddress.AdministrativeArea*
+  commentId: Overload:Google.Type.PostalAddress.AdministrativeArea
+  isExternal: false
+  name: AdministrativeArea
+  nameWithType: PostalAddress.AdministrativeArea
+  fullName: Google.Type.PostalAddress.AdministrativeArea
+- uid: Google.Type.PostalAddress.Locality*
+  commentId: Overload:Google.Type.PostalAddress.Locality
+  isExternal: false
+  name: Locality
+  nameWithType: PostalAddress.Locality
+  fullName: Google.Type.PostalAddress.Locality
+- uid: Google.Type.PostalAddress.Sublocality*
+  commentId: Overload:Google.Type.PostalAddress.Sublocality
+  isExternal: false
+  name: Sublocality
+  nameWithType: PostalAddress.Sublocality
+  fullName: Google.Type.PostalAddress.Sublocality
+- uid: Google.Type.PostalAddress.AddressLines*
+  commentId: Overload:Google.Type.PostalAddress.AddressLines
+  isExternal: false
+  name: AddressLines
+  nameWithType: PostalAddress.AddressLines
+  fullName: Google.Type.PostalAddress.AddressLines
+- uid: Google.Protobuf.Collections.RepeatedField{System.String}
+  commentId: T:Google.Protobuf.Collections.RepeatedField{System.String}
+  parent: Google.Protobuf.Collections
+  definition: Google.Protobuf.Collections.RepeatedField`1
+  name: RepeatedField<String>
+  nameWithType: RepeatedField<String>
+  fullName: Google.Protobuf.Collections.RepeatedField<System.String>
+  nameWithType.vb: RepeatedField(Of String)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of System.String)
+  name.vb: RepeatedField(Of String)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
+  isExternal: true
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: Google.Type.PostalAddress.Recipients*
+  commentId: Overload:Google.Type.PostalAddress.Recipients
+  isExternal: false
+  name: Recipients
+  nameWithType: PostalAddress.Recipients
+  fullName: Google.Type.PostalAddress.Recipients
+- uid: Google.Type.PostalAddress.Organization*
+  commentId: Overload:Google.Type.PostalAddress.Organization
+  isExternal: false
+  name: Organization
+  nameWithType: PostalAddress.Organization
+  fullName: Google.Type.PostalAddress.Organization
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Type.PostalAddress.Equals*
+  commentId: Overload:Google.Type.PostalAddress.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: PostalAddress.Equals
+  fullName: Google.Type.PostalAddress.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{Google.Type.PostalAddress}.Equals(Google.Type.PostalAddress)
+  commentId: M:System.IEquatable{Google.Type.PostalAddress}.Equals(Google.Type.PostalAddress)
+  parent: System.IEquatable{Google.Type.PostalAddress}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(PostalAddress)
+  nameWithType: IEquatable<PostalAddress>.Equals(PostalAddress)
+  fullName: System.IEquatable<Google.Type.PostalAddress>.Equals(Google.Type.PostalAddress)
+  nameWithType.vb: IEquatable(Of PostalAddress).Equals(PostalAddress)
+  fullName.vb: System.IEquatable(Of Google.Type.PostalAddress).Equals(Google.Type.PostalAddress)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<PostalAddress>.Equals
+    fullName: System.IEquatable<Google.Type.PostalAddress>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of PostalAddress).Equals
+    fullName: System.IEquatable(Of Google.Type.PostalAddress).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Type.PostalAddress.GetHashCode*
+  commentId: Overload:Google.Type.PostalAddress.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: PostalAddress.GetHashCode
+  fullName: Google.Type.PostalAddress.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Type.PostalAddress.ToString*
+  commentId: Overload:Google.Type.PostalAddress.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: PostalAddress.ToString
+  fullName: Google.Type.PostalAddress.ToString
+- uid: Google.Type.PostalAddress.WriteTo*
+  commentId: Overload:Google.Type.PostalAddress.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: PostalAddress.WriteTo
+  fullName: Google.Type.PostalAddress.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: Google.Type.PostalAddress.CalculateSize*
+  commentId: Overload:Google.Type.PostalAddress.CalculateSize
+  isExternal: false
+  name: CalculateSize
+  nameWithType: PostalAddress.CalculateSize
+  fullName: Google.Type.PostalAddress.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Type.PostalAddress.MergeFrom*
+  commentId: Overload:Google.Type.PostalAddress.MergeFrom
+  isExternal: false
+  name: MergeFrom
+  nameWithType: PostalAddress.MergeFrom
+  fullName: Google.Type.PostalAddress.MergeFrom
+- uid: Google.Protobuf.IMessage{Google.Type.PostalAddress}.MergeFrom(Google.Type.PostalAddress)
+  commentId: M:Google.Protobuf.IMessage{Google.Type.PostalAddress}.MergeFrom(Google.Type.PostalAddress)
+  parent: Google.Protobuf.IMessage{Google.Type.PostalAddress}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(PostalAddress)
+  nameWithType: IMessage<PostalAddress>.MergeFrom(PostalAddress)
+  fullName: Google.Protobuf.IMessage<Google.Type.PostalAddress>.MergeFrom(Google.Type.PostalAddress)
+  nameWithType.vb: IMessage(Of PostalAddress).MergeFrom(PostalAddress)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Type.PostalAddress).MergeFrom(Google.Type.PostalAddress)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<PostalAddress>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Type.PostalAddress>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of PostalAddress).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Type.PostalAddress).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Type.PostalAddress
+    name: PostalAddress
+    nameWithType: PostalAddress
+    fullName: Google.Type.PostalAddress
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: true
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream

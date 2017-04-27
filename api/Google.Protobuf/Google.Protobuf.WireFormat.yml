@@ -1,0 +1,507 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.WireFormat
+  commentId: T:Google.Protobuf.WireFormat
+  id: WireFormat
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.WireFormat.GetTagFieldNumber(System.UInt32)
+  - Google.Protobuf.WireFormat.GetTagWireType(System.UInt32)
+  - Google.Protobuf.WireFormat.MakeTag(System.Int32,Google.Protobuf.WireFormat.WireType)
+  langs:
+  - csharp
+  - vb
+  name: WireFormat
+  nameWithType: WireFormat
+  fullName: Google.Protobuf.WireFormat
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WireFormat.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WireFormat
+    path: csharp/src/Google.Protobuf/WireFormat.cs
+    startLine: 43
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nThis class is used internally by the Protocol Buffer Library and generated\nmessage implementations. It is public only for the sake of those generated\nmessages. Others should not use this class directly.\n<p>\nThis class contains constants and helper functions useful for dealing with\nthe Protocol Buffer wire format.\n</p>\n"
+  example: []
+  syntax:
+    content: public static class WireFormat
+    content.vb: Public Module WireFormat
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Google.Protobuf.WireFormat.GetTagWireType(System.UInt32)
+  commentId: M:Google.Protobuf.WireFormat.GetTagWireType(System.UInt32)
+  id: GetTagWireType(System.UInt32)
+  parent: Google.Protobuf.WireFormat
+  langs:
+  - csharp
+  - vb
+  name: GetTagWireType(UInt32)
+  nameWithType: WireFormat.GetTagWireType(UInt32)
+  fullName: Google.Protobuf.WireFormat.GetTagWireType(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WireFormat.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: GetTagWireType
+    path: csharp/src/Google.Protobuf/WireFormat.cs
+    startLine: 82
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nGiven a tag value, determines the wire type (lower 3 bits).\n"
+  example: []
+  syntax:
+    content: public static WireFormat.WireType GetTagWireType(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+    return:
+      type: Google.Protobuf.WireFormat.WireType
+    content.vb: Public Shared Function GetTagWireType(tag As UInteger) As WireFormat.WireType
+  overload: Google.Protobuf.WireFormat.GetTagWireType*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WireFormat.GetTagFieldNumber(System.UInt32)
+  commentId: M:Google.Protobuf.WireFormat.GetTagFieldNumber(System.UInt32)
+  id: GetTagFieldNumber(System.UInt32)
+  parent: Google.Protobuf.WireFormat
+  langs:
+  - csharp
+  - vb
+  name: GetTagFieldNumber(UInt32)
+  nameWithType: WireFormat.GetTagFieldNumber(UInt32)
+  fullName: Google.Protobuf.WireFormat.GetTagFieldNumber(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WireFormat.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: GetTagFieldNumber
+    path: csharp/src/Google.Protobuf/WireFormat.cs
+    startLine: 90
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nGiven a tag value, determines the field number (the upper 29 bits).\n"
+  example: []
+  syntax:
+    content: public static int GetTagFieldNumber(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+    return:
+      type: System.Int32
+    content.vb: Public Shared Function GetTagFieldNumber(tag As UInteger) As Integer
+  overload: Google.Protobuf.WireFormat.GetTagFieldNumber*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WireFormat.MakeTag(System.Int32,Google.Protobuf.WireFormat.WireType)
+  commentId: M:Google.Protobuf.WireFormat.MakeTag(System.Int32,Google.Protobuf.WireFormat.WireType)
+  id: MakeTag(System.Int32,Google.Protobuf.WireFormat.WireType)
+  parent: Google.Protobuf.WireFormat
+  langs:
+  - csharp
+  - vb
+  name: MakeTag(Int32, WireFormat.WireType)
+  nameWithType: WireFormat.MakeTag(Int32, WireFormat.WireType)
+  fullName: Google.Protobuf.WireFormat.MakeTag(System.Int32, Google.Protobuf.WireFormat.WireType)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WireFormat.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MakeTag
+    path: csharp/src/Google.Protobuf/WireFormat.cs
+    startLine: 98
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nMakes a tag value given a field number and wire type.\n"
+  example: []
+  syntax:
+    content: public static uint MakeTag(int fieldNumber, WireFormat.WireType wireType)
+    parameters:
+    - id: fieldNumber
+      type: System.Int32
+    - id: wireType
+      type: Google.Protobuf.WireFormat.WireType
+    return:
+      type: System.UInt32
+    content.vb: Public Shared Function MakeTag(fieldNumber As Integer, wireType As WireFormat.WireType) As UInteger
+  overload: Google.Protobuf.WireFormat.MakeTag*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.WireFormat.GetTagWireType*
+  commentId: Overload:Google.Protobuf.WireFormat.GetTagWireType
+  isExternal: false
+  name: GetTagWireType
+  nameWithType: WireFormat.GetTagWireType
+  fullName: Google.Protobuf.WireFormat.GetTagWireType
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: Google.Protobuf.WireFormat.WireType
+  commentId: T:Google.Protobuf.WireFormat.WireType
+  parent: Google.Protobuf
+  isExternal: false
+  name: WireFormat.WireType
+  nameWithType: WireFormat.WireType
+  fullName: Google.Protobuf.WireFormat.WireType
+- uid: Google.Protobuf.WireFormat.GetTagFieldNumber*
+  commentId: Overload:Google.Protobuf.WireFormat.GetTagFieldNumber
+  isExternal: false
+  name: GetTagFieldNumber
+  nameWithType: WireFormat.GetTagFieldNumber
+  fullName: Google.Protobuf.WireFormat.GetTagFieldNumber
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Protobuf.WireFormat.MakeTag*
+  commentId: Overload:Google.Protobuf.WireFormat.MakeTag
+  isExternal: false
+  name: MakeTag
+  nameWithType: WireFormat.MakeTag
+  fullName: Google.Protobuf.WireFormat.MakeTag

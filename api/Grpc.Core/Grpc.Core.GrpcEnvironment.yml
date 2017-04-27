@@ -1,0 +1,643 @@
+### YamlMime:ManagedReference
+items:
+- uid: Grpc.Core.GrpcEnvironment
+  commentId: T:Grpc.Core.GrpcEnvironment
+  id: GrpcEnvironment
+  parent: Grpc.Core
+  children:
+  - Grpc.Core.GrpcEnvironment.KillServersAsync
+  - Grpc.Core.GrpcEnvironment.Logger
+  - Grpc.Core.GrpcEnvironment.SetCompletionQueueCount(System.Int32)
+  - Grpc.Core.GrpcEnvironment.SetLogger(Grpc.Core.Logging.ILogger)
+  - Grpc.Core.GrpcEnvironment.SetThreadPoolSize(System.Int32)
+  - Grpc.Core.GrpcEnvironment.ShutdownChannelsAsync
+  langs:
+  - csharp
+  - vb
+  name: GrpcEnvironment
+  nameWithType: GrpcEnvironment
+  fullName: Grpc.Core.GrpcEnvironment
+  type: Class
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: GrpcEnvironment
+    path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+    startLine: 47
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nEncapsulates initialization and shutdown of gRPC library.\n"
+  example: []
+  syntax:
+    content: public class GrpcEnvironment
+    content.vb: Public Class GrpcEnvironment
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Grpc.Core.GrpcEnvironment.ShutdownChannelsAsync
+  commentId: M:Grpc.Core.GrpcEnvironment.ShutdownChannelsAsync
+  id: ShutdownChannelsAsync
+  parent: Grpc.Core.GrpcEnvironment
+  langs:
+  - csharp
+  - vb
+  name: ShutdownChannelsAsync()
+  nameWithType: GrpcEnvironment.ShutdownChannelsAsync()
+  fullName: Grpc.Core.GrpcEnvironment.ShutdownChannelsAsync()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ShutdownChannelsAsync
+    path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+    startLine: 156
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nRequests shutdown of all channels created by the current process.\n"
+  example: []
+  syntax:
+    content: public static Task ShutdownChannelsAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Shared Function ShutdownChannelsAsync As Task
+  overload: Grpc.Core.GrpcEnvironment.ShutdownChannelsAsync*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Grpc.Core.GrpcEnvironment.KillServersAsync
+  commentId: M:Grpc.Core.GrpcEnvironment.KillServersAsync
+  id: KillServersAsync
+  parent: Grpc.Core.GrpcEnvironment
+  langs:
+  - csharp
+  - vb
+  name: KillServersAsync()
+  nameWithType: GrpcEnvironment.KillServersAsync()
+  fullName: Grpc.Core.GrpcEnvironment.KillServersAsync()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: KillServersAsync
+    path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+    startLine: 169
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nRequests immediate shutdown of all servers created by the current process.\n"
+  example: []
+  syntax:
+    content: public static Task KillServersAsync()
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Shared Function KillServersAsync As Task
+  overload: Grpc.Core.GrpcEnvironment.KillServersAsync*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Grpc.Core.GrpcEnvironment.Logger
+  commentId: P:Grpc.Core.GrpcEnvironment.Logger
+  id: Logger
+  parent: Grpc.Core.GrpcEnvironment
+  langs:
+  - csharp
+  - vb
+  name: Logger
+  nameWithType: GrpcEnvironment.Logger
+  fullName: Grpc.Core.GrpcEnvironment.Logger
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Logger
+    path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+    startLine: 183
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nGets application-wide logger used by gRPC.\n"
+  example: []
+  syntax:
+    content: public static ILogger Logger { get; }
+    parameters: []
+    return:
+      type: Grpc.Core.Logging.ILogger
+      description: The logger.
+    content.vb: Public Shared ReadOnly Property Logger As ILogger
+  overload: Grpc.Core.GrpcEnvironment.Logger*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Grpc.Core.GrpcEnvironment.SetLogger(Grpc.Core.Logging.ILogger)
+  commentId: M:Grpc.Core.GrpcEnvironment.SetLogger(Grpc.Core.Logging.ILogger)
+  id: SetLogger(Grpc.Core.Logging.ILogger)
+  parent: Grpc.Core.GrpcEnvironment
+  langs:
+  - csharp
+  - vb
+  name: SetLogger(ILogger)
+  nameWithType: GrpcEnvironment.SetLogger(ILogger)
+  fullName: Grpc.Core.GrpcEnvironment.SetLogger(Grpc.Core.Logging.ILogger)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: SetLogger
+    path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+    startLine: 194
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nSets the application-wide logger that should be used by gRPC.\n"
+  example: []
+  syntax:
+    content: public static void SetLogger(ILogger customLogger)
+    parameters:
+    - id: customLogger
+      type: Grpc.Core.Logging.ILogger
+    content.vb: Public Shared Sub SetLogger(customLogger As ILogger)
+  overload: Grpc.Core.GrpcEnvironment.SetLogger*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Grpc.Core.GrpcEnvironment.SetThreadPoolSize(System.Int32)
+  commentId: M:Grpc.Core.GrpcEnvironment.SetThreadPoolSize(System.Int32)
+  id: SetThreadPoolSize(System.Int32)
+  parent: Grpc.Core.GrpcEnvironment
+  langs:
+  - csharp
+  - vb
+  name: SetThreadPoolSize(Int32)
+  nameWithType: GrpcEnvironment.SetThreadPoolSize(Int32)
+  fullName: Grpc.Core.GrpcEnvironment.SetThreadPoolSize(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: SetThreadPoolSize
+    path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+    startLine: 207
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nSets the number of threads in the gRPC thread pool that polls for internal RPC events.\nCan be only invoke before the <code>GrpcEnviroment</code> is started and cannot be changed afterwards.\nSetting thread pool size is an advanced setting and you should only use it if you know what you are doing.\nMost users should rely on the default value provided by gRPC library.\nNote: this method is part of an experimental API that can change or be removed without any prior notice.\n"
+  example: []
+  syntax:
+    content: public static void SetThreadPoolSize(int threadCount)
+    parameters:
+    - id: threadCount
+      type: System.Int32
+    content.vb: Public Shared Sub SetThreadPoolSize(threadCount As Integer)
+  overload: Grpc.Core.GrpcEnvironment.SetThreadPoolSize*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Grpc.Core.GrpcEnvironment.SetCompletionQueueCount(System.Int32)
+  commentId: M:Grpc.Core.GrpcEnvironment.SetCompletionQueueCount(System.Int32)
+  id: SetCompletionQueueCount(System.Int32)
+  parent: Grpc.Core.GrpcEnvironment
+  langs:
+  - csharp
+  - vb
+  name: SetCompletionQueueCount(Int32)
+  nameWithType: GrpcEnvironment.SetCompletionQueueCount(Int32)
+  fullName: Grpc.Core.GrpcEnvironment.SetCompletionQueueCount(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: SetCompletionQueueCount
+    path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+    startLine: 224
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nSets the number of completion queues in the  gRPC thread pool that polls for internal RPC events.\nCan be only invoke before the <code>GrpcEnviroment</code> is started and cannot be changed afterwards.\nSetting the number of completions queues is an advanced setting and you should only use it if you know what you are doing.\nMost users should rely on the default value provided by gRPC library.\nNote: this method is part of an experimental API that can change or be removed without any prior notice.\n"
+  example: []
+  syntax:
+    content: public static void SetCompletionQueueCount(int completionQueueCount)
+    parameters:
+    - id: completionQueueCount
+      type: System.Int32
+    content.vb: Public Shared Sub SetCompletionQueueCount(completionQueueCount As Integer)
+  overload: Grpc.Core.GrpcEnvironment.SetCompletionQueueCount*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Grpc.Core.GrpcEnvironment.ShutdownChannelsAsync*
+  commentId: Overload:Grpc.Core.GrpcEnvironment.ShutdownChannelsAsync
+  isExternal: false
+  name: ShutdownChannelsAsync
+  nameWithType: GrpcEnvironment.ShutdownChannelsAsync
+  fullName: Grpc.Core.GrpcEnvironment.ShutdownChannelsAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Grpc.Core.GrpcEnvironment.KillServersAsync*
+  commentId: Overload:Grpc.Core.GrpcEnvironment.KillServersAsync
+  isExternal: false
+  name: KillServersAsync
+  nameWithType: GrpcEnvironment.KillServersAsync
+  fullName: Grpc.Core.GrpcEnvironment.KillServersAsync
+- uid: Grpc.Core.GrpcEnvironment.Logger*
+  commentId: Overload:Grpc.Core.GrpcEnvironment.Logger
+  isExternal: false
+  name: Logger
+  nameWithType: GrpcEnvironment.Logger
+  fullName: Grpc.Core.GrpcEnvironment.Logger
+- uid: Grpc.Core.Logging.ILogger
+  commentId: T:Grpc.Core.Logging.ILogger
+  parent: Grpc.Core.Logging
+  isExternal: false
+  name: ILogger
+  nameWithType: ILogger
+  fullName: Grpc.Core.Logging.ILogger
+- uid: Grpc.Core.Logging
+  commentId: N:Grpc.Core.Logging
+  isExternal: false
+  name: Grpc.Core.Logging
+  nameWithType: Grpc.Core.Logging
+  fullName: Grpc.Core.Logging
+- uid: Grpc.Core.GrpcEnvironment.SetLogger*
+  commentId: Overload:Grpc.Core.GrpcEnvironment.SetLogger
+  isExternal: false
+  name: SetLogger
+  nameWithType: GrpcEnvironment.SetLogger
+  fullName: Grpc.Core.GrpcEnvironment.SetLogger
+- uid: Grpc.Core.GrpcEnvironment.SetThreadPoolSize*
+  commentId: Overload:Grpc.Core.GrpcEnvironment.SetThreadPoolSize
+  isExternal: false
+  name: SetThreadPoolSize
+  nameWithType: GrpcEnvironment.SetThreadPoolSize
+  fullName: Grpc.Core.GrpcEnvironment.SetThreadPoolSize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Grpc.Core.GrpcEnvironment.SetCompletionQueueCount*
+  commentId: Overload:Grpc.Core.GrpcEnvironment.SetCompletionQueueCount
+  isExternal: false
+  name: SetCompletionQueueCount
+  nameWithType: GrpcEnvironment.SetCompletionQueueCount
+  fullName: Grpc.Core.GrpcEnvironment.SetCompletionQueueCount

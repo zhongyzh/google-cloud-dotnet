@@ -1,0 +1,898 @@
+### YamlMime:ManagedReference
+items:
+- uid: Grpc.Core.AsyncUnaryCall`1
+  commentId: T:Grpc.Core.AsyncUnaryCall`1
+  id: AsyncUnaryCall`1
+  parent: Grpc.Core
+  children:
+  - Grpc.Core.AsyncUnaryCall`1.Dispose
+  - Grpc.Core.AsyncUnaryCall`1.GetAwaiter
+  - Grpc.Core.AsyncUnaryCall`1.GetStatus
+  - Grpc.Core.AsyncUnaryCall`1.GetTrailers
+  - Grpc.Core.AsyncUnaryCall`1.ResponseAsync
+  - Grpc.Core.AsyncUnaryCall`1.ResponseHeadersAsync
+  langs:
+  - csharp
+  - vb
+  name: AsyncUnaryCall<TResponse>
+  nameWithType: AsyncUnaryCall<TResponse>
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>
+  type: Class
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: AsyncUnaryCall
+    path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+    startLine: 43
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nReturn type for single request - single response call.\n"
+  example: []
+  syntax:
+    content: 'public sealed class AsyncUnaryCall<TResponse> : IDisposable'
+    typeParameters:
+    - id: TResponse
+      description: Response message type for this call.
+    content.vb: >-
+      Public NotInheritable Class AsyncUnaryCall(Of TResponse)
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: AsyncUnaryCall(Of TResponse)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse)
+  name.vb: AsyncUnaryCall(Of TResponse)
+- uid: Grpc.Core.AsyncUnaryCall`1.ResponseAsync
+  commentId: P:Grpc.Core.AsyncUnaryCall`1.ResponseAsync
+  id: ResponseAsync
+  parent: Grpc.Core.AsyncUnaryCall`1
+  langs:
+  - csharp
+  - vb
+  name: ResponseAsync
+  nameWithType: AsyncUnaryCall<TResponse>.ResponseAsync
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.ResponseAsync
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ResponseAsync
+    path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+    startLine: 63
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nAsynchronous call result.\n"
+  example: []
+  syntax:
+    content: public Task<TResponse> ResponseAsync { get; }
+    parameters: []
+    return:
+      type: System.Threading.Tasks.Task{{TResponse}}
+    content.vb: Public ReadOnly Property ResponseAsync As Task(Of TResponse)
+  overload: Grpc.Core.AsyncUnaryCall`1.ResponseAsync*
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).ResponseAsync
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).ResponseAsync
+- uid: Grpc.Core.AsyncUnaryCall`1.ResponseHeadersAsync
+  commentId: P:Grpc.Core.AsyncUnaryCall`1.ResponseHeadersAsync
+  id: ResponseHeadersAsync
+  parent: Grpc.Core.AsyncUnaryCall`1
+  langs:
+  - csharp
+  - vb
+  name: ResponseHeadersAsync
+  nameWithType: AsyncUnaryCall<TResponse>.ResponseHeadersAsync
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.ResponseHeadersAsync
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ResponseHeadersAsync
+    path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+    startLine: 74
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nAsynchronous access to response headers.\n"
+  example: []
+  syntax:
+    content: public Task<Metadata> ResponseHeadersAsync { get; }
+    parameters: []
+    return:
+      type: System.Threading.Tasks.Task{Grpc.Core.Metadata}
+    content.vb: Public ReadOnly Property ResponseHeadersAsync As Task(Of Metadata)
+  overload: Grpc.Core.AsyncUnaryCall`1.ResponseHeadersAsync*
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).ResponseHeadersAsync
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).ResponseHeadersAsync
+- uid: Grpc.Core.AsyncUnaryCall`1.GetAwaiter
+  commentId: M:Grpc.Core.AsyncUnaryCall`1.GetAwaiter
+  id: GetAwaiter
+  parent: Grpc.Core.AsyncUnaryCall`1
+  langs:
+  - csharp
+  - vb
+  name: GetAwaiter()
+  nameWithType: AsyncUnaryCall<TResponse>.GetAwaiter()
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.GetAwaiter()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: GetAwaiter
+    path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+    startLine: 85
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nAllows awaiting this object directly.\n"
+  example: []
+  syntax:
+    content: public TaskAwaiter<TResponse> GetAwaiter()
+    return:
+      type: System.Runtime.CompilerServices.TaskAwaiter{{TResponse}}
+    content.vb: Public Function GetAwaiter As TaskAwaiter(Of TResponse)
+  overload: Grpc.Core.AsyncUnaryCall`1.GetAwaiter*
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).GetAwaiter()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).GetAwaiter()
+- uid: Grpc.Core.AsyncUnaryCall`1.GetStatus
+  commentId: M:Grpc.Core.AsyncUnaryCall`1.GetStatus
+  id: GetStatus
+  parent: Grpc.Core.AsyncUnaryCall`1
+  langs:
+  - csharp
+  - vb
+  name: GetStatus()
+  nameWithType: AsyncUnaryCall<TResponse>.GetStatus()
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.GetStatus()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: GetStatus
+    path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+    startLine: 94
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nGets the call status if the call has already finished.\nThrows InvalidOperationException otherwise.\n"
+  example: []
+  syntax:
+    content: public Status GetStatus()
+    return:
+      type: Grpc.Core.Status
+    content.vb: Public Function GetStatus As Status
+  overload: Grpc.Core.AsyncUnaryCall`1.GetStatus*
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).GetStatus()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).GetStatus()
+- uid: Grpc.Core.AsyncUnaryCall`1.GetTrailers
+  commentId: M:Grpc.Core.AsyncUnaryCall`1.GetTrailers
+  id: GetTrailers
+  parent: Grpc.Core.AsyncUnaryCall`1
+  langs:
+  - csharp
+  - vb
+  name: GetTrailers()
+  nameWithType: AsyncUnaryCall<TResponse>.GetTrailers()
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.GetTrailers()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: GetTrailers
+    path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+    startLine: 103
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nGets the call trailing metadata if the call has already finished.\nThrows InvalidOperationException otherwise.\n"
+  example: []
+  syntax:
+    content: public Metadata GetTrailers()
+    return:
+      type: Grpc.Core.Metadata
+    content.vb: Public Function GetTrailers As Metadata
+  overload: Grpc.Core.AsyncUnaryCall`1.GetTrailers*
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).GetTrailers()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).GetTrailers()
+- uid: Grpc.Core.AsyncUnaryCall`1.Dispose
+  commentId: M:Grpc.Core.AsyncUnaryCall`1.Dispose
+  id: Dispose
+  parent: Grpc.Core.AsyncUnaryCall`1
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: AsyncUnaryCall<TResponse>.Dispose()
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.Dispose()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Dispose
+    path: src/csharp/Grpc.Core/AsyncUnaryCall.cs
+    startLine: 118
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nProvides means to cleanup after the call.\nIf the call has already finished normally (request stream has been completed and call result has been received), doesn't do anything.\nOtherwise, requests cancellation of the call which should terminate all pending async operations associated with the call.\nAs a result, all resources being used by the call should be released eventually.\n"
+  remarks: "\nNormally, there is no need for you to dispose the call unless you want to utilize the\n\"Cancel\" semantics of invoking <code>Dispose</code>.\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Grpc.Core.AsyncUnaryCall`1.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).Dispose()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).Dispose()
+references:
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Grpc.Core.AsyncUnaryCall`1.ResponseAsync*
+  commentId: Overload:Grpc.Core.AsyncUnaryCall`1.ResponseAsync
+  isExternal: false
+  name: ResponseAsync
+  nameWithType: AsyncUnaryCall<TResponse>.ResponseAsync
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.ResponseAsync
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).ResponseAsync
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).ResponseAsync
+- uid: System.Threading.Tasks.Task{{TResponse}}
+  commentId: T:System.Threading.Tasks.Task{`1}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TResponse>
+  nameWithType: Task<TResponse>
+  fullName: System.Threading.Tasks.Task<TResponse>
+  nameWithType.vb: Task(Of TResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of TResponse)
+  name.vb: Task(Of TResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: Grpc.Core.AsyncUnaryCall`1.ResponseHeadersAsync*
+  commentId: Overload:Grpc.Core.AsyncUnaryCall`1.ResponseHeadersAsync
+  isExternal: false
+  name: ResponseHeadersAsync
+  nameWithType: AsyncUnaryCall<TResponse>.ResponseHeadersAsync
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.ResponseHeadersAsync
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).ResponseHeadersAsync
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).ResponseHeadersAsync
+- uid: System.Threading.Tasks.Task{Grpc.Core.Metadata}
+  commentId: T:System.Threading.Tasks.Task{Grpc.Core.Metadata}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Metadata>
+  nameWithType: Task<Metadata>
+  fullName: System.Threading.Tasks.Task<Grpc.Core.Metadata>
+  nameWithType.vb: Task(Of Metadata)
+  fullName.vb: System.Threading.Tasks.Task(Of Grpc.Core.Metadata)
+  name.vb: Task(Of Metadata)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Grpc.Core.Metadata
+    name: Metadata
+    nameWithType: Metadata
+    fullName: Grpc.Core.Metadata
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Grpc.Core.Metadata
+    name: Metadata
+    nameWithType: Metadata
+    fullName: Grpc.Core.Metadata
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.AsyncUnaryCall`1.GetAwaiter*
+  commentId: Overload:Grpc.Core.AsyncUnaryCall`1.GetAwaiter
+  isExternal: false
+  name: GetAwaiter
+  nameWithType: AsyncUnaryCall<TResponse>.GetAwaiter
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.GetAwaiter
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).GetAwaiter
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).GetAwaiter
+- uid: System.Runtime.CompilerServices.TaskAwaiter{{TResponse}}
+  commentId: T:System.Runtime.CompilerServices.TaskAwaiter{`1}
+  parent: System.Runtime.CompilerServices
+  definition: System.Runtime.CompilerServices.TaskAwaiter`1
+  name: TaskAwaiter<TResponse>
+  nameWithType: TaskAwaiter<TResponse>
+  fullName: System.Runtime.CompilerServices.TaskAwaiter<TResponse>
+  nameWithType.vb: TaskAwaiter(Of TResponse)
+  fullName.vb: System.Runtime.CompilerServices.TaskAwaiter(Of TResponse)
+  name.vb: TaskAwaiter(Of TResponse)
+  spec.csharp:
+  - uid: System.Runtime.CompilerServices.TaskAwaiter`1
+    name: TaskAwaiter
+    nameWithType: TaskAwaiter
+    fullName: System.Runtime.CompilerServices.TaskAwaiter
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Runtime.CompilerServices.TaskAwaiter`1
+    name: TaskAwaiter
+    nameWithType: TaskAwaiter
+    fullName: System.Runtime.CompilerServices.TaskAwaiter
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Runtime.CompilerServices.TaskAwaiter`1
+  commentId: T:System.Runtime.CompilerServices.TaskAwaiter`1
+  isExternal: true
+  name: TaskAwaiter<TResult>
+  nameWithType: TaskAwaiter<TResult>
+  fullName: System.Runtime.CompilerServices.TaskAwaiter<TResult>
+  nameWithType.vb: TaskAwaiter(Of TResult)
+  fullName.vb: System.Runtime.CompilerServices.TaskAwaiter(Of TResult)
+  name.vb: TaskAwaiter(Of TResult)
+  spec.csharp:
+  - uid: System.Runtime.CompilerServices.TaskAwaiter`1
+    name: TaskAwaiter
+    nameWithType: TaskAwaiter
+    fullName: System.Runtime.CompilerServices.TaskAwaiter
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Runtime.CompilerServices.TaskAwaiter`1
+    name: TaskAwaiter
+    nameWithType: TaskAwaiter
+    fullName: System.Runtime.CompilerServices.TaskAwaiter
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Runtime.CompilerServices
+  commentId: N:System.Runtime.CompilerServices
+  isExternal: false
+  name: System.Runtime.CompilerServices
+  nameWithType: System.Runtime.CompilerServices
+  fullName: System.Runtime.CompilerServices
+- uid: Grpc.Core.AsyncUnaryCall`1.GetStatus*
+  commentId: Overload:Grpc.Core.AsyncUnaryCall`1.GetStatus
+  isExternal: false
+  name: GetStatus
+  nameWithType: AsyncUnaryCall<TResponse>.GetStatus
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.GetStatus
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).GetStatus
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).GetStatus
+- uid: Grpc.Core.Status
+  commentId: T:Grpc.Core.Status
+  parent: Grpc.Core
+  isExternal: false
+  name: Status
+  nameWithType: Status
+  fullName: Grpc.Core.Status
+- uid: Grpc.Core.AsyncUnaryCall`1.GetTrailers*
+  commentId: Overload:Grpc.Core.AsyncUnaryCall`1.GetTrailers
+  isExternal: false
+  name: GetTrailers
+  nameWithType: AsyncUnaryCall<TResponse>.GetTrailers
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.GetTrailers
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).GetTrailers
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).GetTrailers
+- uid: Grpc.Core.Metadata
+  commentId: T:Grpc.Core.Metadata
+  parent: Grpc.Core
+  isExternal: false
+  name: Metadata
+  nameWithType: Metadata
+  fullName: Grpc.Core.Metadata
+- uid: Grpc.Core.AsyncUnaryCall`1.Dispose*
+  commentId: Overload:Grpc.Core.AsyncUnaryCall`1.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: AsyncUnaryCall<TResponse>.Dispose
+  fullName: Grpc.Core.AsyncUnaryCall<TResponse>.Dispose
+  nameWithType.vb: AsyncUnaryCall(Of TResponse).Dispose
+  fullName.vb: Grpc.Core.AsyncUnaryCall(Of TResponse).Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

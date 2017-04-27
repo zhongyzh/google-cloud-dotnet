@@ -1,0 +1,2563 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.HttpRule
+  commentId: T:Google.Api.HttpRule
+  id: HttpRule
+  parent: Google.Api
+  children:
+  - Google.Api.HttpRule.#ctor
+  - Google.Api.HttpRule.#ctor(Google.Api.HttpRule)
+  - Google.Api.HttpRule.AdditionalBindings
+  - Google.Api.HttpRule.AdditionalBindingsFieldNumber
+  - Google.Api.HttpRule.Body
+  - Google.Api.HttpRule.BodyFieldNumber
+  - Google.Api.HttpRule.CalculateSize
+  - Google.Api.HttpRule.ClearPattern
+  - Google.Api.HttpRule.Clone
+  - Google.Api.HttpRule.Custom
+  - Google.Api.HttpRule.CustomFieldNumber
+  - Google.Api.HttpRule.Delete
+  - Google.Api.HttpRule.DeleteFieldNumber
+  - Google.Api.HttpRule.Descriptor
+  - Google.Api.HttpRule.Equals(Google.Api.HttpRule)
+  - Google.Api.HttpRule.Equals(System.Object)
+  - Google.Api.HttpRule.Get
+  - Google.Api.HttpRule.GetFieldNumber
+  - Google.Api.HttpRule.GetHashCode
+  - Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor
+  - Google.Api.HttpRule.MergeFrom(Google.Api.HttpRule)
+  - Google.Api.HttpRule.MergeFrom(Google.Protobuf.CodedInputStream)
+  - Google.Api.HttpRule.Parser
+  - Google.Api.HttpRule.Patch
+  - Google.Api.HttpRule.PatchFieldNumber
+  - Google.Api.HttpRule.PatternCase
+  - Google.Api.HttpRule.Post
+  - Google.Api.HttpRule.PostFieldNumber
+  - Google.Api.HttpRule.Put
+  - Google.Api.HttpRule.PutFieldNumber
+  - Google.Api.HttpRule.Selector
+  - Google.Api.HttpRule.SelectorFieldNumber
+  - Google.Api.HttpRule.ToString
+  - Google.Api.HttpRule.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: HttpRule
+  nameWithType: HttpRule
+  fullName: Google.Api.HttpRule
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: HttpRule
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 374
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\n`HttpRule` defines the mapping of an RPC method to one or more HTTP\nREST APIs.  The mapping determines what portions of the request\nmessage are populated from the path, query parameters, or body of\nthe HTTP request.  The mapping is typically specified as an\n`google.api.http` annotation, see \"google/api/annotations.proto\"\nfor details.\n\nThe mapping consists of a field specifying the path template and\nmethod kind.  The path template can refer to fields in the request\nmessage, as in the example below which describes a REST GET\noperation on a resource collection of messages:\n\nservice Messaging {\n rpc GetMessage(GetMessageRequest) returns (Message) {\n   option (google.api.http).get = \"/v1/messages/{message_id}/{sub.subfield}\";\n }\n}\nmessage GetMessageRequest {\n message SubMessage {\n   string subfield = 1;\n }\n string message_id = 1; // mapped to the URL\n SubMessage sub = 2;    // `sub.subfield` is url-mapped\n}\nmessage Message {\n string text = 1; // content of the resource\n}\n\nThe same http annotation can alternatively be expressed inside the\n`GRPC API Configuration` YAML file.\n\nhttp:\n rules:\n   - selector: &lt;proto_package_name&gt;.Messaging.GetMessage\n     get: /v1/messages/{message_id}/{sub.subfield}\n\nThis definition enables an automatic, bidrectional mapping of HTTP\nJSON to RPC. Example:\n\nHTTP | RPC\n-----|-----\n`GET /v1/messages/123456/foo`  | `GetMessage(message_id: \"123456\" sub: SubMessage(subfield: \"foo\"))`\n\nIn general, not only fields but also field paths can be referenced\nfrom a path pattern. Fields mapped to the path pattern cannot be\nrepeated and must have a primitive (non-message) type.\n\nAny fields in the request message which are not bound by the path\npattern automatically become (optional) HTTP query\nparameters. Assume the following definition of the request message:\n\nmessage GetMessageRequest {\n message SubMessage {\n   string subfield = 1;\n }\n string message_id = 1; // mapped to the URL\n int64 revision = 2;    // becomes a parameter\n SubMessage sub = 3;    // `sub.subfield` becomes a parameter\n}\n\nThis enables a HTTP JSON to RPC mapping as below:\n\nHTTP | RPC\n-----|-----\n`GET /v1/messages/123456?revision=2&amp;sub.subfield=foo` | `GetMessage(message_id: \"123456\" revision: 2 sub: SubMessage(subfield: \"foo\"))`\n\nNote that fields which are mapped to HTTP parameters must have a\nprimitive type or a repeated primitive type. Message types are not\nallowed. In the case of a repeated type, the parameter can be\nrepeated in the URL, as in `...?param=A&amp;param=B`.\n\nFor HTTP method kinds which allow a request body, the `body` field\nspecifies the mapping. Consider a REST update method on the\nmessage resource collection:\n\nservice Messaging {\n rpc UpdateMessage(UpdateMessageRequest) returns (Message) {\n   option (google.api.http) = {\n     put: \"/v1/messages/{message_id}\"\n     body: \"message\"\n   };\n }\n}\nmessage UpdateMessageRequest {\n string message_id = 1; // mapped to the URL\n Message message = 2;   // mapped to the body\n}\n\nThe following HTTP JSON to RPC mapping is enabled, where the\nrepresentation of the JSON in the request body is determined by\nprotos JSON encoding:\n\nHTTP | RPC\n-----|-----\n`PUT /v1/messages/123456 { \"text\": \"Hi!\" }` | `UpdateMessage(message_id: \"123456\" message { text: \"Hi!\" })`\n\nThe special name `*` can be used in the body mapping to define that\nevery field not bound by the path template should be mapped to the\nrequest body.  This enables the following alternative definition of\nthe update method:\n\nservice Messaging {\n rpc UpdateMessage(Message) returns (Message) {\n   option (google.api.http) = {\n     put: \"/v1/messages/{message_id}\"\n     body: \"*\"\n   };\n }\n}\nmessage Message {\n string message_id = 1;\n string text = 2;\n}\n\nThe following HTTP JSON to RPC mapping is enabled:\n\nHTTP | RPC\n-----|-----\n`PUT /v1/messages/123456 { \"text\": \"Hi!\" }` | `UpdateMessage(message_id: \"123456\" text: \"Hi!\")`\n\nNote that when using `*` in the body mapping, it is not possible to\nhave HTTP parameters, as all fields not bound by the path end in\nthe body. This makes this option more rarely used in practice of\ndefining REST APIs. The common usage of `*` is in custom methods\nwhich don't use the URL at all for transferring data.\n\nIt is possible to define multiple HTTP methods for one RPC by using\nthe `additional_bindings` option. Example:\n\nservice Messaging {\n rpc GetMessage(GetMessageRequest) returns (Message) {\n   option (google.api.http) = {\n     get: \"/v1/messages/{message_id}\"\n     additional_bindings {\n       get: \"/v1/users/{user_id}/messages/{message_id}\"\n     }\n   };\n }\n}\nmessage GetMessageRequest {\n string message_id = 1;\n string user_id = 2;\n}\n\nThis enables the following two alternative HTTP JSON to RPC\nmappings:\n\nHTTP | RPC\n-----|-----\n`GET /v1/messages/123456` | `GetMessage(message_id: \"123456\")`\n`GET /v1/users/me/messages/123456` | `GetMessage(user_id: \"me\" message_id: \"123456\")`\n\n# Rules for HTTP mapping\n\nThe rules for mapping HTTP path, query parameters, and body fields\nto the request message are as follows:\n\n1. The `body` field specifies either `*` or a field path, or is\nomitted. If omitted, it assumes there is no HTTP body.\n2. Leaf fields (recursive expansion of nested messages in the\nrequest) can be classified into three types:\n(a) Matched in the URL template.\n(b) Covered by body (if body is `*`, everything except (a) fields;\n   else everything under the body field)\n(c) All other fields.\n3. URL query parameters found in the HTTP request are mapped to (c) fields.\n4. Any body sent with an HTTP request can contain only (b) fields.\n\nThe syntax of the path template is as follows:\n\nTemplate = \"/\" Segments [ Verb ] ;\nSegments = Segment { \"/\" Segment } ;\nSegment  = \"*\" | \"**\" | LITERAL | Variable ;\nVariable = \"{\" FieldPath [ \"=\" Segments ] \"}\" ;\nFieldPath = IDENT { \".\" IDENT } ;\nVerb     = \":\" LITERAL ;\n\nThe syntax `*` matches a single path segment. It follows the semantics of\n[RFC 6570](https://tools.ietf.org/html/rfc6570) Section 3.2.2 Simple String\nExpansion.\n\nThe syntax `**` matches zero or more path segments. It follows the semantics\nof [RFC 6570](https://tools.ietf.org/html/rfc6570) Section 3.2.3 Reserved\nExpansion. NOTE: it must be the last segment in the path except the Verb.\n\nThe syntax `LITERAL` matches literal text in the URL path.\n\nThe syntax `Variable` matches the entire path as specified by its template;\nthis nested template must not contain further variables. If a variable\nmatches a single path segment, its template may be omitted, e.g. `{var}`\nis equivalent to `{var=*}`.\n\nNOTE: the field paths in variables and in the `body` must not refer to\nrepeated fields or map fields.\n\nUse CustomHttpPattern to specify any HTTP method that is not included in the\n`pattern` field, such as HEAD, or \"*\" to leave the HTTP method unspecified for\na given URL path rule. The wild-card rule is useful for services that provide\ncontent to Web (HTML) clients.\n"
+  example: []
+  syntax:
+    content: 'public sealed class HttpRule : IMessage<HttpRule>, IMessage, IEquatable<HttpRule>, IDeepCloneable<HttpRule>'
+    content.vb: >-
+      Public NotInheritable Class HttpRule
+          Implements IMessage(Of HttpRule), IMessage, IEquatable(Of HttpRule), IDeepCloneable(Of HttpRule)
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.HttpRule}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Api.HttpRule}
+  - Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.HttpRule.Parser
+  commentId: P:Google.Api.HttpRule.Parser
+  id: Parser
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: HttpRule.Parser
+  fullName: Google.Api.HttpRule.Parser
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Parser
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 376
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageParser<HttpRule> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{Google.Api.HttpRule}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of HttpRule)
+  overload: Google.Api.HttpRule.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.HttpRule.Descriptor
+  commentId: P:Google.Api.HttpRule.Descriptor
+  id: Descriptor
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: HttpRule.Descriptor
+  fullName: Google.Api.HttpRule.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Descriptor
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 379
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: Google.Api.HttpRule.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: HttpRule.IMessage.Descriptor
+  fullName: Google.Api.HttpRule.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 384
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: HttpRule.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Api.HttpRule.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.HttpRule.#ctor
+  commentId: M:Google.Api.HttpRule.#ctor
+  id: '#ctor'
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: HttpRule()
+  nameWithType: HttpRule.HttpRule()
+  fullName: Google.Api.HttpRule.HttpRule()
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 389
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public HttpRule()
+    content.vb: Public Sub New
+  overload: Google.Api.HttpRule.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.#ctor(Google.Api.HttpRule)
+  commentId: M:Google.Api.HttpRule.#ctor(Google.Api.HttpRule)
+  id: '#ctor(Google.Api.HttpRule)'
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: HttpRule(HttpRule)
+  nameWithType: HttpRule.HttpRule(HttpRule)
+  fullName: Google.Api.HttpRule.HttpRule(Google.Api.HttpRule)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 396
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public HttpRule(HttpRule other)
+    parameters:
+    - id: other
+      type: Google.Api.HttpRule
+    content.vb: Public Sub New(other As HttpRule)
+  overload: Google.Api.HttpRule.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.Clone
+  commentId: M:Google.Api.HttpRule.Clone
+  id: Clone
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: HttpRule.Clone()
+  fullName: Google.Api.HttpRule.Clone()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Clone
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 424
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public HttpRule Clone()
+    return:
+      type: Google.Api.HttpRule
+    content.vb: Public Function Clone As HttpRule
+  overload: Google.Api.HttpRule.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.SelectorFieldNumber
+  commentId: F:Google.Api.HttpRule.SelectorFieldNumber
+  id: SelectorFieldNumber
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: SelectorFieldNumber
+  nameWithType: HttpRule.SelectorFieldNumber
+  fullName: Google.Api.HttpRule.SelectorFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: SelectorFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 430
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "selector" field.
+  example: []
+  syntax:
+    content: public const int SelectorFieldNumber = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const SelectorFieldNumber As Integer = 1
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.HttpRule.Selector
+  commentId: P:Google.Api.HttpRule.Selector
+  id: Selector
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Selector
+  nameWithType: HttpRule.Selector
+  fullName: Google.Api.HttpRule.Selector
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Selector
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 437
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nSelects methods to which this rule applies.\n\nRefer to [selector][google.api.DocumentationRule.selector] for syntax details.\n"
+  example: []
+  syntax:
+    content: public string Selector { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Selector As String
+  overload: Google.Api.HttpRule.Selector*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.GetFieldNumber
+  commentId: F:Google.Api.HttpRule.GetFieldNumber
+  id: GetFieldNumber
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: GetFieldNumber
+  nameWithType: HttpRule.GetFieldNumber
+  fullName: Google.Api.HttpRule.GetFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 446
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "get" field.
+  example: []
+  syntax:
+    content: public const int GetFieldNumber = 2
+    return:
+      type: System.Int32
+    content.vb: Public Const GetFieldNumber As Integer = 2
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.HttpRule.Get
+  commentId: P:Google.Api.HttpRule.Get
+  id: Get
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Get
+  nameWithType: HttpRule.Get
+  fullName: Google.Api.HttpRule.Get
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Get
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 450
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nUsed for listing and getting information about resources.\n"
+  example: []
+  syntax:
+    content: public string Get { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Get As String
+  overload: Google.Api.HttpRule.Get*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.PutFieldNumber
+  commentId: F:Google.Api.HttpRule.PutFieldNumber
+  id: PutFieldNumber
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: PutFieldNumber
+  nameWithType: HttpRule.PutFieldNumber
+  fullName: Google.Api.HttpRule.PutFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PutFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 460
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "put" field.
+  example: []
+  syntax:
+    content: public const int PutFieldNumber = 3
+    return:
+      type: System.Int32
+    content.vb: Public Const PutFieldNumber As Integer = 3
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.HttpRule.Put
+  commentId: P:Google.Api.HttpRule.Put
+  id: Put
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Put
+  nameWithType: HttpRule.Put
+  fullName: Google.Api.HttpRule.Put
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Put
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 464
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nUsed for updating a resource.\n"
+  example: []
+  syntax:
+    content: public string Put { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Put As String
+  overload: Google.Api.HttpRule.Put*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.PostFieldNumber
+  commentId: F:Google.Api.HttpRule.PostFieldNumber
+  id: PostFieldNumber
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: PostFieldNumber
+  nameWithType: HttpRule.PostFieldNumber
+  fullName: Google.Api.HttpRule.PostFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PostFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 474
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "post" field.
+  example: []
+  syntax:
+    content: public const int PostFieldNumber = 4
+    return:
+      type: System.Int32
+    content.vb: Public Const PostFieldNumber As Integer = 4
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.HttpRule.Post
+  commentId: P:Google.Api.HttpRule.Post
+  id: Post
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Post
+  nameWithType: HttpRule.Post
+  fullName: Google.Api.HttpRule.Post
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Post
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 478
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nUsed for creating a resource.\n"
+  example: []
+  syntax:
+    content: public string Post { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Post As String
+  overload: Google.Api.HttpRule.Post*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.DeleteFieldNumber
+  commentId: F:Google.Api.HttpRule.DeleteFieldNumber
+  id: DeleteFieldNumber
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: DeleteFieldNumber
+  nameWithType: HttpRule.DeleteFieldNumber
+  fullName: Google.Api.HttpRule.DeleteFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: DeleteFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 488
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "delete" field.
+  example: []
+  syntax:
+    content: public const int DeleteFieldNumber = 5
+    return:
+      type: System.Int32
+    content.vb: Public Const DeleteFieldNumber As Integer = 5
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.HttpRule.Delete
+  commentId: P:Google.Api.HttpRule.Delete
+  id: Delete
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Delete
+  nameWithType: HttpRule.Delete
+  fullName: Google.Api.HttpRule.Delete
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Delete
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 492
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nUsed for deleting a resource.\n"
+  example: []
+  syntax:
+    content: public string Delete { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Delete As String
+  overload: Google.Api.HttpRule.Delete*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.PatchFieldNumber
+  commentId: F:Google.Api.HttpRule.PatchFieldNumber
+  id: PatchFieldNumber
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: PatchFieldNumber
+  nameWithType: HttpRule.PatchFieldNumber
+  fullName: Google.Api.HttpRule.PatchFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PatchFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 502
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "patch" field.
+  example: []
+  syntax:
+    content: public const int PatchFieldNumber = 6
+    return:
+      type: System.Int32
+    content.vb: Public Const PatchFieldNumber As Integer = 6
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.HttpRule.Patch
+  commentId: P:Google.Api.HttpRule.Patch
+  id: Patch
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Patch
+  nameWithType: HttpRule.Patch
+  fullName: Google.Api.HttpRule.Patch
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Patch
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 506
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nUsed for updating a resource.\n"
+  example: []
+  syntax:
+    content: public string Patch { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Patch As String
+  overload: Google.Api.HttpRule.Patch*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.CustomFieldNumber
+  commentId: F:Google.Api.HttpRule.CustomFieldNumber
+  id: CustomFieldNumber
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: CustomFieldNumber
+  nameWithType: HttpRule.CustomFieldNumber
+  fullName: Google.Api.HttpRule.CustomFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CustomFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 516
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "custom" field.
+  example: []
+  syntax:
+    content: public const int CustomFieldNumber = 8
+    return:
+      type: System.Int32
+    content.vb: Public Const CustomFieldNumber As Integer = 8
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.HttpRule.Custom
+  commentId: P:Google.Api.HttpRule.Custom
+  id: Custom
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Custom
+  nameWithType: HttpRule.Custom
+  fullName: Google.Api.HttpRule.Custom
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Custom
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 520
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nCustom pattern is used for defining custom verbs.\n"
+  example: []
+  syntax:
+    content: public CustomHttpPattern Custom { get; set; }
+    parameters: []
+    return:
+      type: Google.Api.CustomHttpPattern
+    content.vb: Public Property Custom As CustomHttpPattern
+  overload: Google.Api.HttpRule.Custom*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.BodyFieldNumber
+  commentId: F:Google.Api.HttpRule.BodyFieldNumber
+  id: BodyFieldNumber
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: BodyFieldNumber
+  nameWithType: HttpRule.BodyFieldNumber
+  fullName: Google.Api.HttpRule.BodyFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: BodyFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 530
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "body" field.
+  example: []
+  syntax:
+    content: public const int BodyFieldNumber = 7
+    return:
+      type: System.Int32
+    content.vb: Public Const BodyFieldNumber As Integer = 7
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.HttpRule.Body
+  commentId: P:Google.Api.HttpRule.Body
+  id: Body
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Body
+  nameWithType: HttpRule.Body
+  fullName: Google.Api.HttpRule.Body
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Body
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 538
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nThe name of the request field whose value is mapped to the HTTP body, or\n`*` for mapping all fields not captured by the path pattern to the HTTP\nbody. NOTE: the referred field must not be a repeated field and must be\npresent at the top-level of request message type.\n"
+  example: []
+  syntax:
+    content: public string Body { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Body As String
+  overload: Google.Api.HttpRule.Body*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.AdditionalBindingsFieldNumber
+  commentId: F:Google.Api.HttpRule.AdditionalBindingsFieldNumber
+  id: AdditionalBindingsFieldNumber
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: AdditionalBindingsFieldNumber
+  nameWithType: HttpRule.AdditionalBindingsFieldNumber
+  fullName: Google.Api.HttpRule.AdditionalBindingsFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: AdditionalBindingsFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 547
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "additional_bindings" field.
+  example: []
+  syntax:
+    content: public const int AdditionalBindingsFieldNumber = 11
+    return:
+      type: System.Int32
+    content.vb: Public Const AdditionalBindingsFieldNumber As Integer = 11
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.HttpRule.AdditionalBindings
+  commentId: P:Google.Api.HttpRule.AdditionalBindings
+  id: AdditionalBindings
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: AdditionalBindings
+  nameWithType: HttpRule.AdditionalBindings
+  fullName: Google.Api.HttpRule.AdditionalBindings
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: AdditionalBindings
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 556
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nAdditional HTTP bindings for the selector. Nested bindings must\nnot contain an `additional_bindings` field themselves (that is,\nthe nesting may only be one level deep).\n"
+  example: []
+  syntax:
+    content: public RepeatedField<HttpRule> AdditionalBindings { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{Google.Api.HttpRule}
+    content.vb: Public ReadOnly Property AdditionalBindings As RepeatedField(Of HttpRule)
+  overload: Google.Api.HttpRule.AdditionalBindings*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.HttpRule.PatternCase
+  commentId: P:Google.Api.HttpRule.PatternCase
+  id: PatternCase
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: PatternCase
+  nameWithType: HttpRule.PatternCase
+  fullName: Google.Api.HttpRule.PatternCase
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PatternCase
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 573
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public HttpRule.PatternOneofCase PatternCase { get; }
+    parameters: []
+    return:
+      type: Google.Api.HttpRule.PatternOneofCase
+    content.vb: Public ReadOnly Property PatternCase As HttpRule.PatternOneofCase
+  overload: Google.Api.HttpRule.PatternCase*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.HttpRule.ClearPattern
+  commentId: M:Google.Api.HttpRule.ClearPattern
+  id: ClearPattern
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: ClearPattern()
+  nameWithType: HttpRule.ClearPattern()
+  fullName: Google.Api.HttpRule.ClearPattern()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ClearPattern
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 578
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void ClearPattern()
+    content.vb: Public Sub ClearPattern
+  overload: Google.Api.HttpRule.ClearPattern*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.Equals(System.Object)
+  commentId: M:Google.Api.HttpRule.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: HttpRule.Equals(Object)
+  fullName: Google.Api.HttpRule.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 584
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Api.HttpRule.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.HttpRule.Equals(Google.Api.HttpRule)
+  commentId: M:Google.Api.HttpRule.Equals(Google.Api.HttpRule)
+  id: Equals(Google.Api.HttpRule)
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: Equals(HttpRule)
+  nameWithType: HttpRule.Equals(HttpRule)
+  fullName: Google.Api.HttpRule.Equals(Google.Api.HttpRule)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 589
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public bool Equals(HttpRule other)
+    parameters:
+    - id: other
+      type: Google.Api.HttpRule
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As HttpRule) As Boolean
+  overload: Google.Api.HttpRule.Equals*
+  implements:
+  - System.IEquatable{Google.Api.HttpRule}.Equals(Google.Api.HttpRule)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.GetHashCode
+  commentId: M:Google.Api.HttpRule.GetHashCode
+  id: GetHashCode
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: HttpRule.GetHashCode()
+  fullName: Google.Api.HttpRule.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetHashCode
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 610
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Api.HttpRule.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.HttpRule.ToString
+  commentId: M:Google.Api.HttpRule.ToString
+  id: ToString
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: HttpRule.ToString()
+  fullName: Google.Api.HttpRule.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ToString
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 626
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Api.HttpRule.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.HttpRule.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Api.HttpRule.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: HttpRule.WriteTo(CodedOutputStream)
+  fullName: Google.Api.HttpRule.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: WriteTo
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 631
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: Google.Api.HttpRule.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.CalculateSize
+  commentId: M:Google.Api.HttpRule.CalculateSize
+  id: CalculateSize
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: HttpRule.CalculateSize()
+  fullName: Google.Api.HttpRule.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CalculateSize
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 668
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: Google.Api.HttpRule.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.MergeFrom(Google.Api.HttpRule)
+  commentId: M:Google.Api.HttpRule.MergeFrom(Google.Api.HttpRule)
+  id: MergeFrom(Google.Api.HttpRule)
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(HttpRule)
+  nameWithType: HttpRule.MergeFrom(HttpRule)
+  fullName: Google.Api.HttpRule.MergeFrom(Google.Api.HttpRule)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 699
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(HttpRule other)
+    parameters:
+    - id: other
+      type: Google.Api.HttpRule
+    content.vb: Public Sub MergeFrom(other As HttpRule)
+  overload: Google.Api.HttpRule.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.HttpRule}.MergeFrom(Google.Api.HttpRule)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.HttpRule.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Api.HttpRule.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: HttpRule.MergeFrom(CodedInputStream)
+  fullName: Google.Api.HttpRule.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 734
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: Google.Api.HttpRule.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Api
+  commentId: N:Google.Api
+  isExternal: false
+  name: Google.Api
+  nameWithType: Google.Api
+  fullName: Google.Api
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Api.HttpRule}
+  commentId: T:Google.Protobuf.IMessage{Google.Api.HttpRule}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<HttpRule>
+  nameWithType: IMessage<HttpRule>
+  fullName: Google.Protobuf.IMessage<Google.Api.HttpRule>
+  nameWithType.vb: IMessage(Of HttpRule)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.HttpRule)
+  name.vb: IMessage(Of HttpRule)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Api.HttpRule}
+  commentId: T:System.IEquatable{Google.Api.HttpRule}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<HttpRule>
+  nameWithType: IEquatable<HttpRule>
+  fullName: System.IEquatable<Google.Api.HttpRule>
+  nameWithType.vb: IEquatable(Of HttpRule)
+  fullName.vb: System.IEquatable(Of Google.Api.HttpRule)
+  name.vb: IEquatable(Of HttpRule)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<HttpRule>
+  nameWithType: IDeepCloneable<HttpRule>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.HttpRule>
+  nameWithType.vb: IDeepCloneable(Of HttpRule)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.HttpRule)
+  name.vb: IDeepCloneable(Of HttpRule)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.HttpRule.Parser*
+  commentId: Overload:Google.Api.HttpRule.Parser
+  isExternal: false
+  name: Parser
+  nameWithType: HttpRule.Parser
+  fullName: Google.Api.HttpRule.Parser
+- uid: Google.Protobuf.MessageParser{Google.Api.HttpRule}
+  commentId: T:Google.Protobuf.MessageParser{Google.Api.HttpRule}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<HttpRule>
+  nameWithType: MessageParser<HttpRule>
+  fullName: Google.Protobuf.MessageParser<Google.Api.HttpRule>
+  nameWithType.vb: MessageParser(Of HttpRule)
+  fullName.vb: Google.Protobuf.MessageParser(Of Google.Api.HttpRule)
+  name.vb: MessageParser(Of HttpRule)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: true
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.HttpRule.Descriptor*
+  commentId: Overload:Google.Api.HttpRule.Descriptor
+  isExternal: false
+  name: Descriptor
+  nameWithType: HttpRule.Descriptor
+  fullName: Google.Api.HttpRule.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: true
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: HttpRule.IMessage.Descriptor
+  fullName: Google.Api.HttpRule.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: HttpRule.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Api.HttpRule.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.HttpRule.#ctor*
+  commentId: Overload:Google.Api.HttpRule.#ctor
+  isExternal: false
+  name: HttpRule
+  nameWithType: HttpRule.HttpRule
+  fullName: Google.Api.HttpRule.HttpRule
+- uid: Google.Api.HttpRule
+  commentId: T:Google.Api.HttpRule
+  parent: Google.Api
+  isExternal: false
+  name: HttpRule
+  nameWithType: HttpRule
+  fullName: Google.Api.HttpRule
+- uid: Google.Api.HttpRule.Clone*
+  commentId: Overload:Google.Api.HttpRule.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: HttpRule.Clone
+  fullName: Google.Api.HttpRule.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<HttpRule>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.HttpRule>.Clone()
+  nameWithType.vb: IDeepCloneable(Of HttpRule).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.HttpRule).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<HttpRule>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Api.HttpRule>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of HttpRule).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Api.HttpRule).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Api.HttpRule.Selector*
+  commentId: Overload:Google.Api.HttpRule.Selector
+  isExternal: false
+  name: Selector
+  nameWithType: HttpRule.Selector
+  fullName: Google.Api.HttpRule.Selector
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Api.HttpRule.Get*
+  commentId: Overload:Google.Api.HttpRule.Get
+  isExternal: false
+  name: Get
+  nameWithType: HttpRule.Get
+  fullName: Google.Api.HttpRule.Get
+- uid: Google.Api.HttpRule.Put*
+  commentId: Overload:Google.Api.HttpRule.Put
+  isExternal: false
+  name: Put
+  nameWithType: HttpRule.Put
+  fullName: Google.Api.HttpRule.Put
+- uid: Google.Api.HttpRule.Post*
+  commentId: Overload:Google.Api.HttpRule.Post
+  isExternal: false
+  name: Post
+  nameWithType: HttpRule.Post
+  fullName: Google.Api.HttpRule.Post
+- uid: Google.Api.HttpRule.Delete*
+  commentId: Overload:Google.Api.HttpRule.Delete
+  isExternal: false
+  name: Delete
+  nameWithType: HttpRule.Delete
+  fullName: Google.Api.HttpRule.Delete
+- uid: Google.Api.HttpRule.Patch*
+  commentId: Overload:Google.Api.HttpRule.Patch
+  isExternal: false
+  name: Patch
+  nameWithType: HttpRule.Patch
+  fullName: Google.Api.HttpRule.Patch
+- uid: Google.Api.HttpRule.Custom*
+  commentId: Overload:Google.Api.HttpRule.Custom
+  isExternal: false
+  name: Custom
+  nameWithType: HttpRule.Custom
+  fullName: Google.Api.HttpRule.Custom
+- uid: Google.Api.CustomHttpPattern
+  commentId: T:Google.Api.CustomHttpPattern
+  parent: Google.Api
+  isExternal: false
+  name: CustomHttpPattern
+  nameWithType: CustomHttpPattern
+  fullName: Google.Api.CustomHttpPattern
+- uid: Google.Api.HttpRule.Body*
+  commentId: Overload:Google.Api.HttpRule.Body
+  isExternal: false
+  name: Body
+  nameWithType: HttpRule.Body
+  fullName: Google.Api.HttpRule.Body
+- uid: Google.Api.HttpRule.AdditionalBindings*
+  commentId: Overload:Google.Api.HttpRule.AdditionalBindings
+  isExternal: false
+  name: AdditionalBindings
+  nameWithType: HttpRule.AdditionalBindings
+  fullName: Google.Api.HttpRule.AdditionalBindings
+- uid: Google.Protobuf.Collections.RepeatedField{Google.Api.HttpRule}
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Api.HttpRule}
+  parent: Google.Protobuf.Collections
+  definition: Google.Protobuf.Collections.RepeatedField`1
+  name: RepeatedField<HttpRule>
+  nameWithType: RepeatedField<HttpRule>
+  fullName: Google.Protobuf.Collections.RepeatedField<Google.Api.HttpRule>
+  nameWithType.vb: RepeatedField(Of HttpRule)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Api.HttpRule)
+  name.vb: RepeatedField(Of HttpRule)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
+  isExternal: true
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: Google.Api.HttpRule.PatternCase*
+  commentId: Overload:Google.Api.HttpRule.PatternCase
+  isExternal: false
+  name: PatternCase
+  nameWithType: HttpRule.PatternCase
+  fullName: Google.Api.HttpRule.PatternCase
+- uid: Google.Api.HttpRule.PatternOneofCase
+  commentId: T:Google.Api.HttpRule.PatternOneofCase
+  parent: Google.Api
+  isExternal: false
+  name: HttpRule.PatternOneofCase
+  nameWithType: HttpRule.PatternOneofCase
+  fullName: Google.Api.HttpRule.PatternOneofCase
+- uid: Google.Api.HttpRule.ClearPattern*
+  commentId: Overload:Google.Api.HttpRule.ClearPattern
+  isExternal: false
+  name: ClearPattern
+  nameWithType: HttpRule.ClearPattern
+  fullName: Google.Api.HttpRule.ClearPattern
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.HttpRule.Equals*
+  commentId: Overload:Google.Api.HttpRule.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: HttpRule.Equals
+  fullName: Google.Api.HttpRule.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{Google.Api.HttpRule}.Equals(Google.Api.HttpRule)
+  commentId: M:System.IEquatable{Google.Api.HttpRule}.Equals(Google.Api.HttpRule)
+  parent: System.IEquatable{Google.Api.HttpRule}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(HttpRule)
+  nameWithType: IEquatable<HttpRule>.Equals(HttpRule)
+  fullName: System.IEquatable<Google.Api.HttpRule>.Equals(Google.Api.HttpRule)
+  nameWithType.vb: IEquatable(Of HttpRule).Equals(HttpRule)
+  fullName.vb: System.IEquatable(Of Google.Api.HttpRule).Equals(Google.Api.HttpRule)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<HttpRule>.Equals
+    fullName: System.IEquatable<Google.Api.HttpRule>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of HttpRule).Equals
+    fullName: System.IEquatable(Of Google.Api.HttpRule).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.HttpRule.GetHashCode*
+  commentId: Overload:Google.Api.HttpRule.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: HttpRule.GetHashCode
+  fullName: Google.Api.HttpRule.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.HttpRule.ToString*
+  commentId: Overload:Google.Api.HttpRule.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: HttpRule.ToString
+  fullName: Google.Api.HttpRule.ToString
+- uid: Google.Api.HttpRule.WriteTo*
+  commentId: Overload:Google.Api.HttpRule.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: HttpRule.WriteTo
+  fullName: Google.Api.HttpRule.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: Google.Api.HttpRule.CalculateSize*
+  commentId: Overload:Google.Api.HttpRule.CalculateSize
+  isExternal: false
+  name: CalculateSize
+  nameWithType: HttpRule.CalculateSize
+  fullName: Google.Api.HttpRule.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.HttpRule.MergeFrom*
+  commentId: Overload:Google.Api.HttpRule.MergeFrom
+  isExternal: false
+  name: MergeFrom
+  nameWithType: HttpRule.MergeFrom
+  fullName: Google.Api.HttpRule.MergeFrom
+- uid: Google.Protobuf.IMessage{Google.Api.HttpRule}.MergeFrom(Google.Api.HttpRule)
+  commentId: M:Google.Protobuf.IMessage{Google.Api.HttpRule}.MergeFrom(Google.Api.HttpRule)
+  parent: Google.Protobuf.IMessage{Google.Api.HttpRule}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(HttpRule)
+  nameWithType: IMessage<HttpRule>.MergeFrom(HttpRule)
+  fullName: Google.Protobuf.IMessage<Google.Api.HttpRule>.MergeFrom(Google.Api.HttpRule)
+  nameWithType.vb: IMessage(Of HttpRule).MergeFrom(HttpRule)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.HttpRule).MergeFrom(Google.Api.HttpRule)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<HttpRule>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Api.HttpRule>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of HttpRule).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Api.HttpRule).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: true
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream

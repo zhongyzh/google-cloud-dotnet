@@ -1,0 +1,873 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.PathTemplate
+  commentId: T:Google.Api.Gax.PathTemplate
+  id: PathTemplate
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.PathTemplate.#ctor(System.String)
+  - Google.Api.Gax.PathTemplate.Expand(System.String[])
+  - Google.Api.Gax.PathTemplate.ExpandWithService(System.String,System.String[])
+  - Google.Api.Gax.PathTemplate.ParameterCount
+  - Google.Api.Gax.PathTemplate.ParameterNames
+  - Google.Api.Gax.PathTemplate.ParseName(System.String)
+  - Google.Api.Gax.PathTemplate.ToString
+  - Google.Api.Gax.PathTemplate.TryParseName(System.String,Google.Api.Gax.TemplatedResourceName@)
+  langs:
+  - csharp
+  - vb
+  name: PathTemplate
+  nameWithType: PathTemplate
+  fullName: Google.Api.Gax.PathTemplate
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax/PathTemplate.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PathTemplate
+    path: src/Google.Api.Gax/PathTemplate.cs
+    startLine: 28
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nRepresents a path template used for resource names which may be composed of multiple IDs.\n"
+  remarks: "\n<p>\nTemplates use a subset of the syntax of the API platform. See\nhttps://github.com/googleapis/googleapis/blob/master/google/api/http.proto\nfor details of the API platform.\n</p>\n<p>\nThis class performs no URL escaping or unescaping. It is designed for use within GRPC, where no\nURL encoding is required.\n</p>\n"
+  example: []
+  syntax:
+    content: public sealed class PathTemplate
+    content.vb: Public NotInheritable Class PathTemplate
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.Gax.PathTemplate.ParameterNames
+  commentId: P:Google.Api.Gax.PathTemplate.ParameterNames
+  id: ParameterNames
+  parent: Google.Api.Gax.PathTemplate
+  langs:
+  - csharp
+  - vb
+  name: ParameterNames
+  nameWithType: PathTemplate.ParameterNames
+  fullName: Google.Api.Gax.PathTemplate.ParameterNames
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/PathTemplate.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ParameterNames
+    path: src/Google.Api.Gax/PathTemplate.cs
+    startLine: 53
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nThe names of the parameters within the template. This collection has one element per parameter,\nbut unnamed parameters have a name of <code>null</code>.\n"
+  example: []
+  syntax:
+    content: public IReadOnlyList<string> ParameterNames { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{System.String}
+    content.vb: Public ReadOnly Property ParameterNames As IReadOnlyList(Of String)
+  overload: Google.Api.Gax.PathTemplate.ParameterNames*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.PathTemplate.#ctor(System.String)
+  commentId: M:Google.Api.Gax.PathTemplate.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: Google.Api.Gax.PathTemplate
+  langs:
+  - csharp
+  - vb
+  name: PathTemplate(String)
+  nameWithType: PathTemplate.PathTemplate(String)
+  fullName: Google.Api.Gax.PathTemplate.PathTemplate(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.Gax/PathTemplate.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.Gax/PathTemplate.cs
+    startLine: 59
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nConstructs a template from its textual representation, such as <code>shelves/*/books/**</code>.\n"
+  example: []
+  syntax:
+    content: public PathTemplate(string template)
+    parameters:
+    - id: template
+      type: System.String
+      description: The textual representation of the template. Must not be null.
+    content.vb: Public Sub New(template As String)
+  overload: Google.Api.Gax.PathTemplate.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Gax.PathTemplate.ParameterCount
+  commentId: P:Google.Api.Gax.PathTemplate.ParameterCount
+  id: ParameterCount
+  parent: Google.Api.Gax.PathTemplate
+  langs:
+  - csharp
+  - vb
+  name: ParameterCount
+  nameWithType: PathTemplate.ParameterCount
+  fullName: Google.Api.Gax.PathTemplate.ParameterCount
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/PathTemplate.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ParameterCount
+    path: src/Google.Api.Gax/PathTemplate.cs
+    startLine: 77
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nThe number of parameter segments (regular wildcards or path wildcards, named or unnamed) in the template.\n"
+  example: []
+  syntax:
+    content: public int ParameterCount { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ParameterCount As Integer
+  overload: Google.Api.Gax.PathTemplate.ParameterCount*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.PathTemplate.Expand(System.String[])
+  commentId: M:Google.Api.Gax.PathTemplate.Expand(System.String[])
+  id: Expand(System.String[])
+  parent: Google.Api.Gax.PathTemplate
+  langs:
+  - csharp
+  - vb
+  name: Expand(String[])
+  nameWithType: PathTemplate.Expand(String[])
+  fullName: Google.Api.Gax.PathTemplate.Expand(System.String[])
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/PathTemplate.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Expand
+    path: src/Google.Api.Gax/PathTemplate.cs
+    startLine: 140
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nValidates that the given resource IDs are valid for this template, and returns a string representation\n"
+  remarks: "\n<p>\nThis is equivalent to calling <code>new ResourceName(template, resourceIds).ToString()</code>, but simpler in\ncalling code and more efficient in terms of memory allocation.\n</p>\n<p>\nThis method assumes no service name is required. Call <xref href=\"Google.Api.Gax.PathTemplate.ExpandWithService(System.String%2cSystem.String%5b%5d)\" data-throw-if-not-resolved=\"false\"></xref> to specify a service name.\n</p>\n"
+  example: []
+  syntax:
+    content: public string Expand(params string[] resourceIds)
+    parameters:
+    - id: resourceIds
+      type: System.String[]
+      description: The resource IDs to use to populate the parameters in this template. Must not be null.
+    return:
+      type: System.String
+      description: The string representation of the resource name.
+    content.vb: Public Function Expand(ParamArray resourceIds As String()) As String
+  overload: Google.Api.Gax.PathTemplate.Expand*
+  nameWithType.vb: PathTemplate.Expand(String())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.PathTemplate.Expand(System.String())
+  name.vb: Expand(String())
+- uid: Google.Api.Gax.PathTemplate.ExpandWithService(System.String,System.String[])
+  commentId: M:Google.Api.Gax.PathTemplate.ExpandWithService(System.String,System.String[])
+  id: ExpandWithService(System.String,System.String[])
+  parent: Google.Api.Gax.PathTemplate
+  langs:
+  - csharp
+  - vb
+  name: ExpandWithService(String, String[])
+  nameWithType: PathTemplate.ExpandWithService(String, String[])
+  fullName: Google.Api.Gax.PathTemplate.ExpandWithService(System.String, System.String[])
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/PathTemplate.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ExpandWithService
+    path: src/Google.Api.Gax/PathTemplate.cs
+    startLine: 150
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nValidates that the given resource IDs are valid for this template, and returns a string representation\n"
+  remarks: "\n"
+  example: []
+  syntax:
+    content: public string ExpandWithService(string serviceName, params string[] resourceIds)
+    parameters:
+    - id: serviceName
+      type: System.String
+      description: The service name, which may be null.
+    - id: resourceIds
+      type: System.String[]
+      description: The resource IDs to use to populate the parameters in this template. Must not be null.
+    return:
+      type: System.String
+      description: The string representation of the resource name.
+    content.vb: Public Function ExpandWithService(serviceName As String, ParamArray resourceIds As String()) As String
+  overload: Google.Api.Gax.PathTemplate.ExpandWithService*
+  nameWithType.vb: PathTemplate.ExpandWithService(String, String())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.PathTemplate.ExpandWithService(System.String, System.String())
+  name.vb: ExpandWithService(String, String())
+- uid: Google.Api.Gax.PathTemplate.TryParseName(System.String,Google.Api.Gax.TemplatedResourceName@)
+  commentId: M:Google.Api.Gax.PathTemplate.TryParseName(System.String,Google.Api.Gax.TemplatedResourceName@)
+  id: TryParseName(System.String,Google.Api.Gax.TemplatedResourceName@)
+  parent: Google.Api.Gax.PathTemplate
+  langs:
+  - csharp
+  - vb
+  name: TryParseName(String, out TemplatedResourceName)
+  nameWithType: PathTemplate.TryParseName(String, out TemplatedResourceName)
+  fullName: Google.Api.Gax.PathTemplate.TryParseName(System.String, out Google.Api.Gax.TemplatedResourceName)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/PathTemplate.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: TryParseName
+    path: src/Google.Api.Gax/PathTemplate.cs
+    startLine: 209
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nAttempts to parse the given resource name against this template, returning <code>null</code> on failure.\n"
+  remarks: "\nAlthough this method returns <code>null</code> if a name is passed in which doesn't match the template,\nit still throws <xref href=\"System.ArgumentNullException\" data-throw-if-not-resolved=\"false\"></xref> if <span class=\"paramref\">name</span> is null, as this would\nusually indicate a programming error rather than a data error.\n"
+  example: []
+  syntax:
+    content: public bool TryParseName(string name, out TemplatedResourceName result)
+    parameters:
+    - id: name
+      type: System.String
+      description: The resource name to parse against this template. Must not be null.
+    - id: result
+      type: Google.Api.Gax.TemplatedResourceName
+      description: When this method returns, the parsed resource name or <code>null</code> if parsing fails.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the name was parsed successfully; <code>false</code> otherwise.
+    content.vb: Public Function TryParseName(name As String, ByRef result As TemplatedResourceName) As Boolean
+  overload: Google.Api.Gax.PathTemplate.TryParseName*
+  nameWithType.vb: PathTemplate.TryParseName(String, ByRef TemplatedResourceName)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.PathTemplate.TryParseName(System.String, ByRef Google.Api.Gax.TemplatedResourceName)
+  name.vb: TryParseName(String, ByRef TemplatedResourceName)
+- uid: Google.Api.Gax.PathTemplate.ParseName(System.String)
+  commentId: M:Google.Api.Gax.PathTemplate.ParseName(System.String)
+  id: ParseName(System.String)
+  parent: Google.Api.Gax.PathTemplate
+  langs:
+  - csharp
+  - vb
+  name: ParseName(String)
+  nameWithType: PathTemplate.ParseName(String)
+  fullName: Google.Api.Gax.PathTemplate.ParseName(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/PathTemplate.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ParseName
+    path: src/Google.Api.Gax/PathTemplate.cs
+    startLine: 219
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nAttempts to parse the given resource name against this template, throwing <xref href=\"System.ArgumentException\" data-throw-if-not-resolved=\"false\"></xref> on failure.\n"
+  example: []
+  syntax:
+    content: public TemplatedResourceName ParseName(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The resource name to parse against this template. Must not be null.
+    return:
+      type: Google.Api.Gax.TemplatedResourceName
+      description: The parsed name as a <xref href="Google.Api.Gax.TemplatedResourceName" data-throw-if-not-resolved="false"></xref>.
+    content.vb: Public Function ParseName(name As String) As TemplatedResourceName
+  overload: Google.Api.Gax.PathTemplate.ParseName*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Gax.PathTemplate.ToString
+  commentId: M:Google.Api.Gax.PathTemplate.ToString
+  id: ToString
+  parent: Google.Api.Gax.PathTemplate
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: PathTemplate.ToString()
+  fullName: Google.Api.Gax.PathTemplate.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/PathTemplate.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ToString
+    path: src/Google.Api.Gax/PathTemplate.cs
+    startLine: 323
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nReturns the textual representation of this template.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+      description: The same textual representation that this template was initially constructed with.
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Api.Gax.PathTemplate.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.PathTemplate.ParameterNames*
+  commentId: Overload:Google.Api.Gax.PathTemplate.ParameterNames
+  isExternal: false
+  name: ParameterNames
+  nameWithType: PathTemplate.ParameterNames
+  fullName: Google.Api.Gax.PathTemplate.ParameterNames
+- uid: System.Collections.Generic.IReadOnlyList{System.String}
+  commentId: T:System.Collections.Generic.IReadOnlyList{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  name: IReadOnlyList<String>
+  nameWithType: IReadOnlyList<String>
+  fullName: System.Collections.Generic.IReadOnlyList<System.String>
+  nameWithType.vb: IReadOnlyList(Of String)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of System.String)
+  name.vb: IReadOnlyList(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Google.Api.Gax.PathTemplate.#ctor*
+  commentId: Overload:Google.Api.Gax.PathTemplate.#ctor
+  isExternal: false
+  name: PathTemplate
+  nameWithType: PathTemplate.PathTemplate
+  fullName: Google.Api.Gax.PathTemplate.PathTemplate
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Api.Gax.PathTemplate.ParameterCount*
+  commentId: Overload:Google.Api.Gax.PathTemplate.ParameterCount
+  isExternal: false
+  name: ParameterCount
+  nameWithType: PathTemplate.ParameterCount
+  fullName: Google.Api.Gax.PathTemplate.ParameterCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Api.Gax.PathTemplate.ExpandWithService(System.String,System.String[])
+  commentId: M:Google.Api.Gax.PathTemplate.ExpandWithService(System.String,System.String[])
+- uid: Google.Api.Gax.PathTemplate.Expand*
+  commentId: Overload:Google.Api.Gax.PathTemplate.Expand
+  isExternal: false
+  name: Expand
+  nameWithType: PathTemplate.Expand
+  fullName: Google.Api.Gax.PathTemplate.Expand
+- uid: System.String[]
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Google.Api.Gax.PathTemplate.ExpandWithService*
+  commentId: Overload:Google.Api.Gax.PathTemplate.ExpandWithService
+  isExternal: false
+  name: ExpandWithService
+  nameWithType: PathTemplate.ExpandWithService
+  fullName: Google.Api.Gax.PathTemplate.ExpandWithService
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: Google.Api.Gax.PathTemplate.TryParseName*
+  commentId: Overload:Google.Api.Gax.PathTemplate.TryParseName
+  isExternal: false
+  name: TryParseName
+  nameWithType: PathTemplate.TryParseName
+  fullName: Google.Api.Gax.PathTemplate.TryParseName
+- uid: Google.Api.Gax.TemplatedResourceName
+  commentId: T:Google.Api.Gax.TemplatedResourceName
+  parent: Google.Api.Gax
+  isExternal: false
+  name: TemplatedResourceName
+  nameWithType: TemplatedResourceName
+  fullName: Google.Api.Gax.TemplatedResourceName
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: Google.Api.Gax.PathTemplate.ParseName*
+  commentId: Overload:Google.Api.Gax.PathTemplate.ParseName
+  isExternal: false
+  name: ParseName
+  nameWithType: PathTemplate.ParseName
+  fullName: Google.Api.Gax.PathTemplate.ParseName
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PathTemplate.ToString*
+  commentId: Overload:Google.Api.Gax.PathTemplate.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: PathTemplate.ToString
+  fullName: Google.Api.Gax.PathTemplate.ToString

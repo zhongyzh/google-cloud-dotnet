@@ -1,0 +1,983 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.GaxPreconditions
+  commentId: T:Google.Api.Gax.GaxPreconditions
+  id: GaxPreconditions
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.GaxPreconditions.CheckArgument(System.Boolean,System.String,System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckArgument``1(System.Boolean,System.String,System.String,``0)
+  - Google.Api.Gax.GaxPreconditions.CheckArgument``2(System.Boolean,System.String,System.String,``0,``1)
+  - Google.Api.Gax.GaxPreconditions.CheckArgumentRange(System.Int32,System.String,System.Int32,System.Int32)
+  - Google.Api.Gax.GaxPreconditions.CheckEnumValue``1(``0,System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckNotNull``1(``0,System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty(System.String,System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckState(System.Boolean,System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckState``1(System.Boolean,System.String,``0)
+  - Google.Api.Gax.GaxPreconditions.CheckState``2(System.Boolean,System.String,``0,``1)
+  langs:
+  - csharp
+  - vb
+  name: GaxPreconditions
+  nameWithType: GaxPreconditions
+  fullName: Google.Api.Gax.GaxPreconditions
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GaxPreconditions
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 22
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nPreconditions for checking method arguments, state etc.\n"
+  example: []
+  syntax:
+    content: public static class GaxPreconditions
+    content.vb: Public Module GaxPreconditions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Google.Api.Gax.GaxPreconditions.CheckNotNull``1(``0,System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckNotNull``1(``0,System.String)
+  id: CheckNotNull``1(``0,System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckNotNull<T>(T, String)
+  nameWithType: GaxPreconditions.CheckNotNull<T>(T, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNotNull<T>(T, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckNotNull
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 41
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given argument (to the calling method) is non-null.\n"
+  example: []
+  syntax:
+    content: 'public static T CheckNotNull<T>(T argument, string paramName)where T : class'
+    parameters:
+    - id: argument
+      type: '{T}'
+      description: The argument provided for the parameter.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    typeParameters:
+    - id: T
+      description: The type of the parameter.
+    return:
+      type: '{T}'
+      description: <span class="paramref">argument</span> if it is not null
+    content.vb: Public Shared Function CheckNotNull(Of T As Class)(argument As T, paramName As String) As T
+  overload: Google.Api.Gax.GaxPreconditions.CheckNotNull*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <span class="paramref">argument</span> is null
+  nameWithType.vb: GaxPreconditions.CheckNotNull(Of T)(T, String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckNotNull(Of T)(T, System.String)
+  name.vb: CheckNotNull(Of T)(T, String)
+- uid: Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty(System.String,System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty(System.String,System.String)
+  id: CheckNotNullOrEmpty(System.String,System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckNotNullOrEmpty(String, String)
+  nameWithType: GaxPreconditions.CheckNotNullOrEmpty(String, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty(System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckNotNullOrEmpty
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 58
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that a string argument is neither null, nor an empty string.\n"
+  example: []
+  syntax:
+    content: public static string CheckNotNullOrEmpty(string argument, string paramName)
+    parameters:
+    - id: argument
+      type: System.String
+      description: The argument provided for the parameter.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    return:
+      type: System.String
+      description: <span class="paramref">argument</span> if it is not null or empty
+    content.vb: Public Shared Function CheckNotNullOrEmpty(argument As String, paramName As String) As String
+  overload: Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty*
+  exceptions:
+  - type: System.ArgumentNullException
+    commentId: T:System.ArgumentNullException
+    description: <span class="paramref">argument</span> is null
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: <span class="paramref">argument</span> is empty
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.GaxPreconditions.CheckArgumentRange(System.Int32,System.String,System.Int32,System.Int32)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckArgumentRange(System.Int32,System.String,System.Int32,System.Int32)
+  id: CheckArgumentRange(System.Int32,System.String,System.Int32,System.Int32)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckArgumentRange(Int32, String, Int32, Int32)
+  nameWithType: GaxPreconditions.CheckArgumentRange(Int32, String, Int32, Int32)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckArgumentRange(System.Int32, System.String, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckArgumentRange
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 85
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given argument value is valid.\n"
+  remarks: "\nNote that the upper bound (<span class=\"paramref\">maxInclusive</span>) is inclusive,\nnot exclusive. This is deliberate, to allow the specification of ranges which include\n<xref href=\"System.Int32.MaxValue\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static int CheckArgumentRange(int argument, string paramName, int minInclusive, int maxInclusive)
+    parameters:
+    - id: argument
+      type: System.Int32
+      description: The value of the argument passed to the calling method.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    - id: minInclusive
+      type: System.Int32
+      description: The smallest valid value.
+    - id: maxInclusive
+      type: System.Int32
+      description: The largest valid value.
+    return:
+      type: System.Int32
+      description: <span class="paramref">argument</span> if it was in range
+    content.vb: Public Shared Function CheckArgumentRange(argument As Integer, paramName As String, minInclusive As Integer, maxInclusive As Integer) As Integer
+  overload: Google.Api.Gax.GaxPreconditions.CheckArgumentRange*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: The argument was outside the specified range.
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.GaxPreconditions.CheckState(System.Boolean,System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckState(System.Boolean,System.String)
+  id: CheckState(System.Boolean,System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckState(Boolean, String)
+  nameWithType: GaxPreconditions.CheckState(Boolean, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckState(System.Boolean, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckState
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 103
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that given condition is met, throwing an <xref href=\"System.InvalidOperationException\" data-throw-if-not-resolved=\"false\"></xref> otherwise.\n"
+  example: []
+  syntax:
+    content: public static void CheckState(bool condition, string message)
+    parameters:
+    - id: condition
+      type: System.Boolean
+      description: The (already evaluated) condition to check.
+    - id: message
+      type: System.String
+      description: >-
+        The message to include in the exception, if generated. This should not
+
+        use interpolation, as the interpolation would be performed regardless of whether or
+
+        not an exception is thrown.
+    content.vb: Public Shared Sub CheckState(condition As Boolean, message As String)
+  overload: Google.Api.Gax.GaxPreconditions.CheckState*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.GaxPreconditions.CheckState``1(System.Boolean,System.String,``0)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckState``1(System.Boolean,System.String,``0)
+  id: CheckState``1(System.Boolean,System.String,``0)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckState<T>(Boolean, String, T)
+  nameWithType: GaxPreconditions.CheckState<T>(Boolean, String, T)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckState<T>(System.Boolean, System.String, T)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckState
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 118
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that given condition is met, throwing an <xref href=\"System.InvalidOperationException\" data-throw-if-not-resolved=\"false\"></xref> otherwise.\n"
+  example: []
+  syntax:
+    content: public static void CheckState<T>(bool condition, string format, T arg0)
+    parameters:
+    - id: condition
+      type: System.Boolean
+      description: The (already evaluated) condition to check.
+    - id: format
+      type: System.String
+      description: >-
+        The format string to use to create the exception message if the
+
+        condition is not met.
+    - id: arg0
+      type: '{T}'
+      description: The argument to the format string.
+    typeParameters:
+    - id: T
+    content.vb: Public Shared Sub CheckState(Of T)(condition As Boolean, format As String, arg0 As T)
+  overload: Google.Api.Gax.GaxPreconditions.CheckState*
+  nameWithType.vb: GaxPreconditions.CheckState(Of T)(Boolean, String, T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckState(Of T)(System.Boolean, System.String, T)
+  name.vb: CheckState(Of T)(Boolean, String, T)
+- uid: Google.Api.Gax.GaxPreconditions.CheckState``2(System.Boolean,System.String,``0,``1)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckState``2(System.Boolean,System.String,``0,``1)
+  id: CheckState``2(System.Boolean,System.String,``0,``1)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckState<T1, T2>(Boolean, String, T1, T2)
+  nameWithType: GaxPreconditions.CheckState<T1, T2>(Boolean, String, T1, T2)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckState<T1, T2>(System.Boolean, System.String, T1, T2)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckState
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 134
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that given condition is met, throwing an <xref href=\"System.InvalidOperationException\" data-throw-if-not-resolved=\"false\"></xref> otherwise.\n"
+  example: []
+  syntax:
+    content: public static void CheckState<T1, T2>(bool condition, string format, T1 arg0, T2 arg1)
+    parameters:
+    - id: condition
+      type: System.Boolean
+      description: The (already evaluated) condition to check.
+    - id: format
+      type: System.String
+      description: >-
+        The format string to use to create the exception message if the
+
+        condition is not met.
+    - id: arg0
+      type: '{T1}'
+      description: The first argument to the format string.
+    - id: arg1
+      type: '{T2}'
+      description: The second argument to the format string.
+    typeParameters:
+    - id: T1
+    - id: T2
+    content.vb: Public Shared Sub CheckState(Of T1, T2)(condition As Boolean, format As String, arg0 As T1, arg1 As T2)
+  overload: Google.Api.Gax.GaxPreconditions.CheckState*
+  nameWithType.vb: GaxPreconditions.CheckState(Of T1, T2)(Boolean, String, T1, T2)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckState(Of T1, T2)(System.Boolean, System.String, T1, T2)
+  name.vb: CheckState(Of T1, T2)(Boolean, String, T1, T2)
+- uid: Google.Api.Gax.GaxPreconditions.CheckArgument(System.Boolean,System.String,System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckArgument(System.Boolean,System.String,System.String)
+  id: CheckArgument(System.Boolean,System.String,System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckArgument(Boolean, String, String)
+  nameWithType: GaxPreconditions.CheckArgument(Boolean, String, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckArgument(System.Boolean, System.String, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckArgument
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 151
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that given argument-based condition is met, throwing an <xref href=\"System.ArgumentException\" data-throw-if-not-resolved=\"false\"></xref> otherwise.\n"
+  example: []
+  syntax:
+    content: public static void CheckArgument(bool condition, string paramName, string message)
+    parameters:
+    - id: condition
+      type: System.Boolean
+      description: The (already evaluated) condition to check.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter whose value is being tested.
+    - id: message
+      type: System.String
+      description: >-
+        The message to include in the exception, if generated. This should not
+
+        use interpolation, as the interpolation would be performed regardless of whether or not an exception
+
+        is thrown.
+    content.vb: Public Shared Sub CheckArgument(condition As Boolean, paramName As String, message As String)
+  overload: Google.Api.Gax.GaxPreconditions.CheckArgument*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.GaxPreconditions.CheckArgument``1(System.Boolean,System.String,System.String,``0)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckArgument``1(System.Boolean,System.String,System.String,``0)
+  id: CheckArgument``1(System.Boolean,System.String,System.String,``0)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckArgument<T>(Boolean, String, String, T)
+  nameWithType: GaxPreconditions.CheckArgument<T>(Boolean, String, String, T)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckArgument<T>(System.Boolean, System.String, System.String, T)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckArgument
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 167
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that given argument-based condition is met, throwing an <xref href=\"System.ArgumentException\" data-throw-if-not-resolved=\"false\"></xref> otherwise.\n"
+  example: []
+  syntax:
+    content: public static void CheckArgument<T>(bool condition, string paramName, string format, T arg0)
+    parameters:
+    - id: condition
+      type: System.Boolean
+      description: The (already evaluated) condition to check.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter whose value is being tested.
+    - id: format
+      type: System.String
+      description: >-
+        The format string to use to create the exception message if the
+
+        condition is not met.
+    - id: arg0
+      type: '{T}'
+      description: The argument to the format string.
+    typeParameters:
+    - id: T
+    content.vb: Public Shared Sub CheckArgument(Of T)(condition As Boolean, paramName As String, format As String, arg0 As T)
+  overload: Google.Api.Gax.GaxPreconditions.CheckArgument*
+  nameWithType.vb: GaxPreconditions.CheckArgument(Of T)(Boolean, String, String, T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckArgument(Of T)(System.Boolean, System.String, System.String, T)
+  name.vb: CheckArgument(Of T)(Boolean, String, String, T)
+- uid: Google.Api.Gax.GaxPreconditions.CheckArgument``2(System.Boolean,System.String,System.String,``0,``1)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckArgument``2(System.Boolean,System.String,System.String,``0,``1)
+  id: CheckArgument``2(System.Boolean,System.String,System.String,``0,``1)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckArgument<T1, T2>(Boolean, String, String, T1, T2)
+  nameWithType: GaxPreconditions.CheckArgument<T1, T2>(Boolean, String, String, T1, T2)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckArgument<T1, T2>(System.Boolean, System.String, System.String, T1, T2)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckArgument
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 184
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that given argument-based condition is met, throwing an <xref href=\"System.ArgumentException\" data-throw-if-not-resolved=\"false\"></xref> otherwise.\n"
+  example: []
+  syntax:
+    content: public static void CheckArgument<T1, T2>(bool condition, string paramName, string format, T1 arg0, T2 arg1)
+    parameters:
+    - id: condition
+      type: System.Boolean
+      description: The (already evaluated) condition to check.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter whose value is being tested.
+    - id: format
+      type: System.String
+      description: >-
+        The format string to use to create the exception message if the
+
+        condition is not met.
+    - id: arg0
+      type: '{T1}'
+      description: The first argument to the format string.
+    - id: arg1
+      type: '{T2}'
+      description: The second argument to the format string.
+    typeParameters:
+    - id: T1
+    - id: T2
+    content.vb: Public Shared Sub CheckArgument(Of T1, T2)(condition As Boolean, paramName As String, format As String, arg0 As T1, arg1 As T2)
+  overload: Google.Api.Gax.GaxPreconditions.CheckArgument*
+  nameWithType.vb: GaxPreconditions.CheckArgument(Of T1, T2)(Boolean, String, String, T1, T2)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckArgument(Of T1, T2)(System.Boolean, System.String, System.String, T1, T2)
+  name.vb: CheckArgument(Of T1, T2)(Boolean, String, String, T1, T2)
+- uid: Google.Api.Gax.GaxPreconditions.CheckEnumValue``1(``0,System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckEnumValue``1(``0,System.String)
+  id: CheckEnumValue``1(``0,System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckEnumValue<T>(T, String)
+  nameWithType: GaxPreconditions.CheckEnumValue<T>(T, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckEnumValue<T>(T, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckEnumValue
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 199
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given value is in fact defined in the enum used as the type argument of the method.\n"
+  example: []
+  syntax:
+    content: 'public static T CheckEnumValue<T>(T value, string paramName)where T : struct'
+    parameters:
+    - id: value
+      type: '{T}'
+      description: The value to check.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter whose value is being tested.
+    typeParameters:
+    - id: T
+      description: The enum type to check the value within.
+    return:
+      type: '{T}'
+      description: <span class="paramref">value</span> if it was a defined value
+    content.vb: Public Shared Function CheckEnumValue(Of T As Structure)(value As T, paramName As String) As T
+  overload: Google.Api.Gax.GaxPreconditions.CheckEnumValue*
+  nameWithType.vb: GaxPreconditions.CheckEnumValue(Of T)(T, String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckEnumValue(Of T)(T, System.String)
+  name.vb: CheckEnumValue(Of T)(T, String)
+references:
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.GaxPreconditions.CheckNotNull*
+  commentId: Overload:Google.Api.Gax.GaxPreconditions.CheckNotNull
+  isExternal: false
+  name: CheckNotNull
+  nameWithType: GaxPreconditions.CheckNotNull
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNotNull
+- uid: System.ArgumentNullException
+  commentId: T:System.ArgumentNullException
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty*
+  commentId: Overload:Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty
+  isExternal: false
+  name: CheckNotNullOrEmpty
+  nameWithType: GaxPreconditions.CheckNotNullOrEmpty
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.Int32.MaxValue
+  commentId: F:System.Int32.MaxValue
+- uid: Google.Api.Gax.GaxPreconditions.CheckArgumentRange*
+  commentId: Overload:Google.Api.Gax.GaxPreconditions.CheckArgumentRange
+  isExternal: false
+  name: CheckArgumentRange
+  nameWithType: GaxPreconditions.CheckArgumentRange
+  fullName: Google.Api.Gax.GaxPreconditions.CheckArgumentRange
+- uid: System.ArgumentOutOfRangeException
+  commentId: T:System.ArgumentOutOfRangeException
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+- uid: Google.Api.Gax.GaxPreconditions.CheckState*
+  commentId: Overload:Google.Api.Gax.GaxPreconditions.CheckState
+  isExternal: false
+  name: CheckState
+  nameWithType: GaxPreconditions.CheckState
+  fullName: Google.Api.Gax.GaxPreconditions.CheckState
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: '{T1}'
+  commentId: '!:T1'
+  definition: T1
+  name: T1
+  nameWithType: T1
+  fullName: T1
+- uid: '{T2}'
+  commentId: '!:T2'
+  definition: T2
+  name: T2
+  nameWithType: T2
+  fullName: T2
+- uid: T1
+  isExternal: false
+  name: T1
+  nameWithType: T1
+  fullName: T1
+- uid: T2
+  isExternal: false
+  name: T2
+  nameWithType: T2
+  fullName: T2
+- uid: Google.Api.Gax.GaxPreconditions.CheckArgument*
+  commentId: Overload:Google.Api.Gax.GaxPreconditions.CheckArgument
+  isExternal: false
+  name: CheckArgument
+  nameWithType: GaxPreconditions.CheckArgument
+  fullName: Google.Api.Gax.GaxPreconditions.CheckArgument
+- uid: Google.Api.Gax.GaxPreconditions.CheckEnumValue*
+  commentId: Overload:Google.Api.Gax.GaxPreconditions.CheckEnumValue
+  isExternal: false
+  name: CheckEnumValue
+  nameWithType: GaxPreconditions.CheckEnumValue
+  fullName: Google.Api.Gax.GaxPreconditions.CheckEnumValue

@@ -1,0 +1,1974 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  id: CodedInputStream
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.CodedInputStream.#ctor(System.Byte[])
+  - Google.Protobuf.CodedInputStream.#ctor(System.Byte[],System.Int32,System.Int32)
+  - Google.Protobuf.CodedInputStream.#ctor(System.IO.Stream)
+  - Google.Protobuf.CodedInputStream.#ctor(System.IO.Stream,System.Boolean)
+  - Google.Protobuf.CodedInputStream.CreateWithLimits(System.IO.Stream,System.Int32,System.Int32)
+  - Google.Protobuf.CodedInputStream.Dispose
+  - Google.Protobuf.CodedInputStream.IsAtEnd
+  - Google.Protobuf.CodedInputStream.MaybeConsumeTag(System.UInt32)
+  - Google.Protobuf.CodedInputStream.PeekTag
+  - Google.Protobuf.CodedInputStream.Position
+  - Google.Protobuf.CodedInputStream.ReadBool
+  - Google.Protobuf.CodedInputStream.ReadBytes
+  - Google.Protobuf.CodedInputStream.ReadDouble
+  - Google.Protobuf.CodedInputStream.ReadEnum
+  - Google.Protobuf.CodedInputStream.ReadFixed32
+  - Google.Protobuf.CodedInputStream.ReadFixed64
+  - Google.Protobuf.CodedInputStream.ReadFloat
+  - Google.Protobuf.CodedInputStream.ReadInt32
+  - Google.Protobuf.CodedInputStream.ReadInt64
+  - Google.Protobuf.CodedInputStream.ReadLength
+  - Google.Protobuf.CodedInputStream.ReadMessage(Google.Protobuf.IMessage)
+  - Google.Protobuf.CodedInputStream.ReadSFixed32
+  - Google.Protobuf.CodedInputStream.ReadSFixed64
+  - Google.Protobuf.CodedInputStream.ReadSInt32
+  - Google.Protobuf.CodedInputStream.ReadSInt64
+  - Google.Protobuf.CodedInputStream.ReadString
+  - Google.Protobuf.CodedInputStream.ReadTag
+  - Google.Protobuf.CodedInputStream.ReadUInt32
+  - Google.Protobuf.CodedInputStream.ReadUInt64
+  - Google.Protobuf.CodedInputStream.RecursionLimit
+  - Google.Protobuf.CodedInputStream.SizeLimit
+  - Google.Protobuf.CodedInputStream.SkipLastField
+  langs:
+  - csharp
+  - vb
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CodedInputStream
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 53
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads and decodes protocol message fields.\n"
+  remarks: "\n<p>\nThis class is generally used by generated code to read appropriate\nprimitives from the stream. It effectively encapsulates the lowest\nlevels of protocol buffer format.\n</p>\n<p>\nRepeated fields and map fields are not handled by this class; use <xref href=\"Google.Protobuf.Collections.RepeatedField%601\" data-throw-if-not-resolved=\"false\"></xref>\nand <xref href=\"Google.Protobuf.Collections.MapField%602\" data-throw-if-not-resolved=\"false\"></xref> to serialize such fields.\n</p>\n"
+  example: []
+  syntax:
+    content: 'public sealed class CodedInputStream : IDisposable'
+    content.vb: >-
+      Public NotInheritable Class CodedInputStream
+          Implements IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.CodedInputStream.#ctor(System.Byte[])
+  commentId: M:Google.Protobuf.CodedInputStream.#ctor(System.Byte[])
+  id: '#ctor(System.Byte[])'
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: CodedInputStream(Byte[])
+  nameWithType: CodedInputStream.CodedInputStream(Byte[])
+  fullName: Google.Protobuf.CodedInputStream.CodedInputStream(System.Byte[])
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 123
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new CodedInputStream reading data from the given byte array.\n"
+  example: []
+  syntax:
+    content: public CodedInputStream(byte[] buffer)
+    parameters:
+    - id: buffer
+      type: System.Byte[]
+    content.vb: Public Sub New(buffer As Byte())
+  overload: Google.Protobuf.CodedInputStream.#ctor*
+  nameWithType.vb: CodedInputStream.CodedInputStream(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.CodedInputStream.CodedInputStream(System.Byte())
+  name.vb: CodedInputStream(Byte())
+- uid: Google.Protobuf.CodedInputStream.#ctor(System.Byte[],System.Int32,System.Int32)
+  commentId: M:Google.Protobuf.CodedInputStream.#ctor(System.Byte[],System.Int32,System.Int32)
+  id: '#ctor(System.Byte[],System.Int32,System.Int32)'
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: CodedInputStream(Byte[], Int32, Int32)
+  nameWithType: CodedInputStream.CodedInputStream(Byte[], Int32, Int32)
+  fullName: Google.Protobuf.CodedInputStream.CodedInputStream(System.Byte[], System.Int32, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 130
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.CodedInputStream\" data-throw-if-not-resolved=\"false\"></xref> that reads from the given byte array slice.\n"
+  example: []
+  syntax:
+    content: public CodedInputStream(byte[] buffer, int offset, int length)
+    parameters:
+    - id: buffer
+      type: System.Byte[]
+    - id: offset
+      type: System.Int32
+    - id: length
+      type: System.Int32
+    content.vb: Public Sub New(buffer As Byte(), offset As Integer, length As Integer)
+  overload: Google.Protobuf.CodedInputStream.#ctor*
+  nameWithType.vb: CodedInputStream.CodedInputStream(Byte(), Int32, Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.CodedInputStream.CodedInputStream(System.Byte(), System.Int32, System.Int32)
+  name.vb: CodedInputStream(Byte(), Int32, Int32)
+- uid: Google.Protobuf.CodedInputStream.#ctor(System.IO.Stream)
+  commentId: M:Google.Protobuf.CodedInputStream.#ctor(System.IO.Stream)
+  id: '#ctor(System.IO.Stream)'
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: CodedInputStream(Stream)
+  nameWithType: CodedInputStream.CodedInputStream(Stream)
+  fullName: Google.Protobuf.CodedInputStream.CodedInputStream(System.IO.Stream)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 148
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.CodedInputStream\" data-throw-if-not-resolved=\"false\"></xref> reading data from the given stream, which will be disposed\nwhen the returned object is disposed.\n"
+  example: []
+  syntax:
+    content: public CodedInputStream(Stream input)
+    parameters:
+    - id: input
+      type: System.IO.Stream
+      description: The stream to read from.
+    content.vb: Public Sub New(input As Stream)
+  overload: Google.Protobuf.CodedInputStream.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.#ctor(System.IO.Stream,System.Boolean)
+  commentId: M:Google.Protobuf.CodedInputStream.#ctor(System.IO.Stream,System.Boolean)
+  id: '#ctor(System.IO.Stream,System.Boolean)'
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: CodedInputStream(Stream, Boolean)
+  nameWithType: CodedInputStream.CodedInputStream(Stream, Boolean)
+  fullName: Google.Protobuf.CodedInputStream.CodedInputStream(System.IO.Stream, System.Boolean)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 159
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.CodedInputStream\" data-throw-if-not-resolved=\"false\"></xref> reading data from the given stream.\n"
+  example: []
+  syntax:
+    content: public CodedInputStream(Stream input, bool leaveOpen)
+    parameters:
+    - id: input
+      type: System.IO.Stream
+      description: The stream to read from.
+    - id: leaveOpen
+      type: System.Boolean
+      description: >-
+        <code>true</code> to leave <span class="paramref">input</span> open when the returned
+
+        <code></code> is disposed; <code>false</code> to dispose of the given stream when the
+
+        returned object is disposed.
+    content.vb: Public Sub New(input As Stream, leaveOpen As Boolean)
+  overload: Google.Protobuf.CodedInputStream.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.CreateWithLimits(System.IO.Stream,System.Int32,System.Int32)
+  commentId: M:Google.Protobuf.CodedInputStream.CreateWithLimits(System.IO.Stream,System.Int32,System.Int32)
+  id: CreateWithLimits(System.IO.Stream,System.Int32,System.Int32)
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: CreateWithLimits(Stream, Int32, Int32)
+  nameWithType: CodedInputStream.CreateWithLimits(Stream, Int32, Int32)
+  fullName: Google.Protobuf.CodedInputStream.CreateWithLimits(System.IO.Stream, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CreateWithLimits
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 217
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a <xref href=\"Google.Protobuf.CodedInputStream\" data-throw-if-not-resolved=\"false\"></xref> with the specified size and recursion limits, reading\nfrom an input stream.\n"
+  remarks: "\nThis method exists separately from the constructor to reduce the number of constructor overloads.\nIt is likely to be used considerably less frequently than the constructors, as the default limits\nare suitable for most use cases.\n"
+  example: []
+  syntax:
+    content: public static CodedInputStream CreateWithLimits(Stream input, int sizeLimit, int recursionLimit)
+    parameters:
+    - id: input
+      type: System.IO.Stream
+      description: The input stream to read from
+    - id: sizeLimit
+      type: System.Int32
+      description: The total limit of data to read from the stream.
+    - id: recursionLimit
+      type: System.Int32
+      description: The maximum recursion depth to allow while reading.
+    return:
+      type: Google.Protobuf.CodedInputStream
+      description: >-
+        A <code>CodedInputStream</code> reading from <span class="paramref">input</span> with the specified size
+
+        and recursion limits.
+    content.vb: Public Shared Function CreateWithLimits(input As Stream, sizeLimit As Integer, recursionLimit As Integer) As CodedInputStream
+  overload: Google.Protobuf.CodedInputStream.CreateWithLimits*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.CodedInputStream.Position
+  commentId: P:Google.Protobuf.CodedInputStream.Position
+  id: Position
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: CodedInputStream.Position
+  fullName: Google.Protobuf.CodedInputStream.Position
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Position
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 225
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns the current position in the input stream, or the position in the input buffer\n"
+  example: []
+  syntax:
+    content: public long Position { get; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public ReadOnly Property Position As Long
+  overload: Google.Protobuf.CodedInputStream.Position*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.CodedInputStream.SizeLimit
+  commentId: P:Google.Protobuf.CodedInputStream.SizeLimit
+  id: SizeLimit
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: SizeLimit
+  nameWithType: CodedInputStream.SizeLimit
+  fullName: Google.Protobuf.CodedInputStream.SizeLimit
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: SizeLimit
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 254
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns the size limit for this stream.\n"
+  remarks: "\nThis limit is applied when reading from the underlying stream, as a sanity check. It is\nnot applied when reading from a byte array data source without an underlying stream.\nThe default value is 64MB.\n"
+  example: []
+  syntax:
+    content: public int SizeLimit { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: "\nThe size limit.\n"
+    content.vb: Public ReadOnly Property SizeLimit As Integer
+  overload: Google.Protobuf.CodedInputStream.SizeLimit*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.CodedInputStream.RecursionLimit
+  commentId: P:Google.Protobuf.CodedInputStream.RecursionLimit
+  id: RecursionLimit
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: RecursionLimit
+  nameWithType: CodedInputStream.RecursionLimit
+  fullName: Google.Protobuf.CodedInputStream.RecursionLimit
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: RecursionLimit
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 266
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns the recursion limit for this stream. This limit is applied whilst reading messages,\nto avoid maliciously-recursive data.\n"
+  remarks: "\nThe default limit is 64.\n"
+  example: []
+  syntax:
+    content: public int RecursionLimit { get; }
+    parameters: []
+    return:
+      type: System.Int32
+      description: "\nThe recursion limit for this stream.\n"
+    content.vb: Public ReadOnly Property RecursionLimit As Integer
+  overload: Google.Protobuf.CodedInputStream.RecursionLimit*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.CodedInputStream.Dispose
+  commentId: M:Google.Protobuf.CodedInputStream.Dispose
+  id: Dispose
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: CodedInputStream.Dispose()
+  fullName: Google.Protobuf.CodedInputStream.Dispose()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Dispose
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 276
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nDisposes of this instance, potentially closing any underlying stream.\n"
+  remarks: "\nAs there is no flushing to perform here, disposing of a <xref href=\"Google.Protobuf.CodedInputStream\" data-throw-if-not-resolved=\"false\"></xref> which\nwas constructed with the <code>leaveOpen</code> option parameter set to <code>true</code> (or one which\nwas constructed to read from a byte array) has no effect.\n"
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: Google.Protobuf.CodedInputStream.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.PeekTag
+  commentId: M:Google.Protobuf.CodedInputStream.PeekTag
+  id: PeekTag
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: PeekTag()
+  nameWithType: CodedInputStream.PeekTag()
+  fullName: Google.Protobuf.CodedInputStream.PeekTag()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: PeekTag
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 307
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nPeeks at the next field tag. This is like calling <xref href=\"Google.Protobuf.CodedInputStream.ReadTag\" data-throw-if-not-resolved=\"false\"></xref>, but the\ntag is not consumed. (So a subsequent call to <xref href=\"Google.Protobuf.CodedInputStream.ReadTag\" data-throw-if-not-resolved=\"false\"></xref> will return the\nsame value.)\n"
+  example: []
+  syntax:
+    content: public uint PeekTag()
+    return:
+      type: System.UInt32
+    content.vb: Public Function PeekTag As UInteger
+  overload: Google.Protobuf.CodedInputStream.PeekTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadTag
+  commentId: M:Google.Protobuf.CodedInputStream.ReadTag
+  id: ReadTag
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadTag()
+  nameWithType: CodedInputStream.ReadTag()
+  fullName: Google.Protobuf.CodedInputStream.ReadTag()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadTag
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 330
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a field tag, returning the tag of 0 for \"end of stream\".\n"
+  remarks: "\nIf this method returns 0, it doesn't necessarily mean the end of all\nthe data in this CodedInputStream; it may be the end of the logical stream\nfor an embedded message, for example.\n"
+  example: []
+  syntax:
+    content: public uint ReadTag()
+    return:
+      type: System.UInt32
+      description: The next field tag, or 0 for end of stream. (0 is never a valid tag.)
+    content.vb: Public Function ReadTag As UInteger
+  overload: Google.Protobuf.CodedInputStream.ReadTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.SkipLastField
+  commentId: M:Google.Protobuf.CodedInputStream.SkipLastField
+  id: SkipLastField
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: SkipLastField()
+  nameWithType: CodedInputStream.SkipLastField()
+  fullName: Google.Protobuf.CodedInputStream.SkipLastField()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: SkipLastField
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 395
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nSkips the data for the field with the tag we've just read.\nThis should be called directly after <xref href=\"Google.Protobuf.CodedInputStream.ReadTag\" data-throw-if-not-resolved=\"false\"></xref>, when\nthe caller wishes to skip an unknown field.\n"
+  remarks: "\nThis method throws <xref href=\"Google.Protobuf.InvalidProtocolBufferException\" data-throw-if-not-resolved=\"false\"></xref> if the last-read tag was an end-group tag.\nIf a caller wishes to skip a group, they should skip the whole group, by calling this method after reading the\nstart-group tag. This behavior allows callers to call this method on any field they don't understand, correctly\nresulting in an error if an end-group tag has not been paired with an earlier start-group tag.\n"
+  example: []
+  syntax:
+    content: public void SkipLastField()
+    content.vb: Public Sub SkipLastField
+  overload: Google.Protobuf.CodedInputStream.SkipLastField*
+  exceptions:
+  - type: Google.Protobuf.InvalidProtocolBufferException
+    commentId: T:Google.Protobuf.InvalidProtocolBufferException
+    description: The last tag was an end-group tag
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: The last read operation read to the end of the logical stream
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadDouble
+  commentId: M:Google.Protobuf.CodedInputStream.ReadDouble
+  id: ReadDouble
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadDouble()
+  nameWithType: CodedInputStream.ReadDouble()
+  fullName: Google.Protobuf.CodedInputStream.ReadDouble()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadDouble
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 463
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a double field from the stream.\n"
+  example: []
+  syntax:
+    content: public double ReadDouble()
+    return:
+      type: System.Double
+    content.vb: Public Function ReadDouble As Double
+  overload: Google.Protobuf.CodedInputStream.ReadDouble*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadFloat
+  commentId: M:Google.Protobuf.CodedInputStream.ReadFloat
+  id: ReadFloat
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadFloat()
+  nameWithType: CodedInputStream.ReadFloat()
+  fullName: Google.Protobuf.CodedInputStream.ReadFloat()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadFloat
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 471
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a float field from the stream.\n"
+  example: []
+  syntax:
+    content: public float ReadFloat()
+    return:
+      type: System.Single
+    content.vb: Public Function ReadFloat As Single
+  overload: Google.Protobuf.CodedInputStream.ReadFloat*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadUInt64
+  commentId: M:Google.Protobuf.CodedInputStream.ReadUInt64
+  id: ReadUInt64
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadUInt64()
+  nameWithType: CodedInputStream.ReadUInt64()
+  fullName: Google.Protobuf.CodedInputStream.ReadUInt64()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadUInt64
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 493
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a uint64 field from the stream.\n"
+  example: []
+  syntax:
+    content: public ulong ReadUInt64()
+    return:
+      type: System.UInt64
+    content.vb: Public Function ReadUInt64 As ULong
+  overload: Google.Protobuf.CodedInputStream.ReadUInt64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadInt64
+  commentId: M:Google.Protobuf.CodedInputStream.ReadInt64
+  id: ReadInt64
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadInt64()
+  nameWithType: CodedInputStream.ReadInt64()
+  fullName: Google.Protobuf.CodedInputStream.ReadInt64()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadInt64
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 501
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads an int64 field from the stream.\n"
+  example: []
+  syntax:
+    content: public long ReadInt64()
+    return:
+      type: System.Int64
+    content.vb: Public Function ReadInt64 As Long
+  overload: Google.Protobuf.CodedInputStream.ReadInt64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadInt32
+  commentId: M:Google.Protobuf.CodedInputStream.ReadInt32
+  id: ReadInt32
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadInt32()
+  nameWithType: CodedInputStream.ReadInt32()
+  fullName: Google.Protobuf.CodedInputStream.ReadInt32()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadInt32
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 509
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads an int32 field from the stream.\n"
+  example: []
+  syntax:
+    content: public int ReadInt32()
+    return:
+      type: System.Int32
+    content.vb: Public Function ReadInt32 As Integer
+  overload: Google.Protobuf.CodedInputStream.ReadInt32*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadFixed64
+  commentId: M:Google.Protobuf.CodedInputStream.ReadFixed64
+  id: ReadFixed64
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadFixed64()
+  nameWithType: CodedInputStream.ReadFixed64()
+  fullName: Google.Protobuf.CodedInputStream.ReadFixed64()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadFixed64
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 517
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a fixed64 field from the stream.\n"
+  example: []
+  syntax:
+    content: public ulong ReadFixed64()
+    return:
+      type: System.UInt64
+    content.vb: Public Function ReadFixed64 As ULong
+  overload: Google.Protobuf.CodedInputStream.ReadFixed64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadFixed32
+  commentId: M:Google.Protobuf.CodedInputStream.ReadFixed32
+  id: ReadFixed32
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadFixed32()
+  nameWithType: CodedInputStream.ReadFixed32()
+  fullName: Google.Protobuf.CodedInputStream.ReadFixed32()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadFixed32
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 525
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a fixed32 field from the stream.\n"
+  example: []
+  syntax:
+    content: public uint ReadFixed32()
+    return:
+      type: System.UInt32
+    content.vb: Public Function ReadFixed32 As UInteger
+  overload: Google.Protobuf.CodedInputStream.ReadFixed32*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadBool
+  commentId: M:Google.Protobuf.CodedInputStream.ReadBool
+  id: ReadBool
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadBool()
+  nameWithType: CodedInputStream.ReadBool()
+  fullName: Google.Protobuf.CodedInputStream.ReadBool()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadBool
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 533
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a bool field from the stream.\n"
+  example: []
+  syntax:
+    content: public bool ReadBool()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ReadBool As Boolean
+  overload: Google.Protobuf.CodedInputStream.ReadBool*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadString
+  commentId: M:Google.Protobuf.CodedInputStream.ReadString
+  id: ReadString
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadString()
+  nameWithType: CodedInputStream.ReadString()
+  fullName: Google.Protobuf.CodedInputStream.ReadString()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadString
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 541
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a string field from the stream.\n"
+  example: []
+  syntax:
+    content: public string ReadString()
+    return:
+      type: System.String
+    content.vb: Public Function ReadString As String
+  overload: Google.Protobuf.CodedInputStream.ReadString*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadMessage(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.CodedInputStream.ReadMessage(Google.Protobuf.IMessage)
+  id: ReadMessage(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadMessage(IMessage)
+  nameWithType: CodedInputStream.ReadMessage(IMessage)
+  fullName: Google.Protobuf.CodedInputStream.ReadMessage(Google.Protobuf.IMessage)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadMessage
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 564
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads an embedded message field value from the stream.\n"
+  example: []
+  syntax:
+    content: public void ReadMessage(IMessage builder)
+    parameters:
+    - id: builder
+      type: Google.Protobuf.IMessage
+    content.vb: Public Sub ReadMessage(builder As IMessage)
+  overload: Google.Protobuf.CodedInputStream.ReadMessage*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadBytes
+  commentId: M:Google.Protobuf.CodedInputStream.ReadBytes
+  id: ReadBytes
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadBytes()
+  nameWithType: CodedInputStream.ReadBytes()
+  fullName: Google.Protobuf.CodedInputStream.ReadBytes()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadBytes
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 587
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a bytes field value from the stream.\n"
+  example: []
+  syntax:
+    content: public ByteString ReadBytes()
+    return:
+      type: Google.Protobuf.ByteString
+    content.vb: Public Function ReadBytes As ByteString
+  overload: Google.Protobuf.CodedInputStream.ReadBytes*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadUInt32
+  commentId: M:Google.Protobuf.CodedInputStream.ReadUInt32
+  id: ReadUInt32
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadUInt32()
+  nameWithType: CodedInputStream.ReadUInt32()
+  fullName: Google.Protobuf.CodedInputStream.ReadUInt32()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadUInt32
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 608
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a uint32 field value from the stream.\n"
+  example: []
+  syntax:
+    content: public uint ReadUInt32()
+    return:
+      type: System.UInt32
+    content.vb: Public Function ReadUInt32 As UInteger
+  overload: Google.Protobuf.CodedInputStream.ReadUInt32*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadEnum
+  commentId: M:Google.Protobuf.CodedInputStream.ReadEnum
+  id: ReadEnum
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadEnum()
+  nameWithType: CodedInputStream.ReadEnum()
+  fullName: Google.Protobuf.CodedInputStream.ReadEnum()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadEnum
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 616
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads an enum field value from the stream.\n"
+  example: []
+  syntax:
+    content: public int ReadEnum()
+    return:
+      type: System.Int32
+    content.vb: Public Function ReadEnum As Integer
+  overload: Google.Protobuf.CodedInputStream.ReadEnum*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadSFixed32
+  commentId: M:Google.Protobuf.CodedInputStream.ReadSFixed32
+  id: ReadSFixed32
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadSFixed32()
+  nameWithType: CodedInputStream.ReadSFixed32()
+  fullName: Google.Protobuf.CodedInputStream.ReadSFixed32()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadSFixed32
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 625
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads an sfixed32 field value from the stream.\n"
+  example: []
+  syntax:
+    content: public int ReadSFixed32()
+    return:
+      type: System.Int32
+    content.vb: Public Function ReadSFixed32 As Integer
+  overload: Google.Protobuf.CodedInputStream.ReadSFixed32*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadSFixed64
+  commentId: M:Google.Protobuf.CodedInputStream.ReadSFixed64
+  id: ReadSFixed64
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadSFixed64()
+  nameWithType: CodedInputStream.ReadSFixed64()
+  fullName: Google.Protobuf.CodedInputStream.ReadSFixed64()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadSFixed64
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 633
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads an sfixed64 field value from the stream.\n"
+  example: []
+  syntax:
+    content: public long ReadSFixed64()
+    return:
+      type: System.Int64
+    content.vb: Public Function ReadSFixed64 As Long
+  overload: Google.Protobuf.CodedInputStream.ReadSFixed64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadSInt32
+  commentId: M:Google.Protobuf.CodedInputStream.ReadSInt32
+  id: ReadSInt32
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadSInt32()
+  nameWithType: CodedInputStream.ReadSInt32()
+  fullName: Google.Protobuf.CodedInputStream.ReadSInt32()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadSInt32
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 641
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads an sint32 field value from the stream.\n"
+  example: []
+  syntax:
+    content: public int ReadSInt32()
+    return:
+      type: System.Int32
+    content.vb: Public Function ReadSInt32 As Integer
+  overload: Google.Protobuf.CodedInputStream.ReadSInt32*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadSInt64
+  commentId: M:Google.Protobuf.CodedInputStream.ReadSInt64
+  id: ReadSInt64
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadSInt64()
+  nameWithType: CodedInputStream.ReadSInt64()
+  fullName: Google.Protobuf.CodedInputStream.ReadSInt64()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadSInt64
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 649
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads an sint64 field value from the stream.\n"
+  example: []
+  syntax:
+    content: public long ReadSInt64()
+    return:
+      type: System.Int64
+    content.vb: Public Function ReadSInt64 As Long
+  overload: Google.Protobuf.CodedInputStream.ReadSInt64*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.ReadLength
+  commentId: M:Google.Protobuf.CodedInputStream.ReadLength
+  id: ReadLength
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: ReadLength()
+  nameWithType: CodedInputStream.ReadLength()
+  fullName: Google.Protobuf.CodedInputStream.ReadLength()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ReadLength
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 661
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a length for length-delimited data.\n"
+  remarks: "\nThis is internally just reading a varint, but this method exists\nto make the calling code clearer.\n"
+  example: []
+  syntax:
+    content: public int ReadLength()
+    return:
+      type: System.Int32
+    content.vb: Public Function ReadLength As Integer
+  overload: Google.Protobuf.CodedInputStream.ReadLength*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.MaybeConsumeTag(System.UInt32)
+  commentId: M:Google.Protobuf.CodedInputStream.MaybeConsumeTag(System.UInt32)
+  id: MaybeConsumeTag(System.UInt32)
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: MaybeConsumeTag(UInt32)
+  nameWithType: CodedInputStream.MaybeConsumeTag(UInt32)
+  fullName: Google.Protobuf.CodedInputStream.MaybeConsumeTag(System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MaybeConsumeTag
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 671
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nPeeks at the next tag in the stream. If it matches <span class=\"paramref\">tag</span>,\nthe tag is consumed and the method returns <code>true</code>; otherwise, the\nstream is left in the original position and the method returns <code>false</code>.\n"
+  example: []
+  syntax:
+    content: public bool MaybeConsumeTag(uint tag)
+    parameters:
+    - id: tag
+      type: System.UInt32
+    return:
+      type: System.Boolean
+    content.vb: Public Function MaybeConsumeTag(tag As UInteger) As Boolean
+  overload: Google.Protobuf.CodedInputStream.MaybeConsumeTag*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.CodedInputStream.IsAtEnd
+  commentId: P:Google.Protobuf.CodedInputStream.IsAtEnd
+  id: IsAtEnd
+  parent: Google.Protobuf.CodedInputStream
+  langs:
+  - csharp
+  - vb
+  name: IsAtEnd
+  nameWithType: CodedInputStream.IsAtEnd
+  fullName: Google.Protobuf.CodedInputStream.IsAtEnd
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/CodedInputStream.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: IsAtEnd
+    path: csharp/src/Google.Protobuf/CodedInputStream.cs
+    startLine: 993
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns true if the stream has reached the end of the input. This is the\ncase if either the end of the underlying input source has been reached or\nthe stream has reached a limit created using PushLimit.\n"
+  example: []
+  syntax:
+    content: public bool IsAtEnd { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsAtEnd As Boolean
+  overload: Google.Protobuf.CodedInputStream.IsAtEnd*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
+  parent: Google.Protobuf.Collections
+  isExternal: false
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2
+  commentId: T:Google.Protobuf.Collections.MapField`2
+  parent: Google.Protobuf.Collections
+  isExternal: false
+  name: MapField<TKey, TValue>
+  nameWithType: MapField<TKey, TValue>
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>
+  nameWithType.vb: MapField(Of TKey, TValue)
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue)
+  name.vb: MapField(Of TKey, TValue)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.MapField`2
+    name: MapField
+    nameWithType: MapField
+    fullName: Google.Protobuf.Collections.MapField
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.MapField`2
+    name: MapField
+    nameWithType: MapField
+    fullName: Google.Protobuf.Collections.MapField
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.CodedInputStream.#ctor*
+  commentId: Overload:Google.Protobuf.CodedInputStream.#ctor
+  isExternal: false
+  name: CodedInputStream
+  nameWithType: CodedInputStream.CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream.CodedInputStream
+- uid: System.Byte[]
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: false
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Google.Protobuf.CodedInputStream.CreateWithLimits*
+  commentId: Overload:Google.Protobuf.CodedInputStream.CreateWithLimits
+  isExternal: false
+  name: CreateWithLimits
+  nameWithType: CodedInputStream.CreateWithLimits
+  fullName: Google.Protobuf.CodedInputStream.CreateWithLimits
+- uid: Google.Protobuf.CodedInputStream.Position*
+  commentId: Overload:Google.Protobuf.CodedInputStream.Position
+  isExternal: false
+  name: Position
+  nameWithType: CodedInputStream.Position
+  fullName: Google.Protobuf.CodedInputStream.Position
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Google.Protobuf.CodedInputStream.SizeLimit*
+  commentId: Overload:Google.Protobuf.CodedInputStream.SizeLimit
+  isExternal: false
+  name: SizeLimit
+  nameWithType: CodedInputStream.SizeLimit
+  fullName: Google.Protobuf.CodedInputStream.SizeLimit
+- uid: Google.Protobuf.CodedInputStream.RecursionLimit*
+  commentId: Overload:Google.Protobuf.CodedInputStream.RecursionLimit
+  isExternal: false
+  name: RecursionLimit
+  nameWithType: CodedInputStream.RecursionLimit
+  fullName: Google.Protobuf.CodedInputStream.RecursionLimit
+- uid: Google.Protobuf.CodedInputStream.Dispose*
+  commentId: Overload:Google.Protobuf.CodedInputStream.Dispose
+  isExternal: false
+  name: Dispose
+  nameWithType: CodedInputStream.Dispose
+  fullName: Google.Protobuf.CodedInputStream.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream.ReadTag
+  commentId: M:Google.Protobuf.CodedInputStream.ReadTag
+- uid: Google.Protobuf.CodedInputStream.PeekTag*
+  commentId: Overload:Google.Protobuf.CodedInputStream.PeekTag
+  isExternal: false
+  name: PeekTag
+  nameWithType: CodedInputStream.PeekTag
+  fullName: Google.Protobuf.CodedInputStream.PeekTag
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: Google.Protobuf.CodedInputStream.ReadTag*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadTag
+  isExternal: false
+  name: ReadTag
+  nameWithType: CodedInputStream.ReadTag
+  fullName: Google.Protobuf.CodedInputStream.ReadTag
+- uid: Google.Protobuf.InvalidProtocolBufferException
+  commentId: T:Google.Protobuf.InvalidProtocolBufferException
+  isExternal: false
+  name: InvalidProtocolBufferException
+  nameWithType: InvalidProtocolBufferException
+  fullName: Google.Protobuf.InvalidProtocolBufferException
+- uid: Google.Protobuf.CodedInputStream.SkipLastField*
+  commentId: Overload:Google.Protobuf.CodedInputStream.SkipLastField
+  isExternal: false
+  name: SkipLastField
+  nameWithType: CodedInputStream.SkipLastField
+  fullName: Google.Protobuf.CodedInputStream.SkipLastField
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+- uid: Google.Protobuf.CodedInputStream.ReadDouble*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadDouble
+  isExternal: false
+  name: ReadDouble
+  nameWithType: CodedInputStream.ReadDouble
+  fullName: Google.Protobuf.CodedInputStream.ReadDouble
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Google.Protobuf.CodedInputStream.ReadFloat*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadFloat
+  isExternal: false
+  name: ReadFloat
+  nameWithType: CodedInputStream.ReadFloat
+  fullName: Google.Protobuf.CodedInputStream.ReadFloat
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Google.Protobuf.CodedInputStream.ReadUInt64*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadUInt64
+  isExternal: false
+  name: ReadUInt64
+  nameWithType: CodedInputStream.ReadUInt64
+  fullName: Google.Protobuf.CodedInputStream.ReadUInt64
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: Google.Protobuf.CodedInputStream.ReadInt64*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadInt64
+  isExternal: false
+  name: ReadInt64
+  nameWithType: CodedInputStream.ReadInt64
+  fullName: Google.Protobuf.CodedInputStream.ReadInt64
+- uid: Google.Protobuf.CodedInputStream.ReadInt32*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadInt32
+  isExternal: false
+  name: ReadInt32
+  nameWithType: CodedInputStream.ReadInt32
+  fullName: Google.Protobuf.CodedInputStream.ReadInt32
+- uid: Google.Protobuf.CodedInputStream.ReadFixed64*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadFixed64
+  isExternal: false
+  name: ReadFixed64
+  nameWithType: CodedInputStream.ReadFixed64
+  fullName: Google.Protobuf.CodedInputStream.ReadFixed64
+- uid: Google.Protobuf.CodedInputStream.ReadFixed32*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadFixed32
+  isExternal: false
+  name: ReadFixed32
+  nameWithType: CodedInputStream.ReadFixed32
+  fullName: Google.Protobuf.CodedInputStream.ReadFixed32
+- uid: Google.Protobuf.CodedInputStream.ReadBool*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadBool
+  isExternal: false
+  name: ReadBool
+  nameWithType: CodedInputStream.ReadBool
+  fullName: Google.Protobuf.CodedInputStream.ReadBool
+- uid: Google.Protobuf.CodedInputStream.ReadString*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadString
+  isExternal: false
+  name: ReadString
+  nameWithType: CodedInputStream.ReadString
+  fullName: Google.Protobuf.CodedInputStream.ReadString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.CodedInputStream.ReadMessage*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadMessage
+  isExternal: false
+  name: ReadMessage
+  nameWithType: CodedInputStream.ReadMessage
+  fullName: Google.Protobuf.CodedInputStream.ReadMessage
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: Google.Protobuf.CodedInputStream.ReadBytes*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadBytes
+  isExternal: false
+  name: ReadBytes
+  nameWithType: CodedInputStream.ReadBytes
+  fullName: Google.Protobuf.CodedInputStream.ReadBytes
+- uid: Google.Protobuf.ByteString
+  commentId: T:Google.Protobuf.ByteString
+  parent: Google.Protobuf
+  isExternal: false
+  name: ByteString
+  nameWithType: ByteString
+  fullName: Google.Protobuf.ByteString
+- uid: Google.Protobuf.CodedInputStream.ReadUInt32*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadUInt32
+  isExternal: false
+  name: ReadUInt32
+  nameWithType: CodedInputStream.ReadUInt32
+  fullName: Google.Protobuf.CodedInputStream.ReadUInt32
+- uid: Google.Protobuf.CodedInputStream.ReadEnum*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadEnum
+  isExternal: false
+  name: ReadEnum
+  nameWithType: CodedInputStream.ReadEnum
+  fullName: Google.Protobuf.CodedInputStream.ReadEnum
+- uid: Google.Protobuf.CodedInputStream.ReadSFixed32*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadSFixed32
+  isExternal: false
+  name: ReadSFixed32
+  nameWithType: CodedInputStream.ReadSFixed32
+  fullName: Google.Protobuf.CodedInputStream.ReadSFixed32
+- uid: Google.Protobuf.CodedInputStream.ReadSFixed64*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadSFixed64
+  isExternal: false
+  name: ReadSFixed64
+  nameWithType: CodedInputStream.ReadSFixed64
+  fullName: Google.Protobuf.CodedInputStream.ReadSFixed64
+- uid: Google.Protobuf.CodedInputStream.ReadSInt32*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadSInt32
+  isExternal: false
+  name: ReadSInt32
+  nameWithType: CodedInputStream.ReadSInt32
+  fullName: Google.Protobuf.CodedInputStream.ReadSInt32
+- uid: Google.Protobuf.CodedInputStream.ReadSInt64*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadSInt64
+  isExternal: false
+  name: ReadSInt64
+  nameWithType: CodedInputStream.ReadSInt64
+  fullName: Google.Protobuf.CodedInputStream.ReadSInt64
+- uid: Google.Protobuf.CodedInputStream.ReadLength*
+  commentId: Overload:Google.Protobuf.CodedInputStream.ReadLength
+  isExternal: false
+  name: ReadLength
+  nameWithType: CodedInputStream.ReadLength
+  fullName: Google.Protobuf.CodedInputStream.ReadLength
+- uid: Google.Protobuf.CodedInputStream.MaybeConsumeTag*
+  commentId: Overload:Google.Protobuf.CodedInputStream.MaybeConsumeTag
+  isExternal: false
+  name: MaybeConsumeTag
+  nameWithType: CodedInputStream.MaybeConsumeTag
+  fullName: Google.Protobuf.CodedInputStream.MaybeConsumeTag
+- uid: Google.Protobuf.CodedInputStream.IsAtEnd*
+  commentId: Overload:Google.Protobuf.CodedInputStream.IsAtEnd
+  isExternal: false
+  name: IsAtEnd
+  nameWithType: CodedInputStream.IsAtEnd
+  fullName: Google.Protobuf.CodedInputStream.IsAtEnd

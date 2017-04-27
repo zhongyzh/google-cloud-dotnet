@@ -1,0 +1,531 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.FieldCodec`1
+  commentId: T:Google.Protobuf.FieldCodec`1
+  id: FieldCodec`1
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.FieldCodec`1.CalculateSizeWithTag(`0)
+  - Google.Protobuf.FieldCodec`1.Read(Google.Protobuf.CodedInputStream)
+  - Google.Protobuf.FieldCodec`1.WriteTagAndValue(Google.Protobuf.CodedOutputStream,`0)
+  langs:
+  - csharp
+  - vb
+  name: FieldCodec<T>
+  nameWithType: FieldCodec<T>
+  fullName: Google.Protobuf.FieldCodec<T>
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FieldCodec
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 346
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\n<p>\nAn encode/decode pair for a single field. This effectively encapsulates\nall the information needed to read or write the field value from/to a coded\nstream.\n</p>\n<p>\nThis class is public and has to be as it is used by generated code, but its public\nAPI is very limited - just what the generated code needs to call directly.\n</p>\n"
+  remarks: "\nThis never writes default values to the stream, and does not address \"packedness\"\nin repeated fields itself, other than to know whether or not the field *should* be packed.\n"
+  example: []
+  syntax:
+    content: public sealed class FieldCodec<T>
+    typeParameters:
+    - id: T
+    content.vb: Public NotInheritable Class FieldCodec(Of T)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: FieldCodec(Of T)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: Google.Protobuf.FieldCodec(Of T)
+  name.vb: FieldCodec(Of T)
+- uid: Google.Protobuf.FieldCodec`1.WriteTagAndValue(Google.Protobuf.CodedOutputStream,`0)
+  commentId: M:Google.Protobuf.FieldCodec`1.WriteTagAndValue(Google.Protobuf.CodedOutputStream,`0)
+  id: WriteTagAndValue(Google.Protobuf.CodedOutputStream,`0)
+  parent: Google.Protobuf.FieldCodec`1
+  langs:
+  - csharp
+  - vb
+  name: WriteTagAndValue(CodedOutputStream, T)
+  nameWithType: FieldCodec<T>.WriteTagAndValue(CodedOutputStream, T)
+  fullName: Google.Protobuf.FieldCodec<T>.WriteTagAndValue(Google.Protobuf.CodedOutputStream, T)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteTagAndValue
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 449
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrite a tag and the given value, *if* the value is not the default.\n"
+  example: []
+  syntax:
+    content: public void WriteTagAndValue(CodedOutputStream output, T value)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    - id: value
+      type: '{T}'
+    content.vb: Public Sub WriteTagAndValue(output As CodedOutputStream, value As T)
+  overload: Google.Protobuf.FieldCodec`1.WriteTagAndValue*
+  nameWithType.vb: FieldCodec(Of T).WriteTagAndValue(CodedOutputStream, T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.FieldCodec(Of T).WriteTagAndValue(Google.Protobuf.CodedOutputStream, T)
+- uid: Google.Protobuf.FieldCodec`1.Read(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.FieldCodec`1.Read(Google.Protobuf.CodedInputStream)
+  id: Read(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.FieldCodec`1
+  langs:
+  - csharp
+  - vb
+  name: Read(CodedInputStream)
+  nameWithType: FieldCodec<T>.Read(CodedInputStream)
+  fullName: Google.Protobuf.FieldCodec<T>.Read(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Read
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 463
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReads a value of the codec type from the given <xref href=\"Google.Protobuf.CodedInputStream\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public T Read(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+      description: The input stream to read from.
+    return:
+      type: '{T}'
+      description: The value read from the stream.
+    content.vb: Public Function Read(input As CodedInputStream) As T
+  overload: Google.Protobuf.FieldCodec`1.Read*
+  nameWithType.vb: FieldCodec(Of T).Read(CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.FieldCodec(Of T).Read(Google.Protobuf.CodedInputStream)
+- uid: Google.Protobuf.FieldCodec`1.CalculateSizeWithTag(`0)
+  commentId: M:Google.Protobuf.FieldCodec`1.CalculateSizeWithTag(`0)
+  id: CalculateSizeWithTag(`0)
+  parent: Google.Protobuf.FieldCodec`1
+  langs:
+  - csharp
+  - vb
+  name: CalculateSizeWithTag(T)
+  nameWithType: FieldCodec<T>.CalculateSizeWithTag(T)
+  fullName: Google.Protobuf.FieldCodec<T>.CalculateSizeWithTag(T)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/FieldCodec.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CalculateSizeWithTag
+    path: csharp/src/Google.Protobuf/FieldCodec.cs
+    startLine: 469
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCalculates the size required to write the given value, with a tag,\nif the value is not the default.\n"
+  example: []
+  syntax:
+    content: public int CalculateSizeWithTag(T value)
+    parameters:
+    - id: value
+      type: '{T}'
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSizeWithTag(value As T) As Integer
+  overload: Google.Protobuf.FieldCodec`1.CalculateSizeWithTag*
+  nameWithType.vb: FieldCodec(Of T).CalculateSizeWithTag(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.FieldCodec(Of T).CalculateSizeWithTag(T)
+references:
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.FieldCodec`1.WriteTagAndValue*
+  commentId: Overload:Google.Protobuf.FieldCodec`1.WriteTagAndValue
+  isExternal: false
+  name: WriteTagAndValue
+  nameWithType: FieldCodec<T>.WriteTagAndValue
+  fullName: Google.Protobuf.FieldCodec<T>.WriteTagAndValue
+  nameWithType.vb: FieldCodec(Of T).WriteTagAndValue
+  fullName.vb: Google.Protobuf.FieldCodec(Of T).WriteTagAndValue
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+- uid: Google.Protobuf.FieldCodec`1.Read*
+  commentId: Overload:Google.Protobuf.FieldCodec`1.Read
+  isExternal: false
+  name: Read
+  nameWithType: FieldCodec<T>.Read
+  fullName: Google.Protobuf.FieldCodec<T>.Read
+  nameWithType.vb: FieldCodec(Of T).Read
+  fullName.vb: Google.Protobuf.FieldCodec(Of T).Read
+- uid: Google.Protobuf.FieldCodec`1.CalculateSizeWithTag*
+  commentId: Overload:Google.Protobuf.FieldCodec`1.CalculateSizeWithTag
+  isExternal: false
+  name: CalculateSizeWithTag
+  nameWithType: FieldCodec<T>.CalculateSizeWithTag
+  fullName: Google.Protobuf.FieldCodec<T>.CalculateSizeWithTag
+  nameWithType.vb: FieldCodec(Of T).CalculateSizeWithTag
+  fullName.vb: Google.Protobuf.FieldCodec(Of T).CalculateSizeWithTag
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32

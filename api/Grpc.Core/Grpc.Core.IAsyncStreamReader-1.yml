@@ -1,0 +1,286 @@
+### YamlMime:ManagedReference
+items:
+- uid: Grpc.Core.IAsyncStreamReader`1
+  commentId: T:Grpc.Core.IAsyncStreamReader`1
+  id: IAsyncStreamReader`1
+  parent: Grpc.Core
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IAsyncStreamReader<T>
+  nameWithType: IAsyncStreamReader<T>
+  fullName: Grpc.Core.IAsyncStreamReader<T>
+  type: Interface
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/IAsyncStreamReader.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: IAsyncStreamReader
+    path: src/csharp/Grpc.Core/IAsyncStreamReader.cs
+    startLine: 60
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nA stream of messages to be read.\nMessages can be awaited <code>await reader.MoveNext()</code>, that returns <code>true</code>\nif there is a message available and <code>false</code> if there are no more messages\n(i.e. the stream has been closed).\n<p>\nOn the client side, the last invocation of <code>MoveNext()</code> either returns <code>false</code>\nif the call has finished successfully or throws <code>RpcException</code> if call finished\nwith an error. Once the call finishes, subsequent invocations of <code>MoveNext()</code> will\ncontinue yielding the same result (returning <code>false</code> or throwing an exception).\n</p>\n<p>\nOn the server side, <code>MoveNext()</code> does not throw exceptions.\nIn case of a failure, the request stream will appear to be finished\n(<code>MoveNext</code> will return <code>false</code>) and the <code>CancellationToken</code>\nassociated with the call will be cancelled to signal the failure.\n</p>\n"
+  example: []
+  syntax:
+    content: 'public interface IAsyncStreamReader<T> : IAsyncEnumerator<T>, IDisposable'
+    typeParameters:
+    - id: T
+      description: The message type.
+    content.vb: >-
+      Public Interface IAsyncStreamReader(Of T)
+          Inherits IAsyncEnumerator(Of T)
+  inheritedMembers:
+  - System.Collections.Generic.IAsyncEnumerator{{T}}.MoveNext(System.Threading.CancellationToken)
+  - System.Collections.Generic.IAsyncEnumerator{{T}}.Current
+  - System.IDisposable.Dispose
+  nameWithType.vb: IAsyncStreamReader(Of T)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: Grpc.Core.IAsyncStreamReader(Of T)
+  name.vb: IAsyncStreamReader(Of T)
+references:
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: System.Collections.Generic.IAsyncEnumerator{{T}}.MoveNext(System.Threading.CancellationToken)
+  commentId: M:System.Collections.Generic.IAsyncEnumerator{`0}.MoveNext(System.Threading.CancellationToken)
+  parent: System.Collections.Generic.IAsyncEnumerator{{T}}
+  definition: System.Collections.Generic.IAsyncEnumerator`1.MoveNext(System.Threading.CancellationToken)
+  name: MoveNext(CancellationToken)
+  nameWithType: IAsyncEnumerator<T>.MoveNext(CancellationToken)
+  fullName: System.Collections.Generic.IAsyncEnumerator<T>.MoveNext(System.Threading.CancellationToken)
+  nameWithType.vb: IAsyncEnumerator(Of T).MoveNext(CancellationToken)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of T).MoveNext(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1.MoveNext(System.Threading.CancellationToken)
+    name: MoveNext
+    nameWithType: IAsyncEnumerator<T>.MoveNext
+    fullName: System.Collections.Generic.IAsyncEnumerator<T>.MoveNext
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1.MoveNext(System.Threading.CancellationToken)
+    name: MoveNext
+    nameWithType: IAsyncEnumerator(Of T).MoveNext
+    fullName: System.Collections.Generic.IAsyncEnumerator(Of T).MoveNext
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IAsyncEnumerator{{T}}.Current
+  commentId: P:System.Collections.Generic.IAsyncEnumerator{`0}.Current
+  parent: System.Collections.Generic.IAsyncEnumerator{{T}}
+  definition: System.Collections.Generic.IAsyncEnumerator`1.Current
+  name: Current
+  nameWithType: IAsyncEnumerator<T>.Current
+  fullName: System.Collections.Generic.IAsyncEnumerator<T>.Current
+  nameWithType.vb: IAsyncEnumerator(Of T).Current
+  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of T).Current
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IAsyncEnumerator`1.MoveNext(System.Threading.CancellationToken)
+  commentId: M:System.Collections.Generic.IAsyncEnumerator`1.MoveNext(System.Threading.CancellationToken)
+  isExternal: true
+  name: MoveNext(CancellationToken)
+  nameWithType: IAsyncEnumerator<T>.MoveNext(CancellationToken)
+  fullName: System.Collections.Generic.IAsyncEnumerator<T>.MoveNext(System.Threading.CancellationToken)
+  nameWithType.vb: IAsyncEnumerator(Of T).MoveNext(CancellationToken)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of T).MoveNext(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1.MoveNext(System.Threading.CancellationToken)
+    name: MoveNext
+    nameWithType: IAsyncEnumerator<T>.MoveNext
+    fullName: System.Collections.Generic.IAsyncEnumerator<T>.MoveNext
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1.MoveNext(System.Threading.CancellationToken)
+    name: MoveNext
+    nameWithType: IAsyncEnumerator(Of T).MoveNext
+    fullName: System.Collections.Generic.IAsyncEnumerator(Of T).MoveNext
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IAsyncEnumerator{{T}}
+  commentId: T:System.Collections.Generic.IAsyncEnumerator{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IAsyncEnumerator`1
+  name: IAsyncEnumerator<T>
+  nameWithType: IAsyncEnumerator<T>
+  fullName: System.Collections.Generic.IAsyncEnumerator<T>
+  nameWithType.vb: IAsyncEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of T)
+  name.vb: IAsyncEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
+    name: IAsyncEnumerator
+    nameWithType: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
+    name: IAsyncEnumerator
+    nameWithType: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IAsyncEnumerator`1.Current
+  commentId: P:System.Collections.Generic.IAsyncEnumerator`1.Current
+  isExternal: true
+  name: Current
+  nameWithType: IAsyncEnumerator<T>.Current
+  fullName: System.Collections.Generic.IAsyncEnumerator<T>.Current
+  nameWithType.vb: IAsyncEnumerator(Of T).Current
+  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of T).Current
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Collections.Generic.IAsyncEnumerator`1
+  commentId: T:System.Collections.Generic.IAsyncEnumerator`1
+  isExternal: true
+  name: IAsyncEnumerator<T>
+  nameWithType: IAsyncEnumerator<T>
+  fullName: System.Collections.Generic.IAsyncEnumerator<T>
+  nameWithType.vb: IAsyncEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of T)
+  name.vb: IAsyncEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
+    name: IAsyncEnumerator
+    nameWithType: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
+    name: IAsyncEnumerator
+    nameWithType: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System

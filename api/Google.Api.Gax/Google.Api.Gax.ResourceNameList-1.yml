@@ -1,0 +1,2559 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.ResourceNameList`1
+  commentId: T:Google.Api.Gax.ResourceNameList`1
+  id: ResourceNameList`1
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.ResourceNameList`1.#ctor(System.Collections.Generic.IList{System.String},System.Func{System.String,`0})
+  - Google.Api.Gax.ResourceNameList`1.Add(`0)
+  - Google.Api.Gax.ResourceNameList`1.Add(System.Collections.Generic.IEnumerable{`0})
+  - Google.Api.Gax.ResourceNameList`1.Clear
+  - Google.Api.Gax.ResourceNameList`1.Contains(`0)
+  - Google.Api.Gax.ResourceNameList`1.CopyTo(`0[],System.Int32)
+  - Google.Api.Gax.ResourceNameList`1.Count
+  - Google.Api.Gax.ResourceNameList`1.GetEnumerator
+  - Google.Api.Gax.ResourceNameList`1.IndexOf(`0)
+  - Google.Api.Gax.ResourceNameList`1.Insert(System.Int32,`0)
+  - Google.Api.Gax.ResourceNameList`1.IsReadOnly
+  - Google.Api.Gax.ResourceNameList`1.Item(System.Int32)
+  - Google.Api.Gax.ResourceNameList`1.Remove(`0)
+  - Google.Api.Gax.ResourceNameList`1.RemoveAt(System.Int32)
+  - Google.Api.Gax.ResourceNameList`1.System#Collections#IEnumerable#GetEnumerator
+  langs:
+  - csharp
+  - vb
+  name: ResourceNameList<TName>
+  nameWithType: ResourceNameList<TName>
+  fullName: Google.Api.Gax.ResourceNameList<TName>
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ResourceNameList
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 19
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nA list of resource names of a specific type, that delegates all operations to an\nunderlying list of string-based resource names.\n"
+  example: []
+  syntax:
+    content: 'public sealed class ResourceNameList<TName> : IList<TName>, ICollection<TName>, IEnumerable<TName>, IEnumerable where TName : class, IResourceName'
+    typeParameters:
+    - id: TName
+      description: The type of the resource name contained in this list.
+    content.vb: >-
+      Public NotInheritable Class ResourceNameList(Of TName As {Class, IResourceName})
+          Implements IList(Of TName), ICollection(Of TName), IEnumerable(Of TName), IEnumerable
+  inheritance:
+  - System.Object
+  implements:
+  - System.Collections.Generic.IList{{TName}}
+  - System.Collections.Generic.ICollection{{TName}}
+  - System.Collections.Generic.IEnumerable{{TName}}
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: ResourceNameList(Of TName)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName)
+  name.vb: ResourceNameList(Of TName)
+- uid: Google.Api.Gax.ResourceNameList`1.#ctor(System.Collections.Generic.IList{System.String},System.Func{System.String,`0})
+  commentId: M:Google.Api.Gax.ResourceNameList`1.#ctor(System.Collections.Generic.IList{System.String},System.Func{System.String,`0})
+  id: '#ctor(System.Collections.Generic.IList{System.String},System.Func{System.String,`0})'
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: ResourceNameList(IList<String>, Func<String, TName>)
+  nameWithType: ResourceNameList<TName>.ResourceNameList(IList<String>, Func<String, TName>)
+  fullName: Google.Api.Gax.ResourceNameList<TName>.ResourceNameList(System.Collections.Generic.IList<System.String>, System.Func<System.String, TName>)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 31
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nConstructs a <xref href=\"Google.Api.Gax.ResourceNameList%601\" data-throw-if-not-resolved=\"false\"></xref> from an underlying string-based list\nand a resource name parser.\n"
+  example: []
+  syntax:
+    content: public ResourceNameList(IList<string> underlyingList, Func<string, TName> stringToName)
+    parameters:
+    - id: underlyingList
+      type: System.Collections.Generic.IList{System.String}
+      description: ''
+    - id: stringToName
+      type: System.Func{System.String,{TName}}
+      description: ''
+    content.vb: Public Sub New(underlyingList As IList(Of String), stringToName As Func(Of String, TName))
+  overload: Google.Api.Gax.ResourceNameList`1.#ctor*
+  nameWithType.vb: ResourceNameList(Of TName).ResourceNameList(IList(Of String), Func(Of String, TName))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).ResourceNameList(System.Collections.Generic.IList(Of System.String), System.Func(Of System.String, TName))
+  name.vb: ResourceNameList(IList(Of String), Func(Of String, TName))
+- uid: Google.Api.Gax.ResourceNameList`1.Count
+  commentId: P:Google.Api.Gax.ResourceNameList`1.Count
+  id: Count
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: ResourceNameList<TName>.Count
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Count
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Count
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 39
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Count As Integer
+  overload: Google.Api.Gax.ResourceNameList`1.Count*
+  implements:
+  - System.Collections.Generic.ICollection{{TName}}.Count
+  nameWithType.vb: ResourceNameList(Of TName).Count
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Count
+- uid: Google.Api.Gax.ResourceNameList`1.IsReadOnly
+  commentId: P:Google.Api.Gax.ResourceNameList`1.IsReadOnly
+  id: IsReadOnly
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: IsReadOnly
+  nameWithType: ResourceNameList<TName>.IsReadOnly
+  fullName: Google.Api.Gax.ResourceNameList<TName>.IsReadOnly
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: IsReadOnly
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 42
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public bool IsReadOnly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsReadOnly As Boolean
+  overload: Google.Api.Gax.ResourceNameList`1.IsReadOnly*
+  implements:
+  - System.Collections.Generic.ICollection{{TName}}.IsReadOnly
+  nameWithType.vb: ResourceNameList(Of TName).IsReadOnly
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).IsReadOnly
+- uid: Google.Api.Gax.ResourceNameList`1.Item(System.Int32)
+  commentId: P:Google.Api.Gax.ResourceNameList`1.Item(System.Int32)
+  id: Item(System.Int32)
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: Item[Int32]
+  nameWithType: ResourceNameList<TName>.Item[Int32]
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Item[System.Int32]
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: this[]
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 45
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public TName this[int index] { get; set; }
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: '{TName}'
+    content.vb: Public Property Item(index As Integer) As TName
+  overload: Google.Api.Gax.ResourceNameList`1.Item*
+  implements:
+  - System.Collections.Generic.IList{{TName}}.Item(System.Int32)
+  nameWithType.vb: ResourceNameList(Of TName).Item(Int32)
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Item(System.Int32)
+  name.vb: Item(Int32)
+- uid: Google.Api.Gax.ResourceNameList`1.Add(`0)
+  commentId: M:Google.Api.Gax.ResourceNameList`1.Add(`0)
+  id: Add(`0)
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: Add(TName)
+  nameWithType: ResourceNameList<TName>.Add(TName)
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Add(TName)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Add
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 52
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public void Add(TName item)
+    parameters:
+    - id: item
+      type: '{TName}'
+    content.vb: Public Sub Add(item As TName)
+  overload: Google.Api.Gax.ResourceNameList`1.Add*
+  implements:
+  - System.Collections.Generic.ICollection{{TName}}.Add({TName})
+  nameWithType.vb: ResourceNameList(Of TName).Add(TName)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Add(TName)
+- uid: Google.Api.Gax.ResourceNameList`1.Add(System.Collections.Generic.IEnumerable{`0})
+  commentId: M:Google.Api.Gax.ResourceNameList`1.Add(System.Collections.Generic.IEnumerable{`0})
+  id: Add(System.Collections.Generic.IEnumerable{`0})
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: Add(IEnumerable<TName>)
+  nameWithType: ResourceNameList<TName>.Add(IEnumerable<TName>)
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Add(System.Collections.Generic.IEnumerable<TName>)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Add
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 58
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nAdds all items to this list.\n"
+  example: []
+  syntax:
+    content: public void Add(IEnumerable<TName> items)
+    parameters:
+    - id: items
+      type: System.Collections.Generic.IEnumerable{{TName}}
+      description: The items to add to this list.
+    content.vb: Public Sub Add(items As IEnumerable(Of TName))
+  overload: Google.Api.Gax.ResourceNameList`1.Add*
+  nameWithType.vb: ResourceNameList(Of TName).Add(IEnumerable(Of TName))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Add(System.Collections.Generic.IEnumerable(Of TName))
+  name.vb: Add(IEnumerable(Of TName))
+- uid: Google.Api.Gax.ResourceNameList`1.Clear
+  commentId: M:Google.Api.Gax.ResourceNameList`1.Clear
+  id: Clear
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: ResourceNameList<TName>.Clear()
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Clear()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Clear
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 68
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear
+  overload: Google.Api.Gax.ResourceNameList`1.Clear*
+  implements:
+  - System.Collections.Generic.ICollection{{TName}}.Clear
+  nameWithType.vb: ResourceNameList(Of TName).Clear()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Clear()
+- uid: Google.Api.Gax.ResourceNameList`1.Contains(`0)
+  commentId: M:Google.Api.Gax.ResourceNameList`1.Contains(`0)
+  id: Contains(`0)
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: Contains(TName)
+  nameWithType: ResourceNameList<TName>.Contains(TName)
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Contains(TName)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Contains
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 71
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public bool Contains(TName item)
+    parameters:
+    - id: item
+      type: '{TName}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Contains(item As TName) As Boolean
+  overload: Google.Api.Gax.ResourceNameList`1.Contains*
+  implements:
+  - System.Collections.Generic.ICollection{{TName}}.Contains({TName})
+  nameWithType.vb: ResourceNameList(Of TName).Contains(TName)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Contains(TName)
+- uid: Google.Api.Gax.ResourceNameList`1.CopyTo(`0[],System.Int32)
+  commentId: M:Google.Api.Gax.ResourceNameList`1.CopyTo(`0[],System.Int32)
+  id: CopyTo(`0[],System.Int32)
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: CopyTo(TName[], Int32)
+  nameWithType: ResourceNameList<TName>.CopyTo(TName[], Int32)
+  fullName: Google.Api.Gax.ResourceNameList<TName>.CopyTo(TName[], System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CopyTo
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 74
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public void CopyTo(TName[] array, int arrayIndex)
+    parameters:
+    - id: array
+      type: '{TName}[]'
+    - id: arrayIndex
+      type: System.Int32
+    content.vb: Public Sub CopyTo(array As TName(), arrayIndex As Integer)
+  overload: Google.Api.Gax.ResourceNameList`1.CopyTo*
+  implements:
+  - System.Collections.Generic.ICollection{{TName}}.CopyTo({TName}[],System.Int32)
+  nameWithType.vb: ResourceNameList(Of TName).CopyTo(TName(), Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).CopyTo(TName(), System.Int32)
+  name.vb: CopyTo(TName(), Int32)
+- uid: Google.Api.Gax.ResourceNameList`1.GetEnumerator
+  commentId: M:Google.Api.Gax.ResourceNameList`1.GetEnumerator
+  id: GetEnumerator
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: ResourceNameList<TName>.GetEnumerator()
+  fullName: Google.Api.Gax.ResourceNameList<TName>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetEnumerator
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 86
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public IEnumerator<TName> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{{TName}}
+    content.vb: Public Function GetEnumerator As IEnumerator(Of TName)
+  overload: Google.Api.Gax.ResourceNameList`1.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{{TName}}.GetEnumerator
+  nameWithType.vb: ResourceNameList(Of TName).GetEnumerator()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).GetEnumerator()
+- uid: Google.Api.Gax.ResourceNameList`1.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:Google.Api.Gax.ResourceNameList`1.System#Collections#IEnumerable#GetEnumerator
+  id: System#Collections#IEnumerable#GetEnumerator
+  isEii: true
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: IEnumerable.GetEnumerator()
+  nameWithType: ResourceNameList<TName>.IEnumerable.GetEnumerator()
+  fullName: Google.Api.Gax.ResourceNameList<TName>.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: System.Collections.IEnumerable.GetEnumerator
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 89
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: IEnumerator IEnumerable.GetEnumerator()
+    return:
+      type: System.Collections.IEnumerator
+    content.vb: Function System.Collections.IEnumerable.GetEnumerator As IEnumerator Implements IEnumerable.GetEnumerator
+  overload: Google.Api.Gax.ResourceNameList`1.System#Collections#IEnumerable#GetEnumerator*
+  implements:
+  - System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: ResourceNameList(Of TName).System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+- uid: Google.Api.Gax.ResourceNameList`1.IndexOf(`0)
+  commentId: M:Google.Api.Gax.ResourceNameList`1.IndexOf(`0)
+  id: IndexOf(`0)
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: IndexOf(TName)
+  nameWithType: ResourceNameList<TName>.IndexOf(TName)
+  fullName: Google.Api.Gax.ResourceNameList<TName>.IndexOf(TName)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: IndexOf
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 92
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public int IndexOf(TName item)
+    parameters:
+    - id: item
+      type: '{TName}'
+    return:
+      type: System.Int32
+    content.vb: Public Function IndexOf(item As TName) As Integer
+  overload: Google.Api.Gax.ResourceNameList`1.IndexOf*
+  implements:
+  - System.Collections.Generic.IList{{TName}}.IndexOf({TName})
+  nameWithType.vb: ResourceNameList(Of TName).IndexOf(TName)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).IndexOf(TName)
+- uid: Google.Api.Gax.ResourceNameList`1.Insert(System.Int32,`0)
+  commentId: M:Google.Api.Gax.ResourceNameList`1.Insert(System.Int32,`0)
+  id: Insert(System.Int32,`0)
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: Insert(Int32, TName)
+  nameWithType: ResourceNameList<TName>.Insert(Int32, TName)
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Insert(System.Int32, TName)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Insert
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 95
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public void Insert(int index, TName item)
+    parameters:
+    - id: index
+      type: System.Int32
+    - id: item
+      type: '{TName}'
+    content.vb: Public Sub Insert(index As Integer, item As TName)
+  overload: Google.Api.Gax.ResourceNameList`1.Insert*
+  implements:
+  - System.Collections.Generic.IList{{TName}}.Insert(System.Int32,{TName})
+  nameWithType.vb: ResourceNameList(Of TName).Insert(Int32, TName)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Insert(System.Int32, TName)
+- uid: Google.Api.Gax.ResourceNameList`1.Remove(`0)
+  commentId: M:Google.Api.Gax.ResourceNameList`1.Remove(`0)
+  id: Remove(`0)
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: Remove(TName)
+  nameWithType: ResourceNameList<TName>.Remove(TName)
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Remove(TName)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Remove
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 98
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public bool Remove(TName item)
+    parameters:
+    - id: item
+      type: '{TName}'
+    return:
+      type: System.Boolean
+    content.vb: Public Function Remove(item As TName) As Boolean
+  overload: Google.Api.Gax.ResourceNameList`1.Remove*
+  implements:
+  - System.Collections.Generic.ICollection{{TName}}.Remove({TName})
+  nameWithType.vb: ResourceNameList(Of TName).Remove(TName)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Remove(TName)
+- uid: Google.Api.Gax.ResourceNameList`1.RemoveAt(System.Int32)
+  commentId: M:Google.Api.Gax.ResourceNameList`1.RemoveAt(System.Int32)
+  id: RemoveAt(System.Int32)
+  parent: Google.Api.Gax.ResourceNameList`1
+  langs:
+  - csharp
+  - vb
+  name: RemoveAt(Int32)
+  nameWithType: ResourceNameList<TName>.RemoveAt(Int32)
+  fullName: Google.Api.Gax.ResourceNameList<TName>.RemoveAt(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/ResourceNameList.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: RemoveAt
+    path: src/Google.Api.Gax/ResourceNameList.cs
+    startLine: 101
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public void RemoveAt(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+    content.vb: Public Sub RemoveAt(index As Integer)
+  overload: Google.Api.Gax.ResourceNameList`1.RemoveAt*
+  implements:
+  - System.Collections.Generic.IList{{TName}}.RemoveAt(System.Int32)
+  nameWithType.vb: ResourceNameList(Of TName).RemoveAt(Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).RemoveAt(System.Int32)
+references:
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Collections.Generic.IList{{TName}}
+  commentId: T:System.Collections.Generic.IList{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<TName>
+  nameWithType: IList<TName>
+  fullName: System.Collections.Generic.IList<TName>
+  nameWithType.vb: IList(Of TName)
+  fullName.vb: System.Collections.Generic.IList(Of TName)
+  name.vb: IList(Of TName)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{{TName}}
+  commentId: T:System.Collections.Generic.ICollection{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<TName>
+  nameWithType: ICollection<TName>
+  fullName: System.Collections.Generic.ICollection<TName>
+  nameWithType.vb: ICollection(Of TName)
+  fullName.vb: System.Collections.Generic.ICollection(Of TName)
+  name.vb: ICollection(Of TName)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{{TName}}
+  commentId: T:System.Collections.Generic.IEnumerable{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<TName>
+  nameWithType: IEnumerable<TName>
+  fullName: System.Collections.Generic.IEnumerable<TName>
+  nameWithType.vb: IEnumerable(Of TName)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TName)
+  name.vb: IEnumerable(Of TName)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: false
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: Google.Api.Gax.ResourceNameList`1
+  commentId: T:Google.Api.Gax.ResourceNameList`1
+  isExternal: false
+  name: ResourceNameList<TName>
+  nameWithType: ResourceNameList<TName>
+  fullName: Google.Api.Gax.ResourceNameList<TName>
+  nameWithType.vb: ResourceNameList(Of TName)
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName)
+  name.vb: ResourceNameList(Of TName)
+  spec.csharp:
+  - uid: Google.Api.Gax.ResourceNameList`1
+    name: ResourceNameList
+    nameWithType: ResourceNameList
+    fullName: Google.Api.Gax.ResourceNameList
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.ResourceNameList`1
+    name: ResourceNameList
+    nameWithType: ResourceNameList
+    fullName: Google.Api.Gax.ResourceNameList
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ResourceNameList`1.#ctor*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.#ctor
+  isExternal: false
+  name: ResourceNameList
+  nameWithType: ResourceNameList<TName>.ResourceNameList
+  fullName: Google.Api.Gax.ResourceNameList<TName>.ResourceNameList
+  nameWithType.vb: ResourceNameList(Of TName).ResourceNameList
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).ResourceNameList
+- uid: System.Collections.Generic.IList{System.String}
+  commentId: T:System.Collections.Generic.IList{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<String>
+  nameWithType: IList<String>
+  fullName: System.Collections.Generic.IList<System.String>
+  nameWithType.vb: IList(Of String)
+  fullName.vb: System.Collections.Generic.IList(Of System.String)
+  name.vb: IList(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.String,{TName}}
+  commentId: T:System.Func{System.String,`0}
+  parent: System
+  definition: System.Func`2
+  name: Func<String, TName>
+  nameWithType: Func<String, TName>
+  fullName: System.Func<System.String, TName>
+  nameWithType.vb: Func(Of String, TName)
+  fullName.vb: System.Func(Of System.String, TName)
+  name.vb: Func(Of String, TName)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ResourceNameList`1.Count*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.Count
+  isExternal: false
+  name: Count
+  nameWithType: ResourceNameList<TName>.Count
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Count
+  nameWithType.vb: ResourceNameList(Of TName).Count
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Count
+- uid: System.Collections.Generic.ICollection{{TName}}.Count
+  commentId: P:System.Collections.Generic.ICollection{`0}.Count
+  parent: System.Collections.Generic.ICollection{{TName}}
+  definition: System.Collections.Generic.ICollection`1.Count
+  name: Count
+  nameWithType: ICollection<TName>.Count
+  fullName: System.Collections.Generic.ICollection<TName>.Count
+  nameWithType.vb: ICollection(Of TName).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of TName).Count
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Collections.Generic.ICollection`1.Count
+  commentId: P:System.Collections.Generic.ICollection`1.Count
+  isExternal: true
+  name: Count
+  nameWithType: ICollection<T>.Count
+  fullName: System.Collections.Generic.ICollection<T>.Count
+  nameWithType.vb: ICollection(Of T).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Count
+- uid: Google.Api.Gax.ResourceNameList`1.IsReadOnly*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.IsReadOnly
+  isExternal: false
+  name: IsReadOnly
+  nameWithType: ResourceNameList<TName>.IsReadOnly
+  fullName: Google.Api.Gax.ResourceNameList<TName>.IsReadOnly
+  nameWithType.vb: ResourceNameList(Of TName).IsReadOnly
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).IsReadOnly
+- uid: System.Collections.Generic.ICollection{{TName}}.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection{`0}.IsReadOnly
+  parent: System.Collections.Generic.ICollection{{TName}}
+  definition: System.Collections.Generic.ICollection`1.IsReadOnly
+  name: IsReadOnly
+  nameWithType: ICollection<TName>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<TName>.IsReadOnly
+  nameWithType.vb: ICollection(Of TName).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of TName).IsReadOnly
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Collections.Generic.ICollection`1.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection`1.IsReadOnly
+  isExternal: true
+  name: IsReadOnly
+  nameWithType: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType.vb: ICollection(Of T).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
+- uid: Google.Api.Gax.ResourceNameList`1.Item*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.Item
+  isExternal: false
+  name: Item
+  nameWithType: ResourceNameList<TName>.Item
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Item
+  nameWithType.vb: ResourceNameList(Of TName).Item
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Item
+- uid: System.Collections.Generic.IList{{TName}}.Item(System.Int32)
+  commentId: P:System.Collections.Generic.IList{`0}.Item(System.Int32)
+  parent: System.Collections.Generic.IList{{TName}}
+  definition: System.Collections.Generic.IList`1.Item(System.Int32)
+  name: Item[Int32]
+  nameWithType: IList<TName>.Item[Int32]
+  fullName: System.Collections.Generic.IList<TName>.Item[System.Int32]
+  nameWithType.vb: IList(Of TName).Item(Int32)
+  fullName.vb: System.Collections.Generic.IList(Of TName).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.Item(System.Int32)
+    name: Item
+    nameWithType: IList<TName>.Item
+    fullName: System.Collections.Generic.IList<TName>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.Item(System.Int32)
+    name: Item
+    nameWithType: IList(Of TName).Item
+    fullName: System.Collections.Generic.IList(Of TName).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{TName}'
+  commentId: '!:TName'
+  definition: TName
+  name: TName
+  nameWithType: TName
+  fullName: TName
+- uid: System.Collections.Generic.IList`1.Item(System.Int32)
+  commentId: P:System.Collections.Generic.IList`1.Item(System.Int32)
+  isExternal: true
+  name: Item[Int32]
+  nameWithType: IList<T>.Item[Int32]
+  fullName: System.Collections.Generic.IList<T>.Item[System.Int32]
+  nameWithType.vb: IList(Of T).Item(Int32)
+  fullName.vb: System.Collections.Generic.IList(Of T).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.Item(System.Int32)
+    name: Item
+    nameWithType: IList<T>.Item
+    fullName: System.Collections.Generic.IList<T>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.Item(System.Int32)
+    name: Item
+    nameWithType: IList(Of T).Item
+    fullName: System.Collections.Generic.IList(Of T).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TName
+  isExternal: false
+  name: TName
+  nameWithType: TName
+  fullName: TName
+- uid: Google.Api.Gax.ResourceNameList`1.Add*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.Add
+  isExternal: false
+  name: Add
+  nameWithType: ResourceNameList<TName>.Add
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Add
+  nameWithType.vb: ResourceNameList(Of TName).Add
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Add
+- uid: System.Collections.Generic.ICollection{{TName}}.Add({TName})
+  commentId: M:System.Collections.Generic.ICollection{`0}.Add(`0)
+  parent: System.Collections.Generic.ICollection{{TName}}
+  definition: System.Collections.Generic.ICollection`1.Add(`0)
+  name: Add(TName)
+  nameWithType: ICollection<TName>.Add(TName)
+  fullName: System.Collections.Generic.ICollection<TName>.Add(TName)
+  nameWithType.vb: ICollection(Of TName).Add(TName)
+  fullName.vb: System.Collections.Generic.ICollection(Of TName).Add(TName)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection<TName>.Add
+    fullName: System.Collections.Generic.ICollection<TName>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection(Of TName).Add
+    fullName: System.Collections.Generic.ICollection(Of TName).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Add(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Add(`0)
+  isExternal: true
+  name: Add(T)
+  nameWithType: ICollection<T>.Add(T)
+  fullName: System.Collections.Generic.ICollection<T>.Add(T)
+  nameWithType.vb: ICollection(Of T).Add(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Add(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection<T>.Add
+    fullName: System.Collections.Generic.ICollection<T>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection(Of T).Add
+    fullName: System.Collections.Generic.ICollection(Of T).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ResourceNameList`1.Clear*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.Clear
+  isExternal: false
+  name: Clear
+  nameWithType: ResourceNameList<TName>.Clear
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Clear
+  nameWithType.vb: ResourceNameList(Of TName).Clear
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Clear
+- uid: System.Collections.Generic.ICollection{{TName}}.Clear
+  commentId: M:System.Collections.Generic.ICollection{`0}.Clear
+  parent: System.Collections.Generic.ICollection{{TName}}
+  definition: System.Collections.Generic.ICollection`1.Clear
+  name: Clear()
+  nameWithType: ICollection<TName>.Clear()
+  fullName: System.Collections.Generic.ICollection<TName>.Clear()
+  nameWithType.vb: ICollection(Of TName).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of TName).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection<TName>.Clear
+    fullName: System.Collections.Generic.ICollection<TName>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection(Of TName).Clear
+    fullName: System.Collections.Generic.ICollection(Of TName).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Clear
+  commentId: M:System.Collections.Generic.ICollection`1.Clear
+  isExternal: true
+  name: Clear()
+  nameWithType: ICollection<T>.Clear()
+  fullName: System.Collections.Generic.ICollection<T>.Clear()
+  nameWithType.vb: ICollection(Of T).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection<T>.Clear
+    fullName: System.Collections.Generic.ICollection<T>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection(Of T).Clear
+    fullName: System.Collections.Generic.ICollection(Of T).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ResourceNameList`1.Contains*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.Contains
+  isExternal: false
+  name: Contains
+  nameWithType: ResourceNameList<TName>.Contains
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Contains
+  nameWithType.vb: ResourceNameList(Of TName).Contains
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Contains
+- uid: System.Collections.Generic.ICollection{{TName}}.Contains({TName})
+  commentId: M:System.Collections.Generic.ICollection{`0}.Contains(`0)
+  parent: System.Collections.Generic.ICollection{{TName}}
+  definition: System.Collections.Generic.ICollection`1.Contains(`0)
+  name: Contains(TName)
+  nameWithType: ICollection<TName>.Contains(TName)
+  fullName: System.Collections.Generic.ICollection<TName>.Contains(TName)
+  nameWithType.vb: ICollection(Of TName).Contains(TName)
+  fullName.vb: System.Collections.Generic.ICollection(Of TName).Contains(TName)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection<TName>.Contains
+    fullName: System.Collections.Generic.ICollection<TName>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection(Of TName).Contains
+    fullName: System.Collections.Generic.ICollection(Of TName).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Contains(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Contains(`0)
+  isExternal: true
+  name: Contains(T)
+  nameWithType: ICollection<T>.Contains(T)
+  fullName: System.Collections.Generic.ICollection<T>.Contains(T)
+  nameWithType.vb: ICollection(Of T).Contains(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Contains(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection<T>.Contains
+    fullName: System.Collections.Generic.ICollection<T>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection(Of T).Contains
+    fullName: System.Collections.Generic.ICollection(Of T).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ResourceNameList`1.CopyTo*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.CopyTo
+  isExternal: false
+  name: CopyTo
+  nameWithType: ResourceNameList<TName>.CopyTo
+  fullName: Google.Api.Gax.ResourceNameList<TName>.CopyTo
+  nameWithType.vb: ResourceNameList(Of TName).CopyTo
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).CopyTo
+- uid: System.Collections.Generic.ICollection{{TName}}.CopyTo({TName}[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection{`0}.CopyTo(`0[],System.Int32)
+  parent: System.Collections.Generic.ICollection{{TName}}
+  definition: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(TName[], Int32)
+  nameWithType: ICollection<TName>.CopyTo(TName[], Int32)
+  fullName: System.Collections.Generic.ICollection<TName>.CopyTo(TName[], System.Int32)
+  nameWithType.vb: ICollection(Of TName).CopyTo(TName(), Int32)
+  fullName.vb: System.Collections.Generic.ICollection(Of TName).CopyTo(TName(), System.Int32)
+  name.vb: CopyTo(TName(), Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection<TName>.CopyTo
+    fullName: System.Collections.Generic.ICollection<TName>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection(Of TName).CopyTo
+    fullName: System.Collections.Generic.ICollection(Of TName).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{TName}[]'
+  name: TName[]
+  nameWithType: TName[]
+  fullName: TName[]
+  nameWithType.vb: TName()
+  fullName.vb: TName()
+  name.vb: TName()
+  spec.csharp:
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  name: CopyTo(T[], Int32)
+  nameWithType: ICollection<T>.CopyTo(T[], Int32)
+  fullName: System.Collections.Generic.ICollection<T>.CopyTo(T[], System.Int32)
+  nameWithType.vb: ICollection(Of T).CopyTo(T(), Int32)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).CopyTo(T(), System.Int32)
+  name.vb: CopyTo(T(), Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection<T>.CopyTo
+    fullName: System.Collections.Generic.ICollection<T>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection(Of T).CopyTo
+    fullName: System.Collections.Generic.ICollection(Of T).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ResourceNameList`1.GetEnumerator*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.GetEnumerator
+  isExternal: false
+  name: GetEnumerator
+  nameWithType: ResourceNameList<TName>.GetEnumerator
+  fullName: Google.Api.Gax.ResourceNameList<TName>.GetEnumerator
+  nameWithType.vb: ResourceNameList(Of TName).GetEnumerator
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{{TName}}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{`0}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{{TName}}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<TName>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<TName>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of TName).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TName).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<TName>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<TName>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of TName).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of TName).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator{{TName}}
+  commentId: T:System.Collections.Generic.IEnumerator{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<TName>
+  nameWithType: IEnumerator<TName>
+  fullName: System.Collections.Generic.IEnumerator<TName>
+  nameWithType.vb: IEnumerator(Of TName)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of TName)
+  name.vb: IEnumerator(Of TName)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ResourceNameList`1.System#Collections#IEnumerable#GetEnumerator*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.System#Collections#IEnumerable#GetEnumerator
+  isExternal: false
+  name: IEnumerable.GetEnumerator
+  nameWithType: ResourceNameList<TName>.IEnumerable.GetEnumerator
+  fullName: Google.Api.Gax.ResourceNameList<TName>.System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: ResourceNameList(Of TName).System.Collections.IEnumerable.GetEnumerator
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).System.Collections.IEnumerable.GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+- uid: System.Collections.IEnumerable.GetEnumerator
+  commentId: M:System.Collections.IEnumerable.GetEnumerator
+  parent: System.Collections.IEnumerable
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable.GetEnumerator()
+  fullName: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: Google.Api.Gax.ResourceNameList`1.IndexOf*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.IndexOf
+  isExternal: false
+  name: IndexOf
+  nameWithType: ResourceNameList<TName>.IndexOf
+  fullName: Google.Api.Gax.ResourceNameList<TName>.IndexOf
+  nameWithType.vb: ResourceNameList(Of TName).IndexOf
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).IndexOf
+- uid: System.Collections.Generic.IList{{TName}}.IndexOf({TName})
+  commentId: M:System.Collections.Generic.IList{`0}.IndexOf(`0)
+  parent: System.Collections.Generic.IList{{TName}}
+  definition: System.Collections.Generic.IList`1.IndexOf(`0)
+  name: IndexOf(TName)
+  nameWithType: IList<TName>.IndexOf(TName)
+  fullName: System.Collections.Generic.IList<TName>.IndexOf(TName)
+  nameWithType.vb: IList(Of TName).IndexOf(TName)
+  fullName.vb: System.Collections.Generic.IList(Of TName).IndexOf(TName)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: IList<TName>.IndexOf
+    fullName: System.Collections.Generic.IList<TName>.IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: IList(Of TName).IndexOf
+    fullName: System.Collections.Generic.IList(Of TName).IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1.IndexOf(`0)
+  commentId: M:System.Collections.Generic.IList`1.IndexOf(`0)
+  isExternal: true
+  name: IndexOf(T)
+  nameWithType: IList<T>.IndexOf(T)
+  fullName: System.Collections.Generic.IList<T>.IndexOf(T)
+  nameWithType.vb: IList(Of T).IndexOf(T)
+  fullName.vb: System.Collections.Generic.IList(Of T).IndexOf(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: IList<T>.IndexOf
+    fullName: System.Collections.Generic.IList<T>.IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.IndexOf(`0)
+    name: IndexOf
+    nameWithType: IList(Of T).IndexOf
+    fullName: System.Collections.Generic.IList(Of T).IndexOf
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ResourceNameList`1.Insert*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.Insert
+  isExternal: false
+  name: Insert
+  nameWithType: ResourceNameList<TName>.Insert
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Insert
+  nameWithType.vb: ResourceNameList(Of TName).Insert
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Insert
+- uid: System.Collections.Generic.IList{{TName}}.Insert(System.Int32,{TName})
+  commentId: M:System.Collections.Generic.IList{`0}.Insert(System.Int32,`0)
+  parent: System.Collections.Generic.IList{{TName}}
+  definition: System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+  name: Insert(Int32, TName)
+  nameWithType: IList<TName>.Insert(Int32, TName)
+  fullName: System.Collections.Generic.IList<TName>.Insert(System.Int32, TName)
+  nameWithType.vb: IList(Of TName).Insert(Int32, TName)
+  fullName.vb: System.Collections.Generic.IList(Of TName).Insert(System.Int32, TName)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: IList<TName>.Insert
+    fullName: System.Collections.Generic.IList<TName>.Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: IList(Of TName).Insert
+    fullName: System.Collections.Generic.IList(Of TName).Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+  commentId: M:System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+  isExternal: true
+  name: Insert(Int32, T)
+  nameWithType: IList<T>.Insert(Int32, T)
+  fullName: System.Collections.Generic.IList<T>.Insert(System.Int32, T)
+  nameWithType.vb: IList(Of T).Insert(Int32, T)
+  fullName.vb: System.Collections.Generic.IList(Of T).Insert(System.Int32, T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: IList<T>.Insert
+    fullName: System.Collections.Generic.IList<T>.Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.Insert(System.Int32,`0)
+    name: Insert
+    nameWithType: IList(Of T).Insert
+    fullName: System.Collections.Generic.IList(Of T).Insert
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ResourceNameList`1.Remove*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.Remove
+  isExternal: false
+  name: Remove
+  nameWithType: ResourceNameList<TName>.Remove
+  fullName: Google.Api.Gax.ResourceNameList<TName>.Remove
+  nameWithType.vb: ResourceNameList(Of TName).Remove
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).Remove
+- uid: System.Collections.Generic.ICollection{{TName}}.Remove({TName})
+  commentId: M:System.Collections.Generic.ICollection{`0}.Remove(`0)
+  parent: System.Collections.Generic.ICollection{{TName}}
+  definition: System.Collections.Generic.ICollection`1.Remove(`0)
+  name: Remove(TName)
+  nameWithType: ICollection<TName>.Remove(TName)
+  fullName: System.Collections.Generic.ICollection<TName>.Remove(TName)
+  nameWithType.vb: ICollection(Of TName).Remove(TName)
+  fullName.vb: System.Collections.Generic.ICollection(Of TName).Remove(TName)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection<TName>.Remove
+    fullName: System.Collections.Generic.ICollection<TName>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection(Of TName).Remove
+    fullName: System.Collections.Generic.ICollection(Of TName).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TName
+    nameWithType: TName
+    fullName: TName
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Remove(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Remove(`0)
+  isExternal: true
+  name: Remove(T)
+  nameWithType: ICollection<T>.Remove(T)
+  fullName: System.Collections.Generic.ICollection<T>.Remove(T)
+  nameWithType.vb: ICollection(Of T).Remove(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Remove(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection<T>.Remove
+    fullName: System.Collections.Generic.ICollection<T>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection(Of T).Remove
+    fullName: System.Collections.Generic.ICollection(Of T).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ResourceNameList`1.RemoveAt*
+  commentId: Overload:Google.Api.Gax.ResourceNameList`1.RemoveAt
+  isExternal: false
+  name: RemoveAt
+  nameWithType: ResourceNameList<TName>.RemoveAt
+  fullName: Google.Api.Gax.ResourceNameList<TName>.RemoveAt
+  nameWithType.vb: ResourceNameList(Of TName).RemoveAt
+  fullName.vb: Google.Api.Gax.ResourceNameList(Of TName).RemoveAt
+- uid: System.Collections.Generic.IList{{TName}}.RemoveAt(System.Int32)
+  commentId: M:System.Collections.Generic.IList{`0}.RemoveAt(System.Int32)
+  parent: System.Collections.Generic.IList{{TName}}
+  definition: System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+  name: RemoveAt(Int32)
+  nameWithType: IList<TName>.RemoveAt(Int32)
+  fullName: System.Collections.Generic.IList<TName>.RemoveAt(System.Int32)
+  nameWithType.vb: IList(Of TName).RemoveAt(Int32)
+  fullName.vb: System.Collections.Generic.IList(Of TName).RemoveAt(System.Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: IList<TName>.RemoveAt
+    fullName: System.Collections.Generic.IList<TName>.RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: IList(Of TName).RemoveAt
+    fullName: System.Collections.Generic.IList(Of TName).RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+  commentId: M:System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+  isExternal: true
+  name: RemoveAt(Int32)
+  nameWithType: IList<T>.RemoveAt(Int32)
+  fullName: System.Collections.Generic.IList<T>.RemoveAt(System.Int32)
+  nameWithType.vb: IList(Of T).RemoveAt(Int32)
+  fullName.vb: System.Collections.Generic.IList(Of T).RemoveAt(System.Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: IList<T>.RemoveAt
+    fullName: System.Collections.Generic.IList<T>.RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1.RemoveAt(System.Int32)
+    name: RemoveAt
+    nameWithType: IList(Of T).RemoveAt
+    fullName: System.Collections.Generic.IList(Of T).RemoveAt
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

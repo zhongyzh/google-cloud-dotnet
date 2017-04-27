@@ -1,0 +1,903 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  id: MessageParser`1
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.MessageParser`1.#ctor(System.Func{`0})
+  - Google.Protobuf.MessageParser`1.ParseDelimitedFrom(System.IO.Stream)
+  - Google.Protobuf.MessageParser`1.ParseFrom(Google.Protobuf.ByteString)
+  - Google.Protobuf.MessageParser`1.ParseFrom(Google.Protobuf.CodedInputStream)
+  - Google.Protobuf.MessageParser`1.ParseFrom(System.Byte[])
+  - Google.Protobuf.MessageParser`1.ParseFrom(System.IO.Stream)
+  - Google.Protobuf.MessageParser`1.ParseJson(System.String)
+  langs:
+  - csharp
+  - vb
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/MessageParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MessageParser
+    path: csharp/src/Google.Protobuf/MessageParser.cs
+    startLine: 156
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nA parser for a specific message type.\n"
+  remarks: "\n<p>\nThis delegates most behavior to the\n<xref href=\"Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)\" data-throw-if-not-resolved=\"false\"></xref> implementation within the original type, but\nprovides convenient overloads to parse from a variety of sources.\n</p>\n<p>\nMost applications will never need to create their own instances of this type;\ninstead, use the static <code>Parser</code> property of a generated message type to obtain a\nparser for that type.\n</p>\n"
+  example: []
+  syntax:
+    content: 'public sealed class MessageParser<T> : MessageParser where T : IMessage<T>'
+    typeParameters:
+    - id: T
+      description: The type of message to be parsed.
+    content.vb: >-
+      Public NotInheritable Class MessageParser(Of T As IMessage(Of T))
+          Inherits MessageParser
+  inheritance:
+  - System.Object
+  - Google.Protobuf.MessageParser
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: MessageParser(Of T)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+- uid: Google.Protobuf.MessageParser`1.#ctor(System.Func{`0})
+  commentId: M:Google.Protobuf.MessageParser`1.#ctor(System.Func{`0})
+  id: '#ctor(System.Func{`0})'
+  parent: Google.Protobuf.MessageParser`1
+  langs:
+  - csharp
+  - vb
+  name: MessageParser(Func<T>)
+  nameWithType: MessageParser<T>.MessageParser(Func<T>)
+  fullName: Google.Protobuf.MessageParser<T>.MessageParser(System.Func<T>)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/MessageParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/MessageParser.cs
+    startLine: 172
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new parser.\n"
+  remarks: "\nThe factory method is effectively an optimization over using a generic constraint\nto require a parameterless constructor: delegates are significantly faster to execute.\n"
+  example: []
+  syntax:
+    content: public MessageParser(Func<T> factory)
+    parameters:
+    - id: factory
+      type: System.Func{{T}}
+      description: Function to invoke when a new, empty message is required.
+    content.vb: Public Sub New(factory As Func(Of T))
+  overload: Google.Protobuf.MessageParser`1.#ctor*
+  nameWithType.vb: MessageParser(Of T).MessageParser(Func(Of T))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.MessageParser(Of T).MessageParser(System.Func(Of T))
+  name.vb: MessageParser(Func(Of T))
+- uid: Google.Protobuf.MessageParser`1.ParseFrom(System.Byte[])
+  commentId: M:Google.Protobuf.MessageParser`1.ParseFrom(System.Byte[])
+  id: ParseFrom(System.Byte[])
+  parent: Google.Protobuf.MessageParser`1
+  langs:
+  - csharp
+  - vb
+  name: ParseFrom(Byte[])
+  nameWithType: MessageParser<T>.ParseFrom(Byte[])
+  fullName: Google.Protobuf.MessageParser<T>.ParseFrom(System.Byte[])
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/MessageParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ParseFrom
+    path: csharp/src/Google.Protobuf/MessageParser.cs
+    startLine: 191
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nParses a message from a byte array.\n"
+  example: []
+  syntax:
+    content: public T ParseFrom(byte[] data)
+    parameters:
+    - id: data
+      type: System.Byte[]
+      description: The byte array containing the message. Must not be null.
+    return:
+      type: '{T}'
+      description: The newly parsed message.
+    content.vb: Public Function ParseFrom(data As Byte()) As T
+  overload: Google.Protobuf.MessageParser`1.ParseFrom*
+  nameWithType.vb: MessageParser(Of T).ParseFrom(Byte())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.MessageParser(Of T).ParseFrom(System.Byte())
+  name.vb: ParseFrom(Byte())
+- uid: Google.Protobuf.MessageParser`1.ParseFrom(Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.MessageParser`1.ParseFrom(Google.Protobuf.ByteString)
+  id: ParseFrom(Google.Protobuf.ByteString)
+  parent: Google.Protobuf.MessageParser`1
+  langs:
+  - csharp
+  - vb
+  name: ParseFrom(ByteString)
+  nameWithType: MessageParser<T>.ParseFrom(ByteString)
+  fullName: Google.Protobuf.MessageParser<T>.ParseFrom(Google.Protobuf.ByteString)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/MessageParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ParseFrom
+    path: csharp/src/Google.Protobuf/MessageParser.cs
+    startLine: 204
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nParses a message from the given byte string.\n"
+  example: []
+  syntax:
+    content: public T ParseFrom(ByteString data)
+    parameters:
+    - id: data
+      type: Google.Protobuf.ByteString
+      description: The data to parse.
+    return:
+      type: '{T}'
+      description: The parsed message.
+    content.vb: Public Function ParseFrom(data As ByteString) As T
+  overload: Google.Protobuf.MessageParser`1.ParseFrom*
+  nameWithType.vb: MessageParser(Of T).ParseFrom(ByteString)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.MessageParser(Of T).ParseFrom(Google.Protobuf.ByteString)
+- uid: Google.Protobuf.MessageParser`1.ParseFrom(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageParser`1.ParseFrom(System.IO.Stream)
+  id: ParseFrom(System.IO.Stream)
+  parent: Google.Protobuf.MessageParser`1
+  langs:
+  - csharp
+  - vb
+  name: ParseFrom(Stream)
+  nameWithType: MessageParser<T>.ParseFrom(Stream)
+  fullName: Google.Protobuf.MessageParser<T>.ParseFrom(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/MessageParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ParseFrom
+    path: csharp/src/Google.Protobuf/MessageParser.cs
+    startLine: 217
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nParses a message from the given stream.\n"
+  example: []
+  syntax:
+    content: public T ParseFrom(Stream input)
+    parameters:
+    - id: input
+      type: System.IO.Stream
+      description: The stream to parse.
+    return:
+      type: '{T}'
+      description: The parsed message.
+    content.vb: Public Function ParseFrom(input As Stream) As T
+  overload: Google.Protobuf.MessageParser`1.ParseFrom*
+  nameWithType.vb: MessageParser(Of T).ParseFrom(Stream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.MessageParser(Of T).ParseFrom(System.IO.Stream)
+- uid: Google.Protobuf.MessageParser`1.ParseDelimitedFrom(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageParser`1.ParseDelimitedFrom(System.IO.Stream)
+  id: ParseDelimitedFrom(System.IO.Stream)
+  parent: Google.Protobuf.MessageParser`1
+  langs:
+  - csharp
+  - vb
+  name: ParseDelimitedFrom(Stream)
+  nameWithType: MessageParser<T>.ParseDelimitedFrom(Stream)
+  fullName: Google.Protobuf.MessageParser<T>.ParseDelimitedFrom(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/MessageParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ParseDelimitedFrom
+    path: csharp/src/Google.Protobuf/MessageParser.cs
+    startLine: 233
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nParses a length-delimited message from the given stream.\n"
+  remarks: "\nThe stream is expected to contain a length and then the data. Only the amount of data\nspecified by the length will be consumed.\n"
+  example: []
+  syntax:
+    content: public T ParseDelimitedFrom(Stream input)
+    parameters:
+    - id: input
+      type: System.IO.Stream
+      description: The stream to parse.
+    return:
+      type: '{T}'
+      description: The parsed message.
+    content.vb: Public Function ParseDelimitedFrom(input As Stream) As T
+  overload: Google.Protobuf.MessageParser`1.ParseDelimitedFrom*
+  nameWithType.vb: MessageParser(Of T).ParseDelimitedFrom(Stream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.MessageParser(Of T).ParseDelimitedFrom(System.IO.Stream)
+- uid: Google.Protobuf.MessageParser`1.ParseFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.MessageParser`1.ParseFrom(Google.Protobuf.CodedInputStream)
+  id: ParseFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.MessageParser`1
+  langs:
+  - csharp
+  - vb
+  name: ParseFrom(CodedInputStream)
+  nameWithType: MessageParser<T>.ParseFrom(CodedInputStream)
+  fullName: Google.Protobuf.MessageParser<T>.ParseFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/MessageParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ParseFrom
+    path: csharp/src/Google.Protobuf/MessageParser.cs
+    startLine: 245
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nParses a message from the given coded input stream.\n"
+  example: []
+  syntax:
+    content: public T ParseFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+      description: The stream to parse.
+    return:
+      type: '{T}'
+      description: The parsed message.
+    content.vb: Public Function ParseFrom(input As CodedInputStream) As T
+  overload: Google.Protobuf.MessageParser`1.ParseFrom*
+  nameWithType.vb: MessageParser(Of T).ParseFrom(CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.MessageParser(Of T).ParseFrom(Google.Protobuf.CodedInputStream)
+- uid: Google.Protobuf.MessageParser`1.ParseJson(System.String)
+  commentId: M:Google.Protobuf.MessageParser`1.ParseJson(System.String)
+  id: ParseJson(System.String)
+  parent: Google.Protobuf.MessageParser`1
+  langs:
+  - csharp
+  - vb
+  name: ParseJson(String)
+  nameWithType: MessageParser<T>.ParseJson(String)
+  fullName: Google.Protobuf.MessageParser<T>.ParseJson(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/MessageParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ParseJson
+    path: csharp/src/Google.Protobuf/MessageParser.cs
+    startLine: 259
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nParses a message from the given JSON.\n"
+  example: []
+  syntax:
+    content: public T ParseJson(string json)
+    parameters:
+    - id: json
+      type: System.String
+      description: The JSON to parse.
+    return:
+      type: '{T}'
+      description: The parsed message.
+    content.vb: Public Function ParseJson(json As String) As T
+  overload: Google.Protobuf.MessageParser`1.ParseJson*
+  exceptions:
+  - type: Google.Protobuf.InvalidJsonException
+    commentId: T:Google.Protobuf.InvalidJsonException
+    description: The JSON does not comply with RFC 7159
+  - type: Google.Protobuf.InvalidProtocolBufferException
+    commentId: T:Google.Protobuf.InvalidProtocolBufferException
+    description: The JSON does not represent a Protocol Buffers message correctly
+  nameWithType.vb: MessageParser(Of T).ParseJson(String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.MessageParser(Of T).ParseJson(System.String)
+references:
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.MessageParser
+  commentId: T:Google.Protobuf.MessageParser
+  parent: Google.Protobuf
+  isExternal: false
+  name: MessageParser
+  nameWithType: MessageParser
+  fullName: Google.Protobuf.MessageParser
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.MessageParser`1.#ctor*
+  commentId: Overload:Google.Protobuf.MessageParser`1.#ctor
+  isExternal: false
+  name: MessageParser
+  nameWithType: MessageParser<T>.MessageParser
+  fullName: Google.Protobuf.MessageParser<T>.MessageParser
+  nameWithType.vb: MessageParser(Of T).MessageParser
+  fullName.vb: Google.Protobuf.MessageParser(Of T).MessageParser
+- uid: System.Func{{T}}
+  commentId: T:System.Func{`0}
+  parent: System
+  definition: System.Func`1
+  name: Func<T>
+  nameWithType: Func<T>
+  fullName: System.Func<T>
+  nameWithType.vb: Func(Of T)
+  fullName.vb: System.Func(Of T)
+  name.vb: Func(Of T)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1.ParseFrom*
+  commentId: Overload:Google.Protobuf.MessageParser`1.ParseFrom
+  isExternal: false
+  name: ParseFrom
+  nameWithType: MessageParser<T>.ParseFrom
+  fullName: Google.Protobuf.MessageParser<T>.ParseFrom
+  nameWithType.vb: MessageParser(Of T).ParseFrom
+  fullName.vb: Google.Protobuf.MessageParser(Of T).ParseFrom
+- uid: System.Byte[]
+  name: Byte[]
+  nameWithType: Byte[]
+  fullName: System.Byte[]
+  nameWithType.vb: Byte()
+  fullName.vb: System.Byte()
+  name.vb: Byte()
+  spec.csharp:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Google.Protobuf.ByteString
+  commentId: T:Google.Protobuf.ByteString
+  parent: Google.Protobuf
+  isExternal: false
+  name: ByteString
+  nameWithType: ByteString
+  fullName: Google.Protobuf.ByteString
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: false
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+- uid: Google.Protobuf.MessageParser`1.ParseDelimitedFrom*
+  commentId: Overload:Google.Protobuf.MessageParser`1.ParseDelimitedFrom
+  isExternal: false
+  name: ParseDelimitedFrom
+  nameWithType: MessageParser<T>.ParseDelimitedFrom
+  fullName: Google.Protobuf.MessageParser<T>.ParseDelimitedFrom
+  nameWithType.vb: MessageParser(Of T).ParseDelimitedFrom
+  fullName.vb: Google.Protobuf.MessageParser(Of T).ParseDelimitedFrom
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+- uid: Google.Protobuf.MessageParser`1.ParseJson*
+  commentId: Overload:Google.Protobuf.MessageParser`1.ParseJson
+  isExternal: false
+  name: ParseJson
+  nameWithType: MessageParser<T>.ParseJson
+  fullName: Google.Protobuf.MessageParser<T>.ParseJson
+  nameWithType.vb: MessageParser(Of T).ParseJson
+  fullName.vb: Google.Protobuf.MessageParser(Of T).ParseJson
+- uid: Google.Protobuf.InvalidJsonException
+  commentId: T:Google.Protobuf.InvalidJsonException
+  isExternal: false
+  name: InvalidJsonException
+  nameWithType: InvalidJsonException
+  fullName: Google.Protobuf.InvalidJsonException
+- uid: Google.Protobuf.InvalidProtocolBufferException
+  commentId: T:Google.Protobuf.InvalidProtocolBufferException
+  isExternal: false
+  name: InvalidProtocolBufferException
+  nameWithType: InvalidProtocolBufferException
+  fullName: Google.Protobuf.InvalidProtocolBufferException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

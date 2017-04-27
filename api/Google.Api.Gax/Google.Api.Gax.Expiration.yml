@@ -1,0 +1,779 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.Expiration
+  commentId: T:Google.Api.Gax.Expiration
+  id: Expiration
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.Expiration.Deadline
+  - Google.Api.Gax.Expiration.FromDeadline(System.DateTime)
+  - Google.Api.Gax.Expiration.FromTimeout(System.TimeSpan)
+  - Google.Api.Gax.Expiration.None
+  - Google.Api.Gax.Expiration.Timeout
+  - Google.Api.Gax.Expiration.Type
+  langs:
+  - csharp
+  - vb
+  name: Expiration
+  nameWithType: Expiration
+  fullName: Google.Api.Gax.Expiration
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax/Expiration.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Expiration
+    path: src/Google.Api.Gax/Expiration.cs
+    startLine: 35
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nExpiration specified by relative timeout or absolute deadline.\n"
+  example: []
+  syntax:
+    content: public sealed class Expiration
+    content.vb: Public NotInheritable Class Expiration
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.Gax.Expiration.FromTimeout(System.TimeSpan)
+  commentId: M:Google.Api.Gax.Expiration.FromTimeout(System.TimeSpan)
+  id: FromTimeout(System.TimeSpan)
+  parent: Google.Api.Gax.Expiration
+  langs:
+  - csharp
+  - vb
+  name: FromTimeout(TimeSpan)
+  nameWithType: Expiration.FromTimeout(TimeSpan)
+  fullName: Google.Api.Gax.Expiration.FromTimeout(System.TimeSpan)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/Expiration.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: FromTimeout
+    path: src/Google.Api.Gax/Expiration.cs
+    startLine: 45
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nCreate an <xref href=\"Google.Api.Gax.Expiration\" data-throw-if-not-resolved=\"false\"></xref> with a relative timeout.\n"
+  remarks: "\nZero or negative timeouts are valid, and will cause immediate failure of the operation being performed.\n"
+  example: []
+  syntax:
+    content: public static Expiration FromTimeout(TimeSpan timeout)
+    parameters:
+    - id: timeout
+      type: System.TimeSpan
+      description: The relative timeout.
+    return:
+      type: Google.Api.Gax.Expiration
+      description: An <xref href="Google.Api.Gax.Expiration" data-throw-if-not-resolved="false"></xref> with the specified relative timeout.
+    content.vb: Public Shared Function FromTimeout(timeout As TimeSpan) As Expiration
+  overload: Google.Api.Gax.Expiration.FromTimeout*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.Expiration.FromDeadline(System.DateTime)
+  commentId: M:Google.Api.Gax.Expiration.FromDeadline(System.DateTime)
+  id: FromDeadline(System.DateTime)
+  parent: Google.Api.Gax.Expiration
+  langs:
+  - csharp
+  - vb
+  name: FromDeadline(DateTime)
+  nameWithType: Expiration.FromDeadline(DateTime)
+  fullName: Google.Api.Gax.Expiration.FromDeadline(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/Expiration.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: FromDeadline
+    path: src/Google.Api.Gax/Expiration.cs
+    startLine: 55
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nCreate an <xref href=\"Google.Api.Gax.Expiration\" data-throw-if-not-resolved=\"false\"></xref> with an absolute deadline.\n"
+  remarks: "\nDeadlines in the past are valid, and will cause immediate failure of the operation being performed.\n"
+  example: []
+  syntax:
+    content: public static Expiration FromDeadline(DateTime deadline)
+    parameters:
+    - id: deadline
+      type: System.DateTime
+      description: The absolute deadline. Should be a UTC datetime.
+    return:
+      type: Google.Api.Gax.Expiration
+      description: An <xref href="Google.Api.Gax.Expiration" data-throw-if-not-resolved="false"></xref> with the specified absolute deadline.
+    content.vb: Public Shared Function FromDeadline(deadline As Date) As Expiration
+  overload: Google.Api.Gax.Expiration.FromDeadline*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.Expiration.None
+  commentId: P:Google.Api.Gax.Expiration.None
+  id: None
+  parent: Google.Api.Gax.Expiration
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: Expiration.None
+  fullName: Google.Api.Gax.Expiration.None
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/Expiration.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: None
+    path: src/Google.Api.Gax/Expiration.cs
+    startLine: 63
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nAn <xref href=\"Google.Api.Gax.Expiration\" data-throw-if-not-resolved=\"false\"></xref> with no timeout or deadline.\n"
+  remarks: "\nIndicates that no expiration is required.\n"
+  example: []
+  syntax:
+    content: public static Expiration None { get; }
+    parameters: []
+    return:
+      type: Google.Api.Gax.Expiration
+    content.vb: Public Shared ReadOnly Property None As Expiration
+  overload: Google.Api.Gax.Expiration.None*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.Gax.Expiration.Timeout
+  commentId: P:Google.Api.Gax.Expiration.Timeout
+  id: Timeout
+  parent: Google.Api.Gax.Expiration
+  langs:
+  - csharp
+  - vb
+  name: Timeout
+  nameWithType: Expiration.Timeout
+  fullName: Google.Api.Gax.Expiration.Timeout
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/Expiration.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Timeout
+    path: src/Google.Api.Gax/Expiration.cs
+    startLine: 74
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nIf not null, the relative timeout of this expiration.\n"
+  example: []
+  syntax:
+    content: public TimeSpan? Timeout { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.TimeSpan}
+    content.vb: Public ReadOnly Property Timeout As TimeSpan?
+  overload: Google.Api.Gax.Expiration.Timeout*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.Expiration.Deadline
+  commentId: P:Google.Api.Gax.Expiration.Deadline
+  id: Deadline
+  parent: Google.Api.Gax.Expiration
+  langs:
+  - csharp
+  - vb
+  name: Deadline
+  nameWithType: Expiration.Deadline
+  fullName: Google.Api.Gax.Expiration.Deadline
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/Expiration.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Deadline
+    path: src/Google.Api.Gax/Expiration.cs
+    startLine: 79
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nIf not null, the absolute deadline of this expiration.\n"
+  example: []
+  syntax:
+    content: public DateTime? Deadline { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.DateTime}
+    content.vb: Public ReadOnly Property Deadline As Date?
+  overload: Google.Api.Gax.Expiration.Deadline*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.Expiration.Type
+  commentId: P:Google.Api.Gax.Expiration.Type
+  id: Type
+  parent: Google.Api.Gax.Expiration
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: Expiration.Type
+  fullName: Google.Api.Gax.Expiration.Type
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/Expiration.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Type
+    path: src/Google.Api.Gax/Expiration.cs
+    startLine: 84
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nWhat <xref href=\"Google.Api.Gax.ExpirationType\" data-throw-if-not-resolved=\"false\"></xref> is contained in this <xref href=\"Google.Api.Gax.Expiration\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public ExpirationType Type { get; }
+    parameters: []
+    return:
+      type: Google.Api.Gax.ExpirationType
+    content.vb: Public ReadOnly Property Type As ExpirationType
+  overload: Google.Api.Gax.Expiration.Type*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+references:
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.Expiration
+  commentId: T:Google.Api.Gax.Expiration
+  parent: Google.Api.Gax
+  isExternal: false
+  name: Expiration
+  nameWithType: Expiration
+  fullName: Google.Api.Gax.Expiration
+- uid: Google.Api.Gax.Expiration.FromTimeout*
+  commentId: Overload:Google.Api.Gax.Expiration.FromTimeout
+  isExternal: false
+  name: FromTimeout
+  nameWithType: Expiration.FromTimeout
+  fullName: Google.Api.Gax.Expiration.FromTimeout
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: Google.Api.Gax.Expiration.FromDeadline*
+  commentId: Overload:Google.Api.Gax.Expiration.FromDeadline
+  isExternal: false
+  name: FromDeadline
+  nameWithType: Expiration.FromDeadline
+  fullName: Google.Api.Gax.Expiration.FromDeadline
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: Google.Api.Gax.Expiration.None*
+  commentId: Overload:Google.Api.Gax.Expiration.None
+  isExternal: false
+  name: None
+  nameWithType: Expiration.None
+  fullName: Google.Api.Gax.Expiration.None
+- uid: Google.Api.Gax.Expiration.Timeout*
+  commentId: Overload:Google.Api.Gax.Expiration.Timeout
+  isExternal: false
+  name: Timeout
+  nameWithType: Expiration.Timeout
+  fullName: Google.Api.Gax.Expiration.Timeout
+- uid: System.Nullable{System.TimeSpan}
+  commentId: T:System.Nullable{System.TimeSpan}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<TimeSpan>
+  nameWithType: Nullable<TimeSpan>
+  fullName: System.Nullable<System.TimeSpan>
+  nameWithType.vb: Nullable(Of TimeSpan)
+  fullName.vb: System.Nullable(Of System.TimeSpan)
+  name.vb: Nullable(Of TimeSpan)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.Expiration.Deadline*
+  commentId: Overload:Google.Api.Gax.Expiration.Deadline
+  isExternal: false
+  name: Deadline
+  nameWithType: Expiration.Deadline
+  fullName: Google.Api.Gax.Expiration.Deadline
+- uid: System.Nullable{System.DateTime}
+  commentId: T:System.Nullable{System.DateTime}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<DateTime>
+  nameWithType: Nullable<DateTime>
+  fullName: System.Nullable<System.DateTime>
+  nameWithType.vb: Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of System.DateTime)
+  name.vb: Nullable(Of DateTime)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.ExpirationType
+  commentId: T:Google.Api.Gax.ExpirationType
+  parent: Google.Api.Gax
+  isExternal: false
+  name: ExpirationType
+  nameWithType: ExpirationType
+  fullName: Google.Api.Gax.ExpirationType
+- uid: Google.Api.Gax.Expiration.Type*
+  commentId: Overload:Google.Api.Gax.Expiration.Type
+  isExternal: false
+  name: Type
+  nameWithType: Expiration.Type
+  fullName: Google.Api.Gax.Expiration.Type

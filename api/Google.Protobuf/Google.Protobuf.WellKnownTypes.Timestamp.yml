@@ -1,0 +1,2968 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.WellKnownTypes.Timestamp
+  commentId: T:Google.Protobuf.WellKnownTypes.Timestamp
+  id: Timestamp
+  parent: Google.Protobuf.WellKnownTypes
+  children:
+  - Google.Protobuf.WellKnownTypes.Timestamp.#ctor
+  - Google.Protobuf.WellKnownTypes.Timestamp.#ctor(Google.Protobuf.WellKnownTypes.Timestamp)
+  - Google.Protobuf.WellKnownTypes.Timestamp.CalculateSize
+  - Google.Protobuf.WellKnownTypes.Timestamp.Clone
+  - Google.Protobuf.WellKnownTypes.Timestamp.Descriptor
+  - Google.Protobuf.WellKnownTypes.Timestamp.Equals(Google.Protobuf.WellKnownTypes.Timestamp)
+  - Google.Protobuf.WellKnownTypes.Timestamp.Equals(System.Object)
+  - Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(System.DateTime)
+  - Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(System.DateTimeOffset)
+  - Google.Protobuf.WellKnownTypes.Timestamp.GetHashCode
+  - Google.Protobuf.WellKnownTypes.Timestamp.Google#Protobuf#IMessage#Descriptor
+  - Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom(Google.Protobuf.CodedInputStream)
+  - Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom(Google.Protobuf.WellKnownTypes.Timestamp)
+  - Google.Protobuf.WellKnownTypes.Timestamp.Nanos
+  - Google.Protobuf.WellKnownTypes.Timestamp.NanosFieldNumber
+  - Google.Protobuf.WellKnownTypes.Timestamp.op_Addition(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Duration)
+  - Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Duration)
+  - Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Timestamp)
+  - Google.Protobuf.WellKnownTypes.Timestamp.Parser
+  - Google.Protobuf.WellKnownTypes.Timestamp.Seconds
+  - Google.Protobuf.WellKnownTypes.Timestamp.SecondsFieldNumber
+  - Google.Protobuf.WellKnownTypes.Timestamp.ToDateTime
+  - Google.Protobuf.WellKnownTypes.Timestamp.ToDateTimeOffset
+  - Google.Protobuf.WellKnownTypes.Timestamp.ToDiagnosticString
+  - Google.Protobuf.WellKnownTypes.Timestamp.ToString
+  - Google.Protobuf.WellKnownTypes.Timestamp.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: Timestamp
+  nameWithType: Timestamp
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Timestamp
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+    startLine: 38
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nA Timestamp represents a point in time independent of any time zone\nor calendar, represented as seconds and fractions of seconds at\nnanosecond resolution in UTC Epoch time. It is encoded using the\nProleptic Gregorian Calendar which extends the Gregorian calendar\nbackwards to year one. It is encoded assuming all minutes are 60\nseconds long, i.e. leap seconds are \"smeared\" so that no leap second\ntable is needed for interpretation. Range is from\n0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z.\nBy restricting to that range, we ensure that we can convert to\nand from  RFC 3339 date strings.\nSee [https://www.ietf.org/rfc/rfc3339.txt](https://www.ietf.org/rfc/rfc3339.txt).\n\nExample 1: Compute Timestamp from POSIX `time()`.\n\nTimestamp timestamp;\ntimestamp.set_seconds(time(NULL));\ntimestamp.set_nanos(0);\n\nExample 2: Compute Timestamp from POSIX `gettimeofday()`.\n\nstruct timeval tv;\ngettimeofday(&amp;tv, NULL);\n\nTimestamp timestamp;\ntimestamp.set_seconds(tv.tv_sec);\ntimestamp.set_nanos(tv.tv_usec * 1000);\n\nExample 3: Compute Timestamp from Win32 `GetSystemTimeAsFileTime()`.\n\nFILETIME ft;\nGetSystemTimeAsFileTime(&amp;ft);\nUINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;\n\n// A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z\n// is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.\nTimestamp timestamp;\ntimestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));\ntimestamp.set_nanos((INT32) ((ticks % 10000000) * 100));\n\nExample 4: Compute Timestamp from Java `System.currentTimeMillis()`.\n\nlong millis = System.currentTimeMillis();\n\nTimestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)\n   .setNanos((int) ((millis % 1000) * 1000000)).build();\n\nExample 5: Compute Timestamp from current time in Python.\n\ntimestamp = Timestamp()\ntimestamp.GetCurrentTime()\n"
+  example: []
+  syntax:
+    content: 'public sealed class Timestamp : IMessage<Timestamp>, IEquatable<Timestamp>, IDeepCloneable<Timestamp>, ICustomDiagnosticMessage, IMessage'
+    content.vb: >-
+      Public NotInheritable Class Timestamp
+          Implements IMessage(Of Timestamp), IEquatable(Of Timestamp), IDeepCloneable(Of Timestamp), ICustomDiagnosticMessage, IMessage
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Timestamp}
+  - System.IEquatable{Google.Protobuf.WellKnownTypes.Timestamp}
+  - Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Timestamp}
+  - Google.Protobuf.ICustomDiagnosticMessage
+  - Google.Protobuf.IMessage
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteArray
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteString
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Parser
+  commentId: P:Google.Protobuf.WellKnownTypes.Timestamp.Parser
+  id: Parser
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: Timestamp.Parser
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Parser
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Parser
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 94
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public static MessageParser<Timestamp> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{Google.Protobuf.WellKnownTypes.Timestamp}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of Timestamp)
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Descriptor
+  commentId: P:Google.Protobuf.WellKnownTypes.Timestamp.Descriptor
+  id: Descriptor
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: Timestamp.Descriptor
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Descriptor
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Descriptor
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 97
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Protobuf.WellKnownTypes.Timestamp.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: Timestamp.IMessage.Descriptor
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 102
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Timestamp.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Protobuf.WellKnownTypes.Timestamp.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.#ctor
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.#ctor
+  id: '#ctor'
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Timestamp()
+  nameWithType: Timestamp.Timestamp()
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Timestamp()
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 107
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public Timestamp()
+    content.vb: Public Sub New
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.#ctor(Google.Protobuf.WellKnownTypes.Timestamp)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.#ctor(Google.Protobuf.WellKnownTypes.Timestamp)
+  id: '#ctor(Google.Protobuf.WellKnownTypes.Timestamp)'
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Timestamp(Timestamp)
+  nameWithType: Timestamp.Timestamp(Timestamp)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Timestamp(Google.Protobuf.WellKnownTypes.Timestamp)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 114
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public Timestamp(Timestamp other)
+    parameters:
+    - id: other
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+    content.vb: Public Sub New(other As Timestamp)
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Clone
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.Clone
+  id: Clone
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Timestamp.Clone()
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Clone()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Clone
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 120
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public Timestamp Clone()
+    return:
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+    content.vb: Public Function Clone As Timestamp
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Timestamp}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.SecondsFieldNumber
+  commentId: F:Google.Protobuf.WellKnownTypes.Timestamp.SecondsFieldNumber
+  id: SecondsFieldNumber
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: SecondsFieldNumber
+  nameWithType: Timestamp.SecondsFieldNumber
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.SecondsFieldNumber
+  type: Field
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: SecondsFieldNumber
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 126
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: Field number for the "seconds" field.
+  example: []
+  syntax:
+    content: public const int SecondsFieldNumber = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const SecondsFieldNumber As Integer = 1
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Seconds
+  commentId: P:Google.Protobuf.WellKnownTypes.Timestamp.Seconds
+  id: Seconds
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Seconds
+  nameWithType: Timestamp.Seconds
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Seconds
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Seconds
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 133
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nRepresents seconds of UTC time since Unix epoch\n1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to\n9999-12-31T23:59:59Z inclusive.\n"
+  example: []
+  syntax:
+    content: public long Seconds { get; set; }
+    parameters: []
+    return:
+      type: System.Int64
+    content.vb: Public Property Seconds As Long
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.Seconds*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.NanosFieldNumber
+  commentId: F:Google.Protobuf.WellKnownTypes.Timestamp.NanosFieldNumber
+  id: NanosFieldNumber
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: NanosFieldNumber
+  nameWithType: Timestamp.NanosFieldNumber
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.NanosFieldNumber
+  type: Field
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: NanosFieldNumber
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 142
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: Field number for the "nanos" field.
+  example: []
+  syntax:
+    content: public const int NanosFieldNumber = 2
+    return:
+      type: System.Int32
+    content.vb: Public Const NanosFieldNumber As Integer = 2
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Nanos
+  commentId: P:Google.Protobuf.WellKnownTypes.Timestamp.Nanos
+  id: Nanos
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Nanos
+  nameWithType: Timestamp.Nanos
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Nanos
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Nanos
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 150
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nNon-negative fractions of a second at nanosecond resolution. Negative\nsecond values with fractions must still have non-negative nanos values\nthat count forward in time. Must be from 0 to 999,999,999\ninclusive.\n"
+  example: []
+  syntax:
+    content: public int Nanos { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Nanos As Integer
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.Nanos*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Equals(System.Object)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Timestamp.Equals(Object)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Equals
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 158
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Equals(Google.Protobuf.WellKnownTypes.Timestamp)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.Equals(Google.Protobuf.WellKnownTypes.Timestamp)
+  id: Equals(Google.Protobuf.WellKnownTypes.Timestamp)
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Equals(Timestamp)
+  nameWithType: Timestamp.Equals(Timestamp)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Equals(Google.Protobuf.WellKnownTypes.Timestamp)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Equals
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 163
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public bool Equals(Timestamp other)
+    parameters:
+    - id: other
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As Timestamp) As Boolean
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.Equals*
+  implements:
+  - System.IEquatable{Google.Protobuf.WellKnownTypes.Timestamp}.Equals(Google.Protobuf.WellKnownTypes.Timestamp)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.GetHashCode
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.GetHashCode
+  id: GetHashCode
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Timestamp.GetHashCode()
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: GetHashCode
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 176
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.ToString
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.ToString
+  id: ToString
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Timestamp.ToString()
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.ToString()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToString
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 184
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: Timestamp.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteTo
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 189
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.CalculateSize
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.CalculateSize
+  id: CalculateSize
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: Timestamp.CalculateSize()
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CalculateSize
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 201
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom(Google.Protobuf.WellKnownTypes.Timestamp)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom(Google.Protobuf.WellKnownTypes.Timestamp)
+  id: MergeFrom(Google.Protobuf.WellKnownTypes.Timestamp)
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(Timestamp)
+  nameWithType: Timestamp.MergeFrom(Timestamp)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom(Google.Protobuf.WellKnownTypes.Timestamp)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MergeFrom
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 213
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public void MergeFrom(Timestamp other)
+    parameters:
+    - id: other
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+    content.vb: Public Sub MergeFrom(other As Timestamp)
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Timestamp}.MergeFrom(Google.Protobuf.WellKnownTypes.Timestamp)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: Timestamp.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MergeFrom
+    path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
+    startLine: 226
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Timestamp)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Timestamp)
+  id: op_Subtraction(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Timestamp)
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Subtraction(Timestamp, Timestamp)
+  nameWithType: Timestamp.Subtraction(Timestamp, Timestamp)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Subtraction(Google.Protobuf.WellKnownTypes.Timestamp, Google.Protobuf.WellKnownTypes.Timestamp)
+  type: Operator
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: op_Subtraction
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+    startLine: 59
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nReturns the difference between one <xref href=\"Google.Protobuf.WellKnownTypes.Timestamp\" data-throw-if-not-resolved=\"false\"></xref> and another, as a <xref href=\"Google.Protobuf.WellKnownTypes.Duration\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static Duration operator -(Timestamp lhs, Timestamp rhs)
+    parameters:
+    - id: lhs
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+      description: The timestamp to subtract from. Must not be null.
+    - id: rhs
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+      description: The timestamp to subtract. Must not be null.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The difference between the two specified timestamps.
+    content.vb: Public Shared Operator -(lhs As Timestamp, rhs As Timestamp) As Duration
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.op_Addition(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Duration)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.op_Addition(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Duration)
+  id: op_Addition(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Duration)
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Addition(Timestamp, Duration)
+  nameWithType: Timestamp.Addition(Timestamp, Duration)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Addition(Google.Protobuf.WellKnownTypes.Timestamp, Google.Protobuf.WellKnownTypes.Duration)
+  type: Operator
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: op_Addition
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+    startLine: 75
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nAdds a <xref href=\"Google.Protobuf.WellKnownTypes.Duration\" data-throw-if-not-resolved=\"false\"></xref> to a <xref href=\"Google.Protobuf.WellKnownTypes.Timestamp\" data-throw-if-not-resolved=\"false\"></xref>, to obtain another <code>Timestamp</code>.\n"
+  example: []
+  syntax:
+    content: public static Timestamp operator +(Timestamp lhs, Duration rhs)
+    parameters:
+    - id: lhs
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+      description: The timestamp to add the duration to. Must not be null.
+    - id: rhs
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The duration to add. Must not be null.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+      description: The result of adding the duration to the timestamp.
+    content.vb: Public Shared Operator +(lhs As Timestamp, rhs As Duration) As Timestamp
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.op_Addition*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Duration)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Duration)
+  id: op_Subtraction(Google.Protobuf.WellKnownTypes.Timestamp,Google.Protobuf.WellKnownTypes.Duration)
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: Subtraction(Timestamp, Duration)
+  nameWithType: Timestamp.Subtraction(Timestamp, Duration)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Subtraction(Google.Protobuf.WellKnownTypes.Timestamp, Google.Protobuf.WellKnownTypes.Duration)
+  type: Operator
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: op_Subtraction
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+    startLine: 91
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nSubtracts a <xref href=\"Google.Protobuf.WellKnownTypes.Duration\" data-throw-if-not-resolved=\"false\"></xref> from a <xref href=\"Google.Protobuf.WellKnownTypes.Timestamp\" data-throw-if-not-resolved=\"false\"></xref>, to obtain another <code>Timestamp</code>.\n"
+  example: []
+  syntax:
+    content: public static Timestamp operator -(Timestamp lhs, Duration rhs)
+    parameters:
+    - id: lhs
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+      description: The timestamp to subtract the duration from. Must not be null.
+    - id: rhs
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The duration to subtract.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+      description: The result of subtracting the duration from the timestamp.
+    content.vb: Public Shared Operator -(lhs As Timestamp, rhs As Duration) As Timestamp
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.ToDateTime
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.ToDateTime
+  id: ToDateTime
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: ToDateTime()
+  nameWithType: Timestamp.ToDateTime()
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.ToDateTime()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToDateTime
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+    startLine: 113
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nConverts this timestamp into a <xref href=\"System.DateTime\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nThe resulting <code>DateTime</code> will always have a <code>Kind</code> of <code>Utc</code>.\nIf the timestamp is not a precise number of ticks, it will be truncated towards the start\nof time. For example, a timestamp with a <xref href=\"Google.Protobuf.WellKnownTypes.Timestamp.Nanos\" data-throw-if-not-resolved=\"false\"></xref> value of 99 will result in a\n<xref href=\"System.DateTime\" data-throw-if-not-resolved=\"false\"></xref> value precisely on a second.\n"
+  example: []
+  syntax:
+    content: public DateTime ToDateTime()
+    return:
+      type: System.DateTime
+      description: This timestamp as a <code>DateTime</code>.
+    content.vb: Public Function ToDateTime As Date
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.ToDateTime*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: >-
+      The timestamp contains invalid values; either it is
+
+      incorrectly normalized or is outside the valid range.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.ToDateTimeOffset
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.ToDateTimeOffset
+  id: ToDateTimeOffset
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: ToDateTimeOffset()
+  nameWithType: Timestamp.ToDateTimeOffset()
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.ToDateTimeOffset()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToDateTimeOffset
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+    startLine: 134
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nConverts this timestamp into a <xref href=\"System.DateTimeOffset\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nThe resulting <code>DateTimeOffset</code> will always have an <code>Offset</code> of zero.\nIf the timestamp is not a precise number of ticks, it will be truncated towards the start\nof time. For example, a timestamp with a <xref href=\"Google.Protobuf.WellKnownTypes.Timestamp.Nanos\" data-throw-if-not-resolved=\"false\"></xref> value of 99 will result in a\n<xref href=\"System.DateTimeOffset\" data-throw-if-not-resolved=\"false\"></xref> value precisely on a second.\n"
+  example: []
+  syntax:
+    content: public DateTimeOffset ToDateTimeOffset()
+    return:
+      type: System.DateTimeOffset
+      description: This timestamp as a <code>DateTimeOffset</code>.
+    content.vb: Public Function ToDateTimeOffset As DateTimeOffset
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.ToDateTimeOffset*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: >-
+      The timestamp contains invalid values; either it is
+
+      incorrectly normalized or is outside the valid range.
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(System.DateTime)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(System.DateTime)
+  id: FromDateTime(System.DateTime)
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: FromDateTime(DateTime)
+  nameWithType: Timestamp.FromDateTime(DateTime)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FromDateTime
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+    startLine: 145
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nConverts the specified <xref href=\"System.DateTime\" data-throw-if-not-resolved=\"false\"></xref> to a <xref href=\"Google.Protobuf.WellKnownTypes.Timestamp\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static Timestamp FromDateTime(DateTime dateTime)
+    parameters:
+    - id: dateTime
+      type: System.DateTime
+      description: ''
+    return:
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+      description: The converted timestamp.
+    content.vb: Public Shared Function FromDateTime(dateTime As Date) As Timestamp
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: The <code>Kind</code> of <span class="paramref">dateTime</span> is not <code>DateTimeKind.Utc</code>.
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(System.DateTimeOffset)
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(System.DateTimeOffset)
+  id: FromDateTimeOffset(System.DateTimeOffset)
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: FromDateTimeOffset(DateTimeOffset)
+  nameWithType: Timestamp.FromDateTimeOffset(DateTimeOffset)
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset(System.DateTimeOffset)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FromDateTimeOffset
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+    startLine: 165
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nConverts the given <xref href=\"System.DateTimeOffset\" data-throw-if-not-resolved=\"false\"></xref> to a <xref href=\"Google.Protobuf.WellKnownTypes.Timestamp\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  remarks: >-
+    The offset is taken into consideration when converting the value (so the same instant in time
+
+    is represented) but is not a separate part of the resulting value. In other words, there is no
+
+    roundtrip operation to retrieve the original <code>DateTimeOffset</code>.
+  example: []
+  syntax:
+    content: public static Timestamp FromDateTimeOffset(DateTimeOffset dateTimeOffset)
+    parameters:
+    - id: dateTimeOffset
+      type: System.DateTimeOffset
+      description: The date and time (with UTC offset) to convert to a timestamp.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+      description: The converted timestamp.
+    content.vb: Public Shared Function FromDateTimeOffset(dateTimeOffset As DateTimeOffset) As Timestamp
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.ToDiagnosticString
+  commentId: M:Google.Protobuf.WellKnownTypes.Timestamp.ToDiagnosticString
+  id: ToDiagnosticString
+  parent: Google.Protobuf.WellKnownTypes.Timestamp
+  langs:
+  - csharp
+  - vb
+  name: ToDiagnosticString()
+  nameWithType: Timestamp.ToDiagnosticString()
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.ToDiagnosticString()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToDiagnosticString
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
+    startLine: 235
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nReturns a string representation of this <xref href=\"Google.Protobuf.WellKnownTypes.Timestamp\" data-throw-if-not-resolved=\"false\"></xref> for diagnostic purposes.\n"
+  remarks: "\nNormally the returned value will be a JSON string value (including leading and trailing quotes) but\nwhen the value is non-normalized or out of range, a JSON object representation will be returned\ninstead, including a warning. This is to avoid exceptions being thrown when trying to\ndiagnose problems - the regular JSON formatter will still throw an exception for non-normalized\nvalues.\n"
+  example: []
+  syntax:
+    content: public string ToDiagnosticString()
+    return:
+      type: System.String
+      description: A string representation of this value.
+    content.vb: Public Function ToDiagnosticString As String
+  overload: Google.Protobuf.WellKnownTypes.Timestamp.ToDiagnosticString*
+  implements:
+  - Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Protobuf.WellKnownTypes
+  commentId: N:Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Google.Protobuf.WellKnownTypes
+  nameWithType: Google.Protobuf.WellKnownTypes
+  fullName: Google.Protobuf.WellKnownTypes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Timestamp}
+  commentId: T:Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Timestamp}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<Timestamp>
+  nameWithType: IMessage<Timestamp>
+  fullName: Google.Protobuf.IMessage<Google.Protobuf.WellKnownTypes.Timestamp>
+  nameWithType.vb: IMessage(Of Timestamp)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Protobuf.WellKnownTypes.Timestamp)
+  name.vb: IMessage(Of Timestamp)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable{Google.Protobuf.WellKnownTypes.Timestamp}
+  commentId: T:System.IEquatable{Google.Protobuf.WellKnownTypes.Timestamp}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Timestamp>
+  nameWithType: IEquatable<Timestamp>
+  fullName: System.IEquatable<Google.Protobuf.WellKnownTypes.Timestamp>
+  nameWithType.vb: IEquatable(Of Timestamp)
+  fullName.vb: System.IEquatable(Of Google.Protobuf.WellKnownTypes.Timestamp)
+  name.vb: IEquatable(Of Timestamp)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Timestamp}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Timestamp}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<Timestamp>
+  nameWithType: IDeepCloneable<Timestamp>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Protobuf.WellKnownTypes.Timestamp>
+  nameWithType.vb: IDeepCloneable(Of Timestamp)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Protobuf.WellKnownTypes.Timestamp)
+  name.vb: IDeepCloneable(Of Timestamp)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.ICustomDiagnosticMessage
+  commentId: T:Google.Protobuf.ICustomDiagnosticMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: ICustomDiagnosticMessage
+  nameWithType: ICustomDiagnosticMessage
+  fullName: Google.Protobuf.ICustomDiagnosticMessage
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  name: MergeFrom(Byte[])
+  nameWithType: MessageExtensions.MergeFrom(Byte[])
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+  nameWithType.vb: MessageExtensions.MergeFrom(Byte())
+  fullName.vb: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte())
+  name.vb: MergeFrom(Byte())
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  name: MergeFrom(ByteString)
+  nameWithType: MessageExtensions.MergeFrom(ByteString)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  name: MergeFrom(Stream)
+  nameWithType: MessageExtensions.MergeFrom(Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  name: MergeDelimitedFrom(Stream)
+  nameWithType: MessageExtensions.MergeDelimitedFrom(Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteArray
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  name: ToByteArray()
+  nameWithType: MessageExtensions.ToByteArray()
+  fullName: Google.Protobuf.MessageExtensions.ToByteArray()
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  name: WriteTo(Stream)
+  nameWithType: MessageExtensions.WriteTo(Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  name: WriteDelimitedTo(Stream)
+  nameWithType: MessageExtensions.WriteDelimitedTo(Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteString
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  name: ToByteString()
+  nameWithType: MessageExtensions.ToByteString()
+  fullName: Google.Protobuf.MessageExtensions.ToByteString()
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: false
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: false
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  isExternal: true
+  name: MergeFrom(IMessage, Byte[])
+  nameWithType: MessageExtensions.MergeFrom(IMessage, Byte[])
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, System.Byte[])
+  nameWithType.vb: MessageExtensions.MergeFrom(IMessage, Byte())
+  fullName.vb: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, System.Byte())
+  name.vb: MergeFrom(IMessage, Byte())
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions
+  commentId: T:Google.Protobuf.MessageExtensions
+  parent: Google.Protobuf
+  isExternal: false
+  name: MessageExtensions
+  nameWithType: MessageExtensions
+  fullName: Google.Protobuf.MessageExtensions
+- uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  isExternal: false
+  name: MergeFrom(IMessage, ByteString)
+  nameWithType: MessageExtensions.MergeFrom(IMessage, ByteString)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, Google.Protobuf.ByteString)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: MergeFrom(IMessage, Stream)
+  nameWithType: MessageExtensions.MergeFrom(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: MergeDelimitedFrom(IMessage, Stream)
+  nameWithType: MessageExtensions.MergeDelimitedFrom(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  isExternal: false
+  name: ToByteArray(IMessage)
+  nameWithType: MessageExtensions.ToByteArray(IMessage)
+  fullName: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: WriteTo(IMessage, Stream)
+  nameWithType: MessageExtensions.WriteTo(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: WriteDelimitedTo(IMessage, Stream)
+  nameWithType: MessageExtensions.WriteDelimitedTo(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  isExternal: false
+  name: ToByteString(IMessage)
+  nameWithType: MessageExtensions.ToByteString(IMessage)
+  fullName: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Parser*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.Parser
+  isExternal: false
+  name: Parser
+  nameWithType: Timestamp.Parser
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Parser
+- uid: Google.Protobuf.MessageParser{Google.Protobuf.WellKnownTypes.Timestamp}
+  commentId: T:Google.Protobuf.MessageParser{Google.Protobuf.WellKnownTypes.Timestamp}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<Timestamp>
+  nameWithType: MessageParser<Timestamp>
+  fullName: Google.Protobuf.MessageParser<Google.Protobuf.WellKnownTypes.Timestamp>
+  nameWithType.vb: MessageParser(Of Timestamp)
+  fullName.vb: Google.Protobuf.MessageParser(Of Google.Protobuf.WellKnownTypes.Timestamp)
+  name.vb: MessageParser(Of Timestamp)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: false
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Descriptor*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.Descriptor
+  isExternal: false
+  name: Descriptor
+  nameWithType: Timestamp.Descriptor
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: Timestamp.IMessage.Descriptor
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Timestamp.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Protobuf.WellKnownTypes.Timestamp.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.#ctor*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.#ctor
+  isExternal: false
+  name: Timestamp
+  nameWithType: Timestamp.Timestamp
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Timestamp
+- uid: Google.Protobuf.WellKnownTypes.Timestamp
+  commentId: T:Google.Protobuf.WellKnownTypes.Timestamp
+  parent: Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Timestamp
+  nameWithType: Timestamp
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Clone*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: Timestamp.Clone
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Timestamp}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Timestamp}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Protobuf.WellKnownTypes.Timestamp}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<Timestamp>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Protobuf.WellKnownTypes.Timestamp>.Clone()
+  nameWithType.vb: IDeepCloneable(Of Timestamp).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Protobuf.WellKnownTypes.Timestamp).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<Timestamp>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Protobuf.WellKnownTypes.Timestamp>.Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of Timestamp).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Protobuf.WellKnownTypes.Timestamp).Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: false
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Seconds*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.Seconds
+  isExternal: false
+  name: Seconds
+  nameWithType: Timestamp.Seconds
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Seconds
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Nanos*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.Nanos
+  isExternal: false
+  name: Nanos
+  nameWithType: Timestamp.Nanos
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Nanos
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Equals*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: Timestamp.Equals
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{Google.Protobuf.WellKnownTypes.Timestamp}.Equals(Google.Protobuf.WellKnownTypes.Timestamp)
+  commentId: M:System.IEquatable{Google.Protobuf.WellKnownTypes.Timestamp}.Equals(Google.Protobuf.WellKnownTypes.Timestamp)
+  parent: System.IEquatable{Google.Protobuf.WellKnownTypes.Timestamp}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Timestamp)
+  nameWithType: IEquatable<Timestamp>.Equals(Timestamp)
+  fullName: System.IEquatable<Google.Protobuf.WellKnownTypes.Timestamp>.Equals(Google.Protobuf.WellKnownTypes.Timestamp)
+  nameWithType.vb: IEquatable(Of Timestamp).Equals(Timestamp)
+  fullName.vb: System.IEquatable(Of Google.Protobuf.WellKnownTypes.Timestamp).Equals(Google.Protobuf.WellKnownTypes.Timestamp)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Timestamp>.Equals
+    fullName: System.IEquatable<Google.Protobuf.WellKnownTypes.Timestamp>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Timestamp).Equals
+    fullName: System.IEquatable(Of Google.Protobuf.WellKnownTypes.Timestamp).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.GetHashCode*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: Timestamp.GetHashCode
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.ToString*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: Timestamp.ToString
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.WriteTo*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: Timestamp.WriteTo
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.CalculateSize*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.CalculateSize
+  isExternal: false
+  name: CalculateSize
+  nameWithType: Timestamp.CalculateSize
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom
+  isExternal: false
+  name: MergeFrom
+  nameWithType: Timestamp.MergeFrom
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.MergeFrom
+- uid: Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Timestamp}.MergeFrom(Google.Protobuf.WellKnownTypes.Timestamp)
+  commentId: M:Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Timestamp}.MergeFrom(Google.Protobuf.WellKnownTypes.Timestamp)
+  parent: Google.Protobuf.IMessage{Google.Protobuf.WellKnownTypes.Timestamp}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(Timestamp)
+  nameWithType: IMessage<Timestamp>.MergeFrom(Timestamp)
+  fullName: Google.Protobuf.IMessage<Google.Protobuf.WellKnownTypes.Timestamp>.MergeFrom(Google.Protobuf.WellKnownTypes.Timestamp)
+  nameWithType.vb: IMessage(Of Timestamp).MergeFrom(Timestamp)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Protobuf.WellKnownTypes.Timestamp).MergeFrom(Google.Protobuf.WellKnownTypes.Timestamp)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<Timestamp>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Protobuf.WellKnownTypes.Timestamp>.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of Timestamp).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Protobuf.WellKnownTypes.Timestamp).MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.WellKnownTypes.Timestamp
+    name: Timestamp
+    nameWithType: Timestamp
+    fullName: Google.Protobuf.WellKnownTypes.Timestamp
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: false
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+- uid: Google.Protobuf.WellKnownTypes.Duration
+  commentId: T:Google.Protobuf.WellKnownTypes.Duration
+  parent: Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Duration
+  nameWithType: Duration
+  fullName: Google.Protobuf.WellKnownTypes.Duration
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.op_Subtraction
+  isExternal: false
+  name: Subtraction
+  nameWithType: Timestamp.Subtraction
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Subtraction
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.op_Addition*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.op_Addition
+  isExternal: false
+  name: Addition
+  nameWithType: Timestamp.Addition
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.Addition
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.Nanos
+  commentId: P:Google.Protobuf.WellKnownTypes.Timestamp.Nanos
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.ToDateTime*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.ToDateTime
+  isExternal: false
+  name: ToDateTime
+  nameWithType: Timestamp.ToDateTime
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.ToDateTime
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+- uid: System.DateTimeOffset
+  commentId: T:System.DateTimeOffset
+  parent: System
+  isExternal: true
+  name: DateTimeOffset
+  nameWithType: DateTimeOffset
+  fullName: System.DateTimeOffset
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.ToDateTimeOffset*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.ToDateTimeOffset
+  isExternal: false
+  name: ToDateTimeOffset
+  nameWithType: Timestamp.ToDateTimeOffset
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.ToDateTimeOffset
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime
+  isExternal: false
+  name: FromDateTime
+  nameWithType: Timestamp.FromDateTime
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.FromDateTime
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset
+  isExternal: false
+  name: FromDateTimeOffset
+  nameWithType: Timestamp.FromDateTimeOffset
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.FromDateTimeOffset
+- uid: Google.Protobuf.WellKnownTypes.Timestamp.ToDiagnosticString*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.Timestamp.ToDiagnosticString
+  isExternal: false
+  name: ToDiagnosticString
+  nameWithType: Timestamp.ToDiagnosticString
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp.ToDiagnosticString
+- uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  commentId: M:Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  parent: Google.Protobuf.ICustomDiagnosticMessage
+  isExternal: false
+  name: ToDiagnosticString()
+  nameWithType: ICustomDiagnosticMessage.ToDiagnosticString()
+  fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString()
+  spec.csharp:
+  - uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+    name: ToDiagnosticString
+    nameWithType: ICustomDiagnosticMessage.ToDiagnosticString
+    fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+    name: ToDiagnosticString
+    nameWithType: ICustomDiagnosticMessage.ToDiagnosticString
+    fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

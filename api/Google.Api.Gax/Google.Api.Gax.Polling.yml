@@ -1,0 +1,945 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.Polling
+  commentId: T:Google.Api.Gax.Polling
+  id: Polling
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.Polling.PollRepeatedly``1(System.Func{System.Nullable{System.DateTime},``0},System.Predicate{``0},Google.Api.Gax.IClock,Google.Api.Gax.IScheduler,Google.Api.Gax.PollSettings,System.Threading.CancellationToken)
+  - Google.Api.Gax.Polling.PollRepeatedlyAsync``1(System.Func{System.Nullable{System.DateTime},System.Threading.Tasks.Task{``0}},System.Predicate{``0},Google.Api.Gax.IClock,Google.Api.Gax.IScheduler,Google.Api.Gax.PollSettings,System.Threading.CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: Polling
+  nameWithType: Polling
+  fullName: Google.Api.Gax.Polling
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax/Polling.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Polling
+    path: src/Google.Api.Gax/Polling.cs
+    startLine: 16
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nHelper methods for polling scenarios.\n"
+  example: []
+  syntax:
+    content: public static class Polling
+    content.vb: Public Module Polling
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Google.Api.Gax.Polling.PollRepeatedly``1(System.Func{System.Nullable{System.DateTime},``0},System.Predicate{``0},Google.Api.Gax.IClock,Google.Api.Gax.IScheduler,Google.Api.Gax.PollSettings,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.Polling.PollRepeatedly``1(System.Func{System.Nullable{System.DateTime},``0},System.Predicate{``0},Google.Api.Gax.IClock,Google.Api.Gax.IScheduler,Google.Api.Gax.PollSettings,System.Threading.CancellationToken)
+  id: PollRepeatedly``1(System.Func{System.Nullable{System.DateTime},``0},System.Predicate{``0},Google.Api.Gax.IClock,Google.Api.Gax.IScheduler,Google.Api.Gax.PollSettings,System.Threading.CancellationToken)
+  parent: Google.Api.Gax.Polling
+  langs:
+  - csharp
+  - vb
+  name: PollRepeatedly<TResponse>(Func<Nullable<DateTime>, TResponse>, Predicate<TResponse>, IClock, IScheduler, PollSettings, CancellationToken)
+  nameWithType: Polling.PollRepeatedly<TResponse>(Func<Nullable<DateTime>, TResponse>, Predicate<TResponse>, IClock, IScheduler, PollSettings, CancellationToken)
+  fullName: Google.Api.Gax.Polling.PollRepeatedly<TResponse>(System.Func<System.Nullable<System.DateTime>, TResponse>, System.Predicate<TResponse>, Google.Api.Gax.IClock, Google.Api.Gax.IScheduler, Google.Api.Gax.PollSettings, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/Polling.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PollRepeatedly
+    path: src/Google.Api.Gax/Polling.cs
+    startLine: 34
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nRepeatedly calls the specified polling action, delaying between calls,\nuntil a given condition is met in the response.\n"
+  example: []
+  syntax:
+    content: public static TResponse PollRepeatedly<TResponse>(Func<DateTime? , TResponse> pollAction, Predicate<TResponse> completionPredicate, IClock clock, IScheduler scheduler, PollSettings pollSettings, CancellationToken cancellationToken)
+    parameters:
+    - id: pollAction
+      type: System.Func{System.Nullable{System.DateTime},{TResponse}}
+      description: >-
+        The poll action, typically performing an RPC. The value passed to the
+
+        action is the overall deadline, so that the RPC settings can be adjusted accordingly. A null value
+
+        indicates no deadline.
+    - id: completionPredicate
+      type: System.Predicate{{TResponse}}
+      description: >-
+        The test for whether to return the response (<code>true</code>) or continue
+
+        polling (<code>false</code>). Must not be null.
+    - id: clock
+      type: Google.Api.Gax.IClock
+      description: The clock to use for determining deadlines. Must not be null.
+    - id: scheduler
+      type: Google.Api.Gax.IScheduler
+      description: The scheduler to use for delaying between calls. Must not be null.
+    - id: pollSettings
+      type: Google.Api.Gax.PollSettings
+      description: The poll settings, controlling timeouts, call settings and delays.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token used to cancel delays, if any.
+    typeParameters:
+    - id: TResponse
+      description: The response type. Must not be null.
+    return:
+      type: '{TResponse}'
+      description: The completed response.
+    content.vb: Public Shared Function PollRepeatedly(Of TResponse)(pollAction As Func(Of Date?, TResponse), completionPredicate As Predicate(Of TResponse), clock As IClock, scheduler As IScheduler, pollSettings As PollSettings, cancellationToken As CancellationToken) As TResponse
+  overload: Google.Api.Gax.Polling.PollRepeatedly*
+  exceptions:
+  - type: System.TimeoutException
+    commentId: T:System.TimeoutException
+    description: The timeout specified in the poll settings expired.
+  nameWithType.vb: Polling.PollRepeatedly(Of TResponse)(Func(Of Nullable(Of DateTime), TResponse), Predicate(Of TResponse), IClock, IScheduler, PollSettings, CancellationToken)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.Polling.PollRepeatedly(Of TResponse)(System.Func(Of System.Nullable(Of System.DateTime), TResponse), System.Predicate(Of TResponse), Google.Api.Gax.IClock, Google.Api.Gax.IScheduler, Google.Api.Gax.PollSettings, System.Threading.CancellationToken)
+  name.vb: PollRepeatedly(Of TResponse)(Func(Of Nullable(Of DateTime), TResponse), Predicate(Of TResponse), IClock, IScheduler, PollSettings, CancellationToken)
+- uid: Google.Api.Gax.Polling.PollRepeatedlyAsync``1(System.Func{System.Nullable{System.DateTime},System.Threading.Tasks.Task{``0}},System.Predicate{``0},Google.Api.Gax.IClock,Google.Api.Gax.IScheduler,Google.Api.Gax.PollSettings,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.Polling.PollRepeatedlyAsync``1(System.Func{System.Nullable{System.DateTime},System.Threading.Tasks.Task{``0}},System.Predicate{``0},Google.Api.Gax.IClock,Google.Api.Gax.IScheduler,Google.Api.Gax.PollSettings,System.Threading.CancellationToken)
+  id: PollRepeatedlyAsync``1(System.Func{System.Nullable{System.DateTime},System.Threading.Tasks.Task{``0}},System.Predicate{``0},Google.Api.Gax.IClock,Google.Api.Gax.IScheduler,Google.Api.Gax.PollSettings,System.Threading.CancellationToken)
+  parent: Google.Api.Gax.Polling
+  langs:
+  - csharp
+  - vb
+  name: PollRepeatedlyAsync<TResponse>(Func<Nullable<DateTime>, Task<TResponse>>, Predicate<TResponse>, IClock, IScheduler, PollSettings, CancellationToken)
+  nameWithType: Polling.PollRepeatedlyAsync<TResponse>(Func<Nullable<DateTime>, Task<TResponse>>, Predicate<TResponse>, IClock, IScheduler, PollSettings, CancellationToken)
+  fullName: Google.Api.Gax.Polling.PollRepeatedlyAsync<TResponse>(System.Func<System.Nullable<System.DateTime>, System.Threading.Tasks.Task<TResponse>>, System.Predicate<TResponse>, Google.Api.Gax.IClock, Google.Api.Gax.IScheduler, Google.Api.Gax.PollSettings, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/Polling.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PollRepeatedlyAsync
+    path: src/Google.Api.Gax/Polling.cs
+    startLine: 80
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nAsynchronously repeatedly calls the specified polling action, delaying between calls,\nuntil a given condition is met in the response.\n"
+  example: []
+  syntax:
+    content: public static Task<TResponse> PollRepeatedlyAsync<TResponse>(Func<DateTime? , Task<TResponse>> pollAction, Predicate<TResponse> completionPredicate, IClock clock, IScheduler scheduler, PollSettings pollSettings, CancellationToken cancellationToken)
+    parameters:
+    - id: pollAction
+      type: System.Func{System.Nullable{System.DateTime},System.Threading.Tasks.Task{{TResponse}}}
+      description: >-
+        The poll action, typically performing an RPC. The value passed to the
+
+        action is the overall deadline, so that the RPC settings can be adjusted accordingly. A null
+
+        value indicates no deadline.
+    - id: completionPredicate
+      type: System.Predicate{{TResponse}}
+      description: >-
+        The test for whether to return the response (<code>true</code>) or continue
+
+        polling (<code>false</code>). Must not be null.
+    - id: clock
+      type: Google.Api.Gax.IClock
+      description: The clock to use for determining deadlines. Must not be null.
+    - id: scheduler
+      type: Google.Api.Gax.IScheduler
+      description: The scheduler to use for delaying between calls. Must not be null.
+    - id: pollSettings
+      type: Google.Api.Gax.PollSettings
+      description: The poll settings, controlling timeouts, call settings and delays.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token used to cancel delays, if any.
+    typeParameters:
+    - id: TResponse
+      description: The response type. Must not be null.
+    return:
+      type: System.Threading.Tasks.Task{{TResponse}}
+      description: A task representing the asynchronous operation. The result of the task will be the completed response.
+    content.vb: Public Shared Function PollRepeatedlyAsync(Of TResponse)(pollAction As Func(Of Date?, Task(Of TResponse)), completionPredicate As Predicate(Of TResponse), clock As IClock, scheduler As IScheduler, pollSettings As PollSettings, cancellationToken As CancellationToken) As Task(Of TResponse)
+  overload: Google.Api.Gax.Polling.PollRepeatedlyAsync*
+  nameWithType.vb: Polling.PollRepeatedlyAsync(Of TResponse)(Func(Of Nullable(Of DateTime), Task(Of TResponse)), Predicate(Of TResponse), IClock, IScheduler, PollSettings, CancellationToken)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.Polling.PollRepeatedlyAsync(Of TResponse)(System.Func(Of System.Nullable(Of System.DateTime), System.Threading.Tasks.Task(Of TResponse)), System.Predicate(Of TResponse), Google.Api.Gax.IClock, Google.Api.Gax.IScheduler, Google.Api.Gax.PollSettings, System.Threading.CancellationToken)
+  name.vb: PollRepeatedlyAsync(Of TResponse)(Func(Of Nullable(Of DateTime), Task(Of TResponse)), Predicate(Of TResponse), IClock, IScheduler, PollSettings, CancellationToken)
+references:
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.Polling.PollRepeatedly*
+  commentId: Overload:Google.Api.Gax.Polling.PollRepeatedly
+  isExternal: false
+  name: PollRepeatedly
+  nameWithType: Polling.PollRepeatedly
+  fullName: Google.Api.Gax.Polling.PollRepeatedly
+- uid: System.TimeoutException
+  commentId: T:System.TimeoutException
+- uid: System.Func{System.Nullable{System.DateTime},{TResponse}}
+  commentId: T:System.Func{System.Nullable{System.DateTime},``0}
+  parent: System
+  definition: System.Func`2
+  name: Func<Nullable<DateTime>, TResponse>
+  nameWithType: Func<Nullable<DateTime>, TResponse>
+  fullName: System.Func<System.Nullable<System.DateTime>, TResponse>
+  nameWithType.vb: Func(Of Nullable(Of DateTime), TResponse)
+  fullName.vb: System.Func(Of System.Nullable(Of System.DateTime), TResponse)
+  name.vb: Func(Of Nullable(Of DateTime), TResponse)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Predicate{{TResponse}}
+  commentId: T:System.Predicate{``0}
+  parent: System
+  definition: System.Predicate`1
+  name: Predicate<TResponse>
+  nameWithType: Predicate<TResponse>
+  fullName: System.Predicate<TResponse>
+  nameWithType.vb: Predicate(Of TResponse)
+  fullName.vb: System.Predicate(Of TResponse)
+  name.vb: Predicate(Of TResponse)
+  spec.csharp:
+  - uid: System.Predicate`1
+    name: Predicate
+    nameWithType: Predicate
+    fullName: System.Predicate
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Predicate`1
+    name: Predicate
+    nameWithType: Predicate
+    fullName: System.Predicate
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.IClock
+  commentId: T:Google.Api.Gax.IClock
+  parent: Google.Api.Gax
+  isExternal: false
+  name: IClock
+  nameWithType: IClock
+  fullName: Google.Api.Gax.IClock
+- uid: Google.Api.Gax.IScheduler
+  commentId: T:Google.Api.Gax.IScheduler
+  parent: Google.Api.Gax
+  isExternal: false
+  name: IScheduler
+  nameWithType: IScheduler
+  fullName: Google.Api.Gax.IScheduler
+- uid: Google.Api.Gax.PollSettings
+  commentId: T:Google.Api.Gax.PollSettings
+  parent: Google.Api.Gax
+  isExternal: false
+  name: PollSettings
+  nameWithType: PollSettings
+  fullName: Google.Api.Gax.PollSettings
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: '{TResponse}'
+  commentId: '!:TResponse'
+  definition: TResponse
+  name: TResponse
+  nameWithType: TResponse
+  fullName: TResponse
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Predicate`1
+  commentId: T:System.Predicate`1
+  isExternal: true
+  name: Predicate<T>
+  nameWithType: Predicate<T>
+  fullName: System.Predicate<T>
+  nameWithType.vb: Predicate(Of T)
+  fullName.vb: System.Predicate(Of T)
+  name.vb: Predicate(Of T)
+  spec.csharp:
+  - uid: System.Predicate`1
+    name: Predicate
+    nameWithType: Predicate
+    fullName: System.Predicate
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Predicate`1
+    name: Predicate
+    nameWithType: Predicate
+    fullName: System.Predicate
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: false
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: TResponse
+  commentId: '!:TResponse'
+  isExternal: false
+  name: TResponse
+  nameWithType: TResponse
+  fullName: TResponse
+- uid: Google.Api.Gax.Polling.PollRepeatedlyAsync*
+  commentId: Overload:Google.Api.Gax.Polling.PollRepeatedlyAsync
+  isExternal: false
+  name: PollRepeatedlyAsync
+  nameWithType: Polling.PollRepeatedlyAsync
+  fullName: Google.Api.Gax.Polling.PollRepeatedlyAsync
+- uid: System.Func{System.Nullable{System.DateTime},System.Threading.Tasks.Task{{TResponse}}}
+  commentId: T:System.Func{System.Nullable{System.DateTime},System.Threading.Tasks.Task{``0}}
+  parent: System
+  definition: System.Func`2
+  name: Func<Nullable<DateTime>, Task<TResponse>>
+  nameWithType: Func<Nullable<DateTime>, Task<TResponse>>
+  fullName: System.Func<System.Nullable<System.DateTime>, System.Threading.Tasks.Task<TResponse>>
+  nameWithType.vb: Func(Of Nullable(Of DateTime), Task(Of TResponse))
+  fullName.vb: System.Func(Of System.Nullable(Of System.DateTime), System.Threading.Tasks.Task(Of TResponse))
+  name.vb: Func(Of Nullable(Of DateTime), Task(Of TResponse))
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: System.DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{{TResponse}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TResponse>
+  nameWithType: Task<TResponse>
+  fullName: System.Threading.Tasks.Task<TResponse>
+  nameWithType.vb: Task(Of TResponse)
+  fullName.vb: System.Threading.Tasks.Task(Of TResponse)
+  name.vb: Task(Of TResponse)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

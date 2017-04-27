@@ -1,0 +1,105 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.IClock
+  commentId: T:Google.Api.Gax.IClock
+  id: IClock
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.IClock.GetCurrentDateTimeUtc
+  langs:
+  - csharp
+  - vb
+  name: IClock
+  nameWithType: IClock
+  fullName: Google.Api.Gax.IClock
+  type: Interface
+  source:
+    remote:
+      path: src/Google.Api.Gax/IClock.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: IClock
+    path: src/Google.Api.Gax/IClock.cs
+    startLine: 21
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nAn abstraction of the ability to determine the current date and time.\n"
+  remarks: "\nThis interface primarily exists for testing purposes, allowing test code to\nisolate itself from the system clock. In production, the <xref href=\"Google.Api.Gax.SystemClock\" data-throw-if-not-resolved=\"false\"></xref>\nimplementation is by far the most likely one to be used, and the only one provided\nwithin this library. Code that uses a clock should generally be designed to allow it\nto be optionally specified, defaulting to <xref href=\"Google.Api.Gax.SystemClock.Instance\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public interface IClock
+    content.vb: Public Interface IClock
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: Google.Api.Gax.IClock.GetCurrentDateTimeUtc
+  commentId: M:Google.Api.Gax.IClock.GetCurrentDateTimeUtc
+  id: GetCurrentDateTimeUtc
+  parent: Google.Api.Gax.IClock
+  langs:
+  - csharp
+  - vb
+  name: GetCurrentDateTimeUtc()
+  nameWithType: IClock.GetCurrentDateTimeUtc()
+  fullName: Google.Api.Gax.IClock.GetCurrentDateTimeUtc()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/IClock.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetCurrentDateTimeUtc
+    path: src/Google.Api.Gax/IClock.cs
+    startLine: 27
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nReturns the current date and time in UTC, with a kind of <xref href=\"System.DateTimeKind.Utc\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: DateTime GetCurrentDateTimeUtc()
+    return:
+      type: System.DateTime
+      description: A <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> representing the current date and time in UTC.
+    content.vb: Function GetCurrentDateTimeUtc As Date
+  overload: Google.Api.Gax.IClock.GetCurrentDateTimeUtc*
+references:
+- uid: Google.Api.Gax.SystemClock
+  commentId: T:Google.Api.Gax.SystemClock
+  isExternal: false
+  name: SystemClock
+  nameWithType: SystemClock
+  fullName: Google.Api.Gax.SystemClock
+- uid: Google.Api.Gax.SystemClock.Instance
+  commentId: P:Google.Api.Gax.SystemClock.Instance
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.DateTimeKind.Utc
+  commentId: F:System.DateTimeKind.Utc
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: Google.Api.Gax.IClock.GetCurrentDateTimeUtc*
+  commentId: Overload:Google.Api.Gax.IClock.GetCurrentDateTimeUtc
+  isExternal: false
+  name: GetCurrentDateTimeUtc
+  nameWithType: IClock.GetCurrentDateTimeUtc
+  fullName: Google.Api.Gax.IClock.GetCurrentDateTimeUtc
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System

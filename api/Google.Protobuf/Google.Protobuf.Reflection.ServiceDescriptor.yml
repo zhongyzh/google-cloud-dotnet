@@ -1,0 +1,636 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.Reflection.ServiceDescriptor
+  commentId: T:Google.Protobuf.Reflection.ServiceDescriptor
+  id: ServiceDescriptor
+  parent: Google.Protobuf.Reflection
+  children:
+  - Google.Protobuf.Reflection.ServiceDescriptor.FindMethodByName(System.String)
+  - Google.Protobuf.Reflection.ServiceDescriptor.Methods
+  - Google.Protobuf.Reflection.ServiceDescriptor.Name
+  langs:
+  - csharp
+  - vb
+  name: ServiceDescriptor
+  nameWithType: ServiceDescriptor
+  fullName: Google.Protobuf.Reflection.ServiceDescriptor
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ServiceDescriptor
+    path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
+    startLine: 40
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nDescribes a service type.\n"
+  example: []
+  syntax:
+    content: 'public sealed class ServiceDescriptor : DescriptorBase, IDescriptor'
+    content.vb: >-
+      Public NotInheritable Class ServiceDescriptor
+          Inherits DescriptorBase
+          Implements IDescriptor
+  inheritance:
+  - System.Object
+  - Google.Protobuf.Reflection.DescriptorBase
+  implements:
+  - Google.Protobuf.Reflection.IDescriptor
+  inheritedMembers:
+  - Google.Protobuf.Reflection.DescriptorBase.Index
+  - Google.Protobuf.Reflection.DescriptorBase.FullName
+  - Google.Protobuf.Reflection.DescriptorBase.File
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.Reflection.ServiceDescriptor.Name
+  commentId: P:Google.Protobuf.Reflection.ServiceDescriptor.Name
+  id: Name
+  parent: Google.Protobuf.Reflection.ServiceDescriptor
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: ServiceDescriptor.Name
+  fullName: Google.Protobuf.Reflection.ServiceDescriptor.Name
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Name
+    path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
+    startLine: 58
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nThe brief name of the descriptor's target.\n"
+  example: []
+  syntax:
+    content: public override string Name { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property Name As String
+  overridden: Google.Protobuf.Reflection.DescriptorBase.Name
+  overload: Google.Protobuf.Reflection.ServiceDescriptor.Name*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.ServiceDescriptor.Methods
+  commentId: P:Google.Protobuf.Reflection.ServiceDescriptor.Methods
+  id: Methods
+  parent: Google.Protobuf.Reflection.ServiceDescriptor
+  langs:
+  - csharp
+  - vb
+  name: Methods
+  nameWithType: ServiceDescriptor.Methods
+  fullName: Google.Protobuf.Reflection.ServiceDescriptor.Methods
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Methods
+    path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
+    startLine: 65
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  example: []
+  syntax:
+    content: public IList<MethodDescriptor> Methods { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IList{Google.Protobuf.Reflection.MethodDescriptor}
+      description: "\nAn unmodifiable list of methods in this service.\n"
+    content.vb: Public ReadOnly Property Methods As IList(Of MethodDescriptor)
+  overload: Google.Protobuf.Reflection.ServiceDescriptor.Methods*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.ServiceDescriptor.FindMethodByName(System.String)
+  commentId: M:Google.Protobuf.Reflection.ServiceDescriptor.FindMethodByName(System.String)
+  id: FindMethodByName(System.String)
+  parent: Google.Protobuf.Reflection.ServiceDescriptor
+  langs:
+  - csharp
+  - vb
+  name: FindMethodByName(String)
+  nameWithType: ServiceDescriptor.FindMethodByName(String)
+  fullName: Google.Protobuf.Reflection.ServiceDescriptor.FindMethodByName(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FindMethodByName
+    path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
+    startLine: 75
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nFinds a method by name.\n"
+  example: []
+  syntax:
+    content: public MethodDescriptor FindMethodByName(string name)
+    parameters:
+    - id: name
+      type: System.String
+      description: The unqualified name of the method (e.g. "Foo").
+    return:
+      type: Google.Protobuf.Reflection.MethodDescriptor
+      description: The method's decsriptor, or null if not found.
+    content.vb: Public Function FindMethodByName(name As String) As MethodDescriptor
+  overload: Google.Protobuf.Reflection.ServiceDescriptor.FindMethodByName*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.Reflection.DescriptorBase
+  commentId: T:Google.Protobuf.Reflection.DescriptorBase
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: DescriptorBase
+  nameWithType: DescriptorBase
+  fullName: Google.Protobuf.Reflection.DescriptorBase
+- uid: Google.Protobuf.Reflection.IDescriptor
+  commentId: T:Google.Protobuf.Reflection.IDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: IDescriptor
+  nameWithType: IDescriptor
+  fullName: Google.Protobuf.Reflection.IDescriptor
+- uid: Google.Protobuf.Reflection.DescriptorBase.Index
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.Index
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: Index
+  nameWithType: DescriptorBase.Index
+  fullName: Google.Protobuf.Reflection.DescriptorBase.Index
+- uid: Google.Protobuf.Reflection.DescriptorBase.FullName
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.FullName
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: FullName
+  nameWithType: DescriptorBase.FullName
+  fullName: Google.Protobuf.Reflection.DescriptorBase.FullName
+- uid: Google.Protobuf.Reflection.DescriptorBase.File
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.File
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: File
+  nameWithType: DescriptorBase.File
+  fullName: Google.Protobuf.Reflection.DescriptorBase.File
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.Reflection.DescriptorBase.Name
+  commentId: P:Google.Protobuf.Reflection.DescriptorBase.Name
+  parent: Google.Protobuf.Reflection.DescriptorBase
+  isExternal: false
+  name: Name
+  nameWithType: DescriptorBase.Name
+  fullName: Google.Protobuf.Reflection.DescriptorBase.Name
+- uid: Google.Protobuf.Reflection.ServiceDescriptor.Name*
+  commentId: Overload:Google.Protobuf.Reflection.ServiceDescriptor.Name
+  isExternal: false
+  name: Name
+  nameWithType: ServiceDescriptor.Name
+  fullName: Google.Protobuf.Reflection.ServiceDescriptor.Name
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.Reflection.ServiceDescriptor.Methods*
+  commentId: Overload:Google.Protobuf.Reflection.ServiceDescriptor.Methods
+  isExternal: false
+  name: Methods
+  nameWithType: ServiceDescriptor.Methods
+  fullName: Google.Protobuf.Reflection.ServiceDescriptor.Methods
+- uid: System.Collections.Generic.IList{Google.Protobuf.Reflection.MethodDescriptor}
+  commentId: T:System.Collections.Generic.IList{Google.Protobuf.Reflection.MethodDescriptor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IList`1
+  name: IList<MethodDescriptor>
+  nameWithType: IList<MethodDescriptor>
+  fullName: System.Collections.Generic.IList<Google.Protobuf.Reflection.MethodDescriptor>
+  nameWithType.vb: IList(Of MethodDescriptor)
+  fullName.vb: System.Collections.Generic.IList(Of Google.Protobuf.Reflection.MethodDescriptor)
+  name.vb: IList(Of MethodDescriptor)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.Reflection.MethodDescriptor
+    name: MethodDescriptor
+    nameWithType: MethodDescriptor
+    fullName: Google.Protobuf.Reflection.MethodDescriptor
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.Reflection.MethodDescriptor
+    name: MethodDescriptor
+    nameWithType: MethodDescriptor
+    fullName: Google.Protobuf.Reflection.MethodDescriptor
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
+  isExternal: true
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IList`1
+    name: IList
+    nameWithType: IList
+    fullName: System.Collections.Generic.IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Google.Protobuf.Reflection.ServiceDescriptor.FindMethodByName*
+  commentId: Overload:Google.Protobuf.Reflection.ServiceDescriptor.FindMethodByName
+  isExternal: false
+  name: FindMethodByName
+  nameWithType: ServiceDescriptor.FindMethodByName
+  fullName: Google.Protobuf.Reflection.ServiceDescriptor.FindMethodByName
+- uid: Google.Protobuf.Reflection.MethodDescriptor
+  commentId: T:Google.Protobuf.Reflection.MethodDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: MethodDescriptor
+  nameWithType: MethodDescriptor
+  fullName: Google.Protobuf.Reflection.MethodDescriptor

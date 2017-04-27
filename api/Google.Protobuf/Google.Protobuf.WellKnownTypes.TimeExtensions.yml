@@ -1,0 +1,545 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.WellKnownTypes.TimeExtensions
+  commentId: T:Google.Protobuf.WellKnownTypes.TimeExtensions
+  id: TimeExtensions
+  parent: Google.Protobuf.WellKnownTypes
+  children:
+  - Google.Protobuf.WellKnownTypes.TimeExtensions.ToDuration(System.TimeSpan)
+  - Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp(System.DateTime)
+  - Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp(System.DateTimeOffset)
+  langs:
+  - csharp
+  - vb
+  name: TimeExtensions
+  nameWithType: TimeExtensions
+  fullName: Google.Protobuf.WellKnownTypes.TimeExtensions
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimeExtensions.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: TimeExtensions
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimeExtensions.cs
+    startLine: 39
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nExtension methods on BCL time-related types, converting to protobuf types.\n"
+  example: []
+  syntax:
+    content: public static class TimeExtensions
+    content.vb: Public Module TimeExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp(System.DateTime)
+  commentId: M:Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp(System.DateTime)
+  id: ToTimestamp(System.DateTime)
+  isExtensionMethod: true
+  parent: Google.Protobuf.WellKnownTypes.TimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToTimestamp(DateTime)
+  nameWithType: TimeExtensions.ToTimestamp(DateTime)
+  fullName: Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp(System.DateTime)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimeExtensions.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToTimestamp
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimeExtensions.cs
+    startLine: 47
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nConverts the given <xref href=\"System.DateTime\" data-throw-if-not-resolved=\"false\"></xref> to a <xref href=\"Google.Protobuf.WellKnownTypes.Timestamp\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static Timestamp ToTimestamp(this DateTime dateTime)
+    parameters:
+    - id: dateTime
+      type: System.DateTime
+      description: The date and time to convert to a timestamp.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+      description: The converted timestamp.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ToTimestamp(dateTime As Date) As Timestamp
+  overload: Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: The <span class="paramref">dateTime</span> value has a <xref href="System.DateTime.Kind" data-throw-if-not-resolved="false"></xref>other than <code>Utc</code>.
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp(System.DateTimeOffset)
+  commentId: M:Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp(System.DateTimeOffset)
+  id: ToTimestamp(System.DateTimeOffset)
+  isExtensionMethod: true
+  parent: Google.Protobuf.WellKnownTypes.TimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToTimestamp(DateTimeOffset)
+  nameWithType: TimeExtensions.ToTimestamp(DateTimeOffset)
+  fullName: Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp(System.DateTimeOffset)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimeExtensions.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToTimestamp
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimeExtensions.cs
+    startLine: 60
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nConverts the given <xref href=\"System.DateTimeOffset\" data-throw-if-not-resolved=\"false\"></xref> to a <xref href=\"Google.Protobuf.WellKnownTypes.Timestamp\" data-throw-if-not-resolved=\"false\"></xref>\n"
+  remarks: >-
+    The offset is taken into consideration when converting the value (so the same instant in time
+
+    is represented) but is not a separate part of the resulting value. In other words, there is no
+
+    roundtrip operation to retrieve the original <code>DateTimeOffset</code>.
+  example: []
+  syntax:
+    content: public static Timestamp ToTimestamp(this DateTimeOffset dateTimeOffset)
+    parameters:
+    - id: dateTimeOffset
+      type: System.DateTimeOffset
+      description: The date and time (with UTC offset) to convert to a timestamp.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Timestamp
+      description: The converted timestamp.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ToTimestamp(dateTimeOffset As DateTimeOffset) As Timestamp
+  overload: Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.WellKnownTypes.TimeExtensions.ToDuration(System.TimeSpan)
+  commentId: M:Google.Protobuf.WellKnownTypes.TimeExtensions.ToDuration(System.TimeSpan)
+  id: ToDuration(System.TimeSpan)
+  isExtensionMethod: true
+  parent: Google.Protobuf.WellKnownTypes.TimeExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToDuration(TimeSpan)
+  nameWithType: TimeExtensions.ToDuration(TimeSpan)
+  fullName: Google.Protobuf.WellKnownTypes.TimeExtensions.ToDuration(System.TimeSpan)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/WellKnownTypes/TimeExtensions.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToDuration
+    path: csharp/src/Google.Protobuf/WellKnownTypes/TimeExtensions.cs
+    startLine: 70
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.WellKnownTypes
+  summary: "\nConverts the given <xref href=\"System.TimeSpan\" data-throw-if-not-resolved=\"false\"></xref> to a <xref href=\"Google.Protobuf.WellKnownTypes.Duration\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public static Duration ToDuration(this TimeSpan timeSpan)
+    parameters:
+    - id: timeSpan
+      type: System.TimeSpan
+      description: The time span to convert.
+    return:
+      type: Google.Protobuf.WellKnownTypes.Duration
+      description: The converted duration.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ToDuration(timeSpan As TimeSpan) As Duration
+  overload: Google.Protobuf.WellKnownTypes.TimeExtensions.ToDuration*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: Google.Protobuf.WellKnownTypes
+  commentId: N:Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Google.Protobuf.WellKnownTypes
+  nameWithType: Google.Protobuf.WellKnownTypes
+  fullName: Google.Protobuf.WellKnownTypes
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.DateTime
+  commentId: T:System.DateTime
+  parent: System
+  isExternal: true
+  name: DateTime
+  nameWithType: DateTime
+  fullName: System.DateTime
+- uid: Google.Protobuf.WellKnownTypes.Timestamp
+  commentId: T:Google.Protobuf.WellKnownTypes.Timestamp
+  parent: Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Timestamp
+  nameWithType: Timestamp
+  fullName: Google.Protobuf.WellKnownTypes.Timestamp
+- uid: System.DateTime.Kind
+  commentId: P:System.DateTime.Kind
+- uid: Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp
+  isExternal: false
+  name: ToTimestamp
+  nameWithType: TimeExtensions.ToTimestamp
+  fullName: Google.Protobuf.WellKnownTypes.TimeExtensions.ToTimestamp
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: System.DateTimeOffset
+  commentId: T:System.DateTimeOffset
+  parent: System
+  isExternal: true
+  name: DateTimeOffset
+  nameWithType: DateTimeOffset
+  fullName: System.DateTimeOffset
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: Google.Protobuf.WellKnownTypes.Duration
+  commentId: T:Google.Protobuf.WellKnownTypes.Duration
+  parent: Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Duration
+  nameWithType: Duration
+  fullName: Google.Protobuf.WellKnownTypes.Duration
+- uid: Google.Protobuf.WellKnownTypes.TimeExtensions.ToDuration*
+  commentId: Overload:Google.Protobuf.WellKnownTypes.TimeExtensions.ToDuration
+  isExternal: false
+  name: ToDuration
+  nameWithType: TimeExtensions.ToDuration
+  fullName: Google.Protobuf.WellKnownTypes.TimeExtensions.ToDuration

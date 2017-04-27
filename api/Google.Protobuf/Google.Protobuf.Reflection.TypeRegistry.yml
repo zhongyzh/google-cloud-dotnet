@@ -1,0 +1,847 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.Reflection.TypeRegistry
+  commentId: T:Google.Protobuf.Reflection.TypeRegistry
+  id: TypeRegistry
+  parent: Google.Protobuf.Reflection
+  children:
+  - Google.Protobuf.Reflection.TypeRegistry.Empty
+  - Google.Protobuf.Reflection.TypeRegistry.Find(System.String)
+  - Google.Protobuf.Reflection.TypeRegistry.FromFiles(Google.Protobuf.Reflection.FileDescriptor[])
+  - Google.Protobuf.Reflection.TypeRegistry.FromFiles(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.FileDescriptor})
+  - Google.Protobuf.Reflection.TypeRegistry.FromMessages(Google.Protobuf.Reflection.MessageDescriptor[])
+  - Google.Protobuf.Reflection.TypeRegistry.FromMessages(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.MessageDescriptor})
+  langs:
+  - csharp
+  - vb
+  name: TypeRegistry
+  nameWithType: TypeRegistry
+  fullName: Google.Protobuf.Reflection.TypeRegistry
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: TypeRegistry
+    path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+    startLine: 39
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nAn immutable registry of types which can be looked up by their full name.\n"
+  example: []
+  syntax:
+    content: public sealed class TypeRegistry
+    content.vb: Public NotInheritable Class TypeRegistry
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.Reflection.TypeRegistry.Empty
+  commentId: P:Google.Protobuf.Reflection.TypeRegistry.Empty
+  id: Empty
+  parent: Google.Protobuf.Reflection.TypeRegistry
+  langs:
+  - csharp
+  - vb
+  name: Empty
+  nameWithType: TypeRegistry.Empty
+  fullName: Google.Protobuf.Reflection.TypeRegistry.Empty
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Empty
+    path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+    startLine: 44
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nAn empty type registry, containing no types.\n"
+  example: []
+  syntax:
+    content: public static TypeRegistry Empty { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.TypeRegistry
+    content.vb: Public Shared ReadOnly Property Empty As TypeRegistry
+  overload: Google.Protobuf.Reflection.TypeRegistry.Empty*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.TypeRegistry.Find(System.String)
+  commentId: M:Google.Protobuf.Reflection.TypeRegistry.Find(System.String)
+  id: Find(System.String)
+  parent: Google.Protobuf.Reflection.TypeRegistry
+  langs:
+  - csharp
+  - vb
+  name: Find(String)
+  nameWithType: TypeRegistry.Find(String)
+  fullName: Google.Protobuf.Reflection.TypeRegistry.Find(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Find
+    path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+    startLine: 60
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nAttempts to find a message descriptor by its full name.\n"
+  example: []
+  syntax:
+    content: public MessageDescriptor Find(string fullName)
+    parameters:
+    - id: fullName
+      type: System.String
+      description: >-
+        The full name of the message, which is the dot-separated
+
+        combination of package, containing messages and message name
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+      description: >-
+        The message descriptor corresponding to <span class="paramref">fullName</span> or null
+
+        if there is no such message descriptor.
+    content.vb: Public Function Find(fullName As String) As MessageDescriptor
+  overload: Google.Protobuf.Reflection.TypeRegistry.Find*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.Reflection.TypeRegistry.FromFiles(Google.Protobuf.Reflection.FileDescriptor[])
+  commentId: M:Google.Protobuf.Reflection.TypeRegistry.FromFiles(Google.Protobuf.Reflection.FileDescriptor[])
+  id: FromFiles(Google.Protobuf.Reflection.FileDescriptor[])
+  parent: Google.Protobuf.Reflection.TypeRegistry
+  langs:
+  - csharp
+  - vb
+  name: FromFiles(FileDescriptor[])
+  nameWithType: TypeRegistry.FromFiles(FileDescriptor[])
+  fullName: Google.Protobuf.Reflection.TypeRegistry.FromFiles(Google.Protobuf.Reflection.FileDescriptor[])
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FromFiles
+    path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+    startLine: 77
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nCreates a type registry from the specified set of file descriptors.\n"
+  remarks: "\nThis is a convenience overload for <xref href=\"Google.Protobuf.Reflection.TypeRegistry.FromFiles(System.Collections.Generic.IEnumerable%7bGoogle.Protobuf.Reflection.FileDescriptor%7d)\" data-throw-if-not-resolved=\"false\"></xref>\nto allow calls such as <code>TypeRegistry.FromFiles(descriptor1, descriptor2)</code>.\n"
+  example: []
+  syntax:
+    content: public static TypeRegistry FromFiles(params FileDescriptor[] fileDescriptors)
+    parameters:
+    - id: fileDescriptors
+      type: Google.Protobuf.Reflection.FileDescriptor[]
+      description: The set of files to include in the registry. Must not contain null values.
+    return:
+      type: Google.Protobuf.Reflection.TypeRegistry
+      description: A type registry for the given files.
+    content.vb: Public Shared Function FromFiles(ParamArray fileDescriptors As FileDescriptor()) As TypeRegistry
+  overload: Google.Protobuf.Reflection.TypeRegistry.FromFiles*
+  nameWithType.vb: TypeRegistry.FromFiles(FileDescriptor())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Protobuf.Reflection.TypeRegistry.FromFiles(Google.Protobuf.Reflection.FileDescriptor())
+  name.vb: FromFiles(FileDescriptor())
+- uid: Google.Protobuf.Reflection.TypeRegistry.FromFiles(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.FileDescriptor})
+  commentId: M:Google.Protobuf.Reflection.TypeRegistry.FromFiles(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.FileDescriptor})
+  id: FromFiles(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.FileDescriptor})
+  parent: Google.Protobuf.Reflection.TypeRegistry
+  langs:
+  - csharp
+  - vb
+  name: FromFiles(IEnumerable<FileDescriptor>)
+  nameWithType: TypeRegistry.FromFiles(IEnumerable<FileDescriptor>)
+  fullName: Google.Protobuf.Reflection.TypeRegistry.FromFiles(System.Collections.Generic.IEnumerable<Google.Protobuf.Reflection.FileDescriptor>)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FromFiles
+    path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+    startLine: 91
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nCreates a type registry from the specified set of file descriptors.\n"
+  remarks: "\nAll message types within all the specified files are added to the registry, and\nthe dependencies of the specified files are also added, recursively.\n"
+  example: []
+  syntax:
+    content: public static TypeRegistry FromFiles(IEnumerable<FileDescriptor> fileDescriptors)
+    parameters:
+    - id: fileDescriptors
+      type: System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.FileDescriptor}
+      description: The set of files to include in the registry. Must not contain null values.
+    return:
+      type: Google.Protobuf.Reflection.TypeRegistry
+      description: A type registry for the given files.
+    content.vb: Public Shared Function FromFiles(fileDescriptors As IEnumerable(Of FileDescriptor)) As TypeRegistry
+  overload: Google.Protobuf.Reflection.TypeRegistry.FromFiles*
+  nameWithType.vb: TypeRegistry.FromFiles(IEnumerable(Of FileDescriptor))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Protobuf.Reflection.TypeRegistry.FromFiles(System.Collections.Generic.IEnumerable(Of Google.Protobuf.Reflection.FileDescriptor))
+  name.vb: FromFiles(IEnumerable(Of FileDescriptor))
+- uid: Google.Protobuf.Reflection.TypeRegistry.FromMessages(Google.Protobuf.Reflection.MessageDescriptor[])
+  commentId: M:Google.Protobuf.Reflection.TypeRegistry.FromMessages(Google.Protobuf.Reflection.MessageDescriptor[])
+  id: FromMessages(Google.Protobuf.Reflection.MessageDescriptor[])
+  parent: Google.Protobuf.Reflection.TypeRegistry
+  langs:
+  - csharp
+  - vb
+  name: FromMessages(MessageDescriptor[])
+  nameWithType: TypeRegistry.FromMessages(MessageDescriptor[])
+  fullName: Google.Protobuf.Reflection.TypeRegistry.FromMessages(Google.Protobuf.Reflection.MessageDescriptor[])
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FromMessages
+    path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+    startLine: 112
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nCreates a type registry from the file descriptor parents of the specified set of message descriptors.\n"
+  remarks: "\nThis is a convenience overload for <xref href=\"Google.Protobuf.Reflection.TypeRegistry.FromMessages(System.Collections.Generic.IEnumerable%7bGoogle.Protobuf.Reflection.MessageDescriptor%7d)\" data-throw-if-not-resolved=\"false\"></xref>\nto allow calls such as <code>TypeRegistry.FromFiles(descriptor1, descriptor2)</code>.\n"
+  example: []
+  syntax:
+    content: public static TypeRegistry FromMessages(params MessageDescriptor[] messageDescriptors)
+    parameters:
+    - id: messageDescriptors
+      type: Google.Protobuf.Reflection.MessageDescriptor[]
+      description: >-
+        The set of message descriptors to use to identify file descriptors to include in the registry.
+
+        Must not contain null values.
+    return:
+      type: Google.Protobuf.Reflection.TypeRegistry
+      description: A type registry for the given files.
+    content.vb: Public Shared Function FromMessages(ParamArray messageDescriptors As MessageDescriptor()) As TypeRegistry
+  overload: Google.Protobuf.Reflection.TypeRegistry.FromMessages*
+  nameWithType.vb: TypeRegistry.FromMessages(MessageDescriptor())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Protobuf.Reflection.TypeRegistry.FromMessages(Google.Protobuf.Reflection.MessageDescriptor())
+  name.vb: FromMessages(MessageDescriptor())
+- uid: Google.Protobuf.Reflection.TypeRegistry.FromMessages(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.MessageDescriptor})
+  commentId: M:Google.Protobuf.Reflection.TypeRegistry.FromMessages(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.MessageDescriptor})
+  id: FromMessages(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.MessageDescriptor})
+  parent: Google.Protobuf.Reflection.TypeRegistry
+  langs:
+  - csharp
+  - vb
+  name: FromMessages(IEnumerable<MessageDescriptor>)
+  nameWithType: TypeRegistry.FromMessages(IEnumerable<MessageDescriptor>)
+  fullName: Google.Protobuf.Reflection.TypeRegistry.FromMessages(System.Collections.Generic.IEnumerable<Google.Protobuf.Reflection.MessageDescriptor>)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: FromMessages
+    path: csharp/src/Google.Protobuf/Reflection/TypeRegistry.cs
+    startLine: 128
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nCreates a type registry from the file descriptor parents of the specified set of message descriptors.\n"
+  remarks: "\nThe specified message descriptors are only used to identify their file descriptors; the returned registry\ncontains all the types within the file descriptors which contain the specified message descriptors (and\nthe dependencies of those files), not just the specified messages.\n"
+  example: []
+  syntax:
+    content: public static TypeRegistry FromMessages(IEnumerable<MessageDescriptor> messageDescriptors)
+    parameters:
+    - id: messageDescriptors
+      type: System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.MessageDescriptor}
+      description: >-
+        The set of message descriptors to use to identify file descriptors to include in the registry.
+
+        Must not contain null values.
+    return:
+      type: Google.Protobuf.Reflection.TypeRegistry
+      description: A type registry for the given files.
+    content.vb: Public Shared Function FromMessages(messageDescriptors As IEnumerable(Of MessageDescriptor)) As TypeRegistry
+  overload: Google.Protobuf.Reflection.TypeRegistry.FromMessages*
+  nameWithType.vb: TypeRegistry.FromMessages(IEnumerable(Of MessageDescriptor))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Protobuf.Reflection.TypeRegistry.FromMessages(System.Collections.Generic.IEnumerable(Of Google.Protobuf.Reflection.MessageDescriptor))
+  name.vb: FromMessages(IEnumerable(Of MessageDescriptor))
+references:
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.Reflection.TypeRegistry.Empty*
+  commentId: Overload:Google.Protobuf.Reflection.TypeRegistry.Empty
+  isExternal: false
+  name: Empty
+  nameWithType: TypeRegistry.Empty
+  fullName: Google.Protobuf.Reflection.TypeRegistry.Empty
+- uid: Google.Protobuf.Reflection.TypeRegistry
+  commentId: T:Google.Protobuf.Reflection.TypeRegistry
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: TypeRegistry
+  nameWithType: TypeRegistry
+  fullName: Google.Protobuf.Reflection.TypeRegistry
+- uid: Google.Protobuf.Reflection.TypeRegistry.Find*
+  commentId: Overload:Google.Protobuf.Reflection.TypeRegistry.Find
+  isExternal: false
+  name: Find
+  nameWithType: TypeRegistry.Find
+  fullName: Google.Protobuf.Reflection.TypeRegistry.Find
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection.TypeRegistry.FromFiles(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.FileDescriptor})
+  commentId: M:Google.Protobuf.Reflection.TypeRegistry.FromFiles(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.FileDescriptor})
+- uid: Google.Protobuf.Reflection.TypeRegistry.FromFiles*
+  commentId: Overload:Google.Protobuf.Reflection.TypeRegistry.FromFiles
+  isExternal: false
+  name: FromFiles
+  nameWithType: TypeRegistry.FromFiles
+  fullName: Google.Protobuf.Reflection.TypeRegistry.FromFiles
+- uid: Google.Protobuf.Reflection.FileDescriptor[]
+  name: FileDescriptor[]
+  nameWithType: FileDescriptor[]
+  fullName: Google.Protobuf.Reflection.FileDescriptor[]
+  nameWithType.vb: FileDescriptor()
+  fullName.vb: Google.Protobuf.Reflection.FileDescriptor()
+  name.vb: FileDescriptor()
+  spec.csharp:
+  - uid: Google.Protobuf.Reflection.FileDescriptor
+    name: FileDescriptor
+    nameWithType: FileDescriptor
+    fullName: Google.Protobuf.Reflection.FileDescriptor
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: Google.Protobuf.Reflection.FileDescriptor
+    name: FileDescriptor
+    nameWithType: FileDescriptor
+    fullName: Google.Protobuf.Reflection.FileDescriptor
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.FileDescriptor}
+  commentId: T:System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.FileDescriptor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<FileDescriptor>
+  nameWithType: IEnumerable<FileDescriptor>
+  fullName: System.Collections.Generic.IEnumerable<Google.Protobuf.Reflection.FileDescriptor>
+  nameWithType.vb: IEnumerable(Of FileDescriptor)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Google.Protobuf.Reflection.FileDescriptor)
+  name.vb: IEnumerable(Of FileDescriptor)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.Reflection.FileDescriptor
+    name: FileDescriptor
+    nameWithType: FileDescriptor
+    fullName: Google.Protobuf.Reflection.FileDescriptor
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.Reflection.FileDescriptor
+    name: FileDescriptor
+    nameWithType: FileDescriptor
+    fullName: Google.Protobuf.Reflection.FileDescriptor
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: Google.Protobuf.Reflection.TypeRegistry.FromMessages(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.MessageDescriptor})
+  commentId: M:Google.Protobuf.Reflection.TypeRegistry.FromMessages(System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.MessageDescriptor})
+- uid: Google.Protobuf.Reflection.TypeRegistry.FromMessages*
+  commentId: Overload:Google.Protobuf.Reflection.TypeRegistry.FromMessages
+  isExternal: false
+  name: FromMessages
+  nameWithType: TypeRegistry.FromMessages
+  fullName: Google.Protobuf.Reflection.TypeRegistry.FromMessages
+- uid: Google.Protobuf.Reflection.MessageDescriptor[]
+  name: MessageDescriptor[]
+  nameWithType: MessageDescriptor[]
+  fullName: Google.Protobuf.Reflection.MessageDescriptor[]
+  nameWithType.vb: MessageDescriptor()
+  fullName.vb: Google.Protobuf.Reflection.MessageDescriptor()
+  name.vb: MessageDescriptor()
+  spec.csharp:
+  - uid: Google.Protobuf.Reflection.MessageDescriptor
+    name: MessageDescriptor
+    nameWithType: MessageDescriptor
+    fullName: Google.Protobuf.Reflection.MessageDescriptor
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: Google.Protobuf.Reflection.MessageDescriptor
+    name: MessageDescriptor
+    nameWithType: MessageDescriptor
+    fullName: Google.Protobuf.Reflection.MessageDescriptor
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.MessageDescriptor}
+  commentId: T:System.Collections.Generic.IEnumerable{Google.Protobuf.Reflection.MessageDescriptor}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<MessageDescriptor>
+  nameWithType: IEnumerable<MessageDescriptor>
+  fullName: System.Collections.Generic.IEnumerable<Google.Protobuf.Reflection.MessageDescriptor>
+  nameWithType.vb: IEnumerable(Of MessageDescriptor)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Google.Protobuf.Reflection.MessageDescriptor)
+  name.vb: IEnumerable(Of MessageDescriptor)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.Reflection.MessageDescriptor
+    name: MessageDescriptor
+    nameWithType: MessageDescriptor
+    fullName: Google.Protobuf.Reflection.MessageDescriptor
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.Reflection.MessageDescriptor
+    name: MessageDescriptor
+    nameWithType: MessageDescriptor
+    fullName: Google.Protobuf.Reflection.MessageDescriptor
+  - name: )
+    nameWithType: )
+    fullName: )

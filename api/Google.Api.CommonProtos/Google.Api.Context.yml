@@ -1,0 +1,1830 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Context
+  commentId: T:Google.Api.Context
+  id: Context
+  parent: Google.Api
+  children:
+  - Google.Api.Context.#ctor
+  - Google.Api.Context.#ctor(Google.Api.Context)
+  - Google.Api.Context.CalculateSize
+  - Google.Api.Context.Clone
+  - Google.Api.Context.Descriptor
+  - Google.Api.Context.Equals(Google.Api.Context)
+  - Google.Api.Context.Equals(System.Object)
+  - Google.Api.Context.GetHashCode
+  - Google.Api.Context.Google#Protobuf#IMessage#Descriptor
+  - Google.Api.Context.MergeFrom(Google.Api.Context)
+  - Google.Api.Context.MergeFrom(Google.Protobuf.CodedInputStream)
+  - Google.Api.Context.Parser
+  - Google.Api.Context.Rules
+  - Google.Api.Context.RulesFieldNumber
+  - Google.Api.Context.ToString
+  - Google.Api.Context.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: Context
+  nameWithType: Context
+  fullName: Google.Api.Context
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Context
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 68
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\n`Context` defines which contexts an API requests.\n\nExample:\n\ncontext:\n rules:\n - selector: \"*\"\n   requested:\n   - google.rpc.context.ProjectContext\n   - google.rpc.context.OriginContext\n\nThe above specifies that all methods in the API request\n`google.rpc.context.ProjectContext` and\n`google.rpc.context.OriginContext`.\n\nAvailable context types are defined in package\n`google.rpc.context`.\n"
+  example: []
+  syntax:
+    content: 'public sealed class Context : IMessage<Context>, IMessage, IEquatable<Context>, IDeepCloneable<Context>'
+    content.vb: >-
+      Public NotInheritable Class Context
+          Implements IMessage(Of Context), IMessage, IEquatable(Of Context), IDeepCloneable(Of Context)
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.Context}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Api.Context}
+  - Google.Protobuf.IDeepCloneable{Google.Api.Context}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.Context.Parser
+  commentId: P:Google.Api.Context.Parser
+  id: Parser
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: Context.Parser
+  fullName: Google.Api.Context.Parser
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Parser
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 70
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageParser<Context> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{Google.Api.Context}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of Context)
+  overload: Google.Api.Context.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.Context.Descriptor
+  commentId: P:Google.Api.Context.Descriptor
+  id: Descriptor
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: Context.Descriptor
+  fullName: Google.Api.Context.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Descriptor
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 73
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: Google.Api.Context.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.Context.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Api.Context.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: Context.IMessage.Descriptor
+  fullName: Google.Api.Context.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 78
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Api.Context.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Context.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Api.Context.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.Context.#ctor
+  commentId: M:Google.Api.Context.#ctor
+  id: '#ctor'
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: Context()
+  nameWithType: Context.Context()
+  fullName: Google.Api.Context.Context()
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 83
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Context()
+    content.vb: Public Sub New
+  overload: Google.Api.Context.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Context.#ctor(Google.Api.Context)
+  commentId: M:Google.Api.Context.#ctor(Google.Api.Context)
+  id: '#ctor(Google.Api.Context)'
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: Context(Context)
+  nameWithType: Context.Context(Context)
+  fullName: Google.Api.Context.Context(Google.Api.Context)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 90
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Context(Context other)
+    parameters:
+    - id: other
+      type: Google.Api.Context
+    content.vb: Public Sub New(other As Context)
+  overload: Google.Api.Context.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Context.Clone
+  commentId: M:Google.Api.Context.Clone
+  id: Clone
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Context.Clone()
+  fullName: Google.Api.Context.Clone()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Clone
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 95
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Context Clone()
+    return:
+      type: Google.Api.Context
+    content.vb: Public Function Clone As Context
+  overload: Google.Api.Context.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Api.Context}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Context.RulesFieldNumber
+  commentId: F:Google.Api.Context.RulesFieldNumber
+  id: RulesFieldNumber
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: RulesFieldNumber
+  nameWithType: Context.RulesFieldNumber
+  fullName: Google.Api.Context.RulesFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: RulesFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 101
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "rules" field.
+  example: []
+  syntax:
+    content: public const int RulesFieldNumber = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const RulesFieldNumber As Integer = 1
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.Context.Rules
+  commentId: P:Google.Api.Context.Rules
+  id: Rules
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: Rules
+  nameWithType: Context.Rules
+  fullName: Google.Api.Context.Rules
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Rules
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 110
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nA list of RPC context rules that apply to individual API methods.\n\n**NOTE:** All service configuration rules follow \"last one wins\" order.\n"
+  example: []
+  syntax:
+    content: public RepeatedField<ContextRule> Rules { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{Google.Api.ContextRule}
+    content.vb: Public ReadOnly Property Rules As RepeatedField(Of ContextRule)
+  overload: Google.Api.Context.Rules*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Context.Equals(System.Object)
+  commentId: M:Google.Api.Context.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Context.Equals(Object)
+  fullName: Google.Api.Context.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 115
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Api.Context.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Context.Equals(Google.Api.Context)
+  commentId: M:Google.Api.Context.Equals(Google.Api.Context)
+  id: Equals(Google.Api.Context)
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: Equals(Context)
+  nameWithType: Context.Equals(Context)
+  fullName: Google.Api.Context.Equals(Google.Api.Context)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 120
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public bool Equals(Context other)
+    parameters:
+    - id: other
+      type: Google.Api.Context
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As Context) As Boolean
+  overload: Google.Api.Context.Equals*
+  implements:
+  - System.IEquatable{Google.Api.Context}.Equals(Google.Api.Context)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Context.GetHashCode
+  commentId: M:Google.Api.Context.GetHashCode
+  id: GetHashCode
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Context.GetHashCode()
+  fullName: Google.Api.Context.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetHashCode
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 132
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Api.Context.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Context.ToString
+  commentId: M:Google.Api.Context.ToString
+  id: ToString
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Context.ToString()
+  fullName: Google.Api.Context.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ToString
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 139
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Api.Context.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Context.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Api.Context.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: Context.WriteTo(CodedOutputStream)
+  fullName: Google.Api.Context.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: WriteTo
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 144
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: Google.Api.Context.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Context.CalculateSize
+  commentId: M:Google.Api.Context.CalculateSize
+  id: CalculateSize
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: Context.CalculateSize()
+  fullName: Google.Api.Context.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CalculateSize
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 149
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: Google.Api.Context.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Context.MergeFrom(Google.Api.Context)
+  commentId: M:Google.Api.Context.MergeFrom(Google.Api.Context)
+  id: MergeFrom(Google.Api.Context)
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(Context)
+  nameWithType: Context.MergeFrom(Context)
+  fullName: Google.Api.Context.MergeFrom(Google.Api.Context)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 156
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(Context other)
+    parameters:
+    - id: other
+      type: Google.Api.Context
+    content.vb: Public Sub MergeFrom(other As Context)
+  overload: Google.Api.Context.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.Context}.MergeFrom(Google.Api.Context)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Context.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Api.Context.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Api.Context
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: Context.MergeFrom(CodedInputStream)
+  fullName: Google.Api.Context.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Context.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Context.cs
+    startLine: 164
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: Google.Api.Context.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Api
+  commentId: N:Google.Api
+  isExternal: false
+  name: Google.Api
+  nameWithType: Google.Api
+  fullName: Google.Api
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Api.Context}
+  commentId: T:Google.Protobuf.IMessage{Google.Api.Context}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<Context>
+  nameWithType: IMessage<Context>
+  fullName: Google.Protobuf.IMessage<Google.Api.Context>
+  nameWithType.vb: IMessage(Of Context)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.Context)
+  name.vb: IMessage(Of Context)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Api.Context}
+  commentId: T:System.IEquatable{Google.Api.Context}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Context>
+  nameWithType: IEquatable<Context>
+  fullName: System.IEquatable<Google.Api.Context>
+  nameWithType.vb: IEquatable(Of Context)
+  fullName.vb: System.IEquatable(Of Google.Api.Context)
+  name.vb: IEquatable(Of Context)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.Context}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Api.Context}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<Context>
+  nameWithType: IDeepCloneable<Context>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.Context>
+  nameWithType.vb: IDeepCloneable(Of Context)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.Context)
+  name.vb: IDeepCloneable(Of Context)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Context.Parser*
+  commentId: Overload:Google.Api.Context.Parser
+  isExternal: false
+  name: Parser
+  nameWithType: Context.Parser
+  fullName: Google.Api.Context.Parser
+- uid: Google.Protobuf.MessageParser{Google.Api.Context}
+  commentId: T:Google.Protobuf.MessageParser{Google.Api.Context}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<Context>
+  nameWithType: MessageParser<Context>
+  fullName: Google.Protobuf.MessageParser<Google.Api.Context>
+  nameWithType.vb: MessageParser(Of Context)
+  fullName.vb: Google.Protobuf.MessageParser(Of Google.Api.Context)
+  name.vb: MessageParser(Of Context)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: true
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Context.Descriptor*
+  commentId: Overload:Google.Api.Context.Descriptor
+  isExternal: false
+  name: Descriptor
+  nameWithType: Context.Descriptor
+  fullName: Google.Api.Context.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: true
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Api.Context.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Api.Context.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: Context.IMessage.Descriptor
+  fullName: Google.Api.Context.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Context.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Api.Context.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.Context.#ctor*
+  commentId: Overload:Google.Api.Context.#ctor
+  isExternal: false
+  name: Context
+  nameWithType: Context.Context
+  fullName: Google.Api.Context.Context
+- uid: Google.Api.Context
+  commentId: T:Google.Api.Context
+  parent: Google.Api
+  isExternal: false
+  name: Context
+  nameWithType: Context
+  fullName: Google.Api.Context
+- uid: Google.Api.Context.Clone*
+  commentId: Overload:Google.Api.Context.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: Context.Clone
+  fullName: Google.Api.Context.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.Context}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Api.Context}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Api.Context}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<Context>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.Context>.Clone()
+  nameWithType.vb: IDeepCloneable(Of Context).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.Context).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<Context>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Api.Context>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of Context).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Api.Context).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Api.Context.Rules*
+  commentId: Overload:Google.Api.Context.Rules
+  isExternal: false
+  name: Rules
+  nameWithType: Context.Rules
+  fullName: Google.Api.Context.Rules
+- uid: Google.Protobuf.Collections.RepeatedField{Google.Api.ContextRule}
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Api.ContextRule}
+  parent: Google.Protobuf.Collections
+  definition: Google.Protobuf.Collections.RepeatedField`1
+  name: RepeatedField<ContextRule>
+  nameWithType: RepeatedField<ContextRule>
+  fullName: Google.Protobuf.Collections.RepeatedField<Google.Api.ContextRule>
+  nameWithType.vb: RepeatedField(Of ContextRule)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Api.ContextRule)
+  name.vb: RepeatedField(Of ContextRule)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.ContextRule
+    name: ContextRule
+    nameWithType: ContextRule
+    fullName: Google.Api.ContextRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.ContextRule
+    name: ContextRule
+    nameWithType: ContextRule
+    fullName: Google.Api.ContextRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
+  isExternal: true
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Context.Equals*
+  commentId: Overload:Google.Api.Context.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: Context.Equals
+  fullName: Google.Api.Context.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{Google.Api.Context}.Equals(Google.Api.Context)
+  commentId: M:System.IEquatable{Google.Api.Context}.Equals(Google.Api.Context)
+  parent: System.IEquatable{Google.Api.Context}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Context)
+  nameWithType: IEquatable<Context>.Equals(Context)
+  fullName: System.IEquatable<Google.Api.Context>.Equals(Google.Api.Context)
+  nameWithType.vb: IEquatable(Of Context).Equals(Context)
+  fullName.vb: System.IEquatable(Of Google.Api.Context).Equals(Google.Api.Context)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Context>.Equals
+    fullName: System.IEquatable<Google.Api.Context>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Context).Equals
+    fullName: System.IEquatable(Of Google.Api.Context).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Context.GetHashCode*
+  commentId: Overload:Google.Api.Context.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: Context.GetHashCode
+  fullName: Google.Api.Context.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Context.ToString*
+  commentId: Overload:Google.Api.Context.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: Context.ToString
+  fullName: Google.Api.Context.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Api.Context.WriteTo*
+  commentId: Overload:Google.Api.Context.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: Context.WriteTo
+  fullName: Google.Api.Context.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: Google.Api.Context.CalculateSize*
+  commentId: Overload:Google.Api.Context.CalculateSize
+  isExternal: false
+  name: CalculateSize
+  nameWithType: Context.CalculateSize
+  fullName: Google.Api.Context.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Context.MergeFrom*
+  commentId: Overload:Google.Api.Context.MergeFrom
+  isExternal: false
+  name: MergeFrom
+  nameWithType: Context.MergeFrom
+  fullName: Google.Api.Context.MergeFrom
+- uid: Google.Protobuf.IMessage{Google.Api.Context}.MergeFrom(Google.Api.Context)
+  commentId: M:Google.Protobuf.IMessage{Google.Api.Context}.MergeFrom(Google.Api.Context)
+  parent: Google.Protobuf.IMessage{Google.Api.Context}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(Context)
+  nameWithType: IMessage<Context>.MergeFrom(Context)
+  fullName: Google.Protobuf.IMessage<Google.Api.Context>.MergeFrom(Google.Api.Context)
+  nameWithType.vb: IMessage(Of Context).MergeFrom(Context)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.Context).MergeFrom(Google.Api.Context)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<Context>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Api.Context>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of Context).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Api.Context).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Context
+    name: Context
+    nameWithType: Context
+    fullName: Google.Api.Context
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: true
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream

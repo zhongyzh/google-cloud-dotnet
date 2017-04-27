@@ -1,0 +1,1832 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  commentId: T:Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  id: Distribution.Types.BucketOptions.Types.Explicit
+  parent: Google.Api
+  children:
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.#ctor
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.#ctor(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Bounds
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.BoundsFieldNumber
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.CalculateSize
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Clone
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Descriptor
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals(System.Object)
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.GetHashCode
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Google#Protobuf#IMessage#Descriptor
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom(Google.Protobuf.CodedInputStream)
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Parser
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.ToString
+  - Google.Api.Distribution.Types.BucketOptions.Types.Explicit.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: Distribution.Types.BucketOptions.Types.Explicit
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Explicit
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1196
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nA set of buckets with arbitrary widths.\n\nDefines `size(bounds) + 1` (= N) buckets with these boundaries for\nbucket i:\n\nUpper bound (0 &lt;= i &lt; N-1):     bounds[i]\nLower bound (1 &lt;= i &lt; N);       bounds[i - 1]\n\nThere must be at least one element in `bounds`.  If `bounds` has only one\nelement, there are no finite buckets, and that single element is the\ncommon boundary of the overflow and underflow buckets.\n"
+  example: []
+  syntax:
+    content: 'public sealed class Explicit : IMessage<Distribution.Types.BucketOptions.Types.Explicit>, IMessage, IEquatable<Distribution.Types.BucketOptions.Types.Explicit>, IDeepCloneable<Distribution.Types.BucketOptions.Types.Explicit>'
+    content.vb: >-
+      Public NotInheritable Class Explicit
+          Implements IMessage(Of Distribution.Types.BucketOptions.Types.Explicit), IMessage, IEquatable(Of Distribution.Types.BucketOptions.Types.Explicit), IDeepCloneable(Of Distribution.Types.BucketOptions.Types.Explicit)
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  - Google.Protobuf.IDeepCloneable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Parser
+  commentId: P:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Parser
+  id: Parser
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Parser
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Parser
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Parser
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1198
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageParser<Distribution.Types.BucketOptions.Types.Explicit> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of Distribution.Types.BucketOptions.Types.Explicit)
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Descriptor
+  commentId: P:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Descriptor
+  id: Descriptor
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Descriptor
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Descriptor
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1201
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.IMessage.Descriptor
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1206
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Distribution.Types.BucketOptions.Types.Explicit.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.#ctor
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.#ctor
+  id: '#ctor'
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: Explicit()
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Explicit()
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Explicit()
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1211
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Explicit()
+    content.vb: Public Sub New
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.#ctor(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.#ctor(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  id: '#ctor(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)'
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: Explicit(Distribution.Types.BucketOptions.Types.Explicit)
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Explicit(Distribution.Types.BucketOptions.Types.Explicit)
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Explicit(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1218
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Explicit(Distribution.Types.BucketOptions.Types.Explicit other)
+    parameters:
+    - id: other
+      type: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    content.vb: Public Sub New(other As Distribution.Types.BucketOptions.Types.Explicit)
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Clone
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Clone
+  id: Clone
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Clone()
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Clone()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Clone
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1223
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Distribution.Types.BucketOptions.Types.Explicit Clone()
+    return:
+      type: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    content.vb: Public Function Clone As Distribution.Types.BucketOptions.Types.Explicit
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.BoundsFieldNumber
+  commentId: F:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.BoundsFieldNumber
+  id: BoundsFieldNumber
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: BoundsFieldNumber
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.BoundsFieldNumber
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.BoundsFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: BoundsFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1229
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "bounds" field.
+  example: []
+  syntax:
+    content: public const int BoundsFieldNumber = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const BoundsFieldNumber As Integer = 1
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Bounds
+  commentId: P:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Bounds
+  id: Bounds
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: Bounds
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Bounds
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Bounds
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Bounds
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1236
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nThe values must be monotonically increasing.\n"
+  example: []
+  syntax:
+    content: public RepeatedField<double> Bounds { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{System.Double}
+    content.vb: Public ReadOnly Property Bounds As RepeatedField(Of Double)
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Bounds*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals(System.Object)
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Equals(Object)
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1241
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  id: Equals(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: Equals(Distribution.Types.BucketOptions.Types.Explicit)
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Equals(Distribution.Types.BucketOptions.Types.Explicit)
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1246
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public bool Equals(Distribution.Types.BucketOptions.Types.Explicit other)
+    parameters:
+    - id: other
+      type: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As Distribution.Types.BucketOptions.Types.Explicit) As Boolean
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals*
+  implements:
+  - System.IEquatable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}.Equals(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.GetHashCode
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.GetHashCode
+  id: GetHashCode
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.GetHashCode()
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetHashCode
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1258
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.ToString
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.ToString
+  id: ToString
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.ToString()
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ToString
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1265
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.WriteTo(CodedOutputStream)
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: WriteTo
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1270
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.CalculateSize
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.CalculateSize
+  id: CalculateSize
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.CalculateSize()
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CalculateSize
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1275
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  id: MergeFrom(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(Distribution.Types.BucketOptions.Types.Explicit)
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.MergeFrom(Distribution.Types.BucketOptions.Types.Explicit)
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1282
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(Distribution.Types.BucketOptions.Types.Explicit other)
+    parameters:
+    - id: other
+      type: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    content.vb: Public Sub MergeFrom(other As Distribution.Types.BucketOptions.Types.Explicit)
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}.MergeFrom(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.MergeFrom(CodedInputStream)
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Distribution.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Distribution.cs
+    startLine: 1290
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Api
+  commentId: N:Google.Api
+  isExternal: false
+  name: Google.Api
+  nameWithType: Google.Api
+  fullName: Google.Api
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  commentId: T:Google.Protobuf.IMessage{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<Distribution.Types.BucketOptions.Types.Explicit>
+  nameWithType: IMessage<Distribution.Types.BucketOptions.Types.Explicit>
+  fullName: Google.Protobuf.IMessage<Google.Api.Distribution.Types.BucketOptions.Types.Explicit>
+  nameWithType.vb: IMessage(Of Distribution.Types.BucketOptions.Types.Explicit)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  name.vb: IMessage(Of Distribution.Types.BucketOptions.Types.Explicit)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  commentId: T:System.IEquatable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Distribution.Types.BucketOptions.Types.Explicit>
+  nameWithType: IEquatable<Distribution.Types.BucketOptions.Types.Explicit>
+  fullName: System.IEquatable<Google.Api.Distribution.Types.BucketOptions.Types.Explicit>
+  nameWithType.vb: IEquatable(Of Distribution.Types.BucketOptions.Types.Explicit)
+  fullName.vb: System.IEquatable(Of Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  name.vb: IEquatable(Of Distribution.Types.BucketOptions.Types.Explicit)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<Distribution.Types.BucketOptions.Types.Explicit>
+  nameWithType: IDeepCloneable<Distribution.Types.BucketOptions.Types.Explicit>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.Distribution.Types.BucketOptions.Types.Explicit>
+  nameWithType.vb: IDeepCloneable(Of Distribution.Types.BucketOptions.Types.Explicit)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  name.vb: IDeepCloneable(Of Distribution.Types.BucketOptions.Types.Explicit)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Parser*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Parser
+  isExternal: false
+  name: Parser
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Parser
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Parser
+- uid: Google.Protobuf.MessageParser{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  commentId: T:Google.Protobuf.MessageParser{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<Distribution.Types.BucketOptions.Types.Explicit>
+  nameWithType: MessageParser<Distribution.Types.BucketOptions.Types.Explicit>
+  fullName: Google.Protobuf.MessageParser<Google.Api.Distribution.Types.BucketOptions.Types.Explicit>
+  nameWithType.vb: MessageParser(Of Distribution.Types.BucketOptions.Types.Explicit)
+  fullName.vb: Google.Protobuf.MessageParser(Of Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  name.vb: MessageParser(Of Distribution.Types.BucketOptions.Types.Explicit)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: true
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Descriptor*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Descriptor
+  isExternal: false
+  name: Descriptor
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Descriptor
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: true
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.IMessage.Descriptor
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Distribution.Types.BucketOptions.Types.Explicit.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.#ctor*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.#ctor
+  isExternal: false
+  name: Explicit
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Explicit
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Explicit
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  commentId: T:Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  parent: Google.Api
+  isExternal: false
+  name: Distribution.Types.BucketOptions.Types.Explicit
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Clone*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Clone
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<Distribution.Types.BucketOptions.Types.Explicit>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.Distribution.Types.BucketOptions.Types.Explicit>.Clone()
+  nameWithType.vb: IDeepCloneable(Of Distribution.Types.BucketOptions.Types.Explicit).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.Distribution.Types.BucketOptions.Types.Explicit).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<Distribution.Types.BucketOptions.Types.Explicit>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Api.Distribution.Types.BucketOptions.Types.Explicit>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of Distribution.Types.BucketOptions.Types.Explicit).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Api.Distribution.Types.BucketOptions.Types.Explicit).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Bounds*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Bounds
+  isExternal: false
+  name: Bounds
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Bounds
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Bounds
+- uid: Google.Protobuf.Collections.RepeatedField{System.Double}
+  commentId: T:Google.Protobuf.Collections.RepeatedField{System.Double}
+  parent: Google.Protobuf.Collections
+  definition: Google.Protobuf.Collections.RepeatedField`1
+  name: RepeatedField<Double>
+  nameWithType: RepeatedField<Double>
+  fullName: Google.Protobuf.Collections.RepeatedField<System.Double>
+  nameWithType.vb: RepeatedField(Of Double)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of System.Double)
+  name.vb: RepeatedField(Of Double)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
+  isExternal: true
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.Equals
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}.Equals(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  commentId: M:System.IEquatable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}.Equals(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  parent: System.IEquatable{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Distribution.Types.BucketOptions.Types.Explicit)
+  nameWithType: IEquatable<Distribution.Types.BucketOptions.Types.Explicit>.Equals(Distribution.Types.BucketOptions.Types.Explicit)
+  fullName: System.IEquatable<Google.Api.Distribution.Types.BucketOptions.Types.Explicit>.Equals(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  nameWithType.vb: IEquatable(Of Distribution.Types.BucketOptions.Types.Explicit).Equals(Distribution.Types.BucketOptions.Types.Explicit)
+  fullName.vb: System.IEquatable(Of Google.Api.Distribution.Types.BucketOptions.Types.Explicit).Equals(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Distribution.Types.BucketOptions.Types.Explicit>.Equals
+    fullName: System.IEquatable<Google.Api.Distribution.Types.BucketOptions.Types.Explicit>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Distribution.Types.BucketOptions.Types.Explicit).Equals
+    fullName: System.IEquatable(Of Google.Api.Distribution.Types.BucketOptions.Types.Explicit).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.GetHashCode*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.GetHashCode
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.ToString*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.ToString
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.WriteTo*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.WriteTo
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.CalculateSize*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.CalculateSize
+  isExternal: false
+  name: CalculateSize
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.CalculateSize
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom*
+  commentId: Overload:Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom
+  isExternal: false
+  name: MergeFrom
+  nameWithType: Distribution.Types.BucketOptions.Types.Explicit.MergeFrom
+  fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit.MergeFrom
+- uid: Google.Protobuf.IMessage{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}.MergeFrom(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  commentId: M:Google.Protobuf.IMessage{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}.MergeFrom(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  parent: Google.Protobuf.IMessage{Google.Api.Distribution.Types.BucketOptions.Types.Explicit}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(Distribution.Types.BucketOptions.Types.Explicit)
+  nameWithType: IMessage<Distribution.Types.BucketOptions.Types.Explicit>.MergeFrom(Distribution.Types.BucketOptions.Types.Explicit)
+  fullName: Google.Protobuf.IMessage<Google.Api.Distribution.Types.BucketOptions.Types.Explicit>.MergeFrom(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  nameWithType.vb: IMessage(Of Distribution.Types.BucketOptions.Types.Explicit).MergeFrom(Distribution.Types.BucketOptions.Types.Explicit)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.Distribution.Types.BucketOptions.Types.Explicit).MergeFrom(Google.Api.Distribution.Types.BucketOptions.Types.Explicit)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<Distribution.Types.BucketOptions.Types.Explicit>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Api.Distribution.Types.BucketOptions.Types.Explicit>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of Distribution.Types.BucketOptions.Types.Explicit).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Api.Distribution.Types.BucketOptions.Types.Explicit).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+    name: Distribution.Types.BucketOptions.Types.Explicit
+    nameWithType: Distribution.Types.BucketOptions.Types.Explicit
+    fullName: Google.Api.Distribution.Types.BucketOptions.Types.Explicit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: true
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream

@@ -1,0 +1,4938 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.Collections.MapField`2
+  commentId: T:Google.Protobuf.Collections.MapField`2
+  id: MapField`2
+  parent: Google.Protobuf.Collections
+  children:
+  - Google.Protobuf.Collections.MapField`2.Add(`0,`1)
+  - Google.Protobuf.Collections.MapField`2.Add(System.Collections.Generic.IDictionary{`0,`1})
+  - Google.Protobuf.Collections.MapField`2.AddEntriesFrom(Google.Protobuf.CodedInputStream,Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  - Google.Protobuf.Collections.MapField`2.CalculateSize(Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  - Google.Protobuf.Collections.MapField`2.Clear
+  - Google.Protobuf.Collections.MapField`2.Clone
+  - Google.Protobuf.Collections.MapField`2.ContainsKey(`0)
+  - Google.Protobuf.Collections.MapField`2.Count
+  - Google.Protobuf.Collections.MapField`2.Equals(Google.Protobuf.Collections.MapField{`0,`1})
+  - Google.Protobuf.Collections.MapField`2.Equals(System.Object)
+  - Google.Protobuf.Collections.MapField`2.GetEnumerator
+  - Google.Protobuf.Collections.MapField`2.GetHashCode
+  - Google.Protobuf.Collections.MapField`2.IsReadOnly
+  - Google.Protobuf.Collections.MapField`2.Item(`0)
+  - Google.Protobuf.Collections.MapField`2.Keys
+  - Google.Protobuf.Collections.MapField`2.Remove(`0)
+  - Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  - Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  - Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  - Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  - Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  - Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#IsSynchronized
+  - Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#SyncRoot
+  - Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Add(System.Object,System.Object)
+  - Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Contains(System.Object)
+  - Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#GetEnumerator
+  - Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#IsFixedSize
+  - Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Item(System.Object)
+  - Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Keys
+  - Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Remove(System.Object)
+  - Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Values
+  - Google.Protobuf.Collections.MapField`2.System#Collections#IEnumerable#GetEnumerator
+  - Google.Protobuf.Collections.MapField`2.ToString
+  - Google.Protobuf.Collections.MapField`2.TryGetValue(`0,`1@)
+  - Google.Protobuf.Collections.MapField`2.Values
+  - Google.Protobuf.Collections.MapField`2.WriteTo(Google.Protobuf.CodedOutputStream,Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  langs:
+  - csharp
+  - vb
+  name: MapField<TKey, TValue>
+  nameWithType: MapField<TKey, TValue>
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: MapField
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 68
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nRepresentation of a map field in a Protocol Buffer message.\n"
+  remarks: "\n<p>\nFor string keys, the equality comparison is provided by <xref href=\"System.StringComparer.Ordinal\" data-throw-if-not-resolved=\"false\"></xref>.\n</p>\n<p>\nNull values are not permitted in the map, either for wrapper types or regular messages.\nIf a map is deserialized from a data stream and the value is missing from an entry, a default value\nis created instead. For primitive types, that is the regular default value (0, the empty string and so\non); for message types, an empty instance of the message is created, as if the map entry contained a 0-length\nencoded value for the field.\n</p>\n<p>\nThis implementation does not generally prohibit the use of key/value types which are not\nsupported by Protocol Buffers (e.g. using a key type of <pre><code>byte</code></pre>) but nor does it guarantee\nthat all operations will work in such cases.\n</p>\n<p>\nThe order in which entries are returned when iterating over this object is undefined, and may change\nin future versions.\n</p>\n"
+  example: []
+  syntax:
+    content: 'public sealed class MapField<TKey, TValue> : IDeepCloneable<MapField<TKey, TValue>>, IDictionary<TKey, TValue>, ICollection<KeyValuePair<TKey, TValue>>, IEnumerable<KeyValuePair<TKey, TValue>>, IEquatable<MapField<TKey, TValue>>, IDictionary, ICollection, IEnumerable'
+    typeParameters:
+    - id: TKey
+      description: Key type in the map. Must be a type supported by Protocol Buffer map keys.
+    - id: TValue
+      description: Value type in the map. Must be a type supported by Protocol Buffers.
+    content.vb: >-
+      Public NotInheritable Class MapField(Of TKey, TValue)
+          Implements IDeepCloneable(Of MapField(Of TKey, TValue)), IDictionary(Of TKey, TValue), ICollection(Of KeyValuePair(Of TKey, TValue)), IEnumerable(Of KeyValuePair(Of TKey, TValue)), IEquatable(Of MapField(Of TKey, TValue)), IDictionary, ICollection, IEnumerable
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Protobuf.Collections.MapField`2}
+  - System.Collections.Generic.IDictionary{{TKey},{TValue}}
+  - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  - System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  - System.IEquatable{Google.Protobuf.Collections.MapField`2}
+  - System.Collections.IDictionary
+  - System.Collections.ICollection
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: MapField(Of TKey, TValue)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue)
+  name.vb: MapField(Of TKey, TValue)
+- uid: Google.Protobuf.Collections.MapField`2.Clone
+  commentId: M:Google.Protobuf.Collections.MapField`2.Clone
+  id: Clone
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: MapField<TKey, TValue>.Clone()
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Clone()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Clone
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 81
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nCreates a deep clone of this object.\n"
+  example: []
+  syntax:
+    content: public MapField<TKey, TValue> Clone()
+    return:
+      type: Google.Protobuf.Collections.MapField`2
+      description: "\nA deep clone of this object.\n"
+    content.vb: Public Function Clone As MapField(Of TKey, TValue)
+  overload: Google.Protobuf.Collections.MapField`2.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Protobuf.Collections.MapField`2}.Clone
+  nameWithType.vb: MapField(Of TKey, TValue).Clone()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Clone()
+- uid: Google.Protobuf.Collections.MapField`2.Add(`0,`1)
+  commentId: M:Google.Protobuf.Collections.MapField`2.Add(`0,`1)
+  id: Add(`0,`1)
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Add(TKey, TValue)
+  nameWithType: MapField<TKey, TValue>.Add(TKey, TValue)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Add(TKey, TValue)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Add
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 109
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nAdds the specified key/value pair to the map.\n"
+  remarks: "\nThis operation fails if the key already exists in the map. To replace an existing entry, use the indexer.\n"
+  example: []
+  syntax:
+    content: public void Add(TKey key, TValue value)
+    parameters:
+    - id: key
+      type: '{TKey}'
+      description: The key to add
+    - id: value
+      type: '{TValue}'
+      description: The value to add.
+    content.vb: Public Sub Add(key As TKey, value As TValue)
+  overload: Google.Protobuf.Collections.MapField`2.Add*
+  exceptions:
+  - type: System.ArgumentException
+    commentId: T:System.ArgumentException
+    description: The given key already exists in map.
+  implements:
+  - System.Collections.Generic.IDictionary{{TKey},{TValue}}.Add({TKey},{TValue})
+  nameWithType.vb: MapField(Of TKey, TValue).Add(TKey, TValue)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Add(TKey, TValue)
+- uid: Google.Protobuf.Collections.MapField`2.ContainsKey(`0)
+  commentId: M:Google.Protobuf.Collections.MapField`2.ContainsKey(`0)
+  id: ContainsKey(`0)
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: ContainsKey(TKey)
+  nameWithType: MapField<TKey, TValue>.ContainsKey(TKey)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.ContainsKey(TKey)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ContainsKey
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 124
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nDetermines whether the specified key is present in the map.\n"
+  example: []
+  syntax:
+    content: public bool ContainsKey(TKey key)
+    parameters:
+    - id: key
+      type: '{TKey}'
+      description: The key to check.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the map contains the given key; <code>false</code> otherwise.
+    content.vb: Public Function ContainsKey(key As TKey) As Boolean
+  overload: Google.Protobuf.Collections.MapField`2.ContainsKey*
+  implements:
+  - System.Collections.Generic.IDictionary{{TKey},{TValue}}.ContainsKey({TKey})
+  nameWithType.vb: MapField(Of TKey, TValue).ContainsKey(TKey)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).ContainsKey(TKey)
+- uid: Google.Protobuf.Collections.MapField`2.Remove(`0)
+  commentId: M:Google.Protobuf.Collections.MapField`2.Remove(`0)
+  id: Remove(`0)
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Remove(TKey)
+  nameWithType: MapField<TKey, TValue>.Remove(TKey)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Remove(TKey)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Remove
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 141
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nRemoves the entry identified by the given key from the map.\n"
+  example: []
+  syntax:
+    content: public bool Remove(TKey key)
+    parameters:
+    - id: key
+      type: '{TKey}'
+      description: The key indicating the entry to remove from the map.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the map contained the given key before the entry was removed; <code>false</code> otherwise.
+    content.vb: Public Function Remove(key As TKey) As Boolean
+  overload: Google.Protobuf.Collections.MapField`2.Remove*
+  implements:
+  - System.Collections.Generic.IDictionary{{TKey},{TValue}}.Remove({TKey})
+  nameWithType.vb: MapField(Of TKey, TValue).Remove(TKey)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Remove(TKey)
+- uid: Google.Protobuf.Collections.MapField`2.TryGetValue(`0,`1@)
+  commentId: M:Google.Protobuf.Collections.MapField`2.TryGetValue(`0,`1@)
+  id: TryGetValue(`0,`1@)
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: TryGetValue(TKey, out TValue)
+  nameWithType: MapField<TKey, TValue>.TryGetValue(TKey, out TValue)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.TryGetValue(TKey, out TValue)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: TryGetValue
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 165
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nGets the value associated with the specified key.\n"
+  example: []
+  syntax:
+    content: public bool TryGetValue(TKey key, out TValue value)
+    parameters:
+    - id: key
+      type: '{TKey}'
+      description: The key whose value to get.
+    - id: value
+      type: '{TValue}'
+      description: >-
+        When this method returns, the value associated with the specified key, if the key is found;
+
+        otherwise, the default value for the type of the <span class="paramref">value</span> parameter.
+
+        This parameter is passed uninitialized.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the map contains an element with the specified key; otherwise, <code>false</code>.
+    content.vb: Public Function TryGetValue(key As TKey, ByRef value As TValue) As Boolean
+  overload: Google.Protobuf.Collections.MapField`2.TryGetValue*
+  implements:
+  - System.Collections.Generic.IDictionary{{TKey},{TValue}}.TryGetValue({TKey},{TValue}@)
+  nameWithType.vb: MapField(Of TKey, TValue).TryGetValue(TKey, ByRef TValue)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).TryGetValue(TKey, ByRef TValue)
+  name.vb: TryGetValue(TKey, ByRef TValue)
+- uid: Google.Protobuf.Collections.MapField`2.Item(`0)
+  commentId: P:Google.Protobuf.Collections.MapField`2.Item(`0)
+  id: Item(`0)
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Item[TKey]
+  nameWithType: MapField<TKey, TValue>.Item[TKey]
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Item[TKey]
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: this[]
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 187
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nGets or sets the value associated with the specified key.\n"
+  example: []
+  syntax:
+    content: public TValue this[TKey key] { get; set; }
+    parameters:
+    - id: key
+      type: '{TKey}'
+      description: The key of the value to get or set.
+    return:
+      type: '{TValue}'
+      description: >-
+        The value associated with the specified key. If the specified key is not found,
+
+        a get operation throws a <xref href="System.Collections.Generic.KeyNotFoundException" data-throw-if-not-resolved="false"></xref>, and a set operation creates a new element with the specified key.
+    content.vb: Public Property Item(key As TKey) As TValue
+  overload: Google.Protobuf.Collections.MapField`2.Item*
+  exceptions:
+  - type: System.Collections.Generic.KeyNotFoundException
+    commentId: T:System.Collections.Generic.KeyNotFoundException
+    description: The property is retrieved and key does not exist in the collection.
+  implements:
+  - System.Collections.Generic.IDictionary{{TKey},{TValue}}.Item({TKey})
+  nameWithType.vb: MapField(Of TKey, TValue).Item(TKey)
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Item(TKey)
+  name.vb: Item(TKey)
+- uid: Google.Protobuf.Collections.MapField`2.Keys
+  commentId: P:Google.Protobuf.Collections.MapField`2.Keys
+  id: Keys
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Keys
+  nameWithType: MapField<TKey, TValue>.Keys
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Keys
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Keys
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 224
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nGets a collection containing the keys in the map.\n"
+  example: []
+  syntax:
+    content: public ICollection<TKey> Keys { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{{TKey}}
+    content.vb: Public ReadOnly Property Keys As ICollection(Of TKey)
+  overload: Google.Protobuf.Collections.MapField`2.Keys*
+  implements:
+  - System.Collections.Generic.IDictionary{{TKey},{TValue}}.Keys
+  nameWithType.vb: MapField(Of TKey, TValue).Keys
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Keys
+- uid: Google.Protobuf.Collections.MapField`2.Values
+  commentId: P:Google.Protobuf.Collections.MapField`2.Values
+  id: Values
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Values
+  nameWithType: MapField<TKey, TValue>.Values
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Values
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Values
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 229
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nGets a collection containing the values in the map.\n"
+  example: []
+  syntax:
+    content: public ICollection<TValue> Values { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.ICollection{{TValue}}
+    content.vb: Public ReadOnly Property Values As ICollection(Of TValue)
+  overload: Google.Protobuf.Collections.MapField`2.Values*
+  implements:
+  - System.Collections.Generic.IDictionary{{TKey},{TValue}}.Values
+  nameWithType.vb: MapField(Of TKey, TValue).Values
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Values
+- uid: Google.Protobuf.Collections.MapField`2.Add(System.Collections.Generic.IDictionary{`0,`1})
+  commentId: M:Google.Protobuf.Collections.MapField`2.Add(System.Collections.Generic.IDictionary{`0,`1})
+  id: Add(System.Collections.Generic.IDictionary{`0,`1})
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Add(IDictionary<TKey, TValue>)
+  nameWithType: MapField<TKey, TValue>.Add(IDictionary<TKey, TValue>)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Add(System.Collections.Generic.IDictionary<TKey, TValue>)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Add
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 235
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nAdds the specified entries to the map. The keys and values are not automatically cloned.\n"
+  example: []
+  syntax:
+    content: public void Add(IDictionary<TKey, TValue> entries)
+    parameters:
+    - id: entries
+      type: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+      description: The entries to add to the map.
+    content.vb: Public Sub Add(entries As IDictionary(Of TKey, TValue))
+  overload: Google.Protobuf.Collections.MapField`2.Add*
+  nameWithType.vb: MapField(Of TKey, TValue).Add(IDictionary(Of TKey, TValue))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Add(System.Collections.Generic.IDictionary(Of TKey, TValue))
+  name.vb: Add(IDictionary(Of TKey, TValue))
+- uid: Google.Protobuf.Collections.MapField`2.GetEnumerator
+  commentId: M:Google.Protobuf.Collections.MapField`2.GetEnumerator
+  id: GetEnumerator
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: MapField<TKey, TValue>.GetEnumerator()
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: GetEnumerator
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 250
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nReturns an enumerator that iterates through the collection.\n"
+  example: []
+  syntax:
+    content: public IEnumerator<KeyValuePair<TKey, TValue>> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+      description: "\nAn enumerator that can be used to iterate through the collection.\n"
+    content.vb: Public Function GetEnumerator As IEnumerator(Of KeyValuePair(Of TKey, TValue))
+  overload: Google.Protobuf.Collections.MapField`2.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.GetEnumerator
+  nameWithType.vb: MapField(Of TKey, TValue).GetEnumerator()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).GetEnumerator()
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:Google.Protobuf.Collections.MapField`2.System#Collections#IEnumerable#GetEnumerator
+  id: System#Collections#IEnumerable#GetEnumerator
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: IEnumerable.GetEnumerator()
+  nameWithType: MapField<TKey, TValue>.IEnumerable.GetEnumerator()
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.IEnumerable.GetEnumerator
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 261
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nReturns an enumerator that iterates through a collection.\n"
+  example: []
+  syntax:
+    content: IEnumerator IEnumerable.GetEnumerator()
+    return:
+      type: System.Collections.IEnumerator
+      description: "\nAn <xref href=\"System.Collections.IEnumerator\" data-throw-if-not-resolved=\"false\"></xref> object that can be used to iterate through the collection.\n"
+    content.vb: Function System.Collections.IEnumerable.GetEnumerator As IEnumerator Implements IEnumerable.GetEnumerator
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#IEnumerable#GetEnumerator*
+  implements:
+  - System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  commentId: M:Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  id: System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue>)
+  nameWithType: MapField<TKey, TValue>.ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue>)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Add(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 270
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nAdds the specified item to the map.\n"
+  example: []
+  syntax:
+    content: void ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue> item)
+    parameters:
+    - id: item
+      type: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}
+      description: The item to add to the map.
+    content.vb: Sub System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add(item As KeyValuePair(Of TKey, TValue)) Implements ICollection(Of KeyValuePair(Of TKey, TValue)).Add
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Add*
+  implements:
+  - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.Add(System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add(KeyValuePair(Of TKey, TValue))
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add(KeyValuePair(Of TKey, TValue))
+- uid: Google.Protobuf.Collections.MapField`2.Clear
+  commentId: M:Google.Protobuf.Collections.MapField`2.Clear
+  id: Clear
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Clear()
+  nameWithType: MapField<TKey, TValue>.Clear()
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Clear()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Clear
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 278
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nRemoves all items from the map.\n"
+  example: []
+  syntax:
+    content: public void Clear()
+    content.vb: Public Sub Clear
+  overload: Google.Protobuf.Collections.MapField`2.Clear*
+  implements:
+  - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.Clear
+  - System.Collections.IDictionary.Clear
+  nameWithType.vb: MapField(Of TKey, TValue).Clear()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Clear()
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  commentId: M:Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  id: System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: ICollection<KeyValuePair<TKey, TValue>>.Contains(KeyValuePair<TKey, TValue>)
+  nameWithType: MapField<TKey, TValue>.ICollection<KeyValuePair<TKey, TValue>>.Contains(KeyValuePair<TKey, TValue>)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Contains(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 289
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nDetermines whether map contains an entry equivalent to the given key/value pair.\n"
+  example: []
+  syntax:
+    content: bool ICollection<KeyValuePair<TKey, TValue>>.Contains(KeyValuePair<TKey, TValue> item)
+    parameters:
+    - id: item
+      type: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}
+      description: The key/value pair to find.
+    return:
+      type: System.Boolean
+      description: ''
+    content.vb: Function System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains(item As KeyValuePair(Of TKey, TValue)) As Boolean Implements ICollection(Of KeyValuePair(Of TKey, TValue)).Contains
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Contains*
+  implements:
+  - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.Contains(System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains(KeyValuePair(Of TKey, TValue))
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains(KeyValuePair(Of TKey, TValue))
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  commentId: M:Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  id: System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[], Int32)
+  nameWithType: MapField<TKey, TValue>.ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[], Int32)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.CopyTo(System.Collections.Generic.KeyValuePair<TKey, TValue>[], System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 301
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nCopies the key/value pairs in this map to an array.\n"
+  example: []
+  syntax:
+    content: void ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[] array, int arrayIndex)
+    parameters:
+    - id: array
+      type: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}[]
+      description: The array to copy the entries into.
+    - id: arrayIndex
+      type: System.Int32
+      description: The index of the array at which to start copying values.
+    content.vb: Sub System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo(array As KeyValuePair(Of TKey, TValue)(), arrayIndex As Integer) Implements ICollection(Of KeyValuePair(Of TKey, TValue)).CopyTo
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#CopyTo*
+  implements:
+  - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.CopyTo(System.Collections.Generic.KeyValuePair{{TKey},{TValue}}[],System.Int32)
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo(KeyValuePair(Of TKey, TValue)(), Int32)
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo(System.Collections.Generic.KeyValuePair(Of TKey, TValue)(), System.Int32)
+  name.vb: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo(KeyValuePair(Of TKey, TValue)(), Int32)
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  commentId: M:Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  id: System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: ICollection<KeyValuePair<TKey, TValue>>.Remove(KeyValuePair<TKey, TValue>)
+  nameWithType: MapField<TKey, TValue>.ICollection<KeyValuePair<TKey, TValue>>.Remove(KeyValuePair<TKey, TValue>)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Remove(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 312
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nRemoves the specified key/value pair from the map.\n"
+  remarks: Both the key and the value must be found for the entry to be removed.
+  example: []
+  syntax:
+    content: bool ICollection<KeyValuePair<TKey, TValue>>.Remove(KeyValuePair<TKey, TValue> item)
+    parameters:
+    - id: item
+      type: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}
+      description: The key/value pair to remove.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if the key/value pair was found and removed; <code>false</code> otherwise.
+    content.vb: Function System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove(item As KeyValuePair(Of TKey, TValue)) As Boolean Implements ICollection(Of KeyValuePair(Of TKey, TValue)).Remove
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Remove*
+  implements:
+  - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.Remove(System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove(KeyValuePair(Of TKey, TValue))
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove(KeyValuePair(Of TKey, TValue))
+- uid: Google.Protobuf.Collections.MapField`2.Count
+  commentId: P:Google.Protobuf.Collections.MapField`2.Count
+  id: Count
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: MapField<TKey, TValue>.Count
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Count
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Count
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 335
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nGets the number of elements contained in the map.\n"
+  example: []
+  syntax:
+    content: public int Count { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Count As Integer
+  overload: Google.Protobuf.Collections.MapField`2.Count*
+  implements:
+  - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.Count
+  - System.Collections.ICollection.Count
+  nameWithType.vb: MapField(Of TKey, TValue).Count
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Count
+- uid: Google.Protobuf.Collections.MapField`2.IsReadOnly
+  commentId: P:Google.Protobuf.Collections.MapField`2.IsReadOnly
+  id: IsReadOnly
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: IsReadOnly
+  nameWithType: MapField<TKey, TValue>.IsReadOnly
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.IsReadOnly
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: IsReadOnly
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 340
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nGets a value indicating whether the map is read-only.\n"
+  example: []
+  syntax:
+    content: public bool IsReadOnly { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property IsReadOnly As Boolean
+  overload: Google.Protobuf.Collections.MapField`2.IsReadOnly*
+  implements:
+  - System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.IsReadOnly
+  - System.Collections.IDictionary.IsReadOnly
+  nameWithType.vb: MapField(Of TKey, TValue).IsReadOnly
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).IsReadOnly
+- uid: Google.Protobuf.Collections.MapField`2.Equals(System.Object)
+  commentId: M:Google.Protobuf.Collections.MapField`2.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: MapField<TKey, TValue>.Equals(Object)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Equals
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 349
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nDetermines whether the specified <xref href=\"System.Object\" data-throw-if-not-resolved=\"false\"></xref>, is equal to this instance.\n"
+  example: []
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+      description: The <xref href="System.Object" data-throw-if-not-resolved="false"></xref> to compare with this instance.
+    return:
+      type: System.Boolean
+      description: "\n<code>true</code> if the specified <xref href=\"System.Object\" data-throw-if-not-resolved=\"false\"></xref> is equal to this instance; otherwise, <code>false</code>.\n"
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Protobuf.Collections.MapField`2.Equals*
+  nameWithType.vb: MapField(Of TKey, TValue).Equals(Object)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Equals(System.Object)
+- uid: Google.Protobuf.Collections.MapField`2.GetHashCode
+  commentId: M:Google.Protobuf.Collections.MapField`2.GetHashCode
+  id: GetHashCode
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: MapField<TKey, TValue>.GetHashCode()
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: GetHashCode
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 360
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nReturns a hash code for this instance.\n"
+  example: []
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+      description: "\nA hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. \n"
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Protobuf.Collections.MapField`2.GetHashCode*
+  nameWithType.vb: MapField(Of TKey, TValue).GetHashCode()
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).GetHashCode()
+- uid: Google.Protobuf.Collections.MapField`2.Equals(Google.Protobuf.Collections.MapField{`0,`1})
+  commentId: M:Google.Protobuf.Collections.MapField`2.Equals(Google.Protobuf.Collections.MapField{`0,`1})
+  id: Equals(Google.Protobuf.Collections.MapField{`0,`1})
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: Equals(MapField<TKey, TValue>)
+  nameWithType: MapField<TKey, TValue>.Equals(MapField<TKey, TValue>)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Equals(Google.Protobuf.Collections.MapField<TKey, TValue>)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Equals
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 379
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nCompares this map with another for equality.\n"
+  remarks: "\nThe order of the key/value pairs in the maps is not deemed significant in this comparison.\n"
+  example: []
+  syntax:
+    content: public bool Equals(MapField<TKey, TValue> other)
+    parameters:
+    - id: other
+      type: Google.Protobuf.Collections.MapField`2
+      description: The map to compare this with.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if <span class="paramref">other</span> refers to an equal map; <code>false</code> otherwise.
+    content.vb: Public Function Equals(other As MapField(Of TKey, TValue)) As Boolean
+  overload: Google.Protobuf.Collections.MapField`2.Equals*
+  implements:
+  - System.IEquatable{Google.Protobuf.Collections.MapField`2}.Equals(Google.Protobuf.Collections.MapField{{TKey},{TValue}})
+  nameWithType.vb: MapField(Of TKey, TValue).Equals(MapField(Of TKey, TValue))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Equals(Google.Protobuf.Collections.MapField(Of TKey, TValue))
+  name.vb: Equals(MapField(Of TKey, TValue))
+- uid: Google.Protobuf.Collections.MapField`2.AddEntriesFrom(Google.Protobuf.CodedInputStream,Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  commentId: M:Google.Protobuf.Collections.MapField`2.AddEntriesFrom(Google.Protobuf.CodedInputStream,Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  id: AddEntriesFrom(Google.Protobuf.CodedInputStream,Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: AddEntriesFrom(CodedInputStream, MapField<TKey, TValue>.Codec)
+  nameWithType: MapField<TKey, TValue>.AddEntriesFrom(CodedInputStream, MapField<TKey, TValue>.Codec)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.AddEntriesFrom(Google.Protobuf.CodedInputStream, Google.Protobuf.Collections.MapField<TKey, TValue>.Codec)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: AddEntriesFrom
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 419
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nAdds entries to the map from the given stream.\n"
+  remarks: "\nIt is assumed that the stream is initially positioned after the tag specified by the codec.\nThis method will continue reading entries from the stream until the end is reached, or\na different tag is encountered.\n"
+  example: []
+  syntax:
+    content: public void AddEntriesFrom(CodedInputStream input, MapField<TKey, TValue>.Codec codec)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+      description: Stream to read from
+    - id: codec
+      type: Google.Protobuf.Collections.MapField`2.Codec
+      description: Codec describing how the key/value pairs are encoded
+    content.vb: Public Sub AddEntriesFrom(input As CodedInputStream, codec As MapField(Of TKey, TValue).Codec)
+  overload: Google.Protobuf.Collections.MapField`2.AddEntriesFrom*
+  nameWithType.vb: MapField(Of TKey, TValue).AddEntriesFrom(CodedInputStream, MapField(Of TKey, TValue).Codec)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).AddEntriesFrom(Google.Protobuf.CodedInputStream, Google.Protobuf.Collections.MapField(Of TKey, TValue).Codec)
+  name.vb: AddEntriesFrom(CodedInputStream, MapField(Of TKey, TValue).Codec)
+- uid: Google.Protobuf.Collections.MapField`2.WriteTo(Google.Protobuf.CodedOutputStream,Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  commentId: M:Google.Protobuf.Collections.MapField`2.WriteTo(Google.Protobuf.CodedOutputStream,Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  id: WriteTo(Google.Protobuf.CodedOutputStream,Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream, MapField<TKey, TValue>.Codec)
+  nameWithType: MapField<TKey, TValue>.WriteTo(CodedOutputStream, MapField<TKey, TValue>.Codec)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.WriteTo(Google.Protobuf.CodedOutputStream, Google.Protobuf.Collections.MapField<TKey, TValue>.Codec)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteTo
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 436
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nWrites the contents of this map to the given coded output stream, using the specified codec\nto encode each entry.\n"
+  example: []
+  syntax:
+    content: public void WriteTo(CodedOutputStream output, MapField<TKey, TValue>.Codec codec)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+      description: The output stream to write to.
+    - id: codec
+      type: Google.Protobuf.Collections.MapField`2.Codec
+      description: The codec to use for each entry.
+    content.vb: Public Sub WriteTo(output As CodedOutputStream, codec As MapField(Of TKey, TValue).Codec)
+  overload: Google.Protobuf.Collections.MapField`2.WriteTo*
+  nameWithType.vb: MapField(Of TKey, TValue).WriteTo(CodedOutputStream, MapField(Of TKey, TValue).Codec)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).WriteTo(Google.Protobuf.CodedOutputStream, Google.Protobuf.Collections.MapField(Of TKey, TValue).Codec)
+  name.vb: WriteTo(CodedOutputStream, MapField(Of TKey, TValue).Codec)
+- uid: Google.Protobuf.Collections.MapField`2.CalculateSize(Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  commentId: M:Google.Protobuf.Collections.MapField`2.CalculateSize(Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  id: CalculateSize(Google.Protobuf.Collections.MapField{`0,`1}.Codec)
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize(MapField<TKey, TValue>.Codec)
+  nameWithType: MapField<TKey, TValue>.CalculateSize(MapField<TKey, TValue>.Codec)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.CalculateSize(Google.Protobuf.Collections.MapField<TKey, TValue>.Codec)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: CalculateSize
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 453
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nCalculates the size of this map based on the given entry codec.\n"
+  example: []
+  syntax:
+    content: public int CalculateSize(MapField<TKey, TValue>.Codec codec)
+    parameters:
+    - id: codec
+      type: Google.Protobuf.Collections.MapField`2.Codec
+      description: The codec to use to encode each entry.
+    return:
+      type: System.Int32
+      description: ''
+    content.vb: Public Function CalculateSize(codec As MapField(Of TKey, TValue).Codec) As Integer
+  overload: Google.Protobuf.Collections.MapField`2.CalculateSize*
+  nameWithType.vb: MapField(Of TKey, TValue).CalculateSize(MapField(Of TKey, TValue).Codec)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).CalculateSize(Google.Protobuf.Collections.MapField(Of TKey, TValue).Codec)
+  name.vb: CalculateSize(MapField(Of TKey, TValue).Codec)
+- uid: Google.Protobuf.Collections.MapField`2.ToString
+  commentId: M:Google.Protobuf.Collections.MapField`2.ToString
+  id: ToString
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: MapField<TKey, TValue>.ToString()
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.ToString()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToString
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 475
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  summary: "\nReturns a string representation of this repeated field, in the same\nway as it would be represented by the default JSON formatter.\n"
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Protobuf.Collections.MapField`2.ToString*
+  nameWithType.vb: MapField(Of TKey, TValue).ToString()
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).ToString()
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Add(System.Object,System.Object)
+  commentId: M:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Add(System.Object,System.Object)
+  id: System#Collections#IDictionary#Add(System.Object,System.Object)
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: IDictionary.Add(Object, Object)
+  nameWithType: MapField<TKey, TValue>.IDictionary.Add(Object, Object)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Add(System.Object, System.Object)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.IDictionary.Add
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 483
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: void IDictionary.Add(object key, object value)
+    parameters:
+    - id: key
+      type: System.Object
+    - id: value
+      type: System.Object
+    content.vb: Sub System.Collections.IDictionary.Add(key As Object, value As Object) Implements IDictionary.Add
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Add*
+  implements:
+  - System.Collections.IDictionary.Add(System.Object,System.Object)
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Add(Object, Object)
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Add(System.Object, System.Object)
+  name.vb: System.Collections.IDictionary.Add(Object, Object)
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Contains(System.Object)
+  commentId: M:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Contains(System.Object)
+  id: System#Collections#IDictionary#Contains(System.Object)
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: IDictionary.Contains(Object)
+  nameWithType: MapField<TKey, TValue>.IDictionary.Contains(Object)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Contains(System.Object)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.IDictionary.Contains
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 488
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: bool IDictionary.Contains(object key)
+    parameters:
+    - id: key
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Function System.Collections.IDictionary.Contains(key As Object) As Boolean Implements IDictionary.Contains
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Contains*
+  implements:
+  - System.Collections.IDictionary.Contains(System.Object)
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Contains(Object)
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Contains(System.Object)
+  name.vb: System.Collections.IDictionary.Contains(Object)
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#GetEnumerator
+  commentId: M:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#GetEnumerator
+  id: System#Collections#IDictionary#GetEnumerator
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: IDictionary.GetEnumerator()
+  nameWithType: MapField<TKey, TValue>.IDictionary.GetEnumerator()
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.IDictionary.GetEnumerator
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 497
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: IDictionaryEnumerator IDictionary.GetEnumerator()
+    return:
+      type: System.Collections.IDictionaryEnumerator
+    content.vb: Function System.Collections.IDictionary.GetEnumerator As IDictionaryEnumerator Implements IDictionary.GetEnumerator
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#GetEnumerator*
+  implements:
+  - System.Collections.IDictionary.GetEnumerator
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.GetEnumerator()
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.GetEnumerator()
+  name.vb: System.Collections.IDictionary.GetEnumerator()
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Remove(System.Object)
+  commentId: M:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Remove(System.Object)
+  id: System#Collections#IDictionary#Remove(System.Object)
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: IDictionary.Remove(Object)
+  nameWithType: MapField<TKey, TValue>.IDictionary.Remove(Object)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Remove(System.Object)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.IDictionary.Remove
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 502
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: void IDictionary.Remove(object key)
+    parameters:
+    - id: key
+      type: System.Object
+    content.vb: Sub System.Collections.IDictionary.Remove(key As Object) Implements IDictionary.Remove
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Remove*
+  implements:
+  - System.Collections.IDictionary.Remove(System.Object)
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Remove(Object)
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Remove(System.Object)
+  name.vb: System.Collections.IDictionary.Remove(Object)
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  commentId: M:Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  id: System#Collections#ICollection#CopyTo(System.Array,System.Int32)
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: ICollection.CopyTo(Array, Int32)
+  nameWithType: MapField<TKey, TValue>.ICollection.CopyTo(Array, Int32)
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.ICollection.CopyTo
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 512
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: void ICollection.CopyTo(Array array, int index)
+    parameters:
+    - id: array
+      type: System.Array
+    - id: index
+      type: System.Int32
+    content.vb: Sub System.Collections.ICollection.CopyTo(array As Array, index As Integer) Implements ICollection.CopyTo
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#CopyTo*
+  implements:
+  - System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.ICollection.CopyTo(Array, Int32)
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  name.vb: System.Collections.ICollection.CopyTo(Array, Int32)
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#IsFixedSize
+  commentId: P:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#IsFixedSize
+  id: System#Collections#IDictionary#IsFixedSize
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: IDictionary.IsFixedSize
+  nameWithType: MapField<TKey, TValue>.IDictionary.IsFixedSize
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.IsFixedSize
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.IDictionary.IsFixedSize
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 519
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: bool IDictionary.IsFixedSize { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly WriteOnly Property System.Collections.IDictionary.IsFixedSize As Boolean Implements IDictionary.IsFixedSize
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#IsFixedSize*
+  implements:
+  - System.Collections.IDictionary.IsFixedSize
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.IsFixedSize
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.IsFixedSize
+  name.vb: System.Collections.IDictionary.IsFixedSize
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Keys
+  commentId: P:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Keys
+  id: System#Collections#IDictionary#Keys
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: IDictionary.Keys
+  nameWithType: MapField<TKey, TValue>.IDictionary.Keys
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Keys
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.IDictionary.Keys
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 521
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: ICollection IDictionary.Keys { get; }
+    parameters: []
+    return:
+      type: System.Collections.ICollection
+    content.vb: ReadOnly WriteOnly Property System.Collections.IDictionary.Keys As ICollection Implements IDictionary.Keys
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Keys*
+  implements:
+  - System.Collections.IDictionary.Keys
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Keys
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Keys
+  name.vb: System.Collections.IDictionary.Keys
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Values
+  commentId: P:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Values
+  id: System#Collections#IDictionary#Values
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: IDictionary.Values
+  nameWithType: MapField<TKey, TValue>.IDictionary.Values
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Values
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.IDictionary.Values
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 523
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: ICollection IDictionary.Values { get; }
+    parameters: []
+    return:
+      type: System.Collections.ICollection
+    content.vb: ReadOnly WriteOnly Property System.Collections.IDictionary.Values As ICollection Implements IDictionary.Values
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Values*
+  implements:
+  - System.Collections.IDictionary.Values
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Values
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Values
+  name.vb: System.Collections.IDictionary.Values
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#IsSynchronized
+  commentId: P:Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#IsSynchronized
+  id: System#Collections#ICollection#IsSynchronized
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: ICollection.IsSynchronized
+  nameWithType: MapField<TKey, TValue>.ICollection.IsSynchronized
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.ICollection.IsSynchronized
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.ICollection.IsSynchronized
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 525
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: bool ICollection.IsSynchronized { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: ReadOnly WriteOnly Property System.Collections.ICollection.IsSynchronized As Boolean Implements ICollection.IsSynchronized
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#IsSynchronized*
+  implements:
+  - System.Collections.ICollection.IsSynchronized
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.ICollection.IsSynchronized
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.ICollection.IsSynchronized
+  name.vb: System.Collections.ICollection.IsSynchronized
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#SyncRoot
+  commentId: P:Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#SyncRoot
+  id: System#Collections#ICollection#SyncRoot
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: ICollection.SyncRoot
+  nameWithType: MapField<TKey, TValue>.ICollection.SyncRoot
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.ICollection.SyncRoot
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.ICollection.SyncRoot
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 527
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: object ICollection.SyncRoot { get; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: ReadOnly WriteOnly Property System.Collections.ICollection.SyncRoot As Object Implements ICollection.SyncRoot
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#SyncRoot*
+  implements:
+  - System.Collections.ICollection.SyncRoot
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.ICollection.SyncRoot
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.ICollection.SyncRoot
+  name.vb: System.Collections.ICollection.SyncRoot
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Item(System.Object)
+  commentId: P:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Item(System.Object)
+  id: System#Collections#IDictionary#Item(System.Object)
+  isEii: true
+  parent: Google.Protobuf.Collections.MapField`2
+  langs:
+  - csharp
+  - vb
+  name: IDictionary.Item[Object]
+  nameWithType: MapField<TKey, TValue>.IDictionary.Item[Object]
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Item[System.Object]
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Collections/MapField.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: System.Collections.IDictionary.this[]
+    path: csharp/src/Google.Protobuf/Collections/MapField.cs
+    startLine: 529
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Collections
+  syntax:
+    content: object IDictionary.this[object key] { get; set; }
+    parameters:
+    - id: key
+      type: System.Object
+    return:
+      type: System.Object
+    content.vb: ReadOnly WriteOnly Property System.Collections.IDictionary.Item(key As Object) As Object Implements IDictionary.this
+  overload: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Item*
+  implements:
+  - System.Collections.IDictionary.Item(System.Object)
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Item(Object)
+  modifiers.csharp:
+  - get
+  - set
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Item(System.Object)
+  name.vb: System.Collections.IDictionary.Item(Object)
+references:
+- uid: System.StringComparer.Ordinal
+  commentId: P:System.StringComparer.Ordinal
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IDeepCloneable{Google.Protobuf.Collections.MapField`2}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Protobuf.Collections.MapField`2}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<MapField<TKey, TValue>>
+  nameWithType: IDeepCloneable<MapField<TKey, TValue>>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Protobuf.Collections.MapField<TKey, TValue>>
+  nameWithType.vb: IDeepCloneable(Of MapField(Of TKey, TValue))
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Protobuf.Collections.MapField(Of TKey, TValue))
+  name.vb: IDeepCloneable(Of MapField(Of TKey, TValue))
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.Collections.MapField`2
+    name: MapField
+    nameWithType: MapField
+    fullName: Google.Protobuf.Collections.MapField
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.Collections.MapField`2
+    name: MapField
+    nameWithType: MapField
+    fullName: Google.Protobuf.Collections.MapField
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+  commentId: T:System.Collections.Generic.IDictionary{`0,`1}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IDictionary`2
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  commentId: T:System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{`0,`1}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<KeyValuePair<TKey, TValue>>
+  nameWithType: ICollection<KeyValuePair<TKey, TValue>>
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>
+  nameWithType.vb: ICollection(Of KeyValuePair(Of TKey, TValue))
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: ICollection(Of KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<KeyValuePair<TKey, TValue>>
+  nameWithType: IEnumerable<KeyValuePair<TKey, TValue>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of TKey, TValue))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: IEnumerable(Of KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable{Google.Protobuf.Collections.MapField`2}
+  commentId: T:System.IEquatable{Google.Protobuf.Collections.MapField`2}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<MapField<TKey, TValue>>
+  nameWithType: IEquatable<MapField<TKey, TValue>>
+  fullName: System.IEquatable<Google.Protobuf.Collections.MapField<TKey, TValue>>
+  nameWithType.vb: IEquatable(Of MapField(Of TKey, TValue))
+  fullName.vb: System.IEquatable(Of Google.Protobuf.Collections.MapField(Of TKey, TValue))
+  name.vb: IEquatable(Of MapField(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.Collections.MapField`2
+    name: MapField
+    nameWithType: MapField
+    fullName: Google.Protobuf.Collections.MapField
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.Collections.MapField`2
+    name: MapField
+    nameWithType: MapField
+    fullName: Google.Protobuf.Collections.MapField
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IDictionary
+  commentId: T:System.Collections.IDictionary
+  parent: System.Collections
+  isExternal: true
+  name: IDictionary
+  nameWithType: IDictionary
+  fullName: System.Collections.IDictionary
+- uid: System.Collections.ICollection
+  commentId: T:System.Collections.ICollection
+  parent: System.Collections
+  isExternal: true
+  name: ICollection
+  nameWithType: ICollection
+  fullName: System.Collections.ICollection
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: false
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
+  isExternal: true
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2
+    name: IDictionary
+    nameWithType: IDictionary
+    fullName: System.Collections.Generic.IDictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections.Generic.ICollection`1
+  commentId: T:System.Collections.Generic.ICollection`1
+  isExternal: true
+  name: ICollection<T>
+  nameWithType: ICollection<T>
+  fullName: System.Collections.Generic.ICollection<T>
+  nameWithType.vb: ICollection(Of T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T)
+  name.vb: ICollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: false
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: Google.Protobuf.Collections.MapField`2.Clone*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: MapField<TKey, TValue>.Clone
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Clone
+  nameWithType.vb: MapField(Of TKey, TValue).Clone
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Protobuf.Collections.MapField`2}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Protobuf.Collections.MapField`2}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Protobuf.Collections.MapField`2}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<MapField<TKey, TValue>>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Protobuf.Collections.MapField<TKey, TValue>>.Clone()
+  nameWithType.vb: IDeepCloneable(Of MapField(Of TKey, TValue)).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Protobuf.Collections.MapField(Of TKey, TValue)).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<MapField<TKey, TValue>>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Protobuf.Collections.MapField<TKey, TValue>>.Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of MapField(Of TKey, TValue)).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Protobuf.Collections.MapField(Of TKey, TValue)).Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2
+  commentId: T:Google.Protobuf.Collections.MapField`2
+  parent: Google.Protobuf.Collections
+  isExternal: false
+  name: MapField<TKey, TValue>
+  nameWithType: MapField<TKey, TValue>
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>
+  nameWithType.vb: MapField(Of TKey, TValue)
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue)
+  name.vb: MapField(Of TKey, TValue)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.MapField`2
+    name: MapField
+    nameWithType: MapField
+    fullName: Google.Protobuf.Collections.MapField
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.MapField`2
+    name: MapField
+    nameWithType: MapField
+    fullName: Google.Protobuf.Collections.MapField
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: false
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.Add*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.Add
+  isExternal: false
+  name: Add
+  nameWithType: MapField<TKey, TValue>.Add
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Add
+  nameWithType.vb: MapField(Of TKey, TValue).Add
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Add
+- uid: System.Collections.Generic.IDictionary{{TKey},{TValue}}.Add({TKey},{TValue})
+  commentId: M:System.Collections.Generic.IDictionary{`0,`1}.Add(`0,`1)
+  parent: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+  definition: System.Collections.Generic.IDictionary`2.Add(`0,`1)
+  name: Add(TKey, TValue)
+  nameWithType: IDictionary<TKey, TValue>.Add(TKey, TValue)
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Add(TKey, TValue)
+  nameWithType.vb: IDictionary(Of TKey, TValue).Add(TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).Add(TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2.Add(`0,`1)
+    name: Add
+    nameWithType: IDictionary<TKey, TValue>.Add
+    fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2.Add(`0,`1)
+    name: Add
+    nameWithType: IDictionary(Of TKey, TValue).Add
+    fullName: System.Collections.Generic.IDictionary(Of TKey, TValue).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.ArgumentException
+  commentId: T:System.ArgumentException
+- uid: '{TKey}'
+  commentId: '!:TKey'
+  definition: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: '{TValue}'
+  commentId: '!:TValue'
+  definition: TValue
+  name: TValue
+  nameWithType: TValue
+  fullName: TValue
+- uid: System.Collections.Generic.IDictionary`2.Add(`0,`1)
+  commentId: M:System.Collections.Generic.IDictionary`2.Add(`0,`1)
+  isExternal: true
+  name: Add(TKey, TValue)
+  nameWithType: IDictionary<TKey, TValue>.Add(TKey, TValue)
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Add(TKey, TValue)
+  nameWithType.vb: IDictionary(Of TKey, TValue).Add(TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).Add(TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2.Add(`0,`1)
+    name: Add
+    nameWithType: IDictionary<TKey, TValue>.Add
+    fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2.Add(`0,`1)
+    name: Add
+    nameWithType: IDictionary(Of TKey, TValue).Add
+    fullName: System.Collections.Generic.IDictionary(Of TKey, TValue).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TKey
+  isExternal: false
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: TValue
+  isExternal: false
+  name: TValue
+  nameWithType: TValue
+  fullName: TValue
+- uid: Google.Protobuf.Collections.MapField`2.ContainsKey*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.ContainsKey
+  isExternal: false
+  name: ContainsKey
+  nameWithType: MapField<TKey, TValue>.ContainsKey
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.ContainsKey
+  nameWithType.vb: MapField(Of TKey, TValue).ContainsKey
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).ContainsKey
+- uid: System.Collections.Generic.IDictionary{{TKey},{TValue}}.ContainsKey({TKey})
+  commentId: M:System.Collections.Generic.IDictionary{`0,`1}.ContainsKey(`0)
+  parent: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+  definition: System.Collections.Generic.IDictionary`2.ContainsKey(`0)
+  name: ContainsKey(TKey)
+  nameWithType: IDictionary<TKey, TValue>.ContainsKey(TKey)
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.ContainsKey(TKey)
+  nameWithType.vb: IDictionary(Of TKey, TValue).ContainsKey(TKey)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).ContainsKey(TKey)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2.ContainsKey(`0)
+    name: ContainsKey
+    nameWithType: IDictionary<TKey, TValue>.ContainsKey
+    fullName: System.Collections.Generic.IDictionary<TKey, TValue>.ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2.ContainsKey(`0)
+    name: ContainsKey
+    nameWithType: IDictionary(Of TKey, TValue).ContainsKey
+    fullName: System.Collections.Generic.IDictionary(Of TKey, TValue).ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Collections.Generic.IDictionary`2.ContainsKey(`0)
+  commentId: M:System.Collections.Generic.IDictionary`2.ContainsKey(`0)
+  isExternal: true
+  name: ContainsKey(TKey)
+  nameWithType: IDictionary<TKey, TValue>.ContainsKey(TKey)
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.ContainsKey(TKey)
+  nameWithType.vb: IDictionary(Of TKey, TValue).ContainsKey(TKey)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).ContainsKey(TKey)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2.ContainsKey(`0)
+    name: ContainsKey
+    nameWithType: IDictionary<TKey, TValue>.ContainsKey
+    fullName: System.Collections.Generic.IDictionary<TKey, TValue>.ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2.ContainsKey(`0)
+    name: ContainsKey
+    nameWithType: IDictionary(Of TKey, TValue).ContainsKey
+    fullName: System.Collections.Generic.IDictionary(Of TKey, TValue).ContainsKey
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.Remove*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.Remove
+  isExternal: false
+  name: Remove
+  nameWithType: MapField<TKey, TValue>.Remove
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Remove
+  nameWithType.vb: MapField(Of TKey, TValue).Remove
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Remove
+- uid: System.Collections.Generic.IDictionary{{TKey},{TValue}}.Remove({TKey})
+  commentId: M:System.Collections.Generic.IDictionary{`0,`1}.Remove(`0)
+  parent: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+  definition: System.Collections.Generic.IDictionary`2.Remove(`0)
+  name: Remove(TKey)
+  nameWithType: IDictionary<TKey, TValue>.Remove(TKey)
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Remove(TKey)
+  nameWithType.vb: IDictionary(Of TKey, TValue).Remove(TKey)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).Remove(TKey)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2.Remove(`0)
+    name: Remove
+    nameWithType: IDictionary<TKey, TValue>.Remove
+    fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2.Remove(`0)
+    name: Remove
+    nameWithType: IDictionary(Of TKey, TValue).Remove
+    fullName: System.Collections.Generic.IDictionary(Of TKey, TValue).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IDictionary`2.Remove(`0)
+  commentId: M:System.Collections.Generic.IDictionary`2.Remove(`0)
+  isExternal: true
+  name: Remove(TKey)
+  nameWithType: IDictionary<TKey, TValue>.Remove(TKey)
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Remove(TKey)
+  nameWithType.vb: IDictionary(Of TKey, TValue).Remove(TKey)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).Remove(TKey)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2.Remove(`0)
+    name: Remove
+    nameWithType: IDictionary<TKey, TValue>.Remove
+    fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2.Remove(`0)
+    name: Remove
+    nameWithType: IDictionary(Of TKey, TValue).Remove
+    fullName: System.Collections.Generic.IDictionary(Of TKey, TValue).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.TryGetValue*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.TryGetValue
+  isExternal: false
+  name: TryGetValue
+  nameWithType: MapField<TKey, TValue>.TryGetValue
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.TryGetValue
+  nameWithType.vb: MapField(Of TKey, TValue).TryGetValue
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).TryGetValue
+- uid: System.Collections.Generic.IDictionary{{TKey},{TValue}}.TryGetValue({TKey},{TValue}@)
+  commentId: M:System.Collections.Generic.IDictionary{`0,`1}.TryGetValue(`0,`1@)
+  parent: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+  definition: System.Collections.Generic.IDictionary`2.TryGetValue(`0,`1@)
+  name: TryGetValue(TKey, TValue)
+  nameWithType: IDictionary<TKey, TValue>.TryGetValue(TKey, TValue)
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.TryGetValue(TKey, TValue)
+  nameWithType.vb: IDictionary(Of TKey, TValue).TryGetValue(TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).TryGetValue(TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2.TryGetValue(`0,`1@)
+    name: TryGetValue
+    nameWithType: IDictionary<TKey, TValue>.TryGetValue
+    fullName: System.Collections.Generic.IDictionary<TKey, TValue>.TryGetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2.TryGetValue(`0,`1@)
+    name: TryGetValue
+    nameWithType: IDictionary(Of TKey, TValue).TryGetValue
+    fullName: System.Collections.Generic.IDictionary(Of TKey, TValue).TryGetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IDictionary`2.TryGetValue(`0,`1@)
+  commentId: M:System.Collections.Generic.IDictionary`2.TryGetValue(`0,`1@)
+  isExternal: true
+  name: TryGetValue(TKey, TValue)
+  nameWithType: IDictionary<TKey, TValue>.TryGetValue(TKey, TValue)
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.TryGetValue(TKey, TValue)
+  nameWithType.vb: IDictionary(Of TKey, TValue).TryGetValue(TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).TryGetValue(TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2.TryGetValue(`0,`1@)
+    name: TryGetValue
+    nameWithType: IDictionary<TKey, TValue>.TryGetValue
+    fullName: System.Collections.Generic.IDictionary<TKey, TValue>.TryGetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2.TryGetValue(`0,`1@)
+    name: TryGetValue
+    nameWithType: IDictionary(Of TKey, TValue).TryGetValue
+    fullName: System.Collections.Generic.IDictionary(Of TKey, TValue).TryGetValue
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.KeyNotFoundException
+  commentId: T:System.Collections.Generic.KeyNotFoundException
+- uid: Google.Protobuf.Collections.MapField`2.Item*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.Item
+  isExternal: false
+  name: Item
+  nameWithType: MapField<TKey, TValue>.Item
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Item
+  nameWithType.vb: MapField(Of TKey, TValue).Item
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Item
+- uid: System.Collections.Generic.IDictionary{{TKey},{TValue}}.Item({TKey})
+  commentId: P:System.Collections.Generic.IDictionary{`0,`1}.Item(`0)
+  parent: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+  definition: System.Collections.Generic.IDictionary`2.Item(`0)
+  name: Item[TKey]
+  nameWithType: IDictionary<TKey, TValue>.Item[TKey]
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Item[TKey]
+  nameWithType.vb: IDictionary(Of TKey, TValue).Item(TKey)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).Item(TKey)
+  name.vb: Item(TKey)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2.Item(`0)
+    name: Item
+    nameWithType: IDictionary<TKey, TValue>.Item
+    fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2.Item(`0)
+    name: Item
+    nameWithType: IDictionary(Of TKey, TValue).Item
+    fullName: System.Collections.Generic.IDictionary(Of TKey, TValue).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IDictionary`2.Item(`0)
+  commentId: P:System.Collections.Generic.IDictionary`2.Item(`0)
+  isExternal: true
+  name: Item[TKey]
+  nameWithType: IDictionary<TKey, TValue>.Item[TKey]
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Item[TKey]
+  nameWithType.vb: IDictionary(Of TKey, TValue).Item(TKey)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).Item(TKey)
+  name.vb: Item(TKey)
+  spec.csharp:
+  - uid: System.Collections.Generic.IDictionary`2.Item(`0)
+    name: Item
+    nameWithType: IDictionary<TKey, TValue>.Item
+    fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.Generic.IDictionary`2.Item(`0)
+    name: Item
+    nameWithType: IDictionary(Of TKey, TValue).Item
+    fullName: System.Collections.Generic.IDictionary(Of TKey, TValue).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.Keys*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.Keys
+  isExternal: false
+  name: Keys
+  nameWithType: MapField<TKey, TValue>.Keys
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Keys
+  nameWithType.vb: MapField(Of TKey, TValue).Keys
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Keys
+- uid: System.Collections.Generic.IDictionary{{TKey},{TValue}}.Keys
+  commentId: P:System.Collections.Generic.IDictionary{`0,`1}.Keys
+  parent: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+  definition: System.Collections.Generic.IDictionary`2.Keys
+  name: Keys
+  nameWithType: IDictionary<TKey, TValue>.Keys
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Keys
+  nameWithType.vb: IDictionary(Of TKey, TValue).Keys
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).Keys
+- uid: System.Collections.Generic.ICollection{{TKey}}
+  commentId: T:System.Collections.Generic.ICollection{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<TKey>
+  nameWithType: ICollection<TKey>
+  fullName: System.Collections.Generic.ICollection<TKey>
+  nameWithType.vb: ICollection(Of TKey)
+  fullName.vb: System.Collections.Generic.ICollection(Of TKey)
+  name.vb: ICollection(Of TKey)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IDictionary`2.Keys
+  commentId: P:System.Collections.Generic.IDictionary`2.Keys
+  isExternal: true
+  name: Keys
+  nameWithType: IDictionary<TKey, TValue>.Keys
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Keys
+  nameWithType.vb: IDictionary(Of TKey, TValue).Keys
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).Keys
+- uid: Google.Protobuf.Collections.MapField`2.Values*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.Values
+  isExternal: false
+  name: Values
+  nameWithType: MapField<TKey, TValue>.Values
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Values
+  nameWithType.vb: MapField(Of TKey, TValue).Values
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Values
+- uid: System.Collections.Generic.IDictionary{{TKey},{TValue}}.Values
+  commentId: P:System.Collections.Generic.IDictionary{`0,`1}.Values
+  parent: System.Collections.Generic.IDictionary{{TKey},{TValue}}
+  definition: System.Collections.Generic.IDictionary`2.Values
+  name: Values
+  nameWithType: IDictionary<TKey, TValue>.Values
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Values
+  nameWithType.vb: IDictionary(Of TKey, TValue).Values
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).Values
+- uid: System.Collections.Generic.ICollection{{TValue}}
+  commentId: T:System.Collections.Generic.ICollection{`1}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.ICollection`1
+  name: ICollection<TValue>
+  nameWithType: ICollection<TValue>
+  fullName: System.Collections.Generic.ICollection<TValue>
+  nameWithType.vb: ICollection(Of TValue)
+  fullName.vb: System.Collections.Generic.ICollection(Of TValue)
+  name.vb: ICollection(Of TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1
+    name: ICollection
+    nameWithType: ICollection
+    fullName: System.Collections.Generic.ICollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IDictionary`2.Values
+  commentId: P:System.Collections.Generic.IDictionary`2.Values
+  isExternal: true
+  name: Values
+  nameWithType: IDictionary<TKey, TValue>.Values
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>.Values
+  nameWithType.vb: IDictionary(Of TKey, TValue).Values
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue).Values
+- uid: Google.Protobuf.Collections.MapField`2.GetEnumerator*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.GetEnumerator
+  isExternal: false
+  name: GetEnumerator
+  nameWithType: MapField<TKey, TValue>.GetEnumerator
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.GetEnumerator
+  nameWithType.vb: MapField(Of TKey, TValue).GetEnumerator
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{`0,`1}}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of KeyValuePair(Of TKey, TValue)).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<KeyValuePair<TKey, TValue>>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.KeyValuePair<TKey, TValue>>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of KeyValuePair(Of TKey, TValue)).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  commentId: T:System.Collections.Generic.IEnumerator{System.Collections.Generic.KeyValuePair{`0,`1}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<KeyValuePair<TKey, TValue>>
+  nameWithType: IEnumerator<KeyValuePair<TKey, TValue>>
+  fullName: System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<TKey, TValue>>
+  nameWithType.vb: IEnumerator(Of KeyValuePair(Of TKey, TValue))
+  fullName.vb: System.Collections.Generic.IEnumerator(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: IEnumerator(Of KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IEnumerable#GetEnumerator*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#IEnumerable#GetEnumerator
+  isExternal: false
+  name: IEnumerable.GetEnumerator
+  nameWithType: MapField<TKey, TValue>.IEnumerable.GetEnumerator
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IEnumerable.GetEnumerator
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IEnumerable.GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+- uid: System.Collections.IEnumerable.GetEnumerator
+  commentId: M:System.Collections.IEnumerable.GetEnumerator
+  parent: System.Collections.IEnumerable
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable.GetEnumerator()
+  fullName: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Add*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Add
+  isExternal: false
+  name: ICollection<KeyValuePair<TKey, TValue>>.Add
+  nameWithType: MapField<TKey, TValue>.ICollection<KeyValuePair<TKey, TValue>>.Add
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Add
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add
+  name.vb: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Add
+- uid: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.Add(System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  commentId: M:System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{`0,`1}}.Add(System.Collections.Generic.KeyValuePair{`0,`1})
+  parent: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  definition: System.Collections.Generic.ICollection`1.Add(`0)
+  name: Add(KeyValuePair<TKey, TValue>)
+  nameWithType: ICollection<KeyValuePair<TKey, TValue>>.Add(KeyValuePair<TKey, TValue>)
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Add(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: ICollection(Of KeyValuePair(Of TKey, TValue)).Add(KeyValuePair(Of TKey, TValue))
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).Add(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Add(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection<KeyValuePair<TKey, TValue>>.Add
+    fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection(Of KeyValuePair(Of TKey, TValue)).Add
+    fullName: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}
+  commentId: T:System.Collections.Generic.KeyValuePair{`0,`1}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.KeyValuePair`2
+  name: KeyValuePair<TKey, TValue>
+  nameWithType: KeyValuePair<TKey, TValue>
+  fullName: System.Collections.Generic.KeyValuePair<TKey, TValue>
+  nameWithType.vb: KeyValuePair(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.KeyValuePair(Of TKey, TValue)
+  name.vb: KeyValuePair(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Add(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Add(`0)
+  isExternal: true
+  name: Add(T)
+  nameWithType: ICollection<T>.Add(T)
+  fullName: System.Collections.Generic.ICollection<T>.Add(T)
+  nameWithType.vb: ICollection(Of T).Add(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Add(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection<T>.Add
+    fullName: System.Collections.Generic.ICollection<T>.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Add(`0)
+    name: Add
+    nameWithType: ICollection(Of T).Add
+    fullName: System.Collections.Generic.ICollection(Of T).Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.KeyValuePair`2
+  commentId: T:System.Collections.Generic.KeyValuePair`2
+  isExternal: true
+  name: KeyValuePair<TKey, TValue>
+  nameWithType: KeyValuePair<TKey, TValue>
+  fullName: System.Collections.Generic.KeyValuePair<TKey, TValue>
+  nameWithType.vb: KeyValuePair(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.KeyValuePair(Of TKey, TValue)
+  name.vb: KeyValuePair(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.Clear*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.Clear
+  isExternal: false
+  name: Clear
+  nameWithType: MapField<TKey, TValue>.Clear
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Clear
+  nameWithType.vb: MapField(Of TKey, TValue).Clear
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Clear
+- uid: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.Clear
+  commentId: M:System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{`0,`1}}.Clear
+  parent: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  definition: System.Collections.Generic.ICollection`1.Clear
+  name: Clear()
+  nameWithType: ICollection<KeyValuePair<TKey, TValue>>.Clear()
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Clear()
+  nameWithType.vb: ICollection(Of KeyValuePair(Of TKey, TValue)).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection<KeyValuePair<TKey, TValue>>.Clear
+    fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection(Of KeyValuePair(Of TKey, TValue)).Clear
+    fullName: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IDictionary.Clear
+  commentId: M:System.Collections.IDictionary.Clear
+  parent: System.Collections.IDictionary
+  isExternal: true
+  name: Clear()
+  nameWithType: IDictionary.Clear()
+  fullName: System.Collections.IDictionary.Clear()
+  spec.csharp:
+  - uid: System.Collections.IDictionary.Clear
+    name: Clear
+    nameWithType: IDictionary.Clear
+    fullName: System.Collections.IDictionary.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IDictionary.Clear
+    name: Clear
+    nameWithType: IDictionary.Clear
+    fullName: System.Collections.IDictionary.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Clear
+  commentId: M:System.Collections.Generic.ICollection`1.Clear
+  isExternal: true
+  name: Clear()
+  nameWithType: ICollection<T>.Clear()
+  fullName: System.Collections.Generic.ICollection<T>.Clear()
+  nameWithType.vb: ICollection(Of T).Clear()
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Clear()
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection<T>.Clear
+    fullName: System.Collections.Generic.ICollection<T>.Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Clear
+    name: Clear
+    nameWithType: ICollection(Of T).Clear
+    fullName: System.Collections.Generic.ICollection(Of T).Clear
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Contains*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Contains
+  isExternal: false
+  name: ICollection<KeyValuePair<TKey, TValue>>.Contains
+  nameWithType: MapField<TKey, TValue>.ICollection<KeyValuePair<TKey, TValue>>.Contains
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Contains
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains
+  name.vb: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Contains
+- uid: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.Contains(System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  commentId: M:System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{`0,`1}}.Contains(System.Collections.Generic.KeyValuePair{`0,`1})
+  parent: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  definition: System.Collections.Generic.ICollection`1.Contains(`0)
+  name: Contains(KeyValuePair<TKey, TValue>)
+  nameWithType: ICollection<KeyValuePair<TKey, TValue>>.Contains(KeyValuePair<TKey, TValue>)
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Contains(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: ICollection(Of KeyValuePair(Of TKey, TValue)).Contains(KeyValuePair(Of TKey, TValue))
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).Contains(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Contains(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection<KeyValuePair<TKey, TValue>>.Contains
+    fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection(Of KeyValuePair(Of TKey, TValue)).Contains
+    fullName: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Contains(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Contains(`0)
+  isExternal: true
+  name: Contains(T)
+  nameWithType: ICollection<T>.Contains(T)
+  fullName: System.Collections.Generic.ICollection<T>.Contains(T)
+  nameWithType.vb: ICollection(Of T).Contains(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Contains(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection<T>.Contains
+    fullName: System.Collections.Generic.ICollection<T>.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Contains(`0)
+    name: Contains
+    nameWithType: ICollection(Of T).Contains
+    fullName: System.Collections.Generic.ICollection(Of T).Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#CopyTo*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#CopyTo
+  isExternal: false
+  name: ICollection<KeyValuePair<TKey, TValue>>.CopyTo
+  nameWithType: MapField<TKey, TValue>.ICollection<KeyValuePair<TKey, TValue>>.CopyTo
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.CopyTo
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo
+  name.vb: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.CopyTo
+- uid: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.CopyTo(System.Collections.Generic.KeyValuePair{{TKey},{TValue}}[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{`0,`1}}.CopyTo(System.Collections.Generic.KeyValuePair{`0,`1}[],System.Int32)
+  parent: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  definition: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(KeyValuePair<TKey, TValue>[], Int32)
+  nameWithType: ICollection<KeyValuePair<TKey, TValue>>.CopyTo(KeyValuePair<TKey, TValue>[], Int32)
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.CopyTo(System.Collections.Generic.KeyValuePair<TKey, TValue>[], System.Int32)
+  nameWithType.vb: ICollection(Of KeyValuePair(Of TKey, TValue)).CopyTo(KeyValuePair(Of TKey, TValue)(), Int32)
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).CopyTo(System.Collections.Generic.KeyValuePair(Of TKey, TValue)(), System.Int32)
+  name.vb: CopyTo(KeyValuePair(Of TKey, TValue)(), Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection<KeyValuePair<TKey, TValue>>.CopyTo
+    fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection(Of KeyValuePair(Of TKey, TValue)).CopyTo
+    fullName: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.KeyValuePair{{TKey},{TValue}}[]
+  name: KeyValuePair<TKey, TValue>[]
+  nameWithType: KeyValuePair<TKey, TValue>[]
+  fullName: System.Collections.Generic.KeyValuePair<TKey, TValue>[]
+  nameWithType.vb: KeyValuePair(Of TKey, TValue)()
+  fullName.vb: System.Collections.Generic.KeyValuePair(Of TKey, TValue)()
+  name.vb: KeyValuePair(Of TKey, TValue)()
+  spec.csharp:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  commentId: M:System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+  isExternal: true
+  name: CopyTo(T[], Int32)
+  nameWithType: ICollection<T>.CopyTo(T[], Int32)
+  fullName: System.Collections.Generic.ICollection<T>.CopyTo(T[], System.Int32)
+  nameWithType.vb: ICollection(Of T).CopyTo(T(), Int32)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).CopyTo(T(), System.Int32)
+  name.vb: CopyTo(T(), Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection<T>.CopyTo
+    fullName: System.Collections.Generic.ICollection<T>.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.CopyTo(`0[],System.Int32)
+    name: CopyTo
+    nameWithType: ICollection(Of T).CopyTo
+    fullName: System.Collections.Generic.ICollection(Of T).CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Remove*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#Generic#ICollection{System#Collections#Generic#KeyValuePair{TKey,TValue}}#Remove
+  isExternal: false
+  name: ICollection<KeyValuePair<TKey, TValue>>.Remove
+  nameWithType: MapField<TKey, TValue>.ICollection<KeyValuePair<TKey, TValue>>.Remove
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Remove
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove
+  name.vb: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey,TValue>>.Remove
+- uid: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.Remove(System.Collections.Generic.KeyValuePair{{TKey},{TValue}})
+  commentId: M:System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{`0,`1}}.Remove(System.Collections.Generic.KeyValuePair{`0,`1})
+  parent: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  definition: System.Collections.Generic.ICollection`1.Remove(`0)
+  name: Remove(KeyValuePair<TKey, TValue>)
+  nameWithType: ICollection<KeyValuePair<TKey, TValue>>.Remove(KeyValuePair<TKey, TValue>)
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Remove(System.Collections.Generic.KeyValuePair<TKey, TValue>)
+  nameWithType.vb: ICollection(Of KeyValuePair(Of TKey, TValue)).Remove(KeyValuePair(Of TKey, TValue))
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).Remove(System.Collections.Generic.KeyValuePair(Of TKey, TValue))
+  name.vb: Remove(KeyValuePair(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection<KeyValuePair<TKey, TValue>>.Remove
+    fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection(Of KeyValuePair(Of TKey, TValue)).Remove
+    fullName: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Collections.Generic.KeyValuePair`2
+    name: KeyValuePair
+    nameWithType: KeyValuePair
+    fullName: System.Collections.Generic.KeyValuePair
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.ICollection`1.Remove(`0)
+  commentId: M:System.Collections.Generic.ICollection`1.Remove(`0)
+  isExternal: true
+  name: Remove(T)
+  nameWithType: ICollection<T>.Remove(T)
+  fullName: System.Collections.Generic.ICollection<T>.Remove(T)
+  nameWithType.vb: ICollection(Of T).Remove(T)
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Remove(T)
+  spec.csharp:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection<T>.Remove
+    fullName: System.Collections.Generic.ICollection<T>.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.ICollection`1.Remove(`0)
+    name: Remove
+    nameWithType: ICollection(Of T).Remove
+    fullName: System.Collections.Generic.ICollection(Of T).Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.Count*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.Count
+  isExternal: false
+  name: Count
+  nameWithType: MapField<TKey, TValue>.Count
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Count
+  nameWithType.vb: MapField(Of TKey, TValue).Count
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Count
+- uid: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.Count
+  commentId: P:System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{`0,`1}}.Count
+  parent: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  definition: System.Collections.Generic.ICollection`1.Count
+  name: Count
+  nameWithType: ICollection<KeyValuePair<TKey, TValue>>.Count
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.Count
+  nameWithType.vb: ICollection(Of KeyValuePair(Of TKey, TValue)).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).Count
+- uid: System.Collections.ICollection.Count
+  commentId: P:System.Collections.ICollection.Count
+  parent: System.Collections.ICollection
+  isExternal: true
+  name: Count
+  nameWithType: ICollection.Count
+  fullName: System.Collections.ICollection.Count
+- uid: System.Collections.Generic.ICollection`1.Count
+  commentId: P:System.Collections.Generic.ICollection`1.Count
+  isExternal: true
+  name: Count
+  nameWithType: ICollection<T>.Count
+  fullName: System.Collections.Generic.ICollection<T>.Count
+  nameWithType.vb: ICollection(Of T).Count
+  fullName.vb: System.Collections.Generic.ICollection(Of T).Count
+- uid: Google.Protobuf.Collections.MapField`2.IsReadOnly*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.IsReadOnly
+  isExternal: false
+  name: IsReadOnly
+  nameWithType: MapField<TKey, TValue>.IsReadOnly
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.IsReadOnly
+  nameWithType.vb: MapField(Of TKey, TValue).IsReadOnly
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).IsReadOnly
+- uid: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{`0,`1}}.IsReadOnly
+  parent: System.Collections.Generic.ICollection{System.Collections.Generic.KeyValuePair{{TKey},{TValue}}}
+  definition: System.Collections.Generic.ICollection`1.IsReadOnly
+  name: IsReadOnly
+  nameWithType: ICollection<KeyValuePair<TKey, TValue>>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<System.Collections.Generic.KeyValuePair<TKey, TValue>>.IsReadOnly
+  nameWithType.vb: ICollection(Of KeyValuePair(Of TKey, TValue)).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of System.Collections.Generic.KeyValuePair(Of TKey, TValue)).IsReadOnly
+- uid: System.Collections.IDictionary.IsReadOnly
+  commentId: P:System.Collections.IDictionary.IsReadOnly
+  parent: System.Collections.IDictionary
+  isExternal: true
+  name: IsReadOnly
+  nameWithType: IDictionary.IsReadOnly
+  fullName: System.Collections.IDictionary.IsReadOnly
+- uid: System.Collections.Generic.ICollection`1.IsReadOnly
+  commentId: P:System.Collections.Generic.ICollection`1.IsReadOnly
+  isExternal: true
+  name: IsReadOnly
+  nameWithType: ICollection<T>.IsReadOnly
+  fullName: System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType.vb: ICollection(Of T).IsReadOnly
+  fullName.vb: System.Collections.Generic.ICollection(Of T).IsReadOnly
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.Equals*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: MapField<TKey, TValue>.Equals
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.Equals
+  nameWithType.vb: MapField(Of TKey, TValue).Equals
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).Equals
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.GetHashCode*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: MapField<TKey, TValue>.GetHashCode
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.GetHashCode
+  nameWithType.vb: MapField(Of TKey, TValue).GetHashCode
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).GetHashCode
+- uid: System.IEquatable{Google.Protobuf.Collections.MapField`2}.Equals(Google.Protobuf.Collections.MapField{{TKey},{TValue}})
+  commentId: M:System.IEquatable{Google.Protobuf.Collections.MapField`2}.Equals(Google.Protobuf.Collections.MapField{`0,`1})
+  parent: System.IEquatable{Google.Protobuf.Collections.MapField`2}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(MapField<TKey, TValue>)
+  nameWithType: IEquatable<MapField<TKey, TValue>>.Equals(MapField<TKey, TValue>)
+  fullName: System.IEquatable<Google.Protobuf.Collections.MapField<TKey, TValue>>.Equals(Google.Protobuf.Collections.MapField<TKey, TValue>)
+  nameWithType.vb: IEquatable(Of MapField(Of TKey, TValue)).Equals(MapField(Of TKey, TValue))
+  fullName.vb: System.IEquatable(Of Google.Protobuf.Collections.MapField(Of TKey, TValue)).Equals(Google.Protobuf.Collections.MapField(Of TKey, TValue))
+  name.vb: Equals(MapField(Of TKey, TValue))
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<MapField<TKey, TValue>>.Equals
+    fullName: System.IEquatable<Google.Protobuf.Collections.MapField<TKey, TValue>>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.Collections.MapField`2
+    name: MapField
+    nameWithType: MapField
+    fullName: Google.Protobuf.Collections.MapField
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of MapField(Of TKey, TValue)).Equals
+    fullName: System.IEquatable(Of Google.Protobuf.Collections.MapField(Of TKey, TValue)).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.Collections.MapField`2
+    name: MapField
+    nameWithType: MapField
+    fullName: Google.Protobuf.Collections.MapField
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.AddEntriesFrom*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.AddEntriesFrom
+  isExternal: false
+  name: AddEntriesFrom
+  nameWithType: MapField<TKey, TValue>.AddEntriesFrom
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.AddEntriesFrom
+  nameWithType.vb: MapField(Of TKey, TValue).AddEntriesFrom
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).AddEntriesFrom
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+- uid: Google.Protobuf.Collections.MapField`2.Codec
+  commentId: T:Google.Protobuf.Collections.MapField`2.Codec
+  parent: Google.Protobuf.Collections
+  isExternal: false
+  name: MapField.Codec<>
+  nameWithType: MapField.Codec<>
+  fullName: Google.Protobuf.Collections.MapField.Codec<>
+  nameWithType.vb: MapField.Codec(Of )
+  fullName.vb: Google.Protobuf.Collections.MapField.Codec(Of )
+  name.vb: MapField.Codec(Of )
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.MapField`2.Codec
+    name: MapField.Codec
+    nameWithType: MapField.Codec
+    fullName: Google.Protobuf.Collections.MapField.Codec
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.MapField`2.Codec
+    name: MapField.Codec
+    nameWithType: MapField.Codec
+    fullName: Google.Protobuf.Collections.MapField.Codec
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.WriteTo*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: MapField<TKey, TValue>.WriteTo
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.WriteTo
+  nameWithType.vb: MapField(Of TKey, TValue).WriteTo
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).WriteTo
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: Google.Protobuf.Collections.MapField`2.CalculateSize*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.CalculateSize
+  isExternal: false
+  name: CalculateSize
+  nameWithType: MapField<TKey, TValue>.CalculateSize
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.CalculateSize
+  nameWithType.vb: MapField(Of TKey, TValue).CalculateSize
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).CalculateSize
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.ToString*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: MapField<TKey, TValue>.ToString
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.ToString
+  nameWithType.vb: MapField(Of TKey, TValue).ToString
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Add*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Add
+  isExternal: false
+  name: IDictionary.Add
+  nameWithType: MapField<TKey, TValue>.IDictionary.Add
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Add
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Add
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Add
+  name.vb: System.Collections.IDictionary.Add
+- uid: System.Collections.IDictionary.Add(System.Object,System.Object)
+  commentId: M:System.Collections.IDictionary.Add(System.Object,System.Object)
+  parent: System.Collections.IDictionary
+  isExternal: true
+  name: Add(Object, Object)
+  nameWithType: IDictionary.Add(Object, Object)
+  fullName: System.Collections.IDictionary.Add(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Collections.IDictionary.Add(System.Object,System.Object)
+    name: Add
+    nameWithType: IDictionary.Add
+    fullName: System.Collections.IDictionary.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IDictionary.Add(System.Object,System.Object)
+    name: Add
+    nameWithType: IDictionary.Add
+    fullName: System.Collections.IDictionary.Add
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Contains*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Contains
+  isExternal: false
+  name: IDictionary.Contains
+  nameWithType: MapField<TKey, TValue>.IDictionary.Contains
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Contains
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Contains
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Contains
+  name.vb: System.Collections.IDictionary.Contains
+- uid: System.Collections.IDictionary.Contains(System.Object)
+  commentId: M:System.Collections.IDictionary.Contains(System.Object)
+  parent: System.Collections.IDictionary
+  isExternal: true
+  name: Contains(Object)
+  nameWithType: IDictionary.Contains(Object)
+  fullName: System.Collections.IDictionary.Contains(System.Object)
+  spec.csharp:
+  - uid: System.Collections.IDictionary.Contains(System.Object)
+    name: Contains
+    nameWithType: IDictionary.Contains
+    fullName: System.Collections.IDictionary.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IDictionary.Contains(System.Object)
+    name: Contains
+    nameWithType: IDictionary.Contains
+    fullName: System.Collections.IDictionary.Contains
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#GetEnumerator*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#GetEnumerator
+  isExternal: false
+  name: IDictionary.GetEnumerator
+  nameWithType: MapField<TKey, TValue>.IDictionary.GetEnumerator
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.GetEnumerator
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.GetEnumerator
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.GetEnumerator
+  name.vb: System.Collections.IDictionary.GetEnumerator
+- uid: System.Collections.IDictionary.GetEnumerator
+  commentId: M:System.Collections.IDictionary.GetEnumerator
+  parent: System.Collections.IDictionary
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IDictionary.GetEnumerator()
+  fullName: System.Collections.IDictionary.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.IDictionary.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IDictionary.GetEnumerator
+    fullName: System.Collections.IDictionary.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IDictionary.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IDictionary.GetEnumerator
+    fullName: System.Collections.IDictionary.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IDictionaryEnumerator
+  commentId: T:System.Collections.IDictionaryEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IDictionaryEnumerator
+  nameWithType: IDictionaryEnumerator
+  fullName: System.Collections.IDictionaryEnumerator
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Remove*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Remove
+  isExternal: false
+  name: IDictionary.Remove
+  nameWithType: MapField<TKey, TValue>.IDictionary.Remove
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Remove
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Remove
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Remove
+  name.vb: System.Collections.IDictionary.Remove
+- uid: System.Collections.IDictionary.Remove(System.Object)
+  commentId: M:System.Collections.IDictionary.Remove(System.Object)
+  parent: System.Collections.IDictionary
+  isExternal: true
+  name: Remove(Object)
+  nameWithType: IDictionary.Remove(Object)
+  fullName: System.Collections.IDictionary.Remove(System.Object)
+  spec.csharp:
+  - uid: System.Collections.IDictionary.Remove(System.Object)
+    name: Remove
+    nameWithType: IDictionary.Remove
+    fullName: System.Collections.IDictionary.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IDictionary.Remove(System.Object)
+    name: Remove
+    nameWithType: IDictionary.Remove
+    fullName: System.Collections.IDictionary.Remove
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#CopyTo*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#CopyTo
+  isExternal: false
+  name: ICollection.CopyTo
+  nameWithType: MapField<TKey, TValue>.ICollection.CopyTo
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.ICollection.CopyTo
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.ICollection.CopyTo
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.ICollection.CopyTo
+  name.vb: System.Collections.ICollection.CopyTo
+- uid: System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+  commentId: M:System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+  parent: System.Collections.ICollection
+  isExternal: true
+  name: CopyTo(Array, Int32)
+  nameWithType: ICollection.CopyTo(Array, Int32)
+  fullName: System.Collections.ICollection.CopyTo(System.Array, System.Int32)
+  spec.csharp:
+  - uid: System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+    name: CopyTo
+    nameWithType: ICollection.CopyTo
+    fullName: System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.ICollection.CopyTo(System.Array,System.Int32)
+    name: CopyTo
+    nameWithType: ICollection.CopyTo
+    fullName: System.Collections.ICollection.CopyTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Array
+    name: Array
+    nameWithType: Array
+    fullName: System.Array
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Array
+  commentId: T:System.Array
+  parent: System
+  isExternal: true
+  name: Array
+  nameWithType: Array
+  fullName: System.Array
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#IsFixedSize*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#IsFixedSize
+  isExternal: false
+  name: IDictionary.IsFixedSize
+  nameWithType: MapField<TKey, TValue>.IDictionary.IsFixedSize
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.IsFixedSize
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.IsFixedSize
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.IsFixedSize
+  name.vb: System.Collections.IDictionary.IsFixedSize
+- uid: System.Collections.IDictionary.IsFixedSize
+  commentId: P:System.Collections.IDictionary.IsFixedSize
+  parent: System.Collections.IDictionary
+  isExternal: true
+  name: IsFixedSize
+  nameWithType: IDictionary.IsFixedSize
+  fullName: System.Collections.IDictionary.IsFixedSize
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Keys*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Keys
+  isExternal: false
+  name: IDictionary.Keys
+  nameWithType: MapField<TKey, TValue>.IDictionary.Keys
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Keys
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Keys
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Keys
+  name.vb: System.Collections.IDictionary.Keys
+- uid: System.Collections.IDictionary.Keys
+  commentId: P:System.Collections.IDictionary.Keys
+  parent: System.Collections.IDictionary
+  isExternal: true
+  name: Keys
+  nameWithType: IDictionary.Keys
+  fullName: System.Collections.IDictionary.Keys
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Values*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Values
+  isExternal: false
+  name: IDictionary.Values
+  nameWithType: MapField<TKey, TValue>.IDictionary.Values
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Values
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Values
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Values
+  name.vb: System.Collections.IDictionary.Values
+- uid: System.Collections.IDictionary.Values
+  commentId: P:System.Collections.IDictionary.Values
+  parent: System.Collections.IDictionary
+  isExternal: true
+  name: Values
+  nameWithType: IDictionary.Values
+  fullName: System.Collections.IDictionary.Values
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#IsSynchronized*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#IsSynchronized
+  isExternal: false
+  name: ICollection.IsSynchronized
+  nameWithType: MapField<TKey, TValue>.ICollection.IsSynchronized
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.ICollection.IsSynchronized
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.ICollection.IsSynchronized
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.ICollection.IsSynchronized
+  name.vb: System.Collections.ICollection.IsSynchronized
+- uid: System.Collections.ICollection.IsSynchronized
+  commentId: P:System.Collections.ICollection.IsSynchronized
+  parent: System.Collections.ICollection
+  isExternal: true
+  name: IsSynchronized
+  nameWithType: ICollection.IsSynchronized
+  fullName: System.Collections.ICollection.IsSynchronized
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#SyncRoot*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#ICollection#SyncRoot
+  isExternal: false
+  name: ICollection.SyncRoot
+  nameWithType: MapField<TKey, TValue>.ICollection.SyncRoot
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.ICollection.SyncRoot
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.ICollection.SyncRoot
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.ICollection.SyncRoot
+  name.vb: System.Collections.ICollection.SyncRoot
+- uid: System.Collections.ICollection.SyncRoot
+  commentId: P:System.Collections.ICollection.SyncRoot
+  parent: System.Collections.ICollection
+  isExternal: true
+  name: SyncRoot
+  nameWithType: ICollection.SyncRoot
+  fullName: System.Collections.ICollection.SyncRoot
+- uid: Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Item*
+  commentId: Overload:Google.Protobuf.Collections.MapField`2.System#Collections#IDictionary#Item
+  isExternal: false
+  name: IDictionary.Item
+  nameWithType: MapField<TKey, TValue>.IDictionary.Item
+  fullName: Google.Protobuf.Collections.MapField<TKey, TValue>.System.Collections.IDictionary.Item
+  nameWithType.vb: MapField(Of TKey, TValue).System.Collections.IDictionary.Item
+  fullName.vb: Google.Protobuf.Collections.MapField(Of TKey, TValue).System.Collections.IDictionary.Item
+  name.vb: System.Collections.IDictionary.Item
+- uid: System.Collections.IDictionary.Item(System.Object)
+  commentId: P:System.Collections.IDictionary.Item(System.Object)
+  parent: System.Collections.IDictionary
+  isExternal: true
+  name: Item[Object]
+  nameWithType: IDictionary.Item[Object]
+  fullName: System.Collections.IDictionary.Item[System.Object]
+  nameWithType.vb: IDictionary.Item(Object)
+  fullName.vb: System.Collections.IDictionary.Item(System.Object)
+  name.vb: Item(Object)
+  spec.csharp:
+  - uid: System.Collections.IDictionary.Item(System.Object)
+    name: Item
+    nameWithType: IDictionary.Item
+    fullName: System.Collections.IDictionary.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.IDictionary.Item(System.Object)
+    name: Item
+    nameWithType: IDictionary.Item
+    fullName: System.Collections.IDictionary.Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,613 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.JsonParser.Settings
+  commentId: T:Google.Protobuf.JsonParser.Settings
+  id: JsonParser.Settings
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.JsonParser.Settings.#ctor(System.Int32)
+  - Google.Protobuf.JsonParser.Settings.#ctor(System.Int32,Google.Protobuf.Reflection.TypeRegistry)
+  - Google.Protobuf.JsonParser.Settings.Default
+  - Google.Protobuf.JsonParser.Settings.RecursionLimit
+  - Google.Protobuf.JsonParser.Settings.TypeRegistry
+  langs:
+  - csharp
+  - vb
+  name: JsonParser.Settings
+  nameWithType: JsonParser.Settings
+  fullName: Google.Protobuf.JsonParser.Settings
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Settings
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 971
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nSettings controlling JSON parsing.\n"
+  example: []
+  syntax:
+    content: public sealed class Settings
+    content.vb: Public NotInheritable Class Settings
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.JsonParser.Settings.Default
+  commentId: P:Google.Protobuf.JsonParser.Settings.Default
+  id: Default
+  parent: Google.Protobuf.JsonParser.Settings
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: JsonParser.Settings.Default
+  fullName: Google.Protobuf.JsonParser.Settings.Default
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Default
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 977
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nDefault settings, as used by <xref href=\"Google.Protobuf.JsonParser.Default\" data-throw-if-not-resolved=\"false\"></xref>. This has the same default\nrecursion limit as <xref href=\"Google.Protobuf.CodedInputStream\" data-throw-if-not-resolved=\"false\"></xref>, and an empty type registry.\n"
+  example: []
+  syntax:
+    content: public static JsonParser.Settings Default { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.JsonParser.Settings
+    content.vb: Public Shared ReadOnly Property Default As JsonParser.Settings
+  overload: Google.Protobuf.JsonParser.Settings.Default*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Protobuf.JsonParser.Settings.RecursionLimit
+  commentId: P:Google.Protobuf.JsonParser.Settings.RecursionLimit
+  id: RecursionLimit
+  parent: Google.Protobuf.JsonParser.Settings
+  langs:
+  - csharp
+  - vb
+  name: RecursionLimit
+  nameWithType: JsonParser.Settings.RecursionLimit
+  fullName: Google.Protobuf.JsonParser.Settings.RecursionLimit
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: RecursionLimit
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 991
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nThe maximum depth of messages to parse. Note that this limit only applies to parsing\nmessages, not collections - so a message within a collection within a message only counts as\ndepth 2, not 3.\n"
+  example: []
+  syntax:
+    content: public int RecursionLimit { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property RecursionLimit As Integer
+  overload: Google.Protobuf.JsonParser.Settings.RecursionLimit*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.JsonParser.Settings.TypeRegistry
+  commentId: P:Google.Protobuf.JsonParser.Settings.TypeRegistry
+  id: TypeRegistry
+  parent: Google.Protobuf.JsonParser.Settings
+  langs:
+  - csharp
+  - vb
+  name: TypeRegistry
+  nameWithType: JsonParser.Settings.TypeRegistry
+  fullName: Google.Protobuf.JsonParser.Settings.TypeRegistry
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: TypeRegistry
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 996
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nThe type registry used to parse <xref href=\"Google.Protobuf.WellKnownTypes.Any\" data-throw-if-not-resolved=\"false\"></xref> messages.\n"
+  example: []
+  syntax:
+    content: public TypeRegistry TypeRegistry { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.TypeRegistry
+    content.vb: Public ReadOnly Property TypeRegistry As TypeRegistry
+  overload: Google.Protobuf.JsonParser.Settings.TypeRegistry*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.JsonParser.Settings.#ctor(System.Int32)
+  commentId: M:Google.Protobuf.JsonParser.Settings.#ctor(System.Int32)
+  id: '#ctor(System.Int32)'
+  parent: Google.Protobuf.JsonParser.Settings
+  langs:
+  - csharp
+  - vb
+  name: Settings(Int32)
+  nameWithType: JsonParser.Settings.Settings(Int32)
+  fullName: Google.Protobuf.JsonParser.Settings.Settings(System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 1002
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.JsonParser.Settings\" data-throw-if-not-resolved=\"false\"></xref> object with the specified recursion limit.\n"
+  example: []
+  syntax:
+    content: public Settings(int recursionLimit)
+    parameters:
+    - id: recursionLimit
+      type: System.Int32
+      description: The maximum depth of messages to parse
+    content.vb: Public Sub New(recursionLimit As Integer)
+  overload: Google.Protobuf.JsonParser.Settings.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.JsonParser.Settings.#ctor(System.Int32,Google.Protobuf.Reflection.TypeRegistry)
+  commentId: M:Google.Protobuf.JsonParser.Settings.#ctor(System.Int32,Google.Protobuf.Reflection.TypeRegistry)
+  id: '#ctor(System.Int32,Google.Protobuf.Reflection.TypeRegistry)'
+  parent: Google.Protobuf.JsonParser.Settings
+  langs:
+  - csharp
+  - vb
+  name: Settings(Int32, TypeRegistry)
+  nameWithType: JsonParser.Settings.Settings(Int32, TypeRegistry)
+  fullName: Google.Protobuf.JsonParser.Settings.Settings(System.Int32, Google.Protobuf.Reflection.TypeRegistry)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 1011
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.JsonParser.Settings\" data-throw-if-not-resolved=\"false\"></xref> object with the specified recursion limit and type registry.\n"
+  example: []
+  syntax:
+    content: public Settings(int recursionLimit, TypeRegistry typeRegistry)
+    parameters:
+    - id: recursionLimit
+      type: System.Int32
+      description: The maximum depth of messages to parse
+    - id: typeRegistry
+      type: Google.Protobuf.Reflection.TypeRegistry
+      description: The type registry used to parse <xref href="Google.Protobuf.WellKnownTypes.Any" data-throw-if-not-resolved="false"></xref> messages
+    content.vb: Public Sub New(recursionLimit As Integer, typeRegistry As TypeRegistry)
+  overload: Google.Protobuf.JsonParser.Settings.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.JsonParser.Default
+  commentId: P:Google.Protobuf.JsonParser.Default
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: false
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream
+- uid: Google.Protobuf.JsonParser.Settings.Default*
+  commentId: Overload:Google.Protobuf.JsonParser.Settings.Default
+  isExternal: false
+  name: Default
+  nameWithType: JsonParser.Settings.Default
+  fullName: Google.Protobuf.JsonParser.Settings.Default
+- uid: Google.Protobuf.JsonParser.Settings
+  commentId: T:Google.Protobuf.JsonParser.Settings
+  parent: Google.Protobuf
+  isExternal: false
+  name: JsonParser.Settings
+  nameWithType: JsonParser.Settings
+  fullName: Google.Protobuf.JsonParser.Settings
+- uid: Google.Protobuf.JsonParser.Settings.RecursionLimit*
+  commentId: Overload:Google.Protobuf.JsonParser.Settings.RecursionLimit
+  isExternal: false
+  name: RecursionLimit
+  nameWithType: JsonParser.Settings.RecursionLimit
+  fullName: Google.Protobuf.JsonParser.Settings.RecursionLimit
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Protobuf.WellKnownTypes.Any
+  commentId: T:Google.Protobuf.WellKnownTypes.Any
+  parent: Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Any
+  nameWithType: Any
+  fullName: Google.Protobuf.WellKnownTypes.Any
+- uid: Google.Protobuf.JsonParser.Settings.TypeRegistry*
+  commentId: Overload:Google.Protobuf.JsonParser.Settings.TypeRegistry
+  isExternal: false
+  name: TypeRegistry
+  nameWithType: JsonParser.Settings.TypeRegistry
+  fullName: Google.Protobuf.JsonParser.Settings.TypeRegistry
+- uid: Google.Protobuf.Reflection.TypeRegistry
+  commentId: T:Google.Protobuf.Reflection.TypeRegistry
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: TypeRegistry
+  nameWithType: TypeRegistry
+  fullName: Google.Protobuf.Reflection.TypeRegistry
+- uid: Google.Protobuf.WellKnownTypes
+  commentId: N:Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Google.Protobuf.WellKnownTypes
+  nameWithType: Google.Protobuf.WellKnownTypes
+  fullName: Google.Protobuf.WellKnownTypes
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Protobuf.JsonParser.Settings.#ctor*
+  commentId: Overload:Google.Protobuf.JsonParser.Settings.#ctor
+  isExternal: false
+  name: Settings
+  nameWithType: JsonParser.Settings.Settings
+  fullName: Google.Protobuf.JsonParser.Settings.Settings

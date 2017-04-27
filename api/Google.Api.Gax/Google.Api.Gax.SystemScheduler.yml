@@ -1,0 +1,683 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.SystemScheduler
+  commentId: T:Google.Api.Gax.SystemScheduler
+  id: SystemScheduler
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.SystemScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+  - Google.Api.Gax.SystemScheduler.Instance
+  langs:
+  - csharp
+  - vb
+  name: SystemScheduler
+  nameWithType: SystemScheduler
+  fullName: Google.Api.Gax.SystemScheduler
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax/SystemScheduler.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: SystemScheduler
+    path: src/Google.Api.Gax/SystemScheduler.cs
+    startLine: 16
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nSingleton implementation of <xref href=\"Google.Api.Gax.IScheduler\" data-throw-if-not-resolved=\"false\"></xref> which uses <xref href=\"System.Threading.Tasks.Task.Delay(System.TimeSpan%2cSystem.Threading.CancellationToken)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public sealed class SystemScheduler : IScheduler'
+    content.vb: >-
+      Public NotInheritable Class SystemScheduler
+          Implements IScheduler
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Api.Gax.IScheduler
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  extensionMethods:
+  - Google.Api.Gax.IScheduler.Google.Api.Gax.SchedulerExtensions.Sleep(System.TimeSpan,System.Threading.CancellationToken)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.Gax.SystemScheduler.Instance
+  commentId: P:Google.Api.Gax.SystemScheduler.Instance
+  id: Instance
+  parent: Google.Api.Gax.SystemScheduler
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: SystemScheduler.Instance
+  fullName: Google.Api.Gax.SystemScheduler.Instance
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/SystemScheduler.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Instance
+    path: src/Google.Api.Gax/SystemScheduler.cs
+    startLine: 21
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nRetrieves the singleton instance.\n"
+  example: []
+  syntax:
+    content: public static SystemScheduler Instance { get; }
+    parameters: []
+    return:
+      type: Google.Api.Gax.SystemScheduler
+    content.vb: Public Shared ReadOnly Property Instance As SystemScheduler
+  overload: Google.Api.Gax.SystemScheduler.Instance*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.Gax.SystemScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.SystemScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+  id: Delay(System.TimeSpan,System.Threading.CancellationToken)
+  parent: Google.Api.Gax.SystemScheduler
+  langs:
+  - csharp
+  - vb
+  name: Delay(TimeSpan, CancellationToken)
+  nameWithType: SystemScheduler.Delay(TimeSpan, CancellationToken)
+  fullName: Google.Api.Gax.SystemScheduler.Delay(System.TimeSpan, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/SystemScheduler.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Delay
+    path: src/Google.Api.Gax/SystemScheduler.cs
+    startLine: 26
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nReturns a task which will complete after the given delay. Whether the returned\nawaitable is configured to capture the current context or not is implementation-specific.\n(A test implementation may capture the current context to enable reliable testing.)\n"
+  example: []
+  syntax:
+    content: public Task Delay(TimeSpan timeSpan, CancellationToken cancellationToken)
+    parameters:
+    - id: timeSpan
+      type: System.TimeSpan
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token that will be checked prior to completing the returned task.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A task which will complete after the given delay.
+    content.vb: Public Function Delay(timeSpan As TimeSpan, cancellationToken As CancellationToken) As Task
+  overload: Google.Api.Gax.SystemScheduler.Delay*
+  implements:
+  - Google.Api.Gax.IScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Api.Gax.IScheduler
+  commentId: T:Google.Api.Gax.IScheduler
+  parent: Google.Api.Gax
+  isExternal: false
+  name: IScheduler
+  nameWithType: IScheduler
+  fullName: Google.Api.Gax.IScheduler
+- uid: System.Threading.Tasks.Task.Delay(System.TimeSpan,System.Threading.CancellationToken)
+  commentId: M:System.Threading.Tasks.Task.Delay(System.TimeSpan,System.Threading.CancellationToken)
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.IScheduler.Google.Api.Gax.SchedulerExtensions.Sleep(System.TimeSpan,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+  parent: Google.Api.Gax.SchedulerExtensions
+  definition: Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+  name: Sleep(TimeSpan, CancellationToken)
+  nameWithType: SchedulerExtensions.Sleep(TimeSpan, CancellationToken)
+  fullName: Google.Api.Gax.SchedulerExtensions.Sleep(System.TimeSpan, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Api.Gax.SchedulerExtensions.Sleep(System.TimeSpan,System.Threading.CancellationToken)
+    name: Sleep
+    nameWithType: SchedulerExtensions.Sleep
+    fullName: Google.Api.Gax.SchedulerExtensions.Sleep
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.SchedulerExtensions.Sleep(System.TimeSpan,System.Threading.CancellationToken)
+    name: Sleep
+    nameWithType: SchedulerExtensions.Sleep
+    fullName: Google.Api.Gax.SchedulerExtensions.Sleep
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+  isExternal: true
+  name: Sleep(IScheduler, TimeSpan, CancellationToken)
+  nameWithType: SchedulerExtensions.Sleep(IScheduler, TimeSpan, CancellationToken)
+  fullName: Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler, System.TimeSpan, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+    name: Sleep
+    nameWithType: SchedulerExtensions.Sleep
+    fullName: Google.Api.Gax.SchedulerExtensions.Sleep
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Gax.IScheduler
+    name: IScheduler
+    nameWithType: IScheduler
+    fullName: Google.Api.Gax.IScheduler
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.SchedulerExtensions.Sleep(Google.Api.Gax.IScheduler,System.TimeSpan,System.Threading.CancellationToken)
+    name: Sleep
+    nameWithType: SchedulerExtensions.Sleep
+    fullName: Google.Api.Gax.SchedulerExtensions.Sleep
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Gax.IScheduler
+    name: IScheduler
+    nameWithType: IScheduler
+    fullName: Google.Api.Gax.IScheduler
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.SchedulerExtensions
+  commentId: T:Google.Api.Gax.SchedulerExtensions
+  parent: Google.Api.Gax
+  isExternal: false
+  name: SchedulerExtensions
+  nameWithType: SchedulerExtensions
+  fullName: Google.Api.Gax.SchedulerExtensions
+- uid: Google.Api.Gax.SystemScheduler.Instance*
+  commentId: Overload:Google.Api.Gax.SystemScheduler.Instance
+  isExternal: false
+  name: Instance
+  nameWithType: SystemScheduler.Instance
+  fullName: Google.Api.Gax.SystemScheduler.Instance
+- uid: Google.Api.Gax.SystemScheduler
+  commentId: T:Google.Api.Gax.SystemScheduler
+  parent: Google.Api.Gax
+  isExternal: false
+  name: SystemScheduler
+  nameWithType: SystemScheduler
+  fullName: Google.Api.Gax.SystemScheduler
+- uid: Google.Api.Gax.SystemScheduler.Delay*
+  commentId: Overload:Google.Api.Gax.SystemScheduler.Delay
+  isExternal: false
+  name: Delay
+  nameWithType: SystemScheduler.Delay
+  fullName: Google.Api.Gax.SystemScheduler.Delay
+- uid: Google.Api.Gax.IScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+  commentId: M:Google.Api.Gax.IScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+  parent: Google.Api.Gax.IScheduler
+  isExternal: true
+  name: Delay(TimeSpan, CancellationToken)
+  nameWithType: IScheduler.Delay(TimeSpan, CancellationToken)
+  fullName: Google.Api.Gax.IScheduler.Delay(System.TimeSpan, System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Api.Gax.IScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+    name: Delay
+    nameWithType: IScheduler.Delay
+    fullName: Google.Api.Gax.IScheduler.Delay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.IScheduler.Delay(System.TimeSpan,System.Threading.CancellationToken)
+    name: Delay
+    nameWithType: IScheduler.Delay
+    fullName: Google.Api.Gax.IScheduler.Delay
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.TimeSpan
+    name: TimeSpan
+    nameWithType: TimeSpan
+    fullName: System.TimeSpan
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: false
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

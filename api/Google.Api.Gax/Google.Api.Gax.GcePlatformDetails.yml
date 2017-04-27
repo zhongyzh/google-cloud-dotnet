@@ -1,0 +1,682 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.GcePlatformDetails
+  commentId: T:Google.Api.Gax.GcePlatformDetails
+  id: GcePlatformDetails
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.GcePlatformDetails.#ctor(System.String,System.String,System.String,System.String)
+  - Google.Api.Gax.GcePlatformDetails.InstanceId
+  - Google.Api.Gax.GcePlatformDetails.MetadataJson
+  - Google.Api.Gax.GcePlatformDetails.ProjectId
+  - Google.Api.Gax.GcePlatformDetails.ToString
+  - Google.Api.Gax.GcePlatformDetails.TryLoad(System.String)
+  - Google.Api.Gax.GcePlatformDetails.ZoneName
+  langs:
+  - csharp
+  - vb
+  name: GcePlatformDetails
+  nameWithType: GcePlatformDetails
+  fullName: Google.Api.Gax.GcePlatformDetails
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax/Platform.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GcePlatformDetails
+    path: src/Google.Api.Gax/Platform.cs
+    startLine: 47
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nGoogle Compute Engine details.\n"
+  example: []
+  syntax:
+    content: public sealed class GcePlatformDetails
+    content.vb: Public NotInheritable Class GcePlatformDetails
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.Gax.GcePlatformDetails.TryLoad(System.String)
+  commentId: M:Google.Api.Gax.GcePlatformDetails.TryLoad(System.String)
+  id: TryLoad(System.String)
+  parent: Google.Api.Gax.GcePlatformDetails
+  langs:
+  - csharp
+  - vb
+  name: TryLoad(String)
+  nameWithType: GcePlatformDetails.TryLoad(String)
+  fullName: Google.Api.Gax.GcePlatformDetails.TryLoad(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/Platform.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: TryLoad
+    path: src/Google.Api.Gax/Platform.cs
+    startLine: 56
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nBuilds a <xref href=\"Google.Api.Gax.GcePlatformDetails\" data-throw-if-not-resolved=\"false\"></xref> from the given metadata.\nThis metadata is normally retrieved from the GCE metadata server.\n"
+  example: []
+  syntax:
+    content: public static GcePlatformDetails TryLoad(string metadataJson)
+    parameters:
+    - id: metadataJson
+      type: System.String
+      description: JSON metadata, normally retrieved from the GCE metadata server.
+    return:
+      type: Google.Api.Gax.GcePlatformDetails
+      description: >-
+        A populated <xref href="Google.Api.Gax.GcePlatformDetails" data-throw-if-not-resolved="false"></xref> if the metadata represents and GCE instance;
+
+        <code>null</code> otherwise.
+    content.vb: Public Shared Function TryLoad(metadataJson As String) As GcePlatformDetails
+  overload: Google.Api.Gax.GcePlatformDetails.TryLoad*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.GcePlatformDetails.#ctor(System.String,System.String,System.String,System.String)
+  commentId: M:Google.Api.Gax.GcePlatformDetails.#ctor(System.String,System.String,System.String,System.String)
+  id: '#ctor(System.String,System.String,System.String,System.String)'
+  parent: Google.Api.Gax.GcePlatformDetails
+  langs:
+  - csharp
+  - vb
+  name: GcePlatformDetails(String, String, String, String)
+  nameWithType: GcePlatformDetails.GcePlatformDetails(String, String, String, String)
+  fullName: Google.Api.Gax.GcePlatformDetails.GcePlatformDetails(System.String, System.String, System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.Gax/Platform.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.Gax/Platform.cs
+    startLine: 84
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nConstruct details of Google Compute Engine\n"
+  example: []
+  syntax:
+    content: public GcePlatformDetails(string metadataJson, string projectId, string instanceId, string zoneName)
+    parameters:
+    - id: metadataJson
+      type: System.String
+      description: The full JSON string retrieved from the metadata server.
+    - id: projectId
+      type: System.String
+      description: The project ID.
+    - id: instanceId
+      type: System.String
+      description: The instance ID.
+    - id: zoneName
+      type: System.String
+      description: The zone name.
+    content.vb: Public Sub New(metadataJson As String, projectId As String, instanceId As String, zoneName As String)
+  overload: Google.Api.Gax.GcePlatformDetails.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Gax.GcePlatformDetails.MetadataJson
+  commentId: P:Google.Api.Gax.GcePlatformDetails.MetadataJson
+  id: MetadataJson
+  parent: Google.Api.Gax.GcePlatformDetails
+  langs:
+  - csharp
+  - vb
+  name: MetadataJson
+  nameWithType: GcePlatformDetails.MetadataJson
+  fullName: Google.Api.Gax.GcePlatformDetails.MetadataJson
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/Platform.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MetadataJson
+    path: src/Google.Api.Gax/Platform.cs
+    startLine: 95
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nThe full JSON string retrieved from the metadata server.\n"
+  example: []
+  syntax:
+    content: public string MetadataJson { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property MetadataJson As String
+  overload: Google.Api.Gax.GcePlatformDetails.MetadataJson*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.GcePlatformDetails.ProjectId
+  commentId: P:Google.Api.Gax.GcePlatformDetails.ProjectId
+  id: ProjectId
+  parent: Google.Api.Gax.GcePlatformDetails
+  langs:
+  - csharp
+  - vb
+  name: ProjectId
+  nameWithType: GcePlatformDetails.ProjectId
+  fullName: Google.Api.Gax.GcePlatformDetails.ProjectId
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/Platform.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ProjectId
+    path: src/Google.Api.Gax/Platform.cs
+    startLine: 100
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nThe Project ID under which this GCE instance is running.\n"
+  example: []
+  syntax:
+    content: public string ProjectId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ProjectId As String
+  overload: Google.Api.Gax.GcePlatformDetails.ProjectId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.GcePlatformDetails.InstanceId
+  commentId: P:Google.Api.Gax.GcePlatformDetails.InstanceId
+  id: InstanceId
+  parent: Google.Api.Gax.GcePlatformDetails
+  langs:
+  - csharp
+  - vb
+  name: InstanceId
+  nameWithType: GcePlatformDetails.InstanceId
+  fullName: Google.Api.Gax.GcePlatformDetails.InstanceId
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/Platform.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: InstanceId
+    path: src/Google.Api.Gax/Platform.cs
+    startLine: 105
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nThe Instance ID of the GCE instance on which this is running.\n"
+  example: []
+  syntax:
+    content: public string InstanceId { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property InstanceId As String
+  overload: Google.Api.Gax.GcePlatformDetails.InstanceId*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.GcePlatformDetails.ZoneName
+  commentId: P:Google.Api.Gax.GcePlatformDetails.ZoneName
+  id: ZoneName
+  parent: Google.Api.Gax.GcePlatformDetails
+  langs:
+  - csharp
+  - vb
+  name: ZoneName
+  nameWithType: GcePlatformDetails.ZoneName
+  fullName: Google.Api.Gax.GcePlatformDetails.ZoneName
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/Platform.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ZoneName
+    path: src/Google.Api.Gax/Platform.cs
+    startLine: 110
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nThe zone name where this GCE instance is running.\n"
+  example: []
+  syntax:
+    content: public string ZoneName { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property ZoneName As String
+  overload: Google.Api.Gax.GcePlatformDetails.ZoneName*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.GcePlatformDetails.ToString
+  commentId: M:Google.Api.Gax.GcePlatformDetails.ToString
+  id: ToString
+  parent: Google.Api.Gax.GcePlatformDetails
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: GcePlatformDetails.ToString()
+  fullName: Google.Api.Gax.GcePlatformDetails.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/Platform.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ToString
+    path: src/Google.Api.Gax/Platform.cs
+    startLine: 113
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Api.Gax.GcePlatformDetails.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.GcePlatformDetails
+  commentId: T:Google.Api.Gax.GcePlatformDetails
+  parent: Google.Api.Gax
+  isExternal: false
+  name: GcePlatformDetails
+  nameWithType: GcePlatformDetails
+  fullName: Google.Api.Gax.GcePlatformDetails
+- uid: Google.Api.Gax.GcePlatformDetails.TryLoad*
+  commentId: Overload:Google.Api.Gax.GcePlatformDetails.TryLoad
+  isExternal: false
+  name: TryLoad
+  nameWithType: GcePlatformDetails.TryLoad
+  fullName: Google.Api.Gax.GcePlatformDetails.TryLoad
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Api.Gax.GcePlatformDetails.#ctor*
+  commentId: Overload:Google.Api.Gax.GcePlatformDetails.#ctor
+  isExternal: false
+  name: GcePlatformDetails
+  nameWithType: GcePlatformDetails.GcePlatformDetails
+  fullName: Google.Api.Gax.GcePlatformDetails.GcePlatformDetails
+- uid: Google.Api.Gax.GcePlatformDetails.MetadataJson*
+  commentId: Overload:Google.Api.Gax.GcePlatformDetails.MetadataJson
+  isExternal: false
+  name: MetadataJson
+  nameWithType: GcePlatformDetails.MetadataJson
+  fullName: Google.Api.Gax.GcePlatformDetails.MetadataJson
+- uid: Google.Api.Gax.GcePlatformDetails.ProjectId*
+  commentId: Overload:Google.Api.Gax.GcePlatformDetails.ProjectId
+  isExternal: false
+  name: ProjectId
+  nameWithType: GcePlatformDetails.ProjectId
+  fullName: Google.Api.Gax.GcePlatformDetails.ProjectId
+- uid: Google.Api.Gax.GcePlatformDetails.InstanceId*
+  commentId: Overload:Google.Api.Gax.GcePlatformDetails.InstanceId
+  isExternal: false
+  name: InstanceId
+  nameWithType: GcePlatformDetails.InstanceId
+  fullName: Google.Api.Gax.GcePlatformDetails.InstanceId
+- uid: Google.Api.Gax.GcePlatformDetails.ZoneName*
+  commentId: Overload:Google.Api.Gax.GcePlatformDetails.ZoneName
+  isExternal: false
+  name: ZoneName
+  nameWithType: GcePlatformDetails.ZoneName
+  fullName: Google.Api.Gax.GcePlatformDetails.ZoneName
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.GcePlatformDetails.ToString*
+  commentId: Overload:Google.Api.Gax.GcePlatformDetails.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: GcePlatformDetails.ToString
+  fullName: Google.Api.Gax.GcePlatformDetails.ToString

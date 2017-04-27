@@ -1,0 +1,958 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.PagedEnumerable`2
+  commentId: T:Google.Api.Gax.PagedEnumerable`2
+  id: PagedEnumerable`2
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.PagedEnumerable`2.AsRawResponses
+  - Google.Api.Gax.PagedEnumerable`2.GetEnumerator
+  - Google.Api.Gax.PagedEnumerable`2.ReadPage(System.Int32)
+  - Google.Api.Gax.PagedEnumerable`2.System#Collections#IEnumerable#GetEnumerator
+  langs:
+  - csharp
+  - vb
+  name: PagedEnumerable<TResponse, TResource>
+  nameWithType: PagedEnumerable<TResponse, TResource>
+  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax/PagedEnumerable.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PagedEnumerable
+    path: src/Google.Api.Gax/PagedEnumerable.cs
+    startLine: 21
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nA sequence of resources obtained via API responses, each of which contributes a page of resources.\nApplication code can treat this as a simple sequence (with API calls automatically being made\nlazily as more results are required), or call <xref href=\"Google.Api.Gax.PagedEnumerable%602.AsRawResponses\" data-throw-if-not-resolved=\"false\"></xref> to retrieve\na page at a time, potentially with additional information.\n"
+  example: []
+  syntax:
+    content: 'public abstract class PagedEnumerable<TResponse, TResource> : IEnumerable<TResource>, IEnumerable'
+    typeParameters:
+    - id: TResponse
+      description: The API response type. Each response contains a page of resources.
+    - id: TResource
+      description: The resource type contained within the response.
+    content.vb: >-
+      Public MustInherit Class PagedEnumerable(Of TResponse, TResource)
+          Implements IEnumerable(Of TResource), IEnumerable
+  inheritance:
+  - System.Object
+  implements:
+  - System.Collections.Generic.IEnumerable{{TResource}}
+  - System.Collections.IEnumerable
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: PagedEnumerable(Of TResponse, TResource)
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource)
+  name.vb: PagedEnumerable(Of TResponse, TResource)
+- uid: Google.Api.Gax.PagedEnumerable`2.AsRawResponses
+  commentId: M:Google.Api.Gax.PagedEnumerable`2.AsRawResponses
+  id: AsRawResponses
+  parent: Google.Api.Gax.PagedEnumerable`2
+  langs:
+  - csharp
+  - vb
+  name: AsRawResponses()
+  nameWithType: PagedEnumerable<TResponse, TResource>.AsRawResponses()
+  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>.AsRawResponses()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/PagedEnumerable.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: AsRawResponses
+    path: src/Google.Api.Gax/PagedEnumerable.cs
+    startLine: 28
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nReturns the sequence of raw API responses, each of which contributes a page of\nresources to this sequence.\n"
+  example: []
+  syntax:
+    content: public virtual IEnumerable<TResponse> AsRawResponses()
+    return:
+      type: System.Collections.Generic.IEnumerable{{TResponse}}
+      description: A sequence of raw API responses, each containing a page of resources.
+    content.vb: Public Overridable Function AsRawResponses As IEnumerable(Of TResponse)
+  overload: Google.Api.Gax.PagedEnumerable`2.AsRawResponses*
+  nameWithType.vb: PagedEnumerable(Of TResponse, TResource).AsRawResponses()
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource).AsRawResponses()
+- uid: Google.Api.Gax.PagedEnumerable`2.ReadPage(System.Int32)
+  commentId: M:Google.Api.Gax.PagedEnumerable`2.ReadPage(System.Int32)
+  id: ReadPage(System.Int32)
+  parent: Google.Api.Gax.PagedEnumerable`2
+  langs:
+  - csharp
+  - vb
+  name: ReadPage(Int32)
+  nameWithType: PagedEnumerable<TResponse, TResource>.ReadPage(Int32)
+  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>.ReadPage(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/PagedEnumerable.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ReadPage
+    path: src/Google.Api.Gax/PagedEnumerable.cs
+    startLine: 48
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nEagerly reads a single page of results with a fixed maximum size. The returned page is guaranteed\nto have that many results, unless there is no more data available.\n"
+  remarks: "\n\"Natural\" pages returned by the API may contain a smaller number of resources than requested.\nFor example, a request for a page with 100 resources may return a page with 80 resources but\na next page token for more to be retrieved. This is suitable for batch-processing, but not\nfor user-visible paging such as in a web application, where fixed-size pages are expected.\nThis method may make more than one API call in order to fill the page, but after the page has been\nreturned, all the data will have been loaded. (In particular, iterating over the items in the page\nmultiple times will not make any further requests.)\n"
+  example: []
+  syntax:
+    content: public virtual Page<TResource> ReadPage(int pageSize)
+    parameters:
+    - id: pageSize
+      type: System.Int32
+      description: The page size. Must be greater than 0.
+    return:
+      type: Google.Api.Gax.Page{{TResource}}
+      description: An asynchronous operation, the result of which is a page of resources.
+    content.vb: Public Overridable Function ReadPage(pageSize As Integer) As Page(Of TResource)
+  overload: Google.Api.Gax.PagedEnumerable`2.ReadPage*
+  nameWithType.vb: PagedEnumerable(Of TResponse, TResource).ReadPage(Int32)
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource).ReadPage(System.Int32)
+- uid: Google.Api.Gax.PagedEnumerable`2.GetEnumerator
+  commentId: M:Google.Api.Gax.PagedEnumerable`2.GetEnumerator
+  id: GetEnumerator
+  parent: Google.Api.Gax.PagedEnumerable`2
+  langs:
+  - csharp
+  - vb
+  name: GetEnumerator()
+  nameWithType: PagedEnumerable<TResponse, TResource>.GetEnumerator()
+  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/PagedEnumerable.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetEnumerator
+    path: src/Google.Api.Gax/PagedEnumerable.cs
+    startLine: 54
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: public virtual IEnumerator<TResource> GetEnumerator()
+    return:
+      type: System.Collections.Generic.IEnumerator{{TResource}}
+    content.vb: Public Overridable Function GetEnumerator As IEnumerator(Of TResource)
+  overload: Google.Api.Gax.PagedEnumerable`2.GetEnumerator*
+  implements:
+  - System.Collections.Generic.IEnumerable{{TResource}}.GetEnumerator
+  nameWithType.vb: PagedEnumerable(Of TResponse, TResource).GetEnumerator()
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource).GetEnumerator()
+- uid: Google.Api.Gax.PagedEnumerable`2.System#Collections#IEnumerable#GetEnumerator
+  commentId: M:Google.Api.Gax.PagedEnumerable`2.System#Collections#IEnumerable#GetEnumerator
+  id: System#Collections#IEnumerable#GetEnumerator
+  isEii: true
+  parent: Google.Api.Gax.PagedEnumerable`2
+  langs:
+  - csharp
+  - vb
+  name: IEnumerable.GetEnumerator()
+  nameWithType: PagedEnumerable<TResponse, TResource>.IEnumerable.GetEnumerator()
+  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>.System.Collections.IEnumerable.GetEnumerator()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/PagedEnumerable.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: System.Collections.IEnumerable.GetEnumerator
+    path: src/Google.Api.Gax/PagedEnumerable.cs
+    startLine: 60
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  example: []
+  syntax:
+    content: IEnumerator IEnumerable.GetEnumerator()
+    return:
+      type: System.Collections.IEnumerator
+    content.vb: Function System.Collections.IEnumerable.GetEnumerator As IEnumerator Implements IEnumerable.GetEnumerator
+  overload: Google.Api.Gax.PagedEnumerable`2.System#Collections#IEnumerable#GetEnumerator*
+  implements:
+  - System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: PagedEnumerable(Of TResponse, TResource).System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource).System.Collections.IEnumerable.GetEnumerator()
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+references:
+- uid: Google.Api.Gax.PagedEnumerable`2.AsRawResponses
+  commentId: M:Google.Api.Gax.PagedEnumerable`2.AsRawResponses
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Collections.Generic.IEnumerable{{TResource}}
+  commentId: T:System.Collections.Generic.IEnumerable{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<TResource>
+  nameWithType: IEnumerable<TResource>
+  fullName: System.Collections.Generic.IEnumerable<TResource>
+  nameWithType.vb: IEnumerable(Of TResource)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TResource)
+  name.vb: IEnumerable(Of TResource)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: System.Collections
+  commentId: N:System.Collections
+  isExternal: false
+  name: System.Collections
+  nameWithType: System.Collections
+  fullName: System.Collections
+- uid: Google.Api.Gax.PagedEnumerable`2.AsRawResponses*
+  commentId: Overload:Google.Api.Gax.PagedEnumerable`2.AsRawResponses
+  isExternal: false
+  name: AsRawResponses
+  nameWithType: PagedEnumerable<TResponse, TResource>.AsRawResponses
+  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>.AsRawResponses
+  nameWithType.vb: PagedEnumerable(Of TResponse, TResource).AsRawResponses
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource).AsRawResponses
+- uid: System.Collections.Generic.IEnumerable{{TResponse}}
+  commentId: T:System.Collections.Generic.IEnumerable{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<TResponse>
+  nameWithType: IEnumerable<TResponse>
+  fullName: System.Collections.Generic.IEnumerable<TResponse>
+  nameWithType.vb: IEnumerable(Of TResponse)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TResponse)
+  name.vb: IEnumerable(Of TResponse)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PagedEnumerable`2.ReadPage*
+  commentId: Overload:Google.Api.Gax.PagedEnumerable`2.ReadPage
+  isExternal: false
+  name: ReadPage
+  nameWithType: PagedEnumerable<TResponse, TResource>.ReadPage
+  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>.ReadPage
+  nameWithType.vb: PagedEnumerable(Of TResponse, TResource).ReadPage
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource).ReadPage
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Api.Gax.Page{{TResource}}
+  commentId: T:Google.Api.Gax.Page{`1}
+  parent: Google.Api.Gax
+  definition: Google.Api.Gax.Page`1
+  name: Page<TResource>
+  nameWithType: Page<TResource>
+  fullName: Google.Api.Gax.Page<TResource>
+  nameWithType.vb: Page(Of TResource)
+  fullName.vb: Google.Api.Gax.Page(Of TResource)
+  name.vb: Page(Of TResource)
+  spec.csharp:
+  - uid: Google.Api.Gax.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: Google.Api.Gax.Page
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: Google.Api.Gax.Page
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.Page`1
+  commentId: T:Google.Api.Gax.Page`1
+  isExternal: false
+  name: Page<TResource>
+  nameWithType: Page<TResource>
+  fullName: Google.Api.Gax.Page<TResource>
+  nameWithType.vb: Page(Of TResource)
+  fullName.vb: Google.Api.Gax.Page(Of TResource)
+  name.vb: Page(Of TResource)
+  spec.csharp:
+  - uid: Google.Api.Gax.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: Google.Api.Gax.Page
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Api.Gax.Page`1
+    name: Page
+    nameWithType: Page
+    fullName: Google.Api.Gax.Page
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PagedEnumerable`2.GetEnumerator*
+  commentId: Overload:Google.Api.Gax.PagedEnumerable`2.GetEnumerator
+  isExternal: false
+  name: GetEnumerator
+  nameWithType: PagedEnumerable<TResponse, TResource>.GetEnumerator
+  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>.GetEnumerator
+  nameWithType.vb: PagedEnumerable(Of TResponse, TResource).GetEnumerator
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource).GetEnumerator
+- uid: System.Collections.Generic.IEnumerable{{TResource}}.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable{`0}.GetEnumerator
+  parent: System.Collections.Generic.IEnumerable{{TResource}}
+  definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  name: GetEnumerator()
+  nameWithType: IEnumerable<TResource>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<TResource>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of TResource).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of TResource).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<TResource>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<TResource>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of TResource).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of TResource).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator{{TResource}}
+  commentId: T:System.Collections.Generic.IEnumerator{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerator`1
+  name: IEnumerator<TResource>
+  nameWithType: IEnumerator<TResource>
+  fullName: System.Collections.Generic.IEnumerator<TResource>
+  nameWithType.vb: IEnumerator(Of TResource)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of TResource)
+  name.vb: IEnumerator(Of TResource)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResource
+    nameWithType: TResource
+    fullName: TResource
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable<T>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+  nameWithType.vb: IEnumerable(Of T).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T).GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable<T>.GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable(Of T).GetEnumerator
+    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerator`1
+  commentId: T:System.Collections.Generic.IEnumerator`1
+  isExternal: true
+  name: IEnumerator<T>
+  nameWithType: IEnumerator<T>
+  fullName: System.Collections.Generic.IEnumerator<T>
+  nameWithType.vb: IEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerator(Of T)
+  name.vb: IEnumerator(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerator`1
+    name: IEnumerator
+    nameWithType: IEnumerator
+    fullName: System.Collections.Generic.IEnumerator
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.PagedEnumerable`2.System#Collections#IEnumerable#GetEnumerator*
+  commentId: Overload:Google.Api.Gax.PagedEnumerable`2.System#Collections#IEnumerable#GetEnumerator
+  isExternal: false
+  name: IEnumerable.GetEnumerator
+  nameWithType: PagedEnumerable<TResponse, TResource>.IEnumerable.GetEnumerator
+  fullName: Google.Api.Gax.PagedEnumerable<TResponse, TResource>.System.Collections.IEnumerable.GetEnumerator
+  nameWithType.vb: PagedEnumerable(Of TResponse, TResource).System.Collections.IEnumerable.GetEnumerator
+  fullName.vb: Google.Api.Gax.PagedEnumerable(Of TResponse, TResource).System.Collections.IEnumerable.GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+- uid: System.Collections.IEnumerable.GetEnumerator
+  commentId: M:System.Collections.IEnumerable.GetEnumerator
+  parent: System.Collections.IEnumerable
+  isExternal: true
+  name: GetEnumerator()
+  nameWithType: IEnumerable.GetEnumerator()
+  fullName: System.Collections.IEnumerable.GetEnumerator()
+  spec.csharp:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Collections.IEnumerable.GetEnumerator
+    name: GetEnumerator
+    nameWithType: IEnumerable.GetEnumerator
+    fullName: System.Collections.IEnumerable.GetEnumerator
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerator
+  commentId: T:System.Collections.IEnumerator
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerator
+  nameWithType: IEnumerator
+  fullName: System.Collections.IEnumerator

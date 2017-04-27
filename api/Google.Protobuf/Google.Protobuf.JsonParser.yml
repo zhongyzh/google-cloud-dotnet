@@ -1,0 +1,722 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.JsonParser
+  commentId: T:Google.Protobuf.JsonParser
+  id: JsonParser
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.JsonParser.#ctor(Google.Protobuf.JsonParser.Settings)
+  - Google.Protobuf.JsonParser.Default
+  - Google.Protobuf.JsonParser.Parse(System.IO.TextReader,Google.Protobuf.Reflection.MessageDescriptor)
+  - Google.Protobuf.JsonParser.Parse(System.String,Google.Protobuf.Reflection.MessageDescriptor)
+  - Google.Protobuf.JsonParser.Parse``1(System.IO.TextReader)
+  - Google.Protobuf.JsonParser.Parse``1(System.String)
+  langs:
+  - csharp
+  - vb
+  name: JsonParser
+  nameWithType: JsonParser
+  fullName: Google.Protobuf.JsonParser
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: JsonParser
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 57
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReflection-based converter from JSON to messages.\n"
+  remarks: "\n<p>\nInstances of this class are thread-safe, with no mutable state.\n</p>\n<p>\nThis is a simple start to get JSON parsing working. As it's reflection-based,\nit's not as quick as baking calls into generated messages - but is a simpler implementation.\n(This code is generally not heavily optimized.)\n</p>\n"
+  example: []
+  syntax:
+    content: public sealed class JsonParser
+    content.vb: Public NotInheritable Class JsonParser
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.JsonParser.Default
+  commentId: P:Google.Protobuf.JsonParser.Default
+  id: Default
+  parent: Google.Protobuf.JsonParser
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: JsonParser.Default
+  fullName: Google.Protobuf.JsonParser.Default
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Default
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 102
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns a formatter using the default settings.\n"
+  example: []
+  syntax:
+    content: public static JsonParser Default { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.JsonParser
+    content.vb: Public Shared ReadOnly Property Default As JsonParser
+  overload: Google.Protobuf.JsonParser.Default*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Protobuf.JsonParser.#ctor(Google.Protobuf.JsonParser.Settings)
+  commentId: M:Google.Protobuf.JsonParser.#ctor(Google.Protobuf.JsonParser.Settings)
+  id: '#ctor(Google.Protobuf.JsonParser.Settings)'
+  parent: Google.Protobuf.JsonParser
+  langs:
+  - csharp
+  - vb
+  name: JsonParser(JsonParser.Settings)
+  nameWithType: JsonParser.JsonParser(JsonParser.Settings)
+  fullName: Google.Protobuf.JsonParser.JsonParser(Google.Protobuf.JsonParser.Settings)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 110
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new formatted with the given settings.\n"
+  example: []
+  syntax:
+    content: public JsonParser(JsonParser.Settings settings)
+    parameters:
+    - id: settings
+      type: Google.Protobuf.JsonParser.Settings
+      description: The settings.
+    content.vb: Public Sub New(settings As JsonParser.Settings)
+  overload: Google.Protobuf.JsonParser.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.JsonParser.Parse``1(System.String)
+  commentId: M:Google.Protobuf.JsonParser.Parse``1(System.String)
+  id: Parse``1(System.String)
+  parent: Google.Protobuf.JsonParser
+  langs:
+  - csharp
+  - vb
+  name: Parse<T>(String)
+  nameWithType: JsonParser.Parse<T>(String)
+  fullName: Google.Protobuf.JsonParser.Parse<T>(System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Parse
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 375
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nParses <span class=\"paramref\">json</span> into a new message.\n"
+  example: []
+  syntax:
+    content: 'public T Parse<T>(string json)where T : IMessage, new ()'
+    parameters:
+    - id: json
+      type: System.String
+      description: The JSON to parse.
+    typeParameters:
+    - id: T
+      description: The type of message to create.
+    return:
+      type: '{T}'
+    content.vb: Public Function Parse(Of T As {IMessage, New})(json As String) As T
+  overload: Google.Protobuf.JsonParser.Parse*
+  exceptions:
+  - type: Google.Protobuf.InvalidJsonException
+    commentId: T:Google.Protobuf.InvalidJsonException
+    description: The JSON does not comply with RFC 7159
+  - type: Google.Protobuf.InvalidProtocolBufferException
+    commentId: T:Google.Protobuf.InvalidProtocolBufferException
+    description: The JSON does not represent a Protocol Buffers message correctly
+  nameWithType.vb: JsonParser.Parse(Of T)(String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.JsonParser.Parse(Of T)(System.String)
+  name.vb: Parse(Of T)(String)
+- uid: Google.Protobuf.JsonParser.Parse``1(System.IO.TextReader)
+  commentId: M:Google.Protobuf.JsonParser.Parse``1(System.IO.TextReader)
+  id: Parse``1(System.IO.TextReader)
+  parent: Google.Protobuf.JsonParser
+  langs:
+  - csharp
+  - vb
+  name: Parse<T>(TextReader)
+  nameWithType: JsonParser.Parse<T>(TextReader)
+  fullName: Google.Protobuf.JsonParser.Parse<T>(System.IO.TextReader)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Parse
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 388
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nParses JSON read from <span class=\"paramref\">jsonReader</span> into a new message.\n"
+  example: []
+  syntax:
+    content: 'public T Parse<T>(TextReader jsonReader)where T : IMessage, new ()'
+    parameters:
+    - id: jsonReader
+      type: System.IO.TextReader
+      description: Reader providing the JSON to parse.
+    typeParameters:
+    - id: T
+      description: The type of message to create.
+    return:
+      type: '{T}'
+    content.vb: Public Function Parse(Of T As {IMessage, New})(jsonReader As TextReader) As T
+  overload: Google.Protobuf.JsonParser.Parse*
+  exceptions:
+  - type: Google.Protobuf.InvalidJsonException
+    commentId: T:Google.Protobuf.InvalidJsonException
+    description: The JSON does not comply with RFC 7159
+  - type: Google.Protobuf.InvalidProtocolBufferException
+    commentId: T:Google.Protobuf.InvalidProtocolBufferException
+    description: The JSON does not represent a Protocol Buffers message correctly
+  nameWithType.vb: JsonParser.Parse(Of T)(TextReader)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.JsonParser.Parse(Of T)(System.IO.TextReader)
+  name.vb: Parse(Of T)(TextReader)
+- uid: Google.Protobuf.JsonParser.Parse(System.String,Google.Protobuf.Reflection.MessageDescriptor)
+  commentId: M:Google.Protobuf.JsonParser.Parse(System.String,Google.Protobuf.Reflection.MessageDescriptor)
+  id: Parse(System.String,Google.Protobuf.Reflection.MessageDescriptor)
+  parent: Google.Protobuf.JsonParser
+  langs:
+  - csharp
+  - vb
+  name: Parse(String, MessageDescriptor)
+  nameWithType: JsonParser.Parse(String, MessageDescriptor)
+  fullName: Google.Protobuf.JsonParser.Parse(System.String, Google.Protobuf.Reflection.MessageDescriptor)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Parse
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 403
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nParses <span class=\"paramref\">json</span> into a new message.\n"
+  example: []
+  syntax:
+    content: public IMessage Parse(string json, MessageDescriptor descriptor)
+    parameters:
+    - id: json
+      type: System.String
+      description: The JSON to parse.
+    - id: descriptor
+      type: Google.Protobuf.Reflection.MessageDescriptor
+      description: Descriptor of message type to parse.
+    return:
+      type: Google.Protobuf.IMessage
+    content.vb: Public Function Parse(json As String, descriptor As MessageDescriptor) As IMessage
+  overload: Google.Protobuf.JsonParser.Parse*
+  exceptions:
+  - type: Google.Protobuf.InvalidJsonException
+    commentId: T:Google.Protobuf.InvalidJsonException
+    description: The JSON does not comply with RFC 7159
+  - type: Google.Protobuf.InvalidProtocolBufferException
+    commentId: T:Google.Protobuf.InvalidProtocolBufferException
+    description: The JSON does not represent a Protocol Buffers message correctly
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.JsonParser.Parse(System.IO.TextReader,Google.Protobuf.Reflection.MessageDescriptor)
+  commentId: M:Google.Protobuf.JsonParser.Parse(System.IO.TextReader,Google.Protobuf.Reflection.MessageDescriptor)
+  id: Parse(System.IO.TextReader,Google.Protobuf.Reflection.MessageDescriptor)
+  parent: Google.Protobuf.JsonParser
+  langs:
+  - csharp
+  - vb
+  name: Parse(TextReader, MessageDescriptor)
+  nameWithType: JsonParser.Parse(TextReader, MessageDescriptor)
+  fullName: Google.Protobuf.JsonParser.Parse(System.IO.TextReader, Google.Protobuf.Reflection.MessageDescriptor)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonParser.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Parse
+    path: csharp/src/Google.Protobuf/JsonParser.cs
+    startLine: 417
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nParses JSON read from <span class=\"paramref\">jsonReader</span> into a new message.\n"
+  example: []
+  syntax:
+    content: public IMessage Parse(TextReader jsonReader, MessageDescriptor descriptor)
+    parameters:
+    - id: jsonReader
+      type: System.IO.TextReader
+      description: Reader providing the JSON to parse.
+    - id: descriptor
+      type: Google.Protobuf.Reflection.MessageDescriptor
+      description: Descriptor of message type to parse.
+    return:
+      type: Google.Protobuf.IMessage
+    content.vb: Public Function Parse(jsonReader As TextReader, descriptor As MessageDescriptor) As IMessage
+  overload: Google.Protobuf.JsonParser.Parse*
+  exceptions:
+  - type: Google.Protobuf.InvalidJsonException
+    commentId: T:Google.Protobuf.InvalidJsonException
+    description: The JSON does not comply with RFC 7159
+  - type: Google.Protobuf.InvalidProtocolBufferException
+    commentId: T:Google.Protobuf.InvalidProtocolBufferException
+    description: The JSON does not represent a Protocol Buffers message correctly
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.JsonParser.Default*
+  commentId: Overload:Google.Protobuf.JsonParser.Default
+  isExternal: false
+  name: Default
+  nameWithType: JsonParser.Default
+  fullName: Google.Protobuf.JsonParser.Default
+- uid: Google.Protobuf.JsonParser
+  commentId: T:Google.Protobuf.JsonParser
+  parent: Google.Protobuf
+  isExternal: false
+  name: JsonParser
+  nameWithType: JsonParser
+  fullName: Google.Protobuf.JsonParser
+- uid: Google.Protobuf.JsonParser.#ctor*
+  commentId: Overload:Google.Protobuf.JsonParser.#ctor
+  isExternal: false
+  name: JsonParser
+  nameWithType: JsonParser.JsonParser
+  fullName: Google.Protobuf.JsonParser.JsonParser
+- uid: Google.Protobuf.JsonParser.Settings
+  commentId: T:Google.Protobuf.JsonParser.Settings
+  parent: Google.Protobuf
+  isExternal: false
+  name: JsonParser.Settings
+  nameWithType: JsonParser.Settings
+  fullName: Google.Protobuf.JsonParser.Settings
+- uid: Google.Protobuf.JsonParser.Parse*
+  commentId: Overload:Google.Protobuf.JsonParser.Parse
+  isExternal: false
+  name: Parse
+  nameWithType: JsonParser.Parse
+  fullName: Google.Protobuf.JsonParser.Parse
+- uid: Google.Protobuf.InvalidJsonException
+  commentId: T:Google.Protobuf.InvalidJsonException
+  isExternal: false
+  name: InvalidJsonException
+  nameWithType: InvalidJsonException
+  fullName: Google.Protobuf.InvalidJsonException
+- uid: Google.Protobuf.InvalidProtocolBufferException
+  commentId: T:Google.Protobuf.InvalidProtocolBufferException
+  isExternal: false
+  name: InvalidProtocolBufferException
+  nameWithType: InvalidProtocolBufferException
+  fullName: Google.Protobuf.InvalidProtocolBufferException
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.IO.TextReader
+  commentId: T:System.IO.TextReader
+  parent: System.IO
+  isExternal: true
+  name: TextReader
+  nameWithType: TextReader
+  fullName: System.IO.TextReader
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: false
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection

@@ -1,0 +1,564 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.Grpc.ApiServerStreamingCall`2
+  commentId: T:Google.Api.Gax.Grpc.ApiServerStreamingCall`2
+  id: ApiServerStreamingCall`2
+  parent: Google.Api.Gax.Grpc
+  children:
+  - Google.Api.Gax.Grpc.ApiServerStreamingCall`2.BaseCallSettings
+  - Google.Api.Gax.Grpc.ApiServerStreamingCall`2.Call(`0,Google.Api.Gax.Grpc.CallSettings)
+  langs:
+  - csharp
+  - vb
+  name: ApiServerStreamingCall<TRequest, TResponse>
+  nameWithType: ApiServerStreamingCall<TRequest, TResponse>
+  fullName: Google.Api.Gax.Grpc.ApiServerStreamingCall<TRequest, TResponse>
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/ApiServerStreamingCall.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ApiServerStreamingCall
+    path: src/Google.Api.Gax.Grpc/ApiServerStreamingCall.cs
+    startLine: 31
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nBridge between a server streaming RPC method and higher level\nabstractions, applying call settings as required.\n"
+  example: []
+  syntax:
+    content: public sealed class ApiServerStreamingCall<TRequest, TResponse>
+    typeParameters:
+    - id: TRequest
+      description: RPC request type
+    - id: TResponse
+      description: RPC response type
+    content.vb: Public NotInheritable Class ApiServerStreamingCall(Of TRequest, TResponse)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: ApiServerStreamingCall(Of TRequest, TResponse)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: Google.Api.Gax.Grpc.ApiServerStreamingCall(Of TRequest, TResponse)
+  name.vb: ApiServerStreamingCall(Of TRequest, TResponse)
+- uid: Google.Api.Gax.Grpc.ApiServerStreamingCall`2.BaseCallSettings
+  commentId: P:Google.Api.Gax.Grpc.ApiServerStreamingCall`2.BaseCallSettings
+  id: BaseCallSettings
+  parent: Google.Api.Gax.Grpc.ApiServerStreamingCall`2
+  langs:
+  - csharp
+  - vb
+  name: BaseCallSettings
+  nameWithType: ApiServerStreamingCall<TRequest, TResponse>.BaseCallSettings
+  fullName: Google.Api.Gax.Grpc.ApiServerStreamingCall<TRequest, TResponse>.BaseCallSettings
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/ApiServerStreamingCall.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: BaseCallSettings
+    path: src/Google.Api.Gax.Grpc/ApiServerStreamingCall.cs
+    startLine: 47
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nThe base <xref href=\"Google.Api.Gax.Grpc.CallSettings\" data-throw-if-not-resolved=\"false\"></xref> for this API call; these can be further overridden by providing\na <code>CallSettings</code> to <xref href=\"Google.Api.Gax.Grpc.ApiServerStreamingCall%602.Call(%600%2cGoogle.Api.Gax.Grpc.CallSettings)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public CallSettings BaseCallSettings { get; }
+    parameters: []
+    return:
+      type: Google.Api.Gax.Grpc.CallSettings
+    content.vb: Public ReadOnly Property BaseCallSettings As CallSettings
+  overload: Google.Api.Gax.Grpc.ApiServerStreamingCall`2.BaseCallSettings*
+  nameWithType.vb: ApiServerStreamingCall(Of TRequest, TResponse).BaseCallSettings
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: Google.Api.Gax.Grpc.ApiServerStreamingCall(Of TRequest, TResponse).BaseCallSettings
+- uid: Google.Api.Gax.Grpc.ApiServerStreamingCall`2.Call(`0,Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Api.Gax.Grpc.ApiServerStreamingCall`2.Call(`0,Google.Api.Gax.Grpc.CallSettings)
+  id: Call(`0,Google.Api.Gax.Grpc.CallSettings)
+  parent: Google.Api.Gax.Grpc.ApiServerStreamingCall`2
+  langs:
+  - csharp
+  - vb
+  name: Call(TRequest, CallSettings)
+  nameWithType: ApiServerStreamingCall<TRequest, TResponse>.Call(TRequest, CallSettings)
+  fullName: Google.Api.Gax.Grpc.ApiServerStreamingCall<TRequest, TResponse>.Call(TRequest, Google.Api.Gax.Grpc.CallSettings)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/ApiServerStreamingCall.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Call
+    path: src/Google.Api.Gax.Grpc/ApiServerStreamingCall.cs
+    startLine: 56
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nInitializes a streaming RPC call.\n"
+  example: []
+  syntax:
+    content: public AsyncServerStreamingCall<TResponse> Call(TRequest request, CallSettings perCallCallSettings)
+    parameters:
+    - id: request
+      type: '{TRequest}'
+      description: The RPC request.
+    - id: perCallCallSettings
+      type: Google.Api.Gax.Grpc.CallSettings
+      description: >-
+        The call settings to apply to this specific call,
+
+        overriding defaults where necessary.
+    return:
+      type: Grpc.Core.AsyncServerStreamingCall{{TResponse}}
+      description: A gRPC duplex streaming call object.
+    content.vb: Public Function Call(request As TRequest, perCallCallSettings As CallSettings) As AsyncServerStreamingCall(Of TResponse)
+  overload: Google.Api.Gax.Grpc.ApiServerStreamingCall`2.Call*
+  nameWithType.vb: ApiServerStreamingCall(Of TRequest, TResponse).Call(TRequest, CallSettings)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.Grpc.ApiServerStreamingCall(Of TRequest, TResponse).Call(TRequest, Google.Api.Gax.Grpc.CallSettings)
+references:
+- uid: Google.Api.Gax.Grpc
+  commentId: N:Google.Api.Gax.Grpc
+  isExternal: false
+  name: Google.Api.Gax.Grpc
+  nameWithType: Google.Api.Gax.Grpc
+  fullName: Google.Api.Gax.Grpc
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.Grpc.CallSettings
+  commentId: T:Google.Api.Gax.Grpc.CallSettings
+  parent: Google.Api.Gax.Grpc
+  isExternal: false
+  name: CallSettings
+  nameWithType: CallSettings
+  fullName: Google.Api.Gax.Grpc.CallSettings
+- uid: Google.Api.Gax.Grpc.ApiServerStreamingCall`2.Call(`0,Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Api.Gax.Grpc.ApiServerStreamingCall`2.Call(`0,Google.Api.Gax.Grpc.CallSettings)
+- uid: Google.Api.Gax.Grpc.ApiServerStreamingCall`2.BaseCallSettings*
+  commentId: Overload:Google.Api.Gax.Grpc.ApiServerStreamingCall`2.BaseCallSettings
+  isExternal: false
+  name: BaseCallSettings
+  nameWithType: ApiServerStreamingCall<TRequest, TResponse>.BaseCallSettings
+  fullName: Google.Api.Gax.Grpc.ApiServerStreamingCall<TRequest, TResponse>.BaseCallSettings
+  nameWithType.vb: ApiServerStreamingCall(Of TRequest, TResponse).BaseCallSettings
+  fullName.vb: Google.Api.Gax.Grpc.ApiServerStreamingCall(Of TRequest, TResponse).BaseCallSettings
+- uid: Google.Api.Gax.Grpc.ApiServerStreamingCall`2.Call*
+  commentId: Overload:Google.Api.Gax.Grpc.ApiServerStreamingCall`2.Call
+  isExternal: false
+  name: Call
+  nameWithType: ApiServerStreamingCall<TRequest, TResponse>.Call
+  fullName: Google.Api.Gax.Grpc.ApiServerStreamingCall<TRequest, TResponse>.Call
+  nameWithType.vb: ApiServerStreamingCall(Of TRequest, TResponse).Call
+  fullName.vb: Google.Api.Gax.Grpc.ApiServerStreamingCall(Of TRequest, TResponse).Call
+- uid: '{TRequest}'
+  commentId: '!:TRequest'
+  definition: TRequest
+  name: TRequest
+  nameWithType: TRequest
+  fullName: TRequest
+- uid: Grpc.Core.AsyncServerStreamingCall{{TResponse}}
+  commentId: T:Grpc.Core.AsyncServerStreamingCall{`1}
+  parent: Grpc.Core
+  definition: Grpc.Core.AsyncServerStreamingCall`1
+  name: AsyncServerStreamingCall<TResponse>
+  nameWithType: AsyncServerStreamingCall<TResponse>
+  fullName: Grpc.Core.AsyncServerStreamingCall<TResponse>
+  nameWithType.vb: AsyncServerStreamingCall(Of TResponse)
+  fullName.vb: Grpc.Core.AsyncServerStreamingCall(Of TResponse)
+  name.vb: AsyncServerStreamingCall(Of TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncServerStreamingCall`1
+    name: AsyncServerStreamingCall
+    nameWithType: AsyncServerStreamingCall
+    fullName: Grpc.Core.AsyncServerStreamingCall
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncServerStreamingCall`1
+    name: AsyncServerStreamingCall
+    nameWithType: AsyncServerStreamingCall
+    fullName: Grpc.Core.AsyncServerStreamingCall
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TRequest
+  isExternal: false
+  name: TRequest
+  nameWithType: TRequest
+  fullName: TRequest
+- uid: Grpc.Core.AsyncServerStreamingCall`1
+  commentId: T:Grpc.Core.AsyncServerStreamingCall`1
+  isExternal: true
+  name: AsyncServerStreamingCall<TResponse>
+  nameWithType: AsyncServerStreamingCall<TResponse>
+  fullName: Grpc.Core.AsyncServerStreamingCall<TResponse>
+  nameWithType.vb: AsyncServerStreamingCall(Of TResponse)
+  fullName.vb: Grpc.Core.AsyncServerStreamingCall(Of TResponse)
+  name.vb: AsyncServerStreamingCall(Of TResponse)
+  spec.csharp:
+  - uid: Grpc.Core.AsyncServerStreamingCall`1
+    name: AsyncServerStreamingCall
+    nameWithType: AsyncServerStreamingCall
+    fullName: Grpc.Core.AsyncServerStreamingCall
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.AsyncServerStreamingCall`1
+    name: AsyncServerStreamingCall
+    nameWithType: AsyncServerStreamingCall
+    fullName: Grpc.Core.AsyncServerStreamingCall
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core

@@ -1,0 +1,556 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.Grpc.BackoffSettings
+  commentId: T:Google.Api.Gax.Grpc.BackoffSettings
+  id: BackoffSettings
+  parent: Google.Api.Gax.Grpc
+  children:
+  - Google.Api.Gax.Grpc.BackoffSettings.#ctor(System.TimeSpan,System.TimeSpan,System.Double)
+  - Google.Api.Gax.Grpc.BackoffSettings.Delay
+  - Google.Api.Gax.Grpc.BackoffSettings.DelayMultiplier
+  - Google.Api.Gax.Grpc.BackoffSettings.MaxDelay
+  langs:
+  - csharp
+  - vb
+  name: BackoffSettings
+  nameWithType: BackoffSettings
+  fullName: Google.Api.Gax.Grpc.BackoffSettings
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BackoffSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: BackoffSettings
+    path: src/Google.Api.Gax.Grpc/BackoffSettings.cs
+    startLine: 15
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nBackoff settings used within <xref href=\"Google.Api.Gax.Grpc.RetrySettings\" data-throw-if-not-resolved=\"false\"></xref> to implement\nexponential backoff.\n"
+  example: []
+  syntax:
+    content: public sealed class BackoffSettings
+    content.vb: Public NotInheritable Class BackoffSettings
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.Gax.Grpc.BackoffSettings.Delay
+  commentId: P:Google.Api.Gax.Grpc.BackoffSettings.Delay
+  id: Delay
+  parent: Google.Api.Gax.Grpc.BackoffSettings
+  langs:
+  - csharp
+  - vb
+  name: Delay
+  nameWithType: BackoffSettings.Delay
+  fullName: Google.Api.Gax.Grpc.BackoffSettings.Delay
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BackoffSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Delay
+    path: src/Google.Api.Gax.Grpc/BackoffSettings.cs
+    startLine: 20
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nThe initial delay, either for the first retry or as the initial RPC timeout.\n"
+  example: []
+  syntax:
+    content: public TimeSpan Delay { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public ReadOnly Property Delay As TimeSpan
+  overload: Google.Api.Gax.Grpc.BackoffSettings.Delay*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.Grpc.BackoffSettings.MaxDelay
+  commentId: P:Google.Api.Gax.Grpc.BackoffSettings.MaxDelay
+  id: MaxDelay
+  parent: Google.Api.Gax.Grpc.BackoffSettings
+  langs:
+  - csharp
+  - vb
+  name: MaxDelay
+  nameWithType: BackoffSettings.MaxDelay
+  fullName: Google.Api.Gax.Grpc.BackoffSettings.MaxDelay
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BackoffSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MaxDelay
+    path: src/Google.Api.Gax.Grpc/BackoffSettings.cs
+    startLine: 26
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nThe maximum delay to use. If the increasing delay due to the delay multiplier exceeds this,\nthis maximum is used instead.\n"
+  example: []
+  syntax:
+    content: public TimeSpan MaxDelay { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public ReadOnly Property MaxDelay As TimeSpan
+  overload: Google.Api.Gax.Grpc.BackoffSettings.MaxDelay*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.Grpc.BackoffSettings.DelayMultiplier
+  commentId: P:Google.Api.Gax.Grpc.BackoffSettings.DelayMultiplier
+  id: DelayMultiplier
+  parent: Google.Api.Gax.Grpc.BackoffSettings
+  langs:
+  - csharp
+  - vb
+  name: DelayMultiplier
+  nameWithType: BackoffSettings.DelayMultiplier
+  fullName: Google.Api.Gax.Grpc.BackoffSettings.DelayMultiplier
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BackoffSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: DelayMultiplier
+    path: src/Google.Api.Gax.Grpc/BackoffSettings.cs
+    startLine: 39
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nThe multiplier to apply to the delay on each iteration; must be greater than or equal to 1.0.\n"
+  remarks: "\n<p>\nAs an example, a multiplier of 2.0 with a delay of 0.1s on an RPC which fails three times before\nsucceeding would lead to an initial delay between the first response and the second request\nof 0.1s; a delay between the second response and the third request of 0.2s, and a delay\nbetween the third response and the fourth request.\n</p>\n"
+  example: []
+  syntax:
+    content: public double DelayMultiplier { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property DelayMultiplier As Double
+  overload: Google.Api.Gax.Grpc.BackoffSettings.DelayMultiplier*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.Grpc.BackoffSettings.#ctor(System.TimeSpan,System.TimeSpan,System.Double)
+  commentId: M:Google.Api.Gax.Grpc.BackoffSettings.#ctor(System.TimeSpan,System.TimeSpan,System.Double)
+  id: '#ctor(System.TimeSpan,System.TimeSpan,System.Double)'
+  parent: Google.Api.Gax.Grpc.BackoffSettings
+  langs:
+  - csharp
+  - vb
+  name: BackoffSettings(TimeSpan, TimeSpan, Double)
+  nameWithType: BackoffSettings.BackoffSettings(TimeSpan, TimeSpan, Double)
+  fullName: Google.Api.Gax.Grpc.BackoffSettings.BackoffSettings(System.TimeSpan, System.TimeSpan, System.Double)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BackoffSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.Gax.Grpc/BackoffSettings.cs
+    startLine: 49
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nCreates a new instance with the specified settings.\n"
+  example: []
+  syntax:
+    content: public BackoffSettings(TimeSpan delay, TimeSpan maxDelay, double delayMultiplier = 1)
+    parameters:
+    - id: delay
+      type: System.TimeSpan
+      description: The initial delay, either for the first retry or as the initial RPC timeout.
+    - id: maxDelay
+      type: System.TimeSpan
+      description: >-
+        The maximum delay to use. If the increasing delay due to the delay multiplier exceeds this,
+
+        this maximum is used instead.
+    - id: delayMultiplier
+      type: System.Double
+      description: >-
+        The multiplier to apply to the delay on each iteration; must be greater than or equal to 1.0.
+
+        Defaults to 1.0.
+    content.vb: Public Sub New(delay As TimeSpan, maxDelay As TimeSpan, delayMultiplier As Double = 1)
+  overload: Google.Api.Gax.Grpc.BackoffSettings.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Api.Gax.Grpc.RetrySettings
+  commentId: T:Google.Api.Gax.Grpc.RetrySettings
+  parent: Google.Api.Gax.Grpc
+  isExternal: false
+  name: RetrySettings
+  nameWithType: RetrySettings
+  fullName: Google.Api.Gax.Grpc.RetrySettings
+- uid: Google.Api.Gax.Grpc
+  commentId: N:Google.Api.Gax.Grpc
+  isExternal: false
+  name: Google.Api.Gax.Grpc
+  nameWithType: Google.Api.Gax.Grpc
+  fullName: Google.Api.Gax.Grpc
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.Grpc.BackoffSettings.Delay*
+  commentId: Overload:Google.Api.Gax.Grpc.BackoffSettings.Delay
+  isExternal: false
+  name: Delay
+  nameWithType: BackoffSettings.Delay
+  fullName: Google.Api.Gax.Grpc.BackoffSettings.Delay
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: Google.Api.Gax.Grpc.BackoffSettings.MaxDelay*
+  commentId: Overload:Google.Api.Gax.Grpc.BackoffSettings.MaxDelay
+  isExternal: false
+  name: MaxDelay
+  nameWithType: BackoffSettings.MaxDelay
+  fullName: Google.Api.Gax.Grpc.BackoffSettings.MaxDelay
+- uid: Google.Api.Gax.Grpc.BackoffSettings.DelayMultiplier*
+  commentId: Overload:Google.Api.Gax.Grpc.BackoffSettings.DelayMultiplier
+  isExternal: false
+  name: DelayMultiplier
+  nameWithType: BackoffSettings.DelayMultiplier
+  fullName: Google.Api.Gax.Grpc.BackoffSettings.DelayMultiplier
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Google.Api.Gax.Grpc.BackoffSettings.#ctor*
+  commentId: Overload:Google.Api.Gax.Grpc.BackoffSettings.#ctor
+  isExternal: false
+  name: BackoffSettings
+  nameWithType: BackoffSettings.BackoffSettings
+  fullName: Google.Api.Gax.Grpc.BackoffSettings.BackoffSettings

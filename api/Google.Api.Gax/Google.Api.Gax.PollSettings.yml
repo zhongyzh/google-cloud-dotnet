@@ -1,0 +1,496 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.PollSettings
+  commentId: T:Google.Api.Gax.PollSettings
+  id: PollSettings
+  parent: Google.Api.Gax
+  children:
+  - Google.Api.Gax.PollSettings.#ctor(Google.Api.Gax.Expiration,System.TimeSpan)
+  - Google.Api.Gax.PollSettings.Delay
+  - Google.Api.Gax.PollSettings.Expiration
+  langs:
+  - csharp
+  - vb
+  name: PollSettings
+  nameWithType: PollSettings
+  fullName: Google.Api.Gax.PollSettings
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax/PollSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: PollSettings
+    path: src/Google.Api.Gax/PollSettings.cs
+    startLine: 15
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nSettings controlling repeated polling, for example when waiting for a long-running operation\nto complete.\n"
+  example: []
+  syntax:
+    content: public sealed class PollSettings
+    content.vb: Public NotInheritable Class PollSettings
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.Gax.PollSettings.Expiration
+  commentId: P:Google.Api.Gax.PollSettings.Expiration
+  id: Expiration
+  parent: Google.Api.Gax.PollSettings
+  langs:
+  - csharp
+  - vb
+  name: Expiration
+  nameWithType: PollSettings.Expiration
+  fullName: Google.Api.Gax.PollSettings.Expiration
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/PollSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Expiration
+    path: src/Google.Api.Gax/PollSettings.cs
+    startLine: 20
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nHow long to wait before giving up. This is never null.\n"
+  example: []
+  syntax:
+    content: public Expiration Expiration { get; }
+    parameters: []
+    return:
+      type: Google.Api.Gax.Expiration
+    content.vb: Public ReadOnly Property Expiration As Expiration
+  overload: Google.Api.Gax.PollSettings.Expiration*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.PollSettings.Delay
+  commentId: P:Google.Api.Gax.PollSettings.Delay
+  id: Delay
+  parent: Google.Api.Gax.PollSettings
+  langs:
+  - csharp
+  - vb
+  name: Delay
+  nameWithType: PollSettings.Delay
+  fullName: Google.Api.Gax.PollSettings.Delay
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/PollSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Delay
+    path: src/Google.Api.Gax/PollSettings.cs
+    startLine: 30
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nThe delay between RPC calls when fetching the operation status. This is never negative.\nThere is no exponential backoff between calls; the same delay is used for each call.\n"
+  remarks: "\nThis is the delay between the a successful RPC response being received\nand the next RPC request being sent.\n"
+  example: []
+  syntax:
+    content: public TimeSpan Delay { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public ReadOnly Property Delay As TimeSpan
+  overload: Google.Api.Gax.PollSettings.Delay*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.PollSettings.#ctor(Google.Api.Gax.Expiration,System.TimeSpan)
+  commentId: M:Google.Api.Gax.PollSettings.#ctor(Google.Api.Gax.Expiration,System.TimeSpan)
+  id: '#ctor(Google.Api.Gax.Expiration,System.TimeSpan)'
+  parent: Google.Api.Gax.PollSettings
+  langs:
+  - csharp
+  - vb
+  name: PollSettings(Expiration, TimeSpan)
+  nameWithType: PollSettings.PollSettings(Expiration, TimeSpan)
+  fullName: Google.Api.Gax.PollSettings.PollSettings(Google.Api.Gax.Expiration, System.TimeSpan)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.Gax/PollSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.Gax/PollSettings.cs
+    startLine: 37
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nCreates poll settings from the given expiration, delay and call settings.\n"
+  example: []
+  syntax:
+    content: public PollSettings(Expiration expiration, TimeSpan delay)
+    parameters:
+    - id: expiration
+      type: Google.Api.Gax.Expiration
+      description: The expiration to use in order to know when to stop polling. Must not be null.
+    - id: delay
+      type: System.TimeSpan
+      description: The delay between RPC calls. Must be non-negative.
+    content.vb: Public Sub New(expiration As Expiration, delay As TimeSpan)
+  overload: Google.Api.Gax.PollSettings.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Api.Gax
+  commentId: N:Google.Api.Gax
+  isExternal: false
+  name: Google.Api.Gax
+  nameWithType: Google.Api.Gax
+  fullName: Google.Api.Gax
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.PollSettings.Expiration*
+  commentId: Overload:Google.Api.Gax.PollSettings.Expiration
+  isExternal: false
+  name: Expiration
+  nameWithType: PollSettings.Expiration
+  fullName: Google.Api.Gax.PollSettings.Expiration
+- uid: Google.Api.Gax.Expiration
+  commentId: T:Google.Api.Gax.Expiration
+  parent: Google.Api.Gax
+  isExternal: false
+  name: Expiration
+  nameWithType: Expiration
+  fullName: Google.Api.Gax.Expiration
+- uid: Google.Api.Gax.PollSettings.Delay*
+  commentId: Overload:Google.Api.Gax.PollSettings.Delay
+  isExternal: false
+  name: Delay
+  nameWithType: PollSettings.Delay
+  fullName: Google.Api.Gax.PollSettings.Delay
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: Google.Api.Gax.PollSettings.#ctor*
+  commentId: Overload:Google.Api.Gax.PollSettings.#ctor
+  isExternal: false
+  name: PollSettings
+  nameWithType: PollSettings.PollSettings
+  fullName: Google.Api.Gax.PollSettings.PollSettings

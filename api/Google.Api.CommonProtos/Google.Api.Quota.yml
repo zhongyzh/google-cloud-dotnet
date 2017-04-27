@@ -1,0 +1,1952 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Quota
+  commentId: T:Google.Api.Quota
+  id: Quota
+  parent: Google.Api
+  children:
+  - Google.Api.Quota.#ctor
+  - Google.Api.Quota.#ctor(Google.Api.Quota)
+  - Google.Api.Quota.CalculateSize
+  - Google.Api.Quota.Clone
+  - Google.Api.Quota.Descriptor
+  - Google.Api.Quota.Equals(Google.Api.Quota)
+  - Google.Api.Quota.Equals(System.Object)
+  - Google.Api.Quota.GetHashCode
+  - Google.Api.Quota.Google#Protobuf#IMessage#Descriptor
+  - Google.Api.Quota.Limits
+  - Google.Api.Quota.LimitsFieldNumber
+  - Google.Api.Quota.MergeFrom(Google.Api.Quota)
+  - Google.Api.Quota.MergeFrom(Google.Protobuf.CodedInputStream)
+  - Google.Api.Quota.MetricRules
+  - Google.Api.Quota.MetricRulesFieldNumber
+  - Google.Api.Quota.Parser
+  - Google.Api.Quota.ToString
+  - Google.Api.Quota.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: Quota
+  nameWithType: Quota
+  fullName: Google.Api.Quota
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Quota
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 109
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nQuota configuration helps to achieve fairness and budgeting in service\nusage.\n\nThe quota configuration works this way:\n- The service configuration defines a set of metrics.\n- For API calls, the quota.metric_rules maps methods to metrics with\ncorresponding costs.\n- The quota.limits defines limits on the metrics, which will be used for\nquota checks at runtime.\n\nAn example quota configuration in yaml format:\n\nquota:\nlimits:\n\n- name: apiWriteQpsPerProject\n  metric: library.googleapis.com/write_calls\n  unit: \"1/min/{project}\"  # rate limit for consumer projects\n  values:\n    STANDARD: 10000\n\n# The metric rules bind all methods to the read_calls metric,\n# except for the UpdateBook and DeleteBook methods. These two methods\n# are mapped to the write_calls metric, with the UpdateBook method\n# consuming at twice rate as the DeleteBook method.\nmetric_rules:\n- selector: \"*\"\n  metric_costs:\n    library.googleapis.com/read_calls: 1\n- selector: google.example.library.v1.LibraryService.UpdateBook\n  metric_costs:\n    library.googleapis.com/write_calls: 2\n- selector: google.example.library.v1.LibraryService.DeleteBook\n  metric_costs:\n    library.googleapis.com/write_calls: 1\n\nCorresponding Metric definition:\n\nmetrics:\n- name: library.googleapis.com/read_calls\n  display_name: Read requests\n  metric_kind: DELTA\n  value_type: INT64\n\n- name: library.googleapis.com/write_calls\n  display_name: Write requests\n  metric_kind: DELTA\n  value_type: INT64\n"
+  example: []
+  syntax:
+    content: 'public sealed class Quota : IMessage<Quota>, IMessage, IEquatable<Quota>, IDeepCloneable<Quota>'
+    content.vb: >-
+      Public NotInheritable Class Quota
+          Implements IMessage(Of Quota), IMessage, IEquatable(Of Quota), IDeepCloneable(Of Quota)
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.Quota}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Api.Quota}
+  - Google.Protobuf.IDeepCloneable{Google.Api.Quota}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.Quota.Parser
+  commentId: P:Google.Api.Quota.Parser
+  id: Parser
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: Quota.Parser
+  fullName: Google.Api.Quota.Parser
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Parser
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 111
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageParser<Quota> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{Google.Api.Quota}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of Quota)
+  overload: Google.Api.Quota.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.Quota.Descriptor
+  commentId: P:Google.Api.Quota.Descriptor
+  id: Descriptor
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: Quota.Descriptor
+  fullName: Google.Api.Quota.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Descriptor
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 114
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: Google.Api.Quota.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.Quota.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Api.Quota.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: Quota.IMessage.Descriptor
+  fullName: Google.Api.Quota.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 119
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Api.Quota.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Quota.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Api.Quota.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.Quota.#ctor
+  commentId: M:Google.Api.Quota.#ctor
+  id: '#ctor'
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: Quota()
+  nameWithType: Quota.Quota()
+  fullName: Google.Api.Quota.Quota()
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 124
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Quota()
+    content.vb: Public Sub New
+  overload: Google.Api.Quota.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Quota.#ctor(Google.Api.Quota)
+  commentId: M:Google.Api.Quota.#ctor(Google.Api.Quota)
+  id: '#ctor(Google.Api.Quota)'
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: Quota(Quota)
+  nameWithType: Quota.Quota(Quota)
+  fullName: Google.Api.Quota.Quota(Google.Api.Quota)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 131
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Quota(Quota other)
+    parameters:
+    - id: other
+      type: Google.Api.Quota
+    content.vb: Public Sub New(other As Quota)
+  overload: Google.Api.Quota.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Quota.Clone
+  commentId: M:Google.Api.Quota.Clone
+  id: Clone
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: Quota.Clone()
+  fullName: Google.Api.Quota.Clone()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Clone
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 137
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public Quota Clone()
+    return:
+      type: Google.Api.Quota
+    content.vb: Public Function Clone As Quota
+  overload: Google.Api.Quota.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Api.Quota}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Quota.LimitsFieldNumber
+  commentId: F:Google.Api.Quota.LimitsFieldNumber
+  id: LimitsFieldNumber
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: LimitsFieldNumber
+  nameWithType: Quota.LimitsFieldNumber
+  fullName: Google.Api.Quota.LimitsFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: LimitsFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 143
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "limits" field.
+  example: []
+  syntax:
+    content: public const int LimitsFieldNumber = 3
+    return:
+      type: System.Int32
+    content.vb: Public Const LimitsFieldNumber As Integer = 3
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.Quota.Limits
+  commentId: P:Google.Api.Quota.Limits
+  id: Limits
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: Limits
+  nameWithType: Quota.Limits
+  fullName: Google.Api.Quota.Limits
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Limits
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 152
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nList of `QuotaLimit` definitions for the service.\n\nUsed by metric-based quotas only.\n"
+  example: []
+  syntax:
+    content: public RepeatedField<QuotaLimit> Limits { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{Google.Api.QuotaLimit}
+    content.vb: Public ReadOnly Property Limits As RepeatedField(Of QuotaLimit)
+  overload: Google.Api.Quota.Limits*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Quota.MetricRulesFieldNumber
+  commentId: F:Google.Api.Quota.MetricRulesFieldNumber
+  id: MetricRulesFieldNumber
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: MetricRulesFieldNumber
+  nameWithType: Quota.MetricRulesFieldNumber
+  fullName: Google.Api.Quota.MetricRulesFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MetricRulesFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 158
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "metric_rules" field.
+  example: []
+  syntax:
+    content: public const int MetricRulesFieldNumber = 4
+    return:
+      type: System.Int32
+    content.vb: Public Const MetricRulesFieldNumber As Integer = 4
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.Quota.MetricRules
+  commentId: P:Google.Api.Quota.MetricRules
+  id: MetricRules
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: MetricRules
+  nameWithType: Quota.MetricRules
+  fullName: Google.Api.Quota.MetricRules
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MetricRules
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 168
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nList of `MetricRule` definitions, each one mapping a selected method to one\nor more metrics.\n\nUsed by metric-based quotas only.\n"
+  example: []
+  syntax:
+    content: public RepeatedField<MetricRule> MetricRules { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Collections.RepeatedField{Google.Api.MetricRule}
+    content.vb: Public ReadOnly Property MetricRules As RepeatedField(Of MetricRule)
+  overload: Google.Api.Quota.MetricRules*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Quota.Equals(System.Object)
+  commentId: M:Google.Api.Quota.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: Quota.Equals(Object)
+  fullName: Google.Api.Quota.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 173
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Api.Quota.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Quota.Equals(Google.Api.Quota)
+  commentId: M:Google.Api.Quota.Equals(Google.Api.Quota)
+  id: Equals(Google.Api.Quota)
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: Equals(Quota)
+  nameWithType: Quota.Equals(Quota)
+  fullName: Google.Api.Quota.Equals(Google.Api.Quota)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 178
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public bool Equals(Quota other)
+    parameters:
+    - id: other
+      type: Google.Api.Quota
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As Quota) As Boolean
+  overload: Google.Api.Quota.Equals*
+  implements:
+  - System.IEquatable{Google.Api.Quota}.Equals(Google.Api.Quota)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Quota.GetHashCode
+  commentId: M:Google.Api.Quota.GetHashCode
+  id: GetHashCode
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Quota.GetHashCode()
+  fullName: Google.Api.Quota.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetHashCode
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 191
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Api.Quota.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Quota.ToString
+  commentId: M:Google.Api.Quota.ToString
+  id: ToString
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Quota.ToString()
+  fullName: Google.Api.Quota.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ToString
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 199
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Api.Quota.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.Quota.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Api.Quota.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: Quota.WriteTo(CodedOutputStream)
+  fullName: Google.Api.Quota.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: WriteTo
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 204
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: Google.Api.Quota.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Quota.CalculateSize
+  commentId: M:Google.Api.Quota.CalculateSize
+  id: CalculateSize
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: Quota.CalculateSize()
+  fullName: Google.Api.Quota.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CalculateSize
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 210
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: Google.Api.Quota.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Quota.MergeFrom(Google.Api.Quota)
+  commentId: M:Google.Api.Quota.MergeFrom(Google.Api.Quota)
+  id: MergeFrom(Google.Api.Quota)
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(Quota)
+  nameWithType: Quota.MergeFrom(Quota)
+  fullName: Google.Api.Quota.MergeFrom(Google.Api.Quota)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 218
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(Quota other)
+    parameters:
+    - id: other
+      type: Google.Api.Quota
+    content.vb: Public Sub MergeFrom(other As Quota)
+  overload: Google.Api.Quota.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.Quota}.MergeFrom(Google.Api.Quota)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Quota.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Api.Quota.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Api.Quota
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: Quota.MergeFrom(CodedInputStream)
+  fullName: Google.Api.Quota.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Quota.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Quota.cs
+    startLine: 227
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: Google.Api.Quota.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Api
+  commentId: N:Google.Api
+  isExternal: false
+  name: Google.Api
+  nameWithType: Google.Api
+  fullName: Google.Api
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Api.Quota}
+  commentId: T:Google.Protobuf.IMessage{Google.Api.Quota}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<Quota>
+  nameWithType: IMessage<Quota>
+  fullName: Google.Protobuf.IMessage<Google.Api.Quota>
+  nameWithType.vb: IMessage(Of Quota)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.Quota)
+  name.vb: IMessage(Of Quota)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Api.Quota}
+  commentId: T:System.IEquatable{Google.Api.Quota}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Quota>
+  nameWithType: IEquatable<Quota>
+  fullName: System.IEquatable<Google.Api.Quota>
+  nameWithType.vb: IEquatable(Of Quota)
+  fullName.vb: System.IEquatable(Of Google.Api.Quota)
+  name.vb: IEquatable(Of Quota)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.Quota}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Api.Quota}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<Quota>
+  nameWithType: IDeepCloneable<Quota>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.Quota>
+  nameWithType.vb: IDeepCloneable(Of Quota)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.Quota)
+  name.vb: IDeepCloneable(Of Quota)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Quota.Parser*
+  commentId: Overload:Google.Api.Quota.Parser
+  isExternal: false
+  name: Parser
+  nameWithType: Quota.Parser
+  fullName: Google.Api.Quota.Parser
+- uid: Google.Protobuf.MessageParser{Google.Api.Quota}
+  commentId: T:Google.Protobuf.MessageParser{Google.Api.Quota}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<Quota>
+  nameWithType: MessageParser<Quota>
+  fullName: Google.Protobuf.MessageParser<Google.Api.Quota>
+  nameWithType.vb: MessageParser(Of Quota)
+  fullName.vb: Google.Protobuf.MessageParser(Of Google.Api.Quota)
+  name.vb: MessageParser(Of Quota)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: true
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Quota.Descriptor*
+  commentId: Overload:Google.Api.Quota.Descriptor
+  isExternal: false
+  name: Descriptor
+  nameWithType: Quota.Descriptor
+  fullName: Google.Api.Quota.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: true
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Api.Quota.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Api.Quota.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: Quota.IMessage.Descriptor
+  fullName: Google.Api.Quota.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Quota.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Api.Quota.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.Quota.#ctor*
+  commentId: Overload:Google.Api.Quota.#ctor
+  isExternal: false
+  name: Quota
+  nameWithType: Quota.Quota
+  fullName: Google.Api.Quota.Quota
+- uid: Google.Api.Quota
+  commentId: T:Google.Api.Quota
+  parent: Google.Api
+  isExternal: false
+  name: Quota
+  nameWithType: Quota
+  fullName: Google.Api.Quota
+- uid: Google.Api.Quota.Clone*
+  commentId: Overload:Google.Api.Quota.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: Quota.Clone
+  fullName: Google.Api.Quota.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.Quota}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Api.Quota}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Api.Quota}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<Quota>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.Quota>.Clone()
+  nameWithType.vb: IDeepCloneable(Of Quota).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.Quota).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<Quota>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Api.Quota>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of Quota).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Api.Quota).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Api.Quota.Limits*
+  commentId: Overload:Google.Api.Quota.Limits
+  isExternal: false
+  name: Limits
+  nameWithType: Quota.Limits
+  fullName: Google.Api.Quota.Limits
+- uid: Google.Protobuf.Collections.RepeatedField{Google.Api.QuotaLimit}
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Api.QuotaLimit}
+  parent: Google.Protobuf.Collections
+  definition: Google.Protobuf.Collections.RepeatedField`1
+  name: RepeatedField<QuotaLimit>
+  nameWithType: RepeatedField<QuotaLimit>
+  fullName: Google.Protobuf.Collections.RepeatedField<Google.Api.QuotaLimit>
+  nameWithType.vb: RepeatedField(Of QuotaLimit)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Api.QuotaLimit)
+  name.vb: RepeatedField(Of QuotaLimit)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.QuotaLimit
+    name: QuotaLimit
+    nameWithType: QuotaLimit
+    fullName: Google.Api.QuotaLimit
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.QuotaLimit
+    name: QuotaLimit
+    nameWithType: QuotaLimit
+    fullName: Google.Api.QuotaLimit
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
+  isExternal: true
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: Google.Api.Quota.MetricRules*
+  commentId: Overload:Google.Api.Quota.MetricRules
+  isExternal: false
+  name: MetricRules
+  nameWithType: Quota.MetricRules
+  fullName: Google.Api.Quota.MetricRules
+- uid: Google.Protobuf.Collections.RepeatedField{Google.Api.MetricRule}
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Api.MetricRule}
+  parent: Google.Protobuf.Collections
+  definition: Google.Protobuf.Collections.RepeatedField`1
+  name: RepeatedField<MetricRule>
+  nameWithType: RepeatedField<MetricRule>
+  fullName: Google.Protobuf.Collections.RepeatedField<Google.Api.MetricRule>
+  nameWithType.vb: RepeatedField(Of MetricRule)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Api.MetricRule)
+  name.vb: RepeatedField(Of MetricRule)
+  spec.csharp:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.MetricRule
+    name: MetricRule
+    nameWithType: MetricRule
+    fullName: Google.Api.MetricRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.Collections.RepeatedField`1
+    name: RepeatedField
+    nameWithType: RepeatedField
+    fullName: Google.Protobuf.Collections.RepeatedField
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.MetricRule
+    name: MetricRule
+    nameWithType: MetricRule
+    fullName: Google.Api.MetricRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Quota.Equals*
+  commentId: Overload:Google.Api.Quota.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: Quota.Equals
+  fullName: Google.Api.Quota.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{Google.Api.Quota}.Equals(Google.Api.Quota)
+  commentId: M:System.IEquatable{Google.Api.Quota}.Equals(Google.Api.Quota)
+  parent: System.IEquatable{Google.Api.Quota}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Quota)
+  nameWithType: IEquatable<Quota>.Equals(Quota)
+  fullName: System.IEquatable<Google.Api.Quota>.Equals(Google.Api.Quota)
+  nameWithType.vb: IEquatable(Of Quota).Equals(Quota)
+  fullName.vb: System.IEquatable(Of Google.Api.Quota).Equals(Google.Api.Quota)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Quota>.Equals
+    fullName: System.IEquatable<Google.Api.Quota>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Quota).Equals
+    fullName: System.IEquatable(Of Google.Api.Quota).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Quota.GetHashCode*
+  commentId: Overload:Google.Api.Quota.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: Quota.GetHashCode
+  fullName: Google.Api.Quota.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Quota.ToString*
+  commentId: Overload:Google.Api.Quota.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: Quota.ToString
+  fullName: Google.Api.Quota.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Api.Quota.WriteTo*
+  commentId: Overload:Google.Api.Quota.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: Quota.WriteTo
+  fullName: Google.Api.Quota.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: Google.Api.Quota.CalculateSize*
+  commentId: Overload:Google.Api.Quota.CalculateSize
+  isExternal: false
+  name: CalculateSize
+  nameWithType: Quota.CalculateSize
+  fullName: Google.Api.Quota.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Quota.MergeFrom*
+  commentId: Overload:Google.Api.Quota.MergeFrom
+  isExternal: false
+  name: MergeFrom
+  nameWithType: Quota.MergeFrom
+  fullName: Google.Api.Quota.MergeFrom
+- uid: Google.Protobuf.IMessage{Google.Api.Quota}.MergeFrom(Google.Api.Quota)
+  commentId: M:Google.Protobuf.IMessage{Google.Api.Quota}.MergeFrom(Google.Api.Quota)
+  parent: Google.Protobuf.IMessage{Google.Api.Quota}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(Quota)
+  nameWithType: IMessage<Quota>.MergeFrom(Quota)
+  fullName: Google.Protobuf.IMessage<Google.Api.Quota>.MergeFrom(Google.Api.Quota)
+  nameWithType.vb: IMessage(Of Quota).MergeFrom(Quota)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.Quota).MergeFrom(Google.Api.Quota)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<Quota>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Api.Quota>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of Quota).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Api.Quota).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Quota
+    name: Quota
+    nameWithType: Quota
+    fullName: Google.Api.Quota
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: true
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream

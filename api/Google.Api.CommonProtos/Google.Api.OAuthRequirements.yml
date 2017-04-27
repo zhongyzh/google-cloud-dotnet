@@ -1,0 +1,1743 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.OAuthRequirements
+  commentId: T:Google.Api.OAuthRequirements
+  id: OAuthRequirements
+  parent: Google.Api
+  children:
+  - Google.Api.OAuthRequirements.#ctor
+  - Google.Api.OAuthRequirements.#ctor(Google.Api.OAuthRequirements)
+  - Google.Api.OAuthRequirements.CalculateSize
+  - Google.Api.OAuthRequirements.CanonicalScopes
+  - Google.Api.OAuthRequirements.CanonicalScopesFieldNumber
+  - Google.Api.OAuthRequirements.Clone
+  - Google.Api.OAuthRequirements.Descriptor
+  - Google.Api.OAuthRequirements.Equals(Google.Api.OAuthRequirements)
+  - Google.Api.OAuthRequirements.Equals(System.Object)
+  - Google.Api.OAuthRequirements.GetHashCode
+  - Google.Api.OAuthRequirements.Google#Protobuf#IMessage#Descriptor
+  - Google.Api.OAuthRequirements.MergeFrom(Google.Api.OAuthRequirements)
+  - Google.Api.OAuthRequirements.MergeFrom(Google.Protobuf.CodedInputStream)
+  - Google.Api.OAuthRequirements.Parser
+  - Google.Api.OAuthRequirements.ToString
+  - Google.Api.OAuthRequirements.WriteTo(Google.Protobuf.CodedOutputStream)
+  langs:
+  - csharp
+  - vb
+  name: OAuthRequirements
+  nameWithType: OAuthRequirements
+  fullName: Google.Api.OAuthRequirements
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: OAuthRequirements
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 708
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nOAuth scopes are a way to define data and permissions on data. For example,\nthere are scopes defined for \"Read-only access to Google Calendar\" and\n\"Access to Cloud Platform\". Users can consent to a scope for an application,\ngiving it permission to access that data on their behalf.\n\nOAuth scope specifications should be fairly coarse grained; a user will need\nto see and understand the text description of what your scope means.\n\nIn most cases: use one or at most two OAuth scopes for an entire family of\nproducts. If your product has multiple APIs, you should probably be sharing\nthe OAuth scope across all of those APIs.\n\nWhen you need finer grained OAuth consent screens: talk with your product\nmanagement about how developers will use them in practice.\n\nPlease note that even though each of the canonical scopes is enough for a\nrequest to be accepted and passed to the backend, a request can still fail\ndue to the backend requiring additional scopes or permissions.\n"
+  example: []
+  syntax:
+    content: 'public sealed class OAuthRequirements : IMessage<OAuthRequirements>, IMessage, IEquatable<OAuthRequirements>, IDeepCloneable<OAuthRequirements>'
+    content.vb: >-
+      Public NotInheritable Class OAuthRequirements
+          Implements IMessage(Of OAuthRequirements), IMessage, IEquatable(Of OAuthRequirements), IDeepCloneable(Of OAuthRequirements)
+  inheritance:
+  - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.OAuthRequirements}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Api.OAuthRequirements}
+  - Google.Protobuf.IDeepCloneable{Google.Api.OAuthRequirements}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Api.OAuthRequirements.Parser
+  commentId: P:Google.Api.OAuthRequirements.Parser
+  id: Parser
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: Parser
+  nameWithType: OAuthRequirements.Parser
+  fullName: Google.Api.OAuthRequirements.Parser
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Parser
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 710
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageParser<OAuthRequirements> Parser { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.MessageParser{Google.Api.OAuthRequirements}
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of OAuthRequirements)
+  overload: Google.Api.OAuthRequirements.Parser*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.OAuthRequirements.Descriptor
+  commentId: P:Google.Api.OAuthRequirements.Descriptor
+  id: Descriptor
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: Descriptor
+  nameWithType: OAuthRequirements.Descriptor
+  fullName: Google.Api.OAuthRequirements.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Descriptor
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 713
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public static MessageDescriptor Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+  overload: Google.Api.OAuthRequirements.Descriptor*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Api.OAuthRequirements.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Api.OAuthRequirements.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: OAuthRequirements.IMessage.Descriptor
+  fullName: Google.Api.OAuthRequirements.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 718
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Api.OAuthRequirements.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: OAuthRequirements.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Api.OAuthRequirements.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.OAuthRequirements.#ctor
+  commentId: M:Google.Api.OAuthRequirements.#ctor
+  id: '#ctor'
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: OAuthRequirements()
+  nameWithType: OAuthRequirements.OAuthRequirements()
+  fullName: Google.Api.OAuthRequirements.OAuthRequirements()
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 723
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public OAuthRequirements()
+    content.vb: Public Sub New
+  overload: Google.Api.OAuthRequirements.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.OAuthRequirements.#ctor(Google.Api.OAuthRequirements)
+  commentId: M:Google.Api.OAuthRequirements.#ctor(Google.Api.OAuthRequirements)
+  id: '#ctor(Google.Api.OAuthRequirements)'
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: OAuthRequirements(OAuthRequirements)
+  nameWithType: OAuthRequirements.OAuthRequirements(OAuthRequirements)
+  fullName: Google.Api.OAuthRequirements.OAuthRequirements(Google.Api.OAuthRequirements)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 730
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public OAuthRequirements(OAuthRequirements other)
+    parameters:
+    - id: other
+      type: Google.Api.OAuthRequirements
+    content.vb: Public Sub New(other As OAuthRequirements)
+  overload: Google.Api.OAuthRequirements.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.OAuthRequirements.Clone
+  commentId: M:Google.Api.OAuthRequirements.Clone
+  id: Clone
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: OAuthRequirements.Clone()
+  fullName: Google.Api.OAuthRequirements.Clone()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Clone
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 735
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public OAuthRequirements Clone()
+    return:
+      type: Google.Api.OAuthRequirements
+    content.vb: Public Function Clone As OAuthRequirements
+  overload: Google.Api.OAuthRequirements.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Api.OAuthRequirements}.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.OAuthRequirements.CanonicalScopesFieldNumber
+  commentId: F:Google.Api.OAuthRequirements.CanonicalScopesFieldNumber
+  id: CanonicalScopesFieldNumber
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: CanonicalScopesFieldNumber
+  nameWithType: OAuthRequirements.CanonicalScopesFieldNumber
+  fullName: Google.Api.OAuthRequirements.CanonicalScopesFieldNumber
+  type: Field
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CanonicalScopesFieldNumber
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 741
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: Field number for the "canonical_scopes" field.
+  example: []
+  syntax:
+    content: public const int CanonicalScopesFieldNumber = 1
+    return:
+      type: System.Int32
+    content.vb: Public Const CanonicalScopesFieldNumber As Integer = 1
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Google.Api.OAuthRequirements.CanonicalScopes
+  commentId: P:Google.Api.OAuthRequirements.CanonicalScopes
+  id: CanonicalScopes
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: CanonicalScopes
+  nameWithType: OAuthRequirements.CanonicalScopes
+  fullName: Google.Api.OAuthRequirements.CanonicalScopes
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CanonicalScopes
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 752
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  summary: "\nThe list of publicly documented OAuth scopes that are allowed access. An\nOAuth token containing any of these scopes will be accepted.\n\nExample:\n\ncanonical_scopes: https://www.googleapis.com/auth/calendar,\n                  https://www.googleapis.com/auth/calendar.read\n"
+  example: []
+  syntax:
+    content: public string CanonicalScopes { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property CanonicalScopes As String
+  overload: Google.Api.OAuthRequirements.CanonicalScopes*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Api.OAuthRequirements.Equals(System.Object)
+  commentId: M:Google.Api.OAuthRequirements.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: Equals(Object)
+  nameWithType: OAuthRequirements.Equals(Object)
+  fullName: Google.Api.OAuthRequirements.Equals(System.Object)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 760
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override bool Equals(object other)
+    parameters:
+    - id: other
+      type: System.Object
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
+  overload: Google.Api.OAuthRequirements.Equals*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.OAuthRequirements.Equals(Google.Api.OAuthRequirements)
+  commentId: M:Google.Api.OAuthRequirements.Equals(Google.Api.OAuthRequirements)
+  id: Equals(Google.Api.OAuthRequirements)
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: Equals(OAuthRequirements)
+  nameWithType: OAuthRequirements.Equals(OAuthRequirements)
+  fullName: Google.Api.OAuthRequirements.Equals(Google.Api.OAuthRequirements)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: Equals
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 765
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public bool Equals(OAuthRequirements other)
+    parameters:
+    - id: other
+      type: Google.Api.OAuthRequirements
+    return:
+      type: System.Boolean
+    content.vb: Public Function Equals(other As OAuthRequirements) As Boolean
+  overload: Google.Api.OAuthRequirements.Equals*
+  implements:
+  - System.IEquatable{Google.Api.OAuthRequirements}.Equals(Google.Api.OAuthRequirements)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.OAuthRequirements.GetHashCode
+  commentId: M:Google.Api.OAuthRequirements.GetHashCode
+  id: GetHashCode
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: OAuthRequirements.GetHashCode()
+  fullName: Google.Api.OAuthRequirements.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: GetHashCode
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 777
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override int GetHashCode()
+    return:
+      type: System.Int32
+    content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
+  overload: Google.Api.OAuthRequirements.GetHashCode*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.OAuthRequirements.ToString
+  commentId: M:Google.Api.OAuthRequirements.ToString
+  id: ToString
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: OAuthRequirements.ToString()
+  fullName: Google.Api.OAuthRequirements.ToString()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: ToString
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 784
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public override string ToString()
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
+  overload: Google.Api.OAuthRequirements.ToString*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: Google.Api.OAuthRequirements.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Api.OAuthRequirements.WriteTo(Google.Protobuf.CodedOutputStream)
+  id: WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: WriteTo(CodedOutputStream)
+  nameWithType: OAuthRequirements.WriteTo(CodedOutputStream)
+  fullName: Google.Api.OAuthRequirements.WriteTo(Google.Protobuf.CodedOutputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: WriteTo
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 789
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void WriteTo(CodedOutputStream output)
+    parameters:
+    - id: output
+      type: Google.Protobuf.CodedOutputStream
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+  overload: Google.Api.OAuthRequirements.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.OAuthRequirements.CalculateSize
+  commentId: M:Google.Api.OAuthRequirements.CalculateSize
+  id: CalculateSize
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: CalculateSize()
+  nameWithType: OAuthRequirements.CalculateSize()
+  fullName: Google.Api.OAuthRequirements.CalculateSize()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CalculateSize
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 797
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public int CalculateSize()
+    return:
+      type: System.Int32
+    content.vb: Public Function CalculateSize As Integer
+  overload: Google.Api.OAuthRequirements.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.OAuthRequirements.MergeFrom(Google.Api.OAuthRequirements)
+  commentId: M:Google.Api.OAuthRequirements.MergeFrom(Google.Api.OAuthRequirements)
+  id: MergeFrom(Google.Api.OAuthRequirements)
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(OAuthRequirements)
+  nameWithType: OAuthRequirements.MergeFrom(OAuthRequirements)
+  fullName: Google.Api.OAuthRequirements.MergeFrom(Google.Api.OAuthRequirements)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 806
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(OAuthRequirements other)
+    parameters:
+    - id: other
+      type: Google.Api.OAuthRequirements
+    content.vb: Public Sub MergeFrom(other As OAuthRequirements)
+  overload: Google.Api.OAuthRequirements.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.OAuthRequirements}.MergeFrom(Google.Api.OAuthRequirements)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.OAuthRequirements.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Api.OAuthRequirements.MergeFrom(Google.Protobuf.CodedInputStream)
+  id: MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Api.OAuthRequirements
+  langs:
+  - csharp
+  - vb
+  name: MergeFrom(CodedInputStream)
+  nameWithType: OAuthRequirements.MergeFrom(CodedInputStream)
+  fullName: Google.Api.OAuthRequirements.MergeFrom(Google.Protobuf.CodedInputStream)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Auth.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MergeFrom
+    path: src/Google.Api.CommonProtos/Api/Auth.cs
+    startLine: 816
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: public void MergeFrom(CodedInputStream input)
+    parameters:
+    - id: input
+      type: Google.Protobuf.CodedInputStream
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+  overload: Google.Api.OAuthRequirements.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Api
+  commentId: N:Google.Api
+  isExternal: false
+  name: Google.Api
+  nameWithType: Google.Api
+  fullName: Google.Api
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Api.OAuthRequirements}
+  commentId: T:Google.Protobuf.IMessage{Google.Api.OAuthRequirements}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<OAuthRequirements>
+  nameWithType: IMessage<OAuthRequirements>
+  fullName: Google.Protobuf.IMessage<Google.Api.OAuthRequirements>
+  nameWithType.vb: IMessage(Of OAuthRequirements)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.OAuthRequirements)
+  name.vb: IMessage(Of OAuthRequirements)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Api.OAuthRequirements}
+  commentId: T:System.IEquatable{Google.Api.OAuthRequirements}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<OAuthRequirements>
+  nameWithType: IEquatable<OAuthRequirements>
+  fullName: System.IEquatable<Google.Api.OAuthRequirements>
+  nameWithType.vb: IEquatable(Of OAuthRequirements)
+  fullName.vb: System.IEquatable(Of Google.Api.OAuthRequirements)
+  name.vb: IEquatable(Of OAuthRequirements)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.OAuthRequirements}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Api.OAuthRequirements}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<OAuthRequirements>
+  nameWithType: IDeepCloneable<OAuthRequirements>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.OAuthRequirements>
+  nameWithType.vb: IDeepCloneable(Of OAuthRequirements)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.OAuthRequirements)
+  name.vb: IDeepCloneable(Of OAuthRequirements)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.OAuthRequirements.Parser*
+  commentId: Overload:Google.Api.OAuthRequirements.Parser
+  isExternal: false
+  name: Parser
+  nameWithType: OAuthRequirements.Parser
+  fullName: Google.Api.OAuthRequirements.Parser
+- uid: Google.Protobuf.MessageParser{Google.Api.OAuthRequirements}
+  commentId: T:Google.Protobuf.MessageParser{Google.Api.OAuthRequirements}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.MessageParser`1
+  name: MessageParser<OAuthRequirements>
+  nameWithType: MessageParser<OAuthRequirements>
+  fullName: Google.Protobuf.MessageParser<Google.Api.OAuthRequirements>
+  nameWithType.vb: MessageParser(Of OAuthRequirements)
+  fullName.vb: Google.Protobuf.MessageParser(Of Google.Api.OAuthRequirements)
+  name.vb: MessageParser(Of OAuthRequirements)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
+  isExternal: true
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.MessageParser`1
+    name: MessageParser
+    nameWithType: MessageParser
+    fullName: Google.Protobuf.MessageParser
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.OAuthRequirements.Descriptor*
+  commentId: Overload:Google.Api.OAuthRequirements.Descriptor
+  isExternal: false
+  name: Descriptor
+  nameWithType: OAuthRequirements.Descriptor
+  fullName: Google.Api.OAuthRequirements.Descriptor
+- uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
+  isExternal: true
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
+  fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Api.OAuthRequirements.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Api.OAuthRequirements.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: OAuthRequirements.IMessage.Descriptor
+  fullName: Google.Api.OAuthRequirements.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: OAuthRequirements.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Api.OAuthRequirements.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: Google.Api.OAuthRequirements.#ctor*
+  commentId: Overload:Google.Api.OAuthRequirements.#ctor
+  isExternal: false
+  name: OAuthRequirements
+  nameWithType: OAuthRequirements.OAuthRequirements
+  fullName: Google.Api.OAuthRequirements.OAuthRequirements
+- uid: Google.Api.OAuthRequirements
+  commentId: T:Google.Api.OAuthRequirements
+  parent: Google.Api
+  isExternal: false
+  name: OAuthRequirements
+  nameWithType: OAuthRequirements
+  fullName: Google.Api.OAuthRequirements
+- uid: Google.Api.OAuthRequirements.Clone*
+  commentId: Overload:Google.Api.OAuthRequirements.Clone
+  isExternal: false
+  name: Clone
+  nameWithType: OAuthRequirements.Clone
+  fullName: Google.Api.OAuthRequirements.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.OAuthRequirements}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Api.OAuthRequirements}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Api.OAuthRequirements}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<OAuthRequirements>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.OAuthRequirements>.Clone()
+  nameWithType.vb: IDeepCloneable(Of OAuthRequirements).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.OAuthRequirements).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<OAuthRequirements>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Api.OAuthRequirements>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of OAuthRequirements).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Api.OAuthRequirements).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Google.Api.OAuthRequirements.CanonicalScopes*
+  commentId: Overload:Google.Api.OAuthRequirements.CanonicalScopes
+  isExternal: false
+  name: CanonicalScopes
+  nameWithType: OAuthRequirements.CanonicalScopes
+  fullName: Google.Api.OAuthRequirements.CanonicalScopes
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.OAuthRequirements.Equals*
+  commentId: Overload:Google.Api.OAuthRequirements.Equals
+  isExternal: false
+  name: Equals
+  nameWithType: OAuthRequirements.Equals
+  fullName: Google.Api.OAuthRequirements.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.IEquatable{Google.Api.OAuthRequirements}.Equals(Google.Api.OAuthRequirements)
+  commentId: M:System.IEquatable{Google.Api.OAuthRequirements}.Equals(Google.Api.OAuthRequirements)
+  parent: System.IEquatable{Google.Api.OAuthRequirements}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(OAuthRequirements)
+  nameWithType: IEquatable<OAuthRequirements>.Equals(OAuthRequirements)
+  fullName: System.IEquatable<Google.Api.OAuthRequirements>.Equals(Google.Api.OAuthRequirements)
+  nameWithType.vb: IEquatable(Of OAuthRequirements).Equals(OAuthRequirements)
+  fullName.vb: System.IEquatable(Of Google.Api.OAuthRequirements).Equals(Google.Api.OAuthRequirements)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<OAuthRequirements>.Equals
+    fullName: System.IEquatable<Google.Api.OAuthRequirements>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of OAuthRequirements).Equals
+    fullName: System.IEquatable(Of Google.Api.OAuthRequirements).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.OAuthRequirements.GetHashCode*
+  commentId: Overload:Google.Api.OAuthRequirements.GetHashCode
+  isExternal: false
+  name: GetHashCode
+  nameWithType: OAuthRequirements.GetHashCode
+  fullName: Google.Api.OAuthRequirements.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.OAuthRequirements.ToString*
+  commentId: Overload:Google.Api.OAuthRequirements.ToString
+  isExternal: false
+  name: ToString
+  nameWithType: OAuthRequirements.ToString
+  fullName: Google.Api.OAuthRequirements.ToString
+- uid: Google.Api.OAuthRequirements.WriteTo*
+  commentId: Overload:Google.Api.OAuthRequirements.WriteTo
+  isExternal: false
+  name: WriteTo
+  nameWithType: OAuthRequirements.WriteTo
+  fullName: Google.Api.OAuthRequirements.WriteTo
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
+  fullName: Google.Protobuf.CodedOutputStream
+- uid: Google.Api.OAuthRequirements.CalculateSize*
+  commentId: Overload:Google.Api.OAuthRequirements.CalculateSize
+  isExternal: false
+  name: CalculateSize
+  nameWithType: OAuthRequirements.CalculateSize
+  fullName: Google.Api.OAuthRequirements.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.OAuthRequirements.MergeFrom*
+  commentId: Overload:Google.Api.OAuthRequirements.MergeFrom
+  isExternal: false
+  name: MergeFrom
+  nameWithType: OAuthRequirements.MergeFrom
+  fullName: Google.Api.OAuthRequirements.MergeFrom
+- uid: Google.Protobuf.IMessage{Google.Api.OAuthRequirements}.MergeFrom(Google.Api.OAuthRequirements)
+  commentId: M:Google.Protobuf.IMessage{Google.Api.OAuthRequirements}.MergeFrom(Google.Api.OAuthRequirements)
+  parent: Google.Protobuf.IMessage{Google.Api.OAuthRequirements}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(OAuthRequirements)
+  nameWithType: IMessage<OAuthRequirements>.MergeFrom(OAuthRequirements)
+  fullName: Google.Protobuf.IMessage<Google.Api.OAuthRequirements>.MergeFrom(Google.Api.OAuthRequirements)
+  nameWithType.vb: IMessage(Of OAuthRequirements).MergeFrom(OAuthRequirements)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.OAuthRequirements).MergeFrom(Google.Api.OAuthRequirements)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<OAuthRequirements>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Api.OAuthRequirements>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of OAuthRequirements).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Api.OAuthRequirements).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.OAuthRequirements
+    name: OAuthRequirements
+    nameWithType: OAuthRequirements
+    fullName: Google.Api.OAuthRequirements
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
+  isExternal: true
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
+  fullName: Google.Protobuf.CodedInputStream

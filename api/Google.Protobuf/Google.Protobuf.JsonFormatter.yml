@@ -1,0 +1,685 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.JsonFormatter
+  commentId: T:Google.Protobuf.JsonFormatter
+  id: JsonFormatter
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.JsonFormatter.#ctor(Google.Protobuf.JsonFormatter.Settings)
+  - Google.Protobuf.JsonFormatter.Default
+  - Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage)
+  - Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage,System.IO.TextWriter)
+  - Google.Protobuf.JsonFormatter.ToDiagnosticString(Google.Protobuf.IMessage)
+  - Google.Protobuf.JsonFormatter.WriteValue(System.IO.TextWriter,System.Object)
+  langs:
+  - csharp
+  - vb
+  name: JsonFormatter
+  nameWithType: JsonFormatter
+  fullName: Google.Protobuf.JsonFormatter
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: JsonFormatter
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 58
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReflection-based converter from messages to JSON.\n"
+  remarks: "\n<p>\nInstances of this class are thread-safe, with no mutable state.\n</p>\n<p>\nThis is a simple start to get JSON formatting working. As it's reflection-based,\nit's not as quick as baking calls into generated messages - but is a simpler implementation.\n(This code is generally not heavily optimized.)\n</p>\n"
+  example: []
+  syntax:
+    content: public sealed class JsonFormatter
+    content.vb: Public NotInheritable Class JsonFormatter
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.JsonFormatter.Default
+  commentId: P:Google.Protobuf.JsonFormatter.Default
+  id: Default
+  parent: Google.Protobuf.JsonFormatter
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: JsonFormatter.Default
+  fullName: Google.Protobuf.JsonFormatter.Default
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Default
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 70
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns a formatter using the default settings.\n"
+  example: []
+  syntax:
+    content: public static JsonFormatter Default { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.JsonFormatter
+    content.vb: Public Shared ReadOnly Property Default As JsonFormatter
+  overload: Google.Protobuf.JsonFormatter.Default*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: Google.Protobuf.JsonFormatter.#ctor(Google.Protobuf.JsonFormatter.Settings)
+  commentId: M:Google.Protobuf.JsonFormatter.#ctor(Google.Protobuf.JsonFormatter.Settings)
+  id: '#ctor(Google.Protobuf.JsonFormatter.Settings)'
+  parent: Google.Protobuf.JsonFormatter
+  langs:
+  - csharp
+  - vb
+  name: JsonFormatter(JsonFormatter.Settings)
+  nameWithType: JsonFormatter.JsonFormatter(JsonFormatter.Settings)
+  fullName: Google.Protobuf.JsonFormatter.JsonFormatter(Google.Protobuf.JsonFormatter.Settings)
+  type: Constructor
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: .ctor
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 133
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new formatted with the given settings.\n"
+  example: []
+  syntax:
+    content: public JsonFormatter(JsonFormatter.Settings settings)
+    parameters:
+    - id: settings
+      type: Google.Protobuf.JsonFormatter.Settings
+      description: The settings.
+    content.vb: Public Sub New(settings As JsonFormatter.Settings)
+  overload: Google.Protobuf.JsonFormatter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage)
+  id: Format(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.JsonFormatter
+  langs:
+  - csharp
+  - vb
+  name: Format(IMessage)
+  nameWithType: JsonFormatter.Format(IMessage)
+  fullName: Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Format
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 143
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nFormats the specified message as JSON.\n"
+  example: []
+  syntax:
+    content: public string Format(IMessage message)
+    parameters:
+    - id: message
+      type: Google.Protobuf.IMessage
+      description: The message to format.
+    return:
+      type: System.String
+      description: The formatted message.
+    content.vb: Public Function Format(message As IMessage) As String
+  overload: Google.Protobuf.JsonFormatter.Format*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage,System.IO.TextWriter)
+  commentId: M:Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage,System.IO.TextWriter)
+  id: Format(Google.Protobuf.IMessage,System.IO.TextWriter)
+  parent: Google.Protobuf.JsonFormatter
+  langs:
+  - csharp
+  - vb
+  name: Format(IMessage, TextWriter)
+  nameWithType: JsonFormatter.Format(IMessage, TextWriter)
+  fullName: Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage, System.IO.TextWriter)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: Format
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 156
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nFormats the specified message as JSON.\n"
+  example: []
+  syntax:
+    content: public void Format(IMessage message, TextWriter writer)
+    parameters:
+    - id: message
+      type: Google.Protobuf.IMessage
+      description: The message to format.
+    - id: writer
+      type: System.IO.TextWriter
+      description: The TextWriter to write the formatted message to.
+    content.vb: Public Sub Format(message As IMessage, writer As TextWriter)
+  overload: Google.Protobuf.JsonFormatter.Format*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.JsonFormatter.ToDiagnosticString(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.JsonFormatter.ToDiagnosticString(Google.Protobuf.IMessage)
+  id: ToDiagnosticString(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.JsonFormatter
+  langs:
+  - csharp
+  - vb
+  name: ToDiagnosticString(IMessage)
+  nameWithType: JsonFormatter.ToDiagnosticString(IMessage)
+  fullName: Google.Protobuf.JsonFormatter.ToDiagnosticString(Google.Protobuf.IMessage)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToDiagnosticString
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 188
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nConverts a message to JSON for diagnostic purposes with no extra context.\n"
+  remarks: "\n<p>\nThis differs from calling <xref href=\"Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage)\" data-throw-if-not-resolved=\"false\"></xref> on the default JSON\nformatter in its handling of <xref href=\"Google.Protobuf.WellKnownTypes.Any\" data-throw-if-not-resolved=\"false\"></xref>. As no type registry is available\nin <xref href=\"System.Object.ToString\" data-throw-if-not-resolved=\"false\"></xref> calls, the normal way of resolving the type of\nan <code>Any</code> message cannot be applied. Instead, a JSON property named <code>@value</code>\nis included with the base64 data from the <xref href=\"Google.Protobuf.WellKnownTypes.Any.Value\" data-throw-if-not-resolved=\"false\"></xref> property of the message.\n</p>\n<p>The value returned by this method is only designed to be used for diagnostic\npurposes. It may not be parsable by <xref href=\"Google.Protobuf.JsonParser\" data-throw-if-not-resolved=\"false\"></xref>, and may not be parsable\nby other Protocol Buffer implementations.</p>\n"
+  example: []
+  syntax:
+    content: public static string ToDiagnosticString(IMessage message)
+    parameters:
+    - id: message
+      type: Google.Protobuf.IMessage
+      description: The message to format for diagnostic purposes.
+    return:
+      type: System.String
+      description: The diagnostic-only JSON representation of the message
+    content.vb: Public Shared Function ToDiagnosticString(message As IMessage) As String
+  overload: Google.Protobuf.JsonFormatter.ToDiagnosticString*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.JsonFormatter.WriteValue(System.IO.TextWriter,System.Object)
+  commentId: M:Google.Protobuf.JsonFormatter.WriteValue(System.IO.TextWriter,System.Object)
+  id: WriteValue(System.IO.TextWriter,System.Object)
+  parent: Google.Protobuf.JsonFormatter
+  langs:
+  - csharp
+  - vb
+  name: WriteValue(TextWriter, Object)
+  nameWithType: JsonFormatter.WriteValue(TextWriter, Object)
+  fullName: Google.Protobuf.JsonFormatter.WriteValue(System.IO.TextWriter, System.Object)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: WriteValue
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 334
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWrites a single value to the given writer as JSON. Only types understood by\nProtocol Buffers can be written in this way. This method is only exposed for\nadvanced use cases; most users should be using <xref href=\"Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage)\" data-throw-if-not-resolved=\"false\"></xref>\nor <xref href=\"Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage%2cSystem.IO.TextWriter)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public void WriteValue(TextWriter writer, object value)
+    parameters:
+    - id: writer
+      type: System.IO.TextWriter
+      description: The writer to write the value to. Must not be null.
+    - id: value
+      type: System.Object
+      description: The value to write. May be null.
+    content.vb: Public Sub WriteValue(writer As TextWriter, value As Object)
+  overload: Google.Protobuf.JsonFormatter.WriteValue*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.JsonFormatter.Default*
+  commentId: Overload:Google.Protobuf.JsonFormatter.Default
+  isExternal: false
+  name: Default
+  nameWithType: JsonFormatter.Default
+  fullName: Google.Protobuf.JsonFormatter.Default
+- uid: Google.Protobuf.JsonFormatter
+  commentId: T:Google.Protobuf.JsonFormatter
+  parent: Google.Protobuf
+  isExternal: false
+  name: JsonFormatter
+  nameWithType: JsonFormatter
+  fullName: Google.Protobuf.JsonFormatter
+- uid: Google.Protobuf.JsonFormatter.#ctor*
+  commentId: Overload:Google.Protobuf.JsonFormatter.#ctor
+  isExternal: false
+  name: JsonFormatter
+  nameWithType: JsonFormatter.JsonFormatter
+  fullName: Google.Protobuf.JsonFormatter.JsonFormatter
+- uid: Google.Protobuf.JsonFormatter.Settings
+  commentId: T:Google.Protobuf.JsonFormatter.Settings
+  parent: Google.Protobuf
+  isExternal: false
+  name: JsonFormatter.Settings
+  nameWithType: JsonFormatter.Settings
+  fullName: Google.Protobuf.JsonFormatter.Settings
+- uid: Google.Protobuf.JsonFormatter.Format*
+  commentId: Overload:Google.Protobuf.JsonFormatter.Format
+  isExternal: false
+  name: Format
+  nameWithType: JsonFormatter.Format
+  fullName: Google.Protobuf.JsonFormatter.Format
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.IO.TextWriter
+  commentId: T:System.IO.TextWriter
+  parent: System.IO
+  isExternal: true
+  name: TextWriter
+  nameWithType: TextWriter
+  fullName: System.IO.TextWriter
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: false
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+- uid: Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage)
+- uid: Google.Protobuf.WellKnownTypes.Any
+  commentId: T:Google.Protobuf.WellKnownTypes.Any
+  parent: Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Any
+  nameWithType: Any
+  fullName: Google.Protobuf.WellKnownTypes.Any
+- uid: Google.Protobuf.WellKnownTypes.Any.Value
+  commentId: P:Google.Protobuf.WellKnownTypes.Any.Value
+- uid: Google.Protobuf.JsonParser
+  commentId: T:Google.Protobuf.JsonParser
+  parent: Google.Protobuf
+  isExternal: false
+  name: JsonParser
+  nameWithType: JsonParser
+  fullName: Google.Protobuf.JsonParser
+- uid: Google.Protobuf.JsonFormatter.ToDiagnosticString*
+  commentId: Overload:Google.Protobuf.JsonFormatter.ToDiagnosticString
+  isExternal: false
+  name: ToDiagnosticString
+  nameWithType: JsonFormatter.ToDiagnosticString
+  fullName: Google.Protobuf.JsonFormatter.ToDiagnosticString
+- uid: Google.Protobuf.WellKnownTypes
+  commentId: N:Google.Protobuf.WellKnownTypes
+  isExternal: false
+  name: Google.Protobuf.WellKnownTypes
+  nameWithType: Google.Protobuf.WellKnownTypes
+  fullName: Google.Protobuf.WellKnownTypes
+- uid: Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage,System.IO.TextWriter)
+  commentId: M:Google.Protobuf.JsonFormatter.Format(Google.Protobuf.IMessage,System.IO.TextWriter)
+- uid: Google.Protobuf.JsonFormatter.WriteValue*
+  commentId: Overload:Google.Protobuf.JsonFormatter.WriteValue
+  isExternal: false
+  name: WriteValue
+  nameWithType: JsonFormatter.WriteValue
+  fullName: Google.Protobuf.JsonFormatter.WriteValue

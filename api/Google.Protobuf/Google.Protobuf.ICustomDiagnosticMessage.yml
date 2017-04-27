@@ -1,0 +1,1011 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.ICustomDiagnosticMessage
+  commentId: T:Google.Protobuf.ICustomDiagnosticMessage
+  id: ICustomDiagnosticMessage
+  parent: Google.Protobuf
+  children:
+  - Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  langs:
+  - csharp
+  - vb
+  name: ICustomDiagnosticMessage
+  nameWithType: ICustomDiagnosticMessage
+  fullName: Google.Protobuf.ICustomDiagnosticMessage
+  type: Interface
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ICustomDiagnosticMessage.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ICustomDiagnosticMessage
+    path: csharp/src/Google.Protobuf/ICustomDiagnosticMessage.cs
+    startLine: 54
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nA message type that has a custom string format for diagnostic purposes.\n"
+  remarks: "\n<p>\nCalling <xref href=\"System.Object.ToString\" data-throw-if-not-resolved=\"false\"></xref> on a generated message type normally\nreturns the JSON representation. If a message type implements this interface,\nthen the <xref href=\"Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString\" data-throw-if-not-resolved=\"false\"></xref> method will be called instead of the regular\nJSON formatting code, but only when <code>ToString()</code> is called either on the message itself\nor on another message which contains it. This does not affect the normal JSON formatting of\nthe message.\n</p>\n<p>\nFor example, if you create a proto message representing a GUID, the internal\nrepresentation may be a <code>bytes</code> field or four <code>fixed32</code> fields. However, when debugging\nit may be more convenient to see a result in the same format as <xref href=\"System.Guid\" data-throw-if-not-resolved=\"false\"></xref> provides.\n</p>\n<p>This interface extends <xref href=\"Google.Protobuf.IMessage\" data-throw-if-not-resolved=\"false\"></xref> to avoid it accidentally being implemented\non types other than messages, where it would not be used by anything in the framework.</p>\n"
+  example: []
+  syntax:
+    content: 'public interface ICustomDiagnosticMessage : IMessage'
+    content.vb: >-
+      Public Interface ICustomDiagnosticMessage
+          Inherits IMessage
+  inheritedMembers:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  - Google.Protobuf.IMessage.CalculateSize
+  - Google.Protobuf.IMessage.Descriptor
+  extensionMethods:
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteArray
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+  - Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteString
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  commentId: M:Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  id: ToDiagnosticString
+  parent: Google.Protobuf.ICustomDiagnosticMessage
+  langs:
+  - csharp
+  - vb
+  name: ToDiagnosticString()
+  nameWithType: ICustomDiagnosticMessage.ToDiagnosticString()
+  fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString()
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ICustomDiagnosticMessage.cs
+      branch: 3.2.x
+      repo: https://github.com/google/protobuf
+    id: ToDiagnosticString
+    path: csharp/src/Google.Protobuf/ICustomDiagnosticMessage.cs
+    startLine: 66
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nReturns a string representation of this object, for diagnostic purposes.\n"
+  remarks: "\nThis method is called when a message is formatted as part of a <xref href=\"System.Object.ToString\" data-throw-if-not-resolved=\"false\"></xref>\ncall. It does not affect the JSON representation used by <xref href=\"Google.Protobuf.JsonFormatter\" data-throw-if-not-resolved=\"false\"></xref> other than\nin calls to <xref href=\"Google.Protobuf.JsonFormatter.ToDiagnosticString(Google.Protobuf.IMessage)\" data-throw-if-not-resolved=\"false\"></xref>. While it is recommended\nthat the result is valid JSON, this is never assumed by the Protobuf library.\n"
+  example: []
+  syntax:
+    content: string ToDiagnosticString()
+    return:
+      type: System.String
+      description: A string representation of this object, for diagnostic purposes.
+    content.vb: Function ToDiagnosticString As String
+  overload: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString*
+references:
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  commentId: M:Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  parent: Google.Protobuf.ICustomDiagnosticMessage
+  isExternal: false
+  name: ToDiagnosticString()
+  nameWithType: ICustomDiagnosticMessage.ToDiagnosticString()
+  fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString()
+  spec.csharp:
+  - uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+    name: ToDiagnosticString
+    nameWithType: ICustomDiagnosticMessage.ToDiagnosticString
+    fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+    name: ToDiagnosticString
+    nameWithType: ICustomDiagnosticMessage.ToDiagnosticString
+    fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Guid
+  commentId: T:System.Guid
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: false
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  name: MergeFrom(Byte[])
+  nameWithType: MessageExtensions.MergeFrom(Byte[])
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+  nameWithType.vb: MessageExtensions.MergeFrom(Byte())
+  fullName.vb: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte())
+  name.vb: MergeFrom(Byte())
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  name: MergeFrom(ByteString)
+  nameWithType: MessageExtensions.MergeFrom(ByteString)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  name: MergeFrom(Stream)
+  nameWithType: MessageExtensions.MergeFrom(Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  name: MergeDelimitedFrom(Stream)
+  nameWithType: MessageExtensions.MergeDelimitedFrom(Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteArray
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  name: ToByteArray()
+  nameWithType: MessageExtensions.ToByteArray()
+  fullName: Google.Protobuf.MessageExtensions.ToByteArray()
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  name: WriteTo(Stream)
+  nameWithType: MessageExtensions.WriteTo(Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  name: WriteDelimitedTo(Stream)
+  nameWithType: MessageExtensions.WriteDelimitedTo(Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.Google.Protobuf.MessageExtensions.ToByteString
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  parent: Google.Protobuf.MessageExtensions
+  definition: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  name: ToByteString()
+  nameWithType: MessageExtensions.ToByteString()
+  fullName: Google.Protobuf.MessageExtensions.ToByteString()
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Google.Protobuf.ICustomDiagnosticMessage
+  commentId: T:Google.Protobuf.ICustomDiagnosticMessage
+  parent: Google.Protobuf
+  isExternal: false
+  name: ICustomDiagnosticMessage
+  nameWithType: ICustomDiagnosticMessage
+  fullName: Google.Protobuf.ICustomDiagnosticMessage
+- uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+  isExternal: true
+  name: MergeFrom(IMessage, Byte[])
+  nameWithType: MessageExtensions.MergeFrom(IMessage, Byte[])
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, System.Byte[])
+  nameWithType.vb: MessageExtensions.MergeFrom(IMessage, Byte())
+  fullName.vb: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, System.Byte())
+  name.vb: MergeFrom(IMessage, Byte())
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.Byte[])
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Byte
+    name: Byte
+    nameWithType: Byte
+    fullName: System.Byte
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions
+  commentId: T:Google.Protobuf.MessageExtensions
+  parent: Google.Protobuf
+  isExternal: false
+  name: MessageExtensions
+  nameWithType: MessageExtensions
+  fullName: Google.Protobuf.MessageExtensions
+- uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+  isExternal: false
+  name: MergeFrom(IMessage, ByteString)
+  nameWithType: MessageExtensions.MergeFrom(IMessage, ByteString)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, Google.Protobuf.ByteString)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,Google.Protobuf.ByteString)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: MergeFrom(IMessage, Stream)
+  nameWithType: MessageExtensions.MergeFrom(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeFrom
+    nameWithType: MessageExtensions.MergeFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: MergeDelimitedFrom(IMessage, Stream)
+  nameWithType: MessageExtensions.MergeDelimitedFrom(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.MergeDelimitedFrom(Google.Protobuf.IMessage,System.IO.Stream)
+    name: MergeDelimitedFrom
+    nameWithType: MessageExtensions.MergeDelimitedFrom
+    fullName: Google.Protobuf.MessageExtensions.MergeDelimitedFrom
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  isExternal: false
+  name: ToByteArray(IMessage)
+  nameWithType: MessageExtensions.ToByteArray(IMessage)
+  fullName: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteArray(Google.Protobuf.IMessage)
+    name: ToByteArray
+    nameWithType: MessageExtensions.ToByteArray
+    fullName: Google.Protobuf.MessageExtensions.ToByteArray
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: WriteTo(IMessage, Stream)
+  nameWithType: MessageExtensions.WriteTo(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteTo
+    nameWithType: MessageExtensions.WriteTo
+    fullName: Google.Protobuf.MessageExtensions.WriteTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  commentId: M:Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+  isExternal: true
+  name: WriteDelimitedTo(IMessage, Stream)
+  nameWithType: MessageExtensions.WriteDelimitedTo(IMessage, Stream)
+  fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage, System.IO.Stream)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.WriteDelimitedTo(Google.Protobuf.IMessage,System.IO.Stream)
+    name: WriteDelimitedTo
+    nameWithType: MessageExtensions.WriteDelimitedTo
+    fullName: Google.Protobuf.MessageExtensions.WriteDelimitedTo
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.IO.Stream
+    name: Stream
+    nameWithType: Stream
+    fullName: System.IO.Stream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  isExternal: false
+  name: ToByteString(IMessage)
+  nameWithType: MessageExtensions.ToByteString(IMessage)
+  fullName: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+  spec.csharp:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.MessageExtensions.ToByteString(Google.Protobuf.IMessage)
+    name: ToByteString
+    nameWithType: MessageExtensions.ToByteString
+    fullName: Google.Protobuf.MessageExtensions.ToByteString
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.IMessage
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.JsonFormatter
+  commentId: T:Google.Protobuf.JsonFormatter
+  parent: Google.Protobuf
+  isExternal: false
+  name: JsonFormatter
+  nameWithType: JsonFormatter
+  fullName: Google.Protobuf.JsonFormatter
+- uid: Google.Protobuf.JsonFormatter.ToDiagnosticString(Google.Protobuf.IMessage)
+  commentId: M:Google.Protobuf.JsonFormatter.ToDiagnosticString(Google.Protobuf.IMessage)
+- uid: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString*
+  commentId: Overload:Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+  isExternal: false
+  name: ToDiagnosticString
+  nameWithType: ICustomDiagnosticMessage.ToDiagnosticString
+  fullName: Google.Protobuf.ICustomDiagnosticMessage.ToDiagnosticString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

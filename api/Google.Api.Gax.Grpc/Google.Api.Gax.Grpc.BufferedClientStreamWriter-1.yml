@@ -1,0 +1,836 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1
+  commentId: T:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1
+  id: BufferedClientStreamWriter`1
+  parent: Google.Api.Gax.Grpc
+  children:
+  - Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.#ctor(Grpc.Core.IClientStreamWriter{`0},System.Int32)
+  - Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteAsync(`0)
+  - Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteAsync(`0,Grpc.Core.WriteOptions)
+  - Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteCompleteAsync
+  - Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteAsync(`0)
+  - Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteAsync(`0,Grpc.Core.WriteOptions)
+  - Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteCompleteAsync
+  langs:
+  - csharp
+  - vb
+  name: BufferedClientStreamWriter<T>
+  nameWithType: BufferedClientStreamWriter<T>
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>
+  type: Class
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: BufferedClientStreamWriter
+    path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+    startLine: 24
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nA wrapper around <xref href=\"Grpc.Core.IClientStreamWriter%601\" data-throw-if-not-resolved=\"false\"></xref> which removes the \"one write at a time\"\nrestriction by buffering messages (and the completion signal) up to a given capacity.\n"
+  example: []
+  syntax:
+    content: >-
+      public class BufferedClientStreamWriter<T>
+          where T : class
+    typeParameters:
+    - id: T
+      description: The type of message in the stream.
+    content.vb: Public Class BufferedClientStreamWriter(Of T As Class)
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  nameWithType.vb: BufferedClientStreamWriter(Of T)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T)
+  name.vb: BufferedClientStreamWriter(Of T)
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.#ctor(Grpc.Core.IClientStreamWriter{`0},System.Int32)
+  commentId: M:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.#ctor(Grpc.Core.IClientStreamWriter{`0},System.Int32)
+  id: '#ctor(Grpc.Core.IClientStreamWriter{`0},System.Int32)'
+  parent: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1
+  langs:
+  - csharp
+  - vb
+  name: BufferedClientStreamWriter(IClientStreamWriter<T>, Int32)
+  nameWithType: BufferedClientStreamWriter<T>.BufferedClientStreamWriter(IClientStreamWriter<T>, Int32)
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.BufferedClientStreamWriter(Grpc.Core.IClientStreamWriter<T>, System.Int32)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+    startLine: 67
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nConstructs an instance which writes to the specified writer, and with the given capacity.\n"
+  example: []
+  syntax:
+    content: public BufferedClientStreamWriter(IClientStreamWriter<T> writer, int capacity)
+    parameters:
+    - id: writer
+      type: Grpc.Core.IClientStreamWriter{{T}}
+      description: The writer to delegate to.
+    - id: capacity
+      type: System.Int32
+      description: The maximum number of messages to buffer.
+    content.vb: Public Sub New(writer As IClientStreamWriter(Of T), capacity As Integer)
+  overload: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.#ctor*
+  nameWithType.vb: BufferedClientStreamWriter(Of T).BufferedClientStreamWriter(IClientStreamWriter(Of T), Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).BufferedClientStreamWriter(Grpc.Core.IClientStreamWriter(Of T), System.Int32)
+  name.vb: BufferedClientStreamWriter(IClientStreamWriter(Of T), Int32)
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteAsync(`0)
+  commentId: M:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteAsync(`0)
+  id: TryWriteAsync(`0)
+  parent: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1
+  langs:
+  - csharp
+  - vb
+  name: TryWriteAsync(T)
+  nameWithType: BufferedClientStreamWriter<T>.TryWriteAsync(T)
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.TryWriteAsync(T)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: TryWriteAsync
+    path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+    startLine: 82
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nWrites a message to the stream, if there is enough space in the buffer and <xref href=\"Google.Api.Gax.Grpc.BufferedClientStreamWriter%601.WriteCompleteAsync\" data-throw-if-not-resolved=\"false\"></xref>\nhasn't already been called. The same write options will be used as for the previous message.\n"
+  example: []
+  syntax:
+    content: public Task TryWriteAsync(T message)
+    parameters:
+    - id: message
+      type: '{T}'
+      description: The message to write.
+    return:
+      type: System.Threading.Tasks.Task
+      description: >-
+        <code>null</code> if the message queue is full or the stream has already been completed;
+            otherwise, a <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> which will complete when the message has been written to the stream.
+    content.vb: Public Function TryWriteAsync(message As T) As Task
+  overload: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteAsync*
+  nameWithType.vb: BufferedClientStreamWriter(Of T).TryWriteAsync(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).TryWriteAsync(T)
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteAsync(`0,Grpc.Core.WriteOptions)
+  commentId: M:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteAsync(`0,Grpc.Core.WriteOptions)
+  id: TryWriteAsync(`0,Grpc.Core.WriteOptions)
+  parent: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1
+  langs:
+  - csharp
+  - vb
+  name: TryWriteAsync(T, WriteOptions)
+  nameWithType: BufferedClientStreamWriter<T>.TryWriteAsync(T, WriteOptions)
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.TryWriteAsync(T, Grpc.Core.WriteOptions)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: TryWriteAsync
+    path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+    startLine: 91
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nWrites a message to the stream, if there is enough space in the buffer and <xref href=\"Google.Api.Gax.Grpc.BufferedClientStreamWriter%601.WriteCompleteAsync\" data-throw-if-not-resolved=\"false\"></xref>\nhasn't already been called.\n"
+  example: []
+  syntax:
+    content: public Task TryWriteAsync(T message, WriteOptions options)
+    parameters:
+    - id: message
+      type: '{T}'
+      description: The message to write.
+    - id: options
+      type: Grpc.Core.WriteOptions
+      description: The write options to use for this message.
+    return:
+      type: System.Threading.Tasks.Task
+      description: <code>null</code> if the message queue is full or the stream has already been completed.
+    content.vb: Public Function TryWriteAsync(message As T, options As WriteOptions) As Task
+  overload: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteAsync*
+  nameWithType.vb: BufferedClientStreamWriter(Of T).TryWriteAsync(T, WriteOptions)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).TryWriteAsync(T, Grpc.Core.WriteOptions)
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteAsync(`0)
+  commentId: M:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteAsync(`0)
+  id: WriteAsync(`0)
+  parent: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1
+  langs:
+  - csharp
+  - vb
+  name: WriteAsync(T)
+  nameWithType: BufferedClientStreamWriter<T>.WriteAsync(T)
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.WriteAsync(T)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: WriteAsync
+    path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+    startLine: 101
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nWrites a message to the stream, if there is enough space in the buffer and <xref href=\"Google.Api.Gax.Grpc.BufferedClientStreamWriter%601.WriteCompleteAsync\" data-throw-if-not-resolved=\"false\"></xref>\nhasn't already been called. The same write options will be used as for the previous message.\n"
+  example: []
+  syntax:
+    content: public Task WriteAsync(T message)
+    parameters:
+    - id: message
+      type: '{T}'
+      description: The message to write.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> which will complete when the message has been written to the stream.
+    content.vb: Public Function WriteAsync(message As T) As Task
+  overload: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteAsync*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: >-
+      There isn't enough space left in the buffer,
+
+      or the stream has been completed.
+  nameWithType.vb: BufferedClientStreamWriter(Of T).WriteAsync(T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).WriteAsync(T)
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteAsync(`0,Grpc.Core.WriteOptions)
+  commentId: M:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteAsync(`0,Grpc.Core.WriteOptions)
+  id: WriteAsync(`0,Grpc.Core.WriteOptions)
+  parent: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1
+  langs:
+  - csharp
+  - vb
+  name: WriteAsync(T, WriteOptions)
+  nameWithType: BufferedClientStreamWriter<T>.WriteAsync(T, WriteOptions)
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.WriteAsync(T, Grpc.Core.WriteOptions)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: WriteAsync
+    path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+    startLine: 112
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nWrites a message to the stream, if there is enough space in the buffer and <xref href=\"Google.Api.Gax.Grpc.BufferedClientStreamWriter%601.WriteCompleteAsync\" data-throw-if-not-resolved=\"false\"></xref>\nhasn't already been called.\n"
+  example: []
+  syntax:
+    content: public Task WriteAsync(T message, WriteOptions options)
+    parameters:
+    - id: message
+      type: '{T}'
+      description: The message to write.
+    - id: options
+      type: Grpc.Core.WriteOptions
+      description: The write options to use for this message.
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> which will complete when the message has been written to the stream.
+    content.vb: Public Function WriteAsync(message As T, options As WriteOptions) As Task
+  overload: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteAsync*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: >-
+      There isn't enough space left in the buffer,
+
+      or <xref href="Google.Api.Gax.Grpc.BufferedClientStreamWriter%601.WriteCompleteAsync" data-throw-if-not-resolved="false"></xref> has already been called.
+  nameWithType.vb: BufferedClientStreamWriter(Of T).WriteAsync(T, WriteOptions)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).WriteAsync(T, Grpc.Core.WriteOptions)
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteCompleteAsync
+  commentId: M:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteCompleteAsync
+  id: TryWriteCompleteAsync
+  parent: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1
+  langs:
+  - csharp
+  - vb
+  name: TryWriteCompleteAsync()
+  nameWithType: BufferedClientStreamWriter<T>.TryWriteCompleteAsync()
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.TryWriteCompleteAsync()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: TryWriteCompleteAsync
+    path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+    startLine: 220
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nCompletes the stream when all buffered messages have been sent, if there is enough space in the buffer.\nThis method can only be successfully called once, and further messages cannot be written after it\nhas been successfully called.\n"
+  example: []
+  syntax:
+    content: public Task TryWriteCompleteAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: >-
+        <code>null</code> if this stream has already be completed, or if the buffer is full; otherwise a
+
+        <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> which will complete when the stream has finished being completed.
+    content.vb: Public Function TryWriteCompleteAsync As Task
+  overload: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteCompleteAsync*
+  nameWithType.vb: BufferedClientStreamWriter(Of T).TryWriteCompleteAsync()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).TryWriteCompleteAsync()
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteCompleteAsync
+  commentId: M:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteCompleteAsync
+  id: WriteCompleteAsync
+  parent: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1
+  langs:
+  - csharp
+  - vb
+  name: WriteCompleteAsync()
+  nameWithType: BufferedClientStreamWriter<T>.WriteCompleteAsync()
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.WriteCompleteAsync()
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: WriteCompleteAsync
+    path: src/Google.Api.Gax.Grpc/BufferedClientStreamWriter.cs
+    startLine: 229
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nCompletes the stream when all buffered messages have been sent, if there is enough space in the buffer.\nThis method can only be successfully called once, and further messages cannot be written after it\nhas been successfully called.\n"
+  example: []
+  syntax:
+    content: public Task WriteCompleteAsync()
+    return:
+      type: System.Threading.Tasks.Task
+      description: A <xref href="System.Threading.Tasks.Task" data-throw-if-not-resolved="false"></xref> which will complete when the stream has finished being completed.
+    content.vb: Public Function WriteCompleteAsync As Task
+  overload: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteCompleteAsync*
+  exceptions:
+  - type: System.InvalidOperationException
+    commentId: T:System.InvalidOperationException
+    description: This stream has already be completed, or the buffer is full
+  nameWithType.vb: BufferedClientStreamWriter(Of T).WriteCompleteAsync()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).WriteCompleteAsync()
+references:
+- uid: Grpc.Core.IClientStreamWriter`1
+  commentId: T:Grpc.Core.IClientStreamWriter`1
+  isExternal: true
+  name: IClientStreamWriter<T>
+  nameWithType: IClientStreamWriter<T>
+  fullName: Grpc.Core.IClientStreamWriter<T>
+  nameWithType.vb: IClientStreamWriter(Of T)
+  fullName.vb: Grpc.Core.IClientStreamWriter(Of T)
+  name.vb: IClientStreamWriter(Of T)
+  spec.csharp:
+  - uid: Grpc.Core.IClientStreamWriter`1
+    name: IClientStreamWriter
+    nameWithType: IClientStreamWriter
+    fullName: Grpc.Core.IClientStreamWriter
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.IClientStreamWriter`1
+    name: IClientStreamWriter
+    nameWithType: IClientStreamWriter
+    fullName: Grpc.Core.IClientStreamWriter
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.Grpc
+  commentId: N:Google.Api.Gax.Grpc
+  isExternal: false
+  name: Google.Api.Gax.Grpc
+  nameWithType: Google.Api.Gax.Grpc
+  fullName: Google.Api.Gax.Grpc
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.#ctor*
+  commentId: Overload:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.#ctor
+  isExternal: false
+  name: BufferedClientStreamWriter
+  nameWithType: BufferedClientStreamWriter<T>.BufferedClientStreamWriter
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.BufferedClientStreamWriter
+  nameWithType.vb: BufferedClientStreamWriter(Of T).BufferedClientStreamWriter
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).BufferedClientStreamWriter
+- uid: Grpc.Core.IClientStreamWriter{{T}}
+  commentId: T:Grpc.Core.IClientStreamWriter{`0}
+  parent: Grpc.Core
+  definition: Grpc.Core.IClientStreamWriter`1
+  name: IClientStreamWriter<T>
+  nameWithType: IClientStreamWriter<T>
+  fullName: Grpc.Core.IClientStreamWriter<T>
+  nameWithType.vb: IClientStreamWriter(Of T)
+  fullName.vb: Grpc.Core.IClientStreamWriter(Of T)
+  name.vb: IClientStreamWriter(Of T)
+  spec.csharp:
+  - uid: Grpc.Core.IClientStreamWriter`1
+    name: IClientStreamWriter
+    nameWithType: IClientStreamWriter
+    fullName: Grpc.Core.IClientStreamWriter
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Grpc.Core.IClientStreamWriter`1
+    name: IClientStreamWriter
+    nameWithType: IClientStreamWriter
+    fullName: Grpc.Core.IClientStreamWriter
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteCompleteAsync
+  commentId: M:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteCompleteAsync
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteAsync*
+  commentId: Overload:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteAsync
+  isExternal: false
+  name: TryWriteAsync
+  nameWithType: BufferedClientStreamWriter<T>.TryWriteAsync
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.TryWriteAsync
+  nameWithType.vb: BufferedClientStreamWriter(Of T).TryWriteAsync
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).TryWriteAsync
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: Grpc.Core.WriteOptions
+  commentId: T:Grpc.Core.WriteOptions
+  parent: Grpc.Core
+  isExternal: true
+  name: WriteOptions
+  nameWithType: WriteOptions
+  fullName: Grpc.Core.WriteOptions
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteAsync*
+  commentId: Overload:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteAsync
+  isExternal: false
+  name: WriteAsync
+  nameWithType: BufferedClientStreamWriter<T>.WriteAsync
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.WriteAsync
+  nameWithType.vb: BufferedClientStreamWriter(Of T).WriteAsync
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).WriteAsync
+- uid: System.InvalidOperationException
+  commentId: T:System.InvalidOperationException
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteCompleteAsync*
+  commentId: Overload:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.TryWriteCompleteAsync
+  isExternal: false
+  name: TryWriteCompleteAsync
+  nameWithType: BufferedClientStreamWriter<T>.TryWriteCompleteAsync
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.TryWriteCompleteAsync
+  nameWithType.vb: BufferedClientStreamWriter(Of T).TryWriteCompleteAsync
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).TryWriteCompleteAsync
+- uid: Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteCompleteAsync*
+  commentId: Overload:Google.Api.Gax.Grpc.BufferedClientStreamWriter`1.WriteCompleteAsync
+  isExternal: false
+  name: WriteCompleteAsync
+  nameWithType: BufferedClientStreamWriter<T>.WriteCompleteAsync
+  fullName: Google.Api.Gax.Grpc.BufferedClientStreamWriter<T>.WriteCompleteAsync
+  nameWithType.vb: BufferedClientStreamWriter(Of T).WriteCompleteAsync
+  fullName.vb: Google.Api.Gax.Grpc.BufferedClientStreamWriter(Of T).WriteCompleteAsync

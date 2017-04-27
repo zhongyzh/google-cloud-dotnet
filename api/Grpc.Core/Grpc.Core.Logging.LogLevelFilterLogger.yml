@@ -1,0 +1,1478 @@
+### YamlMime:ManagedReference
+items:
+- uid: Grpc.Core.Logging.LogLevelFilterLogger
+  commentId: T:Grpc.Core.Logging.LogLevelFilterLogger
+  id: LogLevelFilterLogger
+  parent: Grpc.Core.Logging
+  children:
+  - Grpc.Core.Logging.LogLevelFilterLogger.#ctor(Grpc.Core.Logging.ILogger,Grpc.Core.Logging.LogLevel)
+  - Grpc.Core.Logging.LogLevelFilterLogger.Debug(System.String)
+  - Grpc.Core.Logging.LogLevelFilterLogger.Debug(System.String,System.Object[])
+  - Grpc.Core.Logging.LogLevelFilterLogger.Error(System.Exception,System.String)
+  - Grpc.Core.Logging.LogLevelFilterLogger.Error(System.String)
+  - Grpc.Core.Logging.LogLevelFilterLogger.Error(System.String,System.Object[])
+  - Grpc.Core.Logging.LogLevelFilterLogger.ForType``1
+  - Grpc.Core.Logging.LogLevelFilterLogger.Info(System.String)
+  - Grpc.Core.Logging.LogLevelFilterLogger.Info(System.String,System.Object[])
+  - Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.Exception,System.String)
+  - Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.String)
+  - Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.String,System.Object[])
+  langs:
+  - csharp
+  - vb
+  name: LogLevelFilterLogger
+  nameWithType: LogLevelFilterLogger
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger
+  type: Class
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: LogLevelFilterLogger
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 42
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logger that filters out messages below certain log level.
+  example: []
+  syntax:
+    content: 'public class LogLevelFilterLogger : ILogger'
+    content.vb: >-
+      Public Class LogLevelFilterLogger
+          Implements ILogger
+  inheritance:
+  - System.Object
+  implements:
+  - Grpc.Core.Logging.ILogger
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.#ctor(Grpc.Core.Logging.ILogger,Grpc.Core.Logging.LogLevel)
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.#ctor(Grpc.Core.Logging.ILogger,Grpc.Core.Logging.LogLevel)
+  id: '#ctor(Grpc.Core.Logging.ILogger,Grpc.Core.Logging.LogLevel)'
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: LogLevelFilterLogger(ILogger, LogLevel)
+  nameWithType: LogLevelFilterLogger.LogLevelFilterLogger(ILogger, LogLevel)
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.LogLevelFilterLogger(Grpc.Core.Logging.ILogger, Grpc.Core.Logging.LogLevel)
+  type: Constructor
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: .ctor
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 50
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: "\nCreates and instance of <code>LogLevelFilter.</code>\n"
+  example: []
+  syntax:
+    content: public LogLevelFilterLogger(ILogger logger, LogLevel logLevel)
+    parameters:
+    - id: logger
+      type: Grpc.Core.Logging.ILogger
+    - id: logLevel
+      type: Grpc.Core.Logging.LogLevel
+    content.vb: Public Sub New(logger As ILogger, logLevel As LogLevel)
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.ForType``1
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.ForType``1
+  id: ForType``1
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: ForType<T>()
+  nameWithType: LogLevelFilterLogger.ForType<T>()
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.ForType<T>()
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: ForType
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 59
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: "\nReturns a logger associated with the specified type.\n"
+  example: []
+  syntax:
+    content: public virtual ILogger ForType<T>()
+    typeParameters:
+    - id: T
+    return:
+      type: Grpc.Core.Logging.ILogger
+    content.vb: Public Overridable Function ForType(Of T) As ILogger
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.ForType*
+  implements:
+  - Grpc.Core.Logging.ILogger.ForType``1
+  nameWithType.vb: LogLevelFilterLogger.ForType(Of T)()
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+  fullName.vb: Grpc.Core.Logging.LogLevelFilterLogger.ForType(Of T)()
+  name.vb: ForType(Of T)()
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Debug(System.String)
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.Debug(System.String)
+  id: Debug(System.String)
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: Debug(String)
+  nameWithType: LogLevelFilterLogger.Debug(String)
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Debug(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Debug
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 70
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logs a message with severity Debug.
+  example: []
+  syntax:
+    content: public void Debug(string message)
+    parameters:
+    - id: message
+      type: System.String
+    content.vb: Public Sub Debug(message As String)
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.Debug*
+  implements:
+  - Grpc.Core.Logging.ILogger.Debug(System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Debug(System.String,System.Object[])
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.Debug(System.String,System.Object[])
+  id: Debug(System.String,System.Object[])
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: Debug(String, Object[])
+  nameWithType: LogLevelFilterLogger.Debug(String, Object[])
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Debug(System.String, System.Object[])
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Debug
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 79
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logs a formatted message with severity Debug.
+  example: []
+  syntax:
+    content: public void Debug(string format, params object[] formatArgs)
+    parameters:
+    - id: format
+      type: System.String
+    - id: formatArgs
+      type: System.Object[]
+    content.vb: Public Sub Debug(format As String, ParamArray formatArgs As Object())
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.Debug*
+  implements:
+  - Grpc.Core.Logging.ILogger.Debug(System.String,System.Object[])
+  nameWithType.vb: LogLevelFilterLogger.Debug(String, Object())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.Logging.LogLevelFilterLogger.Debug(System.String, System.Object())
+  name.vb: Debug(String, Object())
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Info(System.String)
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.Info(System.String)
+  id: Info(System.String)
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: Info(String)
+  nameWithType: LogLevelFilterLogger.Info(String)
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Info(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Info
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 88
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logs a message with severity Info.
+  example: []
+  syntax:
+    content: public void Info(string message)
+    parameters:
+    - id: message
+      type: System.String
+    content.vb: Public Sub Info(message As String)
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.Info*
+  implements:
+  - Grpc.Core.Logging.ILogger.Info(System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Info(System.String,System.Object[])
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.Info(System.String,System.Object[])
+  id: Info(System.String,System.Object[])
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: Info(String, Object[])
+  nameWithType: LogLevelFilterLogger.Info(String, Object[])
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Info(System.String, System.Object[])
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Info
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 97
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logs a formatted message with severity Info.
+  example: []
+  syntax:
+    content: public void Info(string format, params object[] formatArgs)
+    parameters:
+    - id: format
+      type: System.String
+    - id: formatArgs
+      type: System.Object[]
+    content.vb: Public Sub Info(format As String, ParamArray formatArgs As Object())
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.Info*
+  implements:
+  - Grpc.Core.Logging.ILogger.Info(System.String,System.Object[])
+  nameWithType.vb: LogLevelFilterLogger.Info(String, Object())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.Logging.LogLevelFilterLogger.Info(System.String, System.Object())
+  name.vb: Info(String, Object())
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.String)
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.String)
+  id: Warning(System.String)
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: Warning(String)
+  nameWithType: LogLevelFilterLogger.Warning(String)
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Warning
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 106
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logs a message with severity Warning.
+  example: []
+  syntax:
+    content: public void Warning(string message)
+    parameters:
+    - id: message
+      type: System.String
+    content.vb: Public Sub Warning(message As String)
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.Warning*
+  implements:
+  - Grpc.Core.Logging.ILogger.Warning(System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.String,System.Object[])
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.String,System.Object[])
+  id: Warning(System.String,System.Object[])
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: Warning(String, Object[])
+  nameWithType: LogLevelFilterLogger.Warning(String, Object[])
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.String, System.Object[])
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Warning
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 115
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logs a formatted message with severity Warning.
+  example: []
+  syntax:
+    content: public void Warning(string format, params object[] formatArgs)
+    parameters:
+    - id: format
+      type: System.String
+    - id: formatArgs
+      type: System.Object[]
+    content.vb: Public Sub Warning(format As String, ParamArray formatArgs As Object())
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.Warning*
+  implements:
+  - Grpc.Core.Logging.ILogger.Warning(System.String,System.Object[])
+  nameWithType.vb: LogLevelFilterLogger.Warning(String, Object())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.String, System.Object())
+  name.vb: Warning(String, Object())
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.Exception,System.String)
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.Exception,System.String)
+  id: Warning(System.Exception,System.String)
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: Warning(Exception, String)
+  nameWithType: LogLevelFilterLogger.Warning(Exception, String)
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Warning(System.Exception, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Warning
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 124
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logs a message and an associated exception with severity Warning.
+  example: []
+  syntax:
+    content: public void Warning(Exception exception, string message)
+    parameters:
+    - id: exception
+      type: System.Exception
+    - id: message
+      type: System.String
+    content.vb: Public Sub Warning(exception As Exception, message As String)
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.Warning*
+  implements:
+  - Grpc.Core.Logging.ILogger.Warning(System.Exception,System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Error(System.String)
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.Error(System.String)
+  id: Error(System.String)
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: Error(String)
+  nameWithType: LogLevelFilterLogger.Error(String)
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Error(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Error
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 133
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logs a message with severity Error.
+  example: []
+  syntax:
+    content: public void Error(string message)
+    parameters:
+    - id: message
+      type: System.String
+    content.vb: Public Sub Error(message As String)
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.Error*
+  implements:
+  - Grpc.Core.Logging.ILogger.Error(System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Error(System.String,System.Object[])
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.Error(System.String,System.Object[])
+  id: Error(System.String,System.Object[])
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: Error(String, Object[])
+  nameWithType: LogLevelFilterLogger.Error(String, Object[])
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Error(System.String, System.Object[])
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Error
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 142
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logs a formatted message with severity Error.
+  example: []
+  syntax:
+    content: public void Error(string format, params object[] formatArgs)
+    parameters:
+    - id: format
+      type: System.String
+    - id: formatArgs
+      type: System.Object[]
+    content.vb: Public Sub Error(format As String, ParamArray formatArgs As Object())
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.Error*
+  implements:
+  - Grpc.Core.Logging.ILogger.Error(System.String,System.Object[])
+  nameWithType.vb: LogLevelFilterLogger.Error(String, Object())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Grpc.Core.Logging.LogLevelFilterLogger.Error(System.String, System.Object())
+  name.vb: Error(String, Object())
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Error(System.Exception,System.String)
+  commentId: M:Grpc.Core.Logging.LogLevelFilterLogger.Error(System.Exception,System.String)
+  id: Error(System.Exception,System.String)
+  parent: Grpc.Core.Logging.LogLevelFilterLogger
+  langs:
+  - csharp
+  - vb
+  name: Error(Exception, String)
+  nameWithType: LogLevelFilterLogger.Error(Exception, String)
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Error(System.Exception, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+      branch: v1.2.x
+      repo: https://github.com/grpc/grpc
+    id: Error
+    path: src/csharp/Grpc.Core/Logging/LogLevelFilterLogger.cs
+    startLine: 151
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core.Logging
+  summary: Logs a message and an associated exception with severity Error.
+  example: []
+  syntax:
+    content: public void Error(Exception exception, string message)
+    parameters:
+    - id: exception
+      type: System.Exception
+    - id: message
+      type: System.String
+    content.vb: Public Sub Error(exception As Exception, message As String)
+  overload: Grpc.Core.Logging.LogLevelFilterLogger.Error*
+  implements:
+  - Grpc.Core.Logging.ILogger.Error(System.Exception,System.String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: Grpc.Core.Logging
+  commentId: N:Grpc.Core.Logging
+  isExternal: false
+  name: Grpc.Core.Logging
+  nameWithType: Grpc.Core.Logging
+  fullName: Grpc.Core.Logging
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Grpc.Core.Logging.ILogger
+  commentId: T:Grpc.Core.Logging.ILogger
+  parent: Grpc.Core.Logging
+  isExternal: false
+  name: ILogger
+  nameWithType: ILogger
+  fullName: Grpc.Core.Logging.ILogger
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.#ctor*
+  commentId: Overload:Grpc.Core.Logging.LogLevelFilterLogger.#ctor
+  isExternal: false
+  name: LogLevelFilterLogger
+  nameWithType: LogLevelFilterLogger.LogLevelFilterLogger
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.LogLevelFilterLogger
+- uid: Grpc.Core.Logging.LogLevel
+  commentId: T:Grpc.Core.Logging.LogLevel
+  parent: Grpc.Core.Logging
+  isExternal: false
+  name: LogLevel
+  nameWithType: LogLevel
+  fullName: Grpc.Core.Logging.LogLevel
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.ForType*
+  commentId: Overload:Grpc.Core.Logging.LogLevelFilterLogger.ForType
+  isExternal: false
+  name: ForType
+  nameWithType: LogLevelFilterLogger.ForType
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.ForType
+- uid: Grpc.Core.Logging.ILogger.ForType``1
+  commentId: M:Grpc.Core.Logging.ILogger.ForType``1
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: false
+  name: ForType<T>()
+  nameWithType: ILogger.ForType<T>()
+  fullName: Grpc.Core.Logging.ILogger.ForType<T>()
+  nameWithType.vb: ILogger.ForType(Of T)()
+  fullName.vb: Grpc.Core.Logging.ILogger.ForType(Of T)()
+  name.vb: ForType(Of T)()
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.ForType``1
+    name: ForType<T>
+    nameWithType: ILogger.ForType<T>
+    fullName: Grpc.Core.Logging.ILogger.ForType<T>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.ForType``1
+    name: ForType(Of T)
+    nameWithType: ILogger.ForType(Of T)
+    fullName: Grpc.Core.Logging.ILogger.ForType(Of T)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Debug*
+  commentId: Overload:Grpc.Core.Logging.LogLevelFilterLogger.Debug
+  isExternal: false
+  name: Debug
+  nameWithType: LogLevelFilterLogger.Debug
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Debug
+- uid: Grpc.Core.Logging.ILogger.Debug(System.String)
+  commentId: M:Grpc.Core.Logging.ILogger.Debug(System.String)
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: true
+  name: Debug(String)
+  nameWithType: ILogger.Debug(String)
+  fullName: Grpc.Core.Logging.ILogger.Debug(System.String)
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.Debug(System.String)
+    name: Debug
+    nameWithType: ILogger.Debug
+    fullName: Grpc.Core.Logging.ILogger.Debug
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.Debug(System.String)
+    name: Debug
+    nameWithType: ILogger.Debug
+    fullName: Grpc.Core.Logging.ILogger.Debug
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Grpc.Core.Logging.ILogger.Debug(System.String,System.Object[])
+  commentId: M:Grpc.Core.Logging.ILogger.Debug(System.String,System.Object[])
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: true
+  name: Debug(String, Object[])
+  nameWithType: ILogger.Debug(String, Object[])
+  fullName: Grpc.Core.Logging.ILogger.Debug(System.String, System.Object[])
+  nameWithType.vb: ILogger.Debug(String, Object())
+  fullName.vb: Grpc.Core.Logging.ILogger.Debug(System.String, System.Object())
+  name.vb: Debug(String, Object())
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.Debug(System.String,System.Object[])
+    name: Debug
+    nameWithType: ILogger.Debug
+    fullName: Grpc.Core.Logging.ILogger.Debug
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.Debug(System.String,System.Object[])
+    name: Debug
+    nameWithType: ILogger.Debug
+    fullName: Grpc.Core.Logging.ILogger.Debug
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object[]
+  name: Object[]
+  nameWithType: Object[]
+  fullName: System.Object[]
+  nameWithType.vb: Object()
+  fullName.vb: System.Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Info*
+  commentId: Overload:Grpc.Core.Logging.LogLevelFilterLogger.Info
+  isExternal: false
+  name: Info
+  nameWithType: LogLevelFilterLogger.Info
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Info
+- uid: Grpc.Core.Logging.ILogger.Info(System.String)
+  commentId: M:Grpc.Core.Logging.ILogger.Info(System.String)
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: true
+  name: Info(String)
+  nameWithType: ILogger.Info(String)
+  fullName: Grpc.Core.Logging.ILogger.Info(System.String)
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.Info(System.String)
+    name: Info
+    nameWithType: ILogger.Info
+    fullName: Grpc.Core.Logging.ILogger.Info
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.Info(System.String)
+    name: Info
+    nameWithType: ILogger.Info
+    fullName: Grpc.Core.Logging.ILogger.Info
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.Logging.ILogger.Info(System.String,System.Object[])
+  commentId: M:Grpc.Core.Logging.ILogger.Info(System.String,System.Object[])
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: true
+  name: Info(String, Object[])
+  nameWithType: ILogger.Info(String, Object[])
+  fullName: Grpc.Core.Logging.ILogger.Info(System.String, System.Object[])
+  nameWithType.vb: ILogger.Info(String, Object())
+  fullName.vb: Grpc.Core.Logging.ILogger.Info(System.String, System.Object())
+  name.vb: Info(String, Object())
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.Info(System.String,System.Object[])
+    name: Info
+    nameWithType: ILogger.Info
+    fullName: Grpc.Core.Logging.ILogger.Info
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.Info(System.String,System.Object[])
+    name: Info
+    nameWithType: ILogger.Info
+    fullName: Grpc.Core.Logging.ILogger.Info
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Warning*
+  commentId: Overload:Grpc.Core.Logging.LogLevelFilterLogger.Warning
+  isExternal: false
+  name: Warning
+  nameWithType: LogLevelFilterLogger.Warning
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Warning
+- uid: Grpc.Core.Logging.ILogger.Warning(System.String)
+  commentId: M:Grpc.Core.Logging.ILogger.Warning(System.String)
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: true
+  name: Warning(String)
+  nameWithType: ILogger.Warning(String)
+  fullName: Grpc.Core.Logging.ILogger.Warning(System.String)
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.Warning(System.String)
+    name: Warning
+    nameWithType: ILogger.Warning
+    fullName: Grpc.Core.Logging.ILogger.Warning
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.Warning(System.String)
+    name: Warning
+    nameWithType: ILogger.Warning
+    fullName: Grpc.Core.Logging.ILogger.Warning
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.Logging.ILogger.Warning(System.String,System.Object[])
+  commentId: M:Grpc.Core.Logging.ILogger.Warning(System.String,System.Object[])
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: true
+  name: Warning(String, Object[])
+  nameWithType: ILogger.Warning(String, Object[])
+  fullName: Grpc.Core.Logging.ILogger.Warning(System.String, System.Object[])
+  nameWithType.vb: ILogger.Warning(String, Object())
+  fullName.vb: Grpc.Core.Logging.ILogger.Warning(System.String, System.Object())
+  name.vb: Warning(String, Object())
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.Warning(System.String,System.Object[])
+    name: Warning
+    nameWithType: ILogger.Warning
+    fullName: Grpc.Core.Logging.ILogger.Warning
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.Warning(System.String,System.Object[])
+    name: Warning
+    nameWithType: ILogger.Warning
+    fullName: Grpc.Core.Logging.ILogger.Warning
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.Logging.ILogger.Warning(System.Exception,System.String)
+  commentId: M:Grpc.Core.Logging.ILogger.Warning(System.Exception,System.String)
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: true
+  name: Warning(Exception, String)
+  nameWithType: ILogger.Warning(Exception, String)
+  fullName: Grpc.Core.Logging.ILogger.Warning(System.Exception, System.String)
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.Warning(System.Exception,System.String)
+    name: Warning
+    nameWithType: ILogger.Warning
+    fullName: Grpc.Core.Logging.ILogger.Warning
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.Warning(System.Exception,System.String)
+    name: Warning
+    nameWithType: ILogger.Warning
+    fullName: Grpc.Core.Logging.ILogger.Warning
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: Grpc.Core.Logging.LogLevelFilterLogger.Error*
+  commentId: Overload:Grpc.Core.Logging.LogLevelFilterLogger.Error
+  isExternal: false
+  name: Error
+  nameWithType: LogLevelFilterLogger.Error
+  fullName: Grpc.Core.Logging.LogLevelFilterLogger.Error
+- uid: Grpc.Core.Logging.ILogger.Error(System.String)
+  commentId: M:Grpc.Core.Logging.ILogger.Error(System.String)
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: true
+  name: Error(String)
+  nameWithType: ILogger.Error(String)
+  fullName: Grpc.Core.Logging.ILogger.Error(System.String)
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.Error(System.String)
+    name: Error
+    nameWithType: ILogger.Error
+    fullName: Grpc.Core.Logging.ILogger.Error
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.Error(System.String)
+    name: Error
+    nameWithType: ILogger.Error
+    fullName: Grpc.Core.Logging.ILogger.Error
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.Logging.ILogger.Error(System.String,System.Object[])
+  commentId: M:Grpc.Core.Logging.ILogger.Error(System.String,System.Object[])
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: true
+  name: Error(String, Object[])
+  nameWithType: ILogger.Error(String, Object[])
+  fullName: Grpc.Core.Logging.ILogger.Error(System.String, System.Object[])
+  nameWithType.vb: ILogger.Error(String, Object())
+  fullName.vb: Grpc.Core.Logging.ILogger.Error(System.String, System.Object())
+  name.vb: Error(String, Object())
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.Error(System.String,System.Object[])
+    name: Error
+    nameWithType: ILogger.Error
+    fullName: Grpc.Core.Logging.ILogger.Error
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.Error(System.String,System.Object[])
+    name: Error
+    nameWithType: ILogger.Error
+    fullName: Grpc.Core.Logging.ILogger.Error
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Grpc.Core.Logging.ILogger.Error(System.Exception,System.String)
+  commentId: M:Grpc.Core.Logging.ILogger.Error(System.Exception,System.String)
+  parent: Grpc.Core.Logging.ILogger
+  isExternal: true
+  name: Error(Exception, String)
+  nameWithType: ILogger.Error(Exception, String)
+  fullName: Grpc.Core.Logging.ILogger.Error(System.Exception, System.String)
+  spec.csharp:
+  - uid: Grpc.Core.Logging.ILogger.Error(System.Exception,System.String)
+    name: Error
+    nameWithType: ILogger.Error
+    fullName: Grpc.Core.Logging.ILogger.Error
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Grpc.Core.Logging.ILogger.Error(System.Exception,System.String)
+    name: Error
+    nameWithType: ILogger.Error
+    fullName: Grpc.Core.Logging.ILogger.Error
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Exception
+    name: Exception
+    nameWithType: Exception
+    fullName: System.Exception
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
