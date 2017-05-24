@@ -27,8 +27,8 @@ items:
   summary: Data format for the response.
   example: []
   syntax:
-    content: 'public enum AltEnum : int'
-    content.vb: Public Enum AltEnum As Integer
+    content: public enum AltEnum
+    content.vb: Public Enum AltEnum
   nameWithType.vb: BigqueryBaseServiceRequest(Of TResponse).AltEnum
   modifiers.csharp:
   - public
@@ -63,9 +63,22 @@ items:
   summary: Responses with Content-Type of application/json
   example: []
   syntax:
-    content: Json = 0
+    content: >-
+      [StringValue("json")]
+
+      Json = 0
     return:
       type: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest`1.AltEnum
+    content.vb: >-
+      <StringValue("json")>
+
+      Json = 0
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: json
   nameWithType.vb: BigqueryBaseServiceRequest(Of TResponse).AltEnum.Json
   modifiers.csharp:
   - public

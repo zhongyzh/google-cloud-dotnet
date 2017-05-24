@@ -5,6 +5,7 @@ items:
   id: MethodDescriptor
   parent: Google.Protobuf.Reflection
   children:
+  - Google.Protobuf.Reflection.MethodDescriptor.CustomOptions
   - Google.Protobuf.Reflection.MethodDescriptor.InputType
   - Google.Protobuf.Reflection.MethodDescriptor.IsClientStreaming
   - Google.Protobuf.Reflection.MethodDescriptor.IsServerStreaming
@@ -21,7 +22,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: MethodDescriptor
     path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
@@ -75,7 +76,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Service
     path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
@@ -112,7 +113,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: InputType
     path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
@@ -149,7 +150,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: OutputType
     path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
@@ -186,7 +187,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: IsClientStreaming
     path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
@@ -223,7 +224,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: IsServerStreaming
     path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
@@ -246,6 +247,43 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
+- uid: Google.Protobuf.Reflection.MethodDescriptor.CustomOptions
+  commentId: P:Google.Protobuf.Reflection.MethodDescriptor.CustomOptions
+  id: CustomOptions
+  parent: Google.Protobuf.Reflection.MethodDescriptor
+  langs:
+  - csharp
+  - vb
+  name: CustomOptions
+  nameWithType: MethodDescriptor.CustomOptions
+  fullName: Google.Protobuf.Reflection.MethodDescriptor.CustomOptions
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: CustomOptions
+    path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
+    startLine: 72
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nThe (possibly empty) set of custom options for this method.\n"
+  example: []
+  syntax:
+    content: public CustomOptions CustomOptions { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.CustomOptions
+    content.vb: Public ReadOnly Property CustomOptions As CustomOptions
+  overload: Google.Protobuf.Reflection.MethodDescriptor.CustomOptions*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: Google.Protobuf.Reflection.MethodDescriptor.Name
   commentId: P:Google.Protobuf.Reflection.MethodDescriptor.Name
   id: Name
@@ -260,11 +298,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Name
     path: csharp/src/Google.Protobuf/Reflection/MethodDescriptor.cs
-    startLine: 83
+    startLine: 88
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Reflection
@@ -671,6 +709,19 @@ references:
   name: IsServerStreaming
   nameWithType: MethodDescriptor.IsServerStreaming
   fullName: Google.Protobuf.Reflection.MethodDescriptor.IsServerStreaming
+- uid: Google.Protobuf.Reflection.MethodDescriptor.CustomOptions*
+  commentId: Overload:Google.Protobuf.Reflection.MethodDescriptor.CustomOptions
+  isExternal: false
+  name: CustomOptions
+  nameWithType: MethodDescriptor.CustomOptions
+  fullName: Google.Protobuf.Reflection.MethodDescriptor.CustomOptions
+- uid: Google.Protobuf.Reflection.CustomOptions
+  commentId: T:Google.Protobuf.Reflection.CustomOptions
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: CustomOptions
+  nameWithType: CustomOptions
+  fullName: Google.Protobuf.Reflection.CustomOptions
 - uid: Google.Protobuf.Reflection.DescriptorBase.Name
   commentId: P:Google.Protobuf.Reflection.DescriptorBase.Name
   parent: Google.Protobuf.Reflection.DescriptorBase

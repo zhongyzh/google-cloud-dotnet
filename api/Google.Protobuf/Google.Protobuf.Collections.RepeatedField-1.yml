@@ -48,7 +48,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: RepeatedField
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
@@ -60,24 +60,26 @@ items:
   remarks: "\nThis implementation does not generally prohibit the use of types which are not\nsupported by Protocol Buffers but nor does it guarantee that all operations will work in such cases.\n"
   example: []
   syntax:
-    content: 'public sealed class RepeatedField<T> : IList<T>, ICollection<T>, IEnumerable<T>, IList, ICollection, IEnumerable, IDeepCloneable<RepeatedField<T>>, IEquatable<RepeatedField<T>>'
+    content: 'public sealed class RepeatedField<T> : IList<T>, ICollection<T>, IList, ICollection, IDeepCloneable<RepeatedField<T>>, IEquatable<RepeatedField<T>>, IReadOnlyList<T>, IReadOnlyCollection<T>, IEnumerable<T>, IEnumerable'
     typeParameters:
     - id: T
       description: The element type of the repeated field.
     content.vb: >-
       Public NotInheritable Class RepeatedField(Of T)
-          Implements IList(Of T), ICollection(Of T), IEnumerable(Of T), IList, ICollection, IEnumerable, IDeepCloneable(Of RepeatedField(Of T)), IEquatable(Of RepeatedField(Of T))
+          Implements IList(Of T), ICollection(Of T), IList, ICollection, IDeepCloneable(Of RepeatedField(Of T)), IEquatable(Of RepeatedField(Of T)), IReadOnlyList(Of T), IReadOnlyCollection(Of T), IEnumerable(Of T), IEnumerable
   inheritance:
   - System.Object
   implements:
   - System.Collections.Generic.IList{{T}}
   - System.Collections.Generic.ICollection{{T}}
-  - System.Collections.Generic.IEnumerable{{T}}
   - System.Collections.IList
   - System.Collections.ICollection
-  - System.Collections.IEnumerable
   - Google.Protobuf.IDeepCloneable{Google.Protobuf.Collections.RepeatedField`1}
   - System.IEquatable{Google.Protobuf.Collections.RepeatedField`1}
+  - System.Collections.Generic.IReadOnlyList{{T}}
+  - System.Collections.Generic.IReadOnlyCollection{{T}}
+  - System.Collections.Generic.IEnumerable{{T}}
+  - System.Collections.IEnumerable
   inheritedMembers:
   - System.Object.Equals(System.Object,System.Object)
   - System.Object.ReferenceEquals(System.Object,System.Object)
@@ -108,11 +110,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Clone
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 67
+    startLine: 70
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -148,11 +150,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: AddEntriesFrom
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 91
+    startLine: 94
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -190,11 +192,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: CalculateSize
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 128
+    startLine: 131
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -235,11 +237,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: WriteTo
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 179
+    startLine: 182
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -277,11 +279,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Add
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 226
+    startLine: 229
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -317,11 +319,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Clear
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 236
+    startLine: 239
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -354,11 +356,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Contains
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 247
+    startLine: 250
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -397,11 +399,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: CopyTo
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 257
+    startLine: 260
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -441,11 +443,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Remove
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 267
+    startLine: 270
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -484,11 +486,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Count
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 283
+    startLine: 286
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -504,6 +506,7 @@ items:
   implements:
   - System.Collections.Generic.ICollection{{T}}.Count
   - System.Collections.ICollection.Count
+  - System.Collections.Generic.IReadOnlyCollection{{T}}.Count
   nameWithType.vb: RepeatedField(Of T).Count
   modifiers.csharp:
   - public
@@ -526,11 +529,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: IsReadOnly
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 288
+    startLine: 291
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -568,11 +571,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: AddRange
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 294
+    startLine: 297
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -607,11 +610,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Add
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 356
+    startLine: 359
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -646,11 +649,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: GetEnumerator
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 367
+    startLine: 370
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -685,11 +688,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Equals
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 382
+    startLine: 385
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -730,11 +733,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.IEnumerable.GetEnumerator
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 393
+    startLine: 396
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -766,11 +769,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: GetHashCode
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 404
+    startLine: 407
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -806,11 +809,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Equals
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 419
+    startLine: 422
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -850,11 +853,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: IndexOf
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 450
+    startLine: 453
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -893,11 +896,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Insert
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 469
+    startLine: 472
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -936,11 +939,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: RemoveAt
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 486
+    startLine: 489
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -977,11 +980,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ToString
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 501
+    startLine: 504
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1016,11 +1019,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: this[]
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 516
+    startLine: 519
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1039,6 +1042,7 @@ items:
   overload: Google.Protobuf.Collections.RepeatedField`1.Item*
   implements:
   - System.Collections.Generic.IList{{T}}.Item(System.Int32)
+  - System.Collections.Generic.IReadOnlyList{{T}}.Item(System.Int32)
   nameWithType.vb: RepeatedField(Of T).Item(Int32)
   modifiers.csharp:
   - public
@@ -1063,11 +1067,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.IList.IsFixedSize
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 538
+    startLine: 541
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1102,11 +1106,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.ICollection.CopyTo
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 540
+    startLine: 543
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1139,11 +1143,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.ICollection.IsSynchronized
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 545
+    startLine: 548
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1178,11 +1182,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.ICollection.SyncRoot
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 547
+    startLine: 550
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1217,11 +1221,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.IList.this[]
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 549
+    startLine: 552
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1257,11 +1261,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.IList.Add
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 555
+    startLine: 558
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1294,11 +1298,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.IList.Contains
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 561
+    startLine: 564
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1331,11 +1335,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.IList.IndexOf
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 566
+    startLine: 569
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1368,11 +1372,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.IList.Insert
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 575
+    startLine: 578
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1405,11 +1409,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.IList.Remove
     path: csharp/src/Google.Protobuf/Collections/RepeatedField.cs
-    startLine: 580
+    startLine: 583
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Collections
@@ -1519,46 +1523,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic.IEnumerable{{T}}
-  commentId: T:System.Collections.Generic.IEnumerable{`0}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.IList
   commentId: T:System.Collections.IList
   parent: System.Collections
@@ -1573,13 +1537,6 @@ references:
   name: ICollection
   nameWithType: ICollection
   fullName: System.Collections.ICollection
-- uid: System.Collections.IEnumerable
-  commentId: T:System.Collections.IEnumerable
-  parent: System.Collections
-  isExternal: true
-  name: IEnumerable
-  nameWithType: IEnumerable
-  fullName: System.Collections.IEnumerable
 - uid: Google.Protobuf.IDeepCloneable{Google.Protobuf.Collections.RepeatedField`1}
   commentId: T:Google.Protobuf.IDeepCloneable{Google.Protobuf.Collections.RepeatedField`1}
   parent: Google.Protobuf
@@ -1698,6 +1655,133 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic.IReadOnlyList{{T}}
+  commentId: T:System.Collections.Generic.IReadOnlyList{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IReadOnlyCollection{{T}}
+  commentId: T:System.Collections.Generic.IReadOnlyCollection{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyCollection`1
+  name: IReadOnlyCollection<T>
+  nameWithType: IReadOnlyCollection<T>
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>
+  nameWithType.vb: IReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T)
+  name.vb: IReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{`0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.IEnumerable
+  commentId: T:System.Collections.IEnumerable
+  parent: System.Collections
+  isExternal: true
+  name: IEnumerable
+  nameWithType: IEnumerable
+  fullName: System.Collections.IEnumerable
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
   parent: System.Object
@@ -1964,45 +2048,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
-  isExternal: true
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections
   commentId: N:System.Collections
   isExternal: false
@@ -2081,6 +2126,123 @@ references:
     name: IEquatable
     nameWithType: IEquatable
     fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: System.Collections.Generic.IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IReadOnlyCollection`1
+  commentId: T:System.Collections.Generic.IReadOnlyCollection`1
+  isExternal: true
+  name: IReadOnlyCollection<T>
+  nameWithType: IReadOnlyCollection<T>
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>
+  nameWithType.vb: IReadOnlyCollection(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T)
+  name.vb: IReadOnlyCollection(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyCollection`1
+    name: IReadOnlyCollection
+    nameWithType: IReadOnlyCollection
+    fullName: System.Collections.Generic.IReadOnlyCollection
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -2873,6 +3035,15 @@ references:
   name: Count
   nameWithType: ICollection.Count
   fullName: System.Collections.ICollection.Count
+- uid: System.Collections.Generic.IReadOnlyCollection{{T}}.Count
+  commentId: P:System.Collections.Generic.IReadOnlyCollection{`0}.Count
+  parent: System.Collections.Generic.IReadOnlyCollection{{T}}
+  definition: System.Collections.Generic.IReadOnlyCollection`1.Count
+  name: Count
+  nameWithType: IReadOnlyCollection<T>.Count
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>.Count
+  nameWithType.vb: IReadOnlyCollection(Of T).Count
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T).Count
 - uid: System.Collections.Generic.ICollection`1.Count
   commentId: P:System.Collections.Generic.ICollection`1.Count
   isExternal: true
@@ -2881,6 +3052,14 @@ references:
   fullName: System.Collections.Generic.ICollection<T>.Count
   nameWithType.vb: ICollection(Of T).Count
   fullName.vb: System.Collections.Generic.ICollection(Of T).Count
+- uid: System.Collections.Generic.IReadOnlyCollection`1.Count
+  commentId: P:System.Collections.Generic.IReadOnlyCollection`1.Count
+  isExternal: true
+  name: Count
+  nameWithType: IReadOnlyCollection<T>.Count
+  fullName: System.Collections.Generic.IReadOnlyCollection<T>.Count
+  nameWithType.vb: IReadOnlyCollection(Of T).Count
+  fullName.vb: System.Collections.Generic.IReadOnlyCollection(Of T).Count
 - uid: Google.Protobuf.Collections.RepeatedField`1.IsReadOnly*
   commentId: Overload:Google.Protobuf.Collections.RepeatedField`1.IsReadOnly
   isExternal: false
@@ -3742,6 +3921,50 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic.IReadOnlyList{{T}}.Item(System.Int32)
+  commentId: P:System.Collections.Generic.IReadOnlyList{`0}.Item(System.Int32)
+  parent: System.Collections.Generic.IReadOnlyList{{T}}
+  definition: System.Collections.Generic.IReadOnlyList`1.Item(System.Int32)
+  name: Item[Int32]
+  nameWithType: IReadOnlyList<T>.Item[Int32]
+  fullName: System.Collections.Generic.IReadOnlyList<T>.Item[System.Int32]
+  nameWithType.vb: IReadOnlyList(Of T).Item(Int32)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1.Item(System.Int32)
+    name: Item
+    nameWithType: IReadOnlyList<T>.Item
+    fullName: System.Collections.Generic.IReadOnlyList<T>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1.Item(System.Int32)
+    name: Item
+    nameWithType: IReadOnlyList(Of T).Item
+    fullName: System.Collections.Generic.IReadOnlyList(Of T).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Collections.Generic.IList`1.Item(System.Int32)
   commentId: P:System.Collections.Generic.IList`1.Item(System.Int32)
   isExternal: true
@@ -3773,6 +3996,49 @@ references:
     name: Item
     nameWithType: IList(Of T).Item
     fullName: System.Collections.Generic.IList(Of T).Item
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IReadOnlyList`1.Item(System.Int32)
+  commentId: P:System.Collections.Generic.IReadOnlyList`1.Item(System.Int32)
+  isExternal: true
+  name: Item[Int32]
+  nameWithType: IReadOnlyList<T>.Item[Int32]
+  fullName: System.Collections.Generic.IReadOnlyList<T>.Item[System.Int32]
+  nameWithType.vb: IReadOnlyList(Of T).Item(Int32)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T).Item(System.Int32)
+  name.vb: Item(Int32)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1.Item(System.Int32)
+    name: Item
+    nameWithType: IReadOnlyList<T>.Item
+    fullName: System.Collections.Generic.IReadOnlyList<T>.Item
+    isExternal: true
+  - name: '['
+    nameWithType: '['
+    fullName: '['
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ']'
+    nameWithType: ']'
+    fullName: ']'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1.Item(System.Int32)
+    name: Item
+    nameWithType: IReadOnlyList(Of T).Item
+    fullName: System.Collections.Generic.IReadOnlyList(Of T).Item
     isExternal: true
   - name: (
     nameWithType: (

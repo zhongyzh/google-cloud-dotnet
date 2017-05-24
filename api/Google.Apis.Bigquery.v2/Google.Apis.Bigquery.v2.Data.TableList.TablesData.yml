@@ -26,17 +26,23 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TablesData
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4216
+    startLine: 4217
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   syntax:
-    content: 'public class TablesData : object'
-    content.vb: >-
-      Public Class TablesData
-          Inherits Object
+    content: public class TablesData
+    content.vb: Public Class TablesData
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -61,19 +67,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: FriendlyName
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4219
+    startLine: 4220
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: The user-friendly name for this table.
   example: []
   syntax:
-    content: public virtual string FriendlyName { get; set; }
+    content: >-
+      [JsonProperty("friendlyName")]
+
+      public virtual string FriendlyName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property FriendlyName As String
+    content.vb: >-
+      <JsonProperty("friendlyName")>
+
+      Public Overridable Property FriendlyName As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.FriendlyName*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: friendlyName
   modifiers.csharp:
   - public
   - virtual
@@ -100,19 +118,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Id
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4223
+    startLine: 4224
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: An opaque ID of the table
   example: []
   syntax:
-    content: public virtual string Id { get; set; }
+    content: >-
+      [JsonProperty("id")]
+
+      public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Id As String
+    content.vb: >-
+      <JsonProperty("id")>
+
+      Public Overridable Property Id As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Id*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -139,19 +169,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Kind
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4227
+    startLine: 4228
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: The resource type.
   example: []
   syntax:
-    content: public virtual string Kind { get; set; }
+    content: >-
+      [JsonProperty("kind")]
+
+      public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Kind As String
+    content.vb: >-
+      <JsonProperty("kind")>
+
+      Public Overridable Property Kind As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Kind*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -178,7 +220,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Labels
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4232
+    startLine: 4233
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -188,12 +230,24 @@ items:
     your tables.
   example: []
   syntax:
-    content: public virtual System.Collections.Generic.IDictionary<string, string> Labels { get; set; }
+    content: >-
+      [JsonProperty("labels")]
+
+      public virtual IDictionary<string, string> Labels { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IDictionary{System.String,System.String}
-    content.vb: Public Overridable Property Labels As System.Collections.Generic.IDictionary(Of String, String)
+    content.vb: >-
+      <JsonProperty("labels")>
+
+      Public Overridable Property Labels As IDictionary(Of String, String)
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Labels*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: labels
   modifiers.csharp:
   - public
   - virtual
@@ -220,19 +274,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TableReference
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4236
+    startLine: 4237
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: A reference uniquely identifying the table.
   example: []
   syntax:
-    content: public virtual TableReference TableReference { get; set; }
+    content: >-
+      [JsonProperty("tableReference")]
+
+      public virtual TableReference TableReference { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableReference
-    content.vb: Public Overridable Property TableReference As TableReference
+    content.vb: >-
+      <JsonProperty("tableReference")>
+
+      Public Overridable Property TableReference As TableReference
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.TableReference*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: tableReference
   modifiers.csharp:
   - public
   - virtual
@@ -259,19 +325,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Type
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4240
+    startLine: 4241
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: 'The type of table. Possible values are: TABLE, VIEW.'
   example: []
   syntax:
-    content: public virtual string Type { get; set; }
+    content: >-
+      [JsonProperty("type")]
+
+      public virtual string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Type As String
+    content.vb: >-
+      <JsonProperty("type")>
+
+      Public Overridable Property Type As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Type*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: type
   modifiers.csharp:
   - public
   - virtual
@@ -298,19 +376,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: View
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4244
+    startLine: 4245
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Additional details for a view.
   example: []
   syntax:
-    content: public virtual TableList.TablesData.ViewData View { get; set; }
+    content: >-
+      [JsonProperty("view")]
+
+      public virtual TableList.TablesData.ViewData View { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableList.TablesData.ViewData
-    content.vb: Public Overridable Property View As TableList.TablesData.ViewData
+    content.vb: >-
+      <JsonProperty("view")>
+
+      Public Overridable Property View As TableList.TablesData.ViewData
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.View*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: view
   modifiers.csharp:
   - public
   - virtual
@@ -327,10 +417,297 @@ references:
   nameWithType: Google.Apis.Bigquery.v2.Data
   fullName: Google.Apis.Bigquery.v2.Data
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Google.Apis.Bigquery.v2.Data.TableList.TablesData.FriendlyName*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.TableList.TablesData.FriendlyName
   isExternal: false
@@ -338,6 +715,8 @@ references:
   nameWithType: TableList.TablesData.FriendlyName
   fullName: Google.Apis.Bigquery.v2.Data.TableList.TablesData.FriendlyName
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -361,18 +740,19 @@ references:
   nameWithType: TableList.TablesData.Labels
   fullName: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Labels
 - uid: System.Collections.Generic.IDictionary{System.String,System.String}
-  commentId: '!:System.Collections.Generic.IDictionary{System.String,System.String}'
+  commentId: T:System.Collections.Generic.IDictionary{System.String,System.String}
+  parent: System.Collections.Generic
   definition: System.Collections.Generic.IDictionary`2
-  name: System.Collections.Generic.IDictionary<String, String>
-  nameWithType: System.Collections.Generic.IDictionary<String, String>
+  name: IDictionary<String, String>
+  nameWithType: IDictionary<String, String>
   fullName: System.Collections.Generic.IDictionary<System.String, System.String>
-  nameWithType.vb: System.Collections.Generic.IDictionary(Of String, String)
+  nameWithType.vb: IDictionary(Of String, String)
   fullName.vb: System.Collections.Generic.IDictionary(Of System.String, System.String)
-  name.vb: System.Collections.Generic.IDictionary(Of String, String)
+  name.vb: IDictionary(Of String, String)
   spec.csharp:
   - uid: System.Collections.Generic.IDictionary`2
-    name: System.Collections.Generic.IDictionary
-    nameWithType: System.Collections.Generic.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
     fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: <
@@ -396,8 +776,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IDictionary`2
-    name: System.Collections.Generic.IDictionary
-    nameWithType: System.Collections.Generic.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
     fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: '(Of '
@@ -420,55 +800,62 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Collections.Generic.IDictionary`2
+  commentId: T:System.Collections.Generic.IDictionary`2
   isExternal: true
-  name: System.Collections.Generic.IDictionary<, >
-  nameWithType: System.Collections.Generic.IDictionary<, >
-  fullName: System.Collections.Generic.IDictionary<, >
-  nameWithType.vb: System.Collections.Generic.IDictionary(Of , )
-  fullName.vb: System.Collections.Generic.IDictionary(Of , )
-  name.vb: System.Collections.Generic.IDictionary(Of , )
+  name: IDictionary<TKey, TValue>
+  nameWithType: IDictionary<TKey, TValue>
+  fullName: System.Collections.Generic.IDictionary<TKey, TValue>
+  nameWithType.vb: IDictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.IDictionary(Of TKey, TValue)
+  name.vb: IDictionary(Of TKey, TValue)
   spec.csharp:
   - uid: System.Collections.Generic.IDictionary`2
-    name: System.Collections.Generic.IDictionary
-    nameWithType: System.Collections.Generic.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
     fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IDictionary`2
-    name: System.Collections.Generic.IDictionary
-    nameWithType: System.Collections.Generic.IDictionary
+    name: IDictionary
+    nameWithType: IDictionary
     fullName: System.Collections.Generic.IDictionary
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: Google.Apis.Bigquery.v2.Data.TableList.TablesData.TableReference*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.TableList.TablesData.TableReference
   isExternal: false

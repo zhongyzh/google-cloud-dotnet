@@ -41,7 +41,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Timestamp
     path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
@@ -49,7 +49,7 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
-  summary: "\nA Timestamp represents a point in time independent of any time zone\nor calendar, represented as seconds and fractions of seconds at\nnanosecond resolution in UTC Epoch time. It is encoded using the\nProleptic Gregorian Calendar which extends the Gregorian calendar\nbackwards to year one. It is encoded assuming all minutes are 60\nseconds long, i.e. leap seconds are \"smeared\" so that no leap second\ntable is needed for interpretation. Range is from\n0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z.\nBy restricting to that range, we ensure that we can convert to\nand from  RFC 3339 date strings.\nSee [https://www.ietf.org/rfc/rfc3339.txt](https://www.ietf.org/rfc/rfc3339.txt).\n\nExample 1: Compute Timestamp from POSIX `time()`.\n\nTimestamp timestamp;\ntimestamp.set_seconds(time(NULL));\ntimestamp.set_nanos(0);\n\nExample 2: Compute Timestamp from POSIX `gettimeofday()`.\n\nstruct timeval tv;\ngettimeofday(&amp;tv, NULL);\n\nTimestamp timestamp;\ntimestamp.set_seconds(tv.tv_sec);\ntimestamp.set_nanos(tv.tv_usec * 1000);\n\nExample 3: Compute Timestamp from Win32 `GetSystemTimeAsFileTime()`.\n\nFILETIME ft;\nGetSystemTimeAsFileTime(&amp;ft);\nUINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;\n\n// A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z\n// is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.\nTimestamp timestamp;\ntimestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));\ntimestamp.set_nanos((INT32) ((ticks % 10000000) * 100));\n\nExample 4: Compute Timestamp from Java `System.currentTimeMillis()`.\n\nlong millis = System.currentTimeMillis();\n\nTimestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)\n   .setNanos((int) ((millis % 1000) * 1000000)).build();\n\nExample 5: Compute Timestamp from current time in Python.\n\ntimestamp = Timestamp()\ntimestamp.GetCurrentTime()\n"
+  summary: "\nA Timestamp represents a point in time independent of any time zone\nor calendar, represented as seconds and fractions of seconds at\nnanosecond resolution in UTC Epoch time. It is encoded using the\nProleptic Gregorian Calendar which extends the Gregorian calendar\nbackwards to year one. It is encoded assuming all minutes are 60\nseconds long, i.e. leap seconds are \"smeared\" so that no leap second\ntable is needed for interpretation. Range is from\n0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z.\nBy restricting to that range, we ensure that we can convert to\nand from  RFC 3339 date strings.\nSee [https://www.ietf.org/rfc/rfc3339.txt](https://www.ietf.org/rfc/rfc3339.txt).\n\n# Examples\n\nExample 1: Compute Timestamp from POSIX `time()`.\n\nTimestamp timestamp;\ntimestamp.set_seconds(time(NULL));\ntimestamp.set_nanos(0);\n\nExample 2: Compute Timestamp from POSIX `gettimeofday()`.\n\nstruct timeval tv;\ngettimeofday(&amp;tv, NULL);\n\nTimestamp timestamp;\ntimestamp.set_seconds(tv.tv_sec);\ntimestamp.set_nanos(tv.tv_usec * 1000);\n\nExample 3: Compute Timestamp from Win32 `GetSystemTimeAsFileTime()`.\n\nFILETIME ft;\nGetSystemTimeAsFileTime(&amp;ft);\nUINT64 ticks = (((UINT64)ft.dwHighDateTime) &lt;&lt; 32) | ft.dwLowDateTime;\n\n// A Windows tick is 100 nanoseconds. Windows epoch 1601-01-01T00:00:00Z\n// is 11644473600 seconds before Unix epoch 1970-01-01T00:00:00Z.\nTimestamp timestamp;\ntimestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));\ntimestamp.set_nanos((INT32) ((ticks % 10000000) * 100));\n\nExample 4: Compute Timestamp from Java `System.currentTimeMillis()`.\n\nlong millis = System.currentTimeMillis();\n\nTimestamp timestamp = Timestamp.newBuilder().setSeconds(millis / 1000)\n   .setNanos((int) ((millis % 1000) * 1000000)).build();\n\nExample 5: Compute Timestamp from current time in Python.\n\ntimestamp = Timestamp()\ntimestamp.GetCurrentTime()\n\n# JSON Mapping\n\nIn JSON format, the Timestamp type is encoded as a string in the\n[RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format. That is, the\nformat is \"{year}-{month}-{day}T{hour}:{min}:{sec}[.{frac_sec}]Z\"\nwhere {year} is always expressed using four digits while {month}, {day},\n{hour}, {min}, and {sec} are zero-padded to two digits each. The fractional\nseconds, which can go up to 9 digits (i.e. up to 1 nanosecond resolution),\nare optional. The \"Z\" suffix indicates the timezone (\"UTC\"); the timezone\nis required, though only UTC (as indicated by \"Z\") is presently supported.\n\nFor example, \"2017-01-15T01:30:15.01Z\" encodes 15.01 seconds past\n01:30 UTC on January 15, 2017.\n\nIn JavaScript, one can convert a Date object to this format using the\nstandard [toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString]\nmethod. In Python, a standard `datetime.datetime` object can be converted\nto this format using [`strftime`](https://docs.python.org/2/library/time.html#time.strftime)\nwith the time format spec '%Y-%m-%dT%H:%M:%S.%fZ'. Likewise, in Java, one\ncan use the Joda Time's [`ISODateTimeFormat.dateTime()`](\nhttp://joda-time.sourceforge.net/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime())\nto obtain a formatter capable of generating timestamps in this format.\n"
   example: []
   syntax:
     content: 'public sealed class Timestamp : IMessage<Timestamp>, IEquatable<Timestamp>, IDeepCloneable<Timestamp>, ICustomDiagnosticMessage, IMessage'
@@ -100,11 +100,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Parser
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 94
+    startLine: 119
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -137,11 +137,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Descriptor
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 97
+    startLine: 122
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -175,11 +175,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: pb::Google.Protobuf.IMessage.Descriptor
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 102
+    startLine: 127
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -213,11 +213,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: .ctor
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 107
+    startLine: 132
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -243,11 +243,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: .ctor
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 114
+    startLine: 139
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -276,11 +276,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Clone
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 120
+    startLine: 145
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -310,11 +310,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: SecondsFieldNumber
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 126
+    startLine: 151
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -345,11 +345,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Seconds
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 133
+    startLine: 158
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -382,11 +382,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: NanosFieldNumber
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 142
+    startLine: 167
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -417,11 +417,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Nanos
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 150
+    startLine: 175
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -454,11 +454,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Equals
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 158
+    startLine: 183
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -492,11 +492,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Equals
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 163
+    startLine: 188
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -529,11 +529,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: GetHashCode
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 176
+    startLine: 201
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -564,11 +564,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ToString
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 184
+    startLine: 209
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -599,11 +599,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: WriteTo
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 189
+    startLine: 214
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -634,11 +634,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: CalculateSize
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 201
+    startLine: 226
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -668,11 +668,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: MergeFrom
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 213
+    startLine: 238
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -703,11 +703,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: MergeFrom
     path: csharp/src/Google.Protobuf/WellKnownTypes/Timestamp.cs
-    startLine: 226
+    startLine: 251
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
@@ -738,7 +738,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: op_Subtraction
     path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
@@ -782,7 +782,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: op_Addition
     path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
@@ -826,7 +826,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: op_Subtraction
     path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
@@ -870,7 +870,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ToDateTime
     path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
@@ -913,7 +913,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ToDateTimeOffset
     path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
@@ -956,7 +956,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: FromDateTime
     path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
@@ -1001,7 +1001,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: FromDateTimeOffset
     path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
@@ -1048,7 +1048,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ToDiagnosticString
     path: csharp/src/Google.Protobuf/WellKnownTypes/TimestampPartial.cs

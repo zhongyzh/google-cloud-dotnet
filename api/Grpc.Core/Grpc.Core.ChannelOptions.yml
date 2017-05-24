@@ -14,6 +14,7 @@ items:
   - Grpc.Core.ChannelOptions.MaxSendMessageLength
   - Grpc.Core.ChannelOptions.PrimaryUserAgentString
   - Grpc.Core.ChannelOptions.SecondaryUserAgentString
+  - Grpc.Core.ChannelOptions.SoReuseport
   - Grpc.Core.ChannelOptions.SslTargetNameOverride
   langs:
   - csharp
@@ -25,7 +26,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: ChannelOptions
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -69,7 +70,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: SslTargetNameOverride
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -104,7 +105,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: Census
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -139,7 +140,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: MaxConcurrentStreams
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -174,7 +175,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: MaxReceiveMessageLength
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -209,7 +210,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: MaxSendMessageLength
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -244,7 +245,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: MaxMessageLength
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -291,7 +292,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: Http2InitialSequenceNumber
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -326,7 +327,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: DefaultAuthority
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -361,7 +362,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: PrimaryUserAgentString
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -396,7 +397,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/ChannelOptions.cs
-      branch: v1.2.x
+      branch: v1.3.x
       repo: https://github.com/grpc/grpc
     id: SecondaryUserAgentString
     path: src/csharp/Grpc.Core/ChannelOptions.cs
@@ -411,6 +412,41 @@ items:
     return:
       type: System.String
     content.vb: Public Const SecondaryUserAgentString As String = "grpc.secondary_user_agent"
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: Grpc.Core.ChannelOptions.SoReuseport
+  commentId: F:Grpc.Core.ChannelOptions.SoReuseport
+  id: SoReuseport
+  parent: Grpc.Core.ChannelOptions
+  langs:
+  - csharp
+  - vb
+  name: SoReuseport
+  nameWithType: ChannelOptions.SoReuseport
+  fullName: Grpc.Core.ChannelOptions.SoReuseport
+  type: Field
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/ChannelOptions.cs
+      branch: v1.3.x
+      repo: https://github.com/grpc/grpc
+    id: SoReuseport
+    path: src/csharp/Grpc.Core/ChannelOptions.cs
+    startLine: 175
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: If non-zero, allow the use of SO_REUSEPORT for server if it's available (default 1)
+  example: []
+  syntax:
+    content: public const string SoReuseport = "grpc.so_reuseport"
+    return:
+      type: System.String
+    content.vb: Public Const SoReuseport As String = "grpc.so_reuseport"
   modifiers.csharp:
   - public
   - const

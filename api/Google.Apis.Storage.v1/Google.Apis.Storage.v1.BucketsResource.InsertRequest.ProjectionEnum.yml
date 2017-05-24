@@ -21,7 +21,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ProjectionEnum
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 1154
+    startLine: 1271
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -31,8 +31,8 @@ items:
     defaultObjectAcl properties, when it defaults to full.
   example: []
   syntax:
-    content: 'public enum ProjectionEnum : int'
-    content.vb: Public Enum ProjectionEnum As Integer
+    content: public enum ProjectionEnum
+    content.vb: Public Enum ProjectionEnum
   modifiers.csharp:
   - public
   - enum
@@ -57,16 +57,29 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Full
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 1157
+    startLine: 1274
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Include all properties.
   example: []
   syntax:
-    content: Full = 0
+    content: >-
+      [StringValue("full")]
+
+      Full = 0
     return:
       type: Google.Apis.Storage.v1.BucketsResource.InsertRequest.ProjectionEnum
+    content.vb: >-
+      <StringValue("full")>
+
+      Full = 0
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: full
   modifiers.csharp:
   - public
   - const
@@ -91,16 +104,29 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: NoAcl
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 1160
+    startLine: 1277
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Omit owner, acl and defaultObjectAcl properties.
   example: []
   syntax:
-    content: NoAcl = 1
+    content: >-
+      [StringValue("noAcl")]
+
+      NoAcl = 1
     return:
       type: Google.Apis.Storage.v1.BucketsResource.InsertRequest.ProjectionEnum
+    content.vb: >-
+      <StringValue("noAcl")>
+
+      NoAcl = 1
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: noAcl
   modifiers.csharp:
   - public
   - const

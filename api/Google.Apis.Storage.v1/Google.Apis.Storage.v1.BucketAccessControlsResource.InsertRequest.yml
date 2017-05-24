@@ -12,6 +12,7 @@ items:
   - Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.InitParameters
   - Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.MethodName
   - Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.RestPath
+  - Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.UserProject
   langs:
   - csharp
   - vb
@@ -26,20 +27,25 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: InsertRequest
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 503
+    startLine: 529
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Creates a new ACL entry on the specified bucket.
   example: []
   syntax:
-    content: 'public class InsertRequest : StorageBaseServiceRequest<BucketAccessControl>'
+    content: 'public class InsertRequest : StorageBaseServiceRequest<BucketAccessControl>, IClientServiceRequest<BucketAccessControl>, IClientServiceRequest'
     content.vb: >-
       Public Class InsertRequest
           Inherits StorageBaseServiceRequest(Of BucketAccessControl)
+          Implements IClientServiceRequest(Of BucketAccessControl), IClientServiceRequest
   inheritance:
   - System.Object
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
   - Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  implements:
+  - Google.Apis.Requests.IClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  - Google.Apis.Requests.IClientServiceRequest
   inheritedMembers:
   - Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.Alt
   - Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.Fields
@@ -48,6 +54,26 @@ items:
   - Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.PrettyPrint
   - Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.QuotaUser
   - Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.UserIp
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.Execute
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsStream
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsync
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsync(System.Threading.CancellationToken)
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsStreamAsync
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.CreateRequest(System.Nullable{System.Boolean})
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.GenerateRequestUri
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.GetDefaultETagAction(System.String)
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ETagAction
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ModifyRequest
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.RequestParameters
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.Service
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -61,8 +87,8 @@ items:
   langs:
   - csharp
   - vb
-  name: InsertRequest(Services.IClientService, BucketAccessControl, String)
-  nameWithType: BucketAccessControlsResource.InsertRequest.InsertRequest(Services.IClientService, BucketAccessControl, String)
+  name: InsertRequest(IClientService, BucketAccessControl, String)
+  nameWithType: BucketAccessControlsResource.InsertRequest.InsertRequest(IClientService, BucketAccessControl, String)
   fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.InsertRequest(Google.Apis.Services.IClientService, Google.Apis.Storage.v1.Data.BucketAccessControl, System.String)
   type: Constructor
   source:
@@ -72,14 +98,14 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: .ctor
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 506
+    startLine: 532
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Constructs a new Insert request.
   example: []
   syntax:
-    content: public InsertRequest(Services.IClientService service, BucketAccessControl body, string bucket)
+    content: public InsertRequest(IClientService service, BucketAccessControl body, string bucket)
     parameters:
     - id: service
       type: Google.Apis.Services.IClientService
@@ -87,7 +113,7 @@ items:
       type: Google.Apis.Storage.v1.Data.BucketAccessControl
     - id: bucket
       type: System.String
-    content.vb: Public Sub New(service As Services.IClientService, body As BucketAccessControl, bucket As String)
+    content.vb: Public Sub New(service As IClientService, body As BucketAccessControl, bucket As String)
   overload: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.#ctor*
   modifiers.csharp:
   - public
@@ -111,19 +137,33 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Bucket
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 516
+    startLine: 542
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Name of a bucket.
   example: []
   syntax:
-    content: public virtual string Bucket { get; }
+    content: >-
+      [RequestParameter("bucket", RequestParameterType.Path)]
+
+      public virtual string Bucket { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable ReadOnly Property Bucket As String
+    content.vb: >-
+      <RequestParameter("bucket", RequestParameterType.Path)>
+
+      Public Overridable ReadOnly Property Bucket As String
   overload: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.Bucket*
+  attributes:
+  - type: Google.Apis.Util.RequestParameterAttribute
+    ctor: Google.Apis.Util.RequestParameterAttribute.#ctor(System.String,Google.Apis.Util.RequestParameterType)
+    arguments:
+    - type: System.String
+      value: bucket
+    - type: Google.Apis.Util.RequestParameterType
+      value: 0
   modifiers.csharp:
   - public
   - virtual
@@ -132,6 +172,59 @@ items:
   - Public
   - Overridable
   - ReadOnly
+- uid: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.UserProject
+  commentId: P:Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.UserProject
+  id: UserProject
+  parent: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest
+  langs:
+  - csharp
+  - vb
+  name: UserProject
+  nameWithType: BucketAccessControlsResource.InsertRequest.UserProject
+  fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.UserProject
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: UserProject
+    path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+    startLine: 546
+  assemblies:
+  - Google.Apis.Storage.v1
+  namespace: Google.Apis.Storage.v1
+  summary: The project number to be billed for this request, for Requester Pays buckets.
+  example: []
+  syntax:
+    content: >-
+      [RequestParameter("userProject", RequestParameterType.Query)]
+
+      public virtual string UserProject { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RequestParameter("userProject", RequestParameterType.Query)>
+
+      Public Overridable Property UserProject As String
+  overload: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.UserProject*
+  attributes:
+  - type: Google.Apis.Util.RequestParameterAttribute
+    ctor: Google.Apis.Util.RequestParameterAttribute.#ctor(System.String,Google.Apis.Util.RequestParameterType)
+    arguments:
+    - type: System.String
+      value: userProject
+    - type: Google.Apis.Util.RequestParameterType
+      value: 1
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
 - uid: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.GetBody
   commentId: M:Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.GetBody
   id: GetBody
@@ -150,7 +243,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: GetBody
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 524
+    startLine: 554
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -161,6 +254,7 @@ items:
     return:
       type: System.Object
     content.vb: Protected Overrides Function GetBody As Object
+  overridden: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.GetBody
   overload: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.GetBody*
   modifiers.csharp:
   - protected
@@ -186,7 +280,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: MethodName
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 527
+    startLine: 557
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -198,6 +292,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides ReadOnly Property MethodName As String
+  overridden: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.MethodName
   overload: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.MethodName*
   modifiers.csharp:
   - public
@@ -225,7 +320,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: HttpMethod
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 533
+    startLine: 563
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -237,6 +332,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides ReadOnly Property HttpMethod As String
+  overridden: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.HttpMethod
   overload: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.HttpMethod*
   modifiers.csharp:
   - public
@@ -264,7 +360,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: RestPath
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 539
+    startLine: 569
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -276,6 +372,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides ReadOnly Property RestPath As String
+  overridden: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.RestPath
   overload: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.RestPath*
   modifiers.csharp:
   - public
@@ -303,7 +400,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: InitParameters
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 545
+    startLine: 575
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -328,10 +425,54 @@ references:
   nameWithType: Google.Apis.Storage.v1
   fullName: Google.Apis.Storage.v1
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  commentId: T:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  parent: Google.Apis.Requests
+  definition: Google.Apis.Requests.ClientServiceRequest`1
+  name: ClientServiceRequest<BucketAccessControl>
+  nameWithType: ClientServiceRequest<BucketAccessControl>
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl)
+  name.vb: ClientServiceRequest(Of BucketAccessControl)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1
+    name: ClientServiceRequest
+    nameWithType: ClientServiceRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Apis.Storage.v1.Data.BucketAccessControl
+    name: BucketAccessControl
+    nameWithType: BucketAccessControl
+    fullName: Google.Apis.Storage.v1.Data.BucketAccessControl
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1
+    name: ClientServiceRequest
+    nameWithType: ClientServiceRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Apis.Storage.v1.Data.BucketAccessControl
+    name: BucketAccessControl
+    nameWithType: BucketAccessControl
+    fullName: Google.Apis.Storage.v1.Data.BucketAccessControl
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
   commentId: T:Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
   parent: Google.Apis.Storage.v1
@@ -372,6 +513,55 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Google.Apis.Requests.IClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  commentId: T:Google.Apis.Requests.IClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  parent: Google.Apis.Requests
+  definition: Google.Apis.Requests.IClientServiceRequest`1
+  name: IClientServiceRequest<BucketAccessControl>
+  nameWithType: IClientServiceRequest<BucketAccessControl>
+  fullName: Google.Apis.Requests.IClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>
+  nameWithType.vb: IClientServiceRequest(Of BucketAccessControl)
+  fullName.vb: Google.Apis.Requests.IClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl)
+  name.vb: IClientServiceRequest(Of BucketAccessControl)
+  spec.csharp:
+  - uid: Google.Apis.Requests.IClientServiceRequest`1
+    name: IClientServiceRequest
+    nameWithType: IClientServiceRequest
+    fullName: Google.Apis.Requests.IClientServiceRequest
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Apis.Storage.v1.Data.BucketAccessControl
+    name: BucketAccessControl
+    nameWithType: BucketAccessControl
+    fullName: Google.Apis.Storage.v1.Data.BucketAccessControl
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Apis.Requests.IClientServiceRequest`1
+    name: IClientServiceRequest
+    nameWithType: IClientServiceRequest
+    fullName: Google.Apis.Requests.IClientServiceRequest
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Apis.Storage.v1.Data.BucketAccessControl
+    name: BucketAccessControl
+    nameWithType: BucketAccessControl
+    fullName: Google.Apis.Storage.v1.Data.BucketAccessControl
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.IClientServiceRequest
+  commentId: T:Google.Apis.Requests.IClientServiceRequest
+  parent: Google.Apis.Requests
+  isExternal: true
+  name: IClientServiceRequest
+  nameWithType: IClientServiceRequest
+  fullName: Google.Apis.Requests.IClientServiceRequest
 - uid: Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.Alt
   commentId: P:Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.Alt
   parent: Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
@@ -435,6 +625,732 @@ references:
   fullName: Google.Apis.Storage.v1.StorageBaseServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.UserIp
   nameWithType.vb: StorageBaseServiceRequest(Of BucketAccessControl).UserIp
   fullName.vb: Google.Apis.Storage.v1.StorageBaseServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).UserIp
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.Execute
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.Execute
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.Execute
+  name: Execute()
+  nameWithType: ClientServiceRequest<BucketAccessControl>.Execute()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.Execute()
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).Execute()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).Execute()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.Execute
+    name: Execute
+    nameWithType: ClientServiceRequest<BucketAccessControl>.Execute
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.Execute
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.Execute
+    name: Execute
+    nameWithType: ClientServiceRequest(Of BucketAccessControl).Execute
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).Execute
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsStream
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsStream
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+  name: ExecuteAsStream()
+  nameWithType: ClientServiceRequest<BucketAccessControl>.ExecuteAsStream()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ExecuteAsStream()
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).ExecuteAsStream()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ExecuteAsStream()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+    name: ExecuteAsStream
+    nameWithType: ClientServiceRequest<BucketAccessControl>.ExecuteAsStream
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ExecuteAsStream
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+    name: ExecuteAsStream
+    nameWithType: ClientServiceRequest(Of BucketAccessControl).ExecuteAsStream
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ExecuteAsStream
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsync
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsync
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+  name: ExecuteAsync()
+  nameWithType: ClientServiceRequest<BucketAccessControl>.ExecuteAsync()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ExecuteAsync()
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).ExecuteAsync()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ExecuteAsync()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest<BucketAccessControl>.ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest(Of BucketAccessControl).ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsync(System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsync(System.Threading.CancellationToken)
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+  name: ExecuteAsync(CancellationToken)
+  nameWithType: ClientServiceRequest<BucketAccessControl>.ExecuteAsync(CancellationToken)
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ExecuteAsync(System.Threading.CancellationToken)
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).ExecuteAsync(CancellationToken)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ExecuteAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest<BucketAccessControl>.ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest(Of BucketAccessControl).ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsStreamAsync
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsStreamAsync
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+  name: ExecuteAsStreamAsync()
+  nameWithType: ClientServiceRequest<BucketAccessControl>.ExecuteAsStreamAsync()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ExecuteAsStreamAsync()
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).ExecuteAsStreamAsync()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ExecuteAsStreamAsync()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest<BucketAccessControl>.ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest(Of BucketAccessControl).ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  name: ExecuteAsStreamAsync(CancellationToken)
+  nameWithType: ClientServiceRequest<BucketAccessControl>.ExecuteAsStreamAsync(CancellationToken)
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).ExecuteAsStreamAsync(CancellationToken)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest<BucketAccessControl>.ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest(Of BucketAccessControl).ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.CreateRequest(System.Nullable{System.Boolean})
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.CreateRequest(System.Nullable{System.Boolean})
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+  name: CreateRequest(Nullable<Boolean>)
+  nameWithType: ClientServiceRequest<BucketAccessControl>.CreateRequest(Nullable<Boolean>)
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.CreateRequest(System.Nullable<System.Boolean>)
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).CreateRequest(Nullable(Of Boolean))
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).CreateRequest(System.Nullable(Of System.Boolean))
+  name.vb: CreateRequest(Nullable(Of Boolean))
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+    name: CreateRequest
+    nameWithType: ClientServiceRequest<BucketAccessControl>.CreateRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.CreateRequest
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+    name: CreateRequest
+    nameWithType: ClientServiceRequest(Of BucketAccessControl).CreateRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).CreateRequest
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.GenerateRequestUri
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.GenerateRequestUri
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+  name: GenerateRequestUri()
+  nameWithType: ClientServiceRequest<BucketAccessControl>.GenerateRequestUri()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.GenerateRequestUri()
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).GenerateRequestUri()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).GenerateRequestUri()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+    name: GenerateRequestUri
+    nameWithType: ClientServiceRequest<BucketAccessControl>.GenerateRequestUri
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.GenerateRequestUri
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+    name: GenerateRequestUri
+    nameWithType: ClientServiceRequest(Of BucketAccessControl).GenerateRequestUri
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).GenerateRequestUri
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.GetDefaultETagAction(System.String)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.GetDefaultETagAction(System.String)
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+  name: GetDefaultETagAction(String)
+  nameWithType: ClientServiceRequest<BucketAccessControl>.GetDefaultETagAction(String)
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.GetDefaultETagAction(System.String)
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).GetDefaultETagAction(String)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).GetDefaultETagAction(System.String)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+    name: GetDefaultETagAction
+    nameWithType: ClientServiceRequest<BucketAccessControl>.GetDefaultETagAction
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.GetDefaultETagAction
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+    name: GetDefaultETagAction
+    nameWithType: ClientServiceRequest(Of BucketAccessControl).GetDefaultETagAction
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).GetDefaultETagAction
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ETagAction
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ETagAction
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ETagAction
+  name: ETagAction
+  nameWithType: ClientServiceRequest<BucketAccessControl>.ETagAction
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ETagAction
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).ETagAction
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ETagAction
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ModifyRequest
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.ModifyRequest
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ModifyRequest
+  name: ModifyRequest
+  nameWithType: ClientServiceRequest<BucketAccessControl>.ModifyRequest
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.ModifyRequest
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).ModifyRequest
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).ModifyRequest
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.RequestParameters
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.RequestParameters
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.RequestParameters
+  name: RequestParameters
+  nameWithType: ClientServiceRequest<BucketAccessControl>.RequestParameters
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.RequestParameters
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).RequestParameters
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).RequestParameters
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.Service
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.Service
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.Service
+  name: Service
+  nameWithType: ClientServiceRequest<BucketAccessControl>.Service
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.Service
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).Service
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).Service
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Apis.Requests.ClientServiceRequest`1
+  commentId: T:Google.Apis.Requests.ClientServiceRequest`1
+  isExternal: true
+  name: ClientServiceRequest<TResponse>
+  nameWithType: ClientServiceRequest<TResponse>
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>
+  nameWithType.vb: ClientServiceRequest(Of TResponse)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse)
+  name.vb: ClientServiceRequest(Of TResponse)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1
+    name: ClientServiceRequest
+    nameWithType: ClientServiceRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1
+    name: ClientServiceRequest
+    nameWithType: ClientServiceRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests
+  commentId: N:Google.Apis.Requests
+  isExternal: false
+  name: Google.Apis.Requests
+  nameWithType: Google.Apis.Requests
+  fullName: Google.Apis.Requests
 - uid: Google.Apis.Storage.v1.StorageBaseServiceRequest`1
   commentId: T:Google.Apis.Storage.v1.StorageBaseServiceRequest`1
   isExternal: false
@@ -463,6 +1379,45 @@ references:
     name: StorageBaseServiceRequest
     nameWithType: StorageBaseServiceRequest
     fullName: Google.Apis.Storage.v1.StorageBaseServiceRequest
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.IClientServiceRequest`1
+  commentId: T:Google.Apis.Requests.IClientServiceRequest`1
+  isExternal: true
+  name: IClientServiceRequest<TResponse>
+  nameWithType: IClientServiceRequest<TResponse>
+  fullName: Google.Apis.Requests.IClientServiceRequest<TResponse>
+  nameWithType.vb: IClientServiceRequest(Of TResponse)
+  fullName.vb: Google.Apis.Requests.IClientServiceRequest(Of TResponse)
+  name.vb: IClientServiceRequest(Of TResponse)
+  spec.csharp:
+  - uid: Google.Apis.Requests.IClientServiceRequest`1
+    name: IClientServiceRequest
+    nameWithType: IClientServiceRequest
+    fullName: Google.Apis.Requests.IClientServiceRequest
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Apis.Requests.IClientServiceRequest`1
+    name: IClientServiceRequest
+    nameWithType: IClientServiceRequest
+    fullName: Google.Apis.Requests.IClientServiceRequest
+    isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
@@ -528,6 +1483,389 @@ references:
   fullName: Google.Apis.Storage.v1.StorageBaseServiceRequest<TResponse>.UserIp
   nameWithType.vb: StorageBaseServiceRequest(Of TResponse).UserIp
   fullName.vb: Google.Apis.Storage.v1.StorageBaseServiceRequest(Of TResponse).UserIp
+- uid: Google.Apis.Requests.ClientServiceRequest`1.Execute
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.Execute
+  isExternal: true
+  name: Execute()
+  nameWithType: ClientServiceRequest<TResponse>.Execute()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.Execute()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).Execute()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).Execute()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.Execute
+    name: Execute
+    nameWithType: ClientServiceRequest<TResponse>.Execute
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.Execute
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.Execute
+    name: Execute
+    nameWithType: ClientServiceRequest(Of TResponse).Execute
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).Execute
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+  isExternal: true
+  name: ExecuteAsStream()
+  nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStream()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStream()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ExecuteAsStream()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStream()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+    name: ExecuteAsStream
+    nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStream
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStream
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+    name: ExecuteAsStream
+    nameWithType: ClientServiceRequest(Of TResponse).ExecuteAsStream
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStream
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+  isExternal: true
+  name: ExecuteAsync()
+  nameWithType: ClientServiceRequest<TResponse>.ExecuteAsync()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsync()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ExecuteAsync()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsync()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest<TResponse>.ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest(Of TResponse).ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+  isExternal: true
+  name: ExecuteAsync(CancellationToken)
+  nameWithType: ClientServiceRequest<TResponse>.ExecuteAsync(CancellationToken)
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsync(System.Threading.CancellationToken)
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ExecuteAsync(CancellationToken)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest<TResponse>.ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest(Of TResponse).ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+  isExternal: true
+  name: ExecuteAsStreamAsync()
+  nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStreamAsync()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStreamAsync()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  isExternal: true
+  name: ExecuteAsStreamAsync(CancellationToken)
+  nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStreamAsync(CancellationToken)
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync(CancellationToken)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+  isExternal: true
+  name: CreateRequest(Nullable<Boolean>)
+  nameWithType: ClientServiceRequest<TResponse>.CreateRequest(Nullable<Boolean>)
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.CreateRequest(System.Nullable<System.Boolean>)
+  nameWithType.vb: ClientServiceRequest(Of TResponse).CreateRequest(Nullable(Of Boolean))
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).CreateRequest(System.Nullable(Of System.Boolean))
+  name.vb: CreateRequest(Nullable(Of Boolean))
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+    name: CreateRequest
+    nameWithType: ClientServiceRequest<TResponse>.CreateRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.CreateRequest
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+    name: CreateRequest
+    nameWithType: ClientServiceRequest(Of TResponse).CreateRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).CreateRequest
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+  isExternal: true
+  name: GenerateRequestUri()
+  nameWithType: ClientServiceRequest<TResponse>.GenerateRequestUri()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GenerateRequestUri()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).GenerateRequestUri()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GenerateRequestUri()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+    name: GenerateRequestUri
+    nameWithType: ClientServiceRequest<TResponse>.GenerateRequestUri
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GenerateRequestUri
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+    name: GenerateRequestUri
+    nameWithType: ClientServiceRequest(Of TResponse).GenerateRequestUri
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GenerateRequestUri
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+  isExternal: true
+  name: GetDefaultETagAction(String)
+  nameWithType: ClientServiceRequest<TResponse>.GetDefaultETagAction(String)
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GetDefaultETagAction(System.String)
+  nameWithType.vb: ClientServiceRequest(Of TResponse).GetDefaultETagAction(String)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GetDefaultETagAction(System.String)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+    name: GetDefaultETagAction
+    nameWithType: ClientServiceRequest<TResponse>.GetDefaultETagAction
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GetDefaultETagAction
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+    name: GetDefaultETagAction
+    nameWithType: ClientServiceRequest(Of TResponse).GetDefaultETagAction
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GetDefaultETagAction
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ETagAction
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.ETagAction
+  isExternal: true
+  name: ETagAction
+  nameWithType: ClientServiceRequest<TResponse>.ETagAction
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ETagAction
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ETagAction
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ETagAction
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ModifyRequest
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.ModifyRequest
+  isExternal: true
+  name: ModifyRequest
+  nameWithType: ClientServiceRequest<TResponse>.ModifyRequest
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ModifyRequest
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ModifyRequest
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ModifyRequest
+- uid: Google.Apis.Requests.ClientServiceRequest`1.RequestParameters
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.RequestParameters
+  isExternal: true
+  name: RequestParameters
+  nameWithType: ClientServiceRequest<TResponse>.RequestParameters
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.RequestParameters
+  nameWithType.vb: ClientServiceRequest(Of TResponse).RequestParameters
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).RequestParameters
+- uid: Google.Apis.Requests.ClientServiceRequest`1.Service
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.Service
+  isExternal: true
+  name: Service
+  nameWithType: ClientServiceRequest<TResponse>.Service
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.Service
+  nameWithType.vb: ClientServiceRequest(Of TResponse).Service
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).Service
 - uid: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.#ctor*
   commentId: Overload:Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.#ctor
   isExternal: false
@@ -535,9 +1873,11 @@ references:
   nameWithType: BucketAccessControlsResource.InsertRequest.InsertRequest
   fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.InsertRequest
 - uid: Google.Apis.Services.IClientService
+  commentId: T:Google.Apis.Services.IClientService
+  parent: Google.Apis.Services
   isExternal: true
-  name: Services.IClientService
-  nameWithType: Services.IClientService
+  name: IClientService
+  nameWithType: IClientService
   fullName: Google.Apis.Services.IClientService
 - uid: Google.Apis.Storage.v1.Data.BucketAccessControl
   commentId: T:Google.Apis.Storage.v1.Data.BucketAccessControl
@@ -547,10 +1887,18 @@ references:
   nameWithType: BucketAccessControl
   fullName: Google.Apis.Storage.v1.Data.BucketAccessControl
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Google.Apis.Services
+  commentId: N:Google.Apis.Services
+  isExternal: false
+  name: Google.Apis.Services
+  nameWithType: Google.Apis.Services
+  fullName: Google.Apis.Services
 - uid: Google.Apis.Storage.v1.Data
   commentId: N:Google.Apis.Storage.v1.Data
   isExternal: false
@@ -563,30 +1911,152 @@ references:
   name: Bucket
   nameWithType: BucketAccessControlsResource.InsertRequest.Bucket
   fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.Bucket
+- uid: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.UserProject*
+  commentId: Overload:Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.UserProject
+  isExternal: false
+  name: UserProject
+  nameWithType: BucketAccessControlsResource.InsertRequest.UserProject
+  fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.UserProject
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.GetBody
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.GetBody
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+  name: GetBody()
+  nameWithType: ClientServiceRequest<BucketAccessControl>.GetBody()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.GetBody()
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).GetBody()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).GetBody()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+    name: GetBody
+    nameWithType: ClientServiceRequest<BucketAccessControl>.GetBody
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.GetBody
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+    name: GetBody
+    nameWithType: ClientServiceRequest(Of BucketAccessControl).GetBody
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).GetBody
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.GetBody*
   commentId: Overload:Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.GetBody
   isExternal: false
   name: GetBody
   nameWithType: BucketAccessControlsResource.InsertRequest.GetBody
   fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.GetBody
+- uid: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.GetBody
+  isExternal: true
+  name: GetBody()
+  nameWithType: ClientServiceRequest<TResponse>.GetBody()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GetBody()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).GetBody()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GetBody()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+    name: GetBody
+    nameWithType: ClientServiceRequest<TResponse>.GetBody
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GetBody
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+    name: GetBody
+    nameWithType: ClientServiceRequest(Of TResponse).GetBody
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GetBody
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.MethodName
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.MethodName
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.MethodName
+  name: MethodName
+  nameWithType: ClientServiceRequest<BucketAccessControl>.MethodName
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.MethodName
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).MethodName
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).MethodName
 - uid: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.MethodName*
   commentId: Overload:Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.MethodName
   isExternal: false
   name: MethodName
   nameWithType: BucketAccessControlsResource.InsertRequest.MethodName
   fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.MethodName
+- uid: Google.Apis.Requests.ClientServiceRequest`1.MethodName
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.MethodName
+  isExternal: true
+  name: MethodName
+  nameWithType: ClientServiceRequest<TResponse>.MethodName
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.MethodName
+  nameWithType.vb: ClientServiceRequest(Of TResponse).MethodName
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).MethodName
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.HttpMethod
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.HttpMethod
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.HttpMethod
+  name: HttpMethod
+  nameWithType: ClientServiceRequest<BucketAccessControl>.HttpMethod
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.HttpMethod
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).HttpMethod
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).HttpMethod
 - uid: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.HttpMethod*
   commentId: Overload:Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.HttpMethod
   isExternal: false
   name: HttpMethod
   nameWithType: BucketAccessControlsResource.InsertRequest.HttpMethod
   fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.HttpMethod
+- uid: Google.Apis.Requests.ClientServiceRequest`1.HttpMethod
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.HttpMethod
+  isExternal: true
+  name: HttpMethod
+  nameWithType: ClientServiceRequest<TResponse>.HttpMethod
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.HttpMethod
+  nameWithType.vb: ClientServiceRequest(Of TResponse).HttpMethod
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).HttpMethod
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.RestPath
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.RestPath
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.RestPath
+  name: RestPath
+  nameWithType: ClientServiceRequest<BucketAccessControl>.RestPath
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Storage.v1.Data.BucketAccessControl>.RestPath
+  nameWithType.vb: ClientServiceRequest(Of BucketAccessControl).RestPath
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Storage.v1.Data.BucketAccessControl).RestPath
 - uid: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.RestPath*
   commentId: Overload:Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.RestPath
   isExternal: false
   name: RestPath
   nameWithType: BucketAccessControlsResource.InsertRequest.RestPath
   fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.InsertRequest.RestPath
+- uid: Google.Apis.Requests.ClientServiceRequest`1.RestPath
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.RestPath
+  isExternal: true
+  name: RestPath
+  nameWithType: ClientServiceRequest<TResponse>.RestPath
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.RestPath
+  nameWithType.vb: ClientServiceRequest(Of TResponse).RestPath
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).RestPath
 - uid: Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.InitParameters
   commentId: M:Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}.InitParameters
   parent: Google.Apis.Storage.v1.StorageBaseServiceRequest{Google.Apis.Storage.v1.Data.BucketAccessControl}

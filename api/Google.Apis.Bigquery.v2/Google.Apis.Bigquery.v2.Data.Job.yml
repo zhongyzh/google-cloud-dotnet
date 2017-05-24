@@ -33,12 +33,22 @@ items:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   syntax:
-    content: 'public class Job : Requests.IDirectResponseSchema'
+    content: 'public class Job : IDirectResponseSchema'
     content.vb: >-
       Public Class Job
-          Inherits Requests.IDirectResponseSchema
+          Implements IDirectResponseSchema
   inheritance:
   - System.Object
+  implements:
+  - Google.Apis.Requests.IDirectResponseSchema
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -70,12 +80,24 @@ items:
   summary: '[Required] Describes the job configuration.'
   example: []
   syntax:
-    content: public virtual JobConfiguration Configuration { get; set; }
+    content: >-
+      [JsonProperty("configuration")]
+
+      public virtual JobConfiguration Configuration { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.JobConfiguration
-    content.vb: Public Overridable Property Configuration As JobConfiguration
+    content.vb: >-
+      <JsonProperty("configuration")>
+
+      Public Overridable Property Configuration As JobConfiguration
   overload: Google.Apis.Bigquery.v2.Data.Job.Configuration*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: configuration
   modifiers.csharp:
   - public
   - virtual
@@ -109,12 +131,26 @@ items:
   summary: '[Output-only] A hash of this resource.'
   example: []
   syntax:
-    content: public virtual string ETag { get; set; }
+    content: >-
+      [JsonProperty("etag")]
+
+      public virtual string ETag { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property ETag As String
+    content.vb: >-
+      <JsonProperty("etag")>
+
+      Public Overridable Property ETag As String
   overload: Google.Apis.Bigquery.v2.Data.Job.ETag*
+  implements:
+  - Google.Apis.Requests.IDirectResponseSchema.ETag
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: etag
   modifiers.csharp:
   - public
   - virtual
@@ -148,12 +184,24 @@ items:
   summary: '[Output-only] Opaque ID field of the job'
   example: []
   syntax:
-    content: public virtual string Id { get; set; }
+    content: >-
+      [JsonProperty("id")]
+
+      public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Id As String
+    content.vb: >-
+      <JsonProperty("id")>
+
+      Public Overridable Property Id As String
   overload: Google.Apis.Bigquery.v2.Data.Job.Id*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -187,12 +235,24 @@ items:
   summary: '[Optional] Reference describing the unique-per-user name of the job.'
   example: []
   syntax:
-    content: public virtual JobReference JobReference { get; set; }
+    content: >-
+      [JsonProperty("jobReference")]
+
+      public virtual JobReference JobReference { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.JobReference
-    content.vb: Public Overridable Property JobReference As JobReference
+    content.vb: >-
+      <JsonProperty("jobReference")>
+
+      Public Overridable Property JobReference As JobReference
   overload: Google.Apis.Bigquery.v2.Data.Job.JobReference*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: jobReference
   modifiers.csharp:
   - public
   - virtual
@@ -226,12 +286,24 @@ items:
   summary: '[Output-only] The type of the resource.'
   example: []
   syntax:
-    content: public virtual string Kind { get; set; }
+    content: >-
+      [JsonProperty("kind")]
+
+      public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Kind As String
+    content.vb: >-
+      <JsonProperty("kind")>
+
+      Public Overridable Property Kind As String
   overload: Google.Apis.Bigquery.v2.Data.Job.Kind*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -265,12 +337,24 @@ items:
   summary: '[Output-only] A URL that can be used to access this resource again.'
   example: []
   syntax:
-    content: public virtual string SelfLink { get; set; }
+    content: >-
+      [JsonProperty("selfLink")]
+
+      public virtual string SelfLink { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property SelfLink As String
+    content.vb: >-
+      <JsonProperty("selfLink")>
+
+      Public Overridable Property SelfLink As String
   overload: Google.Apis.Bigquery.v2.Data.Job.SelfLink*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: selfLink
   modifiers.csharp:
   - public
   - virtual
@@ -307,12 +391,24 @@ items:
     job.
   example: []
   syntax:
-    content: public virtual JobStatistics Statistics { get; set; }
+    content: >-
+      [JsonProperty("statistics")]
+
+      public virtual JobStatistics Statistics { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.JobStatistics
-    content.vb: Public Overridable Property Statistics As JobStatistics
+    content.vb: >-
+      <JsonProperty("statistics")>
+
+      Public Overridable Property Statistics As JobStatistics
   overload: Google.Apis.Bigquery.v2.Data.Job.Statistics*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: statistics
   modifiers.csharp:
   - public
   - virtual
@@ -349,12 +445,24 @@ items:
     the job is complete.
   example: []
   syntax:
-    content: public virtual JobStatus Status { get; set; }
+    content: >-
+      [JsonProperty("status")]
+
+      public virtual JobStatus Status { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.JobStatus
-    content.vb: Public Overridable Property Status As JobStatus
+    content.vb: >-
+      <JsonProperty("status")>
+
+      Public Overridable Property Status As JobStatus
   overload: Google.Apis.Bigquery.v2.Data.Job.Status*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: status
   modifiers.csharp:
   - public
   - virtual
@@ -388,12 +496,24 @@ items:
   summary: '[Output-only] Email address of the user who ran the job.'
   example: []
   syntax:
-    content: public virtual string UserEmail { get; set; }
+    content: >-
+      [JsonProperty("user_email")]
+
+      public virtual string UserEmail { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property UserEmail As String
+    content.vb: >-
+      <JsonProperty("user_email")>
+
+      Public Overridable Property UserEmail As String
   overload: Google.Apis.Bigquery.v2.Data.Job.UserEmail*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: user_email
   modifiers.csharp:
   - public
   - virtual
@@ -410,10 +530,310 @@ references:
   nameWithType: Google.Apis.Bigquery.v2.Data
   fullName: Google.Apis.Bigquery.v2.Data
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Apis.Requests.IDirectResponseSchema
+  commentId: T:Google.Apis.Requests.IDirectResponseSchema
+  parent: Google.Apis.Requests
+  isExternal: true
+  name: IDirectResponseSchema
+  nameWithType: IDirectResponseSchema
+  fullName: Google.Apis.Requests.IDirectResponseSchema
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Apis.Requests
+  commentId: N:Google.Apis.Requests
+  isExternal: false
+  name: Google.Apis.Requests
+  nameWithType: Google.Apis.Requests
+  fullName: Google.Apis.Requests
 - uid: Google.Apis.Bigquery.v2.Data.Job.Configuration*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.Job.Configuration
   isExternal: false
@@ -433,7 +853,16 @@ references:
   name: ETag
   nameWithType: Job.ETag
   fullName: Google.Apis.Bigquery.v2.Data.Job.ETag
+- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
+  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
+  parent: Google.Apis.Requests.IDirectResponseSchema
+  isExternal: true
+  name: ETag
+  nameWithType: IDirectResponseSchema.ETag
+  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String

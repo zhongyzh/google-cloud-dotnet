@@ -37,13 +37,18 @@ items:
     whereas the patch method only replaces fields that are provided in the submitted dataset resource.
   example: []
   syntax:
-    content: 'public class UpdateRequest : BigqueryBaseServiceRequest<Dataset>'
+    content: 'public class UpdateRequest : BigqueryBaseServiceRequest<Dataset>, IClientServiceRequest<Dataset>, IClientServiceRequest'
     content.vb: >-
       Public Class UpdateRequest
           Inherits BigqueryBaseServiceRequest(Of Dataset)
+          Implements IClientServiceRequest(Of Dataset), IClientServiceRequest
   inheritance:
   - System.Object
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
   - Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  implements:
+  - Google.Apis.Requests.IClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  - Google.Apis.Requests.IClientServiceRequest
   inheritedMembers:
   - Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.Alt
   - Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.Fields
@@ -52,6 +57,26 @@ items:
   - Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.PrettyPrint
   - Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.QuotaUser
   - Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.UserIp
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.Execute
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsStream
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsync
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsync(System.Threading.CancellationToken)
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsStreamAsync
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.CreateRequest(System.Nullable{System.Boolean})
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.GenerateRequestUri
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.GetDefaultETagAction(System.String)
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ETagAction
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ModifyRequest
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.RequestParameters
+  - Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.Service
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -65,8 +90,8 @@ items:
   langs:
   - csharp
   - vb
-  name: UpdateRequest(Services.IClientService, Dataset, String, String)
-  nameWithType: DatasetsResource.UpdateRequest.UpdateRequest(Services.IClientService, Dataset, String, String)
+  name: UpdateRequest(IClientService, Dataset, String, String)
+  nameWithType: DatasetsResource.UpdateRequest.UpdateRequest(IClientService, Dataset, String, String)
   fullName: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.UpdateRequest(Google.Apis.Services.IClientService, Google.Apis.Bigquery.v2.Data.Dataset, System.String, System.String)
   type: Constructor
   source:
@@ -83,7 +108,7 @@ items:
   summary: Constructs a new Update request.
   example: []
   syntax:
-    content: public UpdateRequest(Services.IClientService service, Dataset body, string projectId, string datasetId)
+    content: public UpdateRequest(IClientService service, Dataset body, string projectId, string datasetId)
     parameters:
     - id: service
       type: Google.Apis.Services.IClientService
@@ -93,7 +118,7 @@ items:
       type: System.String
     - id: datasetId
       type: System.String
-    content.vb: Public Sub New(service As Services.IClientService, body As Dataset, projectId As String, datasetId As String)
+    content.vb: Public Sub New(service As IClientService, body As Dataset, projectId As String, datasetId As String)
   overload: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.#ctor*
   modifiers.csharp:
   - public
@@ -124,12 +149,26 @@ items:
   summary: Project ID of the dataset being updated
   example: []
   syntax:
-    content: public virtual string ProjectId { get; }
+    content: >-
+      [RequestParameter("projectId", RequestParameterType.Path)]
+
+      public virtual string ProjectId { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable ReadOnly Property ProjectId As String
+    content.vb: >-
+      <RequestParameter("projectId", RequestParameterType.Path)>
+
+      Public Overridable ReadOnly Property ProjectId As String
   overload: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.ProjectId*
+  attributes:
+  - type: Google.Apis.Util.RequestParameterAttribute
+    ctor: Google.Apis.Util.RequestParameterAttribute.#ctor(System.String,Google.Apis.Util.RequestParameterType)
+    arguments:
+    - type: System.String
+      value: projectId
+    - type: Google.Apis.Util.RequestParameterType
+      value: 0
   modifiers.csharp:
   - public
   - virtual
@@ -163,12 +202,26 @@ items:
   summary: Dataset ID of the dataset being updated
   example: []
   syntax:
-    content: public virtual string DatasetId { get; }
+    content: >-
+      [RequestParameter("datasetId", RequestParameterType.Path)]
+
+      public virtual string DatasetId { get; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable ReadOnly Property DatasetId As String
+    content.vb: >-
+      <RequestParameter("datasetId", RequestParameterType.Path)>
+
+      Public Overridable ReadOnly Property DatasetId As String
   overload: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.DatasetId*
+  attributes:
+  - type: Google.Apis.Util.RequestParameterAttribute
+    ctor: Google.Apis.Util.RequestParameterAttribute.#ctor(System.String,Google.Apis.Util.RequestParameterType)
+    arguments:
+    - type: System.String
+      value: datasetId
+    - type: Google.Apis.Util.RequestParameterType
+      value: 0
   modifiers.csharp:
   - public
   - virtual
@@ -206,6 +259,7 @@ items:
     return:
       type: System.Object
     content.vb: Protected Overrides Function GetBody As Object
+  overridden: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.GetBody
   overload: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.GetBody*
   modifiers.csharp:
   - protected
@@ -243,6 +297,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides ReadOnly Property MethodName As String
+  overridden: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.MethodName
   overload: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.MethodName*
   modifiers.csharp:
   - public
@@ -282,6 +337,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides ReadOnly Property HttpMethod As String
+  overridden: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.HttpMethod
   overload: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.HttpMethod*
   modifiers.csharp:
   - public
@@ -321,6 +377,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides ReadOnly Property RestPath As String
+  overridden: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.RestPath
   overload: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.RestPath*
   modifiers.csharp:
   - public
@@ -373,10 +430,54 @@ references:
   nameWithType: Google.Apis.Bigquery.v2
   fullName: Google.Apis.Bigquery.v2
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  commentId: T:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  parent: Google.Apis.Requests
+  definition: Google.Apis.Requests.ClientServiceRequest`1
+  name: ClientServiceRequest<Dataset>
+  nameWithType: ClientServiceRequest<Dataset>
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>
+  nameWithType.vb: ClientServiceRequest(Of Dataset)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset)
+  name.vb: ClientServiceRequest(Of Dataset)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1
+    name: ClientServiceRequest
+    nameWithType: ClientServiceRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Apis.Bigquery.v2.Data.Dataset
+    name: Dataset
+    nameWithType: Dataset
+    fullName: Google.Apis.Bigquery.v2.Data.Dataset
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1
+    name: ClientServiceRequest
+    nameWithType: ClientServiceRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Apis.Bigquery.v2.Data.Dataset
+    name: Dataset
+    nameWithType: Dataset
+    fullName: Google.Apis.Bigquery.v2.Data.Dataset
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
   commentId: T:Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
   parent: Google.Apis.Bigquery.v2
@@ -417,6 +518,55 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Google.Apis.Requests.IClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  commentId: T:Google.Apis.Requests.IClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  parent: Google.Apis.Requests
+  definition: Google.Apis.Requests.IClientServiceRequest`1
+  name: IClientServiceRequest<Dataset>
+  nameWithType: IClientServiceRequest<Dataset>
+  fullName: Google.Apis.Requests.IClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>
+  nameWithType.vb: IClientServiceRequest(Of Dataset)
+  fullName.vb: Google.Apis.Requests.IClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset)
+  name.vb: IClientServiceRequest(Of Dataset)
+  spec.csharp:
+  - uid: Google.Apis.Requests.IClientServiceRequest`1
+    name: IClientServiceRequest
+    nameWithType: IClientServiceRequest
+    fullName: Google.Apis.Requests.IClientServiceRequest
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Apis.Bigquery.v2.Data.Dataset
+    name: Dataset
+    nameWithType: Dataset
+    fullName: Google.Apis.Bigquery.v2.Data.Dataset
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Apis.Requests.IClientServiceRequest`1
+    name: IClientServiceRequest
+    nameWithType: IClientServiceRequest
+    fullName: Google.Apis.Requests.IClientServiceRequest
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Apis.Bigquery.v2.Data.Dataset
+    name: Dataset
+    nameWithType: Dataset
+    fullName: Google.Apis.Bigquery.v2.Data.Dataset
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.IClientServiceRequest
+  commentId: T:Google.Apis.Requests.IClientServiceRequest
+  parent: Google.Apis.Requests
+  isExternal: true
+  name: IClientServiceRequest
+  nameWithType: IClientServiceRequest
+  fullName: Google.Apis.Requests.IClientServiceRequest
 - uid: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.Alt
   commentId: P:Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.Alt
   parent: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
@@ -480,6 +630,732 @@ references:
   fullName: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.UserIp
   nameWithType.vb: BigqueryBaseServiceRequest(Of Dataset).UserIp
   fullName.vb: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).UserIp
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.Execute
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.Execute
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.Execute
+  name: Execute()
+  nameWithType: ClientServiceRequest<Dataset>.Execute()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.Execute()
+  nameWithType.vb: ClientServiceRequest(Of Dataset).Execute()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).Execute()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.Execute
+    name: Execute
+    nameWithType: ClientServiceRequest<Dataset>.Execute
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.Execute
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.Execute
+    name: Execute
+    nameWithType: ClientServiceRequest(Of Dataset).Execute
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).Execute
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsStream
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsStream
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+  name: ExecuteAsStream()
+  nameWithType: ClientServiceRequest<Dataset>.ExecuteAsStream()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ExecuteAsStream()
+  nameWithType.vb: ClientServiceRequest(Of Dataset).ExecuteAsStream()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ExecuteAsStream()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+    name: ExecuteAsStream
+    nameWithType: ClientServiceRequest<Dataset>.ExecuteAsStream
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ExecuteAsStream
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+    name: ExecuteAsStream
+    nameWithType: ClientServiceRequest(Of Dataset).ExecuteAsStream
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ExecuteAsStream
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsync
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsync
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+  name: ExecuteAsync()
+  nameWithType: ClientServiceRequest<Dataset>.ExecuteAsync()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ExecuteAsync()
+  nameWithType.vb: ClientServiceRequest(Of Dataset).ExecuteAsync()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ExecuteAsync()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest<Dataset>.ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest(Of Dataset).ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsync(System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsync(System.Threading.CancellationToken)
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+  name: ExecuteAsync(CancellationToken)
+  nameWithType: ClientServiceRequest<Dataset>.ExecuteAsync(CancellationToken)
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ExecuteAsync(System.Threading.CancellationToken)
+  nameWithType.vb: ClientServiceRequest(Of Dataset).ExecuteAsync(CancellationToken)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ExecuteAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest<Dataset>.ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest(Of Dataset).ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsStreamAsync
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsStreamAsync
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+  name: ExecuteAsStreamAsync()
+  nameWithType: ClientServiceRequest<Dataset>.ExecuteAsStreamAsync()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ExecuteAsStreamAsync()
+  nameWithType.vb: ClientServiceRequest(Of Dataset).ExecuteAsStreamAsync()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ExecuteAsStreamAsync()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest<Dataset>.ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest(Of Dataset).ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  name: ExecuteAsStreamAsync(CancellationToken)
+  nameWithType: ClientServiceRequest<Dataset>.ExecuteAsStreamAsync(CancellationToken)
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  nameWithType.vb: ClientServiceRequest(Of Dataset).ExecuteAsStreamAsync(CancellationToken)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest<Dataset>.ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest(Of Dataset).ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.CreateRequest(System.Nullable{System.Boolean})
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.CreateRequest(System.Nullable{System.Boolean})
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+  name: CreateRequest(Nullable<Boolean>)
+  nameWithType: ClientServiceRequest<Dataset>.CreateRequest(Nullable<Boolean>)
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.CreateRequest(System.Nullable<System.Boolean>)
+  nameWithType.vb: ClientServiceRequest(Of Dataset).CreateRequest(Nullable(Of Boolean))
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).CreateRequest(System.Nullable(Of System.Boolean))
+  name.vb: CreateRequest(Nullable(Of Boolean))
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+    name: CreateRequest
+    nameWithType: ClientServiceRequest<Dataset>.CreateRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.CreateRequest
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+    name: CreateRequest
+    nameWithType: ClientServiceRequest(Of Dataset).CreateRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).CreateRequest
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.GenerateRequestUri
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.GenerateRequestUri
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+  name: GenerateRequestUri()
+  nameWithType: ClientServiceRequest<Dataset>.GenerateRequestUri()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.GenerateRequestUri()
+  nameWithType.vb: ClientServiceRequest(Of Dataset).GenerateRequestUri()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).GenerateRequestUri()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+    name: GenerateRequestUri
+    nameWithType: ClientServiceRequest<Dataset>.GenerateRequestUri
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.GenerateRequestUri
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+    name: GenerateRequestUri
+    nameWithType: ClientServiceRequest(Of Dataset).GenerateRequestUri
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).GenerateRequestUri
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.GetDefaultETagAction(System.String)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.GetDefaultETagAction(System.String)
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+  name: GetDefaultETagAction(String)
+  nameWithType: ClientServiceRequest<Dataset>.GetDefaultETagAction(String)
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.GetDefaultETagAction(System.String)
+  nameWithType.vb: ClientServiceRequest(Of Dataset).GetDefaultETagAction(String)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).GetDefaultETagAction(System.String)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+    name: GetDefaultETagAction
+    nameWithType: ClientServiceRequest<Dataset>.GetDefaultETagAction
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.GetDefaultETagAction
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+    name: GetDefaultETagAction
+    nameWithType: ClientServiceRequest(Of Dataset).GetDefaultETagAction
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).GetDefaultETagAction
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ETagAction
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ETagAction
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ETagAction
+  name: ETagAction
+  nameWithType: ClientServiceRequest<Dataset>.ETagAction
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ETagAction
+  nameWithType.vb: ClientServiceRequest(Of Dataset).ETagAction
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ETagAction
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ModifyRequest
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.ModifyRequest
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.ModifyRequest
+  name: ModifyRequest
+  nameWithType: ClientServiceRequest<Dataset>.ModifyRequest
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.ModifyRequest
+  nameWithType.vb: ClientServiceRequest(Of Dataset).ModifyRequest
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).ModifyRequest
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.RequestParameters
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.RequestParameters
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.RequestParameters
+  name: RequestParameters
+  nameWithType: ClientServiceRequest<Dataset>.RequestParameters
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.RequestParameters
+  nameWithType.vb: ClientServiceRequest(Of Dataset).RequestParameters
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).RequestParameters
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.Service
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.Service
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.Service
+  name: Service
+  nameWithType: ClientServiceRequest<Dataset>.Service
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.Service
+  nameWithType.vb: ClientServiceRequest(Of Dataset).Service
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).Service
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Apis.Requests.ClientServiceRequest`1
+  commentId: T:Google.Apis.Requests.ClientServiceRequest`1
+  isExternal: true
+  name: ClientServiceRequest<TResponse>
+  nameWithType: ClientServiceRequest<TResponse>
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>
+  nameWithType.vb: ClientServiceRequest(Of TResponse)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse)
+  name.vb: ClientServiceRequest(Of TResponse)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1
+    name: ClientServiceRequest
+    nameWithType: ClientServiceRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1
+    name: ClientServiceRequest
+    nameWithType: ClientServiceRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests
+  commentId: N:Google.Apis.Requests
+  isExternal: false
+  name: Google.Apis.Requests
+  nameWithType: Google.Apis.Requests
+  fullName: Google.Apis.Requests
 - uid: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest`1
   commentId: T:Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest`1
   isExternal: false
@@ -508,6 +1384,45 @@ references:
     name: BigqueryBaseServiceRequest
     nameWithType: BigqueryBaseServiceRequest
     fullName: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.IClientServiceRequest`1
+  commentId: T:Google.Apis.Requests.IClientServiceRequest`1
+  isExternal: true
+  name: IClientServiceRequest<TResponse>
+  nameWithType: IClientServiceRequest<TResponse>
+  fullName: Google.Apis.Requests.IClientServiceRequest<TResponse>
+  nameWithType.vb: IClientServiceRequest(Of TResponse)
+  fullName.vb: Google.Apis.Requests.IClientServiceRequest(Of TResponse)
+  name.vb: IClientServiceRequest(Of TResponse)
+  spec.csharp:
+  - uid: Google.Apis.Requests.IClientServiceRequest`1
+    name: IClientServiceRequest
+    nameWithType: IClientServiceRequest
+    fullName: Google.Apis.Requests.IClientServiceRequest
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Apis.Requests.IClientServiceRequest`1
+    name: IClientServiceRequest
+    nameWithType: IClientServiceRequest
+    fullName: Google.Apis.Requests.IClientServiceRequest
+    isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
@@ -573,6 +1488,389 @@ references:
   fullName: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest<TResponse>.UserIp
   nameWithType.vb: BigqueryBaseServiceRequest(Of TResponse).UserIp
   fullName.vb: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest(Of TResponse).UserIp
+- uid: Google.Apis.Requests.ClientServiceRequest`1.Execute
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.Execute
+  isExternal: true
+  name: Execute()
+  nameWithType: ClientServiceRequest<TResponse>.Execute()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.Execute()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).Execute()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).Execute()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.Execute
+    name: Execute
+    nameWithType: ClientServiceRequest<TResponse>.Execute
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.Execute
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.Execute
+    name: Execute
+    nameWithType: ClientServiceRequest(Of TResponse).Execute
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).Execute
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+  isExternal: true
+  name: ExecuteAsStream()
+  nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStream()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStream()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ExecuteAsStream()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStream()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+    name: ExecuteAsStream
+    nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStream
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStream
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStream
+    name: ExecuteAsStream
+    nameWithType: ClientServiceRequest(Of TResponse).ExecuteAsStream
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStream
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+  isExternal: true
+  name: ExecuteAsync()
+  nameWithType: ClientServiceRequest<TResponse>.ExecuteAsync()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsync()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ExecuteAsync()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsync()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest<TResponse>.ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest(Of TResponse).ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+  isExternal: true
+  name: ExecuteAsync(CancellationToken)
+  nameWithType: ClientServiceRequest<TResponse>.ExecuteAsync(CancellationToken)
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsync(System.Threading.CancellationToken)
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ExecuteAsync(CancellationToken)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest<TResponse>.ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsync(System.Threading.CancellationToken)
+    name: ExecuteAsync
+    nameWithType: ClientServiceRequest(Of TResponse).ExecuteAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+  isExternal: true
+  name: ExecuteAsStreamAsync()
+  nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStreamAsync()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStreamAsync()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  isExternal: true
+  name: ExecuteAsStreamAsync(CancellationToken)
+  nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStreamAsync(CancellationToken)
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync(CancellationToken)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync(System.Threading.CancellationToken)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest<TResponse>.ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.ExecuteAsStreamAsync(System.Threading.CancellationToken)
+    name: ExecuteAsStreamAsync
+    nameWithType: ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ExecuteAsStreamAsync
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+  isExternal: true
+  name: CreateRequest(Nullable<Boolean>)
+  nameWithType: ClientServiceRequest<TResponse>.CreateRequest(Nullable<Boolean>)
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.CreateRequest(System.Nullable<System.Boolean>)
+  nameWithType.vb: ClientServiceRequest(Of TResponse).CreateRequest(Nullable(Of Boolean))
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).CreateRequest(System.Nullable(Of System.Boolean))
+  name.vb: CreateRequest(Nullable(Of Boolean))
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+    name: CreateRequest
+    nameWithType: ClientServiceRequest<TResponse>.CreateRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.CreateRequest
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest(System.Nullable{System.Boolean})
+    name: CreateRequest
+    nameWithType: ClientServiceRequest(Of TResponse).CreateRequest
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).CreateRequest
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+  isExternal: true
+  name: GenerateRequestUri()
+  nameWithType: ClientServiceRequest<TResponse>.GenerateRequestUri()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GenerateRequestUri()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).GenerateRequestUri()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GenerateRequestUri()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+    name: GenerateRequestUri
+    nameWithType: ClientServiceRequest<TResponse>.GenerateRequestUri
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GenerateRequestUri
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
+    name: GenerateRequestUri
+    nameWithType: ClientServiceRequest(Of TResponse).GenerateRequestUri
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GenerateRequestUri
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+  isExternal: true
+  name: GetDefaultETagAction(String)
+  nameWithType: ClientServiceRequest<TResponse>.GetDefaultETagAction(String)
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GetDefaultETagAction(System.String)
+  nameWithType.vb: ClientServiceRequest(Of TResponse).GetDefaultETagAction(String)
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GetDefaultETagAction(System.String)
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+    name: GetDefaultETagAction
+    nameWithType: ClientServiceRequest<TResponse>.GetDefaultETagAction
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GetDefaultETagAction
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetDefaultETagAction(System.String)
+    name: GetDefaultETagAction
+    nameWithType: ClientServiceRequest(Of TResponse).GetDefaultETagAction
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GetDefaultETagAction
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ETagAction
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.ETagAction
+  isExternal: true
+  name: ETagAction
+  nameWithType: ClientServiceRequest<TResponse>.ETagAction
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ETagAction
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ETagAction
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ETagAction
+- uid: Google.Apis.Requests.ClientServiceRequest`1.ModifyRequest
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.ModifyRequest
+  isExternal: true
+  name: ModifyRequest
+  nameWithType: ClientServiceRequest<TResponse>.ModifyRequest
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ModifyRequest
+  nameWithType.vb: ClientServiceRequest(Of TResponse).ModifyRequest
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ModifyRequest
+- uid: Google.Apis.Requests.ClientServiceRequest`1.RequestParameters
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.RequestParameters
+  isExternal: true
+  name: RequestParameters
+  nameWithType: ClientServiceRequest<TResponse>.RequestParameters
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.RequestParameters
+  nameWithType.vb: ClientServiceRequest(Of TResponse).RequestParameters
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).RequestParameters
+- uid: Google.Apis.Requests.ClientServiceRequest`1.Service
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.Service
+  isExternal: true
+  name: Service
+  nameWithType: ClientServiceRequest<TResponse>.Service
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.Service
+  nameWithType.vb: ClientServiceRequest(Of TResponse).Service
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).Service
 - uid: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.#ctor*
   commentId: Overload:Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.#ctor
   isExternal: false
@@ -580,9 +1878,11 @@ references:
   nameWithType: DatasetsResource.UpdateRequest.UpdateRequest
   fullName: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.UpdateRequest
 - uid: Google.Apis.Services.IClientService
+  commentId: T:Google.Apis.Services.IClientService
+  parent: Google.Apis.Services
   isExternal: true
-  name: Services.IClientService
-  nameWithType: Services.IClientService
+  name: IClientService
+  nameWithType: IClientService
   fullName: Google.Apis.Services.IClientService
 - uid: Google.Apis.Bigquery.v2.Data.Dataset
   commentId: T:Google.Apis.Bigquery.v2.Data.Dataset
@@ -592,10 +1892,18 @@ references:
   nameWithType: Dataset
   fullName: Google.Apis.Bigquery.v2.Data.Dataset
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Google.Apis.Services
+  commentId: N:Google.Apis.Services
+  isExternal: false
+  name: Google.Apis.Services
+  nameWithType: Google.Apis.Services
+  fullName: Google.Apis.Services
 - uid: Google.Apis.Bigquery.v2.Data
   commentId: N:Google.Apis.Bigquery.v2.Data
   isExternal: false
@@ -614,30 +1922,146 @@ references:
   name: DatasetId
   nameWithType: DatasetsResource.UpdateRequest.DatasetId
   fullName: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.DatasetId
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.GetBody
+  commentId: M:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.GetBody
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+  name: GetBody()
+  nameWithType: ClientServiceRequest<Dataset>.GetBody()
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.GetBody()
+  nameWithType.vb: ClientServiceRequest(Of Dataset).GetBody()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).GetBody()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+    name: GetBody
+    nameWithType: ClientServiceRequest<Dataset>.GetBody
+    fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.GetBody
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+    name: GetBody
+    nameWithType: ClientServiceRequest(Of Dataset).GetBody
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).GetBody
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.GetBody*
   commentId: Overload:Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.GetBody
   isExternal: false
   name: GetBody
   nameWithType: DatasetsResource.UpdateRequest.GetBody
   fullName: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.GetBody
+- uid: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+  commentId: M:Google.Apis.Requests.ClientServiceRequest`1.GetBody
+  isExternal: true
+  name: GetBody()
+  nameWithType: ClientServiceRequest<TResponse>.GetBody()
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GetBody()
+  nameWithType.vb: ClientServiceRequest(Of TResponse).GetBody()
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GetBody()
+  spec.csharp:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+    name: GetBody
+    nameWithType: ClientServiceRequest<TResponse>.GetBody
+    fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.GetBody
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Apis.Requests.ClientServiceRequest`1.GetBody
+    name: GetBody
+    nameWithType: ClientServiceRequest(Of TResponse).GetBody
+    fullName: Google.Apis.Requests.ClientServiceRequest(Of TResponse).GetBody
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.MethodName
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.MethodName
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.MethodName
+  name: MethodName
+  nameWithType: ClientServiceRequest<Dataset>.MethodName
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.MethodName
+  nameWithType.vb: ClientServiceRequest(Of Dataset).MethodName
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).MethodName
 - uid: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.MethodName*
   commentId: Overload:Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.MethodName
   isExternal: false
   name: MethodName
   nameWithType: DatasetsResource.UpdateRequest.MethodName
   fullName: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.MethodName
+- uid: Google.Apis.Requests.ClientServiceRequest`1.MethodName
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.MethodName
+  isExternal: true
+  name: MethodName
+  nameWithType: ClientServiceRequest<TResponse>.MethodName
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.MethodName
+  nameWithType.vb: ClientServiceRequest(Of TResponse).MethodName
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).MethodName
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.HttpMethod
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.HttpMethod
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.HttpMethod
+  name: HttpMethod
+  nameWithType: ClientServiceRequest<Dataset>.HttpMethod
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.HttpMethod
+  nameWithType.vb: ClientServiceRequest(Of Dataset).HttpMethod
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).HttpMethod
 - uid: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.HttpMethod*
   commentId: Overload:Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.HttpMethod
   isExternal: false
   name: HttpMethod
   nameWithType: DatasetsResource.UpdateRequest.HttpMethod
   fullName: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.HttpMethod
+- uid: Google.Apis.Requests.ClientServiceRequest`1.HttpMethod
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.HttpMethod
+  isExternal: true
+  name: HttpMethod
+  nameWithType: ClientServiceRequest<TResponse>.HttpMethod
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.HttpMethod
+  nameWithType.vb: ClientServiceRequest(Of TResponse).HttpMethod
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).HttpMethod
+- uid: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.RestPath
+  commentId: P:Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.RestPath
+  parent: Google.Apis.Requests.ClientServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}
+  definition: Google.Apis.Requests.ClientServiceRequest`1.RestPath
+  name: RestPath
+  nameWithType: ClientServiceRequest<Dataset>.RestPath
+  fullName: Google.Apis.Requests.ClientServiceRequest<Google.Apis.Bigquery.v2.Data.Dataset>.RestPath
+  nameWithType.vb: ClientServiceRequest(Of Dataset).RestPath
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of Google.Apis.Bigquery.v2.Data.Dataset).RestPath
 - uid: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.RestPath*
   commentId: Overload:Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.RestPath
   isExternal: false
   name: RestPath
   nameWithType: DatasetsResource.UpdateRequest.RestPath
   fullName: Google.Apis.Bigquery.v2.DatasetsResource.UpdateRequest.RestPath
+- uid: Google.Apis.Requests.ClientServiceRequest`1.RestPath
+  commentId: P:Google.Apis.Requests.ClientServiceRequest`1.RestPath
+  isExternal: true
+  name: RestPath
+  nameWithType: ClientServiceRequest<TResponse>.RestPath
+  fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.RestPath
+  nameWithType.vb: ClientServiceRequest(Of TResponse).RestPath
+  fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).RestPath
 - uid: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.InitParameters
   commentId: M:Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}.InitParameters
   parent: Google.Apis.Bigquery.v2.BigqueryBaseServiceRequest{Google.Apis.Bigquery.v2.Data.Dataset}

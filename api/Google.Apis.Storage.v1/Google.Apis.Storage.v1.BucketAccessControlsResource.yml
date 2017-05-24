@@ -33,12 +33,18 @@ items:
   summary: The "bucketAccessControls" collection of methods.
   example: []
   syntax:
-    content: 'public class BucketAccessControlsResource : object'
-    content.vb: >-
-      Public Class BucketAccessControlsResource
-          Inherits Object
+    content: public class BucketAccessControlsResource
+    content.vb: Public Class BucketAccessControlsResource
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -52,8 +58,8 @@ items:
   langs:
   - csharp
   - vb
-  name: BucketAccessControlsResource(Services.IClientService)
-  nameWithType: BucketAccessControlsResource.BucketAccessControlsResource(Services.IClientService)
+  name: BucketAccessControlsResource(IClientService)
+  nameWithType: BucketAccessControlsResource.BucketAccessControlsResource(IClientService)
   fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.BucketAccessControlsResource(Google.Apis.Services.IClientService)
   type: Constructor
   source:
@@ -70,11 +76,11 @@ items:
   summary: Constructs a new resource.
   example: []
   syntax:
-    content: public BucketAccessControlsResource(Services.IClientService service)
+    content: public BucketAccessControlsResource(IClientService service)
     parameters:
     - id: service
       type: Google.Apis.Services.IClientService
-    content.vb: Public Sub New(service As Services.IClientService)
+    content.vb: Public Sub New(service As IClientService)
   overload: Google.Apis.Storage.v1.BucketAccessControlsResource.#ctor*
   modifiers.csharp:
   - public
@@ -146,7 +152,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Get
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 421
+    startLine: 434
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -194,7 +200,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Insert
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 497
+    startLine: 523
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -237,7 +243,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: List
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 564
+    startLine: 603
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -277,7 +283,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Patch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 628
+    startLine: 680
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -328,7 +334,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Update
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 714
+    startLine: 779
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -369,10 +375,297 @@ references:
   nameWithType: Google.Apis.Storage.v1
   fullName: Google.Apis.Storage.v1
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Google.Apis.Storage.v1.BucketAccessControlsResource.#ctor*
   commentId: Overload:Google.Apis.Storage.v1.BucketAccessControlsResource.#ctor
   isExternal: false
@@ -380,10 +673,18 @@ references:
   nameWithType: BucketAccessControlsResource.BucketAccessControlsResource
   fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.BucketAccessControlsResource
 - uid: Google.Apis.Services.IClientService
+  commentId: T:Google.Apis.Services.IClientService
+  parent: Google.Apis.Services
   isExternal: true
-  name: Services.IClientService
-  nameWithType: Services.IClientService
+  name: IClientService
+  nameWithType: IClientService
   fullName: Google.Apis.Services.IClientService
+- uid: Google.Apis.Services
+  commentId: N:Google.Apis.Services
+  isExternal: false
+  name: Google.Apis.Services
+  nameWithType: Google.Apis.Services
+  fullName: Google.Apis.Services
 - uid: Google.Apis.Storage.v1.BucketAccessControlsResource.Delete*
   commentId: Overload:Google.Apis.Storage.v1.BucketAccessControlsResource.Delete
   isExternal: false
@@ -391,6 +692,8 @@ references:
   nameWithType: BucketAccessControlsResource.Delete
   fullName: Google.Apis.Storage.v1.BucketAccessControlsResource.Delete
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String

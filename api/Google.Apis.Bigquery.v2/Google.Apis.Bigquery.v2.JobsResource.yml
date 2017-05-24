@@ -34,12 +34,18 @@ items:
   summary: The "jobs" collection of methods.
   example: []
   syntax:
-    content: 'public class JobsResource : object'
-    content.vb: >-
-      Public Class JobsResource
-          Inherits Object
+    content: public class JobsResource
+    content.vb: Public Class JobsResource
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -53,8 +59,8 @@ items:
   langs:
   - csharp
   - vb
-  name: JobsResource(Services.IClientService)
-  nameWithType: JobsResource.JobsResource(Services.IClientService)
+  name: JobsResource(IClientService)
+  nameWithType: JobsResource.JobsResource(IClientService)
   fullName: Google.Apis.Bigquery.v2.JobsResource.JobsResource(Google.Apis.Services.IClientService)
   type: Constructor
   source:
@@ -71,11 +77,11 @@ items:
   summary: Constructs a new resource.
   example: []
   syntax:
-    content: public JobsResource(Services.IClientService service)
+    content: public JobsResource(IClientService service)
     parameters:
     - id: service
       type: Google.Apis.Services.IClientService
-    content.vb: Public Sub New(service As Services.IClientService)
+    content.vb: Public Sub New(service As IClientService)
   overload: Google.Apis.Bigquery.v2.JobsResource.#ctor*
   modifiers.csharp:
   - public
@@ -277,8 +283,8 @@ items:
   langs:
   - csharp
   - vb
-  name: Insert(Job, String, System.IO.Stream, String)
-  nameWithType: JobsResource.Insert(Job, String, System.IO.Stream, String)
+  name: Insert(Job, String, Stream, String)
+  nameWithType: JobsResource.Insert(Job, String, Stream, String)
   fullName: Google.Apis.Bigquery.v2.JobsResource.Insert(Google.Apis.Bigquery.v2.Data.Job, System.String, System.IO.Stream, System.String)
   type: Method
   source:
@@ -295,7 +301,7 @@ items:
   summary: Starts a new asynchronous job. Requires the Can View project role.
   example: []
   syntax:
-    content: public virtual JobsResource.InsertMediaUpload Insert(Job body, string projectId, System.IO.Stream stream, string contentType)
+    content: public virtual JobsResource.InsertMediaUpload Insert(Job body, string projectId, Stream stream, string contentType)
     parameters:
     - id: body
       type: Google.Apis.Bigquery.v2.Data.Job
@@ -311,7 +317,7 @@ items:
       description: The content type of the stream to upload.
     return:
       type: Google.Apis.Bigquery.v2.JobsResource.InsertMediaUpload
-    content.vb: Public Overridable Function Insert(body As Job, projectId As String, stream As System.IO.Stream, contentType As String) As JobsResource.InsertMediaUpload
+    content.vb: Public Overridable Function Insert(body As Job, projectId As String, stream As Stream, contentType As String) As JobsResource.InsertMediaUpload
   overload: Google.Apis.Bigquery.v2.JobsResource.Insert*
   modifiers.csharp:
   - public
@@ -418,10 +424,297 @@ references:
   nameWithType: Google.Apis.Bigquery.v2
   fullName: Google.Apis.Bigquery.v2
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Google.Apis.Bigquery.v2.JobsResource.#ctor*
   commentId: Overload:Google.Apis.Bigquery.v2.JobsResource.#ctor
   isExternal: false
@@ -429,10 +722,18 @@ references:
   nameWithType: JobsResource.JobsResource
   fullName: Google.Apis.Bigquery.v2.JobsResource.JobsResource
 - uid: Google.Apis.Services.IClientService
+  commentId: T:Google.Apis.Services.IClientService
+  parent: Google.Apis.Services
   isExternal: true
-  name: Services.IClientService
-  nameWithType: Services.IClientService
+  name: IClientService
+  nameWithType: IClientService
   fullName: Google.Apis.Services.IClientService
+- uid: Google.Apis.Services
+  commentId: N:Google.Apis.Services
+  isExternal: false
+  name: Google.Apis.Services
+  nameWithType: Google.Apis.Services
+  fullName: Google.Apis.Services
 - uid: Google.Apis.Bigquery.v2.JobsResource.Cancel*
   commentId: Overload:Google.Apis.Bigquery.v2.JobsResource.Cancel
   isExternal: false
@@ -440,6 +741,8 @@ references:
   nameWithType: JobsResource.Cancel
   fullName: Google.Apis.Bigquery.v2.JobsResource.Cancel
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -504,9 +807,11 @@ references:
   nameWithType: Google.Apis.Bigquery.v2.Data
   fullName: Google.Apis.Bigquery.v2.Data
 - uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
   isExternal: true
-  name: System.IO.Stream
-  nameWithType: System.IO.Stream
+  name: Stream
+  nameWithType: Stream
   fullName: System.IO.Stream
 - uid: Google.Apis.Bigquery.v2.JobsResource.InsertMediaUpload
   commentId: T:Google.Apis.Bigquery.v2.JobsResource.InsertMediaUpload
@@ -515,6 +820,12 @@ references:
   name: JobsResource.InsertMediaUpload
   nameWithType: JobsResource.InsertMediaUpload
   fullName: Google.Apis.Bigquery.v2.JobsResource.InsertMediaUpload
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: false
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
 - uid: Google.Apis.Bigquery.v2.JobsResource.List*
   commentId: Overload:Google.Apis.Bigquery.v2.JobsResource.List
   isExternal: false

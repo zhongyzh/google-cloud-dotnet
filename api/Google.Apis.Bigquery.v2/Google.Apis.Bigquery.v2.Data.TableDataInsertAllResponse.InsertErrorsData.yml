@@ -21,17 +21,23 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: InsertErrorsData
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4123
+    startLine: 4124
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   syntax:
-    content: 'public class InsertErrorsData : object'
-    content.vb: >-
-      Public Class InsertErrorsData
-          Inherits Object
+    content: public class InsertErrorsData
+    content.vb: Public Class InsertErrorsData
   inheritance:
   - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -56,19 +62,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Errors
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4126
+    startLine: 4127
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Error information for the row indicated by the index property.
   example: []
   syntax:
-    content: public virtual System.Collections.Generic.IList<ErrorProto> Errors { get; set; }
+    content: >-
+      [JsonProperty("errors")]
+
+      public virtual IList<ErrorProto> Errors { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.ErrorProto}
-    content.vb: Public Overridable Property Errors As System.Collections.Generic.IList(Of ErrorProto)
+    content.vb: >-
+      <JsonProperty("errors")>
+
+      Public Overridable Property Errors As IList(Of ErrorProto)
   overload: Google.Apis.Bigquery.v2.Data.TableDataInsertAllResponse.InsertErrorsData.Errors*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: errors
   modifiers.csharp:
   - public
   - virtual
@@ -95,19 +113,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Index
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4130
+    startLine: 4131
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: The index of the row that error applies to.
   example: []
   syntax:
-    content: public virtual System.Nullable<long> Index { get; set; }
+    content: >-
+      [JsonProperty("index")]
+
+      public virtual long ? Index { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property Index As System.Nullable(Of Long)
+    content.vb: >-
+      <JsonProperty("index")>
+
+      Public Overridable Property Index As Long?
   overload: Google.Apis.Bigquery.v2.Data.TableDataInsertAllResponse.InsertErrorsData.Index*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: index
   modifiers.csharp:
   - public
   - virtual
@@ -124,10 +154,297 @@ references:
   nameWithType: Google.Apis.Bigquery.v2.Data
   fullName: Google.Apis.Bigquery.v2.Data
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
 - uid: Google.Apis.Bigquery.v2.Data.TableDataInsertAllResponse.InsertErrorsData.Errors*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.TableDataInsertAllResponse.InsertErrorsData.Errors
   isExternal: false
@@ -135,18 +452,19 @@ references:
   nameWithType: TableDataInsertAllResponse.InsertErrorsData.Errors
   fullName: Google.Apis.Bigquery.v2.Data.TableDataInsertAllResponse.InsertErrorsData.Errors
 - uid: System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.ErrorProto}
-  commentId: '!:System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.ErrorProto}'
+  commentId: T:System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.ErrorProto}
+  parent: System.Collections.Generic
   definition: System.Collections.Generic.IList`1
-  name: System.Collections.Generic.IList<ErrorProto>
-  nameWithType: System.Collections.Generic.IList<ErrorProto>
+  name: IList<ErrorProto>
+  nameWithType: IList<ErrorProto>
   fullName: System.Collections.Generic.IList<Google.Apis.Bigquery.v2.Data.ErrorProto>
-  nameWithType.vb: System.Collections.Generic.IList(Of ErrorProto)
+  nameWithType.vb: IList(Of ErrorProto)
   fullName.vb: System.Collections.Generic.IList(Of Google.Apis.Bigquery.v2.Data.ErrorProto)
-  name.vb: System.Collections.Generic.IList(Of ErrorProto)
+  name.vb: IList(Of ErrorProto)
   spec.csharp:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
@@ -161,8 +479,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
@@ -176,43 +494,50 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
   isExternal: true
-  name: System.Collections.Generic.IList<>
-  nameWithType: System.Collections.Generic.IList<>
-  fullName: System.Collections.Generic.IList<>
-  nameWithType.vb: System.Collections.Generic.IList(Of )
-  fullName.vb: System.Collections.Generic.IList(Of )
-  name.vb: System.Collections.Generic.IList(Of )
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
   spec.csharp:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: Google.Apis.Bigquery.v2.Data.TableDataInsertAllResponse.InsertErrorsData.Index*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.TableDataInsertAllResponse.InsertErrorsData.Index
   isExternal: false
@@ -220,18 +545,19 @@ references:
   nameWithType: TableDataInsertAllResponse.InsertErrorsData.Index
   fullName: Google.Apis.Bigquery.v2.Data.TableDataInsertAllResponse.InsertErrorsData.Index
 - uid: System.Nullable{System.Int64}
-  commentId: '!:System.Nullable{System.Int64}'
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
   definition: System.Nullable`1
-  name: System.Nullable<Int64>
-  nameWithType: System.Nullable<Int64>
+  name: Nullable<Int64>
+  nameWithType: Nullable<Int64>
   fullName: System.Nullable<System.Int64>
-  nameWithType.vb: System.Nullable(Of Int64)
+  nameWithType.vb: Nullable(Of Int64)
   fullName.vb: System.Nullable(Of System.Int64)
-  name.vb: System.Nullable(Of Int64)
+  name.vb: Nullable(Of Int64)
   spec.csharp:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: <
@@ -247,8 +573,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: '(Of '
@@ -263,40 +589,41 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Nullable`1
+  commentId: T:System.Nullable`1
   isExternal: true
-  name: System.Nullable<>
-  nameWithType: System.Nullable<>
-  fullName: System.Nullable<>
-  nameWithType.vb: System.Nullable(Of )
-  fullName.vb: System.Nullable(Of )
-  name.vb: System.Nullable(Of )
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
   spec.csharp:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )

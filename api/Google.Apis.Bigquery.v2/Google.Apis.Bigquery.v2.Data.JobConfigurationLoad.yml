@@ -45,12 +45,22 @@ items:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   syntax:
-    content: 'public class JobConfigurationLoad : Requests.IDirectResponseSchema'
+    content: 'public class JobConfigurationLoad : IDirectResponseSchema'
     content.vb: >-
       Public Class JobConfigurationLoad
-          Inherits Requests.IDirectResponseSchema
+          Implements IDirectResponseSchema
   inheritance:
   - System.Object
+  implements:
+  - Google.Apis.Requests.IDirectResponseSchema
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -89,12 +99,24 @@ items:
     applicable to CSV, ignored for other formats.
   example: []
   syntax:
-    content: public virtual System.Nullable<bool> AllowJaggedRows { get; set; }
+    content: >-
+      [JsonProperty("allowJaggedRows")]
+
+      public virtual bool ? AllowJaggedRows { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property AllowJaggedRows As System.Nullable(Of Boolean)
+    content.vb: >-
+      <JsonProperty("allowJaggedRows")>
+
+      Public Overridable Property AllowJaggedRows As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowJaggedRows*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: allowJaggedRows
   modifiers.csharp:
   - public
   - virtual
@@ -131,12 +153,24 @@ items:
     file. The default value is false.
   example: []
   syntax:
-    content: public virtual System.Nullable<bool> AllowQuotedNewlines { get; set; }
+    content: >-
+      [JsonProperty("allowQuotedNewlines")]
+
+      public virtual bool ? AllowQuotedNewlines { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property AllowQuotedNewlines As System.Nullable(Of Boolean)
+    content.vb: >-
+      <JsonProperty("allowQuotedNewlines")>
+
+      Public Overridable Property AllowQuotedNewlines As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowQuotedNewlines*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: allowQuotedNewlines
   modifiers.csharp:
   - public
   - virtual
@@ -173,12 +207,24 @@ items:
     sources.
   example: []
   syntax:
-    content: public virtual System.Nullable<bool> Autodetect { get; set; }
+    content: >-
+      [JsonProperty("autodetect")]
+
+      public virtual bool ? Autodetect { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property Autodetect As System.Nullable(Of Boolean)
+    content.vb: >-
+      <JsonProperty("autodetect")>
+
+      Public Overridable Property Autodetect As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Autodetect*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: autodetect
   modifiers.csharp:
   - public
   - virtual
@@ -221,12 +267,24 @@ items:
     completion.
   example: []
   syntax:
-    content: public virtual string CreateDisposition { get; set; }
+    content: >-
+      [JsonProperty("createDisposition")]
+
+      public virtual string CreateDisposition { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property CreateDisposition As String
+    content.vb: >-
+      <JsonProperty("createDisposition")>
+
+      Public Overridable Property CreateDisposition As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.CreateDisposition*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: createDisposition
   modifiers.csharp:
   - public
   - virtual
@@ -260,12 +318,24 @@ items:
   summary: '[Required] The destination table to load the data into.'
   example: []
   syntax:
-    content: public virtual TableReference DestinationTable { get; set; }
+    content: >-
+      [JsonProperty("destinationTable")]
+
+      public virtual TableReference DestinationTable { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableReference
-    content.vb: Public Overridable Property DestinationTable As TableReference
+    content.vb: >-
+      <JsonProperty("destinationTable")>
+
+      Public Overridable Property DestinationTable As TableReference
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationTable*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: destinationTable
   modifiers.csharp:
   - public
   - virtual
@@ -304,12 +374,24 @@ items:
     of the quote and fieldDelimiter properties.
   example: []
   syntax:
-    content: public virtual string Encoding { get; set; }
+    content: >-
+      [JsonProperty("encoding")]
+
+      public virtual string Encoding { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Encoding As String
+    content.vb: >-
+      <JsonProperty("encoding")>
+
+      Public Overridable Property Encoding As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Encoding*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: encoding
   modifiers.csharp:
   - public
   - virtual
@@ -352,12 +434,24 @@ items:
     default value is a comma (',').
   example: []
   syntax:
-    content: public virtual string FieldDelimiter { get; set; }
+    content: >-
+      [JsonProperty("fieldDelimiter")]
+
+      public virtual string FieldDelimiter { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property FieldDelimiter As String
+    content.vb: >-
+      <JsonProperty("fieldDelimiter")>
+
+      Public Overridable Property FieldDelimiter As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.FieldDelimiter*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: fieldDelimiter
   modifiers.csharp:
   - public
   - virtual
@@ -400,12 +494,24 @@ items:
     columns JSON: Named values that don't match any column names
   example: []
   syntax:
-    content: public virtual System.Nullable<bool> IgnoreUnknownValues { get; set; }
+    content: >-
+      [JsonProperty("ignoreUnknownValues")]
+
+      public virtual bool ? IgnoreUnknownValues { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property IgnoreUnknownValues As System.Nullable(Of Boolean)
+    content.vb: >-
+      <JsonProperty("ignoreUnknownValues")>
+
+      Public Overridable Property IgnoreUnknownValues As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.IgnoreUnknownValues*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ignoreUnknownValues
   modifiers.csharp:
   - public
   - virtual
@@ -444,12 +550,24 @@ items:
     is 0, which requires that all records are valid.
   example: []
   syntax:
-    content: public virtual System.Nullable<int> MaxBadRecords { get; set; }
+    content: >-
+      [JsonProperty("maxBadRecords")]
+
+      public virtual int ? MaxBadRecords { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int32}
-    content.vb: Public Overridable Property MaxBadRecords As System.Nullable(Of Integer)
+    content.vb: >-
+      <JsonProperty("maxBadRecords")>
+
+      Public Overridable Property MaxBadRecords As Integer?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.MaxBadRecords*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: maxBadRecords
   modifiers.csharp:
   - public
   - virtual
@@ -492,12 +610,24 @@ items:
     empty string as an empty value.
   example: []
   syntax:
-    content: public virtual string NullMarker { get; set; }
+    content: >-
+      [JsonProperty("nullMarker")]
+
+      public virtual string NullMarker { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property NullMarker As String
+    content.vb: >-
+      <JsonProperty("nullMarker")>
+
+      Public Overridable Property NullMarker As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.NullMarker*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: nullMarker
   modifiers.csharp:
   - public
   - virtual
@@ -538,12 +668,24 @@ items:
     Cloud Datastore backup, an invalid error is returned in the job result.
   example: []
   syntax:
-    content: public virtual System.Collections.Generic.IList<string> ProjectionFields { get; set; }
+    content: >-
+      [JsonProperty("projectionFields")]
+
+      public virtual IList<string> ProjectionFields { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{System.String}
-    content.vb: Public Overridable Property ProjectionFields As System.Collections.Generic.IList(Of String)
+    content.vb: >-
+      <JsonProperty("projectionFields")>
+
+      Public Overridable Property ProjectionFields As IList(Of String)
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.ProjectionFields*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: projectionFields
   modifiers.csharp:
   - public
   - virtual
@@ -586,12 +728,24 @@ items:
     set the allowQuotedNewlines property to true.
   example: []
   syntax:
-    content: public virtual string Quote { get; set; }
+    content: >-
+      [JsonProperty("quote")]
+
+      public virtual string Quote { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Quote As String
+    content.vb: >-
+      <JsonProperty("quote")>
+
+      Public Overridable Property Quote As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Quote*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: quote
   modifiers.csharp:
   - public
   - virtual
@@ -628,12 +782,24 @@ items:
     already exists, or if you're loading data from Google Cloud Datastore.
   example: []
   syntax:
-    content: public virtual TableSchema Schema { get; set; }
+    content: >-
+      [JsonProperty("schema")]
+
+      public virtual TableSchema Schema { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableSchema
-    content.vb: Public Overridable Property Schema As TableSchema
+    content.vb: >-
+      <JsonProperty("schema")>
+
+      Public Overridable Property Schema As TableSchema
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Schema*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: schema
   modifiers.csharp:
   - public
   - virtual
@@ -670,12 +836,24 @@ items:
     example, "foo:STRING, bar:INTEGER, baz:FLOAT".
   example: []
   syntax:
-    content: public virtual string SchemaInline { get; set; }
+    content: >-
+      [JsonProperty("schemaInline")]
+
+      public virtual string SchemaInline { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property SchemaInline As String
+    content.vb: >-
+      <JsonProperty("schemaInline")>
+
+      Public Overridable Property SchemaInline As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SchemaInline*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: schemaInline
   modifiers.csharp:
   - public
   - virtual
@@ -709,12 +887,24 @@ items:
   summary: '[Deprecated] The format of the schemaInline property.'
   example: []
   syntax:
-    content: public virtual string SchemaInlineFormat { get; set; }
+    content: >-
+      [JsonProperty("schemaInlineFormat")]
+
+      public virtual string SchemaInlineFormat { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property SchemaInlineFormat As String
+    content.vb: >-
+      <JsonProperty("schemaInlineFormat")>
+
+      Public Overridable Property SchemaInlineFormat As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SchemaInlineFormat*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: schemaInlineFormat
   modifiers.csharp:
   - public
   - virtual
@@ -759,12 +949,24 @@ items:
     ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original schema to nullable.
   example: []
   syntax:
-    content: public virtual System.Collections.Generic.IList<string> SchemaUpdateOptions { get; set; }
+    content: >-
+      [JsonProperty("schemaUpdateOptions")]
+
+      public virtual IList<string> SchemaUpdateOptions { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{System.String}
-    content.vb: Public Overridable Property SchemaUpdateOptions As System.Collections.Generic.IList(Of String)
+    content.vb: >-
+      <JsonProperty("schemaUpdateOptions")>
+
+      Public Overridable Property SchemaUpdateOptions As IList(Of String)
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SchemaUpdateOptions*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: schemaUpdateOptions
   modifiers.csharp:
   - public
   - virtual
@@ -803,12 +1005,24 @@ items:
     skipped.
   example: []
   syntax:
-    content: public virtual System.Nullable<int> SkipLeadingRows { get; set; }
+    content: >-
+      [JsonProperty("skipLeadingRows")]
+
+      public virtual int ? SkipLeadingRows { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int32}
-    content.vb: Public Overridable Property SkipLeadingRows As System.Nullable(Of Integer)
+    content.vb: >-
+      <JsonProperty("skipLeadingRows")>
+
+      Public Overridable Property SkipLeadingRows As Integer?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SkipLeadingRows*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: skipLeadingRows
   modifiers.csharp:
   - public
   - virtual
@@ -847,12 +1061,24 @@ items:
     "AVRO". The default value is CSV.
   example: []
   syntax:
-    content: public virtual string SourceFormat { get; set; }
+    content: >-
+      [JsonProperty("sourceFormat")]
+
+      public virtual string SourceFormat { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property SourceFormat As String
+    content.vb: >-
+      <JsonProperty("sourceFormat")>
+
+      Public Overridable Property SourceFormat As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SourceFormat*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: sourceFormat
   modifiers.csharp:
   - public
   - virtual
@@ -889,12 +1115,24 @@ items:
     contain one '*' wildcard character and it must come after the 'bucket' name.
   example: []
   syntax:
-    content: public virtual System.Collections.Generic.IList<string> SourceUris { get; set; }
+    content: >-
+      [JsonProperty("sourceUris")]
+
+      public virtual IList<string> SourceUris { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{System.String}
-    content.vb: Public Overridable Property SourceUris As System.Collections.Generic.IList(Of String)
+    content.vb: >-
+      <JsonProperty("sourceUris")>
+
+      Public Overridable Property SourceUris As IList(Of String)
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SourceUris*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: sourceUris
   modifiers.csharp:
   - public
   - virtual
@@ -939,12 +1177,24 @@ items:
     Creation, truncation and append actions occur as one atomic update upon job completion.
   example: []
   syntax:
-    content: public virtual string WriteDisposition { get; set; }
+    content: >-
+      [JsonProperty("writeDisposition")]
+
+      public virtual string WriteDisposition { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property WriteDisposition As String
+    content.vb: >-
+      <JsonProperty("writeDisposition")>
+
+      Public Overridable Property WriteDisposition As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.WriteDisposition*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: writeDisposition
   modifiers.csharp:
   - public
   - virtual
@@ -984,6 +1234,8 @@ items:
       type: System.String
     content.vb: Public Overridable Property ETag As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.ETag*
+  implements:
+  - Google.Apis.Requests.IDirectResponseSchema.ETag
   modifiers.csharp:
   - public
   - virtual
@@ -1000,10 +1252,310 @@ references:
   nameWithType: Google.Apis.Bigquery.v2.Data
   fullName: Google.Apis.Bigquery.v2.Data
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Apis.Requests.IDirectResponseSchema
+  commentId: T:Google.Apis.Requests.IDirectResponseSchema
+  parent: Google.Apis.Requests
+  isExternal: true
+  name: IDirectResponseSchema
+  nameWithType: IDirectResponseSchema
+  fullName: Google.Apis.Requests.IDirectResponseSchema
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Apis.Requests
+  commentId: N:Google.Apis.Requests
+  isExternal: false
+  name: Google.Apis.Requests
+  nameWithType: Google.Apis.Requests
+  fullName: Google.Apis.Requests
 - uid: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowJaggedRows*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowJaggedRows
   isExternal: false
@@ -1011,18 +1563,19 @@ references:
   nameWithType: JobConfigurationLoad.AllowJaggedRows
   fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowJaggedRows
 - uid: System.Nullable{System.Boolean}
-  commentId: '!:System.Nullable{System.Boolean}'
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
   definition: System.Nullable`1
-  name: System.Nullable<Boolean>
-  nameWithType: System.Nullable<Boolean>
+  name: Nullable<Boolean>
+  nameWithType: Nullable<Boolean>
   fullName: System.Nullable<System.Boolean>
-  nameWithType.vb: System.Nullable(Of Boolean)
+  nameWithType.vb: Nullable(Of Boolean)
   fullName.vb: System.Nullable(Of System.Boolean)
-  name.vb: System.Nullable(Of Boolean)
+  name.vb: Nullable(Of Boolean)
   spec.csharp:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: <
@@ -1038,8 +1591,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: '(Of '
@@ -1054,40 +1607,41 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Nullable`1
+  commentId: T:System.Nullable`1
   isExternal: true
-  name: System.Nullable<>
-  nameWithType: System.Nullable<>
-  fullName: System.Nullable<>
-  nameWithType.vb: System.Nullable(Of )
-  fullName.vb: System.Nullable(Of )
-  name.vb: System.Nullable(Of )
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
   spec.csharp:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -1110,6 +1664,8 @@ references:
   nameWithType: JobConfigurationLoad.CreateDisposition
   fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.CreateDisposition
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -1152,18 +1708,19 @@ references:
   nameWithType: JobConfigurationLoad.MaxBadRecords
   fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.MaxBadRecords
 - uid: System.Nullable{System.Int32}
-  commentId: '!:System.Nullable{System.Int32}'
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
   definition: System.Nullable`1
-  name: System.Nullable<Int32>
-  nameWithType: System.Nullable<Int32>
+  name: Nullable<Int32>
+  nameWithType: Nullable<Int32>
   fullName: System.Nullable<System.Int32>
-  nameWithType.vb: System.Nullable(Of Int32)
+  nameWithType.vb: Nullable(Of Int32)
   fullName.vb: System.Nullable(Of System.Int32)
-  name.vb: System.Nullable(Of Int32)
+  name.vb: Nullable(Of Int32)
   spec.csharp:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: <
@@ -1179,8 +1736,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: '(Of '
@@ -1207,18 +1764,19 @@ references:
   nameWithType: JobConfigurationLoad.ProjectionFields
   fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.ProjectionFields
 - uid: System.Collections.Generic.IList{System.String}
-  commentId: '!:System.Collections.Generic.IList{System.String}'
+  commentId: T:System.Collections.Generic.IList{System.String}
+  parent: System.Collections.Generic
   definition: System.Collections.Generic.IList`1
-  name: System.Collections.Generic.IList<String>
-  nameWithType: System.Collections.Generic.IList<String>
+  name: IList<String>
+  nameWithType: IList<String>
   fullName: System.Collections.Generic.IList<System.String>
-  nameWithType.vb: System.Collections.Generic.IList(Of String)
+  nameWithType.vb: IList(Of String)
   fullName.vb: System.Collections.Generic.IList(Of System.String)
-  name.vb: System.Collections.Generic.IList(Of String)
+  name.vb: IList(Of String)
   spec.csharp:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
@@ -1234,8 +1792,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
@@ -1250,43 +1808,50 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
   isExternal: true
-  name: System.Collections.Generic.IList<>
-  nameWithType: System.Collections.Generic.IList<>
-  fullName: System.Collections.Generic.IList<>
-  nameWithType.vb: System.Collections.Generic.IList(Of )
-  fullName.vb: System.Collections.Generic.IList(Of )
-  name.vb: System.Collections.Generic.IList(Of )
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
   spec.csharp:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Quote*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Quote
   isExternal: false
@@ -1354,3 +1919,10 @@ references:
   name: ETag
   nameWithType: JobConfigurationLoad.ETag
   fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.ETag
+- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
+  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
+  parent: Google.Apis.Requests.IDirectResponseSchema
+  isExternal: true
+  name: ETag
+  nameWithType: IDirectResponseSchema.ETag
+  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag

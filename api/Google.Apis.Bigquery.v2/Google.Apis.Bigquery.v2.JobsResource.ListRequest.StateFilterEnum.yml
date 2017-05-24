@@ -29,8 +29,8 @@ items:
   summary: Filter for job state
   example: []
   syntax:
-    content: 'public enum StateFilterEnum : int'
-    content.vb: Public Enum StateFilterEnum As Integer
+    content: public enum StateFilterEnum
+    content.vb: Public Enum StateFilterEnum
   modifiers.csharp:
   - public
   - enum
@@ -62,9 +62,22 @@ items:
   summary: Finished jobs
   example: []
   syntax:
-    content: Done = 0
+    content: >-
+      [StringValue("done")]
+
+      Done = 0
     return:
       type: Google.Apis.Bigquery.v2.JobsResource.ListRequest.StateFilterEnum
+    content.vb: >-
+      <StringValue("done")>
+
+      Done = 0
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: done
   modifiers.csharp:
   - public
   - const
@@ -96,9 +109,22 @@ items:
   summary: Pending jobs
   example: []
   syntax:
-    content: Pending = 1
+    content: >-
+      [StringValue("pending")]
+
+      Pending = 1
     return:
       type: Google.Apis.Bigquery.v2.JobsResource.ListRequest.StateFilterEnum
+    content.vb: >-
+      <StringValue("pending")>
+
+      Pending = 1
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: pending
   modifiers.csharp:
   - public
   - const
@@ -130,9 +156,22 @@ items:
   summary: Running jobs
   example: []
   syntax:
-    content: Running = 2
+    content: >-
+      [StringValue("running")]
+
+      Running = 2
     return:
       type: Google.Apis.Bigquery.v2.JobsResource.ListRequest.StateFilterEnum
+    content.vb: >-
+      <StringValue("running")>
+
+      Running = 2
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: running
   modifiers.csharp:
   - public
   - const

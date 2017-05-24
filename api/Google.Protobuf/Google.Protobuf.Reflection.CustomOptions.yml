@@ -1,0 +1,1264 @@
+### YamlMime:ManagedReference
+items:
+- uid: Google.Protobuf.Reflection.CustomOptions
+  commentId: T:Google.Protobuf.Reflection.CustomOptions
+  id: CustomOptions
+  parent: Google.Protobuf.Reflection
+  children:
+  - Google.Protobuf.Reflection.CustomOptions.TryGetBool(System.Int32,System.Boolean@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetBytes(System.Int32,Google.Protobuf.ByteString@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetDouble(System.Int32,System.Double@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetFixed32(System.Int32,System.UInt32@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetFixed64(System.Int32,System.UInt64@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetFloat(System.Int32,System.Single@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetInt32(System.Int32,System.Int32@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetInt64(System.Int32,System.Int64@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetMessage``1(System.Int32,``0@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetSFixed32(System.Int32,System.Int32@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetSFixed64(System.Int32,System.Int64@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetSInt32(System.Int32,System.Int32@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetSInt64(System.Int32,System.Int64@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetString(System.Int32,System.String@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetUInt32(System.Int32,System.UInt32@)
+  - Google.Protobuf.Reflection.CustomOptions.TryGetUInt64(System.Int32,System.UInt64@)
+  langs:
+  - csharp
+  - vb
+  name: CustomOptions
+  nameWithType: CustomOptions
+  fullName: Google.Protobuf.Reflection.CustomOptions
+  type: Class
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: CustomOptions
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 59
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nContainer for a set of custom options specified within a message, field etc.\n"
+  remarks: "\n<p>\nThis type is publicly immutable, but internally mutable. It is only populated\nby the descriptor parsing code - by the time any user code is able to see an instance,\nit will be fully initialized.\n</p>\n<p>\nIf an option is requested using the incorrect method, an answer may still be returned: all\nof the numeric types are represented internally using 64-bit integers, for example. It is up to\nthe caller to ensure that they make the appropriate method call for the option they're interested in.\nNote that enum options are simply stored as integers, so the value should be fetched using\n<xref href=\"Google.Protobuf.Reflection.CustomOptions.TryGetInt32(System.Int32%2cSystem.Int32%40)\" data-throw-if-not-resolved=\"false\"></xref> and then cast appropriately.\n</p>\n<p>\nRepeated options are currently not supported. Asking for a single value of an option\nwhich was actually repeated will return the last value, except for message types where\nall the set values are merged together.\n</p>\n"
+  example: []
+  syntax:
+    content: public sealed class CustomOptions
+    content.vb: Public NotInheritable Class CustomOptions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetBool(System.Int32,System.Boolean@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetBool(System.Int32,System.Boolean@)
+  id: TryGetBool(System.Int32,System.Boolean@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetBool(Int32, out Boolean)
+  nameWithType: CustomOptions.TryGetBool(Int32, out Boolean)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetBool(System.Int32, out System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetBool
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 81
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a Boolean value for the specified option field.\n"
+  example: []
+  syntax:
+    content: public bool TryGetBool(int field, out bool value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.Boolean
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetBool(field As Integer, ByRef value As Boolean) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetBool*
+  nameWithType.vb: CustomOptions.TryGetBool(Int32, ByRef Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetBool(System.Int32, ByRef System.Boolean)
+  name.vb: TryGetBool(Int32, ByRef Boolean)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetInt32(System.Int32,System.Int32@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetInt32(System.Int32,System.Int32@)
+  id: TryGetInt32(System.Int32,System.Int32@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetInt32(Int32, out Int32)
+  nameWithType: CustomOptions.TryGetInt32(Int32, out Int32)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetInt32(System.Int32, out System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetInt32
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 94
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a signed 32-bit integer value for the specified option field.\n"
+  example: []
+  syntax:
+    content: public bool TryGetInt32(int field, out int value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.Int32
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetInt32(field As Integer, ByRef value As Integer) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetInt32*
+  nameWithType.vb: CustomOptions.TryGetInt32(Int32, ByRef Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetInt32(System.Int32, ByRef System.Int32)
+  name.vb: TryGetInt32(Int32, ByRef Int32)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetInt64(System.Int32,System.Int64@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetInt64(System.Int32,System.Int64@)
+  id: TryGetInt64(System.Int32,System.Int64@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetInt64(Int32, out Int64)
+  nameWithType: CustomOptions.TryGetInt64(Int32, out Int64)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetInt64(System.Int32, out System.Int64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetInt64
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 107
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a signed 64-bit integer value for the specified option field.\n"
+  example: []
+  syntax:
+    content: public bool TryGetInt64(int field, out long value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.Int64
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetInt64(field As Integer, ByRef value As Long) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetInt64*
+  nameWithType.vb: CustomOptions.TryGetInt64(Int32, ByRef Int64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetInt64(System.Int32, ByRef System.Int64)
+  name.vb: TryGetInt64(Int32, ByRef Int64)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetFixed32(System.Int32,System.UInt32@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetFixed32(System.Int32,System.UInt32@)
+  id: TryGetFixed32(System.Int32,System.UInt32@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetFixed32(Int32, out UInt32)
+  nameWithType: CustomOptions.TryGetFixed32(Int32, out UInt32)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetFixed32(System.Int32, out System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetFixed32
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 121
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves an unsigned 32-bit integer value for the specified option field,\nassuming a fixed-length representation.\n"
+  example: []
+  syntax:
+    content: public bool TryGetFixed32(int field, out uint value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.UInt32
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetFixed32(field As Integer, ByRef value As UInteger) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetFixed32*
+  nameWithType.vb: CustomOptions.TryGetFixed32(Int32, ByRef UInt32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetFixed32(System.Int32, ByRef System.UInt32)
+  name.vb: TryGetFixed32(Int32, ByRef UInt32)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetFixed64(System.Int32,System.UInt64@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetFixed64(System.Int32,System.UInt64@)
+  id: TryGetFixed64(System.Int32,System.UInt64@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetFixed64(Int32, out UInt64)
+  nameWithType: CustomOptions.TryGetFixed64(Int32, out UInt64)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetFixed64(System.Int32, out System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetFixed64
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 130
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves an unsigned 64-bit integer value for the specified option field,\nassuming a fixed-length representation.\n"
+  example: []
+  syntax:
+    content: public bool TryGetFixed64(int field, out ulong value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.UInt64
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetFixed64(field As Integer, ByRef value As ULong) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetFixed64*
+  nameWithType.vb: CustomOptions.TryGetFixed64(Int32, ByRef UInt64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetFixed64(System.Int32, ByRef System.UInt64)
+  name.vb: TryGetFixed64(Int32, ByRef UInt64)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed32(System.Int32,System.Int32@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetSFixed32(System.Int32,System.Int32@)
+  id: TryGetSFixed32(System.Int32,System.Int32@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetSFixed32(Int32, out Int32)
+  nameWithType: CustomOptions.TryGetSFixed32(Int32, out Int32)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed32(System.Int32, out System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetSFixed32
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 139
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a signed 32-bit integer value for the specified option field,\nassuming a fixed-length representation.\n"
+  example: []
+  syntax:
+    content: public bool TryGetSFixed32(int field, out int value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.Int32
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetSFixed32(field As Integer, ByRef value As Integer) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed32*
+  nameWithType.vb: CustomOptions.TryGetSFixed32(Int32, ByRef Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed32(System.Int32, ByRef System.Int32)
+  name.vb: TryGetSFixed32(Int32, ByRef Int32)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed64(System.Int32,System.Int64@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetSFixed64(System.Int32,System.Int64@)
+  id: TryGetSFixed64(System.Int32,System.Int64@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetSFixed64(Int32, out Int64)
+  nameWithType: CustomOptions.TryGetSFixed64(Int32, out Int64)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed64(System.Int32, out System.Int64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetSFixed64
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 148
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a signed 64-bit integer value for the specified option field,\nassuming a fixed-length representation.\n"
+  example: []
+  syntax:
+    content: public bool TryGetSFixed64(int field, out long value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.Int64
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetSFixed64(field As Integer, ByRef value As Long) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed64*
+  nameWithType.vb: CustomOptions.TryGetSFixed64(Int32, ByRef Int64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed64(System.Int32, ByRef System.Int64)
+  name.vb: TryGetSFixed64(Int32, ByRef Int64)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetSInt32(System.Int32,System.Int32@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetSInt32(System.Int32,System.Int32@)
+  id: TryGetSInt32(System.Int32,System.Int32@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetSInt32(Int32, out Int32)
+  nameWithType: CustomOptions.TryGetSInt32(Int32, out Int32)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetSInt32(System.Int32, out System.Int32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetSInt32
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 157
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a signed 32-bit integer value for the specified option field,\nassuming a zigzag encoding.\n"
+  example: []
+  syntax:
+    content: public bool TryGetSInt32(int field, out int value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.Int32
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetSInt32(field As Integer, ByRef value As Integer) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetSInt32*
+  nameWithType.vb: CustomOptions.TryGetSInt32(Int32, ByRef Int32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetSInt32(System.Int32, ByRef System.Int32)
+  name.vb: TryGetSInt32(Int32, ByRef Int32)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetSInt64(System.Int32,System.Int64@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetSInt64(System.Int32,System.Int64@)
+  id: TryGetSInt64(System.Int32,System.Int64@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetSInt64(Int32, out Int64)
+  nameWithType: CustomOptions.TryGetSInt64(Int32, out Int64)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetSInt64(System.Int32, out System.Int64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetSInt64
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 171
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a signed 64-bit integer value for the specified option field,\nassuming a zigzag encoding.\n"
+  example: []
+  syntax:
+    content: public bool TryGetSInt64(int field, out long value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.Int64
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetSInt64(field As Integer, ByRef value As Long) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetSInt64*
+  nameWithType.vb: CustomOptions.TryGetSInt64(Int32, ByRef Int64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetSInt64(System.Int32, ByRef System.Int64)
+  name.vb: TryGetSInt64(Int32, ByRef Int64)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetUInt32(System.Int32,System.UInt32@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetUInt32(System.Int32,System.UInt32@)
+  id: TryGetUInt32(System.Int32,System.UInt32@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetUInt32(Int32, out UInt32)
+  nameWithType: CustomOptions.TryGetUInt32(Int32, out UInt32)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetUInt32(System.Int32, out System.UInt32)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetUInt32
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 184
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves an unsigned 32-bit integer value for the specified option field.\n"
+  example: []
+  syntax:
+    content: public bool TryGetUInt32(int field, out uint value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.UInt32
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetUInt32(field As Integer, ByRef value As UInteger) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetUInt32*
+  nameWithType.vb: CustomOptions.TryGetUInt32(Int32, ByRef UInt32)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetUInt32(System.Int32, ByRef System.UInt32)
+  name.vb: TryGetUInt32(Int32, ByRef UInt32)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetUInt64(System.Int32,System.UInt64@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetUInt64(System.Int32,System.UInt64@)
+  id: TryGetUInt64(System.Int32,System.UInt64@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetUInt64(Int32, out UInt64)
+  nameWithType: CustomOptions.TryGetUInt64(Int32, out UInt64)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetUInt64(System.Int32, out System.UInt64)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetUInt64
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 197
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves an unsigned 64-bit integer value for the specified option field.\n"
+  example: []
+  syntax:
+    content: public bool TryGetUInt64(int field, out ulong value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.UInt64
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetUInt64(field As Integer, ByRef value As ULong) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetUInt64*
+  nameWithType.vb: CustomOptions.TryGetUInt64(Int32, ByRef UInt64)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetUInt64(System.Int32, ByRef System.UInt64)
+  name.vb: TryGetUInt64(Int32, ByRef UInt64)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetFloat(System.Int32,System.Single@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetFloat(System.Int32,System.Single@)
+  id: TryGetFloat(System.Int32,System.Single@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetFloat(Int32, out Single)
+  nameWithType: CustomOptions.TryGetFloat(Int32, out Single)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetFloat(System.Int32, out System.Single)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetFloat
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 210
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a 32-bit floating point value for the specified option field.\n"
+  example: []
+  syntax:
+    content: public bool TryGetFloat(int field, out float value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.Single
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetFloat(field As Integer, ByRef value As Single) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetFloat*
+  nameWithType.vb: CustomOptions.TryGetFloat(Int32, ByRef Single)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetFloat(System.Int32, ByRef System.Single)
+  name.vb: TryGetFloat(Int32, ByRef Single)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetDouble(System.Int32,System.Double@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetDouble(System.Int32,System.Double@)
+  id: TryGetDouble(System.Int32,System.Double@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetDouble(Int32, out Double)
+  nameWithType: CustomOptions.TryGetDouble(Int32, out Double)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetDouble(System.Int32, out System.Double)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetDouble
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 225
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a 64-bit floating point value for the specified option field.\n"
+  example: []
+  syntax:
+    content: public bool TryGetDouble(int field, out double value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.Double
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetDouble(field As Integer, ByRef value As Double) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetDouble*
+  nameWithType.vb: CustomOptions.TryGetDouble(Int32, ByRef Double)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetDouble(System.Int32, ByRef System.Double)
+  name.vb: TryGetDouble(Int32, ByRef Double)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetString(System.Int32,System.String@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetString(System.Int32,System.String@)
+  id: TryGetString(System.Int32,System.String@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetString(Int32, out String)
+  nameWithType: CustomOptions.TryGetString(Int32, out String)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetString(System.Int32, out System.String)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetString
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 238
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a string value for the specified option field.\n"
+  example: []
+  syntax:
+    content: public bool TryGetString(int field, out string value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: System.String
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetString(field As Integer, ByRef value As String) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetString*
+  nameWithType.vb: CustomOptions.TryGetString(Int32, ByRef String)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetString(System.Int32, ByRef System.String)
+  name.vb: TryGetString(Int32, ByRef String)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetBytes(System.Int32,Google.Protobuf.ByteString@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetBytes(System.Int32,Google.Protobuf.ByteString@)
+  id: TryGetBytes(System.Int32,Google.Protobuf.ByteString@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetBytes(Int32, out ByteString)
+  nameWithType: CustomOptions.TryGetBytes(Int32, out ByteString)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetBytes(System.Int32, out Google.Protobuf.ByteString)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetBytes
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 251
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a bytes value for the specified option field.\n"
+  example: []
+  syntax:
+    content: public bool TryGetBytes(int field, out ByteString value)
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: Google.Protobuf.ByteString
+      description: The output variable to populate.
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetBytes(field As Integer, ByRef value As ByteString) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetBytes*
+  nameWithType.vb: CustomOptions.TryGetBytes(Int32, ByRef ByteString)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetBytes(System.Int32, ByRef Google.Protobuf.ByteString)
+  name.vb: TryGetBytes(Int32, ByRef ByteString)
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetMessage``1(System.Int32,``0@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetMessage``1(System.Int32,``0@)
+  id: TryGetMessage``1(System.Int32,``0@)
+  parent: Google.Protobuf.Reflection.CustomOptions
+  langs:
+  - csharp
+  - vb
+  name: TryGetMessage<T>(Int32, out T)
+  nameWithType: CustomOptions.TryGetMessage<T>(Int32, out T)
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetMessage<T>(System.Int32, out T)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: TryGetMessage
+    path: csharp/src/Google.Protobuf/Reflection/CustomOptions.cs
+    startLine: 264
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nRetrieves a message value for the specified option field.\n"
+  example: []
+  syntax:
+    content: 'public bool TryGetMessage<T>(int field, out T value)where T : class, IMessage, new ()'
+    parameters:
+    - id: field
+      type: System.Int32
+      description: The field to fetch the value for.
+    - id: value
+      type: '{T}'
+      description: The output variable to populate.
+    typeParameters:
+    - id: T
+    return:
+      type: System.Boolean
+      description: <code>true</code> if a suitable value for the field was found; <code>false</code> otherwise.
+    content.vb: Public Function TryGetMessage(Of T As {Class, IMessage, New})(field As Integer, ByRef value As T) As Boolean
+  overload: Google.Protobuf.Reflection.CustomOptions.TryGetMessage*
+  nameWithType.vb: CustomOptions.TryGetMessage(Of T)(Int32, ByRef T)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Protobuf.Reflection.CustomOptions.TryGetMessage(Of T)(System.Int32, ByRef T)
+  name.vb: TryGetMessage(Of T)(Int32, ByRef T)
+references:
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetInt32(System.Int32,System.Int32@)
+  commentId: M:Google.Protobuf.Reflection.CustomOptions.TryGetInt32(System.Int32,System.Int32@)
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetBool*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetBool
+  isExternal: false
+  name: TryGetBool
+  nameWithType: CustomOptions.TryGetBool
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetBool
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetInt32*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetInt32
+  isExternal: false
+  name: TryGetInt32
+  nameWithType: CustomOptions.TryGetInt32
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetInt32
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetInt64*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetInt64
+  isExternal: false
+  name: TryGetInt64
+  nameWithType: CustomOptions.TryGetInt64
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetInt64
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetFixed32*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetFixed32
+  isExternal: false
+  name: TryGetFixed32
+  nameWithType: CustomOptions.TryGetFixed32
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetFixed32
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  name: UInt32
+  nameWithType: UInt32
+  fullName: System.UInt32
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetFixed64*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetFixed64
+  isExternal: false
+  name: TryGetFixed64
+  nameWithType: CustomOptions.TryGetFixed64
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetFixed64
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  name: UInt64
+  nameWithType: UInt64
+  fullName: System.UInt64
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed32*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetSFixed32
+  isExternal: false
+  name: TryGetSFixed32
+  nameWithType: CustomOptions.TryGetSFixed32
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed32
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed64*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetSFixed64
+  isExternal: false
+  name: TryGetSFixed64
+  nameWithType: CustomOptions.TryGetSFixed64
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetSFixed64
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetSInt32*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetSInt32
+  isExternal: false
+  name: TryGetSInt32
+  nameWithType: CustomOptions.TryGetSInt32
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetSInt32
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetSInt64*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetSInt64
+  isExternal: false
+  name: TryGetSInt64
+  nameWithType: CustomOptions.TryGetSInt64
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetSInt64
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetUInt32*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetUInt32
+  isExternal: false
+  name: TryGetUInt32
+  nameWithType: CustomOptions.TryGetUInt32
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetUInt32
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetUInt64*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetUInt64
+  isExternal: false
+  name: TryGetUInt64
+  nameWithType: CustomOptions.TryGetUInt64
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetUInt64
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetFloat*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetFloat
+  isExternal: false
+  name: TryGetFloat
+  nameWithType: CustomOptions.TryGetFloat
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetFloat
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  name: Single
+  nameWithType: Single
+  fullName: System.Single
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetDouble*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetDouble
+  isExternal: false
+  name: TryGetDouble
+  nameWithType: CustomOptions.TryGetDouble
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetDouble
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetString*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetString
+  isExternal: false
+  name: TryGetString
+  nameWithType: CustomOptions.TryGetString
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetBytes*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetBytes
+  isExternal: false
+  name: TryGetBytes
+  nameWithType: CustomOptions.TryGetBytes
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetBytes
+- uid: Google.Protobuf.ByteString
+  commentId: T:Google.Protobuf.ByteString
+  parent: Google.Protobuf
+  isExternal: false
+  name: ByteString
+  nameWithType: ByteString
+  fullName: Google.Protobuf.ByteString
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: Google.Protobuf.Reflection.CustomOptions.TryGetMessage*
+  commentId: Overload:Google.Protobuf.Reflection.CustomOptions.TryGetMessage
+  isExternal: false
+  name: TryGetMessage
+  nameWithType: CustomOptions.TryGetMessage
+  fullName: Google.Protobuf.Reflection.CustomOptions.TryGetMessage
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  isExternal: false
+  name: T
+  nameWithType: T
+  fullName: T

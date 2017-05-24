@@ -9,7 +9,11 @@ items:
   - Google.Protobuf.JsonFormatter.Settings.#ctor(System.Boolean,Google.Protobuf.Reflection.TypeRegistry)
   - Google.Protobuf.JsonFormatter.Settings.Default
   - Google.Protobuf.JsonFormatter.Settings.FormatDefaultValues
+  - Google.Protobuf.JsonFormatter.Settings.FormatEnumsAsIntegers
   - Google.Protobuf.JsonFormatter.Settings.TypeRegistry
+  - Google.Protobuf.JsonFormatter.Settings.WithFormatDefaultValues(System.Boolean)
+  - Google.Protobuf.JsonFormatter.Settings.WithFormatEnumsAsIntegers(System.Boolean)
+  - Google.Protobuf.JsonFormatter.Settings.WithTypeRegistry(Google.Protobuf.Reflection.TypeRegistry)
   langs:
   - csharp
   - vb
@@ -20,11 +24,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/JsonFormatter.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Settings
     path: csharp/src/Google.Protobuf/JsonFormatter.cs
-    startLine: 755
+    startLine: 762
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -65,11 +69,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/JsonFormatter.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Default
     path: csharp/src/Google.Protobuf/JsonFormatter.cs
-    startLine: 760
+    startLine: 767
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -104,11 +108,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/JsonFormatter.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: FormatDefaultValues
     path: csharp/src/Google.Protobuf/JsonFormatter.cs
-    startLine: 773
+    startLine: 780
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -141,11 +145,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/JsonFormatter.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: TypeRegistry
     path: csharp/src/Google.Protobuf/JsonFormatter.cs
-    startLine: 778
+    startLine: 785
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -158,6 +162,43 @@ items:
       type: Google.Protobuf.Reflection.TypeRegistry
     content.vb: Public ReadOnly Property TypeRegistry As TypeRegistry
   overload: Google.Protobuf.JsonFormatter.Settings.TypeRegistry*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.JsonFormatter.Settings.FormatEnumsAsIntegers
+  commentId: P:Google.Protobuf.JsonFormatter.Settings.FormatEnumsAsIntegers
+  id: FormatEnumsAsIntegers
+  parent: Google.Protobuf.JsonFormatter.Settings
+  langs:
+  - csharp
+  - vb
+  name: FormatEnumsAsIntegers
+  nameWithType: JsonFormatter.Settings.FormatEnumsAsIntegers
+  fullName: Google.Protobuf.JsonFormatter.Settings.FormatEnumsAsIntegers
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: FormatEnumsAsIntegers
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 790
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nWhether to format enums as ints. Defaults to false.\n"
+  example: []
+  syntax:
+    content: public bool FormatEnumsAsIntegers { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property FormatEnumsAsIntegers As Boolean
+  overload: Google.Protobuf.JsonFormatter.Settings.FormatEnumsAsIntegers*
   modifiers.csharp:
   - public
   - get
@@ -178,11 +219,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/JsonFormatter.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: .ctor
     path: csharp/src/Google.Protobuf/JsonFormatter.cs
-    startLine: 787
+    startLine: 798
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -214,11 +255,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/JsonFormatter.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: .ctor
     path: csharp/src/Google.Protobuf/JsonFormatter.cs
-    startLine: 797
+    startLine: 808
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -235,6 +276,120 @@ items:
       description: The <xref href="Google.Protobuf.JsonFormatter.Settings.TypeRegistry" data-throw-if-not-resolved="false"></xref> to use when formatting <xref href="Google.Protobuf.WellKnownTypes.Any" data-throw-if-not-resolved="false"></xref> messages.
     content.vb: Public Sub New(formatDefaultValues As Boolean, typeRegistry As TypeRegistry)
   overload: Google.Protobuf.JsonFormatter.Settings.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.JsonFormatter.Settings.WithFormatDefaultValues(System.Boolean)
+  commentId: M:Google.Protobuf.JsonFormatter.Settings.WithFormatDefaultValues(System.Boolean)
+  id: WithFormatDefaultValues(System.Boolean)
+  parent: Google.Protobuf.JsonFormatter.Settings
+  langs:
+  - csharp
+  - vb
+  name: WithFormatDefaultValues(Boolean)
+  nameWithType: JsonFormatter.Settings.WithFormatDefaultValues(Boolean)
+  fullName: Google.Protobuf.JsonFormatter.Settings.WithFormatDefaultValues(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: WithFormatDefaultValues
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 831
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.JsonFormatter.Settings\" data-throw-if-not-resolved=\"false\"></xref> object with the specified formatting of default values and the current settings.\n"
+  example: []
+  syntax:
+    content: public JsonFormatter.Settings WithFormatDefaultValues(bool formatDefaultValues)
+    parameters:
+    - id: formatDefaultValues
+      type: System.Boolean
+      description: <code>true</code> if default values (0, empty strings etc) should be formatted; <code>false</code> otherwise.
+    return:
+      type: Google.Protobuf.JsonFormatter.Settings
+    content.vb: Public Function WithFormatDefaultValues(formatDefaultValues As Boolean) As JsonFormatter.Settings
+  overload: Google.Protobuf.JsonFormatter.Settings.WithFormatDefaultValues*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.JsonFormatter.Settings.WithTypeRegistry(Google.Protobuf.Reflection.TypeRegistry)
+  commentId: M:Google.Protobuf.JsonFormatter.Settings.WithTypeRegistry(Google.Protobuf.Reflection.TypeRegistry)
+  id: WithTypeRegistry(Google.Protobuf.Reflection.TypeRegistry)
+  parent: Google.Protobuf.JsonFormatter.Settings
+  langs:
+  - csharp
+  - vb
+  name: WithTypeRegistry(TypeRegistry)
+  nameWithType: JsonFormatter.Settings.WithTypeRegistry(TypeRegistry)
+  fullName: Google.Protobuf.JsonFormatter.Settings.WithTypeRegistry(Google.Protobuf.Reflection.TypeRegistry)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: WithTypeRegistry
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 837
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.JsonFormatter.Settings\" data-throw-if-not-resolved=\"false\"></xref> object with the specified type registry and the current settings.\n"
+  example: []
+  syntax:
+    content: public JsonFormatter.Settings WithTypeRegistry(TypeRegistry typeRegistry)
+    parameters:
+    - id: typeRegistry
+      type: Google.Protobuf.Reflection.TypeRegistry
+      description: The <xref href="Google.Protobuf.JsonFormatter.Settings.TypeRegistry" data-throw-if-not-resolved="false"></xref> to use when formatting <xref href="Google.Protobuf.WellKnownTypes.Any" data-throw-if-not-resolved="false"></xref> messages.
+    return:
+      type: Google.Protobuf.JsonFormatter.Settings
+    content.vb: Public Function WithTypeRegistry(typeRegistry As TypeRegistry) As JsonFormatter.Settings
+  overload: Google.Protobuf.JsonFormatter.Settings.WithTypeRegistry*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Protobuf.JsonFormatter.Settings.WithFormatEnumsAsIntegers(System.Boolean)
+  commentId: M:Google.Protobuf.JsonFormatter.Settings.WithFormatEnumsAsIntegers(System.Boolean)
+  id: WithFormatEnumsAsIntegers(System.Boolean)
+  parent: Google.Protobuf.JsonFormatter.Settings
+  langs:
+  - csharp
+  - vb
+  name: WithFormatEnumsAsIntegers(Boolean)
+  nameWithType: JsonFormatter.Settings.WithFormatEnumsAsIntegers(Boolean)
+  fullName: Google.Protobuf.JsonFormatter.Settings.WithFormatEnumsAsIntegers(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/JsonFormatter.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: WithFormatEnumsAsIntegers
+    path: csharp/src/Google.Protobuf/JsonFormatter.cs
+    startLine: 843
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nCreates a new <xref href=\"Google.Protobuf.JsonFormatter.Settings\" data-throw-if-not-resolved=\"false\"></xref> object with the specified enums formatting option and the current settings.\n"
+  example: []
+  syntax:
+    content: public JsonFormatter.Settings WithFormatEnumsAsIntegers(bool formatEnumsAsIntegers)
+    parameters:
+    - id: formatEnumsAsIntegers
+      type: System.Boolean
+      description: <code>true</code> to format the enums as integers; <code>false</code> to format enums as enum names.
+    return:
+      type: Google.Protobuf.JsonFormatter.Settings
+    content.vb: Public Function WithFormatEnumsAsIntegers(formatEnumsAsIntegers As Boolean) As JsonFormatter.Settings
+  overload: Google.Protobuf.JsonFormatter.Settings.WithFormatEnumsAsIntegers*
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -598,6 +753,12 @@ references:
   name: Google.Protobuf.Reflection
   nameWithType: Google.Protobuf.Reflection
   fullName: Google.Protobuf.Reflection
+- uid: Google.Protobuf.JsonFormatter.Settings.FormatEnumsAsIntegers*
+  commentId: Overload:Google.Protobuf.JsonFormatter.Settings.FormatEnumsAsIntegers
+  isExternal: false
+  name: FormatEnumsAsIntegers
+  nameWithType: JsonFormatter.Settings.FormatEnumsAsIntegers
+  fullName: Google.Protobuf.JsonFormatter.Settings.FormatEnumsAsIntegers
 - uid: Google.Protobuf.JsonFormatter.Settings.#ctor*
   commentId: Overload:Google.Protobuf.JsonFormatter.Settings.#ctor
   isExternal: false
@@ -606,3 +767,21 @@ references:
   fullName: Google.Protobuf.JsonFormatter.Settings.Settings
 - uid: Google.Protobuf.JsonFormatter.Settings.TypeRegistry
   commentId: P:Google.Protobuf.JsonFormatter.Settings.TypeRegistry
+- uid: Google.Protobuf.JsonFormatter.Settings.WithFormatDefaultValues*
+  commentId: Overload:Google.Protobuf.JsonFormatter.Settings.WithFormatDefaultValues
+  isExternal: false
+  name: WithFormatDefaultValues
+  nameWithType: JsonFormatter.Settings.WithFormatDefaultValues
+  fullName: Google.Protobuf.JsonFormatter.Settings.WithFormatDefaultValues
+- uid: Google.Protobuf.JsonFormatter.Settings.WithTypeRegistry*
+  commentId: Overload:Google.Protobuf.JsonFormatter.Settings.WithTypeRegistry
+  isExternal: false
+  name: WithTypeRegistry
+  nameWithType: JsonFormatter.Settings.WithTypeRegistry
+  fullName: Google.Protobuf.JsonFormatter.Settings.WithTypeRegistry
+- uid: Google.Protobuf.JsonFormatter.Settings.WithFormatEnumsAsIntegers*
+  commentId: Overload:Google.Protobuf.JsonFormatter.Settings.WithFormatEnumsAsIntegers
+  isExternal: false
+  name: WithFormatEnumsAsIntegers
+  nameWithType: JsonFormatter.Settings.WithFormatEnumsAsIntegers
+  fullName: Google.Protobuf.JsonFormatter.Settings.WithFormatEnumsAsIntegers

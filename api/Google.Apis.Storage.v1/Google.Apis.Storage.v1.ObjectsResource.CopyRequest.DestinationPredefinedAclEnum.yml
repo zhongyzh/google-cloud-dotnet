@@ -25,15 +25,15 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DestinationPredefinedAclEnum
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 3673
+    startLine: 4063
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Apply a predefined set of access controls to the destination object.
   example: []
   syntax:
-    content: 'public enum DestinationPredefinedAclEnum : int'
-    content.vb: Public Enum DestinationPredefinedAclEnum As Integer
+    content: public enum DestinationPredefinedAclEnum
+    content.vb: Public Enum DestinationPredefinedAclEnum
   modifiers.csharp:
   - public
   - enum
@@ -58,16 +58,29 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: AuthenticatedRead
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 3676
+    startLine: 4066
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Object owner gets OWNER access, and allAuthenticatedUsers get READER access.
   example: []
   syntax:
-    content: AuthenticatedRead = 0
+    content: >-
+      [StringValue("authenticatedRead")]
+
+      AuthenticatedRead = 0
     return:
       type: Google.Apis.Storage.v1.ObjectsResource.CopyRequest.DestinationPredefinedAclEnum
+    content.vb: >-
+      <StringValue("authenticatedRead")>
+
+      AuthenticatedRead = 0
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: authenticatedRead
   modifiers.csharp:
   - public
   - const
@@ -92,16 +105,29 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BucketOwnerFullControl
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 3679
+    startLine: 4069
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Object owner gets OWNER access, and project team owners get OWNER access.
   example: []
   syntax:
-    content: BucketOwnerFullControl = 1
+    content: >-
+      [StringValue("bucketOwnerFullControl")]
+
+      BucketOwnerFullControl = 1
     return:
       type: Google.Apis.Storage.v1.ObjectsResource.CopyRequest.DestinationPredefinedAclEnum
+    content.vb: >-
+      <StringValue("bucketOwnerFullControl")>
+
+      BucketOwnerFullControl = 1
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: bucketOwnerFullControl
   modifiers.csharp:
   - public
   - const
@@ -126,16 +152,29 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BucketOwnerRead
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 3682
+    startLine: 4072
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Object owner gets OWNER access, and project team owners get READER access.
   example: []
   syntax:
-    content: BucketOwnerRead = 2
+    content: >-
+      [StringValue("bucketOwnerRead")]
+
+      BucketOwnerRead = 2
     return:
       type: Google.Apis.Storage.v1.ObjectsResource.CopyRequest.DestinationPredefinedAclEnum
+    content.vb: >-
+      <StringValue("bucketOwnerRead")>
+
+      BucketOwnerRead = 2
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: bucketOwnerRead
   modifiers.csharp:
   - public
   - const
@@ -160,16 +199,29 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Private__
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 3685
+    startLine: 4075
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Object owner gets OWNER access.
   example: []
   syntax:
-    content: Private__ = 3
+    content: >-
+      [StringValue("private")]
+
+      Private__ = 3
     return:
       type: Google.Apis.Storage.v1.ObjectsResource.CopyRequest.DestinationPredefinedAclEnum
+    content.vb: >-
+      <StringValue("private")>
+
+      Private__ = 3
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: private
   modifiers.csharp:
   - public
   - const
@@ -194,7 +246,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ProjectPrivate
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 3689
+    startLine: 4079
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -204,9 +256,22 @@ items:
     roles.
   example: []
   syntax:
-    content: ProjectPrivate = 4
+    content: >-
+      [StringValue("projectPrivate")]
+
+      ProjectPrivate = 4
     return:
       type: Google.Apis.Storage.v1.ObjectsResource.CopyRequest.DestinationPredefinedAclEnum
+    content.vb: >-
+      <StringValue("projectPrivate")>
+
+      ProjectPrivate = 4
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: projectPrivate
   modifiers.csharp:
   - public
   - const
@@ -231,16 +296,29 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: PublicRead
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 3692
+    startLine: 4082
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Object owner gets OWNER access, and allUsers get READER access.
   example: []
   syntax:
-    content: PublicRead = 5
+    content: >-
+      [StringValue("publicRead")]
+
+      PublicRead = 5
     return:
       type: Google.Apis.Storage.v1.ObjectsResource.CopyRequest.DestinationPredefinedAclEnum
+    content.vb: >-
+      <StringValue("publicRead")>
+
+      PublicRead = 5
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: publicRead
   modifiers.csharp:
   - public
   - const

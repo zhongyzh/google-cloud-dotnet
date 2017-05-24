@@ -6,7 +6,9 @@ items:
   parent: Google.Apis.Auth.OAuth2.Responses
   children:
   - Google.Apis.Auth.OAuth2.Responses.TokenResponseException.#ctor(Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse)
+  - Google.Apis.Auth.OAuth2.Responses.TokenResponseException.#ctor(Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse,System.Nullable{System.Net.HttpStatusCode})
   - Google.Apis.Auth.OAuth2.Responses.TokenResponseException.Error
+  - Google.Apis.Auth.OAuth2.Responses.TokenResponseException.StatusCode
   langs:
   - csharp
   - vb
@@ -16,12 +18,12 @@ items:
   type: Class
   source:
     remote:
-      path: Src/Support/GoogleApis.Auth/OAuth2/Responses/TokenResponseException.cs
+      path: Src/Support/Google.Apis.Auth/OAuth2/Responses/TokenResponseException.cs
       branch: master
       repo: https://github.com/google/google-api-dotnet-client
     id: TokenResponseException
-    path: Src/Support/GoogleApis.Auth/OAuth2/Responses/TokenResponseException.cs
-    startLine: 24
+    path: Src/Support/Google.Apis.Auth/OAuth2/Responses/TokenResponseException.cs
+    startLine: 25
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Responses
@@ -77,12 +79,12 @@ items:
   type: Property
   source:
     remote:
-      path: Src/Support/GoogleApis.Auth/OAuth2/Responses/TokenResponseException.cs
+      path: Src/Support/Google.Apis.Auth/OAuth2/Responses/TokenResponseException.cs
       branch: master
       repo: https://github.com/google/google-api-dotnet-client
     id: Error
-    path: Src/Support/GoogleApis.Auth/OAuth2/Responses/TokenResponseException.cs
-    startLine: 27
+    path: Src/Support/Google.Apis.Auth/OAuth2/Responses/TokenResponseException.cs
+    startLine: 28
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Responses
@@ -95,6 +97,43 @@ items:
       type: Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse
     content.vb: Public ReadOnly Property Error As TokenErrorResponse
   overload: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.Error*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.StatusCode
+  commentId: P:Google.Apis.Auth.OAuth2.Responses.TokenResponseException.StatusCode
+  id: StatusCode
+  parent: Google.Apis.Auth.OAuth2.Responses.TokenResponseException
+  langs:
+  - csharp
+  - vb
+  name: StatusCode
+  nameWithType: TokenResponseException.StatusCode
+  fullName: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.StatusCode
+  type: Property
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/OAuth2/Responses/TokenResponseException.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: StatusCode
+    path: Src/Support/Google.Apis.Auth/OAuth2/Responses/TokenResponseException.cs
+    startLine: 31
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth.OAuth2.Responses
+  summary: HTTP status code of error, or null if unknown.
+  example: []
+  syntax:
+    content: public HttpStatusCode? StatusCode { get; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Net.HttpStatusCode}
+    content.vb: Public ReadOnly Property StatusCode As HttpStatusCode?
+  overload: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.StatusCode*
   modifiers.csharp:
   - public
   - get
@@ -114,12 +153,12 @@ items:
   type: Constructor
   source:
     remote:
-      path: Src/Support/GoogleApis.Auth/OAuth2/Responses/TokenResponseException.cs
+      path: Src/Support/Google.Apis.Auth/OAuth2/Responses/TokenResponseException.cs
       branch: master
       repo: https://github.com/google/google-api-dotnet-client
     id: .ctor
-    path: Src/Support/GoogleApis.Auth/OAuth2/Responses/TokenResponseException.cs
-    startLine: 30
+    path: Src/Support/Google.Apis.Auth/OAuth2/Responses/TokenResponseException.cs
+    startLine: 34
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Responses
@@ -136,6 +175,46 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.#ctor(Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse,System.Nullable{System.Net.HttpStatusCode})
+  commentId: M:Google.Apis.Auth.OAuth2.Responses.TokenResponseException.#ctor(Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse,System.Nullable{System.Net.HttpStatusCode})
+  id: '#ctor(Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse,System.Nullable{System.Net.HttpStatusCode})'
+  parent: Google.Apis.Auth.OAuth2.Responses.TokenResponseException
+  langs:
+  - csharp
+  - vb
+  name: TokenResponseException(TokenErrorResponse, Nullable<HttpStatusCode>)
+  nameWithType: TokenResponseException.TokenResponseException(TokenErrorResponse, Nullable<HttpStatusCode>)
+  fullName: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.TokenResponseException(Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse, System.Nullable<System.Net.HttpStatusCode>)
+  type: Constructor
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/OAuth2/Responses/TokenResponseException.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: .ctor
+    path: Src/Support/Google.Apis.Auth/OAuth2/Responses/TokenResponseException.cs
+    startLine: 38
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth.OAuth2.Responses
+  summary: Constructs a new token response exception from the given error nad optional HTTP status code.
+  example: []
+  syntax:
+    content: public TokenResponseException(TokenErrorResponse error, HttpStatusCode? statusCode)
+    parameters:
+    - id: error
+      type: Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse
+    - id: statusCode
+      type: System.Nullable{System.Net.HttpStatusCode}
+    content.vb: Public Sub New(error As TokenErrorResponse, statusCode As HttpStatusCode?)
+  overload: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.#ctor*
+  nameWithType.vb: TokenResponseException.TokenResponseException(TokenErrorResponse, Nullable(Of HttpStatusCode))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.TokenResponseException(Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse, System.Nullable(Of System.Net.HttpStatusCode))
+  name.vb: TokenResponseException(TokenErrorResponse, Nullable(Of HttpStatusCode))
 references:
 - uid: Google.Apis.Auth.OAuth2.Responses
   commentId: N:Google.Apis.Auth.OAuth2.Responses
@@ -632,6 +711,95 @@ references:
   name: TokenErrorResponse
   nameWithType: TokenErrorResponse
   fullName: Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse
+- uid: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.StatusCode*
+  commentId: Overload:Google.Apis.Auth.OAuth2.Responses.TokenResponseException.StatusCode
+  isExternal: false
+  name: StatusCode
+  nameWithType: TokenResponseException.StatusCode
+  fullName: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.StatusCode
+- uid: System.Nullable{System.Net.HttpStatusCode}
+  commentId: T:System.Nullable{System.Net.HttpStatusCode}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<HttpStatusCode>
+  nameWithType: Nullable<HttpStatusCode>
+  fullName: System.Nullable<System.Net.HttpStatusCode>
+  nameWithType.vb: Nullable(Of HttpStatusCode)
+  fullName.vb: System.Nullable(Of System.Net.HttpStatusCode)
+  name.vb: Nullable(Of HttpStatusCode)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Net.HttpStatusCode
+    name: HttpStatusCode
+    nameWithType: HttpStatusCode
+    fullName: System.Net.HttpStatusCode
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Net.HttpStatusCode
+    name: HttpStatusCode
+    nameWithType: HttpStatusCode
+    fullName: System.Net.HttpStatusCode
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Apis.Auth.OAuth2.Responses.TokenResponseException.#ctor*
   commentId: Overload:Google.Apis.Auth.OAuth2.Responses.TokenResponseException.#ctor
   isExternal: false

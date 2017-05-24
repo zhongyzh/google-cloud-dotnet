@@ -9,6 +9,7 @@ items:
   - Google.Protobuf.Reflection.FieldDescriptor.CompareTo(Google.Protobuf.Reflection.FieldDescriptor)
   - Google.Protobuf.Reflection.FieldDescriptor.ContainingOneof
   - Google.Protobuf.Reflection.FieldDescriptor.ContainingType
+  - Google.Protobuf.Reflection.FieldDescriptor.CustomOptions
   - Google.Protobuf.Reflection.FieldDescriptor.EnumType
   - Google.Protobuf.Reflection.FieldDescriptor.FieldNumber
   - Google.Protobuf.Reflection.FieldDescriptor.FieldType
@@ -28,7 +29,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: FieldDescriptor
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -83,7 +84,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ContainingType
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -120,7 +121,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ContainingOneof
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -157,7 +158,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: JsonName
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -194,7 +195,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Name
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -234,7 +235,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Accessor
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -272,7 +273,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: IsRepeated
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -309,7 +310,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: IsMap
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -346,7 +347,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: IsPacked
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -383,7 +384,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: FieldType
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -420,7 +421,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: FieldNumber
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -457,7 +458,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: CompareTo
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -496,7 +497,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: EnumType
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -533,7 +534,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: MessageType
     path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
@@ -550,6 +551,43 @@ items:
       type: Google.Protobuf.Reflection.MessageDescriptor
     content.vb: Public ReadOnly Property MessageType As MessageDescriptor
   overload: Google.Protobuf.Reflection.FieldDescriptor.MessageType*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.FieldDescriptor.CustomOptions
+  commentId: P:Google.Protobuf.Reflection.FieldDescriptor.CustomOptions
+  id: CustomOptions
+  parent: Google.Protobuf.Reflection.FieldDescriptor
+  langs:
+  - csharp
+  - vb
+  name: CustomOptions
+  nameWithType: FieldDescriptor.CustomOptions
+  fullName: Google.Protobuf.Reflection.FieldDescriptor.CustomOptions
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: CustomOptions
+    path: csharp/src/Google.Protobuf/Reflection/FieldDescriptor.cs
+    startLine: 255
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nThe (possibly empty) set of custom options for this field.\n"
+  example: []
+  syntax:
+    content: public CustomOptions CustomOptions { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.CustomOptions
+    content.vb: Public ReadOnly Property CustomOptions As CustomOptions
+  overload: Google.Protobuf.Reflection.FieldDescriptor.CustomOptions*
   modifiers.csharp:
   - public
   - get
@@ -1200,3 +1238,16 @@ references:
   name: MessageType
   nameWithType: FieldDescriptor.MessageType
   fullName: Google.Protobuf.Reflection.FieldDescriptor.MessageType
+- uid: Google.Protobuf.Reflection.FieldDescriptor.CustomOptions*
+  commentId: Overload:Google.Protobuf.Reflection.FieldDescriptor.CustomOptions
+  isExternal: false
+  name: CustomOptions
+  nameWithType: FieldDescriptor.CustomOptions
+  fullName: Google.Protobuf.Reflection.FieldDescriptor.CustomOptions
+- uid: Google.Protobuf.Reflection.CustomOptions
+  commentId: T:Google.Protobuf.Reflection.CustomOptions
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: CustomOptions
+  nameWithType: CustomOptions
+  fullName: Google.Protobuf.Reflection.CustomOptions

@@ -7,6 +7,7 @@ items:
   children:
   - Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
   - Google.Protobuf.Reflection.OriginalNameAttribute.Name
+  - Google.Protobuf.Reflection.OriginalNameAttribute.PreferredAlias
   langs:
   - csharp
   - vb
@@ -17,7 +18,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/OriginalNameAttribute.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: OriginalNameAttribute
     path: csharp/src/Google.Protobuf/Reflection/OriginalNameAttribute.cs
@@ -116,7 +117,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/OriginalNameAttribute.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Name
     path: csharp/src/Google.Protobuf/Reflection/OriginalNameAttribute.cs
@@ -139,6 +140,43 @@ items:
   - set
   modifiers.vb:
   - Public
+- uid: Google.Protobuf.Reflection.OriginalNameAttribute.PreferredAlias
+  commentId: P:Google.Protobuf.Reflection.OriginalNameAttribute.PreferredAlias
+  id: PreferredAlias
+  parent: Google.Protobuf.Reflection.OriginalNameAttribute
+  langs:
+  - csharp
+  - vb
+  name: PreferredAlias
+  nameWithType: OriginalNameAttribute.PreferredAlias
+  fullName: Google.Protobuf.Reflection.OriginalNameAttribute.PreferredAlias
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/OriginalNameAttribute.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: PreferredAlias
+    path: csharp/src/Google.Protobuf/Reflection/OriginalNameAttribute.cs
+    startLine: 51
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nIf the name is preferred in the .proto file.\n"
+  example: []
+  syntax:
+    content: public bool PreferredAlias { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property PreferredAlias As Boolean
+  overload: Google.Protobuf.Reflection.OriginalNameAttribute.PreferredAlias*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
 - uid: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
   commentId: M:Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
   id: '#ctor(System.String)'
@@ -153,11 +191,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/OriginalNameAttribute.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: .ctor
     path: csharp/src/Google.Protobuf/Reflection/OriginalNameAttribute.cs
-    startLine: 52
+    startLine: 57
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Reflection
@@ -2918,6 +2956,19 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Google.Protobuf.Reflection.OriginalNameAttribute.PreferredAlias*
+  commentId: Overload:Google.Protobuf.Reflection.OriginalNameAttribute.PreferredAlias
+  isExternal: false
+  name: PreferredAlias
+  nameWithType: OriginalNameAttribute.PreferredAlias
+  fullName: Google.Protobuf.Reflection.OriginalNameAttribute.PreferredAlias
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
 - uid: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor*
   commentId: Overload:Google.Protobuf.Reflection.OriginalNameAttribute.#ctor
   isExternal: false

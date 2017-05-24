@@ -31,17 +31,27 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: QueryRequest
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3805
+    startLine: 3806
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   syntax:
-    content: 'public class QueryRequest : Requests.IDirectResponseSchema'
+    content: 'public class QueryRequest : IDirectResponseSchema'
     content.vb: >-
       Public Class QueryRequest
-          Inherits Requests.IDirectResponseSchema
+          Implements IDirectResponseSchema
   inheritance:
   - System.Object
+  implements:
+  - Google.Apis.Requests.IDirectResponseSchema
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -66,7 +76,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DefaultDataset
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3810
+    startLine: 3811
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -78,12 +88,24 @@ items:
     'datasetId.tableId'.
   example: []
   syntax:
-    content: public virtual DatasetReference DefaultDataset { get; set; }
+    content: >-
+      [JsonProperty("defaultDataset")]
+
+      public virtual DatasetReference DefaultDataset { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.DatasetReference
-    content.vb: Public Overridable Property DefaultDataset As DatasetReference
+    content.vb: >-
+      <JsonProperty("defaultDataset")>
+
+      Public Overridable Property DefaultDataset As DatasetReference
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.DefaultDataset*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: defaultDataset
   modifiers.csharp:
   - public
   - virtual
@@ -110,7 +132,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DryRun
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3816
+    startLine: 3817
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -122,12 +144,24 @@ items:
     error returns. The default value is false.
   example: []
   syntax:
-    content: public virtual System.Nullable<bool> DryRun { get; set; }
+    content: >-
+      [JsonProperty("dryRun")]
+
+      public virtual bool ? DryRun { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property DryRun As System.Nullable(Of Boolean)
+    content.vb: >-
+      <JsonProperty("dryRun")>
+
+      Public Overridable Property DryRun As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.DryRun*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: dryRun
   modifiers.csharp:
   - public
   - virtual
@@ -154,19 +188,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Kind
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3820
+    startLine: 3821
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: The resource type of the request.
   example: []
   syntax:
-    content: public virtual string Kind { get; set; }
+    content: >-
+      [JsonProperty("kind")]
+
+      public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Kind As String
+    content.vb: >-
+      <JsonProperty("kind")>
+
+      Public Overridable Property Kind As String
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.Kind*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -193,7 +239,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: MaxResults
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3827
+    startLine: 3828
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -207,12 +253,24 @@ items:
     row count, and only the byte limit applies.
   example: []
   syntax:
-    content: public virtual System.Nullable<long> MaxResults { get; set; }
+    content: >-
+      [JsonProperty("maxResults")]
+
+      public virtual long ? MaxResults { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property MaxResults As System.Nullable(Of Long)
+    content.vb: >-
+      <JsonProperty("maxResults")>
+
+      Public Overridable Property MaxResults As Long?
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.MaxResults*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: maxResults
   modifiers.csharp:
   - public
   - virtual
@@ -239,7 +297,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ParameterMode
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3832
+    startLine: 3833
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -249,12 +307,24 @@ items:
     named (@myparam) query parameters in this query.
   example: []
   syntax:
-    content: public virtual string ParameterMode { get; set; }
+    content: >-
+      [JsonProperty("parameterMode")]
+
+      public virtual string ParameterMode { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property ParameterMode As String
+    content.vb: >-
+      <JsonProperty("parameterMode")>
+
+      Public Overridable Property ParameterMode As String
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.ParameterMode*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: parameterMode
   modifiers.csharp:
   - public
   - virtual
@@ -281,19 +351,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: PreserveNulls
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3836
+    startLine: 3837
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: '[Deprecated] This property is deprecated.'
   example: []
   syntax:
-    content: public virtual System.Nullable<bool> PreserveNulls { get; set; }
+    content: >-
+      [JsonProperty("preserveNulls")]
+
+      public virtual bool ? PreserveNulls { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property PreserveNulls As System.Nullable(Of Boolean)
+    content.vb: >-
+      <JsonProperty("preserveNulls")>
+
+      Public Overridable Property PreserveNulls As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.PreserveNulls*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: preserveNulls
   modifiers.csharp:
   - public
   - virtual
@@ -320,7 +402,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Query
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3841
+    startLine: 3842
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -330,12 +412,24 @@ items:
     "SELECT count(f1) FROM [myProjectId:myDatasetId.myTableId]".
   example: []
   syntax:
-    content: public virtual string Query { get; set; }
+    content: >-
+      [JsonProperty("query")]
+
+      public virtual string Query { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Query As String
+    content.vb: >-
+      <JsonProperty("query")>
+
+      Public Overridable Property Query As String
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.Query*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: query
   modifiers.csharp:
   - public
   - virtual
@@ -362,19 +456,31 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: QueryParameters
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3845
+    startLine: 3846
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Query parameters for Standard SQL queries.
   example: []
   syntax:
-    content: public virtual System.Collections.Generic.IList<QueryParameter> QueryParameters { get; set; }
+    content: >-
+      [JsonProperty("queryParameters")]
+
+      public virtual IList<QueryParameter> QueryParameters { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.QueryParameter}
-    content.vb: Public Overridable Property QueryParameters As System.Collections.Generic.IList(Of QueryParameter)
+    content.vb: >-
+      <JsonProperty("queryParameters")>
+
+      Public Overridable Property QueryParameters As IList(Of QueryParameter)
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.QueryParameters*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: queryParameters
   modifiers.csharp:
   - public
   - virtual
@@ -401,7 +507,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TimeoutMs
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3853
+    startLine: 3854
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -417,12 +523,24 @@ items:
     value is 10000 milliseconds (10 seconds).
   example: []
   syntax:
-    content: public virtual System.Nullable<long> TimeoutMs { get; set; }
+    content: >-
+      [JsonProperty("timeoutMs")]
+
+      public virtual long ? TimeoutMs { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property TimeoutMs As System.Nullable(Of Long)
+    content.vb: >-
+      <JsonProperty("timeoutMs")>
+
+      Public Overridable Property TimeoutMs As Long?
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.TimeoutMs*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: timeoutMs
   modifiers.csharp:
   - public
   - virtual
@@ -449,7 +567,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UseLegacySql
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3860
+    startLine: 3861
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -463,12 +581,24 @@ items:
     ignored; query will be run as if allowLargeResults is true and flattenResults is false.
   example: []
   syntax:
-    content: public virtual System.Nullable<bool> UseLegacySql { get; set; }
+    content: >-
+      [JsonProperty("useLegacySql")]
+
+      public virtual bool ? UseLegacySql { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property UseLegacySql As System.Nullable(Of Boolean)
+    content.vb: >-
+      <JsonProperty("useLegacySql")>
+
+      Public Overridable Property UseLegacySql As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.UseLegacySql*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: useLegacySql
   modifiers.csharp:
   - public
   - virtual
@@ -495,7 +625,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UseQueryCache
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3865
+    startLine: 3866
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -505,12 +635,24 @@ items:
     cache that will be flushed whenever tables in the query are modified. The default value is true.
   example: []
   syntax:
-    content: public virtual System.Nullable<bool> UseQueryCache { get; set; }
+    content: >-
+      [JsonProperty("useQueryCache")]
+
+      public virtual bool ? UseQueryCache { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property UseQueryCache As System.Nullable(Of Boolean)
+    content.vb: >-
+      <JsonProperty("useQueryCache")>
+
+      Public Overridable Property UseQueryCache As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.UseQueryCache*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: useQueryCache
   modifiers.csharp:
   - public
   - virtual
@@ -537,7 +679,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ETag
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3869
+    startLine: 3870
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -550,6 +692,8 @@ items:
       type: System.String
     content.vb: Public Overridable Property ETag As String
   overload: Google.Apis.Bigquery.v2.Data.QueryRequest.ETag*
+  implements:
+  - Google.Apis.Requests.IDirectResponseSchema.ETag
   modifiers.csharp:
   - public
   - virtual
@@ -566,10 +710,310 @@ references:
   nameWithType: Google.Apis.Bigquery.v2.Data
   fullName: Google.Apis.Bigquery.v2.Data
 - uid: System.Object
+  commentId: T:System.Object
+  parent: System
   isExternal: true
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Apis.Requests.IDirectResponseSchema
+  commentId: T:Google.Apis.Requests.IDirectResponseSchema
+  parent: Google.Apis.Requests
+  isExternal: true
+  name: IDirectResponseSchema
+  nameWithType: IDirectResponseSchema
+  fullName: Google.Apis.Requests.IDirectResponseSchema
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: false
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Google.Apis.Requests
+  commentId: N:Google.Apis.Requests
+  isExternal: false
+  name: Google.Apis.Requests
+  nameWithType: Google.Apis.Requests
+  fullName: Google.Apis.Requests
 - uid: Google.Apis.Bigquery.v2.Data.QueryRequest.DefaultDataset*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.QueryRequest.DefaultDataset
   isExternal: false
@@ -590,18 +1034,19 @@ references:
   nameWithType: QueryRequest.DryRun
   fullName: Google.Apis.Bigquery.v2.Data.QueryRequest.DryRun
 - uid: System.Nullable{System.Boolean}
-  commentId: '!:System.Nullable{System.Boolean}'
+  commentId: T:System.Nullable{System.Boolean}
+  parent: System
   definition: System.Nullable`1
-  name: System.Nullable<Boolean>
-  nameWithType: System.Nullable<Boolean>
+  name: Nullable<Boolean>
+  nameWithType: Nullable<Boolean>
   fullName: System.Nullable<System.Boolean>
-  nameWithType.vb: System.Nullable(Of Boolean)
+  nameWithType.vb: Nullable(Of Boolean)
   fullName.vb: System.Nullable(Of System.Boolean)
-  name.vb: System.Nullable(Of Boolean)
+  name.vb: Nullable(Of Boolean)
   spec.csharp:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: <
@@ -617,8 +1062,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: '(Of '
@@ -633,40 +1078,41 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Nullable`1
+  commentId: T:System.Nullable`1
   isExternal: true
-  name: System.Nullable<>
-  nameWithType: System.Nullable<>
-  fullName: System.Nullable<>
-  nameWithType.vb: System.Nullable(Of )
-  fullName.vb: System.Nullable(Of )
-  name.vb: System.Nullable(Of )
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
   spec.csharp:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -677,6 +1123,8 @@ references:
   nameWithType: QueryRequest.Kind
   fullName: Google.Apis.Bigquery.v2.Data.QueryRequest.Kind
 - uid: System.String
+  commentId: T:System.String
+  parent: System
   isExternal: true
   name: String
   nameWithType: String
@@ -688,18 +1136,19 @@ references:
   nameWithType: QueryRequest.MaxResults
   fullName: Google.Apis.Bigquery.v2.Data.QueryRequest.MaxResults
 - uid: System.Nullable{System.Int64}
-  commentId: '!:System.Nullable{System.Int64}'
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
   definition: System.Nullable`1
-  name: System.Nullable<Int64>
-  nameWithType: System.Nullable<Int64>
+  name: Nullable<Int64>
+  nameWithType: Nullable<Int64>
   fullName: System.Nullable<System.Int64>
-  nameWithType.vb: System.Nullable(Of Int64)
+  nameWithType.vb: Nullable(Of Int64)
   fullName.vb: System.Nullable(Of System.Int64)
-  name.vb: System.Nullable(Of Int64)
+  name.vb: Nullable(Of Int64)
   spec.csharp:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: <
@@ -715,8 +1164,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: System.Nullable`1
-    name: System.Nullable
-    nameWithType: System.Nullable
+    name: Nullable
+    nameWithType: Nullable
     fullName: System.Nullable
     isExternal: true
   - name: '(Of '
@@ -755,18 +1204,19 @@ references:
   nameWithType: QueryRequest.QueryParameters
   fullName: Google.Apis.Bigquery.v2.Data.QueryRequest.QueryParameters
 - uid: System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.QueryParameter}
-  commentId: '!:System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.QueryParameter}'
+  commentId: T:System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.QueryParameter}
+  parent: System.Collections.Generic
   definition: System.Collections.Generic.IList`1
-  name: System.Collections.Generic.IList<QueryParameter>
-  nameWithType: System.Collections.Generic.IList<QueryParameter>
+  name: IList<QueryParameter>
+  nameWithType: IList<QueryParameter>
   fullName: System.Collections.Generic.IList<Google.Apis.Bigquery.v2.Data.QueryParameter>
-  nameWithType.vb: System.Collections.Generic.IList(Of QueryParameter)
+  nameWithType.vb: IList(Of QueryParameter)
   fullName.vb: System.Collections.Generic.IList(Of Google.Apis.Bigquery.v2.Data.QueryParameter)
-  name.vb: System.Collections.Generic.IList(Of QueryParameter)
+  name.vb: IList(Of QueryParameter)
   spec.csharp:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
@@ -781,8 +1231,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
@@ -796,43 +1246,50 @@ references:
     nameWithType: )
     fullName: )
 - uid: System.Collections.Generic.IList`1
+  commentId: T:System.Collections.Generic.IList`1
   isExternal: true
-  name: System.Collections.Generic.IList<>
-  nameWithType: System.Collections.Generic.IList<>
-  fullName: System.Collections.Generic.IList<>
-  nameWithType.vb: System.Collections.Generic.IList(Of )
-  fullName.vb: System.Collections.Generic.IList(Of )
-  name.vb: System.Collections.Generic.IList(Of )
+  name: IList<T>
+  nameWithType: IList<T>
+  fullName: System.Collections.Generic.IList<T>
+  nameWithType.vb: IList(Of T)
+  fullName.vb: System.Collections.Generic.IList(Of T)
+  name.vb: IList(Of T)
   spec.csharp:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IList`1
-    name: System.Collections.Generic.IList
-    nameWithType: System.Collections.Generic.IList
+    name: IList
+    nameWithType: IList
     fullName: System.Collections.Generic.IList
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
 - uid: Google.Apis.Bigquery.v2.Data.QueryRequest.TimeoutMs*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.QueryRequest.TimeoutMs
   isExternal: false
@@ -857,3 +1314,10 @@ references:
   name: ETag
   nameWithType: QueryRequest.ETag
   fullName: Google.Apis.Bigquery.v2.Data.QueryRequest.ETag
+- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
+  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
+  parent: Google.Apis.Requests.IDirectResponseSchema
+  isExternal: true
+  name: ETag
+  nameWithType: IDirectResponseSchema.ETag
+  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag

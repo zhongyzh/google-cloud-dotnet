@@ -15,6 +15,8 @@ items:
   - Google.Protobuf.ByteString.Equals(Google.Protobuf.ByteString)
   - Google.Protobuf.ByteString.Equals(System.Object)
   - Google.Protobuf.ByteString.FromBase64(System.String)
+  - Google.Protobuf.ByteString.FromStream(System.IO.Stream)
+  - Google.Protobuf.ByteString.FromStreamAsync(System.IO.Stream,System.Threading.CancellationToken)
   - Google.Protobuf.ByteString.GetEnumerator
   - Google.Protobuf.ByteString.GetHashCode
   - Google.Protobuf.ByteString.IsEmpty
@@ -38,11 +40,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ByteString
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 43
+    startLine: 50
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -87,11 +89,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Empty
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 93
+    startLine: 100
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -126,11 +128,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Length
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 101
+    startLine: 108
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -163,11 +165,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: IsEmpty
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 109
+    startLine: 116
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -200,11 +202,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ToByteArray
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 119
+    startLine: 126
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -236,11 +238,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ToBase64
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 128
+    startLine: 135
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -271,11 +273,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: FromBase64
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 136
+    startLine: 143
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -296,6 +298,99 @@ items:
   modifiers.vb:
   - Public
   - Shared
+- uid: Google.Protobuf.ByteString.FromStream(System.IO.Stream)
+  commentId: M:Google.Protobuf.ByteString.FromStream(System.IO.Stream)
+  id: FromStream(System.IO.Stream)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: FromStream(Stream)
+  nameWithType: ByteString.FromStream(Stream)
+  fullName: Google.Protobuf.ByteString.FromStream(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: FromStream
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 157
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nConstructs a <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> from data in the given stream, synchronously.\n"
+  remarks: >-
+    If successful, <span class="paramref">stream</span> will be read completely, from the position
+
+    at the start of the call.
+  example: []
+  syntax:
+    content: public static ByteString FromStream(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to copy into a ByteString.
+    return:
+      type: Google.Protobuf.ByteString
+      description: A ByteString with content read from the given stream.
+    content.vb: Public Shared Function FromStream(stream As Stream) As ByteString
+  overload: Google.Protobuf.ByteString.FromStream*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Protobuf.ByteString.FromStreamAsync(System.IO.Stream,System.Threading.CancellationToken)
+  commentId: M:Google.Protobuf.ByteString.FromStreamAsync(System.IO.Stream,System.Threading.CancellationToken)
+  id: FromStreamAsync(System.IO.Stream,System.Threading.CancellationToken)
+  parent: Google.Protobuf.ByteString
+  langs:
+  - csharp
+  - vb
+  name: FromStreamAsync(Stream, CancellationToken)
+  nameWithType: ByteString.FromStreamAsync(Stream, CancellationToken)
+  fullName: Google.Protobuf.ByteString.FromStreamAsync(System.IO.Stream, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/ByteString.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: FromStreamAsync
+    path: csharp/src/Google.Protobuf/ByteString.cs
+    startLine: 181
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf
+  summary: "\nConstructs a <xref href=\"Google.Protobuf.ByteString\" data-throw-if-not-resolved=\"false\"></xref> from data in the given stream, asynchronously.\n"
+  remarks: >-
+    If successful, <span class="paramref">stream</span> will be read completely, from the position
+
+    at the start of the call.
+  example: []
+  syntax:
+    content: public static Task<ByteString> FromStreamAsync(Stream stream, CancellationToken cancellationToken = null)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+      description: The stream to copy into a ByteString.
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: The cancellation token to use when reading from the stream, if any.
+    return:
+      type: System.Threading.Tasks.Task{Google.Protobuf.ByteString}
+      description: A ByteString with content read from the given stream.
+    content.vb: Public Shared Function FromStreamAsync(stream As Stream, cancellationToken As CancellationToken = Nothing) As Task(Of ByteString)
+  overload: Google.Protobuf.ByteString.FromStreamAsync*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
 - uid: Google.Protobuf.ByteString.CopyFrom(System.Byte[])
   commentId: M:Google.Protobuf.ByteString.CopyFrom(System.Byte[])
   id: CopyFrom(System.Byte[])
@@ -310,11 +405,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: CopyFrom
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 150
+    startLine: 206
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -352,11 +447,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: CopyFrom
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 158
+    startLine: 214
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -398,11 +493,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: CopyFrom
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 169
+    startLine: 225
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -439,11 +534,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: CopyFromUtf8
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 177
+    startLine: 233
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -478,11 +573,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: this[]
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 185
+    startLine: 241
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -520,11 +615,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ToString
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 199
+    startLine: 255
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -560,11 +655,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ToStringUtf8
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 212
+    startLine: 268
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -596,11 +691,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: GetEnumerator
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 221
+    startLine: 277
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -634,11 +729,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: System.Collections.IEnumerable.GetEnumerator
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 230
+    startLine: 286
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -669,11 +764,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: CreateCodedInput
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 238
+    startLine: 294
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -703,11 +798,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: op_Equality
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 250
+    startLine: 306
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -747,11 +842,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: op_Inequality
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 280
+    startLine: 336
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -791,11 +886,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Equals
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 290
+    startLine: 346
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -833,11 +928,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: GetHashCode
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 300
+    startLine: 356
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -871,11 +966,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Equals
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 315
+    startLine: 371
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -912,11 +1007,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: CopyTo
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 331
+    startLine: 387
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -952,11 +1047,11 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/ByteString.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: WriteTo
     path: csharp/src/Google.Protobuf/ByteString.cs
-    startLine: 339
+    startLine: 395
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
@@ -1472,6 +1567,131 @@ references:
   name: FromBase64
   nameWithType: ByteString.FromBase64
   fullName: Google.Protobuf.ByteString.FromBase64
+- uid: Google.Protobuf.ByteString.FromStream*
+  commentId: Overload:Google.Protobuf.ByteString.FromStream
+  isExternal: false
+  name: FromStream
+  nameWithType: ByteString.FromStream
+  fullName: Google.Protobuf.ByteString.FromStream
+- uid: System.IO.Stream
+  commentId: T:System.IO.Stream
+  parent: System.IO
+  isExternal: true
+  name: Stream
+  nameWithType: Stream
+  fullName: System.IO.Stream
+- uid: System.IO
+  commentId: N:System.IO
+  isExternal: false
+  name: System.IO
+  nameWithType: System.IO
+  fullName: System.IO
+- uid: Google.Protobuf.ByteString.FromStreamAsync*
+  commentId: Overload:Google.Protobuf.ByteString.FromStreamAsync
+  isExternal: false
+  name: FromStreamAsync
+  nameWithType: ByteString.FromStreamAsync
+  fullName: Google.Protobuf.ByteString.FromStreamAsync
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{Google.Protobuf.ByteString}
+  commentId: T:System.Threading.Tasks.Task{Google.Protobuf.ByteString}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<ByteString>
+  nameWithType: Task<ByteString>
+  fullName: System.Threading.Tasks.Task<Google.Protobuf.ByteString>
+  nameWithType.vb: Task(Of ByteString)
+  fullName.vb: System.Threading.Tasks.Task(Of Google.Protobuf.ByteString)
+  name.vb: Task(Of ByteString)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Protobuf.ByteString
+    name: ByteString
+    nameWithType: ByteString
+    fullName: Google.Protobuf.ByteString
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: false
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
 - uid: Google.Protobuf.ByteString.CopyFrom*
   commentId: Overload:Google.Protobuf.ByteString.CopyFrom
   isExternal: false
@@ -1922,16 +2142,3 @@ references:
   name: WriteTo
   nameWithType: ByteString.WriteTo
   fullName: Google.Protobuf.ByteString.WriteTo
-- uid: System.IO.Stream
-  commentId: T:System.IO.Stream
-  parent: System.IO
-  isExternal: true
-  name: Stream
-  nameWithType: Stream
-  fullName: System.IO.Stream
-- uid: System.IO
-  commentId: N:System.IO
-  isExternal: false
-  name: System.IO
-  nameWithType: System.IO
-  fullName: System.IO

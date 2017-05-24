@@ -5,6 +5,7 @@ items:
   id: ServiceDescriptor
   parent: Google.Protobuf.Reflection
   children:
+  - Google.Protobuf.Reflection.ServiceDescriptor.CustomOptions
   - Google.Protobuf.Reflection.ServiceDescriptor.FindMethodByName(System.String)
   - Google.Protobuf.Reflection.ServiceDescriptor.Methods
   - Google.Protobuf.Reflection.ServiceDescriptor.Name
@@ -18,7 +19,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ServiceDescriptor
     path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
@@ -72,7 +73,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Name
     path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
@@ -112,7 +113,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Methods
     path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
@@ -149,7 +150,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: FindMethodByName
     path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
@@ -174,6 +175,43 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: Google.Protobuf.Reflection.ServiceDescriptor.CustomOptions
+  commentId: P:Google.Protobuf.Reflection.ServiceDescriptor.CustomOptions
+  id: CustomOptions
+  parent: Google.Protobuf.Reflection.ServiceDescriptor
+  langs:
+  - csharp
+  - vb
+  name: CustomOptions
+  nameWithType: ServiceDescriptor.CustomOptions
+  fullName: Google.Protobuf.Reflection.ServiceDescriptor.CustomOptions
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: CustomOptions
+    path: csharp/src/Google.Protobuf/Reflection/ServiceDescriptor.cs
+    startLine: 83
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nThe (possibly empty) set of custom options for this service.\n"
+  example: []
+  syntax:
+    content: public CustomOptions CustomOptions { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.CustomOptions
+    content.vb: Public ReadOnly Property CustomOptions As CustomOptions
+  overload: Google.Protobuf.Reflection.ServiceDescriptor.CustomOptions*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 references:
 - uid: Google.Protobuf.Reflection
   commentId: N:Google.Protobuf.Reflection
@@ -634,3 +672,16 @@ references:
   name: MethodDescriptor
   nameWithType: MethodDescriptor
   fullName: Google.Protobuf.Reflection.MethodDescriptor
+- uid: Google.Protobuf.Reflection.ServiceDescriptor.CustomOptions*
+  commentId: Overload:Google.Protobuf.Reflection.ServiceDescriptor.CustomOptions
+  isExternal: false
+  name: CustomOptions
+  nameWithType: ServiceDescriptor.CustomOptions
+  fullName: Google.Protobuf.Reflection.ServiceDescriptor.CustomOptions
+- uid: Google.Protobuf.Reflection.CustomOptions
+  commentId: T:Google.Protobuf.Reflection.CustomOptions
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: CustomOptions
+  nameWithType: CustomOptions
+  fullName: Google.Protobuf.Reflection.CustomOptions

@@ -20,15 +20,15 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: AltEnum
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 4650
+    startLine: 5105
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Data format for the response.
   example: []
   syntax:
-    content: 'public enum AltEnum : int'
-    content.vb: Public Enum AltEnum As Integer
+    content: public enum AltEnum
+    content.vb: Public Enum AltEnum
   modifiers.csharp:
   - public
   - enum
@@ -53,16 +53,29 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Json
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 4653
+    startLine: 5108
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
   summary: Responses with Content-Type of application/json
   example: []
   syntax:
-    content: Json = 0
+    content: >-
+      [StringValue("json")]
+
+      Json = 0
     return:
       type: Google.Apis.Storage.v1.ObjectsResource.InsertMediaUpload.AltEnum
+    content.vb: >-
+      <StringValue("json")>
+
+      Json = 0
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: json
   modifiers.csharp:
   - public
   - const

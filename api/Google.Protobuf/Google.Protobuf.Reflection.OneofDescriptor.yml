@@ -7,6 +7,7 @@ items:
   children:
   - Google.Protobuf.Reflection.OneofDescriptor.Accessor
   - Google.Protobuf.Reflection.OneofDescriptor.ContainingType
+  - Google.Protobuf.Reflection.OneofDescriptor.CustomOptions
   - Google.Protobuf.Reflection.OneofDescriptor.Fields
   - Google.Protobuf.Reflection.OneofDescriptor.Name
   langs:
@@ -19,7 +20,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: OneofDescriptor
     path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
@@ -73,7 +74,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Name
     path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
@@ -113,7 +114,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: ContainingType
     path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
@@ -151,7 +152,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Fields
     path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
@@ -189,7 +190,7 @@ items:
   source:
     remote:
       path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
-      branch: 3.2.x
+      branch: 3.3.x
       repo: https://github.com/google/protobuf
     id: Accessor
     path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
@@ -207,6 +208,43 @@ items:
       description: "\nThe accessor used for reflective access.\n"
     content.vb: Public ReadOnly Property Accessor As OneofAccessor
   overload: Google.Protobuf.Reflection.OneofDescriptor.Accessor*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Protobuf.Reflection.OneofDescriptor.CustomOptions
+  commentId: P:Google.Protobuf.Reflection.OneofDescriptor.CustomOptions
+  id: CustomOptions
+  parent: Google.Protobuf.Reflection.OneofDescriptor
+  langs:
+  - csharp
+  - vb
+  name: CustomOptions
+  nameWithType: OneofDescriptor.CustomOptions
+  fullName: Google.Protobuf.Reflection.OneofDescriptor.CustomOptions
+  type: Property
+  source:
+    remote:
+      path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
+      branch: 3.3.x
+      repo: https://github.com/google/protobuf
+    id: CustomOptions
+    path: csharp/src/Google.Protobuf/Reflection/OneofDescriptor.cs
+    startLine: 95
+  assemblies:
+  - Google.Protobuf
+  namespace: Google.Protobuf.Reflection
+  summary: "\nThe (possibly empty) set of custom options for this oneof.\n"
+  example: []
+  syntax:
+    content: public CustomOptions CustomOptions { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.CustomOptions
+    content.vb: Public ReadOnly Property CustomOptions As CustomOptions
+  overload: Google.Protobuf.Reflection.OneofDescriptor.CustomOptions*
   modifiers.csharp:
   - public
   - get
@@ -686,3 +724,16 @@ references:
   name: OneofAccessor
   nameWithType: OneofAccessor
   fullName: Google.Protobuf.Reflection.OneofAccessor
+- uid: Google.Protobuf.Reflection.OneofDescriptor.CustomOptions*
+  commentId: Overload:Google.Protobuf.Reflection.OneofDescriptor.CustomOptions
+  isExternal: false
+  name: CustomOptions
+  nameWithType: OneofDescriptor.CustomOptions
+  fullName: Google.Protobuf.Reflection.OneofDescriptor.CustomOptions
+- uid: Google.Protobuf.Reflection.CustomOptions
+  commentId: T:Google.Protobuf.Reflection.CustomOptions
+  parent: Google.Protobuf.Reflection
+  isExternal: false
+  name: CustomOptions
+  nameWithType: CustomOptions
+  fullName: Google.Protobuf.Reflection.CustomOptions
