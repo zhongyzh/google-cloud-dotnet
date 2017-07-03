@@ -9,7 +9,15 @@ items:
   - Google.Api.Gax.GaxPreconditions.CheckArgument``1(System.Boolean,System.String,System.String,``0)
   - Google.Api.Gax.GaxPreconditions.CheckArgument``2(System.Boolean,System.String,System.String,``0,``1)
   - Google.Api.Gax.GaxPreconditions.CheckArgumentRange(System.Int32,System.String,System.Int32,System.Int32)
+  - Google.Api.Gax.GaxPreconditions.CheckArgumentRange``1(``0,System.String,``0,``0)
+  - Google.Api.Gax.GaxPreconditions.CheckArgumentRange``1(System.Nullable{``0},System.String,``0,``0)
   - Google.Api.Gax.GaxPreconditions.CheckEnumValue``1(``0,System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Double,System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Int32,System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Int64,System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Double},System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Int32},System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Int64},System.String)
   - Google.Api.Gax.GaxPreconditions.CheckNotNull``1(``0,System.String)
   - Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty(System.String,System.String)
   - Google.Api.Gax.GaxPreconditions.CheckState(System.Boolean,System.String)
@@ -127,7 +135,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: CheckNotNullOrEmpty
     path: src/Google.Api.Gax/GaxPreconditions.cs
-    startLine: 58
+    startLine: 52
   assemblies:
   - Google.Api.Gax
   namespace: Google.Api.Gax
@@ -178,7 +186,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: CheckArgumentRange
     path: src/Google.Api.Gax/GaxPreconditions.cs
-    startLine: 85
+    startLine: 73
   assemblies:
   - Google.Api.Gax
   namespace: Google.Api.Gax
@@ -215,6 +223,423 @@ items:
   modifiers.vb:
   - Public
   - Shared
+- uid: Google.Api.Gax.GaxPreconditions.CheckArgumentRange``1(``0,System.String,``0,``0)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckArgumentRange``1(``0,System.String,``0,``0)
+  id: CheckArgumentRange``1(``0,System.String,``0,``0)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckArgumentRange<T>(T, String, T, T)
+  nameWithType: GaxPreconditions.CheckArgumentRange<T>(T, String, T, T)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckArgumentRange<T>(T, System.String, T, T)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckArgumentRange
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 91
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given argument value is valid.\n"
+  remarks: "\nNote that the upper bound (<span class=\"paramref\">maxInclusive</span>) is inclusive,\nnot exclusive. This is deliberate, to allow the specification of ranges which include\n<xref href=\"System.Int64.MaxValue\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public static T CheckArgumentRange<T>(T argument, string paramName, T minInclusive, T maxInclusive)where T : IComparable<T>'
+    parameters:
+    - id: argument
+      type: '{T}'
+      description: The value of the argument passed to the calling method.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    - id: minInclusive
+      type: '{T}'
+      description: The smallest valid value.
+    - id: maxInclusive
+      type: '{T}'
+      description: The largest valid value.
+    typeParameters:
+    - id: T
+    return:
+      type: '{T}'
+      description: <span class="paramref">argument</span> if it was in range
+    content.vb: Public Shared Function CheckArgumentRange(Of T As IComparable(Of T))(argument As T, paramName As String, minInclusive As T, maxInclusive As T) As T
+  overload: Google.Api.Gax.GaxPreconditions.CheckArgumentRange*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: The argument was outside the specified range.
+  nameWithType.vb: GaxPreconditions.CheckArgumentRange(Of T)(T, String, T, T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckArgumentRange(Of T)(T, System.String, T, T)
+  name.vb: CheckArgumentRange(Of T)(T, String, T, T)
+- uid: Google.Api.Gax.GaxPreconditions.CheckArgumentRange``1(System.Nullable{``0},System.String,``0,``0)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckArgumentRange``1(System.Nullable{``0},System.String,``0,``0)
+  id: CheckArgumentRange``1(System.Nullable{``0},System.String,``0,``0)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckArgumentRange<T>(Nullable<T>, String, T, T)
+  nameWithType: GaxPreconditions.CheckArgumentRange<T>(Nullable<T>, String, T, T)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckArgumentRange<T>(System.Nullable<T>, System.String, T, T)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckArgumentRange
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 109
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given argument value, if not <code>null</code>, is valid.\n"
+  remarks: "\nNote that the upper bound (<span class=\"paramref\">maxInclusive</span>) is inclusive,\nnot exclusive. This is deliberate, to allow the specification of ranges which include\n<xref href=\"System.Int32.MaxValue\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public static T? CheckArgumentRange<T>(T? argument, string paramName, T minInclusive, T maxInclusive)where T : struct, IComparable<T>'
+    parameters:
+    - id: argument
+      type: System.Nullable{{T}}
+      description: The value of the argument passed to the calling method.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    - id: minInclusive
+      type: '{T}'
+      description: The smallest valid value.
+    - id: maxInclusive
+      type: '{T}'
+      description: The largest valid value.
+    typeParameters:
+    - id: T
+    return:
+      type: System.Nullable{{T}}
+      description: <span class="paramref">argument</span> if it was in range, or <code>null</code>.
+    content.vb: Public Shared Function CheckArgumentRange(Of T As {Structure, IComparable(Of T)})(argument As T?, paramName As String, minInclusive As T, maxInclusive As T) As T?
+  overload: Google.Api.Gax.GaxPreconditions.CheckArgumentRange*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: The argument was outside the specified range.
+  nameWithType.vb: GaxPreconditions.CheckArgumentRange(Of T)(Nullable(Of T), String, T, T)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckArgumentRange(Of T)(System.Nullable(Of T), System.String, T, T)
+  name.vb: CheckArgumentRange(Of T)(Nullable(Of T), String, T, T)
+- uid: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Int32,System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Int32,System.String)
+  id: CheckNonNegative(System.Int32,System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckNonNegative(Int32, String)
+  nameWithType: GaxPreconditions.CheckNonNegative(Int32, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Int32, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckNonNegative
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 119
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given argument value is not negative.\n"
+  example: []
+  syntax:
+    content: public static int CheckNonNegative(int argument, string paramName)
+    parameters:
+    - id: argument
+      type: System.Int32
+      description: The value of the argument passed to the calling method.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    return:
+      type: System.Int32
+      description: <span class="paramref">argument</span> if it was non-negative.
+    content.vb: Public Shared Function CheckNonNegative(argument As Integer, paramName As String) As Integer
+  overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: The argument was negative.
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Int32},System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Int32},System.String)
+  id: CheckNonNegative(System.Nullable{System.Int32},System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckNonNegative(Nullable<Int32>, String)
+  nameWithType: GaxPreconditions.CheckNonNegative(Nullable<Int32>, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable<System.Int32>, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckNonNegative
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 129
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given argument value, if not <code>null</code>, is not negative.\n"
+  example: []
+  syntax:
+    content: public static int ? CheckNonNegative(int ? argument, string paramName)
+    parameters:
+    - id: argument
+      type: System.Nullable{System.Int32}
+      description: The value of the argument passed to the calling method.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    return:
+      type: System.Nullable{System.Int32}
+      description: <span class="paramref">argument</span> if it was non-negative, or <code>null</code>.
+    content.vb: Public Shared Function CheckNonNegative(argument As Integer?, paramName As String) As Integer?
+  overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: The argument was negative.
+  nameWithType.vb: GaxPreconditions.CheckNonNegative(Nullable(Of Int32), String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable(Of System.Int32), System.String)
+  name.vb: CheckNonNegative(Nullable(Of Int32), String)
+- uid: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Int64,System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Int64,System.String)
+  id: CheckNonNegative(System.Int64,System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckNonNegative(Int64, String)
+  nameWithType: GaxPreconditions.CheckNonNegative(Int64, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Int64, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckNonNegative
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 139
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given argument value is not negative.\n"
+  example: []
+  syntax:
+    content: public static long CheckNonNegative(long argument, string paramName)
+    parameters:
+    - id: argument
+      type: System.Int64
+      description: The value of the argument passed to the calling method.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    return:
+      type: System.Int64
+      description: <span class="paramref">argument</span> if it was non-negative.
+    content.vb: Public Shared Function CheckNonNegative(argument As Long, paramName As String) As Long
+  overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: The argument was negative.
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Int64},System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Int64},System.String)
+  id: CheckNonNegative(System.Nullable{System.Int64},System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckNonNegative(Nullable<Int64>, String)
+  nameWithType: GaxPreconditions.CheckNonNegative(Nullable<Int64>, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable<System.Int64>, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckNonNegative
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 149
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given argument value, if not <code>null</code>, is not negative.\n"
+  example: []
+  syntax:
+    content: public static long ? CheckNonNegative(long ? argument, string paramName)
+    parameters:
+    - id: argument
+      type: System.Nullable{System.Int64}
+      description: The value of the argument passed to the calling method.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    return:
+      type: System.Nullable{System.Int64}
+      description: <span class="paramref">argument</span> if it was non-negative, or <code>null</code>.
+    content.vb: Public Shared Function CheckNonNegative(argument As Long?, paramName As String) As Long?
+  overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: The argument was negative.
+  nameWithType.vb: GaxPreconditions.CheckNonNegative(Nullable(Of Int64), String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable(Of System.Int64), System.String)
+  name.vb: CheckNonNegative(Nullable(Of Int64), String)
+- uid: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Double,System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Double,System.String)
+  id: CheckNonNegative(System.Double,System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckNonNegative(Double, String)
+  nameWithType: GaxPreconditions.CheckNonNegative(Double, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Double, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckNonNegative
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 159
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given argument value is not negative.\n"
+  example: []
+  syntax:
+    content: public static double CheckNonNegative(double argument, string paramName)
+    parameters:
+    - id: argument
+      type: System.Double
+      description: The value of the argument passed to the calling method.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    return:
+      type: System.Double
+      description: <span class="paramref">argument</span> if it was non-negative.
+    content.vb: Public Shared Function CheckNonNegative(argument As Double, paramName As String) As Double
+  overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: The argument was negative.
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Double},System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Double},System.String)
+  id: CheckNonNegative(System.Nullable{System.Double},System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckNonNegative(Nullable<Double>, String)
+  nameWithType: GaxPreconditions.CheckNonNegative(Nullable<Double>, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable<System.Double>, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckNonNegative
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 169
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given argument value, if not <code>null</code>, is not negative.\n"
+  example: []
+  syntax:
+    content: public static double ? CheckNonNegative(double ? argument, string paramName)
+    parameters:
+    - id: argument
+      type: System.Nullable{System.Double}
+      description: The value of the argument passed to the calling method.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter in the calling method.
+    return:
+      type: System.Nullable{System.Double}
+      description: <span class="paramref">argument</span> if it was non-negative, or <code>null</code>.
+    content.vb: Public Shared Function CheckNonNegative(argument As Double?, paramName As String) As Double?
+  overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
+  exceptions:
+  - type: System.ArgumentOutOfRangeException
+    commentId: T:System.ArgumentOutOfRangeException
+    description: The argument was negative.
+  nameWithType.vb: GaxPreconditions.CheckNonNegative(Nullable(Of Double), String)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable(Of System.Double), System.String)
+  name.vb: CheckNonNegative(Nullable(Of Double), String)
 - uid: Google.Api.Gax.GaxPreconditions.CheckState(System.Boolean,System.String)
   commentId: M:Google.Api.Gax.GaxPreconditions.CheckState(System.Boolean,System.String)
   id: CheckState(System.Boolean,System.String)
@@ -233,7 +658,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: CheckState
     path: src/Google.Api.Gax/GaxPreconditions.cs
-    startLine: 103
+    startLine: 179
   assemblies:
   - Google.Api.Gax
   namespace: Google.Api.Gax
@@ -279,7 +704,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: CheckState
     path: src/Google.Api.Gax/GaxPreconditions.cs
-    startLine: 118
+    startLine: 194
   assemblies:
   - Google.Api.Gax
   namespace: Google.Api.Gax
@@ -331,7 +756,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: CheckState
     path: src/Google.Api.Gax/GaxPreconditions.cs
-    startLine: 134
+    startLine: 210
   assemblies:
   - Google.Api.Gax
   namespace: Google.Api.Gax
@@ -387,7 +812,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: CheckArgument
     path: src/Google.Api.Gax/GaxPreconditions.cs
-    startLine: 151
+    startLine: 227
   assemblies:
   - Google.Api.Gax
   namespace: Google.Api.Gax
@@ -436,7 +861,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: CheckArgument
     path: src/Google.Api.Gax/GaxPreconditions.cs
-    startLine: 167
+    startLine: 243
   assemblies:
   - Google.Api.Gax
   namespace: Google.Api.Gax
@@ -491,7 +916,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: CheckArgument
     path: src/Google.Api.Gax/GaxPreconditions.cs
-    startLine: 184
+    startLine: 260
   assemblies:
   - Google.Api.Gax
   namespace: Google.Api.Gax
@@ -550,7 +975,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: CheckEnumValue
     path: src/Google.Api.Gax/GaxPreconditions.cs
-    startLine: 199
+    startLine: 275
   assemblies:
   - Google.Api.Gax
   namespace: Google.Api.Gax
@@ -932,6 +1357,239 @@ references:
   name: Int32
   nameWithType: Int32
   fullName: System.Int32
+- uid: System.Int64.MaxValue
+  commentId: F:System.Int64.MaxValue
+- uid: System.Nullable{{T}}
+  commentId: T:System.Nullable{``0}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
+  commentId: Overload:Google.Api.Gax.GaxPreconditions.CheckNonNegative
+  isExternal: false
+  name: CheckNonNegative
+  nameWithType: GaxPreconditions.CheckNonNegative
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNonNegative
+- uid: System.Nullable{System.Int32}
+  commentId: T:System.Nullable{System.Int32}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Int32>
+  nameWithType: Nullable<Int32>
+  fullName: System.Nullable<System.Int32>
+  nameWithType.vb: Nullable(Of Int32)
+  fullName.vb: System.Nullable(Of System.Int32)
+  name.vb: Nullable(Of Int32)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: System.Nullable{System.Int64}
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Int64>
+  nameWithType: Nullable<Int64>
+  fullName: System.Nullable<System.Int64>
+  nameWithType.vb: Nullable(Of Int64)
+  fullName.vb: System.Nullable(Of System.Int64)
+  name.vb: Nullable(Of Int64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: System.Nullable{System.Double}
+  commentId: T:System.Nullable{System.Double}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Double>
+  nameWithType: Nullable<Double>
+  fullName: System.Nullable<System.Double>
+  nameWithType.vb: Nullable(Of Double)
+  fullName.vb: System.Nullable(Of System.Double)
+  name.vb: Nullable(Of Double)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Double
+    name: Double
+    nameWithType: Double
+    fullName: System.Double
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.InvalidOperationException
   commentId: T:System.InvalidOperationException
 - uid: Google.Api.Gax.GaxPreconditions.CheckState*

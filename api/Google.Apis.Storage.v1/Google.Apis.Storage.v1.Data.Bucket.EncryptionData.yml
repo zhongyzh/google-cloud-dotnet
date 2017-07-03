@@ -1,33 +1,37 @@
 ### YamlMime:ManagedReference
 items:
-- uid: Grpc.Core.ContextPropagationToken
-  commentId: T:Grpc.Core.ContextPropagationToken
-  id: ContextPropagationToken
-  parent: Grpc.Core
-  children: []
+- uid: Google.Apis.Storage.v1.Data.Bucket.EncryptionData
+  commentId: T:Google.Apis.Storage.v1.Data.Bucket.EncryptionData
+  id: Bucket.EncryptionData
+  parent: Google.Apis.Storage.v1.Data
+  children:
+  - Google.Apis.Storage.v1.Data.Bucket.EncryptionData.DefaultKmsKeyName
   langs:
   - csharp
   - vb
-  name: ContextPropagationToken
-  nameWithType: ContextPropagationToken
-  fullName: Grpc.Core.ContextPropagationToken
+  name: Bucket.EncryptionData
+  nameWithType: Bucket.EncryptionData
+  fullName: Google.Apis.Storage.v1.Data.Bucket.EncryptionData
   type: Class
   source:
     remote:
-      path: src/csharp/Grpc.Core/ContextPropagationToken.cs
-      branch: v1.4.x
-      repo: https://github.com/grpc/grpc
-    id: ContextPropagationToken
-    path: src/csharp/Grpc.Core/ContextPropagationToken.cs
-    startLine: 49
+      path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: EncryptionData
+    path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+    startLine: 7137
   assemblies:
-  - Grpc.Core
-  namespace: Grpc.Core
-  summary: "\nToken for propagating context of server side handlers to child calls.\nIn situations when a backend is making calls to another backend,\nit makes sense to propagate properties like deadline and cancellation \ntoken of the server call to the child call.\nThe gRPC native layer provides some other contexts (like tracing context) that\nare not accessible to explicitly C# layer, but this token still allows propagating them.\n"
+  - Google.Apis.Storage.v1
+  namespace: Google.Apis.Storage.v1.Data
+  summary: >-
+    Encryption configuration used by default for newly inserted objects, when no encryption config is
+
+    specified.
   example: []
   syntax:
-    content: public class ContextPropagationToken
-    content.vb: Public Class ContextPropagationToken
+    content: public class EncryptionData
+    content.vb: Public Class EncryptionData
   inheritance:
   - System.Object
   inheritedMembers:
@@ -44,13 +48,62 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: Google.Apis.Storage.v1.Data.Bucket.EncryptionData.DefaultKmsKeyName
+  commentId: P:Google.Apis.Storage.v1.Data.Bucket.EncryptionData.DefaultKmsKeyName
+  id: DefaultKmsKeyName
+  parent: Google.Apis.Storage.v1.Data.Bucket.EncryptionData
+  langs:
+  - csharp
+  - vb
+  name: DefaultKmsKeyName
+  nameWithType: Bucket.EncryptionData.DefaultKmsKeyName
+  fullName: Google.Apis.Storage.v1.Data.Bucket.EncryptionData.DefaultKmsKeyName
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: DefaultKmsKeyName
+    path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+    startLine: 7139
+  assemblies:
+  - Google.Apis.Storage.v1
+  namespace: Google.Apis.Storage.v1.Data
+  syntax:
+    content: >-
+      [JsonProperty("defaultKmsKeyName")]
+
+      public virtual string DefaultKmsKeyName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <JsonProperty("defaultKmsKeyName")>
+
+      Public Overridable Property DefaultKmsKeyName As String
+  overload: Google.Apis.Storage.v1.Data.Bucket.EncryptionData.DefaultKmsKeyName*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: defaultKmsKeyName
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
 references:
-- uid: Grpc.Core
-  commentId: N:Grpc.Core
+- uid: Google.Apis.Storage.v1.Data
+  commentId: N:Google.Apis.Storage.v1.Data
   isExternal: false
-  name: Grpc.Core
-  nameWithType: Grpc.Core
-  fullName: Grpc.Core
+  name: Google.Apis.Storage.v1.Data
+  nameWithType: Google.Apis.Storage.v1.Data
+  fullName: Google.Apis.Storage.v1.Data
 - uid: System.Object
   commentId: T:System.Object
   parent: System
@@ -343,3 +396,16 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Google.Apis.Storage.v1.Data.Bucket.EncryptionData.DefaultKmsKeyName*
+  commentId: Overload:Google.Apis.Storage.v1.Data.Bucket.EncryptionData.DefaultKmsKeyName
+  isExternal: false
+  name: DefaultKmsKeyName
+  nameWithType: Bucket.EncryptionData.DefaultKmsKeyName
+  fullName: Google.Apis.Storage.v1.Data.Bucket.EncryptionData.DefaultKmsKeyName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

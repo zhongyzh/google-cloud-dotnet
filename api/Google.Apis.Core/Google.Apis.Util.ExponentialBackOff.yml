@@ -218,10 +218,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: GetNextBackOff
     path: Src/Support/Google.Apis.Core/Util/ExponentialBackOff.cs
-    startLine: 76
+    startLine: 77
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Util
+  summary: "\nGets the a time span to wait before next retry. If the current retry reached the maximum number of retries,\nthe returned value is <xref href=\"System.TimeSpan.MinValue\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
   syntax:
     content: public TimeSpan GetNextBackOff(int currentRetry)
     parameters:

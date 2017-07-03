@@ -105,17 +105,21 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: InterceptAsync
     path: Src/Support/Google.Apis.Core/Http/MaxUrlLengthInterceptor.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Http
+  summary: "\n<summary>Invoked before the request is being sent.</summary>\n"
+  example: []
   syntax:
     content: public Task InterceptAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     parameters:
     - id: request
       type: System.Net.Http.HttpRequestMessage
+      description: The HTTP request message.
     - id: cancellationToken
       type: System.Threading.CancellationToken
+      description: Cancellation token to cancel the operation.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Public Function InterceptAsync(request As HttpRequestMessage, cancellationToken As CancellationToken) As Task

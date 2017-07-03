@@ -187,19 +187,24 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: AuthorizeAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/AuthorizationCodeInstalledApp.cs
-    startLine: 63
+    startLine: 64
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
+  summary: Asynchronously authorizes the installed application to access user's protected data.
+  example: []
   syntax:
     content: public Task<UserCredential> AuthorizeAsync(string userId, CancellationToken taskCancellationToken)
     parameters:
     - id: userId
       type: System.String
+      description: User identifier
     - id: taskCancellationToken
       type: System.Threading.CancellationToken
+      description: Cancellation token to cancel an operation
     return:
       type: System.Threading.Tasks.Task{Google.Apis.Auth.OAuth2.UserCredential}
+      description: The user's credential
     content.vb: Public Function AuthorizeAsync(userId As String, taskCancellationToken As CancellationToken) As Task(Of UserCredential)
   overload: Google.Apis.Auth.OAuth2.AuthorizationCodeInstalledApp.AuthorizeAsync*
   implements:
@@ -226,7 +231,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ShouldRequestAuthorizationCode
     path: Src/Support/Google.Apis.Auth/OAuth2/AuthorizationCodeInstalledApp.cs
-    startLine: 100
+    startLine: 101
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2

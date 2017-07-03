@@ -9,6 +9,7 @@ items:
   - Google.Apis.Storage.v1.Data.Bucket.Billing
   - Google.Apis.Storage.v1.Data.Bucket.Cors
   - Google.Apis.Storage.v1.Data.Bucket.DefaultObjectAcl
+  - Google.Apis.Storage.v1.Data.Bucket.Encryption
   - Google.Apis.Storage.v1.Data.Bucket.ETag
   - Google.Apis.Storage.v1.Data.Bucket.Id
   - Google.Apis.Storage.v1.Data.Bucket.Kind
@@ -42,7 +43,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Bucket
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6773
+    startLine: 6974
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -89,7 +90,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Acl
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6776
+    startLine: 6977
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -140,7 +141,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Billing
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6780
+    startLine: 6981
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -191,7 +192,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Cors
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6784
+    startLine: 6985
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -242,7 +243,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DefaultObjectAcl
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6788
+    startLine: 6989
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -275,6 +276,60 @@ items:
   modifiers.vb:
   - Public
   - Overridable
+- uid: Google.Apis.Storage.v1.Data.Bucket.Encryption
+  commentId: P:Google.Apis.Storage.v1.Data.Bucket.Encryption
+  id: Encryption
+  parent: Google.Apis.Storage.v1.Data.Bucket
+  langs:
+  - csharp
+  - vb
+  name: Encryption
+  nameWithType: Bucket.Encryption
+  fullName: Google.Apis.Storage.v1.Data.Bucket.Encryption
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: Encryption
+    path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+    startLine: 6994
+  assemblies:
+  - Google.Apis.Storage.v1
+  namespace: Google.Apis.Storage.v1.Data
+  summary: >-
+    Encryption configuration used by default for newly inserted objects, when no encryption config is
+
+    specified.
+  example: []
+  syntax:
+    content: >-
+      [JsonProperty("encryption")]
+
+      public virtual Bucket.EncryptionData Encryption { get; set; }
+    parameters: []
+    return:
+      type: Google.Apis.Storage.v1.Data.Bucket.EncryptionData
+    content.vb: >-
+      <JsonProperty("encryption")>
+
+      Public Overridable Property Encryption As Bucket.EncryptionData
+  overload: Google.Apis.Storage.v1.Data.Bucket.Encryption*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: encryption
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
 - uid: Google.Apis.Storage.v1.Data.Bucket.ETag
   commentId: P:Google.Apis.Storage.v1.Data.Bucket.ETag
   id: ETag
@@ -293,7 +348,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ETag
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6792
+    startLine: 6998
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -346,7 +401,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Id
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6796
+    startLine: 7002
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -397,7 +452,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Kind
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6800
+    startLine: 7006
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -448,7 +503,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Labels
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6804
+    startLine: 7010
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -499,7 +554,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Lifecycle
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6808
+    startLine: 7014
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -550,7 +605,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Location
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6813
+    startLine: 7019
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -604,7 +659,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Logging
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6818
+    startLine: 7024
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -658,7 +713,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Metageneration
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6822
+    startLine: 7028
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -709,7 +764,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Name
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6826
+    startLine: 7032
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -760,7 +815,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Owner
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6830
+    startLine: 7036
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -811,7 +866,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ProjectNumber
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6834
+    startLine: 7040
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -862,7 +917,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SelfLink
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6838
+    startLine: 7044
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -913,7 +968,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: StorageClass
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6846
+    startLine: 7052
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -973,7 +1028,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TimeCreatedRaw
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6850
+    startLine: 7056
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -1024,7 +1079,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TimeCreated
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6854
+    startLine: 7060
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -1073,7 +1128,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UpdatedRaw
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6868
+    startLine: 7074
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -1124,7 +1179,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Updated
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6872
+    startLine: 7078
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -1173,7 +1228,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Versioning
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6886
+    startLine: 7092
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -1224,7 +1279,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Website
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6891
+    startLine: 7097
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -1774,6 +1829,19 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Google.Apis.Storage.v1.Data.Bucket.Encryption*
+  commentId: Overload:Google.Apis.Storage.v1.Data.Bucket.Encryption
+  isExternal: false
+  name: Encryption
+  nameWithType: Bucket.Encryption
+  fullName: Google.Apis.Storage.v1.Data.Bucket.Encryption
+- uid: Google.Apis.Storage.v1.Data.Bucket.EncryptionData
+  commentId: T:Google.Apis.Storage.v1.Data.Bucket.EncryptionData
+  parent: Google.Apis.Storage.v1.Data
+  isExternal: false
+  name: Bucket.EncryptionData
+  nameWithType: Bucket.EncryptionData
+  fullName: Google.Apis.Storage.v1.Data.Bucket.EncryptionData
 - uid: Google.Apis.Storage.v1.Data.Bucket.ETag*
   commentId: Overload:Google.Apis.Storage.v1.Data.Bucket.ETag
   isExternal: false

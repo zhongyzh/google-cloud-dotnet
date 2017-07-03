@@ -346,10 +346,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: AccessMethod
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 200
+    startLine: 201
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
+  summary: Gets the method for presenting the access token to the resource server.
+  example: []
   syntax:
     content: public IAccessMethod AccessMethod { get; }
     parameters: []
@@ -383,10 +385,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Clock
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 202
+    startLine: 204
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
+  summary: Gets the clock.
+  example: []
   syntax:
     content: public IClock Clock { get; }
     parameters: []
@@ -420,19 +424,24 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: LoadTokenAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 204
+    startLine: 207
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
+  summary: "\nAsynchronously loads the user's token using the flow's\n<xref href=\"Google.Apis.Util.Store.IDataStore\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
   syntax:
     content: public Task<TokenResponse> LoadTokenAsync(string userId, CancellationToken taskCancellationToken)
     parameters:
     - id: userId
       type: System.String
+      description: User identifier
     - id: taskCancellationToken
       type: System.Threading.CancellationToken
+      description: Cancellation token to cancel operation
     return:
       type: System.Threading.Tasks.Task{Google.Apis.Auth.OAuth2.Responses.TokenResponse}
+      description: Token response
     content.vb: Public Function LoadTokenAsync(userId As String, taskCancellationToken As CancellationToken) As Task(Of TokenResponse)
   overload: Google.Apis.Auth.OAuth2.Flows.AuthorizationCodeFlow.LoadTokenAsync*
   implements:
@@ -459,17 +468,21 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DeleteTokenAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 214
+    startLine: 218
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
+  summary: "\nAsynchronously deletes the user's token using the flow's\n<xref href=\"Google.Apis.Util.Store.IDataStore\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
   syntax:
     content: public Task DeleteTokenAsync(string userId, CancellationToken taskCancellationToken)
     parameters:
     - id: userId
       type: System.String
+      description: User identifier.
     - id: taskCancellationToken
       type: System.Threading.CancellationToken
+      description: Cancellation token to cancel operation.
     return:
       type: System.Threading.Tasks.Task
     content.vb: Public Function DeleteTokenAsync(userId As String, taskCancellationToken As CancellationToken) As Task
@@ -498,10 +511,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: CreateAuthorizationCodeRequest
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 223
+    startLine: 228
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
+  summary: Creates an authorization code request with the specified redirect URI.
+  example: []
   syntax:
     content: public virtual AuthorizationCodeRequestUrl CreateAuthorizationCodeRequest(string redirectUri)
     parameters:
@@ -537,23 +552,30 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ExchangeCodeForTokenAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 233
+    startLine: 239
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
+  summary: Asynchronously exchanges code with a token.
+  example: []
   syntax:
     content: public Task<TokenResponse> ExchangeCodeForTokenAsync(string userId, string code, string redirectUri, CancellationToken taskCancellationToken)
     parameters:
     - id: userId
       type: System.String
+      description: User identifier.
     - id: code
       type: System.String
+      description: Authorization code received from the authorization server.
     - id: redirectUri
       type: System.String
+      description: Redirect URI which is used in the token request.
     - id: taskCancellationToken
       type: System.Threading.CancellationToken
+      description: Cancellation token to cancel operation.
     return:
       type: System.Threading.Tasks.Task{Google.Apis.Auth.OAuth2.Responses.TokenResponse}
+      description: Token response which contains the access token.
     content.vb: Public Function ExchangeCodeForTokenAsync(userId As String, code As String, redirectUri As String, taskCancellationToken As CancellationToken) As Task(Of TokenResponse)
   overload: Google.Apis.Auth.OAuth2.Flows.AuthorizationCodeFlow.ExchangeCodeForTokenAsync*
   implements:
@@ -580,21 +602,27 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: RefreshTokenAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 249
+    startLine: 256
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
+  summary: Asynchronously refreshes an access token using a refresh token.
+  example: []
   syntax:
     content: public Task<TokenResponse> RefreshTokenAsync(string userId, string refreshToken, CancellationToken taskCancellationToken)
     parameters:
     - id: userId
       type: System.String
+      description: User identifier.
     - id: refreshToken
       type: System.String
+      description: Refresh token which is used to get a new access token.
     - id: taskCancellationToken
       type: System.Threading.CancellationToken
+      description: Cancellation token to cancel operation.
     return:
       type: System.Threading.Tasks.Task{Google.Apis.Auth.OAuth2.Responses.TokenResponse}
+      description: Token response which contains the access token and the input refresh token.
     content.vb: Public Function RefreshTokenAsync(userId As String, refreshToken As String, taskCancellationToken As CancellationToken) As Task(Of TokenResponse)
   overload: Google.Apis.Auth.OAuth2.Flows.AuthorizationCodeFlow.RefreshTokenAsync*
   implements:
@@ -621,21 +649,28 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: RevokeTokenAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 268
+    startLine: 276
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
+  summary: "\nAsynchronously revokes the specified token. This method disconnects the user's account from the OAuth 2.0\napplication. It should be called upon removing the user account from the site."
+  remarks: "\nIf revoking the token succeeds, the user's credential is removed from the data store and the user MUST\nauthorize the application again before the application can access the user's private resources.\n"
+  example: []
   syntax:
     content: public virtual Task RevokeTokenAsync(string userId, string token, CancellationToken taskCancellationToken)
     parameters:
     - id: userId
       type: System.String
+      description: User identifier.
     - id: token
       type: System.String
+      description: Access token to be revoked.
     - id: taskCancellationToken
       type: System.Threading.CancellationToken
+      description: Cancellation token to cancel operation.
     return:
       type: System.Threading.Tasks.Task
+      description: <code>true</code> if the token was revoked successfully.
     content.vb: Public Overridable Function RevokeTokenAsync(userId As String, token As String, taskCancellationToken As CancellationToken) As Task
   overload: Google.Apis.Auth.OAuth2.Flows.AuthorizationCodeFlow.RevokeTokenAsync*
   implements:
@@ -664,10 +699,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ShouldForceTokenRetrieval
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 273
+    startLine: 282
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
+  summary: "\nIndicates if a new token needs to be retrieved and stored regardless of normal circumstances.\n"
+  example: []
   syntax:
     content: public virtual bool ShouldForceTokenRetrieval()
     return:
@@ -700,7 +737,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: FetchTokenAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 295
+    startLine: 304
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
@@ -745,10 +782,11 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Dispose
     path: Src/Support/Google.Apis.Auth/OAuth2/Flows/AuthorizationCodeFlow.cs
-    startLine: 325
+    startLine: 335
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Flows
+  example: []
   syntax:
     content: public void Dispose()
     content.vb: Public Sub Dispose

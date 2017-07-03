@@ -7,6 +7,7 @@ items:
   children:
   - Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.#ctor(Google.Apis.Services.IClientService,Google.Apis.Storage.v1.Data.Object,System.String,System.String,System.String,System.String)
   - Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationBucket
+  - Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationKmsKeyName
   - Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationObject
   - Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationPredefinedAcl
   - Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.GetBody
@@ -43,7 +44,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: RewriteRequest
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5658
+    startLine: 5814
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -114,7 +115,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: .ctor
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5661
+    startLine: 5817
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -159,7 +160,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SourceBucket
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5674
+    startLine: 5830
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -212,7 +213,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SourceObject
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5679
+    startLine: 5835
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -268,7 +269,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DestinationBucket
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5684
+    startLine: 5840
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -324,7 +325,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DestinationObject
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5690
+    startLine: 5846
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -364,6 +365,64 @@ items:
   - Public
   - Overridable
   - ReadOnly
+- uid: Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationKmsKeyName
+  commentId: P:Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationKmsKeyName
+  id: DestinationKmsKeyName
+  parent: Google.Apis.Storage.v1.ObjectsResource.RewriteRequest
+  langs:
+  - csharp
+  - vb
+  name: DestinationKmsKeyName
+  nameWithType: ObjectsResource.RewriteRequest.DestinationKmsKeyName
+  fullName: Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationKmsKeyName
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: DestinationKmsKeyName
+    path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+    startLine: 5852
+  assemblies:
+  - Google.Apis.Storage.v1
+  namespace: Google.Apis.Storage.v1
+  summary: >-
+    Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings
+
+    /my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's
+
+    kms_key_name value, if any.
+  example: []
+  syntax:
+    content: >-
+      [RequestParameter("destinationKmsKeyName", RequestParameterType.Query)]
+
+      public virtual string DestinationKmsKeyName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: >-
+      <RequestParameter("destinationKmsKeyName", RequestParameterType.Query)>
+
+      Public Overridable Property DestinationKmsKeyName As String
+  overload: Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationKmsKeyName*
+  attributes:
+  - type: Google.Apis.Util.RequestParameterAttribute
+    ctor: Google.Apis.Util.RequestParameterAttribute.#ctor(System.String,Google.Apis.Util.RequestParameterType)
+    arguments:
+    - type: System.String
+      value: destinationKmsKeyName
+    - type: Google.Apis.Util.RequestParameterType
+      value: 1
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
 - uid: Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationPredefinedAcl
   commentId: P:Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationPredefinedAcl
   id: DestinationPredefinedAcl
@@ -382,7 +441,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DestinationPredefinedAcl
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5694
+    startLine: 5856
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -435,7 +494,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfGenerationMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5723
+    startLine: 5885
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -491,7 +550,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfGenerationNotMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5728
+    startLine: 5890
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -547,7 +606,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfMetagenerationMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5733
+    startLine: 5895
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -603,7 +662,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfMetagenerationNotMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5738
+    startLine: 5900
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -659,7 +718,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfSourceGenerationMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5743
+    startLine: 5905
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -715,7 +774,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfSourceGenerationNotMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5748
+    startLine: 5910
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -771,7 +830,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfSourceMetagenerationMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5753
+    startLine: 5915
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -827,7 +886,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfSourceMetagenerationNotMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5758
+    startLine: 5920
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -883,7 +942,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: MaxBytesRewrittenPerCall
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5766
+    startLine: 5928
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -945,7 +1004,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Projection
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5771
+    startLine: 5933
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -1001,7 +1060,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: RewriteToken
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5790
+    startLine: 5952
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -1061,7 +1120,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SourceGeneration
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5795
+    startLine: 5957
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -1117,11 +1176,11 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UserProject
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5799
+    startLine: 5961
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
-  summary: The project number to be billed for this request, for Requester Pays buckets.
+  summary: The project to be billed for this request, for Requester Pays buckets.
   example: []
   syntax:
     content: >-
@@ -1170,7 +1229,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: GetBody
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5807
+    startLine: 5969
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -1207,7 +1266,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: MethodName
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5810
+    startLine: 5972
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -1247,7 +1306,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: HttpMethod
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5816
+    startLine: 5978
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -1287,7 +1346,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: RestPath
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5822
+    startLine: 5984
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -1327,7 +1386,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: InitParameters
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 5828
+    startLine: 5990
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -2856,6 +2915,12 @@ references:
   name: DestinationObject
   nameWithType: ObjectsResource.RewriteRequest.DestinationObject
   fullName: Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationObject
+- uid: Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationKmsKeyName*
+  commentId: Overload:Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationKmsKeyName
+  isExternal: false
+  name: DestinationKmsKeyName
+  nameWithType: ObjectsResource.RewriteRequest.DestinationKmsKeyName
+  fullName: Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationKmsKeyName
 - uid: Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationPredefinedAcl*
   commentId: Overload:Google.Apis.Storage.v1.ObjectsResource.RewriteRequest.DestinationPredefinedAcl
   isExternal: false

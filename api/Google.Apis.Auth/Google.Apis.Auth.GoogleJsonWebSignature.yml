@@ -4,7 +4,8 @@ items:
   commentId: T:Google.Apis.Auth.GoogleJsonWebSignature
   id: GoogleJsonWebSignature
   parent: Google.Apis.Auth
-  children: []
+  children:
+  - Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(System.String,Google.Apis.Util.IClock,System.Boolean)
   langs:
   - csharp
   - vb
@@ -19,7 +20,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: GoogleJsonWebSignature
     path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
-    startLine: 21
+    startLine: 34
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth
@@ -44,6 +45,58 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(System.String,Google.Apis.Util.IClock,System.Boolean)
+  commentId: M:Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(System.String,Google.Apis.Util.IClock,System.Boolean)
+  id: ValidateAsync(System.String,Google.Apis.Util.IClock,System.Boolean)
+  parent: Google.Apis.Auth.GoogleJsonWebSignature
+  langs:
+  - csharp
+  - vb
+  name: ValidateAsync(String, IClock, Boolean)
+  nameWithType: GoogleJsonWebSignature.ValidateAsync(String, IClock, Boolean)
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(System.String, Google.Apis.Util.IClock, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: ValidateAsync
+    path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+    startLine: 69
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth
+  summary: "\nValidates a Google-issued Json Web Token (JWT).\nWith throw a <xref href=\"Google.Apis.Auth.InvalidJwtException\" data-throw-if-not-resolved=\"false\"></xref> if the passed value is not valid JWT signed by Google.\n"
+  remarks: "\n<p>Follows the procedure to\n<a href=\"https://developers.google.com/identity/protocols/OpenIDConnect#validatinganidtoken\">validate a JWT ID token</a>.\n</p>\n<p>Google certificates are cached, and refreshed once per hour. This can be overridden by setting\n<span class=\"paramref\">forceGoogleCertRefresh</span> to true.</p>\n"
+  example: []
+  syntax:
+    content: public static Task<GoogleJsonWebSignature.Payload> ValidateAsync(string jwt, IClock clock = null, bool forceGoogleCertRefresh = false)
+    parameters:
+    - id: jwt
+      type: System.String
+      description: The JWT to validate.
+    - id: clock
+      type: Google.Apis.Util.IClock
+      description: Optional. The <xref href="Google.Apis.Util.IClock" data-throw-if-not-resolved="false"></xref> to use for JWT expiration verification. Defaults to the system clock.
+    - id: forceGoogleCertRefresh
+      type: System.Boolean
+      description: Optional. If true forces new certificates to be downloaded from Google. Defaults to false.
+    return:
+      type: System.Threading.Tasks.Task{Google.Apis.Auth.GoogleJsonWebSignature.Payload}
+      description: The JWT payload, if the JWT is valid. Throws an <xref href="Google.Apis.Auth.InvalidJwtException" data-throw-if-not-resolved="false"></xref> otherwise.
+    content.vb: Public Shared Function ValidateAsync(jwt As String, clock As IClock = Nothing, forceGoogleCertRefresh As Boolean = False) As Task(Of GoogleJsonWebSignature.Payload)
+  overload: Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync*
+  exceptions:
+  - type: Google.Apis.Auth.InvalidJwtException
+    commentId: T:Google.Apis.Auth.InvalidJwtException
+    description: Thrown when passed a JWT that is not a valid JWT signed by Google.
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
 references:
 - uid: Google.Apis.Auth
   commentId: N:Google.Apis.Auth
@@ -343,3 +396,129 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Google.Apis.Auth.InvalidJwtException
+  commentId: T:Google.Apis.Auth.InvalidJwtException
+  isExternal: false
+  name: InvalidJwtException
+  nameWithType: InvalidJwtException
+  fullName: Google.Apis.Auth.InvalidJwtException
+- uid: Google.Apis.Util.IClock
+  commentId: T:Google.Apis.Util.IClock
+  parent: Google.Apis.Util
+  isExternal: false
+  name: IClock
+  nameWithType: IClock
+  fullName: Google.Apis.Util.IClock
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync*
+  commentId: Overload:Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync
+  isExternal: false
+  name: ValidateAsync
+  nameWithType: GoogleJsonWebSignature.ValidateAsync
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.Threading.Tasks.Task{Google.Apis.Auth.GoogleJsonWebSignature.Payload}
+  commentId: T:System.Threading.Tasks.Task{Google.Apis.Auth.GoogleJsonWebSignature.Payload}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<GoogleJsonWebSignature.Payload>
+  nameWithType: Task<GoogleJsonWebSignature.Payload>
+  fullName: System.Threading.Tasks.Task<Google.Apis.Auth.GoogleJsonWebSignature.Payload>
+  nameWithType.vb: Task(Of GoogleJsonWebSignature.Payload)
+  fullName.vb: System.Threading.Tasks.Task(Of Google.Apis.Auth.GoogleJsonWebSignature.Payload)
+  name.vb: Task(Of GoogleJsonWebSignature.Payload)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+    name: GoogleJsonWebSignature.Payload
+    nameWithType: GoogleJsonWebSignature.Payload
+    fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+    name: GoogleJsonWebSignature.Payload
+    nameWithType: GoogleJsonWebSignature.Payload
+    fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Util
+  commentId: N:Google.Apis.Util
+  isExternal: false
+  name: Google.Apis.Util
+  nameWithType: Google.Apis.Util
+  fullName: Google.Apis.Util
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: false
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks

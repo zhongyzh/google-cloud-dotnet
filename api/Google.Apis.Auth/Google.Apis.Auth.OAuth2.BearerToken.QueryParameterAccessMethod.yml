@@ -21,7 +21,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: QueryParameterAccessMethod
     path: Src/Support/Google.Apis.Auth/OAuth2/BearerToken.cs
-    startLine: 55
+    startLine: 57
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
@@ -68,10 +68,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Intercept
     path: Src/Support/Google.Apis.Auth/OAuth2/BearerToken.cs
-    startLine: 59
+    startLine: 62
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
+  summary: "\nIntercepts a HTTP request right before the HTTP request executes by providing the access token.\n"
+  example: []
   syntax:
     content: public void Intercept(HttpRequestMessage request, string accessToken)
     parameters:
@@ -105,10 +107,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: GetAccessToken
     path: Src/Support/Google.Apis.Auth/OAuth2/BearerToken.cs
-    startLine: 67
+    startLine: 71
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
+  summary: "\nRetrieves the original access token in the HTTP request, as provided in the <xref href=\"Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>\nmethod.\n"
+  example: []
   syntax:
     content: public string GetAccessToken(HttpRequestMessage request)
     parameters:

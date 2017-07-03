@@ -124,7 +124,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: .ctor
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 121
+    startLine: 126
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -159,7 +159,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: CreateBackOffHandler
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 181
+    startLine: 187
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -195,10 +195,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: HttpClient
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 189
+    startLine: 196
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Gets the HTTP client which is used to create requests.
+  example: []
   syntax:
     content: public ConfigurableHttpClient HttpClient { get; }
     parameters: []
@@ -232,10 +234,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: HttpClientInitializer
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 191
+    startLine: 199
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: "\nGets a HTTP client initializer which is able to custom properties on \n<xref href=\"Google.Apis.Http.ConfigurableHttpClient\" data-throw-if-not-resolved=\"false\"></xref> and \n<xref href=\"Google.Apis.Http.ConfigurableMessageHandler\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
   syntax:
     content: public IConfigurableHttpClientInitializer HttpClientInitializer { get; }
     parameters: []
@@ -269,10 +273,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: GZipEnabled
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 193
+    startLine: 202
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Gets or sets whether this service supports GZip.
+  example: []
   syntax:
     content: public bool GZipEnabled { get; }
     parameters: []
@@ -306,10 +312,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ApiKey
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 195
+    startLine: 205
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Gets the API-Key (DeveloperKey) which this service uses for all requests.
+  example: []
   syntax:
     content: public string ApiKey { get; }
     parameters: []
@@ -343,10 +351,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ApplicationName
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 197
+    startLine: 208
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Gets the application name to be used in the User-Agent header.
+  example: []
   syntax:
     content: public string ApplicationName { get; }
     parameters: []
@@ -380,10 +390,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SetRequestSerailizedContent
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 199
+    startLine: 211
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: "\nSets the content of the request by the given body and the this service's configuration. \nFirst the body object is serialized by the Serializer and then, if GZip is enabled, the content will be\nwrapped in a GZip stream, otherwise a regular string stream will be used.\n"
+  example: []
   syntax:
     content: public void SetRequestSerailizedContent(HttpRequestMessage request, object body)
     parameters:
@@ -417,10 +429,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Serializer
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 206
+    startLine: 219
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Gets the Serializer used by this service.
+  example: []
   syntax:
     content: public ISerializer Serializer { get; }
     parameters: []
@@ -454,10 +468,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SerializeObject
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 208
+    startLine: 222
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Serializes an object into a string representation.
+  example: []
   syntax:
     content: public virtual string SerializeObject(object obj)
     parameters:
@@ -493,10 +509,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DeserializeResponse
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 219
+    startLine: 234
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Deserializes a response into the specified object.
+  example: []
   syntax:
     content: public virtual Task<T> DeserializeResponse<T>(HttpResponseMessage response)
     parameters:
@@ -537,10 +555,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DeserializeError
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 281
+    startLine: 297
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Deserializes an error response into a <xref href="Google.Apis.Requests.RequestError" data-throw-if-not-resolved="false"></xref> object.
+  example: []
   syntax:
     content: public virtual Task<RequestError> DeserializeError(HttpResponseMessage response)
     parameters:
@@ -550,6 +570,10 @@ items:
       type: System.Threading.Tasks.Task{Google.Apis.Requests.RequestError}
     content.vb: Public Overridable Function DeserializeError(response As HttpResponseMessage) As Task(Of RequestError)
   overload: Google.Apis.Services.BaseClientService.DeserializeError*
+  exceptions:
+  - type: Google.GoogleApiException
+    commentId: T:Google.GoogleApiException
+    description: If no error is found in the response.
   implements:
   - Google.Apis.Services.IClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
   modifiers.csharp:
@@ -576,10 +600,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Name
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 308
+    startLine: 325
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Gets the service name.
+  example: []
   syntax:
     content: public abstract string Name { get; }
     parameters: []
@@ -615,10 +641,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BaseUri
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 309
+    startLine: 328
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Gets the BaseUri of the service. All request paths should be relative to this URI.
+  example: []
   syntax:
     content: public abstract string BaseUri { get; }
     parameters: []
@@ -654,10 +682,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BasePath
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 310
+    startLine: 331
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Gets the BasePath of the service.
+  example: []
   syntax:
     content: public abstract string BasePath { get; }
     parameters: []
@@ -693,10 +723,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BatchUri
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 311
+    startLine: 334
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: The URI used for batch operations.
+  example: []
   syntax:
     content: public virtual string BatchUri { get; }
     parameters: []
@@ -730,10 +762,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BatchPath
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 312
+    startLine: 337
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: The path used for batch operations.
+  example: []
   syntax:
     content: public virtual string BatchPath { get; }
     parameters: []
@@ -767,10 +801,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Features
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 314
+    startLine: 340
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  summary: Gets the supported features by this service.
+  example: []
   syntax:
     content: public abstract IList<string> Features { get; }
     parameters: []
@@ -806,10 +842,11 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Dispose
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 320
+    startLine: 347
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
+  example: []
   syntax:
     content: public virtual void Dispose()
     content.vb: Public Overridable Sub Dispose
@@ -1607,6 +1644,8 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Google.GoogleApiException
+  commentId: T:Google.GoogleApiException
 - uid: System.Threading.Tasks.Task{Google.Apis.Requests.RequestError}
   commentId: T:System.Threading.Tasks.Task{Google.Apis.Requests.RequestError}
   parent: System.Threading.Tasks

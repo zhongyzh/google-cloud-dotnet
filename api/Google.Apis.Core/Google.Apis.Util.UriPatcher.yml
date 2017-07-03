@@ -20,10 +20,13 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UriPatcher
     path: Src/Support/Google.Apis.Core/Util/UriPatcher.cs
-    startLine: 56
+    startLine: 62
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Util
+  summary: "\nWorkarounds for some unfortunate behaviors in the .NET Framework's\nimplementation of System.Uri\n"
+  remarks: "\nUriPatcher lets us work around some unfortunate behaviors in the .NET Framework's\nimplementation of System.Uri.\n\n== Problem 1: Slashes and dots\n\nPrior to .NET 4.5, System.Uri would always unescape \"%2f\" (\"/\") and \"%5c\" (\"\\\\\").\nRelative path components were also compressed.\n\nAs a result, this:     \"http://www.example.com/.%2f.%5c./\"\n... turned into this:  \"http://www.example.com/\"\n\nThis breaks API requests where slashes or dots appear in path parameters. Such requests\narise, for example, when these characters appear in the name of a GCS object.\n\n== Problem 2: Fewer unreserved characters\n\nUnless IDN/IRI parsing is enabled -- which it is not, by default, prior to .NET 4.5 --\nUri.EscapeDataString uses the set of \"unreserved\" characters from RFC 2396 instead of the\nnewer, *smaller* list from RFC 3986. We build requests using URI templating as described\nby RFC 6570, which specifies that the latter definition (RFC 3986) should be used.\n\nThis breaks API requests with parameters including any of: !*'()\n\n== Solutions\n\nThough the default behaviors changed in .NET 4.5, these \"quirks\" remain for compatibility\nunless the application explicitly targets the new runtime.  Usually, that means adding a\nTargetFrameworkAttribute to the entry assembly.\n\nApplications running on .NET 4.0 or later can also set \"DontUnescapePathDotsAndSlashes\"\nand enable IDN/IRI parsing using app.config or web.config.\n\nAs a class library, we can't control app.config or the entry assembly, so we can't take\neither approach. Instead, we resort to reflection trickery to try to solve these problems\nif we detect they exist. Sorry.\n"
+  example: []
   syntax:
     content: public static class UriPatcher
     content.vb: Public Module UriPatcher
@@ -62,10 +65,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: PatchUriQuirks
     path: Src/Support/Google.Apis.Core/Util/UriPatcher.cs
-    startLine: 58
+    startLine: 67
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Util
+  summary: "\nPatch URI quirks in System.Uri. See class summary for details.\n"
+  example: []
   syntax:
     content: public static void PatchUriQuirks()
     content.vb: Public Shared Sub PatchUriQuirks

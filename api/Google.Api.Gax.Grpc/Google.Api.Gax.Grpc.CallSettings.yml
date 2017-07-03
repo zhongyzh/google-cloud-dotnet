@@ -11,6 +11,7 @@ items:
   - Google.Api.Gax.Grpc.CallSettings.FromCallCredentials(Grpc.Core.CallCredentials)
   - Google.Api.Gax.Grpc.CallSettings.FromCallTiming(Google.Api.Gax.Grpc.CallTiming)
   - Google.Api.Gax.Grpc.CallSettings.FromCancellationToken(System.Threading.CancellationToken)
+  - Google.Api.Gax.Grpc.CallSettings.FromFieldMask(System.String)
   - Google.Api.Gax.Grpc.CallSettings.FromHeader(System.String,System.String)
   - Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action{Grpc.Core.Metadata})
   - Google.Api.Gax.Grpc.CallSettings.HeaderMutation
@@ -83,7 +84,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: .ctor
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 27
+    startLine: 29
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -137,7 +138,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: HeaderMutation
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 47
+    startLine: 49
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -174,7 +175,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: CancellationToken
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 52
+    startLine: 54
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -211,7 +212,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: WriteOptions
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 57
+    startLine: 59
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -248,7 +249,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: PropagationToken
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 62
+    startLine: 64
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -285,7 +286,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: Credentials
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 67
+    startLine: 69
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -322,7 +323,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: Timing
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 75
+    startLine: 77
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -360,7 +361,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: FromCancellationToken
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 114
+    startLine: 116
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -401,7 +402,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: FromCallCredentials
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 123
+    startLine: 125
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -442,7 +443,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: FromCallTiming
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 132
+    startLine: 134
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -483,7 +484,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: FromHeaderMutation
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 141
+    startLine: 143
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -527,7 +528,7 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: FromHeader
     path: src/Google.Api.Gax.Grpc/CallSettings.cs
-    startLine: 150
+    startLine: 152
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
@@ -547,6 +548,48 @@ items:
       description: A new instance.
     content.vb: Public Shared Function FromHeader(name As String, value As String) As CallSettings
   overload: Google.Api.Gax.Grpc.CallSettings.FromHeader*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Api.Gax.Grpc.CallSettings.FromFieldMask(System.String)
+  commentId: M:Google.Api.Gax.Grpc.CallSettings.FromFieldMask(System.String)
+  id: FromFieldMask(System.String)
+  parent: Google.Api.Gax.Grpc.CallSettings
+  langs:
+  - csharp
+  - vb
+  name: FromFieldMask(String)
+  nameWithType: CallSettings.FromFieldMask(String)
+  fullName: Google.Api.Gax.Grpc.CallSettings.FromFieldMask(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax.Grpc/CallSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: FromFieldMask
+    path: src/Google.Api.Gax.Grpc/CallSettings.cs
+    startLine: 169
+  assemblies:
+  - Google.Api.Gax.Grpc
+  namespace: Google.Api.Gax.Grpc
+  summary: "\nCreates a <xref href=\"Google.Api.Gax.Grpc.CallSettings\" data-throw-if-not-resolved=\"false\"></xref> that will include a field mask in the request, to\nlimit which fields are returned in the response.\n"
+  remarks: "\nThe precise effect on the request is not guaranteed: it may be through a header or a side-channel,\nfor example. Likewise the effect of combining multiple settings containing field masks is not specified.\n"
+  example: []
+  syntax:
+    content: public static CallSettings FromFieldMask(string fieldMask)
+    parameters:
+    - id: fieldMask
+      type: System.String
+      description: The field mask for the request. Must not be null.
+    return:
+      type: Google.Api.Gax.Grpc.CallSettings
+      description: A new instance.
+    content.vb: Public Shared Function FromFieldMask(fieldMask As String) As CallSettings
+  overload: Google.Api.Gax.Grpc.CallSettings.FromFieldMask*
   modifiers.csharp:
   - public
   - static
@@ -1806,3 +1849,9 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Google.Api.Gax.Grpc.CallSettings.FromFieldMask*
+  commentId: Overload:Google.Api.Gax.Grpc.CallSettings.FromFieldMask
+  isExternal: false
+  name: FromFieldMask
+  nameWithType: CallSettings.FromFieldMask
+  fullName: Google.Api.Gax.Grpc.CallSettings.FromFieldMask

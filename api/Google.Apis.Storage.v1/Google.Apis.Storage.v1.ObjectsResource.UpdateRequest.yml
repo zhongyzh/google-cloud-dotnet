@@ -10,6 +10,9 @@ items:
   - Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.Download(System.IO.Stream)
   - Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadAsync(System.IO.Stream)
   - Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadAsync(System.IO.Stream,System.Threading.CancellationToken)
+  - Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRange(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue)
+  - Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRangeAsync(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue,System.Threading.CancellationToken)
+  - Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus(System.IO.Stream)
   - Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.Generation
   - Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.GetBody
   - Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.HttpMethod
@@ -39,7 +42,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UpdateRequest
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6245
+    startLine: 6416
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -110,7 +113,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: .ctor
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6248
+    startLine: 6419
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -151,7 +154,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Bucket
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6260
+    startLine: 6431
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -204,7 +207,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Object
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6265
+    startLine: 6436
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -260,7 +263,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Generation
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6270
+    startLine: 6441
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -316,7 +319,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfGenerationMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6275
+    startLine: 6446
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -372,7 +375,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfGenerationNotMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6280
+    startLine: 6451
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -428,7 +431,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfMetagenerationMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6285
+    startLine: 6456
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -484,7 +487,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IfMetagenerationNotMatch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6290
+    startLine: 6461
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -540,7 +543,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: PredefinedAcl
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6294
+    startLine: 6465
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -593,7 +596,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Projection
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6322
+    startLine: 6493
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -646,11 +649,11 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UserProject
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6337
+    startLine: 6508
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
-  summary: The project number to be billed for this request, for Requester Pays buckets.
+  summary: The project to be billed for this request, for Requester Pays buckets.
   example: []
   syntax:
     content: >-
@@ -699,7 +702,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: GetBody
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6345
+    startLine: 6516
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -736,7 +739,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: MethodName
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6348
+    startLine: 6519
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -776,7 +779,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: HttpMethod
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6354
+    startLine: 6525
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -816,7 +819,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: RestPath
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6360
+    startLine: 6531
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -856,7 +859,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: InitParameters
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6366
+    startLine: 6537
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -891,7 +894,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: MediaDownloader
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6463
+    startLine: 6634
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -928,11 +931,11 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Download
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6466
+    startLine: 6640
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
-  summary: Synchronously download the media into the given stream.
+  summary: "\n<p>Synchronously download the media into the given stream.</p>\n<p>Warning: This method hides download errors; use <xref href=\"Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus(System.IO.Stream)\" data-throw-if-not-resolved=\"false\"></xref> instead.</p>\n"
   example: []
   syntax:
     content: public virtual void Download(Stream stream)
@@ -941,6 +944,46 @@ items:
       type: System.IO.Stream
     content.vb: Public Overridable Sub Download(stream As Stream)
   overload: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.Download*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus(System.IO.Stream)
+  commentId: M:Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus(System.IO.Stream)
+  id: DownloadWithStatus(System.IO.Stream)
+  parent: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest
+  langs:
+  - csharp
+  - vb
+  name: DownloadWithStatus(Stream)
+  nameWithType: ObjectsResource.UpdateRequest.DownloadWithStatus(Stream)
+  fullName: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus(System.IO.Stream)
+  type: Method
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: DownloadWithStatus
+    path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+    startLine: 6647
+  assemblies:
+  - Google.Apis.Storage.v1
+  namespace: Google.Apis.Storage.v1
+  summary: Synchronously download the media into the given stream.
+  example: []
+  syntax:
+    content: public virtual IDownloadProgress DownloadWithStatus(Stream stream)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+    return:
+      type: Google.Apis.Download.IDownloadProgress
+      description: The final status of the download; including whether the download succeeded or failed.
+    content.vb: Public Overridable Function DownloadWithStatus(stream As Stream) As IDownloadProgress
+  overload: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus*
   modifiers.csharp:
   - public
   - virtual
@@ -965,7 +1008,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DownloadAsync
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6472
+    startLine: 6653
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -1004,7 +1047,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DownloadAsync
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6478
+    startLine: 6659
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -1021,6 +1064,90 @@ items:
       type: System.Threading.Tasks.Task{Google.Apis.Download.IDownloadProgress}
     content.vb: Public Overridable Function DownloadAsync(stream As Stream, cancellationToken As CancellationToken) As Task(Of IDownloadProgress)
   overload: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadAsync*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRange(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue)
+  commentId: M:Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRange(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue)
+  id: DownloadRange(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue)
+  parent: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest
+  langs:
+  - csharp
+  - vb
+  name: DownloadRange(Stream, RangeHeaderValue)
+  nameWithType: ObjectsResource.UpdateRequest.DownloadRange(Stream, RangeHeaderValue)
+  fullName: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRange(System.IO.Stream, System.Net.Http.Headers.RangeHeaderValue)
+  type: Method
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: DownloadRange
+    path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+    startLine: 6667
+  assemblies:
+  - Google.Apis.Storage.v1
+  namespace: Google.Apis.Storage.v1
+  summary: Synchronously download a range of the media into the given stream.
+  example: []
+  syntax:
+    content: public virtual IDownloadProgress DownloadRange(Stream stream, RangeHeaderValue range)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+    - id: range
+      type: System.Net.Http.Headers.RangeHeaderValue
+    return:
+      type: Google.Apis.Download.IDownloadProgress
+    content.vb: Public Overridable Function DownloadRange(stream As Stream, range As RangeHeaderValue) As IDownloadProgress
+  overload: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRange*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRangeAsync(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue,System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRangeAsync(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue,System.Threading.CancellationToken)
+  id: DownloadRangeAsync(System.IO.Stream,System.Net.Http.Headers.RangeHeaderValue,System.Threading.CancellationToken)
+  parent: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest
+  langs:
+  - csharp
+  - vb
+  name: DownloadRangeAsync(Stream, RangeHeaderValue, CancellationToken)
+  nameWithType: ObjectsResource.UpdateRequest.DownloadRangeAsync(Stream, RangeHeaderValue, CancellationToken)
+  fullName: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRangeAsync(System.IO.Stream, System.Net.Http.Headers.RangeHeaderValue, System.Threading.CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: DownloadRangeAsync
+    path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+    startLine: 6675
+  assemblies:
+  - Google.Apis.Storage.v1
+  namespace: Google.Apis.Storage.v1
+  summary: Asynchronously download a range of the media into the given stream.
+  example: []
+  syntax:
+    content: public virtual Task<IDownloadProgress> DownloadRangeAsync(Stream stream, RangeHeaderValue range, CancellationToken cancellationToken = null)
+    parameters:
+    - id: stream
+      type: System.IO.Stream
+    - id: range
+      type: System.Net.Http.Headers.RangeHeaderValue
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+    return:
+      type: System.Threading.Tasks.Task{Google.Apis.Download.IDownloadProgress}
+    content.vb: Public Overridable Function DownloadRangeAsync(stream As Stream, range As RangeHeaderValue, cancellationToken As CancellationToken = Nothing) As Task(Of IDownloadProgress)
+  overload: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRangeAsync*
   modifiers.csharp:
   - public
   - virtual
@@ -2968,6 +3095,8 @@ references:
   name: Google.Apis.Download
   nameWithType: Google.Apis.Download
   fullName: Google.Apis.Download
+- uid: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus(System.IO.Stream)
+  commentId: M:Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus(System.IO.Stream)
 - uid: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.Download*
   commentId: Overload:Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.Download
   isExternal: false
@@ -2987,6 +3116,19 @@ references:
   name: System.IO
   nameWithType: System.IO
   fullName: System.IO
+- uid: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus*
+  commentId: Overload:Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus
+  isExternal: false
+  name: DownloadWithStatus
+  nameWithType: ObjectsResource.UpdateRequest.DownloadWithStatus
+  fullName: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadWithStatus
+- uid: Google.Apis.Download.IDownloadProgress
+  commentId: T:Google.Apis.Download.IDownloadProgress
+  parent: Google.Apis.Download
+  isExternal: true
+  name: IDownloadProgress
+  nameWithType: IDownloadProgress
+  fullName: Google.Apis.Download.IDownloadProgress
 - uid: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadAsync*
   commentId: Overload:Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadAsync
   isExternal: false
@@ -3095,3 +3237,28 @@ references:
   name: System.Threading
   nameWithType: System.Threading
   fullName: System.Threading
+- uid: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRange*
+  commentId: Overload:Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRange
+  isExternal: false
+  name: DownloadRange
+  nameWithType: ObjectsResource.UpdateRequest.DownloadRange
+  fullName: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRange
+- uid: System.Net.Http.Headers.RangeHeaderValue
+  commentId: T:System.Net.Http.Headers.RangeHeaderValue
+  parent: System.Net.Http.Headers
+  isExternal: true
+  name: RangeHeaderValue
+  nameWithType: RangeHeaderValue
+  fullName: System.Net.Http.Headers.RangeHeaderValue
+- uid: System.Net.Http.Headers
+  commentId: N:System.Net.Http.Headers
+  isExternal: false
+  name: System.Net.Http.Headers
+  nameWithType: System.Net.Http.Headers
+  fullName: System.Net.Http.Headers
+- uid: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRangeAsync*
+  commentId: Overload:Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRangeAsync
+  isExternal: false
+  name: DownloadRangeAsync
+  nameWithType: ObjectsResource.UpdateRequest.DownloadRangeAsync
+  fullName: Google.Apis.Storage.v1.ObjectsResource.UpdateRequest.DownloadRangeAsync

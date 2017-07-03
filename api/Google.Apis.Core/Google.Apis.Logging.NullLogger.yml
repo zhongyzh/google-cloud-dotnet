@@ -76,10 +76,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IsDebugEnabled
     path: Src/Support/Google.Apis.Core/Logging/NullLogger.cs
-    startLine: 27
+    startLine: 26
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Logging
+  summary: Gets an indication whether debug output is logged or not.
+  example: []
   syntax:
     content: public bool IsDebugEnabled { get; }
     parameters: []
@@ -117,13 +119,17 @@ items:
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Logging
+  summary: Returns a logger which will be associated with the specified type.
+  example: []
   syntax:
     content: public ILogger ForType(Type type)
     parameters:
     - id: type
       type: System.Type
+      description: Type to which this logger belongs.
     return:
       type: Google.Apis.Logging.ILogger
+      description: A type-associated logger.
     content.vb: Public Function ForType(type As Type) As ILogger
   overload: Google.Apis.Logging.NullLogger.ForType*
   implements:
@@ -150,16 +156,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ForType
     path: Src/Support/Google.Apis.Core/Logging/NullLogger.cs
-    startLine: 37
+    startLine: 38
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Logging
+  summary: Returns a logger which will be associated with the specified type.
+  example: []
   syntax:
     content: public ILogger ForType<T>()
     typeParameters:
     - id: T
     return:
       type: Google.Apis.Logging.ILogger
+      description: A type-associated logger.
     content.vb: Public Function ForType(Of T) As ILogger
   overload: Google.Apis.Logging.NullLogger.ForType*
   implements:
@@ -189,17 +198,21 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Info
     path: Src/Support/Google.Apis.Core/Logging/NullLogger.cs
-    startLine: 42
+    startLine: 44
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Logging
+  summary: Logs an info message.
+  example: []
   syntax:
     content: public void Info(string message, params object[] formatArgs)
     parameters:
     - id: message
       type: System.String
+      description: The message to log.
     - id: formatArgs
       type: System.Object[]
+      description: String.Format arguments (if applicable).
     content.vb: Public Sub Info(message As String, ParamArray formatArgs As Object())
   overload: Google.Apis.Logging.NullLogger.Info*
   implements:
@@ -229,17 +242,21 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Warning
     path: Src/Support/Google.Apis.Core/Logging/NullLogger.cs
-    startLine: 44
+    startLine: 47
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Logging
+  summary: Logs a warning.
+  example: []
   syntax:
     content: public void Warning(string message, params object[] formatArgs)
     parameters:
     - id: message
       type: System.String
+      description: The message to log.
     - id: formatArgs
       type: System.Object[]
+      description: String.Format arguments (if applicable).
     content.vb: Public Sub Warning(message As String, ParamArray formatArgs As Object())
   overload: Google.Apis.Logging.NullLogger.Warning*
   implements:
@@ -269,17 +286,21 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Debug
     path: Src/Support/Google.Apis.Core/Logging/NullLogger.cs
-    startLine: 46
+    startLine: 50
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Logging
+  summary: Logs a debug message.
+  example: []
   syntax:
     content: public void Debug(string message, params object[] formatArgs)
     parameters:
     - id: message
       type: System.String
+      description: The message to log.
     - id: formatArgs
       type: System.Object[]
+      description: String.Format arguments (if applicable).
     content.vb: Public Sub Debug(message As String, ParamArray formatArgs As Object())
   overload: Google.Apis.Logging.NullLogger.Debug*
   implements:
@@ -309,19 +330,24 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Error
     path: Src/Support/Google.Apis.Core/Logging/NullLogger.cs
-    startLine: 48
+    startLine: 53
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Logging
+  summary: Logs an error message resulting from an exception.
+  example: []
   syntax:
     content: public void Error(Exception exception, string message, params object[] formatArgs)
     parameters:
     - id: exception
       type: System.Exception
+      description: ''
     - id: message
       type: System.String
+      description: The message to log.
     - id: formatArgs
       type: System.Object[]
+      description: String.Format arguments (if applicable).
     content.vb: Public Sub Error(exception As Exception, message As String, ParamArray formatArgs As Object())
   overload: Google.Apis.Logging.NullLogger.Error*
   implements:
@@ -351,17 +377,21 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Error
     path: Src/Support/Google.Apis.Core/Logging/NullLogger.cs
-    startLine: 50
+    startLine: 56
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Logging
+  summary: Logs an error message.
+  example: []
   syntax:
     content: public void Error(string message, params object[] formatArgs)
     parameters:
     - id: message
       type: System.String
+      description: The message to log.
     - id: formatArgs
       type: System.Object[]
+      description: String.Format arguments (if applicable).
     content.vb: Public Sub Error(message As String, ParamArray formatArgs As Object())
   overload: Google.Apis.Logging.NullLogger.Error*
   implements:

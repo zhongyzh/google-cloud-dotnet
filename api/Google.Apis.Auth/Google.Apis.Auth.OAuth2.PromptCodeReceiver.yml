@@ -68,10 +68,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: RedirectUri
     path: Src/Support/Google.Apis.Auth/OAuth2/PromptCodeReceiver.cs
-    startLine: 31
+    startLine: 32
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
+  summary: Gets the redirected URI.
+  example: []
   syntax:
     content: public string RedirectUri { get; }
     parameters: []
@@ -105,19 +107,24 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ReceiveCodeAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/PromptCodeReceiver.cs
-    startLine: 36
+    startLine: 38
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
+  summary: Receives the authorization code.
+  example: []
   syntax:
     content: public Task<AuthorizationCodeResponseUrl> ReceiveCodeAsync(AuthorizationCodeRequestUrl url, CancellationToken taskCancellationToken)
     parameters:
     - id: url
       type: Google.Apis.Auth.OAuth2.Requests.AuthorizationCodeRequestUrl
+      description: The authorization code request URL
     - id: taskCancellationToken
       type: System.Threading.CancellationToken
+      description: Cancellation token
     return:
       type: System.Threading.Tasks.Task{Google.Apis.Auth.OAuth2.Responses.AuthorizationCodeResponseUrl}
+      description: The authorization code response
     content.vb: Public Function ReceiveCodeAsync(url As AuthorizationCodeRequestUrl, taskCancellationToken As CancellationToken) As Task(Of AuthorizationCodeResponseUrl)
   overload: Google.Apis.Auth.OAuth2.PromptCodeReceiver.ReceiveCodeAsync*
   implements:

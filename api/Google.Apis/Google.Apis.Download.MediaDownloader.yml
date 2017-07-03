@@ -261,10 +261,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ProgressChanged
     path: Src/Support/Google.Apis/Download/MediaDownloader.cs
-    startLine: 136
+    startLine: 137
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Download
+  summary: An event which notifies when the download status has been changed.
+  example: []
   syntax:
     content: public event Action<IDownloadProgress> ProgressChanged
     return:
@@ -294,10 +296,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Download
     path: Src/Support/Google.Apis/Download/MediaDownloader.cs
-    startLine: 140
+    startLine: 142
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Download
+  summary: Downloads synchronously the given URL to the given stream.
+  example: []
   syntax:
     content: public IDownloadProgress Download(string url, Stream stream)
     parameters:
@@ -333,10 +337,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DownloadAsync
     path: Src/Support/Google.Apis/Download/MediaDownloader.cs
-    startLine: 145
+    startLine: 148
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Download
+  summary: Downloads asynchronously the given URL to the given stream.
+  example: []
   syntax:
     content: public Task<IDownloadProgress> DownloadAsync(string url, Stream stream)
     parameters:
@@ -372,10 +378,13 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DownloadAsync
     path: Src/Support/Google.Apis/Download/MediaDownloader.cs
-    startLine: 150
+    startLine: 154
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Download
+  summary: "\nDownloads asynchronously the given URL to the given stream. This download method supports a cancellation \ntoken to cancel a request before it was completed.\n"
+  remarks: "\nIn case the download fails <xref href=\"Google.Apis.Download.IDownloadProgress.Exception\" data-throw-if-not-resolved=\"false\"></xref> will contain the exception that\ncause the failure. The only exception which will be thrown is \n<xref href=\"System.Threading.Tasks.TaskCanceledException\" data-throw-if-not-resolved=\"false\"></xref> which indicates that the task was canceled.\n"
+  example: []
   syntax:
     content: public Task<IDownloadProgress> DownloadAsync(string url, Stream stream, CancellationToken cancellationToken)
     parameters:
@@ -413,7 +422,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: OnResponseReceived
     path: Src/Support/Google.Apis/Download/MediaDownloader.cs
-    startLine: 337
+    startLine: 341
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Download
@@ -452,7 +461,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: OnDataReceived
     path: Src/Support/Google.Apis/Download/MediaDownloader.cs
-    startLine: 348
+    startLine: 352
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Download
@@ -496,7 +505,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: OnDownloadCompleted
     path: Src/Support/Google.Apis/Download/MediaDownloader.cs
-    startLine: 357
+    startLine: 361
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Download

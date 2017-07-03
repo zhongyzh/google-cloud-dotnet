@@ -38,7 +38,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: JobConfigurationQuery
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3308
+    startLine: 3309
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -83,7 +83,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: AllowLargeResults
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3313
+    startLine: 3315
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -92,7 +92,9 @@ items:
 
     result tables at a slight cost in performance. Requires destinationTable to be set. For standard SQL
 
-    queries, this flag is ignored and large results are always allowed.
+    queries, this flag is ignored and large results are always allowed. However, you must still set
+
+    destinationTable when result size exceeds the allowed maximum response size.
   example: []
   syntax:
     content: >-
@@ -139,7 +141,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: CreateDisposition
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3321
+    startLine: 3323
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -199,7 +201,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DefaultDataset
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3325
+    startLine: 3327
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -250,14 +252,16 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DestinationTable
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3330
+    startLine: 3333
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: >-
     [Optional] Describes the table where the query results should be stored. If not present, a new
 
-    table will be created to store the results.
+    table will be created to store the results. This property must be set for large results that exceed the
+
+    maximum response size.
   example: []
   syntax:
     content: >-
@@ -304,7 +308,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: FlattenResults
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3336
+    startLine: 3339
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -360,7 +364,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: MaximumBillingTier
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3341
+    startLine: 3344
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -414,7 +418,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: MaximumBytesBilled
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3347
+    startLine: 3350
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -470,7 +474,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ParameterMode
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3352
+    startLine: 3355
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -524,7 +528,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: PreserveNulls
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3356
+    startLine: 3359
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -575,7 +579,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Priority
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3361
+    startLine: 3364
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -629,7 +633,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Query
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3366
+    startLine: 3369
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -683,7 +687,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: QueryParameters
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3370
+    startLine: 3373
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -734,7 +738,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SchemaUpdateOptions
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3379
+    startLine: 3382
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -796,7 +800,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TableDefinitions
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3385
+    startLine: 3388
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -852,7 +856,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UseLegacySql
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3392
+    startLine: 3395
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -910,7 +914,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UseQueryCache
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3398
+    startLine: 3401
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -966,7 +970,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UserDefinedFunctionResources
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3402
+    startLine: 3405
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -1017,7 +1021,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: WriteDisposition
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3411
+    startLine: 3414
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -1079,7 +1083,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ETag
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3415
+    startLine: 3418
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data

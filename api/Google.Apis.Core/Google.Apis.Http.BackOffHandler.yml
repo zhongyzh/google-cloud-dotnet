@@ -297,17 +297,21 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: HandleResponseAsync
     path: Src/Support/Google.Apis.Core/Http/BackOffHandler.cs
-    startLine: 121
+    startLine: 122
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Http
+  summary: "\nHandles an abnormal response when sending a HTTP request. \nA simple rule must be followed, if you modify the request object in a way that the abnormal response can \nbe resolved, you must return <code>true</code>.\n"
+  example: []
   syntax:
     content: public virtual Task<bool> HandleResponseAsync(HandleUnsuccessfulResponseArgs args)
     parameters:
     - id: args
       type: Google.Apis.Http.HandleUnsuccessfulResponseArgs
+      description: "\nHandle response argument which contains properties such as the request, response, current failed try.\n"
     return:
       type: System.Threading.Tasks.Task{System.Boolean}
+      description: Whether this handler has made a change that requires the request to be resent.
     content.vb: Public Overridable Function HandleResponseAsync(args As HandleUnsuccessfulResponseArgs) As Task(Of Boolean)
   overload: Google.Apis.Http.BackOffHandler.HandleResponseAsync*
   implements:
@@ -336,17 +340,21 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: HandleExceptionAsync
     path: Src/Support/Google.Apis.Core/Http/BackOffHandler.cs
-    startLine: 136
+    startLine: 138
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Http
+  summary: "\nHandles an exception thrown when sending a HTTP request. \nA simple rule must be followed, if you modify the request object in a way that the exception can be \nresolved, you must return <code>true</code>.\n"
+  example: []
   syntax:
     content: public virtual Task<bool> HandleExceptionAsync(HandleExceptionArgs args)
     parameters:
     - id: args
       type: Google.Apis.Http.HandleExceptionArgs
+      description: "\nHandle exception argument which properties such as the request, exception, current failed try.\n"
     return:
       type: System.Threading.Tasks.Task{System.Boolean}
+      description: Whether this handler has made a change that requires the request to be resent.
     content.vb: Public Overridable Function HandleExceptionAsync(args As HandleExceptionArgs) As Task(Of Boolean)
   overload: Google.Apis.Http.BackOffHandler.HandleExceptionAsync*
   implements:
@@ -375,7 +383,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Wait
     path: Src/Support/Google.Apis.Core/Http/BackOffHandler.cs
-    startLine: 178
+    startLine: 180
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Http
