@@ -41,7 +41,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nBilling related configuration of the service.\n\nThe following example shows how to configure metrics for billing:\n\nmetrics:\n- name: library.googleapis.com/read_calls\n metric_kind: DELTA\n value_type: INT64\n- name: library.googleapis.com/write_calls\n metric_kind: DELTA\n value_type: INT64\nbilling:\n metrics:\n - library.googleapis.com/read_calls\n - library.googleapis.com/write_calls\n\nThe next example shows how to enable billing status check and customize the\ncheck behavior. It makes sure billing status check is included in the `Check`\nmethod of [Service Control API](https://cloud.google.com/service-control/).\nIn the example, \"google.storage.Get\" method can be served when the billing\nstatus is either `current` or `delinquent`, while \"google.storage.Write\"\nmethod can only be served when the billing status is `current`:\n\nbilling:\n rules:\n - selector: google.storage.Get\n   allowed_statuses:\n   - current\n   - delinquent\n - selector: google.storage.Write\n   allowed_statuses: current\n\nMostly services should only allow `current` status when serving requests.\nIn addition, services can choose to allow both `current` and `delinquent`\nstatuses when serving read-only requests to resources. If there's no\nmatching selector for operation, no billing status check will be performed.\n"
+  summary: "\nBilling related configuration of the service.\n\nThe following example shows how to configure metrics for billing:\n\nmetrics:\n- name: library.googleapis.com/read_calls\n metric_kind: DELTA\n value_type: INT64\n- name: library.googleapis.com/write_calls\n metric_kind: DELTA\n value_type: INT64\nbilling:\n metrics:\n - library.googleapis.com/read_calls\n - library.googleapis.com/write_calls\n\nThe next example shows how to enable billing status check and customize the\ncheck behavior. It makes sure billing status check is included in the `Check`\nmethod of [Service Control API](https://cloud.google.com/service-control/).\nIn the example, &quot;google.storage.Get&quot; method can be served when the billing\nstatus is either `current` or `delinquent`, while &quot;google.storage.Write&quot;\nmethod can only be served when the billing status is `current`:\n\nbilling:\n rules:\n - selector: google.storage.Get\n   allowed_statuses:\n   - current\n   - delinquent\n - selector: google.storage.Write\n   allowed_statuses: current\n\nMostly services should only allow `current` status when serving requests.\nIn addition, services can choose to allow both `current` and `delinquent`\nstatuses when serving read-only requests to resources. If there&apos;s no\nmatching selector for operation, no billing status check will be performed.\n"
   example: []
   syntax:
     content: 'public sealed class Billing : IMessage<Billing>, IMessage, IEquatable<Billing>, IDeepCloneable<Billing>'
@@ -300,7 +300,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "metrics" field.
+  summary: Field number for the &quot;metrics&quot; field.
   example: []
   syntax:
     content: public const int MetricsFieldNumber = 1
@@ -372,7 +372,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "rules" field.
+  summary: Field number for the &quot;rules&quot; field.
   example: []
   syntax:
     content: public const int RulesFieldNumber = 5

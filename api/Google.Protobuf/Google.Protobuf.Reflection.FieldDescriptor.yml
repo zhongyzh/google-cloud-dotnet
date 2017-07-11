@@ -92,7 +92,7 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Reflection
-  summary: "\nGet the field's containing message type.\n"
+  summary: "\nGet the field&apos;s containing message type.\n"
   example: []
   syntax:
     content: public MessageDescriptor ContainingType { get; }
@@ -203,7 +203,7 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Reflection
-  summary: "\nThe brief name of the descriptor's target.\n"
+  summary: "\nThe brief name of the descriptor&apos;s target.\n"
   example: []
   syntax:
     content: public override string Name { get; }
@@ -244,7 +244,7 @@ items:
   - Google.Protobuf
   namespace: Google.Protobuf.Reflection
   summary: "\nReturns the accessor for this field.\n"
-  remarks: "\n<p>\nWhile a <xref href=\"Google.Protobuf.Reflection.FieldDescriptor\" data-throw-if-not-resolved=\"false\"></xref> describes the field, it does not provide\nany way of obtaining or changing the value of the field within a specific message;\nthat is the responsibility of the accessor.\n</p>\n<p>\nThe value returned by this property will be non-null for all regular fields. However,\nif a message containing a map field is introspected, the list of nested messages will include\nan auto-generated nested key/value pair message for the field. This is not represented in any\ngenerated type, and the value of the map field itself is represented by a dictionary in the\nreflection API. There are never instances of those \"hidden\" messages, so no accessor is provided\nand this property will return null.\n</p>\n"
+  remarks: "\n<p>\nWhile a <xref href=\"Google.Protobuf.Reflection.FieldDescriptor\" data-throw-if-not-resolved=\"false\"></xref> describes the field, it does not provide\nany way of obtaining or changing the value of the field within a specific message;\nthat is the responsibility of the accessor.\n</p>\n<p>\nThe value returned by this property will be non-null for all regular fields. However,\nif a message containing a map field is introspected, the list of nested messages will include\nan auto-generated nested key/value pair message for the field. This is not represented in any\ngenerated type, and the value of the map field itself is represented by a dictionary in the\nreflection API. There are never instances of those &quot;hidden&quot; messages, so no accessor is provided\nand this property will return null.\n</p>\n"
   example: []
   syntax:
     content: public IFieldAccessor Accessor { get; }
@@ -466,7 +466,7 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Reflection
-  summary: "\nCompares this descriptor with another one, ordering in \"canonical\" order\nwhich simply means ascending order by field number. <span class=\"paramref\">other</span>\nmust be a field of the same type, i.e. the <xref href=\"Google.Protobuf.Reflection.FieldDescriptor.ContainingType\" data-throw-if-not-resolved=\"false\"></xref> of\nboth fields must be the same.\n"
+  summary: "\nCompares this descriptor with another one, ordering in &quot;canonical&quot; order\nwhich simply means ascending order by field number. <span class=\"paramref\">other</span>\nmust be a field of the same type, i.e. the <xref href=\"Google.Protobuf.Reflection.FieldDescriptor.ContainingType\" data-throw-if-not-resolved=\"false\"></xref> of\nboth fields must be the same.\n"
   example: []
   syntax:
     content: public int CompareTo(FieldDescriptor other)
@@ -505,7 +505,7 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Reflection
-  summary: "\nFor enum fields, returns the field's type.\n"
+  summary: "\nFor enum fields, returns the field&apos;s type.\n"
   example: []
   syntax:
     content: public EnumDescriptor EnumType { get; }
@@ -542,7 +542,7 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.Reflection
-  summary: "\nFor embedded message and group fields, returns the field's type.\n"
+  summary: "\nFor embedded message and group fields, returns the field&apos;s type.\n"
   example: []
   syntax:
     content: public MessageDescriptor MessageType { get; }

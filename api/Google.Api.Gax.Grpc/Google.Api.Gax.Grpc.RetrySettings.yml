@@ -231,7 +231,7 @@ items:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
   summary: "\nThe delay jitter to apply for delays, defaulting to <xref href=\"Google.Api.Gax.Grpc.RetrySettings.RandomJitter\" data-throw-if-not-resolved=\"false\"></xref>.\n"
-  remarks: "\n\"Jitter\" is used to introduce randomness into the pattern of delays. This is to avoid multiple\nclients performing the same delay pattern starting at the same point in time,\nleading to higher-than-necessary contention. The default jitter simply takes each maximum delay\nand returns an actual delay which is a uniformly random value between 0 and the maximum. This\nis good enough for most applications, but makes precise testing difficult.\n"
+  remarks: "\n&quot;Jitter&quot; is used to introduce randomness into the pattern of delays. This is to avoid multiple\nclients performing the same delay pattern starting at the same point in time,\nleading to higher-than-necessary contention. The default jitter simply takes each maximum delay\nand returns an actual delay which is a uniformly random value between 0 and the maximum. This\nis good enough for most applications, but makes precise testing difficult.\n"
   example: []
   syntax:
     content: public RetrySettings.IJitter DelayJitter { get; }
@@ -493,7 +493,7 @@ items:
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
-  summary: "\nThe default retry filter, which retries operations which fail due to a status code of \"not found\".\n"
+  summary: "\nThe default retry filter, which retries operations which fail due to a status code of &quot;not found&quot;.\n"
   example: []
   syntax:
     content: public static Predicate<RpcException> DefaultFilter { get; }

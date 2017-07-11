@@ -41,7 +41,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Type
-  summary: "\nAn object representing a latitude/longitude pair. This is expressed as a pair\nof doubles representing degrees latitude and degrees longitude. Unless\nspecified otherwise, this must conform to the\n&lt;a href=\"http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf\"&gt;WGS84\nstandard&lt;/a&gt;. Values must be within normalized ranges.\n\nExample of normalization code in Python:\n\ndef NormalizeLongitude(longitude):\n \"\"\"Wraps decimal degrees longitude to [-180.0, 180.0].\"\"\"\n q, r = divmod(longitude, 360.0)\n if r &gt; 180.0 or (r == 180.0 and q &lt;= -1.0):\n   return r - 360.0\n return r\n\ndef NormalizeLatLng(latitude, longitude):\n \"\"\"Wraps decimal degrees latitude and longitude to\n [-90.0, 90.0] and [-180.0, 180.0], respectively.\"\"\"\n r = latitude % 360.0\n if r &lt;= 90.0:\n   return r, NormalizeLongitude(longitude)\n elif r &gt;= 270.0:\n   return r - 360, NormalizeLongitude(longitude)\n else:\n   return 180 - r, NormalizeLongitude(longitude + 180.0)\n\nassert 180.0 == NormalizeLongitude(180.0)\nassert -180.0 == NormalizeLongitude(-180.0)\nassert -179.0 == NormalizeLongitude(181.0)\nassert (0.0, 0.0) == NormalizeLatLng(360.0, 0.0)\nassert (0.0, 0.0) == NormalizeLatLng(-360.0, 0.0)\nassert (85.0, 180.0) == NormalizeLatLng(95.0, 0.0)\nassert (-85.0, -170.0) == NormalizeLatLng(-95.0, 10.0)\nassert (90.0, 10.0) == NormalizeLatLng(90.0, 10.0)\nassert (-90.0, -10.0) == NormalizeLatLng(-90.0, -10.0)\nassert (0.0, -170.0) == NormalizeLatLng(-180.0, 10.0)\nassert (0.0, -170.0) == NormalizeLatLng(180.0, 10.0)\nassert (-90.0, 10.0) == NormalizeLatLng(270.0, 10.0)\nassert (90.0, 10.0) == NormalizeLatLng(-270.0, 10.0)\n"
+  summary: "\nAn object representing a latitude/longitude pair. This is expressed as a pair\nof doubles representing degrees latitude and degrees longitude. Unless\nspecified otherwise, this must conform to the\n&lt;a href=&quot;http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf&quot;>WGS84\nstandard&lt;/a>. Values must be within normalized ranges.\n\nExample of normalization code in Python:\n\ndef NormalizeLongitude(longitude):\n &quot;&quot;&quot;Wraps decimal degrees longitude to [-180.0, 180.0].&quot;&quot;&quot;\n q, r = divmod(longitude, 360.0)\n if r > 180.0 or (r == 180.0 and q &lt;= -1.0):\n   return r - 360.0\n return r\n\ndef NormalizeLatLng(latitude, longitude):\n &quot;&quot;&quot;Wraps decimal degrees latitude and longitude to\n [-90.0, 90.0] and [-180.0, 180.0], respectively.&quot;&quot;&quot;\n r = latitude % 360.0\n if r &lt;= 90.0:\n   return r, NormalizeLongitude(longitude)\n elif r >= 270.0:\n   return r - 360, NormalizeLongitude(longitude)\n else:\n   return 180 - r, NormalizeLongitude(longitude + 180.0)\n\nassert 180.0 == NormalizeLongitude(180.0)\nassert -180.0 == NormalizeLongitude(-180.0)\nassert -179.0 == NormalizeLongitude(181.0)\nassert (0.0, 0.0) == NormalizeLatLng(360.0, 0.0)\nassert (0.0, 0.0) == NormalizeLatLng(-360.0, 0.0)\nassert (85.0, 180.0) == NormalizeLatLng(95.0, 0.0)\nassert (-85.0, -170.0) == NormalizeLatLng(-95.0, 10.0)\nassert (90.0, 10.0) == NormalizeLatLng(90.0, 10.0)\nassert (-90.0, -10.0) == NormalizeLatLng(-90.0, -10.0)\nassert (0.0, -170.0) == NormalizeLatLng(-180.0, 10.0)\nassert (0.0, -170.0) == NormalizeLatLng(180.0, 10.0)\nassert (-90.0, 10.0) == NormalizeLatLng(270.0, 10.0)\nassert (90.0, 10.0) == NormalizeLatLng(-270.0, 10.0)\n"
   example: []
   syntax:
     content: 'public sealed class LatLng : IMessage<LatLng>, IMessage, IEquatable<LatLng>, IDeepCloneable<LatLng>'
@@ -300,7 +300,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Type
-  summary: Field number for the "latitude" field.
+  summary: Field number for the &quot;latitude&quot; field.
   example: []
   syntax:
     content: public const int LatitudeFieldNumber = 1
@@ -372,7 +372,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Type
-  summary: Field number for the "longitude" field.
+  summary: Field number for the &quot;longitude&quot; field.
   example: []
   syntax:
     content: public const int LongitudeFieldNumber = 2

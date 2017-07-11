@@ -279,7 +279,7 @@ items:
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Protobuf.Reflection.FileDescriptor}
-      description: "\nUnmodifiable list of this file's dependencies (imports).\n"
+      description: "\nUnmodifiable list of this file&apos;s dependencies (imports).\n"
     content.vb: Public ReadOnly Property Dependencies As IList(Of FileDescriptor)
   overload: Google.Protobuf.Reflection.FileDescriptor.Dependencies*
   modifiers.csharp:
@@ -316,7 +316,7 @@ items:
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Protobuf.Reflection.FileDescriptor}
-      description: "\nUnmodifiable list of this file's public dependencies (public imports).\n"
+      description: "\nUnmodifiable list of this file&apos;s public dependencies (public imports).\n"
     content.vb: Public ReadOnly Property PublicDependencies As IList(Of FileDescriptor)
   overload: Google.Protobuf.Reflection.FileDescriptor.PublicDependencies*
   modifiers.csharp:
@@ -477,7 +477,7 @@ items:
       description: The type of descriptor to look for
     return:
       type: '{T}'
-      description: The type's descriptor, or null if not found.
+      description: The type&apos;s descriptor, or null if not found.
     content.vb: Public Function FindTypeByName(Of T As {Class, IDescriptor})(name As String) As T
   overload: Google.Protobuf.Reflection.FileDescriptor.FindTypeByName*
   nameWithType.vb: FileDescriptor.FindTypeByName(Of T)(String)
@@ -510,7 +510,7 @@ items:
   - Google.Protobuf
   namespace: Google.Protobuf.Reflection
   summary: "\nCreates a descriptor for generated code.\n"
-  remarks: "\nThis method is only designed to be used by the results of generating code with protoc,\nwhich creates the appropriate dependencies etc. It has to be public because the generated\ncode is \"external\", but should not be called directly by end users.\n"
+  remarks: "\nThis method is only designed to be used by the results of generating code with protoc,\nwhich creates the appropriate dependencies etc. It has to be public because the generated\ncode is &quot;external&quot;, but should not be called directly by end users.\n"
   example: []
   syntax:
     content: public static FileDescriptor FromGeneratedCode(byte[] descriptorData, FileDescriptor[] dependencies, GeneratedClrTypeInfo generatedCodeInfo)

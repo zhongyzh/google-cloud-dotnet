@@ -47,7 +47,7 @@ items:
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Upload
-  summary: "\nMedia upload which uses Google's resumable media upload protocol to upload data.\n"
+  summary: "\nMedia upload which uses Google&apos;s resumable media upload protocol to upload data.\n"
   remarks: "\nSee: https://developers.google.com/drive/manage-uploads#resumable for more information on the protocol.\n"
   example: []
   syntax:
@@ -644,7 +644,7 @@ items:
   - Google.Apis
   namespace: Google.Apis.Upload
   summary: "\nResumes the upload from the last point it was interrupted. \nUse when the program was restarted and you wish to resume the upload that was in progress when the program was halted. \nImplemented only for ContentStreams where .CanSeek is True.\n"
-  remarks: "\nIn your application's UploadSessionData Event Handler, store UploadUri.AbsoluteUri property value (resumable session URI string value)\nto persistent storage for use with Resume() or ResumeAsync() upon a program restart.\nIt is strongly recommended that the FullPathFilename of the media file that is being uploaded is saved also so that a subsequent execution of the\nprogram can compare the saved FullPathFilename value to the FullPathFilename of the media file that it has opened for uploading.\nYou do not need to seek to restart point in the ContentStream file.\n"
+  remarks: "\nIn your application&apos;s UploadSessionData Event Handler, store UploadUri.AbsoluteUri property value (resumable session URI string value)\nto persistent storage for use with Resume() or ResumeAsync() upon a program restart.\nIt is strongly recommended that the FullPathFilename of the media file that is being uploaded is saved also so that a subsequent execution of the\nprogram can compare the saved FullPathFilename value to the FullPathFilename of the media file that it has opened for uploading.\nYou do not need to seek to restart point in the ContentStream file.\n"
   example: []
   syntax:
     content: public IUploadProgress Resume(Uri uploadUri)
@@ -757,7 +757,7 @@ items:
   - Google.Apis
   namespace: Google.Apis.Upload
   summary: "\nAsynchronously resumes the upload from the last point it was interrupted. \nUse when resuming and the program was restarted.\nImplemented only for ContentStreams where .CanSeek is True.\n"
-  remarks: "\nIn your application's UploadSessionData Event Handler, store UploadUri.AbsoluteUri property value (resumable session URI string value)\nto persistent storage for use with Resume() or ResumeAsync() upon a program restart.\nIt is strongly recommended that the FullPathFilename of the media file that is being uploaded is saved also so that a subsequent execution of the\nprogram can compare the saved FullPathFilename value to the FullPathFilename of the media file that it has opened for uploading.\nYou do not need to seek to restart point in the ContentStream file.\n"
+  remarks: "\nIn your application&apos;s UploadSessionData Event Handler, store UploadUri.AbsoluteUri property value (resumable session URI string value)\nto persistent storage for use with Resume() or ResumeAsync() upon a program restart.\nIt is strongly recommended that the FullPathFilename of the media file that is being uploaded is saved also so that a subsequent execution of the\nprogram can compare the saved FullPathFilename value to the FullPathFilename of the media file that it has opened for uploading.\nYou do not need to seek to restart point in the ContentStream file.\n"
   example: []
   syntax:
     content: public Task<IUploadProgress> ResumeAsync(Uri uploadUri)
@@ -796,7 +796,7 @@ items:
   - Google.Apis
   namespace: Google.Apis.Upload
   summary: "\nAsynchronously resumes the upload from the last point it was interrupted. \nUse when the program was restarted and you wish to resume the upload that was in progress when the program was halted.\nImplemented only for ContentStreams where .CanSeek is True.\n"
-  remarks: "\nIn your application's UploadSessionData Event Handler, store UploadUri.AbsoluteUri property value (resumable session URI string value)\nto persistent storage for use with Resume() or ResumeAsync() upon a program restart.\nIt is strongly recommended that the FullPathFilename of the media file that is being uploaded is saved also so that a subsequent execution of the\nprogram can compare the saved FullPathFilename value to the FullPathFilename of the media file that it has opened for uploading.\nYou do not need to seek to restart point in the ContentStream file.\n"
+  remarks: "\nIn your application&apos;s UploadSessionData Event Handler, store UploadUri.AbsoluteUri property value (resumable session URI string value)\nto persistent storage for use with Resume() or ResumeAsync() upon a program restart.\nIt is strongly recommended that the FullPathFilename of the media file that is being uploaded is saved also so that a subsequent execution of the\nprogram can compare the saved FullPathFilename value to the FullPathFilename of the media file that it has opened for uploading.\nYou do not need to seek to restart point in the ContentStream file.\n"
   example: []
   syntax:
     content: public Task<IUploadProgress> ResumeAsync(Uri uploadUri, CancellationToken cancellationToken)

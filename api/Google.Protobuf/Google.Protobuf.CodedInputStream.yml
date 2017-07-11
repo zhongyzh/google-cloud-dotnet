@@ -500,8 +500,8 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
-  summary: "\nReads a field tag, returning the tag of 0 for \"end of stream\".\n"
-  remarks: "\nIf this method returns 0, it doesn't necessarily mean the end of all\nthe data in this CodedInputStream; it may be the end of the logical stream\nfor an embedded message, for example.\n"
+  summary: "\nReads a field tag, returning the tag of 0 for &quot;end of stream&quot;.\n"
+  remarks: "\nIf this method returns 0, it doesn&apos;t necessarily mean the end of all\nthe data in this CodedInputStream; it may be the end of the logical stream\nfor an embedded message, for example.\n"
   example: []
   syntax:
     content: public uint ReadTag()
@@ -536,8 +536,8 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
-  summary: "\nSkips the data for the field with the tag we've just read.\nThis should be called directly after <xref href=\"Google.Protobuf.CodedInputStream.ReadTag\" data-throw-if-not-resolved=\"false\"></xref>, when\nthe caller wishes to skip an unknown field.\n"
-  remarks: "\nThis method throws <xref href=\"Google.Protobuf.InvalidProtocolBufferException\" data-throw-if-not-resolved=\"false\"></xref> if the last-read tag was an end-group tag.\nIf a caller wishes to skip a group, they should skip the whole group, by calling this method after reading the\nstart-group tag. This behavior allows callers to call this method on any field they don't understand, correctly\nresulting in an error if an end-group tag has not been paired with an earlier start-group tag.\n"
+  summary: "\nSkips the data for the field with the tag we&apos;ve just read.\nThis should be called directly after <xref href=\"Google.Protobuf.CodedInputStream.ReadTag\" data-throw-if-not-resolved=\"false\"></xref>, when\nthe caller wishes to skip an unknown field.\n"
+  remarks: "\nThis method throws <xref href=\"Google.Protobuf.InvalidProtocolBufferException\" data-throw-if-not-resolved=\"false\"></xref> if the last-read tag was an end-group tag.\nIf a caller wishes to skip a group, they should skip the whole group, by calling this method after reading the\nstart-group tag. This behavior allows callers to call this method on any field they don&apos;t understand, correctly\nresulting in an error if an end-group tag has not been paired with an earlier start-group tag.\n"
   example: []
   syntax:
     content: public void SkipLastField()

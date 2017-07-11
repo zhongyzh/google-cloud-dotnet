@@ -41,7 +41,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nAn object representing a resource that can be used for monitoring, logging,\nbilling, or other purposes. Examples include virtual machine instances,\ndatabases, and storage devices such as disks. The `type` field identifies a\n[MonitoredResourceDescriptor][google.api.MonitoredResourceDescriptor] object that describes the resource's\nschema. Information in the `labels` field identifies the actual resource and\nits attributes according to the schema. For example, a particular Compute\nEngine VM instance could be represented by the following object, because the\n[MonitoredResourceDescriptor][google.api.MonitoredResourceDescriptor] for `\"gce_instance\"` has labels\n`\"instance_id\"` and `\"zone\"`:\n\n{ \"type\": \"gce_instance\",\n \"labels\": { \"instance_id\": \"12345678901234\",\n             \"zone\": \"us-central1-a\" }}\n"
+  summary: "\nAn object representing a resource that can be used for monitoring, logging,\nbilling, or other purposes. Examples include virtual machine instances,\ndatabases, and storage devices such as disks. The `type` field identifies a\n[MonitoredResourceDescriptor][google.api.MonitoredResourceDescriptor] object that describes the resource&apos;s\nschema. Information in the `labels` field identifies the actual resource and\nits attributes according to the schema. For example, a particular Compute\nEngine VM instance could be represented by the following object, because the\n[MonitoredResourceDescriptor][google.api.MonitoredResourceDescriptor] for `&quot;gce_instance&quot;` has labels\n`&quot;instance_id&quot;` and `&quot;zone&quot;`:\n\n{ &quot;type&quot;: &quot;gce_instance&quot;,\n &quot;labels&quot;: { &quot;instance_id&quot;: &quot;12345678901234&quot;,\n             &quot;zone&quot;: &quot;us-central1-a&quot; }}\n"
   example: []
   syntax:
     content: 'public sealed class MonitoredResource : IMessage<MonitoredResource>, IMessage, IEquatable<MonitoredResource>, IDeepCloneable<MonitoredResource>'
@@ -300,7 +300,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "type" field.
+  summary: Field number for the &quot;type&quot; field.
   example: []
   syntax:
     content: public const int TypeFieldNumber = 1
@@ -335,7 +335,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nRequired. The monitored resource type. This field must match\nthe `type` field of a [MonitoredResourceDescriptor][google.api.MonitoredResourceDescriptor] object. For\nexample, the type of a Cloud SQL database is `\"cloudsql_database\"`.\n"
+  summary: "\nRequired. The monitored resource type. This field must match\nthe `type` field of a [MonitoredResourceDescriptor][google.api.MonitoredResourceDescriptor] object. For\nexample, the type of a Cloud SQL database is `&quot;cloudsql_database&quot;`.\n"
   example: []
   syntax:
     content: public string Type { get; set; }
@@ -372,7 +372,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "labels" field.
+  summary: Field number for the &quot;labels&quot; field.
   example: []
   syntax:
     content: public const int LabelsFieldNumber = 2
@@ -407,7 +407,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nRequired. Values for all of the labels listed in the associated monitored\nresource descriptor. For example, Cloud SQL databases use the labels\n`\"database_id\"` and `\"zone\"`.\n"
+  summary: "\nRequired. Values for all of the labels listed in the associated monitored\nresource descriptor. For example, Cloud SQL databases use the labels\n`&quot;database_id&quot;` and `&quot;zone&quot;`.\n"
   example: []
   syntax:
     content: public MapField<string, string> Labels { get; }

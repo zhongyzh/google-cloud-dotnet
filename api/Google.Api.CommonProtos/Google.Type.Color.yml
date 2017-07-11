@@ -45,7 +45,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Type
-  summary: "\nRepresents a color in the RGBA color space. This representation is designed\nfor simplicity of conversion to/from color representations in various\nlanguages over compactness; for example, the fields of this representation\ncan be trivially provided to the constructor of \"java.awt.Color\" in Java; it\ncan also be trivially provided to UIColor's \"+colorWithRed:green:blue:alpha\"\nmethod in iOS; and, with just a little work, it can be easily formatted into\na CSS \"rgba()\" string in JavaScript, as well. Here are some examples:\n\nExample (Java):\n\nimport com.google.type.Color;\n\n// ...\npublic static java.awt.Color fromProto(Color protocolor) {\n  float alpha = protocolor.hasAlpha()\n      ? protocolor.getAlpha().getValue()\n      : 1.0;\n\n  return new java.awt.Color(\n      protocolor.getRed(),\n      protocolor.getGreen(),\n      protocolor.getBlue(),\n      alpha);\n}\n\npublic static Color toProto(java.awt.Color color) {\n  float red = (float) color.getRed();\n  float green = (float) color.getGreen();\n  float blue = (float) color.getBlue();\n  float denominator = 255.0;\n  Color.Builder resultBuilder =\n      Color\n          .newBuilder()\n          .setRed(red / denominator)\n          .setGreen(green / denominator)\n          .setBlue(blue / denominator);\n  int alpha = color.getAlpha();\n  if (alpha != 255) {\n    result.setAlpha(\n        FloatValue\n            .newBuilder()\n            .setValue(((float) alpha) / denominator)\n            .build());\n  }\n  return resultBuilder.build();\n}\n// ...\n\nExample (iOS / Obj-C):\n\n// ...\nstatic UIColor* fromProto(Color* protocolor) {\n   float red = [protocolor red];\n   float green = [protocolor green];\n   float blue = [protocolor blue];\n   FloatValue* alpha_wrapper = [protocolor alpha];\n   float alpha = 1.0;\n   if (alpha_wrapper != nil) {\n     alpha = [alpha_wrapper value];\n   }\n   return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];\n}\n\nstatic Color* toProto(UIColor* color) {\n    CGFloat red, green, blue, alpha;\n    if (![color getRed:&amp;red green:&amp;green blue:&amp;blue alpha:&amp;alpha]) {\n      return nil;\n    }\n    Color* result = [Color alloc] init];\n    [result setRed:red];\n    [result setGreen:green];\n    [result setBlue:blue];\n    if (alpha &lt;= 0.9999) {\n      [result setAlpha:floatWrapperWithValue(alpha)];\n    }\n    [result autorelease];\n    return result;\n}\n// ...\n\nExample (JavaScript):\n\n// ...\n\nvar protoToCssColor = function(rgb_color) {\n  var redFrac = rgb_color.red || 0.0;\n  var greenFrac = rgb_color.green || 0.0;\n  var blueFrac = rgb_color.blue || 0.0;\n  var red = Math.floor(redFrac * 255);\n  var green = Math.floor(greenFrac * 255);\n  var blue = Math.floor(blueFrac * 255);\n\n  if (!('alpha' in rgb_color)) {\n     return rgbToCssColor_(red, green, blue);\n  }\n\n  var alphaFrac = rgb_color.alpha.value || 0.0;\n  var rgbParams = [red, green, blue].join(',');\n  return ['rgba(', rgbParams, ',', alphaFrac, ')'].join('');\n};\n\nvar rgbToCssColor_ = function(red, green, blue) {\n var rgbNumber = new Number((red &lt;&lt; 16) | (green &lt;&lt; 8) | blue);\n var hexString = rgbNumber.toString(16);\n var missingZeros = 6 - hexString.length;\n var resultBuilder = ['#'];\n for (var i = 0; i &lt; missingZeros; i++) {\n    resultBuilder.push('0');\n }\n resultBuilder.push(hexString);\n return resultBuilder.join('');\n};\n\n// ...\n"
+  summary: "\nRepresents a color in the RGBA color space. This representation is designed\nfor simplicity of conversion to/from color representations in various\nlanguages over compactness; for example, the fields of this representation\ncan be trivially provided to the constructor of &quot;java.awt.Color&quot; in Java; it\ncan also be trivially provided to UIColor&apos;s &quot;+colorWithRed:green:blue:alpha&quot;\nmethod in iOS; and, with just a little work, it can be easily formatted into\na CSS &quot;rgba()&quot; string in JavaScript, as well. Here are some examples:\n\nExample (Java):\n\nimport com.google.type.Color;\n\n// ...\npublic static java.awt.Color fromProto(Color protocolor) {\n  float alpha = protocolor.hasAlpha()\n      ? protocolor.getAlpha().getValue()\n      : 1.0;\n\n  return new java.awt.Color(\n      protocolor.getRed(),\n      protocolor.getGreen(),\n      protocolor.getBlue(),\n      alpha);\n}\n\npublic static Color toProto(java.awt.Color color) {\n  float red = (float) color.getRed();\n  float green = (float) color.getGreen();\n  float blue = (float) color.getBlue();\n  float denominator = 255.0;\n  Color.Builder resultBuilder =\n      Color\n          .newBuilder()\n          .setRed(red / denominator)\n          .setGreen(green / denominator)\n          .setBlue(blue / denominator);\n  int alpha = color.getAlpha();\n  if (alpha != 255) {\n    result.setAlpha(\n        FloatValue\n            .newBuilder()\n            .setValue(((float) alpha) / denominator)\n            .build());\n  }\n  return resultBuilder.build();\n}\n// ...\n\nExample (iOS / Obj-C):\n\n// ...\nstatic UIColor* fromProto(Color* protocolor) {\n   float red = [protocolor red];\n   float green = [protocolor green];\n   float blue = [protocolor blue];\n   FloatValue* alpha_wrapper = [protocolor alpha];\n   float alpha = 1.0;\n   if (alpha_wrapper != nil) {\n     alpha = [alpha_wrapper value];\n   }\n   return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];\n}\n\nstatic Color* toProto(UIColor* color) {\n    CGFloat red, green, blue, alpha;\n    if (![color getRed:&amp;red green:&amp;green blue:&amp;blue alpha:&amp;alpha]) {\n      return nil;\n    }\n    Color* result = [Color alloc] init];\n    [result setRed:red];\n    [result setGreen:green];\n    [result setBlue:blue];\n    if (alpha &lt;= 0.9999) {\n      [result setAlpha:floatWrapperWithValue(alpha)];\n    }\n    [result autorelease];\n    return result;\n}\n// ...\n\nExample (JavaScript):\n\n// ...\n\nvar protoToCssColor = function(rgb_color) {\n  var redFrac = rgb_color.red || 0.0;\n  var greenFrac = rgb_color.green || 0.0;\n  var blueFrac = rgb_color.blue || 0.0;\n  var red = Math.floor(redFrac * 255);\n  var green = Math.floor(greenFrac * 255);\n  var blue = Math.floor(blueFrac * 255);\n\n  if (!(&apos;alpha&apos; in rgb_color)) {\n     return rgbToCssColor_(red, green, blue);\n  }\n\n  var alphaFrac = rgb_color.alpha.value || 0.0;\n  var rgbParams = [red, green, blue].join(&apos;,&apos;);\n  return [&apos;rgba(&apos;, rgbParams, &apos;,&apos;, alphaFrac, &apos;)&apos;].join(&apos;&apos;);\n};\n\nvar rgbToCssColor_ = function(red, green, blue) {\n var rgbNumber = new Number((red &lt;&lt; 16) | (green &lt;&lt; 8) | blue);\n var hexString = rgbNumber.toString(16);\n var missingZeros = 6 - hexString.length;\n var resultBuilder = [&apos;#&apos;];\n for (var i = 0; i &lt; missingZeros; i++) {\n    resultBuilder.push(&apos;0&apos;);\n }\n resultBuilder.push(hexString);\n return resultBuilder.join(&apos;&apos;);\n};\n\n// ...\n"
   example: []
   syntax:
     content: 'public sealed class Color : IMessage<Color>, IMessage, IEquatable<Color>, IDeepCloneable<Color>'
@@ -304,7 +304,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Type
-  summary: Field number for the "red" field.
+  summary: Field number for the &quot;red&quot; field.
   example: []
   syntax:
     content: public const int RedFieldNumber = 1
@@ -376,7 +376,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Type
-  summary: Field number for the "green" field.
+  summary: Field number for the &quot;green&quot; field.
   example: []
   syntax:
     content: public const int GreenFieldNumber = 2
@@ -448,7 +448,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Type
-  summary: Field number for the "blue" field.
+  summary: Field number for the &quot;blue&quot; field.
   example: []
   syntax:
     content: public const int BlueFieldNumber = 3
@@ -520,7 +520,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Type
-  summary: Field number for the "alpha" field.
+  summary: Field number for the &quot;alpha&quot; field.
   example: []
   syntax:
     content: public const int AlphaFieldNumber = 4

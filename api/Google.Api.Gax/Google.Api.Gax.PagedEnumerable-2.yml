@@ -125,7 +125,7 @@ items:
   - Google.Api.Gax
   namespace: Google.Api.Gax
   summary: "\nEagerly reads a single page of results with a fixed maximum size. The returned page is guaranteed\nto have that many results, unless there is no more data available.\n"
-  remarks: "\n\"Natural\" pages returned by the API may contain a smaller number of resources than requested.\nFor example, a request for a page with 100 resources may return a page with 80 resources but\na next page token for more to be retrieved. This is suitable for batch-processing, but not\nfor user-visible paging such as in a web application, where fixed-size pages are expected.\nThis method may make more than one API call in order to fill the page, but after the page has been\nreturned, all the data will have been loaded. (In particular, iterating over the items in the page\nmultiple times will not make any further requests.)\n"
+  remarks: "\n&quot;Natural&quot; pages returned by the API may contain a smaller number of resources than requested.\nFor example, a request for a page with 100 resources may return a page with 80 resources but\na next page token for more to be retrieved. This is suitable for batch-processing, but not\nfor user-visible paging such as in a web application, where fixed-size pages are expected.\nThis method may make more than one API call in order to fill the page, but after the page has been\nreturned, all the data will have been loaded. (In particular, iterating over the items in the page\nmultiple times will not make any further requests.)\n"
   example: []
   syntax:
     content: public virtual Page<TResource> ReadPage(int pageSize)

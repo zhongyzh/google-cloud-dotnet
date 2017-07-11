@@ -260,7 +260,7 @@ items:
 
     supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The
 
-    table must already exist. If it does not, a 'notFound' error is returned in the job result. The default
+    table must already exist. If it does not, a &apos;notFound&apos; error is returned in the job result. The default
 
     value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job
 
@@ -429,9 +429,9 @@ items:
 
     the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in
 
-    its raw, binary state. BigQuery also supports the escape sequence "\t" to specify a tab separator. The
+    its raw, binary state. BigQuery also supports the escape sequence &quot;\t&quot; to specify a tab separator. The
 
-    default value is a comma (',').
+    default value is a comma (&apos;,&apos;).
   example: []
   syntax:
     content: >-
@@ -491,7 +491,7 @@ items:
 
     value is false. The sourceFormat property determines what BigQuery treats as an extra value: CSV: Trailing
 
-    columns JSON: Named values that don't match any column names
+    columns JSON: Named values that don&apos;t match any column names
   example: []
   syntax:
     content: >-
@@ -601,7 +601,7 @@ items:
   summary: >-
     [Optional] Specifies a string that represents a null value in a CSV file. For example, if you
 
-    specify "\N", BigQuery interprets "\N" as a null value when loading a CSV file. The default value is the
+    specify &quot;\N&quot;, BigQuery interprets &quot;\N&quot; as a null value when loading a CSV file. The default value is the
 
     empty string. If you set this property to a custom value, BigQuery throws an error if an empty string is
 
@@ -659,11 +659,11 @@ items:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: >-
-    If sourceFormat is set to "DATASTORE_BACKUP", indicates which entity properties to load into
+    If sourceFormat is set to &quot;DATASTORE_BACKUP&quot;, indicates which entity properties to load into
 
     BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties.
 
-    If no properties are specified, BigQuery loads all properties. If any named property isn't found in the
+    If no properties are specified, BigQuery loads all properties. If any named property isn&apos;t found in the
 
     Cloud Datastore backup, an invalid error is returned in the job result.
   example: []
@@ -721,7 +721,7 @@ items:
 
     string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its
 
-    raw, binary state. The default value is a double-quote ('"'). If your data does not contain quoted sections,
+    raw, binary state. The default value is a double-quote (&apos;&quot;&apos;). If your data does not contain quoted sections,
 
     set the property value to an empty string. If your data contains quoted newline characters, you must also
 
@@ -779,7 +779,7 @@ items:
   summary: >-
     [Optional] The schema for the destination table. The schema can be omitted if the destination table
 
-    already exists, or if you're loading data from Google Cloud Datastore.
+    already exists, or if you&apos;re loading data from Google Cloud Datastore.
   example: []
   syntax:
     content: >-
@@ -831,9 +831,9 @@ items:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: >-
-    [Deprecated] The inline schema. For CSV schemas, specify as "Field1:Type1[,Field2:Type2]*". For
+    [Deprecated] The inline schema. For CSV schemas, specify as &quot;Field1:Type1[,Field2:Type2]*&quot;. For
 
-    example, "foo:STRING, bar:INTEGER, baz:FLOAT".
+    example, &quot;foo:STRING, bar:INTEGER, baz:FLOAT&quot;.
   example: []
   syntax:
     content: >-
@@ -1054,11 +1054,11 @@ items:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: >-
-    [Optional] The format of the data files. For CSV files, specify "CSV". For datastore backups,
+    [Optional] The format of the data files. For CSV files, specify &quot;CSV&quot;. For datastore backups,
 
-    specify "DATASTORE_BACKUP". For newline-delimited JSON, specify "NEWLINE_DELIMITED_JSON". For Avro, specify
+    specify &quot;DATASTORE_BACKUP&quot;. For newline-delimited JSON, specify &quot;NEWLINE_DELIMITED_JSON&quot;. For Avro, specify
 
-    "AVRO". The default value is CSV.
+    &quot;AVRO&quot;. The default value is CSV.
   example: []
   syntax:
     content: >-
@@ -1112,7 +1112,7 @@ items:
   summary: >-
     [Required] The fully-qualified URIs that point to your data in Google Cloud Storage. Each URI can
 
-    contain one '*' wildcard character and it must come after the 'bucket' name.
+    contain one &apos;*&apos; wildcard character and it must come after the &apos;bucket&apos; name.
   example: []
   syntax:
     content: >-
@@ -1170,7 +1170,7 @@ items:
 
     WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table
 
-    already exists and contains data, a 'duplicate' error is returned in the job result. The default value is
+    already exists and contains data, a &apos;duplicate&apos; error is returned in the job result. The default value is
 
     WRITE_APPEND. Each action is atomic and only occurs if BigQuery is able to complete the job successfully.
 

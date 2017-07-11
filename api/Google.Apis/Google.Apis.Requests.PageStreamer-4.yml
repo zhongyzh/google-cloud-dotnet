@@ -29,7 +29,7 @@ items:
   summary: "\nA page streamer is a helper to provide both synchronous and asynchronous page streaming\nof a listable or queryable resource.\n"
   remarks: "\n<p>\nThe expected usage pattern is to create a single paginator for a resource collection,\nand then use the instance methods to obtain paginated results.\n</p>\n"
   example:
-  - "\nTo construct a page streamer to return snippets from the YouTube v3 Data API, you might use code\nsuch as the following. The pattern for other APIs would be very similar, with the <code>request.PageToken</code>,\n<code>response.NextPageToken</code> and <code>response.Items</code> properties potentially having different names. Constructing\nthe page streamer doesn't require any service references or authentication, so it's completely safe to perform this\nin a type initializer.\n<pre><code>using Google.Apis.YouTube.v3;\nusing Google.Apis.YouTube.v3.Data;\n...\nprivate static readonly snippetPageStreamer = new PageStreamer&lt;SearchResult, SearchResource.ListRequest, SearchListResponse, string&gt;(\n    (request, token) =&gt; request.PageToken = token,\n    response =&gt; response.NextPageToken,\n    response =&gt; response.Items);</code></pre>\n"
+  - "\nTo construct a page streamer to return snippets from the YouTube v3 Data API, you might use code\nsuch as the following. The pattern for other APIs would be very similar, with the <code>request.PageToken</code>,\n<code>response.NextPageToken</code> and <code>response.Items</code> properties potentially having different names. Constructing\nthe page streamer doesn&apos;t require any service references or authentication, so it&apos;s completely safe to perform this\nin a type initializer.\n<pre><code>using Google.Apis.YouTube.v3;\nusing Google.Apis.YouTube.v3.Data;\n...\nprivate static readonly snippetPageStreamer = new PageStreamer&lt;SearchResult, SearchResource.ListRequest, SearchListResponse, string>(\n    (request, token) => request.PageToken = token,\n    response => response.NextPageToken,\n    response => response.Items);</code></pre>\n"
   syntax:
     content: >-
       public sealed class PageStreamer<TResource, TRequest, TResponse, TToken>
@@ -43,7 +43,7 @@ items:
       description: The type of response obtained when fetching pages
     - id: TToken
       description: >-
-        The type of the "next page token", which must be a reference type;
+        The type of the &quot;next page token&quot;, which must be a reference type;
 
         a null reference for a token indicates the end of a stream of pages.
     content.vb: Public NotInheritable Class PageStreamer(Of TResource, TRequest As IClientServiceRequest(Of TResponse), TResponse, TToken As Class)

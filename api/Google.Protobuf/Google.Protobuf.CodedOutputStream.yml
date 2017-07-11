@@ -82,7 +82,7 @@ items:
   - Google.Protobuf
   namespace: Google.Protobuf
   summary: "\nEncodes and writes protocol message fields.\n"
-  remarks: "\n<p>\nThis class is generally used by generated code to write appropriate\nprimitives to the stream. It effectively encapsulates the lowest\nlevels of protocol buffer format. Unlike some other implementations,\nthis does not include combined \"write tag and value\" methods. Generated\ncode knows the exact byte representations of the tags they're going to write,\nso there's no need to re-encode them each time. Manually-written code calling\nthis class should just call one of the <code>WriteTag</code> overloads before each value.\n</p>\n<p>\nRepeated fields and map fields are not handled by this class; use <code>RepeatedField&lt;T&gt;</code>\nand <code>MapField&lt;TKey, TValue&gt;</code> to serialize such fields.\n</p>\n"
+  remarks: "\n<p>\nThis class is generally used by generated code to write appropriate\nprimitives to the stream. It effectively encapsulates the lowest\nlevels of protocol buffer format. Unlike some other implementations,\nthis does not include combined &quot;write tag and value&quot; methods. Generated\ncode knows the exact byte representations of the tags they&apos;re going to write,\nso there&apos;s no need to re-encode them each time. Manually-written code calling\nthis class should just call one of the <code>WriteTag</code> overloads before each value.\n</p>\n<p>\nRepeated fields and map fields are not handled by this class; use <code>RepeatedField&lt;T></code>\nand <code>MapField&lt;TKey, TValue></code> to serialize such fields.\n</p>\n"
   example: []
   syntax:
     content: 'public sealed class CodedOutputStream : IDisposable'
@@ -2264,7 +2264,7 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf
-  summary: "\nVerifies that SpaceLeft returns zero. It's common to create a byte array\nthat is exactly big enough to hold a message, then write to it with\na CodedOutputStream. Calling CheckNoSpaceLeft after writing verifies that\nthe message was actually as big as expected, which can help bugs.\n"
+  summary: "\nVerifies that SpaceLeft returns zero. It&apos;s common to create a byte array\nthat is exactly big enough to hold a message, then write to it with\na CodedOutputStream. Calling CheckNoSpaceLeft after writing verifies that\nthe message was actually as big as expected, which can help bugs.\n"
   example: []
   syntax:
     content: public void CheckNoSpaceLeft()

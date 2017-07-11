@@ -298,7 +298,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "rules" field.
+  summary: Field number for the &quot;rules&quot; field.
   example: []
   syntax:
     content: public const int RulesFieldNumber = 1
@@ -333,7 +333,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nDefine system parameters.\n\nThe parameters defined here will override the default parameters\nimplemented by the system. If this field is missing from the service\nconfig, default system parameters will be used. Default system parameters\nand names is implementation-dependent.\n\nExample: define api key for all methods\n\nsystem_parameters\n rules:\n   - selector: \"*\"\n     parameters:\n       - name: api_key\n         url_query_parameter: api_key\n\nExample: define 2 api key names for a specific method.\n\nsystem_parameters\n rules:\n   - selector: \"/ListShelves\"\n     parameters:\n       - name: api_key\n         http_header: Api-Key1\n       - name: api_key\n         http_header: Api-Key2\n\n**NOTE:** All service configuration rules follow \"last one wins\" order.\n"
+  summary: "\nDefine system parameters.\n\nThe parameters defined here will override the default parameters\nimplemented by the system. If this field is missing from the service\nconfig, default system parameters will be used. Default system parameters\nand names is implementation-dependent.\n\nExample: define api key for all methods\n\nsystem_parameters\n rules:\n   - selector: &quot;*&quot;\n     parameters:\n       - name: api_key\n         url_query_parameter: api_key\n\nExample: define 2 api key names for a specific method.\n\nsystem_parameters\n rules:\n   - selector: &quot;/ListShelves&quot;\n     parameters:\n       - name: api_key\n         http_header: Api-Key1\n       - name: api_key\n         http_header: Api-Key2\n\n**NOTE:** All service configuration rules follow &quot;last one wins&quot; order.\n"
   example: []
   syntax:
     content: public RepeatedField<SystemParameterRule> Rules { get; }

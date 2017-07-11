@@ -29,7 +29,7 @@ items:
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Requests
-  summary: "\nA batch request which represents individual requests to Google servers. You should add a single service \nrequest using the <xref href=\"Google.Apis.Requests.BatchRequest.Queue%60%601(Google.Apis.Requests.IClientServiceRequest%2cGoogle.Apis.Requests.BatchRequest.OnResponse%7b%60%600%7d)\" data-throw-if-not-resolved=\"false\"></xref> method and execute all individual requests using \n<xref href=\"Google.Apis.Requests.BatchRequest.ExecuteAsync\" data-throw-if-not-resolved=\"false\"></xref>. More information about the batch protocol is available in \nhttps://developers.google.com/storage/docs/json_api/v1/how-tos/batch.\n<remarks>\nCurrent implementation doesn't retry on unsuccessful individual response and doesn't support requests with \ndifferent access tokens (different users or scopes).\n</remarks>\n"
+  summary: "\nA batch request which represents individual requests to Google servers. You should add a single service \nrequest using the <xref href=\"Google.Apis.Requests.BatchRequest.Queue%60%601(Google.Apis.Requests.IClientServiceRequest%2cGoogle.Apis.Requests.BatchRequest.OnResponse%7b%60%600%7d)\" data-throw-if-not-resolved=\"false\"></xref> method and execute all individual requests using \n<xref href=\"Google.Apis.Requests.BatchRequest.ExecuteAsync\" data-throw-if-not-resolved=\"false\"></xref>. More information about the batch protocol is available in \nhttps://developers.google.com/storage/docs/json_api/v1/how-tos/batch.\n<remarks>\nCurrent implementation doesn&apos;t retry on unsuccessful individual response and doesn&apos;t support requests with \ndifferent access tokens (different users or scopes).\n</remarks>\n"
   example: []
   syntax:
     content: public sealed class BatchRequest
@@ -109,7 +109,7 @@ items:
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Requests
-  summary: "\nConstructs a new batch request using the given service. The service's HTTP client is used to create a \nrequest to the given server URL and its serializer members are used to serialize the request and \ndeserialize the response.\n"
+  summary: "\nConstructs a new batch request using the given service. The service&apos;s HTTP client is used to create a \nrequest to the given server URL and its serializer members are used to serialize the request and \ndeserialize the response.\n"
   example: []
   syntax:
     content: public BatchRequest(IClientService service, string batchUrl)
@@ -196,7 +196,7 @@ items:
       description: A callback which will be called after a response was parsed.
     typeParameters:
     - id: TResponse
-      description: The response's type.
+      description: The response&apos;s type.
     content.vb: Public Sub Queue(Of TResponse As Class)(request As IClientServiceRequest, callback As BatchRequest.OnResponse(Of TResponse))
   overload: Google.Apis.Requests.BatchRequest.Queue*
   nameWithType.vb: BatchRequest.Queue(Of TResponse)(IClientServiceRequest, BatchRequest.OnResponse(Of TResponse))

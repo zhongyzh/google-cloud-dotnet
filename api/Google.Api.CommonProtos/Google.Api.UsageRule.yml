@@ -41,7 +41,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nUsage configuration rules for the service.\n\nNOTE: Under development.\n\nUse this rule to configure unregistered calls for the service. Unregistered\ncalls are calls that do not contain consumer project identity.\n(Example: calls that do not contain an API key).\nBy default, API methods do not allow unregistered calls, and each method call\nmust be identified by a consumer project identity. Use this rule to\nallow/disallow unregistered calls.\n\nExample of an API that wants to allow unregistered calls for entire service.\n\nusage:\n rules:\n - selector: \"*\"\n   allow_unregistered_calls: true\n\nExample of a method that wants to allow unregistered calls.\n\nusage:\n rules:\n - selector: \"google.example.library.v1.LibraryService.CreateBook\"\n   allow_unregistered_calls: true\n"
+  summary: "\nUsage configuration rules for the service.\n\nNOTE: Under development.\n\nUse this rule to configure unregistered calls for the service. Unregistered\ncalls are calls that do not contain consumer project identity.\n(Example: calls that do not contain an API key).\nBy default, API methods do not allow unregistered calls, and each method call\nmust be identified by a consumer project identity. Use this rule to\nallow/disallow unregistered calls.\n\nExample of an API that wants to allow unregistered calls for entire service.\n\nusage:\n rules:\n - selector: &quot;*&quot;\n   allow_unregistered_calls: true\n\nExample of a method that wants to allow unregistered calls.\n\nusage:\n rules:\n - selector: &quot;google.example.library.v1.LibraryService.CreateBook&quot;\n   allow_unregistered_calls: true\n"
   example: []
   syntax:
     content: 'public sealed class UsageRule : IMessage<UsageRule>, IMessage, IEquatable<UsageRule>, IDeepCloneable<UsageRule>'
@@ -300,7 +300,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "selector" field.
+  summary: Field number for the &quot;selector&quot; field.
   example: []
   syntax:
     content: public const int SelectorFieldNumber = 1
@@ -335,7 +335,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nSelects the methods to which this rule applies. Use '*' to indicate all\nmethods in all APIs.\n\nRefer to [selector][google.api.DocumentationRule.selector] for syntax details.\n"
+  summary: "\nSelects the methods to which this rule applies. Use &apos;*&apos; to indicate all\nmethods in all APIs.\n\nRefer to [selector][google.api.DocumentationRule.selector] for syntax details.\n"
   example: []
   syntax:
     content: public string Selector { get; set; }
@@ -372,7 +372,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "allow_unregistered_calls" field.
+  summary: Field number for the &quot;allow_unregistered_calls&quot; field.
   example: []
   syntax:
     content: public const int AllowUnregisteredCallsFieldNumber = 2

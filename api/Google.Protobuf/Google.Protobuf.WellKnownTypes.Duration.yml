@@ -51,7 +51,7 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
-  summary: "\nA Duration represents a signed, fixed-length span of time represented\nas a count of seconds and fractions of seconds at nanosecond\nresolution. It is independent of any calendar and concepts like \"day\"\nor \"month\". It is related to Timestamp in that the difference between\ntwo Timestamp values is a Duration and it can be added or subtracted\nfrom a Timestamp. Range is approximately +-10,000 years.\n\n# Examples\n\nExample 1: Compute Duration from two Timestamps in pseudo code.\n\nTimestamp start = ...;\nTimestamp end = ...;\nDuration duration = ...;\n\nduration.seconds = end.seconds - start.seconds;\nduration.nanos = end.nanos - start.nanos;\n\nif (duration.seconds &lt; 0 &amp;&amp; duration.nanos &gt; 0) {\n duration.seconds += 1;\n duration.nanos -= 1000000000;\n} else if (durations.seconds &gt; 0 &amp;&amp; duration.nanos &lt; 0) {\n duration.seconds -= 1;\n duration.nanos += 1000000000;\n}\n\nExample 2: Compute Timestamp from Timestamp + Duration in pseudo code.\n\nTimestamp start = ...;\nDuration duration = ...;\nTimestamp end = ...;\n\nend.seconds = start.seconds + duration.seconds;\nend.nanos = start.nanos + duration.nanos;\n\nif (end.nanos &lt; 0) {\n end.seconds -= 1;\n end.nanos += 1000000000;\n} else if (end.nanos &gt;= 1000000000) {\n end.seconds += 1;\n end.nanos -= 1000000000;\n}\n\nExample 3: Compute Duration from datetime.timedelta in Python.\n\ntd = datetime.timedelta(days=3, minutes=10)\nduration = Duration()\nduration.FromTimedelta(td)\n\n# JSON Mapping\n\nIn JSON format, the Duration type is encoded as a string rather than an\nobject, where the string ends in the suffix \"s\" (indicating seconds) and\nis preceded by the number of seconds, with nanoseconds expressed as\nfractional seconds. For example, 3 seconds with 0 nanoseconds should be\nencoded in JSON format as \"3s\", while 3 seconds and 1 nanosecond should\nbe expressed in JSON format as \"3.000000001s\", and 3 seconds and 1\nmicrosecond should be expressed in JSON format as \"3.000001s\".\n"
+  summary: "\nA Duration represents a signed, fixed-length span of time represented\nas a count of seconds and fractions of seconds at nanosecond\nresolution. It is independent of any calendar and concepts like &quot;day&quot;\nor &quot;month&quot;. It is related to Timestamp in that the difference between\ntwo Timestamp values is a Duration and it can be added or subtracted\nfrom a Timestamp. Range is approximately +-10,000 years.\n\n# Examples\n\nExample 1: Compute Duration from two Timestamps in pseudo code.\n\nTimestamp start = ...;\nTimestamp end = ...;\nDuration duration = ...;\n\nduration.seconds = end.seconds - start.seconds;\nduration.nanos = end.nanos - start.nanos;\n\nif (duration.seconds &lt; 0 &amp;&amp; duration.nanos > 0) {\n duration.seconds += 1;\n duration.nanos -= 1000000000;\n} else if (durations.seconds > 0 &amp;&amp; duration.nanos &lt; 0) {\n duration.seconds -= 1;\n duration.nanos += 1000000000;\n}\n\nExample 2: Compute Timestamp from Timestamp + Duration in pseudo code.\n\nTimestamp start = ...;\nDuration duration = ...;\nTimestamp end = ...;\n\nend.seconds = start.seconds + duration.seconds;\nend.nanos = start.nanos + duration.nanos;\n\nif (end.nanos &lt; 0) {\n end.seconds -= 1;\n end.nanos += 1000000000;\n} else if (end.nanos >= 1000000000) {\n end.seconds += 1;\n end.nanos -= 1000000000;\n}\n\nExample 3: Compute Duration from datetime.timedelta in Python.\n\ntd = datetime.timedelta(days=3, minutes=10)\nduration = Duration()\nduration.FromTimedelta(td)\n\n# JSON Mapping\n\nIn JSON format, the Duration type is encoded as a string rather than an\nobject, where the string ends in the suffix &quot;s&quot; (indicating seconds) and\nis preceded by the number of seconds, with nanoseconds expressed as\nfractional seconds. For example, 3 seconds with 0 nanoseconds should be\nencoded in JSON format as &quot;3s&quot;, while 3 seconds and 1 nanosecond should\nbe expressed in JSON format as &quot;3.000000001s&quot;, and 3 seconds and 1\nmicrosecond should be expressed in JSON format as &quot;3.000001s&quot;.\n"
   example: []
   syntax:
     content: 'public sealed class Duration : IMessage<Duration>, IEquatable<Duration>, IDeepCloneable<Duration>, ICustomDiagnosticMessage, IMessage'
@@ -320,7 +320,7 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
-  summary: Field number for the "seconds" field.
+  summary: Field number for the &quot;seconds&quot; field.
   example: []
   syntax:
     content: public const int SecondsFieldNumber = 1
@@ -392,7 +392,7 @@ items:
   assemblies:
   - Google.Protobuf
   namespace: Google.Protobuf.WellKnownTypes
-  summary: Field number for the "nanos" field.
+  summary: Field number for the &quot;nanos&quot; field.
   example: []
   syntax:
     content: public const int NanosFieldNumber = 2
@@ -902,7 +902,7 @@ items:
   - type: System.InvalidOperationException
     commentId: T:System.InvalidOperationException
     description: >-
-      This value isn't a valid normalized duration, as
+      This value isn&apos;t a valid normalized duration, as
 
       described in the documentation.
   modifiers.csharp:

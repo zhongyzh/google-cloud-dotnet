@@ -43,7 +43,7 @@ items:
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
-  summary: "\nA base class for a client service which provides common mechanism for all services, like \nserialization and GZip support.  It should be safe to use a single service instance to make server requests\nconcurrently from multiple threads. \nThis class adds a special <xref href=\"Google.Apis.Http.IHttpExecuteInterceptor\" data-throw-if-not-resolved=\"false\"></xref> to the \n<xref href=\"Google.Apis.Http.ConfigurableMessageHandler\" data-throw-if-not-resolved=\"false\"></xref> execute interceptor list, which uses the given \nAuthenticator. It calls to its applying authentication method, and injects the \"Authorization\" header in the \nrequest.\nIf the given Authenticator implements <xref href=\"Google.Apis.Http.IHttpUnsuccessfulResponseHandler\" data-throw-if-not-resolved=\"false\"></xref>, this \nclass adds the Authenticator to the <xref href=\"Google.Apis.Http.ConfigurableMessageHandler\" data-throw-if-not-resolved=\"false\"></xref>'s unsuccessful \nresponse handler list.\n"
+  summary: "\nA base class for a client service which provides common mechanism for all services, like \nserialization and GZip support.  It should be safe to use a single service instance to make server requests\nconcurrently from multiple threads. \nThis class adds a special <xref href=\"Google.Apis.Http.IHttpExecuteInterceptor\" data-throw-if-not-resolved=\"false\"></xref> to the \n<xref href=\"Google.Apis.Http.ConfigurableMessageHandler\" data-throw-if-not-resolved=\"false\"></xref> execute interceptor list, which uses the given \nAuthenticator. It calls to its applying authentication method, and injects the &quot;Authorization&quot; header in the \nrequest.\nIf the given Authenticator implements <xref href=\"Google.Apis.Http.IHttpUnsuccessfulResponseHandler\" data-throw-if-not-resolved=\"false\"></xref>, this \nclass adds the Authenticator to the <xref href=\"Google.Apis.Http.ConfigurableMessageHandler\" data-throw-if-not-resolved=\"false\"></xref>&apos;s unsuccessful \nresponse handler list.\n"
   example: []
   syntax:
     content: 'public abstract class BaseClientService : IClientService, IDisposable'
@@ -163,7 +163,7 @@ items:
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
-  summary: "\nCreates the back-off handler with <xref href=\"Google.Apis.Util.ExponentialBackOff\" data-throw-if-not-resolved=\"false\"></xref>. \nOverrides this method to change the default behavior of back-off handler (e.g. you can change the maximum\nwaited request's time span, or create a back-off handler with you own implementation of \n<xref href=\"Google.Apis.Util.IBackOff\" data-throw-if-not-resolved=\"false\"></xref>).\n"
+  summary: "\nCreates the back-off handler with <xref href=\"Google.Apis.Util.ExponentialBackOff\" data-throw-if-not-resolved=\"false\"></xref>. \nOverrides this method to change the default behavior of back-off handler (e.g. you can change the maximum\nwaited request&apos;s time span, or create a back-off handler with you own implementation of \n<xref href=\"Google.Apis.Util.IBackOff\" data-throw-if-not-resolved=\"false\"></xref>).\n"
   example: []
   syntax:
     content: protected virtual BackOffHandler CreateBackOffHandler()
@@ -394,7 +394,7 @@ items:
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
-  summary: "\nSets the content of the request by the given body and the this service's configuration. \nFirst the body object is serialized by the Serializer and then, if GZip is enabled, the content will be\nwrapped in a GZip stream, otherwise a regular string stream will be used.\n"
+  summary: "\nSets the content of the request by the given body and the this service&apos;s configuration. \nFirst the body object is serialized by the Serializer and then, if GZip is enabled, the content will be\nwrapped in a GZip stream, otherwise a regular string stream will be used.\n"
   example: []
   syntax:
     content: public void SetRequestSerailizedContent(HttpRequestMessage request, object body)

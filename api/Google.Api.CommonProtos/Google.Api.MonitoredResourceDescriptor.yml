@@ -47,7 +47,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nAn object that describes the schema of a [MonitoredResource][google.api.MonitoredResource] object using a\ntype name and a set of labels.  For example, the monitored resource\ndescriptor for Google Compute Engine VM instances has a type of\n`\"gce_instance\"` and specifies the use of the labels `\"instance_id\"` and\n`\"zone\"` to identify particular VM instances.\n\nDifferent APIs can support different monitored resource types. APIs generally\nprovide a `list` method that returns the monitored resource descriptors used\nby the API.\n"
+  summary: "\nAn object that describes the schema of a [MonitoredResource][google.api.MonitoredResource] object using a\ntype name and a set of labels.  For example, the monitored resource\ndescriptor for Google Compute Engine VM instances has a type of\n`&quot;gce_instance&quot;` and specifies the use of the labels `&quot;instance_id&quot;` and\n`&quot;zone&quot;` to identify particular VM instances.\n\nDifferent APIs can support different monitored resource types. APIs generally\nprovide a `list` method that returns the monitored resource descriptors used\nby the API.\n"
   example: []
   syntax:
     content: 'public sealed class MonitoredResourceDescriptor : IMessage<MonitoredResourceDescriptor>, IMessage, IEquatable<MonitoredResourceDescriptor>, IDeepCloneable<MonitoredResourceDescriptor>'
@@ -306,7 +306,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "name" field.
+  summary: Field number for the &quot;name&quot; field.
   example: []
   syntax:
     content: public const int NameFieldNumber = 5
@@ -341,7 +341,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nOptional. The resource name of the monitored resource descriptor:\n`\"projects/{project_id}/monitoredResourceDescriptors/{type}\"` where\n{type} is the value of the `type` field in this object and\n{project_id} is a project ID that provides API-specific context for\naccessing the type.  APIs that do not use project information can use the\nresource name format `\"monitoredResourceDescriptors/{type}\"`.\n"
+  summary: "\nOptional. The resource name of the monitored resource descriptor:\n`&quot;projects/{project_id}/monitoredResourceDescriptors/{type}&quot;` where\n{type} is the value of the `type` field in this object and\n{project_id} is a project ID that provides API-specific context for\naccessing the type.  APIs that do not use project information can use the\nresource name format `&quot;monitoredResourceDescriptors/{type}&quot;`.\n"
   example: []
   syntax:
     content: public string Name { get; set; }
@@ -378,7 +378,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "type" field.
+  summary: Field number for the &quot;type&quot; field.
   example: []
   syntax:
     content: public const int TypeFieldNumber = 1
@@ -413,7 +413,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nRequired. The monitored resource type. For example, the type\n`\"cloudsql_database\"` represents databases in Google Cloud SQL.\nThe maximum length of this value is 256 characters.\n"
+  summary: "\nRequired. The monitored resource type. For example, the type\n`&quot;cloudsql_database&quot;` represents databases in Google Cloud SQL.\nThe maximum length of this value is 256 characters.\n"
   example: []
   syntax:
     content: public string Type { get; set; }
@@ -450,7 +450,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "display_name" field.
+  summary: Field number for the &quot;display_name&quot; field.
   example: []
   syntax:
     content: public const int DisplayNameFieldNumber = 2
@@ -485,7 +485,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nOptional. A concise name for the monitored resource type that might be\ndisplayed in user interfaces. It should be a Title Cased Noun Phrase,\nwithout any article or other determiners. For example,\n`\"Google Cloud SQL Database\"`.\n"
+  summary: "\nOptional. A concise name for the monitored resource type that might be\ndisplayed in user interfaces. It should be a Title Cased Noun Phrase,\nwithout any article or other determiners. For example,\n`&quot;Google Cloud SQL Database&quot;`.\n"
   example: []
   syntax:
     content: public string DisplayName { get; set; }
@@ -522,7 +522,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "description" field.
+  summary: Field number for the &quot;description&quot; field.
   example: []
   syntax:
     content: public const int DescriptionFieldNumber = 3
@@ -594,7 +594,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "labels" field.
+  summary: Field number for the &quot;labels&quot; field.
   example: []
   syntax:
     content: public const int LabelsFieldNumber = 4
@@ -629,7 +629,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nRequired. A set of labels used to describe instances of this monitored\nresource type. For example, an individual Google Cloud SQL database is\nidentified by values for the labels `\"database_id\"` and `\"zone\"`.\n"
+  summary: "\nRequired. A set of labels used to describe instances of this monitored\nresource type. For example, an individual Google Cloud SQL database is\nidentified by values for the labels `&quot;database_id&quot;` and `&quot;zone&quot;`.\n"
   example: []
   syntax:
     content: public RepeatedField<LabelDescriptor> Labels { get; }

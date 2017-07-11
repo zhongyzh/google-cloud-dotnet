@@ -87,7 +87,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\n`Service` is the root object of Google service configuration schema. It\ndescribes basic information about a service, such as the name and the\ntitle, and delegates other aspects to sub-sections. Each sub-section is\neither a proto message or a repeated proto message that configures a\nspecific aspect, such as auth. See each proto message definition for details.\n\nExample:\n\ntype: google.api.Service\nconfig_version: 3\nname: calendar.googleapis.com\ntitle: Google Calendar API\napis:\n- name: google.calendar.v3.Calendar\nauthentication:\n providers:\n - id: google_calendar_auth\n   jwks_uri: https://www.googleapis.com/oauth2/v1/certs\n   issuer: https://securetoken.google.com\n rules:\n - selector: \"*\"\n   requirements:\n     provider_id: google_calendar_auth\n"
+  summary: "\n`Service` is the root object of Google service configuration schema. It\ndescribes basic information about a service, such as the name and the\ntitle, and delegates other aspects to sub-sections. Each sub-section is\neither a proto message or a repeated proto message that configures a\nspecific aspect, such as auth. See each proto message definition for details.\n\nExample:\n\ntype: google.api.Service\nconfig_version: 3\nname: calendar.googleapis.com\ntitle: Google Calendar API\napis:\n- name: google.calendar.v3.Calendar\nauthentication:\n providers:\n - id: google_calendar_auth\n   jwks_uri: https://www.googleapis.com/oauth2/v1/certs\n   issuer: https://securetoken.google.com\n rules:\n - selector: &quot;*&quot;\n   requirements:\n     provider_id: google_calendar_auth\n"
   example: []
   syntax:
     content: 'public sealed class Service : IMessage<Service>, IMessage, IEquatable<Service>, IDeepCloneable<Service>'
@@ -346,7 +346,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "config_version" field.
+  summary: Field number for the &quot;config_version&quot; field.
   example: []
   syntax:
     content: public const int ConfigVersionFieldNumber = 20
@@ -418,7 +418,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "name" field.
+  summary: Field number for the &quot;name&quot; field.
   example: []
   syntax:
     content: public const int NameFieldNumber = 1
@@ -490,7 +490,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "id" field.
+  summary: Field number for the &quot;id&quot; field.
   example: []
   syntax:
     content: public const int IdFieldNumber = 33
@@ -562,7 +562,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "title" field.
+  summary: Field number for the &quot;title&quot; field.
   example: []
   syntax:
     content: public const int TitleFieldNumber = 2
@@ -634,7 +634,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "producer_project_id" field.
+  summary: Field number for the &quot;producer_project_id&quot; field.
   example: []
   syntax:
     content: public const int ProducerProjectIdFieldNumber = 22
@@ -706,7 +706,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "apis" field.
+  summary: Field number for the &quot;apis&quot; field.
   example: []
   syntax:
     content: public const int ApisFieldNumber = 3
@@ -778,7 +778,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "types" field.
+  summary: Field number for the &quot;types&quot; field.
   example: []
   syntax:
     content: public const int Types_FieldNumber = 4
@@ -850,7 +850,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "enums" field.
+  summary: Field number for the &quot;enums&quot; field.
   example: []
   syntax:
     content: public const int EnumsFieldNumber = 5
@@ -922,7 +922,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "documentation" field.
+  summary: Field number for the &quot;documentation&quot; field.
   example: []
   syntax:
     content: public const int DocumentationFieldNumber = 6
@@ -994,7 +994,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "backend" field.
+  summary: Field number for the &quot;backend&quot; field.
   example: []
   syntax:
     content: public const int BackendFieldNumber = 8
@@ -1066,7 +1066,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "http" field.
+  summary: Field number for the &quot;http&quot; field.
   example: []
   syntax:
     content: public const int HttpFieldNumber = 9
@@ -1138,7 +1138,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "quota" field.
+  summary: Field number for the &quot;quota&quot; field.
   example: []
   syntax:
     content: public const int QuotaFieldNumber = 10
@@ -1210,7 +1210,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "authentication" field.
+  summary: Field number for the &quot;authentication&quot; field.
   example: []
   syntax:
     content: public const int AuthenticationFieldNumber = 11
@@ -1282,7 +1282,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "context" field.
+  summary: Field number for the &quot;context&quot; field.
   example: []
   syntax:
     content: public const int ContextFieldNumber = 12
@@ -1354,7 +1354,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "usage" field.
+  summary: Field number for the &quot;usage&quot; field.
   example: []
   syntax:
     content: public const int UsageFieldNumber = 15
@@ -1426,7 +1426,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "endpoints" field.
+  summary: Field number for the &quot;endpoints&quot; field.
   example: []
   syntax:
     content: public const int EndpointsFieldNumber = 18
@@ -1498,7 +1498,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "control" field.
+  summary: Field number for the &quot;control&quot; field.
   example: []
   syntax:
     content: public const int ControlFieldNumber = 21
@@ -1570,7 +1570,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "logs" field.
+  summary: Field number for the &quot;logs&quot; field.
   example: []
   syntax:
     content: public const int LogsFieldNumber = 23
@@ -1642,7 +1642,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "metrics" field.
+  summary: Field number for the &quot;metrics&quot; field.
   example: []
   syntax:
     content: public const int MetricsFieldNumber = 24
@@ -1714,7 +1714,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "monitored_resources" field.
+  summary: Field number for the &quot;monitored_resources&quot; field.
   example: []
   syntax:
     content: public const int MonitoredResourcesFieldNumber = 25
@@ -1786,7 +1786,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "logging" field.
+  summary: Field number for the &quot;logging&quot; field.
   example: []
   syntax:
     content: public const int LoggingFieldNumber = 27
@@ -1858,7 +1858,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "monitoring" field.
+  summary: Field number for the &quot;monitoring&quot; field.
   example: []
   syntax:
     content: public const int MonitoringFieldNumber = 28
@@ -1930,7 +1930,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "system_parameters" field.
+  summary: Field number for the &quot;system_parameters&quot; field.
   example: []
   syntax:
     content: public const int SystemParametersFieldNumber = 29
@@ -2002,7 +2002,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "source_info" field.
+  summary: Field number for the &quot;source_info&quot; field.
   example: []
   syntax:
     content: public const int SourceInfoFieldNumber = 37
@@ -2074,7 +2074,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "experimental" field.
+  summary: Field number for the &quot;experimental&quot; field.
   example: []
   syntax:
     content: public const int ExperimentalFieldNumber = 101

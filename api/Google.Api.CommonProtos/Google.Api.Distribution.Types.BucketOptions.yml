@@ -45,7 +45,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: "\nA Distribution may optionally contain a histogram of the values in the\npopulation.  The histogram is given in `bucket_counts` as counts of values\nthat fall into one of a sequence of non-overlapping buckets.  The sequence\nof buckets is described by `bucket_options`.\n\nA bucket specifies an inclusive lower bound and exclusive upper bound for\nthe values that are counted for that bucket.  The upper bound of a bucket\nis strictly greater than the lower bound.\n\nThe sequence of N buckets for a Distribution consists of an underflow\nbucket (number 0), zero or more finite buckets (number 1 through N - 2) and\nan overflow bucket (number N - 1).  The buckets are contiguous:  the lower\nbound of bucket i (i &gt; 0) is the same as the upper bound of bucket i - 1.\nThe buckets span the whole range of finite values: lower bound of the\nunderflow bucket is -infinity and the upper bound of the overflow bucket is\n+infinity.  The finite buckets are so-called because both bounds are\nfinite.\n\n`BucketOptions` describes bucket boundaries in one of three ways.  Two\ndescribe the boundaries by giving parameters for a formula to generate\nboundaries and one gives the bucket boundaries explicitly.\n\nIf `bucket_boundaries` is not given, then no `bucket_counts` may be given.\n"
+  summary: "\nA Distribution may optionally contain a histogram of the values in the\npopulation.  The histogram is given in `bucket_counts` as counts of values\nthat fall into one of a sequence of non-overlapping buckets.  The sequence\nof buckets is described by `bucket_options`.\n\nA bucket specifies an inclusive lower bound and exclusive upper bound for\nthe values that are counted for that bucket.  The upper bound of a bucket\nis strictly greater than the lower bound.\n\nThe sequence of N buckets for a Distribution consists of an underflow\nbucket (number 0), zero or more finite buckets (number 1 through N - 2) and\nan overflow bucket (number N - 1).  The buckets are contiguous:  the lower\nbound of bucket i (i > 0) is the same as the upper bound of bucket i - 1.\nThe buckets span the whole range of finite values: lower bound of the\nunderflow bucket is -infinity and the upper bound of the overflow bucket is\n+infinity.  The finite buckets are so-called because both bounds are\nfinite.\n\n`BucketOptions` describes bucket boundaries in one of three ways.  Two\ndescribe the boundaries by giving parameters for a formula to generate\nboundaries and one gives the bucket boundaries explicitly.\n\nIf `bucket_boundaries` is not given, then no `bucket_counts` may be given.\n"
   example: []
   syntax:
     content: 'public sealed class BucketOptions : IMessage<Distribution.Types.BucketOptions>, IMessage, IEquatable<Distribution.Types.BucketOptions>, IDeepCloneable<Distribution.Types.BucketOptions>'
@@ -304,7 +304,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "linear_buckets" field.
+  summary: Field number for the &quot;linear_buckets&quot; field.
   example: []
   syntax:
     content: public const int LinearBucketsFieldNumber = 1
@@ -376,7 +376,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "exponential_buckets" field.
+  summary: Field number for the &quot;exponential_buckets&quot; field.
   example: []
   syntax:
     content: public const int ExponentialBucketsFieldNumber = 2
@@ -448,7 +448,7 @@ items:
   assemblies:
   - Google.Api.CommonProtos
   namespace: Google.Api
-  summary: Field number for the "explicit_buckets" field.
+  summary: Field number for the &quot;explicit_buckets&quot; field.
   example: []
   syntax:
     content: public const int ExplicitBucketsFieldNumber = 3
