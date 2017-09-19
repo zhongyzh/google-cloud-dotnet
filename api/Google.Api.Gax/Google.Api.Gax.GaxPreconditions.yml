@@ -18,6 +18,7 @@ items:
   - Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Double},System.String)
   - Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Int32},System.String)
   - Google.Api.Gax.GaxPreconditions.CheckNonNegative(System.Nullable{System.Int64},System.String)
+  - Google.Api.Gax.GaxPreconditions.CheckNonNegativeDelay(System.TimeSpan,System.String)
   - Google.Api.Gax.GaxPreconditions.CheckNotNull``1(``0,System.String)
   - Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty(System.String,System.String)
   - Google.Api.Gax.GaxPreconditions.CheckState(System.Boolean,System.String)
@@ -101,13 +102,13 @@ items:
       description: The type of the parameter.
     return:
       type: '{T}'
-      description: <span class="paramref">argument</span> if it is not null
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it is not null
     content.vb: Public Shared Function CheckNotNull(Of T As Class)(argument As T, paramName As String) As T
   overload: Google.Api.Gax.GaxPreconditions.CheckNotNull*
   exceptions:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
-    description: <span class="paramref">argument</span> is null
+    description: <code data-dev-comment-type="paramref" class="paramref">argument</code> is null
   nameWithType.vb: GaxPreconditions.CheckNotNull(Of T)(T, String)
   modifiers.csharp:
   - public
@@ -152,16 +153,16 @@ items:
       description: The name of the parameter in the calling method.
     return:
       type: System.String
-      description: <span class="paramref">argument</span> if it is not null or empty
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it is not null or empty
     content.vb: Public Shared Function CheckNotNullOrEmpty(argument As String, paramName As String) As String
   overload: Google.Api.Gax.GaxPreconditions.CheckNotNullOrEmpty*
   exceptions:
   - type: System.ArgumentNullException
     commentId: T:System.ArgumentNullException
-    description: <span class="paramref">argument</span> is null
+    description: <code data-dev-comment-type="paramref" class="paramref">argument</code> is null
   - type: System.ArgumentException
     commentId: T:System.ArgumentException
-    description: <span class="paramref">argument</span> is empty
+    description: <code data-dev-comment-type="paramref" class="paramref">argument</code> is empty
   modifiers.csharp:
   - public
   - static
@@ -191,7 +192,7 @@ items:
   - Google.Api.Gax
   namespace: Google.Api.Gax
   summary: "\nChecks that the given argument value is valid.\n"
-  remarks: "\nNote that the upper bound (<span class=\"paramref\">maxInclusive</span>) is inclusive,\nnot exclusive. This is deliberate, to allow the specification of ranges which include\n<xref href=\"System.Int32.MaxValue\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nNote that the upper bound (<code data-dev-comment-type=\"paramref\" class=\"paramref\">maxInclusive</code>) is inclusive,\nnot exclusive. This is deliberate, to allow the specification of ranges which include\n<xref href=\"System.Int32.MaxValue\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: public static int CheckArgumentRange(int argument, string paramName, int minInclusive, int maxInclusive)
@@ -210,7 +211,7 @@ items:
       description: The largest valid value.
     return:
       type: System.Int32
-      description: <span class="paramref">argument</span> if it was in range
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it was in range
     content.vb: Public Shared Function CheckArgumentRange(argument As Integer, paramName As String, minInclusive As Integer, maxInclusive As Integer) As Integer
   overload: Google.Api.Gax.GaxPreconditions.CheckArgumentRange*
   exceptions:
@@ -246,7 +247,7 @@ items:
   - Google.Api.Gax
   namespace: Google.Api.Gax
   summary: "\nChecks that the given argument value is valid.\n"
-  remarks: "\nNote that the upper bound (<span class=\"paramref\">maxInclusive</span>) is inclusive,\nnot exclusive. This is deliberate, to allow the specification of ranges which include\n<xref href=\"System.Int64.MaxValue\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nNote that the upper bound (<code data-dev-comment-type=\"paramref\" class=\"paramref\">maxInclusive</code>) is inclusive,\nnot exclusive. This is deliberate, to allow the specification of ranges which include\n<xref href=\"System.Int64.MaxValue\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: 'public static T CheckArgumentRange<T>(T argument, string paramName, T minInclusive, T maxInclusive)where T : IComparable<T>'
@@ -267,7 +268,7 @@ items:
     - id: T
     return:
       type: '{T}'
-      description: <span class="paramref">argument</span> if it was in range
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it was in range
     content.vb: Public Shared Function CheckArgumentRange(Of T As IComparable(Of T))(argument As T, paramName As String, minInclusive As T, maxInclusive As T) As T
   overload: Google.Api.Gax.GaxPreconditions.CheckArgumentRange*
   exceptions:
@@ -306,7 +307,7 @@ items:
   - Google.Api.Gax
   namespace: Google.Api.Gax
   summary: "\nChecks that the given argument value, if not <code>null</code>, is valid.\n"
-  remarks: "\nNote that the upper bound (<span class=\"paramref\">maxInclusive</span>) is inclusive,\nnot exclusive. This is deliberate, to allow the specification of ranges which include\n<xref href=\"System.Int32.MaxValue\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  remarks: "\nNote that the upper bound (<code data-dev-comment-type=\"paramref\" class=\"paramref\">maxInclusive</code>) is inclusive,\nnot exclusive. This is deliberate, to allow the specification of ranges which include\n<xref href=\"System.Int32.MaxValue\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: 'public static T? CheckArgumentRange<T>(T? argument, string paramName, T minInclusive, T maxInclusive)where T : struct, IComparable<T>'
@@ -327,7 +328,7 @@ items:
     - id: T
     return:
       type: System.Nullable{{T}}
-      description: <span class="paramref">argument</span> if it was in range, or <code>null</code>.
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it was in range, or <code>null</code>.
     content.vb: Public Shared Function CheckArgumentRange(Of T As {Structure, IComparable(Of T)})(argument As T?, paramName As String, minInclusive As T, maxInclusive As T) As T?
   overload: Google.Api.Gax.GaxPreconditions.CheckArgumentRange*
   exceptions:
@@ -378,7 +379,7 @@ items:
       description: The name of the parameter in the calling method.
     return:
       type: System.Int32
-      description: <span class="paramref">argument</span> if it was non-negative.
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it was non-negative.
     content.vb: Public Shared Function CheckNonNegative(argument As Integer, paramName As String) As Integer
   overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
   exceptions:
@@ -426,7 +427,7 @@ items:
       description: The name of the parameter in the calling method.
     return:
       type: System.Nullable{System.Int32}
-      description: <span class="paramref">argument</span> if it was non-negative, or <code>null</code>.
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it was non-negative, or <code>null</code>.
     content.vb: Public Shared Function CheckNonNegative(argument As Integer?, paramName As String) As Integer?
   overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
   exceptions:
@@ -477,7 +478,7 @@ items:
       description: The name of the parameter in the calling method.
     return:
       type: System.Int64
-      description: <span class="paramref">argument</span> if it was non-negative.
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it was non-negative.
     content.vb: Public Shared Function CheckNonNegative(argument As Long, paramName As String) As Long
   overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
   exceptions:
@@ -525,7 +526,7 @@ items:
       description: The name of the parameter in the calling method.
     return:
       type: System.Nullable{System.Int64}
-      description: <span class="paramref">argument</span> if it was non-negative, or <code>null</code>.
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it was non-negative, or <code>null</code>.
     content.vb: Public Shared Function CheckNonNegative(argument As Long?, paramName As String) As Long?
   overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
   exceptions:
@@ -576,7 +577,7 @@ items:
       description: The name of the parameter in the calling method.
     return:
       type: System.Double
-      description: <span class="paramref">argument</span> if it was non-negative.
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it was non-negative.
     content.vb: Public Shared Function CheckNonNegative(argument As Double, paramName As String) As Double
   overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
   exceptions:
@@ -624,7 +625,7 @@ items:
       description: The name of the parameter in the calling method.
     return:
       type: System.Nullable{System.Double}
-      description: <span class="paramref">argument</span> if it was non-negative, or <code>null</code>.
+      description: <code data-dev-comment-type="paramref" class="paramref">argument</code> if it was non-negative, or <code>null</code>.
     content.vb: Public Shared Function CheckNonNegative(argument As Double?, paramName As String) As Double?
   overload: Google.Api.Gax.GaxPreconditions.CheckNonNegative*
   exceptions:
@@ -995,7 +996,7 @@ items:
       description: The enum type to check the value within.
     return:
       type: '{T}'
-      description: <span class="paramref">value</span> if it was a defined value
+      description: <code data-dev-comment-type="paramref" class="paramref">value</code> if it was a defined value
     content.vb: Public Shared Function CheckEnumValue(Of T As Structure)(value As T, paramName As String) As T
   overload: Google.Api.Gax.GaxPreconditions.CheckEnumValue*
   nameWithType.vb: GaxPreconditions.CheckEnumValue(Of T)(T, String)
@@ -1007,6 +1008,49 @@ items:
   - Shared
   fullName.vb: Google.Api.Gax.GaxPreconditions.CheckEnumValue(Of T)(T, System.String)
   name.vb: CheckEnumValue(Of T)(T, String)
+- uid: Google.Api.Gax.GaxPreconditions.CheckNonNegativeDelay(System.TimeSpan,System.String)
+  commentId: M:Google.Api.Gax.GaxPreconditions.CheckNonNegativeDelay(System.TimeSpan,System.String)
+  id: CheckNonNegativeDelay(System.TimeSpan,System.String)
+  parent: Google.Api.Gax.GaxPreconditions
+  langs:
+  - csharp
+  - vb
+  name: CheckNonNegativeDelay(TimeSpan, String)
+  nameWithType: GaxPreconditions.CheckNonNegativeDelay(TimeSpan, String)
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNonNegativeDelay(System.TimeSpan, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/Google.Api.Gax/GaxPreconditions.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: CheckNonNegativeDelay
+    path: src/Google.Api.Gax/GaxPreconditions.cs
+    startLine: 290
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nChecks that the given <xref href=\"System.TimeSpan\" data-throw-if-not-resolved=\"false\"></xref> used as a delay is non-negative. This is a very specific\ncall; most users won&apos;t need it.\n"
+  example: []
+  syntax:
+    content: public static TimeSpan CheckNonNegativeDelay(TimeSpan value, string paramName)
+    parameters:
+    - id: value
+      type: System.TimeSpan
+      description: The value to check.
+    - id: paramName
+      type: System.String
+      description: The name of the parameter whose value is being tested.
+    return:
+      type: System.TimeSpan
+    content.vb: Public Shared Function CheckNonNegativeDelay(value As TimeSpan, paramName As String) As TimeSpan
+  overload: Google.Api.Gax.GaxPreconditions.CheckNonNegativeDelay*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
 references:
 - uid: Google.Api.Gax
   commentId: N:Google.Api.Gax
@@ -1639,3 +1683,16 @@ references:
   name: CheckEnumValue
   nameWithType: GaxPreconditions.CheckEnumValue
   fullName: Google.Api.Gax.GaxPreconditions.CheckEnumValue
+- uid: System.TimeSpan
+  commentId: T:System.TimeSpan
+  parent: System
+  isExternal: true
+  name: TimeSpan
+  nameWithType: TimeSpan
+  fullName: System.TimeSpan
+- uid: Google.Api.Gax.GaxPreconditions.CheckNonNegativeDelay*
+  commentId: Overload:Google.Api.Gax.GaxPreconditions.CheckNonNegativeDelay
+  isExternal: false
+  name: CheckNonNegativeDelay
+  nameWithType: GaxPreconditions.CheckNonNegativeDelay
+  fullName: Google.Api.Gax.GaxPreconditions.CheckNonNegativeDelay

@@ -78,7 +78,7 @@ items:
     content: public HttpClient HttpClient { get; set; }
     parameters: []
     return:
-      type: System.Net.Http.HttpClient
+      type: HttpClient
     content.vb: Public Property HttpClient As HttpClient
   overload: Google.Apis.Upload.ResumableUploadOptions.HttpClient*
   modifiers.csharp:
@@ -116,7 +116,7 @@ items:
     content: public Action<HttpRequestMessage> ModifySessionInitiationRequest { get; set; }
     parameters: []
     return:
-      type: System.Action{System.Net.Http.HttpRequestMessage}
+      type: System.Action{HttpRequestMessage}
     content.vb: Public Property ModifySessionInitiationRequest As Action(Of HttpRequestMessage)
   overload: Google.Apis.Upload.ResumableUploadOptions.ModifySessionInitiationRequest*
   modifiers.csharp:
@@ -512,19 +512,12 @@ references:
   name: HttpClient
   nameWithType: ResumableUploadOptions.HttpClient
   fullName: Google.Apis.Upload.ResumableUploadOptions.HttpClient
-- uid: System.Net.Http.HttpClient
-  commentId: T:System.Net.Http.HttpClient
-  parent: System.Net.Http
+- uid: HttpClient
+  commentId: '!:HttpClient'
   isExternal: true
   name: HttpClient
   nameWithType: HttpClient
-  fullName: System.Net.Http.HttpClient
-- uid: System.Net.Http
-  commentId: N:System.Net.Http
-  isExternal: false
-  name: System.Net.Http
-  nameWithType: System.Net.Http
-  fullName: System.Net.Http
+  fullName: HttpClient
 - uid: Google.Apis.Upload.ResumableUpload.CreateFromUploadUri(System.Uri,System.IO.Stream,Google.Apis.Upload.ResumableUploadOptions)
   commentId: M:Google.Apis.Upload.ResumableUpload.CreateFromUploadUri(System.Uri,System.IO.Stream,Google.Apis.Upload.ResumableUploadOptions)
   parent: Google.Apis.Upload.ResumableUpload
@@ -600,15 +593,15 @@ references:
   name: ModifySessionInitiationRequest
   nameWithType: ResumableUploadOptions.ModifySessionInitiationRequest
   fullName: Google.Apis.Upload.ResumableUploadOptions.ModifySessionInitiationRequest
-- uid: System.Action{System.Net.Http.HttpRequestMessage}
-  commentId: T:System.Action{System.Net.Http.HttpRequestMessage}
+- uid: System.Action{HttpRequestMessage}
+  commentId: T:System.Action{HttpRequestMessage}
   parent: System
   definition: System.Action`1
   name: Action<HttpRequestMessage>
   nameWithType: Action<HttpRequestMessage>
-  fullName: System.Action<System.Net.Http.HttpRequestMessage>
+  fullName: System.Action<HttpRequestMessage>
   nameWithType.vb: Action(Of HttpRequestMessage)
-  fullName.vb: System.Action(Of System.Net.Http.HttpRequestMessage)
+  fullName.vb: System.Action(Of HttpRequestMessage)
   name.vb: Action(Of HttpRequestMessage)
   spec.csharp:
   - uid: System.Action`1
@@ -619,10 +612,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Net.Http.HttpRequestMessage
+  - uid: HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
+    fullName: HttpRequestMessage
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -636,10 +629,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Net.Http.HttpRequestMessage
+  - uid: HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
+    fullName: HttpRequestMessage
     isExternal: true
   - name: )
     nameWithType: )

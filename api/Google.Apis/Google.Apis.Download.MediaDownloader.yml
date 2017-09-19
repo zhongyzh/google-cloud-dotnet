@@ -14,7 +14,7 @@ items:
   - Google.Apis.Download.MediaDownloader.ModifyRequest
   - Google.Apis.Download.MediaDownloader.OnDataReceived(System.Byte[],System.Int32)
   - Google.Apis.Download.MediaDownloader.OnDownloadCompleted
-  - Google.Apis.Download.MediaDownloader.OnResponseReceived(System.Net.Http.HttpResponseMessage)
+  - Google.Apis.Download.MediaDownloader.OnResponseReceived(HttpResponseMessage)
   - Google.Apis.Download.MediaDownloader.ProgressChanged
   - Google.Apis.Download.MediaDownloader.Range
   langs:
@@ -162,7 +162,7 @@ items:
     content: public RangeHeaderValue Range { get; set; }
     parameters: []
     return:
-      type: System.Net.Http.Headers.RangeHeaderValue
+      type: RangeHeaderValue
     content.vb: Public Property Range As RangeHeaderValue
   overload: Google.Apis.Download.MediaDownloader.Range*
   modifiers.csharp:
@@ -234,7 +234,7 @@ items:
     content: public Action<HttpRequestMessage> ModifyRequest { get; set; }
     parameters: []
     return:
-      type: System.Action{System.Net.Http.HttpRequestMessage}
+      type: System.Action{HttpRequestMessage}
     content.vb: Public Property ModifyRequest As Action(Of HttpRequestMessage)
   overload: Google.Apis.Download.MediaDownloader.ModifyRequest*
   modifiers.csharp:
@@ -404,16 +404,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Google.Apis.Download.MediaDownloader.OnResponseReceived(System.Net.Http.HttpResponseMessage)
-  commentId: M:Google.Apis.Download.MediaDownloader.OnResponseReceived(System.Net.Http.HttpResponseMessage)
-  id: OnResponseReceived(System.Net.Http.HttpResponseMessage)
+- uid: Google.Apis.Download.MediaDownloader.OnResponseReceived(HttpResponseMessage)
+  commentId: M:Google.Apis.Download.MediaDownloader.OnResponseReceived(HttpResponseMessage)
+  id: OnResponseReceived(HttpResponseMessage)
   parent: Google.Apis.Download.MediaDownloader
   langs:
   - csharp
   - vb
   name: OnResponseReceived(HttpResponseMessage)
   nameWithType: MediaDownloader.OnResponseReceived(HttpResponseMessage)
-  fullName: Google.Apis.Download.MediaDownloader.OnResponseReceived(System.Net.Http.HttpResponseMessage)
+  fullName: Google.Apis.Download.MediaDownloader.OnResponseReceived(HttpResponseMessage)
   type: Method
   source:
     remote:
@@ -433,7 +433,7 @@ items:
     content: protected virtual void OnResponseReceived(HttpResponseMessage response)
     parameters:
     - id: response
-      type: System.Net.Http.HttpResponseMessage
+      type: HttpResponseMessage
       description: HTTP response received.
     content.vb: Protected Overridable Sub OnResponseReceived(response As HttpResponseMessage)
   overload: Google.Apis.Download.MediaDownloader.OnResponseReceived*
@@ -855,19 +855,12 @@ references:
   name: Range
   nameWithType: MediaDownloader.Range
   fullName: Google.Apis.Download.MediaDownloader.Range
-- uid: System.Net.Http.Headers.RangeHeaderValue
-  commentId: T:System.Net.Http.Headers.RangeHeaderValue
-  parent: System.Net.Http.Headers
+- uid: RangeHeaderValue
+  commentId: '!:RangeHeaderValue'
   isExternal: true
   name: RangeHeaderValue
   nameWithType: RangeHeaderValue
-  fullName: System.Net.Http.Headers.RangeHeaderValue
-- uid: System.Net.Http.Headers
-  commentId: N:System.Net.Http.Headers
-  isExternal: false
-  name: System.Net.Http.Headers
-  nameWithType: System.Net.Http.Headers
-  fullName: System.Net.Http.Headers
+  fullName: RangeHeaderValue
 - uid: Google.Apis.Download.MediaDownloader.#ctor*
   commentId: Overload:Google.Apis.Download.MediaDownloader.#ctor
   isExternal: false
@@ -893,15 +886,15 @@ references:
   name: ModifyRequest
   nameWithType: MediaDownloader.ModifyRequest
   fullName: Google.Apis.Download.MediaDownloader.ModifyRequest
-- uid: System.Action{System.Net.Http.HttpRequestMessage}
-  commentId: T:System.Action{System.Net.Http.HttpRequestMessage}
+- uid: System.Action{HttpRequestMessage}
+  commentId: T:System.Action{HttpRequestMessage}
   parent: System
   definition: System.Action`1
   name: Action<HttpRequestMessage>
   nameWithType: Action<HttpRequestMessage>
-  fullName: System.Action<System.Net.Http.HttpRequestMessage>
+  fullName: System.Action<HttpRequestMessage>
   nameWithType.vb: Action(Of HttpRequestMessage)
-  fullName.vb: System.Action(Of System.Net.Http.HttpRequestMessage)
+  fullName.vb: System.Action(Of HttpRequestMessage)
   name.vb: Action(Of HttpRequestMessage)
   spec.csharp:
   - uid: System.Action`1
@@ -912,10 +905,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Net.Http.HttpRequestMessage
+  - uid: HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
+    fullName: HttpRequestMessage
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -929,10 +922,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Net.Http.HttpRequestMessage
+  - uid: HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
+    fullName: HttpRequestMessage
     isExternal: true
   - name: )
     nameWithType: )
@@ -1351,19 +1344,11 @@ references:
   name: OnResponseReceived
   nameWithType: MediaDownloader.OnResponseReceived
   fullName: Google.Apis.Download.MediaDownloader.OnResponseReceived
-- uid: System.Net.Http.HttpResponseMessage
-  commentId: T:System.Net.Http.HttpResponseMessage
-  parent: System.Net.Http
+- uid: HttpResponseMessage
   isExternal: true
   name: HttpResponseMessage
   nameWithType: HttpResponseMessage
-  fullName: System.Net.Http.HttpResponseMessage
-- uid: System.Net.Http
-  commentId: N:System.Net.Http
-  isExternal: false
-  name: System.Net.Http
-  nameWithType: System.Net.Http
-  fullName: System.Net.Http
+  fullName: HttpResponseMessage
 - uid: Google.Apis.Download.MediaDownloader.OnDataReceived*
   commentId: Overload:Google.Apis.Download.MediaDownloader.OnDataReceived
   isExternal: false

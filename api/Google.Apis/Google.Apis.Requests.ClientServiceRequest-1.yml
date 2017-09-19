@@ -143,7 +143,7 @@ items:
     content: public Action<HttpRequestMessage> ModifyRequest { get; set; }
     parameters: []
     return:
-      type: System.Action{System.Net.Http.HttpRequestMessage}
+      type: System.Action{HttpRequestMessage}
     content.vb: Public Property ModifyRequest As Action(Of HttpRequestMessage)
   overload: Google.Apis.Requests.ClientServiceRequest`1.ModifyRequest*
   nameWithType.vb: ClientServiceRequest(Of TResponse).ModifyRequest
@@ -695,13 +695,13 @@ items:
   summary: Creates a HTTP request message with all path and query parameters, ETag, etc.
   example: []
   syntax:
-    content: public HttpRequestMessage CreateRequest(bool ? overrideGZipEnabled = null)
+    content: public HttpRequestMessage CreateRequest(bool ? overrideGZipEnabled = default (bool ? ))
     parameters:
     - id: overrideGZipEnabled
       type: System.Nullable{System.Boolean}
       description: "\nIf <code>null</code> use the service default GZip behavior. Otherwise indicates if GZip is enabled or disabled.\n"
     return:
-      type: System.Net.Http.HttpRequestMessage
+      type: HttpRequestMessage
     content.vb: Public Function CreateRequest(overrideGZipEnabled As Boolean? = Nothing) As HttpRequestMessage
   overload: Google.Apis.Requests.ClientServiceRequest`1.CreateRequest*
   implements:
@@ -806,7 +806,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: GetDefaultETagAction
     path: Src/Support/Google.Apis/Requests/ClientServiceRequest.cs
-    startLine: 284
+    startLine: 280
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Requests
@@ -1239,15 +1239,15 @@ references:
   fullName: Google.Apis.Requests.ClientServiceRequest<TResponse>.ModifyRequest
   nameWithType.vb: ClientServiceRequest(Of TResponse).ModifyRequest
   fullName.vb: Google.Apis.Requests.ClientServiceRequest(Of TResponse).ModifyRequest
-- uid: System.Action{System.Net.Http.HttpRequestMessage}
-  commentId: T:System.Action{System.Net.Http.HttpRequestMessage}
+- uid: System.Action{HttpRequestMessage}
+  commentId: T:System.Action{HttpRequestMessage}
   parent: System
   definition: System.Action`1
   name: Action<HttpRequestMessage>
   nameWithType: Action<HttpRequestMessage>
-  fullName: System.Action<System.Net.Http.HttpRequestMessage>
+  fullName: System.Action<HttpRequestMessage>
   nameWithType.vb: Action(Of HttpRequestMessage)
-  fullName.vb: System.Action(Of System.Net.Http.HttpRequestMessage)
+  fullName.vb: System.Action(Of HttpRequestMessage)
   name.vb: Action(Of HttpRequestMessage)
   spec.csharp:
   - uid: System.Action`1
@@ -1258,10 +1258,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Net.Http.HttpRequestMessage
+  - uid: HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
+    fullName: HttpRequestMessage
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1275,10 +1275,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Net.Http.HttpRequestMessage
+  - uid: HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
+    fullName: HttpRequestMessage
     isExternal: true
   - name: )
     nameWithType: )
@@ -2164,13 +2164,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Net.Http.HttpRequestMessage
-  commentId: T:System.Net.Http.HttpRequestMessage
-  parent: System.Net.Http
+- uid: HttpRequestMessage
   isExternal: true
   name: HttpRequestMessage
   nameWithType: HttpRequestMessage
-  fullName: System.Net.Http.HttpRequestMessage
+  fullName: HttpRequestMessage
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true
@@ -2210,12 +2208,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Net.Http
-  commentId: N:System.Net.Http
-  isExternal: false
-  name: System.Net.Http
-  nameWithType: System.Net.Http
-  fullName: System.Net.Http
 - uid: Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri*
   commentId: Overload:Google.Apis.Requests.ClientServiceRequest`1.GenerateRequestUri
   isExternal: false

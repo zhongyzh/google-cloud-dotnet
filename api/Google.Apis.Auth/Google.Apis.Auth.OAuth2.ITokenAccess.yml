@@ -57,10 +57,10 @@ items:
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
-  summary: "\nGets an access token to authorize a request.\nImplementations should handle automatic refreshes of the token\nif they are supported.\nThe <span class=\"paramref\">authUri</span> might be required by some credential types\n(e.g. the JWT access token) while other credential types\nmigth just ignore it.\n"
+  summary: "\nGets an access token to authorize a request.\nImplementations should handle automatic refreshes of the token\nif they are supported.\nThe <code data-dev-comment-type=\"paramref\" class=\"paramref\">authUri</code> might be required by some credential types\n(e.g. the JWT access token) while other credential types\nmigth just ignore it.\n"
   example: []
   syntax:
-    content: Task<string> GetAccessTokenForRequestAsync(string authUri = null, CancellationToken cancellationToken = null)
+    content: Task<string> GetAccessTokenForRequestAsync(string authUri = null, CancellationToken cancellationToken = default (CancellationToken))
     parameters:
     - id: authUri
       type: System.String

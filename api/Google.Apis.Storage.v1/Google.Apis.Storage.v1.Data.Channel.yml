@@ -30,29 +30,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Channel
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7374
+    startLine: 7430
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: An notification channel used to watch for resource changes.
   example: []
   syntax:
-    content: 'public class Channel : IDirectResponseSchema'
+    content: 'public class Channel : Requests.IDirectResponseSchema'
     content.vb: >-
       Public Class Channel
-          Implements IDirectResponseSchema
+          Inherits Requests.IDirectResponseSchema
   inheritance:
   - System.Object
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema
-  inheritedMembers:
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -77,31 +67,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Address
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7377
+    startLine: 7433
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The address where notifications are delivered for this channel.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("address")]
-
-      public virtual string Address { get; set; }
+    content: public virtual string Address { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("address")>
-
-      Public Overridable Property Address As String
+    content.vb: Public Overridable Property Address As String
   overload: Google.Apis.Storage.v1.Data.Channel.Address*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: address
   modifiers.csharp:
   - public
   - virtual
@@ -128,7 +106,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Expiration
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7382
+    startLine: 7438
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -138,24 +116,12 @@ items:
     Optional.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("expiration")]
-
-      public virtual long ? Expiration { get; set; }
+    content: public virtual long ? Expiration { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: >-
-      <JsonProperty("expiration")>
-
-      Public Overridable Property Expiration As Long?
+    content.vb: Public Overridable Property Expiration As Long?
   overload: Google.Apis.Storage.v1.Data.Channel.Expiration*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: expiration
   modifiers.csharp:
   - public
   - virtual
@@ -182,31 +148,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Id
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7386
+    startLine: 7442
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: A UUID or similar unique string that identifies this channel.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("id")]
-
-      public virtual string Id { get; set; }
+    content: public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("id")>
-
-      Public Overridable Property Id As String
+    content.vb: Public Overridable Property Id As String
   overload: Google.Apis.Storage.v1.Data.Channel.Id*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -233,7 +187,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Kind
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7391
+    startLine: 7447
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -243,24 +197,12 @@ items:
     string &quot;api#channel&quot;.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("kind")]
-
-      public virtual string Kind { get; set; }
+    content: public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("kind")>
-
-      Public Overridable Property Kind As String
+    content.vb: Public Overridable Property Kind As String
   overload: Google.Apis.Storage.v1.Data.Channel.Kind*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -287,31 +229,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Params__
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7395
+    startLine: 7451
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: Additional parameters controlling delivery channel behavior. Optional.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("params")]
-
-      public virtual IDictionary<string, string> Params__ { get; set; }
+    content: public virtual IDictionary<string, string> Params__ { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IDictionary{System.String,System.String}
-    content.vb: >-
-      <JsonProperty("params")>
-
-      Public Overridable Property Params__ As IDictionary(Of String, String)
+    content.vb: Public Overridable Property Params__ As IDictionary(Of String, String)
   overload: Google.Apis.Storage.v1.Data.Channel.Params__*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: params
   modifiers.csharp:
   - public
   - virtual
@@ -338,31 +268,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Payload
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7399
+    startLine: 7455
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: A Boolean value to indicate whether payload is wanted. Optional.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("payload")]
-
-      public virtual bool ? Payload { get; set; }
+    content: public virtual bool ? Payload { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: >-
-      <JsonProperty("payload")>
-
-      Public Overridable Property Payload As Boolean?
+    content.vb: Public Overridable Property Payload As Boolean?
   overload: Google.Apis.Storage.v1.Data.Channel.Payload*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: payload
   modifiers.csharp:
   - public
   - virtual
@@ -389,7 +307,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ResourceId
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7404
+    startLine: 7460
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -399,24 +317,12 @@ items:
     API versions.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("resourceId")]
-
-      public virtual string ResourceId { get; set; }
+    content: public virtual string ResourceId { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("resourceId")>
-
-      Public Overridable Property ResourceId As String
+    content.vb: Public Overridable Property ResourceId As String
   overload: Google.Apis.Storage.v1.Data.Channel.ResourceId*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: resourceId
   modifiers.csharp:
   - public
   - virtual
@@ -443,31 +349,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ResourceUri
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7408
+    startLine: 7464
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: A version-specific identifier for the watched resource.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("resourceUri")]
-
-      public virtual string ResourceUri { get; set; }
+    content: public virtual string ResourceUri { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("resourceUri")>
-
-      Public Overridable Property ResourceUri As String
+    content.vb: Public Overridable Property ResourceUri As String
   overload: Google.Apis.Storage.v1.Data.Channel.ResourceUri*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: resourceUri
   modifiers.csharp:
   - public
   - virtual
@@ -494,7 +388,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Token
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7413
+    startLine: 7469
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -504,24 +398,12 @@ items:
     channel. Optional.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("token")]
-
-      public virtual string Token { get; set; }
+    content: public virtual string Token { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("token")>
-
-      Public Overridable Property Token As String
+    content.vb: Public Overridable Property Token As String
   overload: Google.Apis.Storage.v1.Data.Channel.Token*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: token
   modifiers.csharp:
   - public
   - virtual
@@ -548,31 +430,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Type
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7417
+    startLine: 7473
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The type of delivery mechanism used for this channel.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("type")]
-
-      public virtual string Type { get; set; }
+    content: public virtual string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("type")>
-
-      Public Overridable Property Type As String
+    content.vb: Public Overridable Property Type As String
   overload: Google.Apis.Storage.v1.Data.Channel.Type*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: type
   modifiers.csharp:
   - public
   - virtual
@@ -599,7 +469,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ETag
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7421
+    startLine: 7477
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -612,8 +482,6 @@ items:
       type: System.String
     content.vb: Public Overridable Property ETag As String
   overload: Google.Apis.Storage.v1.Data.Channel.ETag*
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema.ETag
   modifiers.csharp:
   - public
   - virtual
@@ -636,304 +504,12 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: Google.Apis.Requests.IDirectResponseSchema
-  commentId: T:Google.Apis.Requests.IDirectResponseSchema
-  parent: Google.Apis.Requests
-  isExternal: true
-  name: IDirectResponseSchema
-  nameWithType: IDirectResponseSchema
-  fullName: Google.Apis.Requests.IDirectResponseSchema
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
-- uid: Google.Apis.Requests
-  commentId: N:Google.Apis.Requests
-  isExternal: false
-  name: Google.Apis.Requests
-  nameWithType: Google.Apis.Requests
-  fullName: Google.Apis.Requests
 - uid: Google.Apis.Storage.v1.Data.Channel.Address*
   commentId: Overload:Google.Apis.Storage.v1.Data.Channel.Address
   isExternal: false
@@ -1251,10 +827,3 @@ references:
   name: ETag
   nameWithType: Channel.ETag
   fullName: Google.Apis.Storage.v1.Data.Channel.ETag
-- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
-  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
-  parent: Google.Apis.Requests.IDirectResponseSchema
-  isExternal: true
-  name: ETag
-  nameWithType: IDirectResponseSchema.ETag
-  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag

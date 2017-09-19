@@ -6,6 +6,7 @@ items:
   parent: Google.Apis.Bigquery.v2.Data
   children:
   - Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.CreateDisposition
+  - Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationEncryptionConfiguration
   - Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationTable
   - Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.ETag
   - Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.SourceTable
@@ -25,27 +26,17 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: JobConfigurationTableCopy
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3421
+    startLine: 3573
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   syntax:
-    content: 'public class JobConfigurationTableCopy : IDirectResponseSchema'
+    content: 'public class JobConfigurationTableCopy : Requests.IDirectResponseSchema'
     content.vb: >-
       Public Class JobConfigurationTableCopy
-          Implements IDirectResponseSchema
+          Inherits Requests.IDirectResponseSchema
   inheritance:
   - System.Object
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema
-  inheritedMembers:
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -70,7 +61,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: CreateDisposition
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3428
+    startLine: 3580
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -86,24 +77,51 @@ items:
     completion.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("createDisposition")]
-
-      public virtual string CreateDisposition { get; set; }
+    content: public virtual string CreateDisposition { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("createDisposition")>
-
-      Public Overridable Property CreateDisposition As String
+    content.vb: Public Overridable Property CreateDisposition As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.CreateDisposition*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: createDisposition
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationEncryptionConfiguration
+  commentId: P:Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationEncryptionConfiguration
+  id: DestinationEncryptionConfiguration
+  parent: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy
+  langs:
+  - csharp
+  - vb
+  name: DestinationEncryptionConfiguration
+  nameWithType: JobConfigurationTableCopy.DestinationEncryptionConfiguration
+  fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationEncryptionConfiguration
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: DestinationEncryptionConfiguration
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 3584
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: '[Experimental] Custom encryption configuration (e.g., Cloud KMS keys).'
+  example: []
+  syntax:
+    content: public virtual EncryptionConfiguration DestinationEncryptionConfiguration { get; set; }
+    parameters: []
+    return:
+      type: Google.Apis.Bigquery.v2.Data.EncryptionConfiguration
+    content.vb: Public Overridable Property DestinationEncryptionConfiguration As EncryptionConfiguration
+  overload: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationEncryptionConfiguration*
   modifiers.csharp:
   - public
   - virtual
@@ -130,31 +148,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DestinationTable
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3432
+    startLine: 3588
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: '[Required] The destination table'
   example: []
   syntax:
-    content: >-
-      [JsonProperty("destinationTable")]
-
-      public virtual TableReference DestinationTable { get; set; }
+    content: public virtual TableReference DestinationTable { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableReference
-    content.vb: >-
-      <JsonProperty("destinationTable")>
-
-      Public Overridable Property DestinationTable As TableReference
+    content.vb: Public Overridable Property DestinationTable As TableReference
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationTable*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: destinationTable
   modifiers.csharp:
   - public
   - virtual
@@ -181,31 +187,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SourceTable
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3436
+    startLine: 3592
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: '[Pick one] Source table to copy.'
   example: []
   syntax:
-    content: >-
-      [JsonProperty("sourceTable")]
-
-      public virtual TableReference SourceTable { get; set; }
+    content: public virtual TableReference SourceTable { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableReference
-    content.vb: >-
-      <JsonProperty("sourceTable")>
-
-      Public Overridable Property SourceTable As TableReference
+    content.vb: Public Overridable Property SourceTable As TableReference
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.SourceTable*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: sourceTable
   modifiers.csharp:
   - public
   - virtual
@@ -232,31 +226,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SourceTables
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3440
+    startLine: 3596
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: '[Pick one] Source tables to copy.'
   example: []
   syntax:
-    content: >-
-      [JsonProperty("sourceTables")]
-
-      public virtual IList<TableReference> SourceTables { get; set; }
+    content: public virtual IList<TableReference> SourceTables { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.TableReference}
-    content.vb: >-
-      <JsonProperty("sourceTables")>
-
-      Public Overridable Property SourceTables As IList(Of TableReference)
+    content.vb: Public Overridable Property SourceTables As IList(Of TableReference)
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.SourceTables*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: sourceTables
   modifiers.csharp:
   - public
   - virtual
@@ -283,7 +265,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: WriteDisposition
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3449
+    startLine: 3605
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -301,24 +283,12 @@ items:
     Creation, truncation and append actions occur as one atomic update upon job completion.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("writeDisposition")]
-
-      public virtual string WriteDisposition { get; set; }
+    content: public virtual string WriteDisposition { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("writeDisposition")>
-
-      Public Overridable Property WriteDisposition As String
+    content.vb: Public Overridable Property WriteDisposition As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.WriteDisposition*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: writeDisposition
   modifiers.csharp:
   - public
   - virtual
@@ -345,7 +315,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ETag
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3453
+    startLine: 3609
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -358,8 +328,6 @@ items:
       type: System.String
     content.vb: Public Overridable Property ETag As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.ETag*
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema.ETag
   modifiers.csharp:
   - public
   - virtual
@@ -382,304 +350,12 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: Google.Apis.Requests.IDirectResponseSchema
-  commentId: T:Google.Apis.Requests.IDirectResponseSchema
-  parent: Google.Apis.Requests
-  isExternal: true
-  name: IDirectResponseSchema
-  nameWithType: IDirectResponseSchema
-  fullName: Google.Apis.Requests.IDirectResponseSchema
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
-- uid: Google.Apis.Requests
-  commentId: N:Google.Apis.Requests
-  isExternal: false
-  name: Google.Apis.Requests
-  nameWithType: Google.Apis.Requests
-  fullName: Google.Apis.Requests
 - uid: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.CreateDisposition*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.CreateDisposition
   isExternal: false
@@ -693,6 +369,19 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationEncryptionConfiguration*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationEncryptionConfiguration
+  isExternal: false
+  name: DestinationEncryptionConfiguration
+  nameWithType: JobConfigurationTableCopy.DestinationEncryptionConfiguration
+  fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationEncryptionConfiguration
+- uid: Google.Apis.Bigquery.v2.Data.EncryptionConfiguration
+  commentId: T:Google.Apis.Bigquery.v2.Data.EncryptionConfiguration
+  parent: Google.Apis.Bigquery.v2.Data
+  isExternal: false
+  name: EncryptionConfiguration
+  nameWithType: EncryptionConfiguration
+  fullName: Google.Apis.Bigquery.v2.Data.EncryptionConfiguration
 - uid: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationTable*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.DestinationTable
   isExternal: false
@@ -817,10 +506,3 @@ references:
   name: ETag
   nameWithType: JobConfigurationTableCopy.ETag
   fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationTableCopy.ETag
-- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
-  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
-  parent: Google.Apis.Requests.IDirectResponseSchema
-  isExternal: true
-  name: ETag
-  nameWithType: IDirectResponseSchema.ETag
-  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag

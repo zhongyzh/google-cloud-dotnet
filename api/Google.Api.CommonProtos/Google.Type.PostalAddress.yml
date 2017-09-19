@@ -17,7 +17,6 @@ items:
   - Google.Type.PostalAddress.Equals(Google.Type.PostalAddress)
   - Google.Type.PostalAddress.Equals(System.Object)
   - Google.Type.PostalAddress.GetHashCode
-  - Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor
   - Google.Type.PostalAddress.LanguageCode
   - Google.Type.PostalAddress.LanguageCodeFieldNumber
   - Google.Type.PostalAddress.Locality
@@ -62,22 +61,12 @@ items:
   summary: "\nRepresents a postal address, e.g. for postal delivery or payments addresses.\nGiven a postal address, a postal service can deliver items to a premise, P.O.\nBox or similar.\nIt is not intended to model geographical locations (roads, towns,\nmountains).\n\nIn typical usage an address would be created via user input or from importing\nexisting data, depending on the type of process.\n\nAdvice on address input / editing:\n- Use an i18n-ready address widget such as\nhttps://github.com/googlei18n/libaddressinput)\n- Users should not be presented with UI elements for input or editing of\nfields outside countries where that field is used.\n\nFor more guidance on how to use this schema, please see:\nhttps://support.google.com/business/answer/6397478\n"
   example: []
   syntax:
-    content: 'public sealed class PostalAddress : IMessage<PostalAddress>, IMessage, IEquatable<PostalAddress>, IDeepCloneable<PostalAddress>'
+    content: 'public sealed class PostalAddress : Protobuf.IMessage<PostalAddress>'
     content.vb: >-
       Public NotInheritable Class PostalAddress
-          Implements IMessage(Of PostalAddress), IMessage, IEquatable(Of PostalAddress), IDeepCloneable(Of PostalAddress)
+          Inherits Protobuf.IMessage(Of PostalAddress)
   inheritance:
   - System.Object
-  implements:
-  - Google.Protobuf.IMessage{Google.Type.PostalAddress}
-  - Google.Protobuf.IMessage
-  - System.IEquatable{Google.Type.PostalAddress}
-  - Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}
-  inheritedMembers:
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - sealed
@@ -109,11 +98,11 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Type
   syntax:
-    content: public static MessageParser<PostalAddress> Parser { get; }
+    content: public static Protobuf.MessageParser<PostalAddress> Parser { get; }
     parameters: []
     return:
       type: Google.Protobuf.MessageParser{Google.Type.PostalAddress}
-    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of PostalAddress)
+    content.vb: Public Shared ReadOnly Property Parser As Protobuf.MessageParser(Of PostalAddress)
   overload: Google.Type.PostalAddress.Parser*
   modifiers.csharp:
   - public
@@ -146,11 +135,11 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Type
   syntax:
-    content: public static MessageDescriptor Descriptor { get; }
+    content: public static Protobuf.Reflection.MessageDescriptor Descriptor { get; }
     parameters: []
     return:
       type: Google.Protobuf.Reflection.MessageDescriptor
-    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As Protobuf.Reflection.MessageDescriptor
   overload: Google.Type.PostalAddress.Descriptor*
   modifiers.csharp:
   - public
@@ -160,45 +149,6 @@ items:
   - Public
   - Shared
   - ReadOnly
-- uid: Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor
-  commentId: P:Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor
-  id: Google#Protobuf#IMessage#Descriptor
-  isEii: true
-  parent: Google.Type.PostalAddress
-  langs:
-  - csharp
-  - vb
-  name: IMessage.Descriptor
-  nameWithType: PostalAddress.IMessage.Descriptor
-  fullName: Google.Type.PostalAddress.Google.Protobuf.IMessage.Descriptor
-  type: Property
-  source:
-    remote:
-      path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
-      branch: master
-      repo: https://github.com/googleapis/gax-dotnet
-    id: pb::Google.Protobuf.IMessage.Descriptor
-    path: src/Google.Api.CommonProtos/Type/PostalAddress.cs
-    startLine: 80
-  assemblies:
-  - Google.Api.CommonProtos
-  namespace: Google.Type
-  syntax:
-    content: MessageDescriptor IMessage.Descriptor { get; }
-    parameters: []
-    return:
-      type: Google.Protobuf.Reflection.MessageDescriptor
-    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
-  overload: Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor*
-  implements:
-  - Google.Protobuf.IMessage.Descriptor
-  nameWithType.vb: PostalAddress.pb::Google.Protobuf.IMessage.Descriptor
-  modifiers.csharp:
-  - get
-  modifiers.vb:
-  - ReadOnly
-  fullName.vb: Google.Type.PostalAddress.pb::Google.Protobuf.IMessage.Descriptor
-  name.vb: pb::Google.Protobuf.IMessage.Descriptor
 - uid: Google.Type.PostalAddress.#ctor
   commentId: M:Google.Type.PostalAddress.#ctor
   id: '#ctor'
@@ -290,8 +240,6 @@ items:
       type: Google.Type.PostalAddress
     content.vb: Public Function Clone As PostalAddress
   overload: Google.Type.PostalAddress.Clone*
-  implements:
-  - Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}.Clone
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -932,11 +880,11 @@ items:
   summary: "\nUnstructured address lines describing the lower levels of an address.\n\nBecause values in address_lines do not have type information and may\nsometimes contain multiple values in a single field (e.g.\n&quot;Austin, TX&quot;), it is important that the line order is clear. The order of\naddress lines should be &quot;envelope order&quot; for the country/region of the\naddress. In places where this can vary (e.g. Japan), address_language is\nused to make it explicit (e.g. &quot;ja&quot; for large-to-small ordering and\n&quot;ja-Latn&quot; or &quot;en&quot; for small-to-large). This way, the most specific line of\nan address can be selected based on the language.\n\nThe minimum permitted structural representation of an address consists\nof a region_code with all remaining information placed in the\naddress_lines. It would be possible to format such an address very\napproximately without geocoding, but no semantic reasoning could be\nmade about any of the address components until it was at least\npartially resolved.\n\nCreating an address only containing a region_code and address_lines, and\nthen geocoding is the recommended way to handle completely unstructured\naddresses (as opposed to guessing which parts of the address should be\nlocalities or administrative areas).\n"
   example: []
   syntax:
-    content: public RepeatedField<string> AddressLines { get; }
+    content: public Protobuf.Collections.RepeatedField<string> AddressLines { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{System.String}
-    content.vb: Public ReadOnly Property AddressLines As RepeatedField(Of String)
+    content.vb: Public ReadOnly Property AddressLines As Protobuf.Collections.RepeatedField(Of String)
   overload: Google.Type.PostalAddress.AddressLines*
   modifiers.csharp:
   - public
@@ -1004,11 +952,11 @@ items:
   summary: "\nOptional. The recipient at the address.\nThis field may, under certain circumstances, contain multiline information.\nFor example, it might contain &quot;care of&quot; information.\n"
   example: []
   syntax:
-    content: public RepeatedField<string> Recipients { get; }
+    content: public Protobuf.Collections.RepeatedField<string> Recipients { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{System.String}
-    content.vb: Public ReadOnly Property Recipients As RepeatedField(Of String)
+    content.vb: Public ReadOnly Property Recipients As Protobuf.Collections.RepeatedField(Of String)
   overload: Google.Type.PostalAddress.Recipients*
   modifiers.csharp:
   - public
@@ -1118,7 +1066,6 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Overrides Function Equals(other As Object) As Boolean
-  overridden: System.Object.Equals(System.Object)
   overload: Google.Type.PostalAddress.Equals*
   modifiers.csharp:
   - public
@@ -1157,8 +1104,6 @@ items:
       type: System.Boolean
     content.vb: Public Function Equals(other As PostalAddress) As Boolean
   overload: Google.Type.PostalAddress.Equals*
-  implements:
-  - System.IEquatable{Google.Type.PostalAddress}.Equals(Google.Type.PostalAddress)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1190,7 +1135,6 @@ items:
     return:
       type: System.Int32
     content.vb: Public Overrides Function GetHashCode As Integer
-  overridden: System.Object.GetHashCode
   overload: Google.Type.PostalAddress.GetHashCode*
   modifiers.csharp:
   - public
@@ -1225,7 +1169,6 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
-  overridden: System.Object.ToString
   overload: Google.Type.PostalAddress.ToString*
   modifiers.csharp:
   - public
@@ -1240,8 +1183,8 @@ items:
   langs:
   - csharp
   - vb
-  name: WriteTo(CodedOutputStream)
-  nameWithType: PostalAddress.WriteTo(CodedOutputStream)
+  name: WriteTo(Protobuf.CodedOutputStream)
+  nameWithType: PostalAddress.WriteTo(Protobuf.CodedOutputStream)
   fullName: Google.Type.PostalAddress.WriteTo(Google.Protobuf.CodedOutputStream)
   type: Method
   source:
@@ -1256,14 +1199,12 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Type
   syntax:
-    content: public void WriteTo(CodedOutputStream output)
+    content: public void WriteTo(Protobuf.CodedOutputStream output)
     parameters:
     - id: output
       type: Google.Protobuf.CodedOutputStream
-    content.vb: Public Sub WriteTo(output As CodedOutputStream)
+    content.vb: Public Sub WriteTo(output As Protobuf.CodedOutputStream)
   overload: Google.Type.PostalAddress.WriteTo*
-  implements:
-  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1296,8 +1237,6 @@ items:
       type: System.Int32
     content.vb: Public Function CalculateSize As Integer
   overload: Google.Type.PostalAddress.CalculateSize*
-  implements:
-  - Google.Protobuf.IMessage.CalculateSize
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1331,8 +1270,6 @@ items:
       type: Google.Type.PostalAddress
     content.vb: Public Sub MergeFrom(other As PostalAddress)
   overload: Google.Type.PostalAddress.MergeFrom*
-  implements:
-  - Google.Protobuf.IMessage{Google.Type.PostalAddress}.MergeFrom(Google.Type.PostalAddress)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1344,8 +1281,8 @@ items:
   langs:
   - csharp
   - vb
-  name: MergeFrom(CodedInputStream)
-  nameWithType: PostalAddress.MergeFrom(CodedInputStream)
+  name: MergeFrom(Protobuf.CodedInputStream)
+  nameWithType: PostalAddress.MergeFrom(Protobuf.CodedInputStream)
   fullName: Google.Type.PostalAddress.MergeFrom(Google.Protobuf.CodedInputStream)
   type: Method
   source:
@@ -1360,14 +1297,12 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Type
   syntax:
-    content: public void MergeFrom(CodedInputStream input)
+    content: public void MergeFrom(Protobuf.CodedInputStream input)
     parameters:
     - id: input
       type: Google.Protobuf.CodedInputStream
-    content.vb: Public Sub MergeFrom(input As CodedInputStream)
+    content.vb: Public Sub MergeFrom(input As Protobuf.CodedInputStream)
   overload: Google.Type.PostalAddress.MergeFrom*
-  implements:
-  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1386,444 +1321,12 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: Google.Protobuf.IMessage{Google.Type.PostalAddress}
-  commentId: T:Google.Protobuf.IMessage{Google.Type.PostalAddress}
-  parent: Google.Protobuf
-  definition: Google.Protobuf.IMessage`1
-  name: IMessage<PostalAddress>
-  nameWithType: IMessage<PostalAddress>
-  fullName: Google.Protobuf.IMessage<Google.Type.PostalAddress>
-  nameWithType.vb: IMessage(Of PostalAddress)
-  fullName.vb: Google.Protobuf.IMessage(Of Google.Type.PostalAddress)
-  name.vb: IMessage(Of PostalAddress)
-  spec.csharp:
-  - uid: Google.Protobuf.IMessage`1
-    name: IMessage
-    nameWithType: IMessage
-    fullName: Google.Protobuf.IMessage
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: Google.Type.PostalAddress
-    name: PostalAddress
-    nameWithType: PostalAddress
-    fullName: Google.Type.PostalAddress
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: Google.Protobuf.IMessage`1
-    name: IMessage
-    nameWithType: IMessage
-    fullName: Google.Protobuf.IMessage
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: Google.Type.PostalAddress
-    name: PostalAddress
-    nameWithType: PostalAddress
-    fullName: Google.Type.PostalAddress
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Google.Protobuf.IMessage
-  commentId: T:Google.Protobuf.IMessage
-  parent: Google.Protobuf
-  isExternal: true
-  name: IMessage
-  nameWithType: IMessage
-  fullName: Google.Protobuf.IMessage
-- uid: System.IEquatable{Google.Type.PostalAddress}
-  commentId: T:System.IEquatable{Google.Type.PostalAddress}
-  parent: System
-  definition: System.IEquatable`1
-  name: IEquatable<PostalAddress>
-  nameWithType: IEquatable<PostalAddress>
-  fullName: System.IEquatable<Google.Type.PostalAddress>
-  nameWithType.vb: IEquatable(Of PostalAddress)
-  fullName.vb: System.IEquatable(Of Google.Type.PostalAddress)
-  name.vb: IEquatable(Of PostalAddress)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    nameWithType: IEquatable
-    fullName: System.IEquatable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: Google.Type.PostalAddress
-    name: PostalAddress
-    nameWithType: PostalAddress
-    fullName: Google.Type.PostalAddress
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    nameWithType: IEquatable
-    fullName: System.IEquatable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: Google.Type.PostalAddress
-    name: PostalAddress
-    nameWithType: PostalAddress
-    fullName: Google.Type.PostalAddress
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}
-  commentId: T:Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}
-  parent: Google.Protobuf
-  definition: Google.Protobuf.IDeepCloneable`1
-  name: IDeepCloneable<PostalAddress>
-  nameWithType: IDeepCloneable<PostalAddress>
-  fullName: Google.Protobuf.IDeepCloneable<Google.Type.PostalAddress>
-  nameWithType.vb: IDeepCloneable(Of PostalAddress)
-  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Type.PostalAddress)
-  name.vb: IDeepCloneable(Of PostalAddress)
-  spec.csharp:
-  - uid: Google.Protobuf.IDeepCloneable`1
-    name: IDeepCloneable
-    nameWithType: IDeepCloneable
-    fullName: Google.Protobuf.IDeepCloneable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: Google.Type.PostalAddress
-    name: PostalAddress
-    nameWithType: PostalAddress
-    fullName: Google.Type.PostalAddress
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: Google.Protobuf.IDeepCloneable`1
-    name: IDeepCloneable
-    nameWithType: IDeepCloneable
-    fullName: Google.Protobuf.IDeepCloneable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: Google.Type.PostalAddress
-    name: PostalAddress
-    nameWithType: PostalAddress
-    fullName: Google.Type.PostalAddress
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
-- uid: Google.Protobuf.IMessage`1
-  commentId: T:Google.Protobuf.IMessage`1
-  isExternal: true
-  name: IMessage<T>
-  nameWithType: IMessage<T>
-  fullName: Google.Protobuf.IMessage<T>
-  nameWithType.vb: IMessage(Of T)
-  fullName.vb: Google.Protobuf.IMessage(Of T)
-  name.vb: IMessage(Of T)
-  spec.csharp:
-  - uid: Google.Protobuf.IMessage`1
-    name: IMessage
-    nameWithType: IMessage
-    fullName: Google.Protobuf.IMessage
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: Google.Protobuf.IMessage`1
-    name: IMessage
-    nameWithType: IMessage
-    fullName: Google.Protobuf.IMessage
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Google.Protobuf
-  commentId: N:Google.Protobuf
-  isExternal: false
-  name: Google.Protobuf
-  nameWithType: Google.Protobuf
-  fullName: Google.Protobuf
-- uid: System.IEquatable`1
-  commentId: T:System.IEquatable`1
-  isExternal: true
-  name: IEquatable<T>
-  nameWithType: IEquatable<T>
-  fullName: System.IEquatable<T>
-  nameWithType.vb: IEquatable(Of T)
-  fullName.vb: System.IEquatable(Of T)
-  name.vb: IEquatable(Of T)
-  spec.csharp:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    nameWithType: IEquatable
-    fullName: System.IEquatable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.IEquatable`1
-    name: IEquatable
-    nameWithType: IEquatable
-    fullName: System.IEquatable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Google.Protobuf.IDeepCloneable`1
-  commentId: T:Google.Protobuf.IDeepCloneable`1
-  isExternal: true
-  name: IDeepCloneable<T>
-  nameWithType: IDeepCloneable<T>
-  fullName: Google.Protobuf.IDeepCloneable<T>
-  nameWithType.vb: IDeepCloneable(Of T)
-  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
-  name.vb: IDeepCloneable(Of T)
-  spec.csharp:
-  - uid: Google.Protobuf.IDeepCloneable`1
-    name: IDeepCloneable
-    nameWithType: IDeepCloneable
-    fullName: Google.Protobuf.IDeepCloneable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: Google.Protobuf.IDeepCloneable`1
-    name: IDeepCloneable
-    nameWithType: IDeepCloneable
-    fullName: Google.Protobuf.IDeepCloneable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Type.PostalAddress.Parser*
   commentId: Overload:Google.Type.PostalAddress.Parser
   isExternal: false
@@ -1831,19 +1334,18 @@ references:
   nameWithType: PostalAddress.Parser
   fullName: Google.Type.PostalAddress.Parser
 - uid: Google.Protobuf.MessageParser{Google.Type.PostalAddress}
-  commentId: T:Google.Protobuf.MessageParser{Google.Type.PostalAddress}
-  parent: Google.Protobuf
+  commentId: '!:Google.Protobuf.MessageParser{Google.Type.PostalAddress}'
   definition: Google.Protobuf.MessageParser`1
-  name: MessageParser<PostalAddress>
-  nameWithType: MessageParser<PostalAddress>
+  name: Protobuf.MessageParser<PostalAddress>
+  nameWithType: Protobuf.MessageParser<PostalAddress>
   fullName: Google.Protobuf.MessageParser<Google.Type.PostalAddress>
-  nameWithType.vb: MessageParser(Of PostalAddress)
+  nameWithType.vb: Protobuf.MessageParser(Of PostalAddress)
   fullName.vb: Google.Protobuf.MessageParser(Of Google.Type.PostalAddress)
-  name.vb: MessageParser(Of PostalAddress)
+  name.vb: Protobuf.MessageParser(Of PostalAddress)
   spec.csharp:
   - uid: Google.Protobuf.MessageParser`1
-    name: MessageParser
-    nameWithType: MessageParser
+    name: Protobuf.MessageParser
+    nameWithType: Protobuf.MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: <
@@ -1858,8 +1360,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.MessageParser`1
-    name: MessageParser
-    nameWithType: MessageParser
+    name: Protobuf.MessageParser
+    nameWithType: Protobuf.MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: '(Of '
@@ -1873,41 +1375,40 @@ references:
     nameWithType: )
     fullName: )
 - uid: Google.Protobuf.MessageParser`1
-  commentId: T:Google.Protobuf.MessageParser`1
   isExternal: true
-  name: MessageParser<T>
-  nameWithType: MessageParser<T>
-  fullName: Google.Protobuf.MessageParser<T>
-  nameWithType.vb: MessageParser(Of T)
-  fullName.vb: Google.Protobuf.MessageParser(Of T)
-  name.vb: MessageParser(Of T)
+  name: Protobuf.MessageParser<>
+  nameWithType: Protobuf.MessageParser<>
+  fullName: Google.Protobuf.MessageParser<>
+  nameWithType.vb: Protobuf.MessageParser(Of )
+  fullName.vb: Google.Protobuf.MessageParser(Of )
+  name.vb: Protobuf.MessageParser(Of )
   spec.csharp:
   - uid: Google.Protobuf.MessageParser`1
-    name: MessageParser
-    nameWithType: MessageParser
+    name: Protobuf.MessageParser
+    nameWithType: Protobuf.MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.MessageParser`1
-    name: MessageParser
-    nameWithType: MessageParser
+    name: Protobuf.MessageParser
+    nameWithType: Protobuf.MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: )
     nameWithType: )
     fullName: )
@@ -1918,34 +1419,10 @@ references:
   nameWithType: PostalAddress.Descriptor
   fullName: Google.Type.PostalAddress.Descriptor
 - uid: Google.Protobuf.Reflection.MessageDescriptor
-  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
-  parent: Google.Protobuf.Reflection
   isExternal: true
-  name: MessageDescriptor
-  nameWithType: MessageDescriptor
+  name: Protobuf.Reflection.MessageDescriptor
+  nameWithType: Protobuf.Reflection.MessageDescriptor
   fullName: Google.Protobuf.Reflection.MessageDescriptor
-- uid: Google.Protobuf.Reflection
-  commentId: N:Google.Protobuf.Reflection
-  isExternal: false
-  name: Google.Protobuf.Reflection
-  nameWithType: Google.Protobuf.Reflection
-  fullName: Google.Protobuf.Reflection
-- uid: Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor*
-  commentId: Overload:Google.Type.PostalAddress.Google#Protobuf#IMessage#Descriptor
-  isExternal: false
-  name: IMessage.Descriptor
-  nameWithType: PostalAddress.IMessage.Descriptor
-  fullName: Google.Type.PostalAddress.Google.Protobuf.IMessage.Descriptor
-  nameWithType.vb: PostalAddress.pb::Google.Protobuf.IMessage.Descriptor
-  fullName.vb: Google.Type.PostalAddress.pb::Google.Protobuf.IMessage.Descriptor
-  name.vb: pb::Google.Protobuf.IMessage.Descriptor
-- uid: Google.Protobuf.IMessage.Descriptor
-  commentId: P:Google.Protobuf.IMessage.Descriptor
-  parent: Google.Protobuf.IMessage
-  isExternal: true
-  name: Descriptor
-  nameWithType: IMessage.Descriptor
-  fullName: Google.Protobuf.IMessage.Descriptor
 - uid: Google.Type.PostalAddress.#ctor*
   commentId: Overload:Google.Type.PostalAddress.#ctor
   isExternal: false
@@ -1965,71 +1442,6 @@ references:
   name: Clone
   nameWithType: PostalAddress.Clone
   fullName: Google.Type.PostalAddress.Clone
-- uid: Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}.Clone
-  commentId: M:Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}.Clone
-  parent: Google.Protobuf.IDeepCloneable{Google.Type.PostalAddress}
-  definition: Google.Protobuf.IDeepCloneable`1.Clone
-  name: Clone()
-  nameWithType: IDeepCloneable<PostalAddress>.Clone()
-  fullName: Google.Protobuf.IDeepCloneable<Google.Type.PostalAddress>.Clone()
-  nameWithType.vb: IDeepCloneable(Of PostalAddress).Clone()
-  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Type.PostalAddress).Clone()
-  spec.csharp:
-  - uid: Google.Protobuf.IDeepCloneable`1.Clone
-    name: Clone
-    nameWithType: IDeepCloneable<PostalAddress>.Clone
-    fullName: Google.Protobuf.IDeepCloneable<Google.Type.PostalAddress>.Clone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: Google.Protobuf.IDeepCloneable`1.Clone
-    name: Clone
-    nameWithType: IDeepCloneable(Of PostalAddress).Clone
-    fullName: Google.Protobuf.IDeepCloneable(Of Google.Type.PostalAddress).Clone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Google.Protobuf.IDeepCloneable`1.Clone
-  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
-  isExternal: true
-  name: Clone()
-  nameWithType: IDeepCloneable<T>.Clone()
-  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
-  nameWithType.vb: IDeepCloneable(Of T).Clone()
-  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
-  spec.csharp:
-  - uid: Google.Protobuf.IDeepCloneable`1.Clone
-    name: Clone
-    nameWithType: IDeepCloneable<T>.Clone
-    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: Google.Protobuf.IDeepCloneable`1.Clone
-    name: Clone
-    nameWithType: IDeepCloneable(Of T).Clone
-    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -2099,19 +1511,18 @@ references:
   nameWithType: PostalAddress.AddressLines
   fullName: Google.Type.PostalAddress.AddressLines
 - uid: Google.Protobuf.Collections.RepeatedField{System.String}
-  commentId: T:Google.Protobuf.Collections.RepeatedField{System.String}
-  parent: Google.Protobuf.Collections
+  commentId: '!:Google.Protobuf.Collections.RepeatedField{System.String}'
   definition: Google.Protobuf.Collections.RepeatedField`1
-  name: RepeatedField<String>
-  nameWithType: RepeatedField<String>
+  name: Protobuf.Collections.RepeatedField<String>
+  nameWithType: Protobuf.Collections.RepeatedField<String>
   fullName: Google.Protobuf.Collections.RepeatedField<System.String>
-  nameWithType.vb: RepeatedField(Of String)
+  nameWithType.vb: Protobuf.Collections.RepeatedField(Of String)
   fullName.vb: Google.Protobuf.Collections.RepeatedField(Of System.String)
-  name.vb: RepeatedField(Of String)
+  name.vb: Protobuf.Collections.RepeatedField(Of String)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: RepeatedField
-    nameWithType: RepeatedField
+    name: Protobuf.Collections.RepeatedField
+    nameWithType: Protobuf.Collections.RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
@@ -2127,8 +1538,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: RepeatedField
-    nameWithType: RepeatedField
+    name: Protobuf.Collections.RepeatedField
+    nameWithType: Protobuf.Collections.RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
@@ -2143,50 +1554,43 @@ references:
     nameWithType: )
     fullName: )
 - uid: Google.Protobuf.Collections.RepeatedField`1
-  commentId: T:Google.Protobuf.Collections.RepeatedField`1
   isExternal: true
-  name: RepeatedField<T>
-  nameWithType: RepeatedField<T>
-  fullName: Google.Protobuf.Collections.RepeatedField<T>
-  nameWithType.vb: RepeatedField(Of T)
-  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
-  name.vb: RepeatedField(Of T)
+  name: Protobuf.Collections.RepeatedField<>
+  nameWithType: Protobuf.Collections.RepeatedField<>
+  fullName: Google.Protobuf.Collections.RepeatedField<>
+  nameWithType.vb: Protobuf.Collections.RepeatedField(Of )
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of )
+  name.vb: Protobuf.Collections.RepeatedField(Of )
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: RepeatedField
-    nameWithType: RepeatedField
+    name: Protobuf.Collections.RepeatedField
+    nameWithType: Protobuf.Collections.RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: RepeatedField
-    nameWithType: RepeatedField
+    name: Protobuf.Collections.RepeatedField
+    nameWithType: Protobuf.Collections.RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Protobuf.Collections
-  commentId: N:Google.Protobuf.Collections
-  isExternal: false
-  name: Google.Protobuf.Collections
-  nameWithType: Google.Protobuf.Collections
-  fullName: Google.Protobuf.Collections
 - uid: Google.Type.PostalAddress.Recipients*
   commentId: Overload:Google.Type.PostalAddress.Recipients
   isExternal: false
@@ -2199,47 +1603,6 @@ references:
   name: Organization
   nameWithType: PostalAddress.Organization
   fullName: Google.Type.PostalAddress.Organization
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Type.PostalAddress.Equals*
   commentId: Overload:Google.Type.PostalAddress.Equals
   isExternal: false
@@ -2253,153 +1616,12 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
-- uid: System.IEquatable{Google.Type.PostalAddress}.Equals(Google.Type.PostalAddress)
-  commentId: M:System.IEquatable{Google.Type.PostalAddress}.Equals(Google.Type.PostalAddress)
-  parent: System.IEquatable{Google.Type.PostalAddress}
-  definition: System.IEquatable`1.Equals(`0)
-  name: Equals(PostalAddress)
-  nameWithType: IEquatable<PostalAddress>.Equals(PostalAddress)
-  fullName: System.IEquatable<Google.Type.PostalAddress>.Equals(Google.Type.PostalAddress)
-  nameWithType.vb: IEquatable(Of PostalAddress).Equals(PostalAddress)
-  fullName.vb: System.IEquatable(Of Google.Type.PostalAddress).Equals(Google.Type.PostalAddress)
-  spec.csharp:
-  - uid: System.IEquatable`1.Equals(`0)
-    name: Equals
-    nameWithType: IEquatable<PostalAddress>.Equals
-    fullName: System.IEquatable<Google.Type.PostalAddress>.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Google.Type.PostalAddress
-    name: PostalAddress
-    nameWithType: PostalAddress
-    fullName: Google.Type.PostalAddress
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.IEquatable`1.Equals(`0)
-    name: Equals
-    nameWithType: IEquatable(Of PostalAddress).Equals
-    fullName: System.IEquatable(Of Google.Type.PostalAddress).Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Google.Type.PostalAddress
-    name: PostalAddress
-    nameWithType: PostalAddress
-    fullName: Google.Type.PostalAddress
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.IEquatable`1.Equals(`0)
-  commentId: M:System.IEquatable`1.Equals(`0)
-  isExternal: true
-  name: Equals(T)
-  nameWithType: IEquatable<T>.Equals(T)
-  fullName: System.IEquatable<T>.Equals(T)
-  nameWithType.vb: IEquatable(Of T).Equals(T)
-  fullName.vb: System.IEquatable(Of T).Equals(T)
-  spec.csharp:
-  - uid: System.IEquatable`1.Equals(`0)
-    name: Equals
-    nameWithType: IEquatable<T>.Equals
-    fullName: System.IEquatable<T>.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.IEquatable`1.Equals(`0)
-    name: Equals
-    nameWithType: IEquatable(Of T).Equals
-    fullName: System.IEquatable(Of T).Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Type.PostalAddress.GetHashCode*
   commentId: Overload:Google.Type.PostalAddress.GetHashCode
   isExternal: false
   name: GetHashCode
   nameWithType: PostalAddress.GetHashCode
   fullName: Google.Type.PostalAddress.GetHashCode
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Type.PostalAddress.ToString*
   commentId: Overload:Google.Type.PostalAddress.ToString
   isExternal: false
@@ -2412,53 +1634,10 @@ references:
   name: WriteTo
   nameWithType: PostalAddress.WriteTo
   fullName: Google.Type.PostalAddress.WriteTo
-- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
-  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
-  parent: Google.Protobuf.IMessage
-  isExternal: true
-  name: WriteTo(CodedOutputStream)
-  nameWithType: IMessage.WriteTo(CodedOutputStream)
-  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
-  spec.csharp:
-  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
-    name: WriteTo
-    nameWithType: IMessage.WriteTo
-    fullName: Google.Protobuf.IMessage.WriteTo
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Google.Protobuf.CodedOutputStream
-    name: CodedOutputStream
-    nameWithType: CodedOutputStream
-    fullName: Google.Protobuf.CodedOutputStream
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
-    name: WriteTo
-    nameWithType: IMessage.WriteTo
-    fullName: Google.Protobuf.IMessage.WriteTo
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Google.Protobuf.CodedOutputStream
-    name: CodedOutputStream
-    nameWithType: CodedOutputStream
-    fullName: Google.Protobuf.CodedOutputStream
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Protobuf.CodedOutputStream
-  commentId: T:Google.Protobuf.CodedOutputStream
-  parent: Google.Protobuf
   isExternal: true
-  name: CodedOutputStream
-  nameWithType: CodedOutputStream
+  name: Protobuf.CodedOutputStream
+  nameWithType: Protobuf.CodedOutputStream
   fullName: Google.Protobuf.CodedOutputStream
 - uid: Google.Type.PostalAddress.CalculateSize*
   commentId: Overload:Google.Type.PostalAddress.CalculateSize
@@ -2466,167 +1645,14 @@ references:
   name: CalculateSize
   nameWithType: PostalAddress.CalculateSize
   fullName: Google.Type.PostalAddress.CalculateSize
-- uid: Google.Protobuf.IMessage.CalculateSize
-  commentId: M:Google.Protobuf.IMessage.CalculateSize
-  parent: Google.Protobuf.IMessage
-  isExternal: true
-  name: CalculateSize()
-  nameWithType: IMessage.CalculateSize()
-  fullName: Google.Protobuf.IMessage.CalculateSize()
-  spec.csharp:
-  - uid: Google.Protobuf.IMessage.CalculateSize
-    name: CalculateSize
-    nameWithType: IMessage.CalculateSize
-    fullName: Google.Protobuf.IMessage.CalculateSize
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: Google.Protobuf.IMessage.CalculateSize
-    name: CalculateSize
-    nameWithType: IMessage.CalculateSize
-    fullName: Google.Protobuf.IMessage.CalculateSize
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Type.PostalAddress.MergeFrom*
   commentId: Overload:Google.Type.PostalAddress.MergeFrom
   isExternal: false
   name: MergeFrom
   nameWithType: PostalAddress.MergeFrom
   fullName: Google.Type.PostalAddress.MergeFrom
-- uid: Google.Protobuf.IMessage{Google.Type.PostalAddress}.MergeFrom(Google.Type.PostalAddress)
-  commentId: M:Google.Protobuf.IMessage{Google.Type.PostalAddress}.MergeFrom(Google.Type.PostalAddress)
-  parent: Google.Protobuf.IMessage{Google.Type.PostalAddress}
-  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
-  name: MergeFrom(PostalAddress)
-  nameWithType: IMessage<PostalAddress>.MergeFrom(PostalAddress)
-  fullName: Google.Protobuf.IMessage<Google.Type.PostalAddress>.MergeFrom(Google.Type.PostalAddress)
-  nameWithType.vb: IMessage(Of PostalAddress).MergeFrom(PostalAddress)
-  fullName.vb: Google.Protobuf.IMessage(Of Google.Type.PostalAddress).MergeFrom(Google.Type.PostalAddress)
-  spec.csharp:
-  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
-    name: MergeFrom
-    nameWithType: IMessage<PostalAddress>.MergeFrom
-    fullName: Google.Protobuf.IMessage<Google.Type.PostalAddress>.MergeFrom
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Google.Type.PostalAddress
-    name: PostalAddress
-    nameWithType: PostalAddress
-    fullName: Google.Type.PostalAddress
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
-    name: MergeFrom
-    nameWithType: IMessage(Of PostalAddress).MergeFrom
-    fullName: Google.Protobuf.IMessage(Of Google.Type.PostalAddress).MergeFrom
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Google.Type.PostalAddress
-    name: PostalAddress
-    nameWithType: PostalAddress
-    fullName: Google.Type.PostalAddress
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
-  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
-  isExternal: true
-  name: MergeFrom(T)
-  nameWithType: IMessage<T>.MergeFrom(T)
-  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
-  nameWithType.vb: IMessage(Of T).MergeFrom(T)
-  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
-  spec.csharp:
-  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
-    name: MergeFrom
-    nameWithType: IMessage<T>.MergeFrom
-    fullName: Google.Protobuf.IMessage<T>.MergeFrom
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
-    name: MergeFrom
-    nameWithType: IMessage(Of T).MergeFrom
-    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
-  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
-  parent: Google.Protobuf.IMessage
-  isExternal: true
-  name: MergeFrom(CodedInputStream)
-  nameWithType: IMessage.MergeFrom(CodedInputStream)
-  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
-  spec.csharp:
-  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
-    name: MergeFrom
-    nameWithType: IMessage.MergeFrom
-    fullName: Google.Protobuf.IMessage.MergeFrom
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Google.Protobuf.CodedInputStream
-    name: CodedInputStream
-    nameWithType: CodedInputStream
-    fullName: Google.Protobuf.CodedInputStream
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
-    name: MergeFrom
-    nameWithType: IMessage.MergeFrom
-    fullName: Google.Protobuf.IMessage.MergeFrom
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: Google.Protobuf.CodedInputStream
-    name: CodedInputStream
-    nameWithType: CodedInputStream
-    fullName: Google.Protobuf.CodedInputStream
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Protobuf.CodedInputStream
-  commentId: T:Google.Protobuf.CodedInputStream
-  parent: Google.Protobuf
   isExternal: true
-  name: CodedInputStream
-  nameWithType: CodedInputStream
+  name: Protobuf.CodedInputStream
+  nameWithType: Protobuf.CodedInputStream
   fullName: Google.Protobuf.CodedInputStream

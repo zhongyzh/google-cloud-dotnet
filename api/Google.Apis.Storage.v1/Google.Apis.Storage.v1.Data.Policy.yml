@@ -23,29 +23,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Policy
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7861
+    startLine: 7917
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: A bucket/object IAM policy.
   example: []
   syntax:
-    content: 'public class Policy : IDirectResponseSchema'
+    content: 'public class Policy : Requests.IDirectResponseSchema'
     content.vb: >-
       Public Class Policy
-          Implements IDirectResponseSchema
+          Inherits Requests.IDirectResponseSchema
   inheritance:
   - System.Object
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema
-  inheritedMembers:
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -70,7 +60,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Bindings
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7865
+    startLine: 7921
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -80,24 +70,12 @@ items:
     that role.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("bindings")]
-
-      public virtual IList<Policy.BindingsData> Bindings { get; set; }
+    content: public virtual IList<Policy.BindingsData> Bindings { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Storage.v1.Data.Policy.BindingsData}
-    content.vb: >-
-      <JsonProperty("bindings")>
-
-      Public Overridable Property Bindings As IList(Of Policy.BindingsData)
+    content.vb: Public Overridable Property Bindings As IList(Of Policy.BindingsData)
   overload: Google.Apis.Storage.v1.Data.Policy.Bindings*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: bindings
   modifiers.csharp:
   - public
   - virtual
@@ -124,33 +102,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ETag
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7869
+    startLine: 7925
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: HTTP 1.1  Entity tag for the policy.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("etag")]
-
-      public virtual string ETag { get; set; }
+    content: public virtual string ETag { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("etag")>
-
-      Public Overridable Property ETag As String
+    content.vb: Public Overridable Property ETag As String
   overload: Google.Apis.Storage.v1.Data.Policy.ETag*
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema.ETag
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: etag
   modifiers.csharp:
   - public
   - virtual
@@ -177,7 +141,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Kind
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7874
+    startLine: 7930
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -187,24 +151,12 @@ items:
     input.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("kind")]
-
-      public virtual string Kind { get; set; }
+    content: public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("kind")>
-
-      Public Overridable Property Kind As String
+    content.vb: Public Overridable Property Kind As String
   overload: Google.Apis.Storage.v1.Data.Policy.Kind*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -231,38 +183,28 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ResourceId
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7881
+    startLine: 7938
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: >-
-    The ID of the resource to which this policy belongs. Will be of the form buckets/bucket for
+    The ID of the resource to which this policy belongs. Will be of the form projects/_/buckets/bucket
 
-    buckets, and buckets/bucket/objects/object for objects. A specific generation may be specified by appending
+    for buckets, and projects/_/buckets/bucket/objects/object for objects. A specific generation may be
 
-    #generationNumber to the end of the object name, e.g. buckets/my-bucket/objects/data.txt#17. The current
+    specified by appending #generationNumber to the end of the object name, e.g. projects/_/buckets/my-
 
-    generation can be denoted with #0. This field is ignored on input.
+    bucket/objects/data.txt#17. The current generation can be denoted with #0. This field is ignored on
+
+    input.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("resourceId")]
-
-      public virtual string ResourceId { get; set; }
+    content: public virtual string ResourceId { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("resourceId")>
-
-      Public Overridable Property ResourceId As String
+    content.vb: Public Overridable Property ResourceId As String
   overload: Google.Apis.Storage.v1.Data.Policy.ResourceId*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: resourceId
   modifiers.csharp:
   - public
   - virtual
@@ -285,304 +227,12 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: Google.Apis.Requests.IDirectResponseSchema
-  commentId: T:Google.Apis.Requests.IDirectResponseSchema
-  parent: Google.Apis.Requests
-  isExternal: true
-  name: IDirectResponseSchema
-  nameWithType: IDirectResponseSchema
-  fullName: Google.Apis.Requests.IDirectResponseSchema
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
-- uid: Google.Apis.Requests
-  commentId: N:Google.Apis.Requests
-  isExternal: false
-  name: Google.Apis.Requests
-  nameWithType: Google.Apis.Requests
-  fullName: Google.Apis.Requests
 - uid: Google.Apis.Storage.v1.Data.Policy.Bindings*
   commentId: Overload:Google.Apis.Storage.v1.Data.Policy.Bindings
   isExternal: false
@@ -682,13 +332,6 @@ references:
   name: ETag
   nameWithType: Policy.ETag
   fullName: Google.Apis.Storage.v1.Data.Policy.ETag
-- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
-  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
-  parent: Google.Apis.Requests.IDirectResponseSchema
-  isExternal: true
-  name: ETag
-  nameWithType: IDirectResponseSchema.ETag
-  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag
 - uid: System.String
   commentId: T:System.String
   parent: System

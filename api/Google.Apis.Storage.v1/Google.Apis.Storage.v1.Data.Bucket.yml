@@ -43,29 +43,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Bucket
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6974
+    startLine: 7030
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: A bucket.
   example: []
   syntax:
-    content: 'public class Bucket : IDirectResponseSchema'
+    content: 'public class Bucket : Requests.IDirectResponseSchema'
     content.vb: >-
       Public Class Bucket
-          Implements IDirectResponseSchema
+          Inherits Requests.IDirectResponseSchema
   inheritance:
   - System.Object
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema
-  inheritedMembers:
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -90,31 +80,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Acl
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6977
+    startLine: 7033
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: Access controls on the bucket.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("acl")]
-
-      public virtual IList<BucketAccessControl> Acl { get; set; }
+    content: public virtual IList<BucketAccessControl> Acl { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Storage.v1.Data.BucketAccessControl}
-    content.vb: >-
-      <JsonProperty("acl")>
-
-      Public Overridable Property Acl As IList(Of BucketAccessControl)
+    content.vb: Public Overridable Property Acl As IList(Of BucketAccessControl)
   overload: Google.Apis.Storage.v1.Data.Bucket.Acl*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: acl
   modifiers.csharp:
   - public
   - virtual
@@ -141,31 +119,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Billing
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6981
+    startLine: 7037
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The bucket&apos;s billing configuration.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("billing")]
-
-      public virtual Bucket.BillingData Billing { get; set; }
+    content: public virtual Bucket.BillingData Billing { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.Bucket.BillingData
-    content.vb: >-
-      <JsonProperty("billing")>
-
-      Public Overridable Property Billing As Bucket.BillingData
+    content.vb: Public Overridable Property Billing As Bucket.BillingData
   overload: Google.Apis.Storage.v1.Data.Bucket.Billing*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: billing
   modifiers.csharp:
   - public
   - virtual
@@ -192,31 +158,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Cors
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6985
+    startLine: 7041
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The bucket&apos;s Cross-Origin Resource Sharing (CORS) configuration.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("cors")]
-
-      public virtual IList<Bucket.CorsData> Cors { get; set; }
+    content: public virtual IList<Bucket.CorsData> Cors { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Storage.v1.Data.Bucket.CorsData}
-    content.vb: >-
-      <JsonProperty("cors")>
-
-      Public Overridable Property Cors As IList(Of Bucket.CorsData)
+    content.vb: Public Overridable Property Cors As IList(Of Bucket.CorsData)
   overload: Google.Apis.Storage.v1.Data.Bucket.Cors*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: cors
   modifiers.csharp:
   - public
   - virtual
@@ -243,31 +197,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DefaultObjectAcl
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6989
+    startLine: 7045
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: Default access controls to apply to new objects when no ACL is provided.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("defaultObjectAcl")]
-
-      public virtual IList<ObjectAccessControl> DefaultObjectAcl { get; set; }
+    content: public virtual IList<ObjectAccessControl> DefaultObjectAcl { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Storage.v1.Data.ObjectAccessControl}
-    content.vb: >-
-      <JsonProperty("defaultObjectAcl")>
-
-      Public Overridable Property DefaultObjectAcl As IList(Of ObjectAccessControl)
+    content.vb: Public Overridable Property DefaultObjectAcl As IList(Of ObjectAccessControl)
   overload: Google.Apis.Storage.v1.Data.Bucket.DefaultObjectAcl*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: defaultObjectAcl
   modifiers.csharp:
   - public
   - virtual
@@ -294,7 +236,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Encryption
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6994
+    startLine: 7050
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -304,24 +246,12 @@ items:
     specified.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("encryption")]
-
-      public virtual Bucket.EncryptionData Encryption { get; set; }
+    content: public virtual Bucket.EncryptionData Encryption { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.Bucket.EncryptionData
-    content.vb: >-
-      <JsonProperty("encryption")>
-
-      Public Overridable Property Encryption As Bucket.EncryptionData
+    content.vb: Public Overridable Property Encryption As Bucket.EncryptionData
   overload: Google.Apis.Storage.v1.Data.Bucket.Encryption*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: encryption
   modifiers.csharp:
   - public
   - virtual
@@ -348,33 +278,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ETag
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 6998
+    startLine: 7054
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: HTTP 1.1 Entity tag for the bucket.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("etag")]
-
-      public virtual string ETag { get; set; }
+    content: public virtual string ETag { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("etag")>
-
-      Public Overridable Property ETag As String
+    content.vb: Public Overridable Property ETag As String
   overload: Google.Apis.Storage.v1.Data.Bucket.ETag*
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema.ETag
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: etag
   modifiers.csharp:
   - public
   - virtual
@@ -401,31 +317,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Id
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7002
+    startLine: 7058
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The ID of the bucket. For buckets, the id and name properities are the same.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("id")]
-
-      public virtual string Id { get; set; }
+    content: public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("id")>
-
-      Public Overridable Property Id As String
+    content.vb: Public Overridable Property Id As String
   overload: Google.Apis.Storage.v1.Data.Bucket.Id*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -452,31 +356,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Kind
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7006
+    startLine: 7062
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The kind of item this is. For buckets, this is always storage#bucket.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("kind")]
-
-      public virtual string Kind { get; set; }
+    content: public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("kind")>
-
-      Public Overridable Property Kind As String
+    content.vb: Public Overridable Property Kind As String
   overload: Google.Apis.Storage.v1.Data.Bucket.Kind*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -503,31 +395,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Labels
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7010
+    startLine: 7066
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: User-provided labels, in key/value pairs.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("labels")]
-
-      public virtual IDictionary<string, string> Labels { get; set; }
+    content: public virtual IDictionary<string, string> Labels { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IDictionary{System.String,System.String}
-    content.vb: >-
-      <JsonProperty("labels")>
-
-      Public Overridable Property Labels As IDictionary(Of String, String)
+    content.vb: Public Overridable Property Labels As IDictionary(Of String, String)
   overload: Google.Apis.Storage.v1.Data.Bucket.Labels*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: labels
   modifiers.csharp:
   - public
   - virtual
@@ -554,31 +434,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Lifecycle
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7014
+    startLine: 7070
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The bucket&apos;s lifecycle configuration. See lifecycle management for more information.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("lifecycle")]
-
-      public virtual Bucket.LifecycleData Lifecycle { get; set; }
+    content: public virtual Bucket.LifecycleData Lifecycle { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.Bucket.LifecycleData
-    content.vb: >-
-      <JsonProperty("lifecycle")>
-
-      Public Overridable Property Lifecycle As Bucket.LifecycleData
+    content.vb: Public Overridable Property Lifecycle As Bucket.LifecycleData
   overload: Google.Apis.Storage.v1.Data.Bucket.Lifecycle*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: lifecycle
   modifiers.csharp:
   - public
   - virtual
@@ -605,7 +473,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Location
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7019
+    startLine: 7075
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -615,24 +483,12 @@ items:
     within this region. Defaults to US. See the developer&apos;s guide for the authoritative list.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("location")]
-
-      public virtual string Location { get; set; }
+    content: public virtual string Location { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("location")>
-
-      Public Overridable Property Location As String
+    content.vb: Public Overridable Property Location As String
   overload: Google.Apis.Storage.v1.Data.Bucket.Location*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: location
   modifiers.csharp:
   - public
   - virtual
@@ -659,7 +515,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Logging
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7024
+    startLine: 7080
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -669,24 +525,12 @@ items:
     for the current bucket&apos;s logs.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("logging")]
-
-      public virtual Bucket.LoggingData Logging { get; set; }
+    content: public virtual Bucket.LoggingData Logging { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.Bucket.LoggingData
-    content.vb: >-
-      <JsonProperty("logging")>
-
-      Public Overridable Property Logging As Bucket.LoggingData
+    content.vb: Public Overridable Property Logging As Bucket.LoggingData
   overload: Google.Apis.Storage.v1.Data.Bucket.Logging*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: logging
   modifiers.csharp:
   - public
   - virtual
@@ -713,31 +557,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Metageneration
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7028
+    startLine: 7084
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The metadata generation of this bucket.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("metageneration")]
-
-      public virtual long ? Metageneration { get; set; }
+    content: public virtual long ? Metageneration { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: >-
-      <JsonProperty("metageneration")>
-
-      Public Overridable Property Metageneration As Long?
+    content.vb: Public Overridable Property Metageneration As Long?
   overload: Google.Apis.Storage.v1.Data.Bucket.Metageneration*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: metageneration
   modifiers.csharp:
   - public
   - virtual
@@ -764,31 +596,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Name
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7032
+    startLine: 7088
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The name of the bucket.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("name")]
-
-      public virtual string Name { get; set; }
+    content: public virtual string Name { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("name")>
-
-      Public Overridable Property Name As String
+    content.vb: Public Overridable Property Name As String
   overload: Google.Apis.Storage.v1.Data.Bucket.Name*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: name
   modifiers.csharp:
   - public
   - virtual
@@ -815,31 +635,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Owner
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7036
+    startLine: 7092
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The owner of the bucket. This is always the project team&apos;s owner group.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("owner")]
-
-      public virtual Bucket.OwnerData Owner { get; set; }
+    content: public virtual Bucket.OwnerData Owner { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.Bucket.OwnerData
-    content.vb: >-
-      <JsonProperty("owner")>
-
-      Public Overridable Property Owner As Bucket.OwnerData
+    content.vb: Public Overridable Property Owner As Bucket.OwnerData
   overload: Google.Apis.Storage.v1.Data.Bucket.Owner*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: owner
   modifiers.csharp:
   - public
   - virtual
@@ -866,31 +674,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ProjectNumber
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7040
+    startLine: 7096
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The project number of the project the bucket belongs to.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("projectNumber")]
-
-      public virtual ulong ? ProjectNumber { get; set; }
+    content: public virtual ulong ? ProjectNumber { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.UInt64}
-    content.vb: >-
-      <JsonProperty("projectNumber")>
-
-      Public Overridable Property ProjectNumber As ULong?
+    content.vb: Public Overridable Property ProjectNumber As ULong?
   overload: Google.Apis.Storage.v1.Data.Bucket.ProjectNumber*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: projectNumber
   modifiers.csharp:
   - public
   - virtual
@@ -917,31 +713,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SelfLink
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7044
+    startLine: 7100
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The URI of this bucket.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("selfLink")]
-
-      public virtual string SelfLink { get; set; }
+    content: public virtual string SelfLink { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("selfLink")>
-
-      Public Overridable Property SelfLink As String
+    content.vb: Public Overridable Property SelfLink As String
   overload: Google.Apis.Storage.v1.Data.Bucket.SelfLink*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: selfLink
   modifiers.csharp:
   - public
   - virtual
@@ -968,7 +752,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: StorageClass
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7052
+    startLine: 7108
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -984,24 +768,12 @@ items:
     see storage classes.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("storageClass")]
-
-      public virtual string StorageClass { get; set; }
+    content: public virtual string StorageClass { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("storageClass")>
-
-      Public Overridable Property StorageClass As String
+    content.vb: Public Overridable Property StorageClass As String
   overload: Google.Apis.Storage.v1.Data.Bucket.StorageClass*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: storageClass
   modifiers.csharp:
   - public
   - virtual
@@ -1028,31 +800,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TimeCreatedRaw
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7056
+    startLine: 7112
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The creation time of the bucket in RFC 3339 format.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("timeCreated")]
-
-      public virtual string TimeCreatedRaw { get; set; }
+    content: public virtual string TimeCreatedRaw { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("timeCreated")>
-
-      Public Overridable Property TimeCreatedRaw As String
+    content.vb: Public Overridable Property TimeCreatedRaw As String
   overload: Google.Apis.Storage.v1.Data.Bucket.TimeCreatedRaw*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: timeCreated
   modifiers.csharp:
   - public
   - virtual
@@ -1079,29 +839,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TimeCreated
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7060
+    startLine: 7116
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> representation of <xref href="Google.Apis.Storage.v1.Data.Bucket.TimeCreatedRaw" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: >-
-      [JsonIgnore]
-
-      public virtual DateTime? TimeCreated { get; set; }
+    content: public virtual DateTime? TimeCreated { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.DateTime}
-    content.vb: >-
-      <JsonIgnore>
-
-      Public Overridable Property TimeCreated As Date?
+    content.vb: Public Overridable Property TimeCreated As Date?
   overload: Google.Apis.Storage.v1.Data.Bucket.TimeCreated*
-  attributes:
-  - type: Newtonsoft.Json.JsonIgnoreAttribute
-    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
-    arguments: []
   modifiers.csharp:
   - public
   - virtual
@@ -1128,31 +878,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: UpdatedRaw
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7074
+    startLine: 7130
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The modification time of the bucket in RFC 3339 format.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("updated")]
-
-      public virtual string UpdatedRaw { get; set; }
+    content: public virtual string UpdatedRaw { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("updated")>
-
-      Public Overridable Property UpdatedRaw As String
+    content.vb: Public Overridable Property UpdatedRaw As String
   overload: Google.Apis.Storage.v1.Data.Bucket.UpdatedRaw*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: updated
   modifiers.csharp:
   - public
   - virtual
@@ -1179,29 +917,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Updated
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7078
+    startLine: 7134
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: <xref href="System.DateTime" data-throw-if-not-resolved="false"></xref> representation of <xref href="Google.Apis.Storage.v1.Data.Bucket.UpdatedRaw" data-throw-if-not-resolved="false"></xref>.
   example: []
   syntax:
-    content: >-
-      [JsonIgnore]
-
-      public virtual DateTime? Updated { get; set; }
+    content: public virtual DateTime? Updated { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.DateTime}
-    content.vb: >-
-      <JsonIgnore>
-
-      Public Overridable Property Updated As Date?
+    content.vb: Public Overridable Property Updated As Date?
   overload: Google.Apis.Storage.v1.Data.Bucket.Updated*
-  attributes:
-  - type: Newtonsoft.Json.JsonIgnoreAttribute
-    ctor: Newtonsoft.Json.JsonIgnoreAttribute.#ctor
-    arguments: []
   modifiers.csharp:
   - public
   - virtual
@@ -1228,31 +956,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Versioning
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7092
+    startLine: 7148
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   summary: The bucket&apos;s versioning configuration.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("versioning")]
-
-      public virtual Bucket.VersioningData Versioning { get; set; }
+    content: public virtual Bucket.VersioningData Versioning { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.Bucket.VersioningData
-    content.vb: >-
-      <JsonProperty("versioning")>
-
-      Public Overridable Property Versioning As Bucket.VersioningData
+    content.vb: Public Overridable Property Versioning As Bucket.VersioningData
   overload: Google.Apis.Storage.v1.Data.Bucket.Versioning*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: versioning
   modifiers.csharp:
   - public
   - virtual
@@ -1279,7 +995,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Website
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7097
+    startLine: 7153
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -1289,24 +1005,12 @@ items:
     contents as a web site. See the Static Website Examples for more information.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("website")]
-
-      public virtual Bucket.WebsiteData Website { get; set; }
+    content: public virtual Bucket.WebsiteData Website { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.Bucket.WebsiteData
-    content.vb: >-
-      <JsonProperty("website")>
-
-      Public Overridable Property Website As Bucket.WebsiteData
+    content.vb: Public Overridable Property Website As Bucket.WebsiteData
   overload: Google.Apis.Storage.v1.Data.Bucket.Website*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: website
   modifiers.csharp:
   - public
   - virtual
@@ -1329,304 +1033,12 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: Google.Apis.Requests.IDirectResponseSchema
-  commentId: T:Google.Apis.Requests.IDirectResponseSchema
-  parent: Google.Apis.Requests
-  isExternal: true
-  name: IDirectResponseSchema
-  nameWithType: IDirectResponseSchema
-  fullName: Google.Apis.Requests.IDirectResponseSchema
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
-- uid: Google.Apis.Requests
-  commentId: N:Google.Apis.Requests
-  isExternal: false
-  name: Google.Apis.Requests
-  nameWithType: Google.Apis.Requests
-  fullName: Google.Apis.Requests
 - uid: Google.Apis.Storage.v1.Data.Bucket.Acl*
   commentId: Overload:Google.Apis.Storage.v1.Data.Bucket.Acl
   isExternal: false
@@ -1848,13 +1260,6 @@ references:
   name: ETag
   nameWithType: Bucket.ETag
   fullName: Google.Apis.Storage.v1.Data.Bucket.ETag
-- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
-  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
-  parent: Google.Apis.Requests.IDirectResponseSchema
-  isExternal: true
-  name: ETag
-  nameWithType: IDirectResponseSchema.ETag
-  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag
 - uid: System.String
   commentId: T:System.String
   parent: System

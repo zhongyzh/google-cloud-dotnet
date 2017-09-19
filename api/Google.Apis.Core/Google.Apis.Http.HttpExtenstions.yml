@@ -5,7 +5,7 @@ items:
   id: HttpExtenstions
   parent: Google.Apis.Http
   children:
-  - Google.Apis.Http.HttpExtenstions.SetEmptyContent(System.Net.Http.HttpRequestMessage)
+  - Google.Apis.Http.HttpExtenstions.SetEmptyContent(HttpRequestMessage)
   langs:
   - csharp
   - vb
@@ -24,7 +24,7 @@ items:
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Http
-  summary: "\nExtension methods to <xref href=\"System.Net.Http.HttpRequestMessage\" data-throw-if-not-resolved=\"false\"></xref> and \n<xref href=\"System.Net.Http.HttpResponseMessage\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  summary: "\nExtension methods to <see cref=\"!:System.Net.Http.HttpRequestMessage\"></see> and \n<see cref=\"!:System.Net.Http.HttpResponseMessage\"></see>.\n"
   example: []
   syntax:
     content: public static class HttpExtenstions
@@ -46,9 +46,9 @@ items:
   modifiers.vb:
   - Public
   - Module
-- uid: Google.Apis.Http.HttpExtenstions.SetEmptyContent(System.Net.Http.HttpRequestMessage)
-  commentId: M:Google.Apis.Http.HttpExtenstions.SetEmptyContent(System.Net.Http.HttpRequestMessage)
-  id: SetEmptyContent(System.Net.Http.HttpRequestMessage)
+- uid: Google.Apis.Http.HttpExtenstions.SetEmptyContent(HttpRequestMessage)
+  commentId: M:Google.Apis.Http.HttpExtenstions.SetEmptyContent(HttpRequestMessage)
+  id: SetEmptyContent(HttpRequestMessage)
   isExtensionMethod: true
   parent: Google.Apis.Http.HttpExtenstions
   langs:
@@ -56,7 +56,7 @@ items:
   - vb
   name: SetEmptyContent(HttpRequestMessage)
   nameWithType: HttpExtenstions.SetEmptyContent(HttpRequestMessage)
-  fullName: Google.Apis.Http.HttpExtenstions.SetEmptyContent(System.Net.Http.HttpRequestMessage)
+  fullName: Google.Apis.Http.HttpExtenstions.SetEmptyContent(HttpRequestMessage)
   type: Method
   source:
     remote:
@@ -75,9 +75,9 @@ items:
     content: public static HttpContent SetEmptyContent(this HttpRequestMessage request)
     parameters:
     - id: request
-      type: System.Net.Http.HttpRequestMessage
+      type: HttpRequestMessage
     return:
-      type: System.Net.Http.HttpContent
+      type: HttpContent
     content.vb: >-
       <ExtensionAttribute>
 
@@ -90,20 +90,6 @@ items:
   - Public
   - Shared
 references:
-- uid: System.Net.Http.HttpRequestMessage
-  commentId: T:System.Net.Http.HttpRequestMessage
-  parent: System.Net.Http
-  isExternal: true
-  name: HttpRequestMessage
-  nameWithType: HttpRequestMessage
-  fullName: System.Net.Http.HttpRequestMessage
-- uid: System.Net.Http.HttpResponseMessage
-  commentId: T:System.Net.Http.HttpResponseMessage
-  parent: System.Net.Http
-  isExternal: true
-  name: HttpResponseMessage
-  nameWithType: HttpResponseMessage
-  fullName: System.Net.Http.HttpResponseMessage
 - uid: Google.Apis.Http
   commentId: N:Google.Apis.Http
   isExternal: false
@@ -396,12 +382,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Net.Http
-  commentId: N:System.Net.Http
-  isExternal: false
-  name: System.Net.Http
-  nameWithType: System.Net.Http
-  fullName: System.Net.Http
 - uid: System
   commentId: N:System
   isExternal: false
@@ -414,10 +394,14 @@ references:
   name: SetEmptyContent
   nameWithType: HttpExtenstions.SetEmptyContent
   fullName: Google.Apis.Http.HttpExtenstions.SetEmptyContent
-- uid: System.Net.Http.HttpContent
-  commentId: T:System.Net.Http.HttpContent
-  parent: System.Net.Http
+- uid: HttpRequestMessage
+  isExternal: true
+  name: HttpRequestMessage
+  nameWithType: HttpRequestMessage
+  fullName: HttpRequestMessage
+- uid: HttpContent
+  commentId: '!:HttpContent'
   isExternal: true
   name: HttpContent
   nameWithType: HttpContent
-  fullName: System.Net.Http.HttpContent
+  fullName: HttpContent

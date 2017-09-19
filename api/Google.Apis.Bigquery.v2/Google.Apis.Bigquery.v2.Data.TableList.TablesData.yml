@@ -10,6 +10,7 @@ items:
   - Google.Apis.Bigquery.v2.Data.TableList.TablesData.Kind
   - Google.Apis.Bigquery.v2.Data.TableList.TablesData.Labels
   - Google.Apis.Bigquery.v2.Data.TableList.TablesData.TableReference
+  - Google.Apis.Bigquery.v2.Data.TableList.TablesData.TimePartitioning
   - Google.Apis.Bigquery.v2.Data.TableList.TablesData.Type
   - Google.Apis.Bigquery.v2.Data.TableList.TablesData.View
   langs:
@@ -26,7 +27,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TablesData
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4222
+    startLine: 4392
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -67,31 +68,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: FriendlyName
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4225
+    startLine: 4395
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: The user-friendly name for this table.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("friendlyName")]
-
-      public virtual string FriendlyName { get; set; }
+    content: public virtual string FriendlyName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("friendlyName")>
-
-      Public Overridable Property FriendlyName As String
+    content.vb: Public Overridable Property FriendlyName As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.FriendlyName*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: friendlyName
   modifiers.csharp:
   - public
   - virtual
@@ -118,31 +107,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Id
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4229
+    startLine: 4399
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: An opaque ID of the table
   example: []
   syntax:
-    content: >-
-      [JsonProperty("id")]
-
-      public virtual string Id { get; set; }
+    content: public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("id")>
-
-      Public Overridable Property Id As String
+    content.vb: Public Overridable Property Id As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Id*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -169,31 +146,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Kind
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4233
+    startLine: 4403
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: The resource type.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("kind")]
-
-      public virtual string Kind { get; set; }
+    content: public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("kind")>
-
-      Public Overridable Property Kind As String
+    content.vb: Public Overridable Property Kind As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Kind*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -220,7 +185,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Labels
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4238
+    startLine: 4408
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -230,24 +195,12 @@ items:
     your tables.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("labels")]
-
-      public virtual IDictionary<string, string> Labels { get; set; }
+    content: public virtual IDictionary<string, string> Labels { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IDictionary{System.String,System.String}
-    content.vb: >-
-      <JsonProperty("labels")>
-
-      Public Overridable Property Labels As IDictionary(Of String, String)
+    content.vb: Public Overridable Property Labels As IDictionary(Of String, String)
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Labels*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: labels
   modifiers.csharp:
   - public
   - virtual
@@ -274,31 +227,58 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TableReference
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4242
+    startLine: 4412
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: A reference uniquely identifying the table.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("tableReference")]
-
-      public virtual TableReference TableReference { get; set; }
+    content: public virtual TableReference TableReference { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableReference
-    content.vb: >-
-      <JsonProperty("tableReference")>
-
-      Public Overridable Property TableReference As TableReference
+    content.vb: Public Overridable Property TableReference As TableReference
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.TableReference*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: tableReference
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.TableList.TablesData.TimePartitioning
+  commentId: P:Google.Apis.Bigquery.v2.Data.TableList.TablesData.TimePartitioning
+  id: TimePartitioning
+  parent: Google.Apis.Bigquery.v2.Data.TableList.TablesData
+  langs:
+  - csharp
+  - vb
+  name: TimePartitioning
+  nameWithType: TableList.TablesData.TimePartitioning
+  fullName: Google.Apis.Bigquery.v2.Data.TableList.TablesData.TimePartitioning
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: TimePartitioning
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 4416
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: '[Experimental] The time-based partitioning for this table.'
+  example: []
+  syntax:
+    content: public virtual TimePartitioning TimePartitioning { get; set; }
+    parameters: []
+    return:
+      type: Google.Apis.Bigquery.v2.Data.TimePartitioning
+    content.vb: Public Overridable Property TimePartitioning As TimePartitioning
+  overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.TimePartitioning*
   modifiers.csharp:
   - public
   - virtual
@@ -325,31 +305,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Type
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4246
+    startLine: 4420
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: 'The type of table. Possible values are: TABLE, VIEW.'
   example: []
   syntax:
-    content: >-
-      [JsonProperty("type")]
-
-      public virtual string Type { get; set; }
+    content: public virtual string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("type")>
-
-      Public Overridable Property Type As String
+    content.vb: Public Overridable Property Type As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Type*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: type
   modifiers.csharp:
   - public
   - virtual
@@ -376,31 +344,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: View
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 4250
+    startLine: 4424
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Additional details for a view.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("view")]
-
-      public virtual TableList.TablesData.ViewData View { get; set; }
+    content: public virtual TableList.TablesData.ViewData View { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableList.TablesData.ViewData
-    content.vb: >-
-      <JsonProperty("view")>
-
-      Public Overridable Property View As TableList.TablesData.ViewData
+    content.vb: Public Overridable Property View As TableList.TablesData.ViewData
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.View*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: view
   modifiers.csharp:
   - public
   - virtual
@@ -869,6 +825,19 @@ references:
   name: TableReference
   nameWithType: TableReference
   fullName: Google.Apis.Bigquery.v2.Data.TableReference
+- uid: Google.Apis.Bigquery.v2.Data.TableList.TablesData.TimePartitioning*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.TableList.TablesData.TimePartitioning
+  isExternal: false
+  name: TimePartitioning
+  nameWithType: TableList.TablesData.TimePartitioning
+  fullName: Google.Apis.Bigquery.v2.Data.TableList.TablesData.TimePartitioning
+- uid: Google.Apis.Bigquery.v2.Data.TimePartitioning
+  commentId: T:Google.Apis.Bigquery.v2.Data.TimePartitioning
+  parent: Google.Apis.Bigquery.v2.Data
+  isExternal: false
+  name: TimePartitioning
+  nameWithType: TimePartitioning
+  fullName: Google.Apis.Bigquery.v2.Data.TimePartitioning
 - uid: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Type*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.TableList.TablesData.Type
   isExternal: false

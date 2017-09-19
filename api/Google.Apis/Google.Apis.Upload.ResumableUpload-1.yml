@@ -66,9 +66,9 @@ items:
   - Google.Apis.Upload.ResumableUpload.ResumeAsync(System.Threading.CancellationToken)
   - Google.Apis.Upload.ResumableUpload.ResumeAsync(System.Uri)
   - Google.Apis.Upload.ResumableUpload.ResumeAsync(System.Uri,System.Threading.CancellationToken)
-  - Google.Apis.Upload.ResumableUpload.ProcessResponse(System.Net.Http.HttpResponseMessage)
+  - Google.Apis.Upload.ResumableUpload.ProcessResponse(HttpResponseMessage)
   - Google.Apis.Upload.ResumableUpload.SendNextChunkAsync(System.IO.Stream,System.Threading.CancellationToken)
-  - Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(System.Net.Http.HttpResponseMessage)
+  - Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(HttpResponseMessage)
   - System.Object.ToString
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -108,7 +108,7 @@ items:
   - Google.Apis
   namespace: Google.Apis.Upload
   summary: "\nCreate a resumable upload instance with the required parameters.\n"
-  remarks: "\nCaller is responsible for maintaining the <span class=\"paramref\">contentStream</span> open until the upload is \ncompleted.\nCaller is responsible for closing the <span class=\"paramref\">contentStream</span>.\n"
+  remarks: "\nCaller is responsible for maintaining the <code data-dev-comment-type=\"paramref\" class=\"paramref\">contentStream</code> open until the upload is \ncompleted.\nCaller is responsible for closing the <code data-dev-comment-type=\"paramref\" class=\"paramref\">contentStream</code>.\n"
   example: []
   syntax:
     content: protected ResumableUpload(IClientService service, string path, string httpMethod, Stream contentStream, string contentType)
@@ -361,7 +361,7 @@ items:
   summary: "\nInitiates the resumable upload session and returns the session URI, or upload URI.\nSee https://developers.google.com/drive/manage-uploads#start-resumable and\nhttps://cloud.google.com/storage/docs/json_api/v1/how-tos/resumable-upload#start-resumable for more information.\n"
   example: []
   syntax:
-    content: public override Task<Uri> InitiateSessionAsync(CancellationToken cancellationToken = null)
+    content: public override Task<Uri> InitiateSessionAsync(CancellationToken cancellationToken = default (CancellationToken))
     parameters:
     - id: cancellationToken
       type: System.Threading.CancellationToken
@@ -882,41 +882,41 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Apis.Upload.ResumableUpload.ProcessResponse(System.Net.Http.HttpResponseMessage)
-  commentId: M:Google.Apis.Upload.ResumableUpload.ProcessResponse(System.Net.Http.HttpResponseMessage)
+- uid: Google.Apis.Upload.ResumableUpload.ProcessResponse(HttpResponseMessage)
+  commentId: M:Google.Apis.Upload.ResumableUpload.ProcessResponse(HttpResponseMessage)
   parent: Google.Apis.Upload.ResumableUpload
   isExternal: true
   name: ProcessResponse(HttpResponseMessage)
   nameWithType: ResumableUpload.ProcessResponse(HttpResponseMessage)
-  fullName: Google.Apis.Upload.ResumableUpload.ProcessResponse(System.Net.Http.HttpResponseMessage)
+  fullName: Google.Apis.Upload.ResumableUpload.ProcessResponse(HttpResponseMessage)
   spec.csharp:
-  - uid: Google.Apis.Upload.ResumableUpload.ProcessResponse(System.Net.Http.HttpResponseMessage)
+  - uid: Google.Apis.Upload.ResumableUpload.ProcessResponse(HttpResponseMessage)
     name: ProcessResponse
     nameWithType: ResumableUpload.ProcessResponse
     fullName: Google.Apis.Upload.ResumableUpload.ProcessResponse
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpResponseMessage
+  - uid: HttpResponseMessage
     name: HttpResponseMessage
     nameWithType: HttpResponseMessage
-    fullName: System.Net.Http.HttpResponseMessage
+    fullName: HttpResponseMessage
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: Google.Apis.Upload.ResumableUpload.ProcessResponse(System.Net.Http.HttpResponseMessage)
+  - uid: Google.Apis.Upload.ResumableUpload.ProcessResponse(HttpResponseMessage)
     name: ProcessResponse
     nameWithType: ResumableUpload.ProcessResponse
     fullName: Google.Apis.Upload.ResumableUpload.ProcessResponse
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpResponseMessage
+  - uid: HttpResponseMessage
     name: HttpResponseMessage
     nameWithType: HttpResponseMessage
-    fullName: System.Net.Http.HttpResponseMessage
+    fullName: HttpResponseMessage
     isExternal: true
   - name: )
     nameWithType: )
@@ -976,41 +976,41 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(System.Net.Http.HttpResponseMessage)
-  commentId: M:Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(System.Net.Http.HttpResponseMessage)
+- uid: Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(HttpResponseMessage)
+  commentId: M:Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(HttpResponseMessage)
   parent: Google.Apis.Upload.ResumableUpload
   isExternal: true
   name: ExceptionForResponseAsync(HttpResponseMessage)
   nameWithType: ResumableUpload.ExceptionForResponseAsync(HttpResponseMessage)
-  fullName: Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(System.Net.Http.HttpResponseMessage)
+  fullName: Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(HttpResponseMessage)
   spec.csharp:
-  - uid: Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(System.Net.Http.HttpResponseMessage)
+  - uid: Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(HttpResponseMessage)
     name: ExceptionForResponseAsync
     nameWithType: ResumableUpload.ExceptionForResponseAsync
     fullName: Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpResponseMessage
+  - uid: HttpResponseMessage
     name: HttpResponseMessage
     nameWithType: HttpResponseMessage
-    fullName: System.Net.Http.HttpResponseMessage
+    fullName: HttpResponseMessage
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(System.Net.Http.HttpResponseMessage)
+  - uid: Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync(HttpResponseMessage)
     name: ExceptionForResponseAsync
     nameWithType: ResumableUpload.ExceptionForResponseAsync
     fullName: Google.Apis.Upload.ResumableUpload.ExceptionForResponseAsync
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpResponseMessage
+  - uid: HttpResponseMessage
     name: HttpResponseMessage
     nameWithType: HttpResponseMessage
-    fullName: System.Net.Http.HttpResponseMessage
+    fullName: HttpResponseMessage
     isExternal: true
   - name: )
     nameWithType: )

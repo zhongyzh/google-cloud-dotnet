@@ -6,6 +6,7 @@ items:
   parent: Google.Apis.Bigquery.v2
   children:
   - Google.Apis.Bigquery.v2.ProjectsResource.#ctor(Google.Apis.Services.IClientService)
+  - Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccount(System.String)
   - Google.Apis.Bigquery.v2.ProjectsResource.List
   langs:
   - csharp
@@ -53,8 +54,8 @@ items:
   langs:
   - csharp
   - vb
-  name: ProjectsResource(IClientService)
-  nameWithType: ProjectsResource.ProjectsResource(IClientService)
+  name: ProjectsResource(Services.IClientService)
+  nameWithType: ProjectsResource.ProjectsResource(Services.IClientService)
   fullName: Google.Apis.Bigquery.v2.ProjectsResource.ProjectsResource(Google.Apis.Services.IClientService)
   type: Constructor
   source:
@@ -71,16 +72,59 @@ items:
   summary: Constructs a new resource.
   example: []
   syntax:
-    content: public ProjectsResource(IClientService service)
+    content: public ProjectsResource(Services.IClientService service)
     parameters:
     - id: service
       type: Google.Apis.Services.IClientService
-    content.vb: Public Sub New(service As IClientService)
+    content.vb: Public Sub New(service As Services.IClientService)
   overload: Google.Apis.Bigquery.v2.ProjectsResource.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
+- uid: Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccount(System.String)
+  commentId: M:Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccount(System.String)
+  id: GetServiceAccount(System.String)
+  parent: Google.Apis.Bigquery.v2.ProjectsResource
+  langs:
+  - csharp
+  - vb
+  name: GetServiceAccount(String)
+  nameWithType: ProjectsResource.GetServiceAccount(String)
+  fullName: Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccount(System.String)
+  type: Method
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: GetServiceAccount
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 1533
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2
+  summary: >-
+    Returns the email address of the service account for your project used for interactions with Google
+
+    Cloud KMS.
+  example: []
+  syntax:
+    content: public virtual ProjectsResource.GetServiceAccountRequest GetServiceAccount(string projectId)
+    parameters:
+    - id: projectId
+      type: System.String
+      description: Project ID for which the service account is requested.
+    return:
+      type: Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccountRequest
+    content.vb: Public Overridable Function GetServiceAccount(projectId As String) As ProjectsResource.GetServiceAccountRequest
+  overload: Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccount*
+  modifiers.csharp:
+  - public
+  - virtual
+  modifiers.vb:
+  - Public
+  - Overridable
 - uid: Google.Apis.Bigquery.v2.ProjectsResource.List
   commentId: M:Google.Apis.Bigquery.v2.ProjectsResource.List
   id: List
@@ -99,7 +143,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: List
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 1531
+    startLine: 1593
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2
@@ -423,18 +467,30 @@ references:
   nameWithType: ProjectsResource.ProjectsResource
   fullName: Google.Apis.Bigquery.v2.ProjectsResource.ProjectsResource
 - uid: Google.Apis.Services.IClientService
-  commentId: T:Google.Apis.Services.IClientService
-  parent: Google.Apis.Services
   isExternal: true
-  name: IClientService
-  nameWithType: IClientService
+  name: Services.IClientService
+  nameWithType: Services.IClientService
   fullName: Google.Apis.Services.IClientService
-- uid: Google.Apis.Services
-  commentId: N:Google.Apis.Services
+- uid: Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccount*
+  commentId: Overload:Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccount
   isExternal: false
-  name: Google.Apis.Services
-  nameWithType: Google.Apis.Services
-  fullName: Google.Apis.Services
+  name: GetServiceAccount
+  nameWithType: ProjectsResource.GetServiceAccount
+  fullName: Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccount
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccountRequest
+  commentId: T:Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccountRequest
+  parent: Google.Apis.Bigquery.v2
+  isExternal: false
+  name: ProjectsResource.GetServiceAccountRequest
+  nameWithType: ProjectsResource.GetServiceAccountRequest
+  fullName: Google.Apis.Bigquery.v2.ProjectsResource.GetServiceAccountRequest
 - uid: Google.Apis.Bigquery.v2.ProjectsResource.List*
   commentId: Overload:Google.Apis.Bigquery.v2.ProjectsResource.List
   isExternal: false

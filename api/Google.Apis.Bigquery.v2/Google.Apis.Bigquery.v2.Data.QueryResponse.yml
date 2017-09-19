@@ -31,27 +31,17 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: QueryResponse
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3877
+    startLine: 4043
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   syntax:
-    content: 'public class QueryResponse : IDirectResponseSchema'
+    content: 'public class QueryResponse : Requests.IDirectResponseSchema'
     content.vb: >-
       Public Class QueryResponse
-          Implements IDirectResponseSchema
+          Inherits Requests.IDirectResponseSchema
   inheritance:
   - System.Object
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema
-  inheritedMembers:
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -76,31 +66,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: CacheHit
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3880
+    startLine: 4046
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Whether the query result was fetched from the query cache.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("cacheHit")]
-
-      public virtual bool ? CacheHit { get; set; }
+    content: public virtual bool ? CacheHit { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: >-
-      <JsonProperty("cacheHit")>
-
-      Public Overridable Property CacheHit As Boolean?
+    content.vb: Public Overridable Property CacheHit As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.CacheHit*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: cacheHit
   modifiers.csharp:
   - public
   - virtual
@@ -127,7 +105,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Errors
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3886
+    startLine: 4052
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -139,24 +117,12 @@ items:
     that the job has completed or was unsuccessful.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("errors")]
-
-      public virtual IList<ErrorProto> Errors { get; set; }
+    content: public virtual IList<ErrorProto> Errors { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.ErrorProto}
-    content.vb: >-
-      <JsonProperty("errors")>
-
-      Public Overridable Property Errors As IList(Of ErrorProto)
+    content.vb: Public Overridable Property Errors As IList(Of ErrorProto)
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.Errors*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: errors
   modifiers.csharp:
   - public
   - virtual
@@ -183,7 +149,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: JobComplete
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3891
+    startLine: 4057
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -193,24 +159,12 @@ items:
     If this is false, totalRows will not be available.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("jobComplete")]
-
-      public virtual bool ? JobComplete { get; set; }
+    content: public virtual bool ? JobComplete { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: >-
-      <JsonProperty("jobComplete")>
-
-      Public Overridable Property JobComplete As Boolean?
+    content.vb: Public Overridable Property JobComplete As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.JobComplete*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: jobComplete
   modifiers.csharp:
   - public
   - virtual
@@ -237,7 +191,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: JobReference
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3898
+    startLine: 4064
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -251,24 +205,12 @@ items:
     same mechanism (GetQueryResults).
   example: []
   syntax:
-    content: >-
-      [JsonProperty("jobReference")]
-
-      public virtual JobReference JobReference { get; set; }
+    content: public virtual JobReference JobReference { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.JobReference
-    content.vb: >-
-      <JsonProperty("jobReference")>
-
-      Public Overridable Property JobReference As JobReference
+    content.vb: Public Overridable Property JobReference As JobReference
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.JobReference*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: jobReference
   modifiers.csharp:
   - public
   - virtual
@@ -295,31 +237,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Kind
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3902
+    startLine: 4068
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: The resource type.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("kind")]
-
-      public virtual string Kind { get; set; }
+    content: public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("kind")>
-
-      Public Overridable Property Kind As String
+    content.vb: Public Overridable Property Kind As String
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.Kind*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -346,7 +276,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: NumDmlAffectedRows
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3907
+    startLine: 4073
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -356,24 +286,12 @@ items:
     INSERT, UPDATE or DELETE.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("numDmlAffectedRows")]
-
-      public virtual long ? NumDmlAffectedRows { get; set; }
+    content: public virtual long ? NumDmlAffectedRows { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: >-
-      <JsonProperty("numDmlAffectedRows")>
-
-      Public Overridable Property NumDmlAffectedRows As Long?
+    content.vb: Public Overridable Property NumDmlAffectedRows As Long?
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.NumDmlAffectedRows*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: numDmlAffectedRows
   modifiers.csharp:
   - public
   - virtual
@@ -400,31 +318,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: PageToken
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3911
+    startLine: 4077
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: A token used for paging results.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("pageToken")]
-
-      public virtual string PageToken { get; set; }
+    content: public virtual string PageToken { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("pageToken")>
-
-      Public Overridable Property PageToken As String
+    content.vb: Public Overridable Property PageToken As String
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.PageToken*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: pageToken
   modifiers.csharp:
   - public
   - virtual
@@ -451,7 +357,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Rows
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3916
+    startLine: 4082
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -461,24 +367,12 @@ items:
     any additional rows, you can call GetQueryResults and specify the jobReference returned above.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("rows")]
-
-      public virtual IList<TableRow> Rows { get; set; }
+    content: public virtual IList<TableRow> Rows { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.TableRow}
-    content.vb: >-
-      <JsonProperty("rows")>
-
-      Public Overridable Property Rows As IList(Of TableRow)
+    content.vb: Public Overridable Property Rows As IList(Of TableRow)
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.Rows*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: rows
   modifiers.csharp:
   - public
   - virtual
@@ -505,31 +399,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Schema
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3920
+    startLine: 4086
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: The schema of the results. Present only when the query completes successfully.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("schema")]
-
-      public virtual TableSchema Schema { get; set; }
+    content: public virtual TableSchema Schema { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableSchema
-    content.vb: >-
-      <JsonProperty("schema")>
-
-      Public Overridable Property Schema As TableSchema
+    content.vb: Public Overridable Property Schema As TableSchema
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.Schema*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: schema
   modifiers.csharp:
   - public
   - virtual
@@ -556,7 +438,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TotalBytesProcessed
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3925
+    startLine: 4091
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -566,24 +448,12 @@ items:
     of bytes that would be processed if the query were run.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("totalBytesProcessed")]
-
-      public virtual long ? TotalBytesProcessed { get; set; }
+    content: public virtual long ? TotalBytesProcessed { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: >-
-      <JsonProperty("totalBytesProcessed")>
-
-      Public Overridable Property TotalBytesProcessed As Long?
+    content.vb: Public Overridable Property TotalBytesProcessed As Long?
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.TotalBytesProcessed*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: totalBytesProcessed
   modifiers.csharp:
   - public
   - virtual
@@ -610,7 +480,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TotalRows
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3930
+    startLine: 4096
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -620,24 +490,12 @@ items:
     rows in this single page of results.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("totalRows")]
-
-      public virtual ulong ? TotalRows { get; set; }
+    content: public virtual ulong ? TotalRows { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.UInt64}
-    content.vb: >-
-      <JsonProperty("totalRows")>
-
-      Public Overridable Property TotalRows As ULong?
+    content.vb: Public Overridable Property TotalRows As ULong?
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.TotalRows*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: totalRows
   modifiers.csharp:
   - public
   - virtual
@@ -664,7 +522,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ETag
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3934
+    startLine: 4100
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -677,8 +535,6 @@ items:
       type: System.String
     content.vb: Public Overridable Property ETag As String
   overload: Google.Apis.Bigquery.v2.Data.QueryResponse.ETag*
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema.ETag
   modifiers.csharp:
   - public
   - virtual
@@ -701,304 +557,12 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: Google.Apis.Requests.IDirectResponseSchema
-  commentId: T:Google.Apis.Requests.IDirectResponseSchema
-  parent: Google.Apis.Requests
-  isExternal: true
-  name: IDirectResponseSchema
-  nameWithType: IDirectResponseSchema
-  fullName: Google.Apis.Requests.IDirectResponseSchema
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
-- uid: Google.Apis.Requests
-  commentId: N:Google.Apis.Requests
-  isExternal: false
-  name: Google.Apis.Requests
-  nameWithType: Google.Apis.Requests
-  fullName: Google.Apis.Requests
 - uid: Google.Apis.Bigquery.v2.Data.QueryResponse.CacheHit*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.QueryResponse.CacheHit
   isExternal: false
@@ -1392,10 +956,3 @@ references:
   name: ETag
   nameWithType: QueryResponse.ETag
   fullName: Google.Apis.Bigquery.v2.Data.QueryResponse.ETag
-- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
-  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
-  parent: Google.Apis.Requests.IDirectResponseSchema
-  isExternal: true
-  name: ETag
-  nameWithType: IDirectResponseSchema.ETag
-  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag

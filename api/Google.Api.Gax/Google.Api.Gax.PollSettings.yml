@@ -6,8 +6,11 @@ items:
   parent: Google.Api.Gax
   children:
   - Google.Api.Gax.PollSettings.#ctor(Google.Api.Gax.Expiration,System.TimeSpan)
+  - Google.Api.Gax.PollSettings.#ctor(Google.Api.Gax.Expiration,System.TimeSpan,System.Double,System.TimeSpan)
   - Google.Api.Gax.PollSettings.Delay
+  - Google.Api.Gax.PollSettings.DelayMultiplier
   - Google.Api.Gax.PollSettings.Expiration
+  - Google.Api.Gax.PollSettings.MaxDelay
   langs:
   - csharp
   - vb
@@ -124,6 +127,80 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
+- uid: Google.Api.Gax.PollSettings.DelayMultiplier
+  commentId: P:Google.Api.Gax.PollSettings.DelayMultiplier
+  id: DelayMultiplier
+  parent: Google.Api.Gax.PollSettings
+  langs:
+  - csharp
+  - vb
+  name: DelayMultiplier
+  nameWithType: PollSettings.DelayMultiplier
+  fullName: Google.Api.Gax.PollSettings.DelayMultiplier
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/PollSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: DelayMultiplier
+    path: src/Google.Api.Gax/PollSettings.cs
+    startLine: 35
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nThe multiplier to apply to the delay on each iteration; must be greater or equal to 1.0.\n"
+  example: []
+  syntax:
+    content: public double DelayMultiplier { get; }
+    parameters: []
+    return:
+      type: System.Double
+    content.vb: Public ReadOnly Property DelayMultiplier As Double
+  overload: Google.Api.Gax.PollSettings.DelayMultiplier*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Google.Api.Gax.PollSettings.MaxDelay
+  commentId: P:Google.Api.Gax.PollSettings.MaxDelay
+  id: MaxDelay
+  parent: Google.Api.Gax.PollSettings
+  langs:
+  - csharp
+  - vb
+  name: MaxDelay
+  nameWithType: PollSettings.MaxDelay
+  fullName: Google.Api.Gax.PollSettings.MaxDelay
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.Gax/PollSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: MaxDelay
+    path: src/Google.Api.Gax/PollSettings.cs
+    startLine: 41
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nThe maximum delay to use. If the increasing delay due to the delay multiplier exceeds this,\nthis maximum is used instead.\n"
+  example: []
+  syntax:
+    content: public TimeSpan MaxDelay { get; }
+    parameters: []
+    return:
+      type: System.TimeSpan
+    content.vb: Public ReadOnly Property MaxDelay As TimeSpan
+  overload: Google.Api.Gax.PollSettings.MaxDelay*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
 - uid: Google.Api.Gax.PollSettings.#ctor(Google.Api.Gax.Expiration,System.TimeSpan)
   commentId: M:Google.Api.Gax.PollSettings.#ctor(Google.Api.Gax.Expiration,System.TimeSpan)
   id: '#ctor(Google.Api.Gax.Expiration,System.TimeSpan)'
@@ -142,11 +219,11 @@ items:
       repo: https://github.com/googleapis/gax-dotnet
     id: .ctor
     path: src/Google.Api.Gax/PollSettings.cs
-    startLine: 37
+    startLine: 48
   assemblies:
   - Google.Api.Gax
   namespace: Google.Api.Gax
-  summary: "\nCreates poll settings from the given expiration, delay and call settings.\n"
+  summary: "\nCreates poll settings from the given expiration and constant delay.\n"
   example: []
   syntax:
     content: public PollSettings(Expiration expiration, TimeSpan delay)
@@ -156,8 +233,53 @@ items:
       description: The expiration to use in order to know when to stop polling. Must not be null.
     - id: delay
       type: System.TimeSpan
-      description: The delay between RPC calls. Must be non-negative.
+      description: The constant delay between RPC calls. Must be non-negative.
     content.vb: Public Sub New(expiration As Expiration, delay As TimeSpan)
+  overload: Google.Api.Gax.PollSettings.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: Google.Api.Gax.PollSettings.#ctor(Google.Api.Gax.Expiration,System.TimeSpan,System.Double,System.TimeSpan)
+  commentId: M:Google.Api.Gax.PollSettings.#ctor(Google.Api.Gax.Expiration,System.TimeSpan,System.Double,System.TimeSpan)
+  id: '#ctor(Google.Api.Gax.Expiration,System.TimeSpan,System.Double,System.TimeSpan)'
+  parent: Google.Api.Gax.PollSettings
+  langs:
+  - csharp
+  - vb
+  name: PollSettings(Expiration, TimeSpan, Double, TimeSpan)
+  nameWithType: PollSettings.PollSettings(Expiration, TimeSpan, Double, TimeSpan)
+  fullName: Google.Api.Gax.PollSettings.PollSettings(Google.Api.Gax.Expiration, System.TimeSpan, System.Double, System.TimeSpan)
+  type: Constructor
+  source:
+    remote:
+      path: src/Google.Api.Gax/PollSettings.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: .ctor
+    path: src/Google.Api.Gax/PollSettings.cs
+    startLine: 57
+  assemblies:
+  - Google.Api.Gax
+  namespace: Google.Api.Gax
+  summary: "\nCreates poll settings from the given expiration, delay, delay multiplier and maximum delay.\n"
+  example: []
+  syntax:
+    content: public PollSettings(Expiration expiration, TimeSpan delay, double delayMultiplier, TimeSpan maxDelay)
+    parameters:
+    - id: expiration
+      type: Google.Api.Gax.Expiration
+      description: The expiration to use in order to know when to stop polling. Must not be null.
+    - id: delay
+      type: System.TimeSpan
+      description: The delay between RPC calls. Must be non-negative.
+    - id: delayMultiplier
+      type: System.Double
+      description: The multiplier to apply to the delay on each iteration; must be greater or equal to 1.0.
+    - id: maxDelay
+      type: System.TimeSpan
+      description: The maximum delay to use.
+    content.vb: Public Sub New(expiration As Expiration, delay As TimeSpan, delayMultiplier As Double, maxDelay As TimeSpan)
   overload: Google.Api.Gax.PollSettings.#ctor*
   modifiers.csharp:
   - public
@@ -488,6 +610,25 @@ references:
   name: TimeSpan
   nameWithType: TimeSpan
   fullName: System.TimeSpan
+- uid: Google.Api.Gax.PollSettings.DelayMultiplier*
+  commentId: Overload:Google.Api.Gax.PollSettings.DelayMultiplier
+  isExternal: false
+  name: DelayMultiplier
+  nameWithType: PollSettings.DelayMultiplier
+  fullName: Google.Api.Gax.PollSettings.DelayMultiplier
+- uid: System.Double
+  commentId: T:System.Double
+  parent: System
+  isExternal: true
+  name: Double
+  nameWithType: Double
+  fullName: System.Double
+- uid: Google.Api.Gax.PollSettings.MaxDelay*
+  commentId: Overload:Google.Api.Gax.PollSettings.MaxDelay
+  isExternal: false
+  name: MaxDelay
+  nameWithType: PollSettings.MaxDelay
+  fullName: Google.Api.Gax.PollSettings.MaxDelay
 - uid: Google.Api.Gax.PollSettings.#ctor*
   commentId: Overload:Google.Api.Gax.PollSettings.#ctor
   isExternal: false

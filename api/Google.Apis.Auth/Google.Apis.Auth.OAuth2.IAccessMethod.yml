@@ -5,8 +5,8 @@ items:
   id: IAccessMethod
   parent: Google.Apis.Auth.OAuth2
   children:
-  - Google.Apis.Auth.OAuth2.IAccessMethod.GetAccessToken(System.Net.Http.HttpRequestMessage)
-  - Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage,System.String)
+  - Google.Apis.Auth.OAuth2.IAccessMethod.GetAccessToken(HttpRequestMessage)
+  - Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(HttpRequestMessage,System.String)
   langs:
   - csharp
   - vb
@@ -36,16 +36,16 @@ items:
   modifiers.vb:
   - Public
   - Interface
-- uid: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage,System.String)
-  commentId: M:Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage,System.String)
-  id: Intercept(System.Net.Http.HttpRequestMessage,System.String)
+- uid: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(HttpRequestMessage,System.String)
+  commentId: M:Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(HttpRequestMessage,System.String)
+  id: Intercept(HttpRequestMessage,System.String)
   parent: Google.Apis.Auth.OAuth2.IAccessMethod
   langs:
   - csharp
   - vb
   name: Intercept(HttpRequestMessage, String)
   nameWithType: IAccessMethod.Intercept(HttpRequestMessage, String)
-  fullName: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage, System.String)
+  fullName: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(HttpRequestMessage, System.String)
   type: Method
   source:
     remote:
@@ -64,21 +64,21 @@ items:
     content: void Intercept(HttpRequestMessage request, string accessToken)
     parameters:
     - id: request
-      type: System.Net.Http.HttpRequestMessage
+      type: HttpRequestMessage
     - id: accessToken
       type: System.String
     content.vb: Sub Intercept(request As HttpRequestMessage, accessToken As String)
   overload: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept*
-- uid: Google.Apis.Auth.OAuth2.IAccessMethod.GetAccessToken(System.Net.Http.HttpRequestMessage)
-  commentId: M:Google.Apis.Auth.OAuth2.IAccessMethod.GetAccessToken(System.Net.Http.HttpRequestMessage)
-  id: GetAccessToken(System.Net.Http.HttpRequestMessage)
+- uid: Google.Apis.Auth.OAuth2.IAccessMethod.GetAccessToken(HttpRequestMessage)
+  commentId: M:Google.Apis.Auth.OAuth2.IAccessMethod.GetAccessToken(HttpRequestMessage)
+  id: GetAccessToken(HttpRequestMessage)
   parent: Google.Apis.Auth.OAuth2.IAccessMethod
   langs:
   - csharp
   - vb
   name: GetAccessToken(HttpRequestMessage)
   nameWithType: IAccessMethod.GetAccessToken(HttpRequestMessage)
-  fullName: Google.Apis.Auth.OAuth2.IAccessMethod.GetAccessToken(System.Net.Http.HttpRequestMessage)
+  fullName: Google.Apis.Auth.OAuth2.IAccessMethod.GetAccessToken(HttpRequestMessage)
   type: Method
   source:
     remote:
@@ -91,13 +91,13 @@ items:
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
-  summary: "\nRetrieves the original access token in the HTTP request, as provided in the <xref href=\"Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>\nmethod.\n"
+  summary: "\nRetrieves the original access token in the HTTP request, as provided in the <xref href=\"Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(HttpRequestMessage%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>\nmethod.\n"
   example: []
   syntax:
     content: string GetAccessToken(HttpRequestMessage request)
     parameters:
     - id: request
-      type: System.Net.Http.HttpRequestMessage
+      type: HttpRequestMessage
     return:
       type: System.String
     content.vb: Function GetAccessToken(request As HttpRequestMessage) As String
@@ -115,13 +115,11 @@ references:
   name: Intercept
   nameWithType: IAccessMethod.Intercept
   fullName: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept
-- uid: System.Net.Http.HttpRequestMessage
-  commentId: T:System.Net.Http.HttpRequestMessage
-  parent: System.Net.Http
+- uid: HttpRequestMessage
   isExternal: true
   name: HttpRequestMessage
   nameWithType: HttpRequestMessage
-  fullName: System.Net.Http.HttpRequestMessage
+  fullName: HttpRequestMessage
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -129,37 +127,31 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
-- uid: System.Net.Http
-  commentId: N:System.Net.Http
-  isExternal: false
-  name: System.Net.Http
-  nameWithType: System.Net.Http
-  fullName: System.Net.Http
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
-- uid: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage,System.String)
-  commentId: M:Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage,System.String)
+- uid: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(HttpRequestMessage,System.String)
+  commentId: M:Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(HttpRequestMessage,System.String)
   parent: Google.Apis.Auth.OAuth2.IAccessMethod
   isExternal: true
   name: Intercept(HttpRequestMessage, String)
   nameWithType: IAccessMethod.Intercept(HttpRequestMessage, String)
-  fullName: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage, System.String)
+  fullName: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(HttpRequestMessage, System.String)
   spec.csharp:
-  - uid: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage,System.String)
+  - uid: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(HttpRequestMessage,System.String)
     name: Intercept
     nameWithType: IAccessMethod.Intercept
     fullName: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpRequestMessage
+  - uid: HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
+    fullName: HttpRequestMessage
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -173,17 +165,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(System.Net.Http.HttpRequestMessage,System.String)
+  - uid: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept(HttpRequestMessage,System.String)
     name: Intercept
     nameWithType: IAccessMethod.Intercept
     fullName: Google.Apis.Auth.OAuth2.IAccessMethod.Intercept
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpRequestMessage
+  - uid: HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
+    fullName: HttpRequestMessage
     isExternal: true
   - name: ', '
     nameWithType: ', '

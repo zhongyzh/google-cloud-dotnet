@@ -26,11 +26,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: Channel
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 47
+    startLine: 32
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -69,11 +69,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: .ctor
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 71
+    startLine: 56
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -108,11 +108,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: .ctor
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 83
+    startLine: 68
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -153,11 +153,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: .ctor
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 115
+    startLine: 100
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -195,11 +195,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: .ctor
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 127
+    startLine: 112
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -243,11 +243,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: State
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 136
+    startLine: 121
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -280,18 +280,18 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: WaitForStateChangedAsync
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 149
+    startLine: 134
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
   summary: "\nReturned tasks completes once channel state has become different from \ngiven lastObservedState. \nIf deadline is reached or and error occurs, returned task is cancelled.\n"
   example: []
   syntax:
-    content: public Task WaitForStateChangedAsync(ChannelState lastObservedState, DateTime? deadline = null)
+    content: public Task WaitForStateChangedAsync(ChannelState lastObservedState, DateTime? deadline = default (DateTime? ))
     parameters:
     - id: lastObservedState
       type: Grpc.Core.ChannelState
@@ -322,11 +322,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: ResolvedTarget
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 171
+    startLine: 156
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -359,11 +359,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: Target
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 180
+    startLine: 165
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -396,11 +396,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: ShutdownToken
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 191
+    startLine: 176
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -433,18 +433,18 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: ConnectAsync
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 207
+    startLine: 192
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
   summary: "\nAllows explicitly requesting channel to connect without starting an RPC.\nReturned task completes once state Ready was seen. If the deadline is reached,\nor channel enters the Shutdown state, the task is cancelled.\nThere is no need to call this explicitly unless your use case requires that.\nStarting an RPC on a new channel will request connection implicitly.\n"
   example: []
   syntax:
-    content: public Task ConnectAsync(DateTime? deadline = null)
+    content: public Task ConnectAsync(DateTime? deadline = default (DateTime? ))
     parameters:
     - id: deadline
       type: System.Nullable{System.DateTime}
@@ -474,11 +474,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/Channel.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: ShutdownAsync
     path: src/csharp/Grpc.Core/Channel.cs
-    startLine: 232
+    startLine: 217
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core

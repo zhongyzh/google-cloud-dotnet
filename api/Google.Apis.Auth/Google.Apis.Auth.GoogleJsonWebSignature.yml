@@ -5,6 +5,7 @@ items:
   id: GoogleJsonWebSignature
   parent: Google.Apis.Auth
   children:
+  - Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(System.String,Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings)
   - Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(System.String,Google.Apis.Util.IClock,System.Boolean)
   langs:
   - csharp
@@ -67,8 +68,8 @@ items:
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth
-  summary: "\nValidates a Google-issued Json Web Token (JWT).\nWith throw a <xref href=\"Google.Apis.Auth.InvalidJwtException\" data-throw-if-not-resolved=\"false\"></xref> if the passed value is not valid JWT signed by Google.\n"
-  remarks: "\n<p>Follows the procedure to\n<a href=\"https://developers.google.com/identity/protocols/OpenIDConnect#validatinganidtoken\">validate a JWT ID token</a>.\n</p>\n<p>Google certificates are cached, and refreshed once per hour. This can be overridden by setting\n<span class=\"paramref\">forceGoogleCertRefresh</span> to true.</p>\n"
+  summary: "\nValidates a Google-issued Json Web Token (JWT).\nWill throw a <xref href=\"Google.Apis.Auth.InvalidJwtException\" data-throw-if-not-resolved=\"false\"></xref> if the passed value is not valid JWT signed by Google.\n"
+  remarks: "\n<p>Follows the procedure to\n<a href=\"https://developers.google.com/identity/protocols/OpenIDConnect#validatinganidtoken\">validate a JWT ID token</a>.\n</p>\n<p>Google certificates are cached, and refreshed once per hour. This can be overridden by setting\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">forceGoogleCertRefresh</code> to true.</p>\n"
   example: []
   syntax:
     content: public static Task<GoogleJsonWebSignature.Payload> ValidateAsync(string jwt, IClock clock = null, bool forceGoogleCertRefresh = false)
@@ -91,6 +92,51 @@ items:
   - type: Google.Apis.Auth.InvalidJwtException
     commentId: T:Google.Apis.Auth.InvalidJwtException
     description: Thrown when passed a JWT that is not a valid JWT signed by Google.
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(System.String,Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings)
+  commentId: M:Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(System.String,Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings)
+  id: ValidateAsync(System.String,Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings)
+  parent: Google.Apis.Auth.GoogleJsonWebSignature
+  langs:
+  - csharp
+  - vb
+  name: ValidateAsync(String, GoogleJsonWebSignature.ValidationSettings)
+  nameWithType: GoogleJsonWebSignature.ValidateAsync(String, GoogleJsonWebSignature.ValidationSettings)
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(System.String, Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings)
+  type: Method
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: ValidateAsync
+    path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+    startLine: 127
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth
+  summary: "\nValidates a Google-issued Json Web Token (JWT).\nWill throw a <xref href=\"Google.Apis.Auth.InvalidJwtException\" data-throw-if-not-resolved=\"false\"></xref> if the specified JWT fails any validation check.\n"
+  remarks: "\n<p>Follows the procedure to\n<a href=\"https://developers.google.com/identity/protocols/OpenIDConnect#validatinganidtoken\">validate a JWT ID token</a>.\n</p>\n<p>Google certificates are cached, and refreshed once per hour. This can be overridden by setting\n<xref href=\"Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings.ForceGoogleCertRefresh\" data-throw-if-not-resolved=\"false\"></xref> to true.</p>\n"
+  example: []
+  syntax:
+    content: public static Task<GoogleJsonWebSignature.Payload> ValidateAsync(string jwt, GoogleJsonWebSignature.ValidationSettings validationSettings)
+    parameters:
+    - id: jwt
+      type: System.String
+      description: The JWT to validate.
+    - id: validationSettings
+      type: Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings
+      description: Specifies how to carry out the validation.
+    return:
+      type: System.Threading.Tasks.Task{Google.Apis.Auth.GoogleJsonWebSignature.Payload}
+      description: ''
+    content.vb: Public Shared Function ValidateAsync(jwt As String, validationSettings As GoogleJsonWebSignature.ValidationSettings) As Task(Of GoogleJsonWebSignature.Payload)
+  overload: Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync*
   modifiers.csharp:
   - public
   - static
@@ -522,3 +568,12 @@ references:
   name: System.Threading.Tasks
   nameWithType: System.Threading.Tasks
   fullName: System.Threading.Tasks
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings.ForceGoogleCertRefresh
+  commentId: P:Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings.ForceGoogleCertRefresh
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings
+  commentId: T:Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings
+  parent: Google.Apis.Auth
+  isExternal: false
+  name: GoogleJsonWebSignature.ValidationSettings
+  nameWithType: GoogleJsonWebSignature.ValidationSettings
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings

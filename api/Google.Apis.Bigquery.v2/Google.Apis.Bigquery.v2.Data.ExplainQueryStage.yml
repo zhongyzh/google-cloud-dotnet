@@ -5,19 +5,29 @@ items:
   id: ExplainQueryStage
   parent: Google.Apis.Bigquery.v2.Data
   children:
+  - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsAvg
+  - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsMax
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeRatioAvg
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeRatioMax
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ETag
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Id
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Name
+  - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsAvg
+  - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsMax
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadRatioAvg
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadRatioMax
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.RecordsRead
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.RecordsWritten
+  - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytes
+  - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytesSpilled
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Status
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Steps
+  - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsAvg
+  - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsMax
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitRatioAvg
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitRatioMax
+  - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsAvg
+  - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsMax
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteRatioAvg
   - Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteRatioMax
   langs:
@@ -34,33 +44,101 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ExplainQueryStage
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2824
+    startLine: 2898
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   syntax:
-    content: 'public class ExplainQueryStage : IDirectResponseSchema'
+    content: 'public class ExplainQueryStage : Requests.IDirectResponseSchema'
     content.vb: >-
       Public Class ExplainQueryStage
-          Implements IDirectResponseSchema
+          Inherits Requests.IDirectResponseSchema
   inheritance:
   - System.Object
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema
-  inheritedMembers:
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
   modifiers.vb:
   - Public
   - Class
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsAvg
+  commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsAvg
+  id: ComputeMsAvg
+  parent: Google.Apis.Bigquery.v2.Data.ExplainQueryStage
+  langs:
+  - csharp
+  - vb
+  name: ComputeMsAvg
+  nameWithType: ExplainQueryStage.ComputeMsAvg
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsAvg
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: ComputeMsAvg
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 2901
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: Milliseconds the average shard spent on CPU-bound tasks.
+  example: []
+  syntax:
+    content: public virtual long ? ComputeMsAvg { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overridable Property ComputeMsAvg As Long?
+  overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsAvg*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsMax
+  commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsMax
+  id: ComputeMsMax
+  parent: Google.Apis.Bigquery.v2.Data.ExplainQueryStage
+  langs:
+  - csharp
+  - vb
+  name: ComputeMsMax
+  nameWithType: ExplainQueryStage.ComputeMsMax
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsMax
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: ComputeMsMax
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 2905
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: Milliseconds the slowest shard spent on CPU-bound tasks.
+  example: []
+  syntax:
+    content: public virtual long ? ComputeMsMax { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overridable Property ComputeMsMax As Long?
+  overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsMax*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
 - uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeRatioAvg
   commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeRatioAvg
   id: ComputeRatioAvg
@@ -79,31 +157,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ComputeRatioAvg
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2827
+    startLine: 2909
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Relative amount of time the average shard spent on CPU-bound tasks.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("computeRatioAvg")]
-
-      public virtual double ? ComputeRatioAvg { get; set; }
+    content: public virtual double ? ComputeRatioAvg { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Double}
-    content.vb: >-
-      <JsonProperty("computeRatioAvg")>
-
-      Public Overridable Property ComputeRatioAvg As Double?
+    content.vb: Public Overridable Property ComputeRatioAvg As Double?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeRatioAvg*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: computeRatioAvg
   modifiers.csharp:
   - public
   - virtual
@@ -130,31 +196,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ComputeRatioMax
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2831
+    startLine: 2913
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Relative amount of time the slowest shard spent on CPU-bound tasks.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("computeRatioMax")]
-
-      public virtual double ? ComputeRatioMax { get; set; }
+    content: public virtual double ? ComputeRatioMax { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Double}
-    content.vb: >-
-      <JsonProperty("computeRatioMax")>
-
-      Public Overridable Property ComputeRatioMax As Double?
+    content.vb: Public Overridable Property ComputeRatioMax As Double?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeRatioMax*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: computeRatioMax
   modifiers.csharp:
   - public
   - virtual
@@ -181,31 +235,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Id
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2835
+    startLine: 2917
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Unique ID for stage within plan.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("id")]
-
-      public virtual long ? Id { get; set; }
+    content: public virtual long ? Id { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: >-
-      <JsonProperty("id")>
-
-      Public Overridable Property Id As Long?
+    content.vb: Public Overridable Property Id As Long?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Id*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -232,31 +274,97 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Name
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2839
+    startLine: 2921
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Human-readable name for stage.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("name")]
-
-      public virtual string Name { get; set; }
+    content: public virtual string Name { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("name")>
-
-      Public Overridable Property Name As String
+    content.vb: Public Overridable Property Name As String
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Name*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: name
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsAvg
+  commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsAvg
+  id: ReadMsAvg
+  parent: Google.Apis.Bigquery.v2.Data.ExplainQueryStage
+  langs:
+  - csharp
+  - vb
+  name: ReadMsAvg
+  nameWithType: ExplainQueryStage.ReadMsAvg
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsAvg
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: ReadMsAvg
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 2925
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: Milliseconds the average shard spent reading input.
+  example: []
+  syntax:
+    content: public virtual long ? ReadMsAvg { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overridable Property ReadMsAvg As Long?
+  overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsAvg*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsMax
+  commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsMax
+  id: ReadMsMax
+  parent: Google.Apis.Bigquery.v2.Data.ExplainQueryStage
+  langs:
+  - csharp
+  - vb
+  name: ReadMsMax
+  nameWithType: ExplainQueryStage.ReadMsMax
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsMax
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: ReadMsMax
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 2929
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: Milliseconds the slowest shard spent reading input.
+  example: []
+  syntax:
+    content: public virtual long ? ReadMsMax { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overridable Property ReadMsMax As Long?
+  overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsMax*
   modifiers.csharp:
   - public
   - virtual
@@ -283,31 +391,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ReadRatioAvg
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2843
+    startLine: 2933
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Relative amount of time the average shard spent reading input.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("readRatioAvg")]
-
-      public virtual double ? ReadRatioAvg { get; set; }
+    content: public virtual double ? ReadRatioAvg { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Double}
-    content.vb: >-
-      <JsonProperty("readRatioAvg")>
-
-      Public Overridable Property ReadRatioAvg As Double?
+    content.vb: Public Overridable Property ReadRatioAvg As Double?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadRatioAvg*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: readRatioAvg
   modifiers.csharp:
   - public
   - virtual
@@ -334,31 +430,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ReadRatioMax
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2847
+    startLine: 2937
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Relative amount of time the slowest shard spent reading input.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("readRatioMax")]
-
-      public virtual double ? ReadRatioMax { get; set; }
+    content: public virtual double ? ReadRatioMax { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Double}
-    content.vb: >-
-      <JsonProperty("readRatioMax")>
-
-      Public Overridable Property ReadRatioMax As Double?
+    content.vb: Public Overridable Property ReadRatioMax As Double?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadRatioMax*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: readRatioMax
   modifiers.csharp:
   - public
   - virtual
@@ -385,31 +469,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: RecordsRead
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2851
+    startLine: 2941
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Number of records read into the stage.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("recordsRead")]
-
-      public virtual long ? RecordsRead { get; set; }
+    content: public virtual long ? RecordsRead { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: >-
-      <JsonProperty("recordsRead")>
-
-      Public Overridable Property RecordsRead As Long?
+    content.vb: Public Overridable Property RecordsRead As Long?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.RecordsRead*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: recordsRead
   modifiers.csharp:
   - public
   - virtual
@@ -436,31 +508,97 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: RecordsWritten
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2855
+    startLine: 2945
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Number of records written by the stage.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("recordsWritten")]
-
-      public virtual long ? RecordsWritten { get; set; }
+    content: public virtual long ? RecordsWritten { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: >-
-      <JsonProperty("recordsWritten")>
-
-      Public Overridable Property RecordsWritten As Long?
+    content.vb: Public Overridable Property RecordsWritten As Long?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.RecordsWritten*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: recordsWritten
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytes
+  commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytes
+  id: ShuffleOutputBytes
+  parent: Google.Apis.Bigquery.v2.Data.ExplainQueryStage
+  langs:
+  - csharp
+  - vb
+  name: ShuffleOutputBytes
+  nameWithType: ExplainQueryStage.ShuffleOutputBytes
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytes
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: ShuffleOutputBytes
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 2949
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: Total number of bytes written to shuffle.
+  example: []
+  syntax:
+    content: public virtual long ? ShuffleOutputBytes { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overridable Property ShuffleOutputBytes As Long?
+  overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytes*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytesSpilled
+  commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytesSpilled
+  id: ShuffleOutputBytesSpilled
+  parent: Google.Apis.Bigquery.v2.Data.ExplainQueryStage
+  langs:
+  - csharp
+  - vb
+  name: ShuffleOutputBytesSpilled
+  nameWithType: ExplainQueryStage.ShuffleOutputBytesSpilled
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytesSpilled
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: ShuffleOutputBytesSpilled
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 2953
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: Total number of bytes written to shuffle and spilled to disk.
+  example: []
+  syntax:
+    content: public virtual long ? ShuffleOutputBytesSpilled { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overridable Property ShuffleOutputBytesSpilled As Long?
+  overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytesSpilled*
   modifiers.csharp:
   - public
   - virtual
@@ -487,31 +625,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Status
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2859
+    startLine: 2957
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Current status for the stage.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("status")]
-
-      public virtual string Status { get; set; }
+    content: public virtual string Status { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("status")>
-
-      Public Overridable Property Status As String
+    content.vb: Public Overridable Property Status As String
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Status*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: status
   modifiers.csharp:
   - public
   - virtual
@@ -538,31 +664,97 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Steps
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2863
+    startLine: 2961
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: List of operations within the stage in dependency order (approximately chronological).
   example: []
   syntax:
-    content: >-
-      [JsonProperty("steps")]
-
-      public virtual IList<ExplainQueryStep> Steps { get; set; }
+    content: public virtual IList<ExplainQueryStep> Steps { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.ExplainQueryStep}
-    content.vb: >-
-      <JsonProperty("steps")>
-
-      Public Overridable Property Steps As IList(Of ExplainQueryStep)
+    content.vb: Public Overridable Property Steps As IList(Of ExplainQueryStep)
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Steps*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: steps
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsAvg
+  commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsAvg
+  id: WaitMsAvg
+  parent: Google.Apis.Bigquery.v2.Data.ExplainQueryStage
+  langs:
+  - csharp
+  - vb
+  name: WaitMsAvg
+  nameWithType: ExplainQueryStage.WaitMsAvg
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsAvg
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: WaitMsAvg
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 2965
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: Milliseconds the average shard spent waiting to be scheduled.
+  example: []
+  syntax:
+    content: public virtual long ? WaitMsAvg { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overridable Property WaitMsAvg As Long?
+  overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsAvg*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsMax
+  commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsMax
+  id: WaitMsMax
+  parent: Google.Apis.Bigquery.v2.Data.ExplainQueryStage
+  langs:
+  - csharp
+  - vb
+  name: WaitMsMax
+  nameWithType: ExplainQueryStage.WaitMsMax
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsMax
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: WaitMsMax
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 2969
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: Milliseconds the slowest shard spent waiting to be scheduled.
+  example: []
+  syntax:
+    content: public virtual long ? WaitMsMax { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overridable Property WaitMsMax As Long?
+  overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsMax*
   modifiers.csharp:
   - public
   - virtual
@@ -589,31 +781,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: WaitRatioAvg
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2867
+    startLine: 2973
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Relative amount of time the average shard spent waiting to be scheduled.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("waitRatioAvg")]
-
-      public virtual double ? WaitRatioAvg { get; set; }
+    content: public virtual double ? WaitRatioAvg { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Double}
-    content.vb: >-
-      <JsonProperty("waitRatioAvg")>
-
-      Public Overridable Property WaitRatioAvg As Double?
+    content.vb: Public Overridable Property WaitRatioAvg As Double?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitRatioAvg*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: waitRatioAvg
   modifiers.csharp:
   - public
   - virtual
@@ -640,31 +820,97 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: WaitRatioMax
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2871
+    startLine: 2977
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Relative amount of time the slowest shard spent waiting to be scheduled.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("waitRatioMax")]
-
-      public virtual double ? WaitRatioMax { get; set; }
+    content: public virtual double ? WaitRatioMax { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Double}
-    content.vb: >-
-      <JsonProperty("waitRatioMax")>
-
-      Public Overridable Property WaitRatioMax As Double?
+    content.vb: Public Overridable Property WaitRatioMax As Double?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitRatioMax*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: waitRatioMax
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsAvg
+  commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsAvg
+  id: WriteMsAvg
+  parent: Google.Apis.Bigquery.v2.Data.ExplainQueryStage
+  langs:
+  - csharp
+  - vb
+  name: WriteMsAvg
+  nameWithType: ExplainQueryStage.WriteMsAvg
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsAvg
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: WriteMsAvg
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 2981
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: Milliseconds the average shard spent on writing output.
+  example: []
+  syntax:
+    content: public virtual long ? WriteMsAvg { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overridable Property WriteMsAvg As Long?
+  overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsAvg*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsMax
+  commentId: P:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsMax
+  id: WriteMsMax
+  parent: Google.Apis.Bigquery.v2.Data.ExplainQueryStage
+  langs:
+  - csharp
+  - vb
+  name: WriteMsMax
+  nameWithType: ExplainQueryStage.WriteMsMax
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsMax
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: WriteMsMax
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 2985
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: Milliseconds the slowest shard spent on writing output.
+  example: []
+  syntax:
+    content: public virtual long ? WriteMsMax { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.Int64}
+    content.vb: Public Overridable Property WriteMsMax As Long?
+  overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsMax*
   modifiers.csharp:
   - public
   - virtual
@@ -691,31 +937,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: WriteRatioAvg
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2875
+    startLine: 2989
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Relative amount of time the average shard spent on writing output.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("writeRatioAvg")]
-
-      public virtual double ? WriteRatioAvg { get; set; }
+    content: public virtual double ? WriteRatioAvg { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Double}
-    content.vb: >-
-      <JsonProperty("writeRatioAvg")>
-
-      Public Overridable Property WriteRatioAvg As Double?
+    content.vb: Public Overridable Property WriteRatioAvg As Double?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteRatioAvg*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: writeRatioAvg
   modifiers.csharp:
   - public
   - virtual
@@ -742,31 +976,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: WriteRatioMax
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2879
+    startLine: 2993
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: Relative amount of time the slowest shard spent on writing output.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("writeRatioMax")]
-
-      public virtual double ? WriteRatioMax { get; set; }
+    content: public virtual double ? WriteRatioMax { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Double}
-    content.vb: >-
-      <JsonProperty("writeRatioMax")>
-
-      Public Overridable Property WriteRatioMax As Double?
+    content.vb: Public Overridable Property WriteRatioMax As Double?
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteRatioMax*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: writeRatioMax
   modifiers.csharp:
   - public
   - virtual
@@ -793,7 +1015,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ETag
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 2883
+    startLine: 2997
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -806,8 +1028,6 @@ items:
       type: System.String
     content.vb: Public Overridable Property ETag As String
   overload: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ETag*
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema.ETag
   modifiers.csharp:
   - public
   - virtual
@@ -830,304 +1050,107 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: Google.Apis.Requests.IDirectResponseSchema
-  commentId: T:Google.Apis.Requests.IDirectResponseSchema
-  parent: Google.Apis.Requests
-  isExternal: true
-  name: IDirectResponseSchema
-  nameWithType: IDirectResponseSchema
-  fullName: Google.Apis.Requests.IDirectResponseSchema
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
-- uid: Google.Apis.Requests
-  commentId: N:Google.Apis.Requests
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsAvg*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsAvg
   isExternal: false
-  name: Google.Apis.Requests
-  nameWithType: Google.Apis.Requests
-  fullName: Google.Apis.Requests
+  name: ComputeMsAvg
+  nameWithType: ExplainQueryStage.ComputeMsAvg
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsAvg
+- uid: System.Nullable{System.Int64}
+  commentId: T:System.Nullable{System.Int64}
+  parent: System
+  definition: System.Nullable`1
+  name: Nullable<Int64>
+  nameWithType: Nullable<Int64>
+  fullName: System.Nullable<System.Int64>
+  nameWithType.vb: Nullable(Of Int64)
+  fullName.vb: System.Nullable(Of System.Int64)
+  name.vb: Nullable(Of Int64)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: T:System.Nullable`1
+  isExternal: true
+  name: Nullable<T>
+  nameWithType: Nullable<T>
+  fullName: System.Nullable<T>
+  nameWithType.vb: Nullable(Of T)
+  fullName.vb: System.Nullable(Of T)
+  name.vb: Nullable(Of T)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsMax*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsMax
+  isExternal: false
+  name: ComputeMsMax
+  nameWithType: ExplainQueryStage.ComputeMsMax
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeMsMax
 - uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeRatioAvg*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeRatioAvg
   isExternal: false
@@ -1178,45 +1201,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Nullable`1
-  commentId: T:System.Nullable`1
-  isExternal: true
-  name: Nullable<T>
-  nameWithType: Nullable<T>
-  fullName: System.Nullable<T>
-  nameWithType.vb: Nullable(Of T)
-  fullName.vb: System.Nullable(Of T)
-  name.vb: Nullable(Of T)
-  spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeRatioMax*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ComputeRatioMax
   isExternal: false
@@ -1229,50 +1213,6 @@ references:
   name: Id
   nameWithType: ExplainQueryStage.Id
   fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Id
-- uid: System.Nullable{System.Int64}
-  commentId: T:System.Nullable{System.Int64}
-  parent: System
-  definition: System.Nullable`1
-  name: Nullable<Int64>
-  nameWithType: Nullable<Int64>
-  fullName: System.Nullable<System.Int64>
-  nameWithType.vb: Nullable(Of Int64)
-  fullName.vb: System.Nullable(Of System.Int64)
-  name.vb: Nullable(Of Int64)
-  spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Int64
-    name: Int64
-    nameWithType: Int64
-    fullName: System.Int64
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Int64
-    name: Int64
-    nameWithType: Int64
-    fullName: System.Int64
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Name*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Name
   isExternal: false
@@ -1286,6 +1226,18 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsAvg*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsAvg
+  isExternal: false
+  name: ReadMsAvg
+  nameWithType: ExplainQueryStage.ReadMsAvg
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsAvg
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsMax*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsMax
+  isExternal: false
+  name: ReadMsMax
+  nameWithType: ExplainQueryStage.ReadMsMax
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadMsMax
 - uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadRatioAvg*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ReadRatioAvg
   isExternal: false
@@ -1310,6 +1262,18 @@ references:
   name: RecordsWritten
   nameWithType: ExplainQueryStage.RecordsWritten
   fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.RecordsWritten
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytes*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytes
+  isExternal: false
+  name: ShuffleOutputBytes
+  nameWithType: ExplainQueryStage.ShuffleOutputBytes
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytes
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytesSpilled*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytesSpilled
+  isExternal: false
+  name: ShuffleOutputBytesSpilled
+  nameWithType: ExplainQueryStage.ShuffleOutputBytesSpilled
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ShuffleOutputBytesSpilled
 - uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Status*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.Status
   isExternal: false
@@ -1409,6 +1373,18 @@ references:
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsAvg*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsAvg
+  isExternal: false
+  name: WaitMsAvg
+  nameWithType: ExplainQueryStage.WaitMsAvg
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsAvg
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsMax*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsMax
+  isExternal: false
+  name: WaitMsMax
+  nameWithType: ExplainQueryStage.WaitMsMax
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitMsMax
 - uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitRatioAvg*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitRatioAvg
   isExternal: false
@@ -1421,6 +1397,18 @@ references:
   name: WaitRatioMax
   nameWithType: ExplainQueryStage.WaitRatioMax
   fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WaitRatioMax
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsAvg*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsAvg
+  isExternal: false
+  name: WriteMsAvg
+  nameWithType: ExplainQueryStage.WriteMsAvg
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsAvg
+- uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsMax*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsMax
+  isExternal: false
+  name: WriteMsMax
+  nameWithType: ExplainQueryStage.WriteMsMax
+  fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteMsMax
 - uid: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteRatioAvg*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.ExplainQueryStage.WriteRatioAvg
   isExternal: false
@@ -1439,10 +1427,3 @@ references:
   name: ETag
   nameWithType: ExplainQueryStage.ETag
   fullName: Google.Apis.Bigquery.v2.Data.ExplainQueryStage.ETag
-- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
-  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
-  parent: Google.Apis.Requests.IDirectResponseSchema
-  isExternal: true
-  name: ETag
-  nameWithType: IDirectResponseSchema.ETag
-  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag

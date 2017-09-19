@@ -61,8 +61,8 @@ items:
   langs:
   - csharp
   - vb
-  name: BucketsResource(IClientService)
-  nameWithType: BucketsResource.BucketsResource(IClientService)
+  name: BucketsResource(Services.IClientService)
+  nameWithType: BucketsResource.BucketsResource(Services.IClientService)
   fullName: Google.Apis.Storage.v1.BucketsResource.BucketsResource(Google.Apis.Services.IClientService)
   type: Constructor
   source:
@@ -79,11 +79,11 @@ items:
   summary: Constructs a new resource.
   example: []
   syntax:
-    content: public BucketsResource(IClientService service)
+    content: public BucketsResource(Services.IClientService service)
     parameters:
     - id: service
       type: Google.Apis.Services.IClientService
-    content.vb: Public Sub New(service As IClientService)
+    content.vb: Public Sub New(service As Services.IClientService)
   overload: Google.Apis.Storage.v1.BucketsResource.#ctor*
   modifiers.csharp:
   - public
@@ -270,7 +270,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: List
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 1353
+    startLine: 1366
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -310,7 +310,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Patch
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 1482
+    startLine: 1508
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -356,7 +356,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SetIamPolicy
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 1687
+    startLine: 1713
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -388,8 +388,8 @@ items:
   langs:
   - csharp
   - vb
-  name: TestIamPermissions(String, Repeatable<String>)
-  nameWithType: BucketsResource.TestIamPermissions(String, Repeatable<String>)
+  name: TestIamPermissions(String, Util.Repeatable<String>)
+  nameWithType: BucketsResource.TestIamPermissions(String, Util.Repeatable<String>)
   fullName: Google.Apis.Storage.v1.BucketsResource.TestIamPermissions(System.String, Google.Apis.Util.Repeatable<System.String>)
   type: Method
   source:
@@ -399,7 +399,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: TestIamPermissions
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 1769
+    startLine: 1795
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -409,7 +409,7 @@ items:
     caller.
   example: []
   syntax:
-    content: public virtual BucketsResource.TestIamPermissionsRequest TestIamPermissions(string bucket, Repeatable<string> permissions)
+    content: public virtual BucketsResource.TestIamPermissionsRequest TestIamPermissions(string bucket, Util.Repeatable<string> permissions)
     parameters:
     - id: bucket
       type: System.String
@@ -419,9 +419,9 @@ items:
       description: Permissions to test.
     return:
       type: Google.Apis.Storage.v1.BucketsResource.TestIamPermissionsRequest
-    content.vb: Public Overridable Function TestIamPermissions(bucket As String, permissions As Repeatable(Of String)) As BucketsResource.TestIamPermissionsRequest
+    content.vb: Public Overridable Function TestIamPermissions(bucket As String, permissions As Util.Repeatable(Of String)) As BucketsResource.TestIamPermissionsRequest
   overload: Google.Apis.Storage.v1.BucketsResource.TestIamPermissions*
-  nameWithType.vb: BucketsResource.TestIamPermissions(String, Repeatable(Of String))
+  nameWithType.vb: BucketsResource.TestIamPermissions(String, Util.Repeatable(Of String))
   modifiers.csharp:
   - public
   - virtual
@@ -429,7 +429,7 @@ items:
   - Public
   - Overridable
   fullName.vb: Google.Apis.Storage.v1.BucketsResource.TestIamPermissions(System.String, Google.Apis.Util.Repeatable(Of System.String))
-  name.vb: TestIamPermissions(String, Repeatable(Of String))
+  name.vb: TestIamPermissions(String, Util.Repeatable(Of String))
 - uid: Google.Apis.Storage.v1.BucketsResource.Update(Google.Apis.Storage.v1.Data.Bucket,System.String)
   commentId: M:Google.Apis.Storage.v1.BucketsResource.Update(Google.Apis.Storage.v1.Data.Bucket,System.String)
   id: Update(Google.Apis.Storage.v1.Data.Bucket,System.String)
@@ -448,7 +448,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Update
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 1859
+    startLine: 1885
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1
@@ -782,18 +782,10 @@ references:
   nameWithType: BucketsResource.BucketsResource
   fullName: Google.Apis.Storage.v1.BucketsResource.BucketsResource
 - uid: Google.Apis.Services.IClientService
-  commentId: T:Google.Apis.Services.IClientService
-  parent: Google.Apis.Services
   isExternal: true
-  name: IClientService
-  nameWithType: IClientService
+  name: Services.IClientService
+  nameWithType: Services.IClientService
   fullName: Google.Apis.Services.IClientService
-- uid: Google.Apis.Services
-  commentId: N:Google.Apis.Services
-  isExternal: false
-  name: Google.Apis.Services
-  nameWithType: Google.Apis.Services
-  fullName: Google.Apis.Services
 - uid: Google.Apis.Storage.v1.BucketsResource.Delete*
   commentId: Overload:Google.Apis.Storage.v1.BucketsResource.Delete
   isExternal: false
@@ -919,19 +911,18 @@ references:
   nameWithType: BucketsResource.TestIamPermissions
   fullName: Google.Apis.Storage.v1.BucketsResource.TestIamPermissions
 - uid: Google.Apis.Util.Repeatable{System.String}
-  commentId: T:Google.Apis.Util.Repeatable{System.String}
-  parent: Google.Apis.Util
+  commentId: '!:Google.Apis.Util.Repeatable{System.String}'
   definition: Google.Apis.Util.Repeatable`1
-  name: Repeatable<String>
-  nameWithType: Repeatable<String>
+  name: Util.Repeatable<String>
+  nameWithType: Util.Repeatable<String>
   fullName: Google.Apis.Util.Repeatable<System.String>
-  nameWithType.vb: Repeatable(Of String)
+  nameWithType.vb: Util.Repeatable(Of String)
   fullName.vb: Google.Apis.Util.Repeatable(Of System.String)
-  name.vb: Repeatable(Of String)
+  name.vb: Util.Repeatable(Of String)
   spec.csharp:
   - uid: Google.Apis.Util.Repeatable`1
-    name: Repeatable
-    nameWithType: Repeatable
+    name: Util.Repeatable
+    nameWithType: Util.Repeatable
     fullName: Google.Apis.Util.Repeatable
     isExternal: true
   - name: <
@@ -947,8 +938,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Apis.Util.Repeatable`1
-    name: Repeatable
-    nameWithType: Repeatable
+    name: Util.Repeatable
+    nameWithType: Util.Repeatable
     fullName: Google.Apis.Util.Repeatable
     isExternal: true
   - name: '(Of '
@@ -970,50 +961,43 @@ references:
   nameWithType: BucketsResource.TestIamPermissionsRequest
   fullName: Google.Apis.Storage.v1.BucketsResource.TestIamPermissionsRequest
 - uid: Google.Apis.Util.Repeatable`1
-  commentId: T:Google.Apis.Util.Repeatable`1
   isExternal: true
-  name: Repeatable<T>
-  nameWithType: Repeatable<T>
-  fullName: Google.Apis.Util.Repeatable<T>
-  nameWithType.vb: Repeatable(Of T)
-  fullName.vb: Google.Apis.Util.Repeatable(Of T)
-  name.vb: Repeatable(Of T)
+  name: Util.Repeatable<>
+  nameWithType: Util.Repeatable<>
+  fullName: Google.Apis.Util.Repeatable<>
+  nameWithType.vb: Util.Repeatable(Of )
+  fullName.vb: Google.Apis.Util.Repeatable(Of )
+  name.vb: Util.Repeatable(Of )
   spec.csharp:
   - uid: Google.Apis.Util.Repeatable`1
-    name: Repeatable
-    nameWithType: Repeatable
+    name: Util.Repeatable
+    nameWithType: Util.Repeatable
     fullName: Google.Apis.Util.Repeatable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: Google.Apis.Util.Repeatable`1
-    name: Repeatable
-    nameWithType: Repeatable
+    name: Util.Repeatable
+    nameWithType: Util.Repeatable
     fullName: Google.Apis.Util.Repeatable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Apis.Util
-  commentId: N:Google.Apis.Util
-  isExternal: false
-  name: Google.Apis.Util
-  nameWithType: Google.Apis.Util
-  fullName: Google.Apis.Util
 - uid: Google.Apis.Storage.v1.BucketsResource.Update*
   commentId: Overload:Google.Apis.Storage.v1.BucketsResource.Update
   isExternal: false

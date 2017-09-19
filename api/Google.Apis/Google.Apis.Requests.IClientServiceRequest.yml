@@ -243,13 +243,13 @@ items:
   summary: Creates a HTTP request message with all path and query parameters, ETag, etc.
   example: []
   syntax:
-    content: HttpRequestMessage CreateRequest(bool ? overrideGZipEnabled = null)
+    content: HttpRequestMessage CreateRequest(bool ? overrideGZipEnabled = default (bool ? ))
     parameters:
     - id: overrideGZipEnabled
       type: System.Nullable{System.Boolean}
       description: "\nIf <code>null</code> use the service default GZip behavior. Otherwise indicates if GZip is enabled or disabled.\n"
     return:
-      type: System.Net.Http.HttpRequestMessage
+      type: HttpRequestMessage
     content.vb: Function CreateRequest(overrideGZipEnabled As Boolean? = Nothing) As HttpRequestMessage
   overload: Google.Apis.Requests.IClientServiceRequest.CreateRequest*
   nameWithType.vb: IClientServiceRequest.CreateRequest(Nullable(Of Boolean))
@@ -577,13 +577,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Net.Http.HttpRequestMessage
-  commentId: T:System.Net.Http.HttpRequestMessage
-  parent: System.Net.Http
+- uid: HttpRequestMessage
   isExternal: true
   name: HttpRequestMessage
   nameWithType: HttpRequestMessage
-  fullName: System.Net.Http.HttpRequestMessage
+  fullName: HttpRequestMessage
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true
@@ -623,12 +621,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Net.Http
-  commentId: N:System.Net.Http
-  isExternal: false
-  name: System.Net.Http
-  nameWithType: System.Net.Http
-  fullName: System.Net.Http
 - uid: Google.Apis.Requests.IClientServiceRequest.ExecuteAsStreamAsync*
   commentId: Overload:Google.Apis.Requests.IClientServiceRequest.ExecuteAsStreamAsync
   isExternal: false

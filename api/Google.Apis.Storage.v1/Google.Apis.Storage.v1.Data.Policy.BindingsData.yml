@@ -5,6 +5,7 @@ items:
   id: Policy.BindingsData
   parent: Google.Apis.Storage.v1.Data
   children:
+  - Google.Apis.Storage.v1.Data.Policy.BindingsData.Condition
   - Google.Apis.Storage.v1.Data.Policy.BindingsData.Members
   - Google.Apis.Storage.v1.Data.Policy.BindingsData.Role
   langs:
@@ -21,7 +22,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BindingsData
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7886
+    startLine: 7943
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -44,6 +45,43 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: Google.Apis.Storage.v1.Data.Policy.BindingsData.Condition
+  commentId: P:Google.Apis.Storage.v1.Data.Policy.BindingsData.Condition
+  id: Condition
+  parent: Google.Apis.Storage.v1.Data.Policy.BindingsData
+  langs:
+  - csharp
+  - vb
+  name: Condition
+  nameWithType: Policy.BindingsData.Condition
+  fullName: Google.Apis.Storage.v1.Data.Policy.BindingsData.Condition
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: Condition
+    path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
+    startLine: 7945
+  assemblies:
+  - Google.Apis.Storage.v1
+  namespace: Google.Apis.Storage.v1.Data
+  syntax:
+    content: public virtual object Condition { get; set; }
+    parameters: []
+    return:
+      type: System.Object
+    content.vb: Public Overridable Property Condition As Object
+  overload: Google.Apis.Storage.v1.Data.Policy.BindingsData.Condition*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
 - uid: Google.Apis.Storage.v1.Data.Policy.BindingsData.Members
   commentId: P:Google.Apis.Storage.v1.Data.Policy.BindingsData.Members
   id: Members
@@ -62,7 +100,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Members
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7901
+    startLine: 7961
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -94,24 +132,12 @@ items:
     project
   example: []
   syntax:
-    content: >-
-      [JsonProperty("members")]
-
-      public virtual IList<string> Members { get; set; }
+    content: public virtual IList<string> Members { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{System.String}
-    content.vb: >-
-      <JsonProperty("members")>
-
-      Public Overridable Property Members As IList(Of String)
+    content.vb: Public Overridable Property Members As IList(Of String)
   overload: Google.Apis.Storage.v1.Data.Policy.BindingsData.Members*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: members
   modifiers.csharp:
   - public
   - virtual
@@ -138,7 +164,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Role
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7919
+    startLine: 7979
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -174,24 +200,12 @@ items:
     listing/creation/deletion. Equivalent to an ACL entry on a bucket with the OWNER role.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("role")]
-
-      public virtual string Role { get; set; }
+    content: public virtual string Role { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("role")>
-
-      Public Overridable Property Role As String
+    content.vb: Public Overridable Property Role As String
   overload: Google.Apis.Storage.v1.Data.Policy.BindingsData.Role*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: role
   modifiers.csharp:
   - public
   - virtual
@@ -499,6 +513,12 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: Google.Apis.Storage.v1.Data.Policy.BindingsData.Condition*
+  commentId: Overload:Google.Apis.Storage.v1.Data.Policy.BindingsData.Condition
+  isExternal: false
+  name: Condition
+  nameWithType: Policy.BindingsData.Condition
+  fullName: Google.Apis.Storage.v1.Data.Policy.BindingsData.Condition
 - uid: Google.Apis.Storage.v1.Data.Policy.BindingsData.Members*
   commentId: Overload:Google.Apis.Storage.v1.Data.Policy.BindingsData.Members
   isExternal: false

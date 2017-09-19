@@ -9,6 +9,7 @@ items:
   - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowQuotedNewlines
   - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Autodetect
   - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.CreateDisposition
+  - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationEncryptionConfiguration
   - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationTable
   - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Encoding
   - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.ETag
@@ -25,6 +26,7 @@ items:
   - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SkipLeadingRows
   - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SourceFormat
   - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SourceUris
+  - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.TimePartitioning
   - Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.WriteDisposition
   langs:
   - csharp
@@ -40,27 +42,17 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: JobConfigurationLoad
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3174
+    startLine: 3302
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   syntax:
-    content: 'public class JobConfigurationLoad : IDirectResponseSchema'
+    content: 'public class JobConfigurationLoad : Requests.IDirectResponseSchema'
     content.vb: >-
       Public Class JobConfigurationLoad
-          Implements IDirectResponseSchema
+          Inherits Requests.IDirectResponseSchema
   inheritance:
   - System.Object
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema
-  inheritedMembers:
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -85,7 +77,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: AllowJaggedRows
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3180
+    startLine: 3308
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -99,24 +91,12 @@ items:
     applicable to CSV, ignored for other formats.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("allowJaggedRows")]
-
-      public virtual bool ? AllowJaggedRows { get; set; }
+    content: public virtual bool ? AllowJaggedRows { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: >-
-      <JsonProperty("allowJaggedRows")>
-
-      Public Overridable Property AllowJaggedRows As Boolean?
+    content.vb: Public Overridable Property AllowJaggedRows As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowJaggedRows*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: allowJaggedRows
   modifiers.csharp:
   - public
   - virtual
@@ -143,7 +123,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: AllowQuotedNewlines
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3185
+    startLine: 3313
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -153,24 +133,12 @@ items:
     file. The default value is false.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("allowQuotedNewlines")]
-
-      public virtual bool ? AllowQuotedNewlines { get; set; }
+    content: public virtual bool ? AllowQuotedNewlines { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: >-
-      <JsonProperty("allowQuotedNewlines")>
-
-      Public Overridable Property AllowQuotedNewlines As Boolean?
+    content.vb: Public Overridable Property AllowQuotedNewlines As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowQuotedNewlines*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: allowQuotedNewlines
   modifiers.csharp:
   - public
   - virtual
@@ -197,7 +165,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Autodetect
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3190
+    startLine: 3318
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -207,24 +175,12 @@ items:
     sources.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("autodetect")]
-
-      public virtual bool ? Autodetect { get; set; }
+    content: public virtual bool ? Autodetect { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: >-
-      <JsonProperty("autodetect")>
-
-      Public Overridable Property Autodetect As Boolean?
+    content.vb: Public Overridable Property Autodetect As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Autodetect*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: autodetect
   modifiers.csharp:
   - public
   - virtual
@@ -251,7 +207,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: CreateDisposition
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3198
+    startLine: 3326
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -267,24 +223,51 @@ items:
     completion.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("createDisposition")]
-
-      public virtual string CreateDisposition { get; set; }
+    content: public virtual string CreateDisposition { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("createDisposition")>
-
-      Public Overridable Property CreateDisposition As String
+    content.vb: Public Overridable Property CreateDisposition As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.CreateDisposition*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: createDisposition
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationEncryptionConfiguration
+  commentId: P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationEncryptionConfiguration
+  id: DestinationEncryptionConfiguration
+  parent: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad
+  langs:
+  - csharp
+  - vb
+  name: DestinationEncryptionConfiguration
+  nameWithType: JobConfigurationLoad.DestinationEncryptionConfiguration
+  fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationEncryptionConfiguration
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: DestinationEncryptionConfiguration
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 3330
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: '[Experimental] Custom encryption configuration (e.g., Cloud KMS keys).'
+  example: []
+  syntax:
+    content: public virtual EncryptionConfiguration DestinationEncryptionConfiguration { get; set; }
+    parameters: []
+    return:
+      type: Google.Apis.Bigquery.v2.Data.EncryptionConfiguration
+    content.vb: Public Overridable Property DestinationEncryptionConfiguration As EncryptionConfiguration
+  overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationEncryptionConfiguration*
   modifiers.csharp:
   - public
   - virtual
@@ -311,31 +294,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DestinationTable
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3202
+    startLine: 3334
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: '[Required] The destination table to load the data into.'
   example: []
   syntax:
-    content: >-
-      [JsonProperty("destinationTable")]
-
-      public virtual TableReference DestinationTable { get; set; }
+    content: public virtual TableReference DestinationTable { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableReference
-    content.vb: >-
-      <JsonProperty("destinationTable")>
-
-      Public Overridable Property DestinationTable As TableReference
+    content.vb: Public Overridable Property DestinationTable As TableReference
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationTable*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: destinationTable
   modifiers.csharp:
   - public
   - virtual
@@ -362,7 +333,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Encoding
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3208
+    startLine: 3340
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -374,24 +345,12 @@ items:
     of the quote and fieldDelimiter properties.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("encoding")]
-
-      public virtual string Encoding { get; set; }
+    content: public virtual string Encoding { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("encoding")>
-
-      Public Overridable Property Encoding As String
+    content.vb: Public Overridable Property Encoding As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Encoding*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: encoding
   modifiers.csharp:
   - public
   - virtual
@@ -418,7 +377,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: FieldDelimiter
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3216
+    startLine: 3348
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -434,24 +393,12 @@ items:
     default value is a comma (&apos;,&apos;).
   example: []
   syntax:
-    content: >-
-      [JsonProperty("fieldDelimiter")]
-
-      public virtual string FieldDelimiter { get; set; }
+    content: public virtual string FieldDelimiter { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("fieldDelimiter")>
-
-      Public Overridable Property FieldDelimiter As String
+    content.vb: Public Overridable Property FieldDelimiter As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.FieldDelimiter*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: fieldDelimiter
   modifiers.csharp:
   - public
   - virtual
@@ -478,7 +425,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: IgnoreUnknownValues
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3224
+    startLine: 3356
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -494,24 +441,12 @@ items:
     columns JSON: Named values that don&apos;t match any column names
   example: []
   syntax:
-    content: >-
-      [JsonProperty("ignoreUnknownValues")]
-
-      public virtual bool ? IgnoreUnknownValues { get; set; }
+    content: public virtual bool ? IgnoreUnknownValues { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: >-
-      <JsonProperty("ignoreUnknownValues")>
-
-      Public Overridable Property IgnoreUnknownValues As Boolean?
+    content.vb: Public Overridable Property IgnoreUnknownValues As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.IgnoreUnknownValues*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: ignoreUnknownValues
   modifiers.csharp:
   - public
   - virtual
@@ -538,7 +473,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: MaxBadRecords
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3230
+    startLine: 3362
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -550,24 +485,12 @@ items:
     is 0, which requires that all records are valid.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("maxBadRecords")]
-
-      public virtual int ? MaxBadRecords { get; set; }
+    content: public virtual int ? MaxBadRecords { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int32}
-    content.vb: >-
-      <JsonProperty("maxBadRecords")>
-
-      Public Overridable Property MaxBadRecords As Integer?
+    content.vb: Public Overridable Property MaxBadRecords As Integer?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.MaxBadRecords*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: maxBadRecords
   modifiers.csharp:
   - public
   - virtual
@@ -594,7 +517,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: NullMarker
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3238
+    startLine: 3370
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -610,24 +533,12 @@ items:
     empty string as an empty value.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("nullMarker")]
-
-      public virtual string NullMarker { get; set; }
+    content: public virtual string NullMarker { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("nullMarker")>
-
-      Public Overridable Property NullMarker As String
+    content.vb: Public Overridable Property NullMarker As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.NullMarker*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: nullMarker
   modifiers.csharp:
   - public
   - virtual
@@ -654,7 +565,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ProjectionFields
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3245
+    startLine: 3377
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -668,24 +579,12 @@ items:
     Cloud Datastore backup, an invalid error is returned in the job result.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("projectionFields")]
-
-      public virtual IList<string> ProjectionFields { get; set; }
+    content: public virtual IList<string> ProjectionFields { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{System.String}
-    content.vb: >-
-      <JsonProperty("projectionFields")>
-
-      Public Overridable Property ProjectionFields As IList(Of String)
+    content.vb: Public Overridable Property ProjectionFields As IList(Of String)
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.ProjectionFields*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: projectionFields
   modifiers.csharp:
   - public
   - virtual
@@ -712,7 +611,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Quote
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3253
+    startLine: 3385
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -728,24 +627,12 @@ items:
     set the allowQuotedNewlines property to true.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("quote")]
-
-      public virtual string Quote { get; set; }
+    content: public virtual string Quote { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("quote")>
-
-      Public Overridable Property Quote As String
+    content.vb: Public Overridable Property Quote As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Quote*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: quote
   modifiers.csharp:
   - public
   - virtual
@@ -772,7 +659,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Schema
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3258
+    startLine: 3390
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -782,24 +669,12 @@ items:
     already exists, or if you&apos;re loading data from Google Cloud Datastore.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("schema")]
-
-      public virtual TableSchema Schema { get; set; }
+    content: public virtual TableSchema Schema { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableSchema
-    content.vb: >-
-      <JsonProperty("schema")>
-
-      Public Overridable Property Schema As TableSchema
+    content.vb: Public Overridable Property Schema As TableSchema
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.Schema*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: schema
   modifiers.csharp:
   - public
   - virtual
@@ -826,7 +701,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SchemaInline
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3263
+    startLine: 3395
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -836,24 +711,12 @@ items:
     example, &quot;foo:STRING, bar:INTEGER, baz:FLOAT&quot;.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("schemaInline")]
-
-      public virtual string SchemaInline { get; set; }
+    content: public virtual string SchemaInline { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("schemaInline")>
-
-      Public Overridable Property SchemaInline As String
+    content.vb: Public Overridable Property SchemaInline As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SchemaInline*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: schemaInline
   modifiers.csharp:
   - public
   - virtual
@@ -880,31 +743,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SchemaInlineFormat
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3267
+    startLine: 3399
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: '[Deprecated] The format of the schemaInline property.'
   example: []
   syntax:
-    content: >-
-      [JsonProperty("schemaInlineFormat")]
-
-      public virtual string SchemaInlineFormat { get; set; }
+    content: public virtual string SchemaInlineFormat { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("schemaInlineFormat")>
-
-      Public Overridable Property SchemaInlineFormat As String
+    content.vb: Public Overridable Property SchemaInlineFormat As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SchemaInlineFormat*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: schemaInlineFormat
   modifiers.csharp:
   - public
   - virtual
@@ -931,42 +782,32 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SchemaUpdateOptions
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3276
+    startLine: 3409
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: >-
     [Experimental] Allows the schema of the desitination table to be updated as a side effect of the
 
-    load job. Schema update options are supported in two cases: when writeDisposition is WRITE_APPEND; when
+    load job if a schema is autodetected or supplied in the job configuration. Schema update options are
 
-    writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by
+    supported in two cases: when writeDisposition is WRITE_APPEND; when writeDisposition is WRITE_TRUNCATE and
 
-    partition decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema. One or more of the
+    the destination table is a partition of a table, specified by partition decorators. For normal tables,
 
-    following values are specified: ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema.
+    WRITE_TRUNCATE will always overwrite the schema. One or more of the following values are specified:
 
-    ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original schema to nullable.
+    ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema. ALLOW_FIELD_RELAXATION: allow relaxing a
+
+    required field in the original schema to nullable.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("schemaUpdateOptions")]
-
-      public virtual IList<string> SchemaUpdateOptions { get; set; }
+    content: public virtual IList<string> SchemaUpdateOptions { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{System.String}
-    content.vb: >-
-      <JsonProperty("schemaUpdateOptions")>
-
-      Public Overridable Property SchemaUpdateOptions As IList(Of String)
+    content.vb: Public Overridable Property SchemaUpdateOptions As IList(Of String)
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SchemaUpdateOptions*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: schemaUpdateOptions
   modifiers.csharp:
   - public
   - virtual
@@ -993,7 +834,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SkipLeadingRows
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3282
+    startLine: 3415
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -1005,24 +846,12 @@ items:
     skipped.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("skipLeadingRows")]
-
-      public virtual int ? SkipLeadingRows { get; set; }
+    content: public virtual int ? SkipLeadingRows { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int32}
-    content.vb: >-
-      <JsonProperty("skipLeadingRows")>
-
-      Public Overridable Property SkipLeadingRows As Integer?
+    content.vb: Public Overridable Property SkipLeadingRows As Integer?
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SkipLeadingRows*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: skipLeadingRows
   modifiers.csharp:
   - public
   - virtual
@@ -1049,7 +878,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SourceFormat
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3288
+    startLine: 3421
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -1061,24 +890,12 @@ items:
     &quot;AVRO&quot;. The default value is CSV.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("sourceFormat")]
-
-      public virtual string SourceFormat { get; set; }
+    content: public virtual string SourceFormat { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("sourceFormat")>
-
-      Public Overridable Property SourceFormat As String
+    content.vb: Public Overridable Property SourceFormat As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SourceFormat*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: sourceFormat
   modifiers.csharp:
   - public
   - virtual
@@ -1105,34 +922,72 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SourceUris
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3293
+    startLine: 3430
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   summary: >-
-    [Required] The fully-qualified URIs that point to your data in Google Cloud Storage. Each URI can
+    [Required] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud
 
-    contain one &apos;*&apos; wildcard character and it must come after the &apos;bucket&apos; name.
+    Storage URIs: Each URI can contain one &apos;*&apos; wildcard character and it must come after the &apos;bucket&apos; name. Size
+
+    limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI
+
+    can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For
+
+    Google Cloud Datastore backups: Exactly one URI can be specified. Also, the &apos;*&apos; wildcard character is not
+
+    allowed.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("sourceUris")]
-
-      public virtual IList<string> SourceUris { get; set; }
+    content: public virtual IList<string> SourceUris { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{System.String}
-    content.vb: >-
-      <JsonProperty("sourceUris")>
-
-      Public Overridable Property SourceUris As IList(Of String)
+    content.vb: Public Overridable Property SourceUris As IList(Of String)
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SourceUris*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: sourceUris
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.TimePartitioning
+  commentId: P:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.TimePartitioning
+  id: TimePartitioning
+  parent: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad
+  langs:
+  - csharp
+  - vb
+  name: TimePartitioning
+  nameWithType: JobConfigurationLoad.TimePartitioning
+  fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.TimePartitioning
+  type: Property
+  source:
+    remote:
+      path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: TimePartitioning
+    path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
+    startLine: 3435
+  assemblies:
+  - Google.Apis.Bigquery.v2
+  namespace: Google.Apis.Bigquery.v2.Data
+  summary: >-
+    [Experimental] If specified, configures time-based partitioning for the destination
+
+    table.
+  example: []
+  syntax:
+    content: public virtual TimePartitioning TimePartitioning { get; set; }
+    parameters: []
+    return:
+      type: Google.Apis.Bigquery.v2.Data.TimePartitioning
+    content.vb: Public Overridable Property TimePartitioning As TimePartitioning
+  overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.TimePartitioning*
   modifiers.csharp:
   - public
   - virtual
@@ -1159,7 +1014,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: WriteDisposition
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3302
+    startLine: 3444
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -1177,24 +1032,12 @@ items:
     Creation, truncation and append actions occur as one atomic update upon job completion.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("writeDisposition")]
-
-      public virtual string WriteDisposition { get; set; }
+    content: public virtual string WriteDisposition { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("writeDisposition")>
-
-      Public Overridable Property WriteDisposition As String
+    content.vb: Public Overridable Property WriteDisposition As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.WriteDisposition*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: writeDisposition
   modifiers.csharp:
   - public
   - virtual
@@ -1221,7 +1064,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ETag
     path: Src/Generated/Google.Apis.Bigquery.v2/Google.Apis.Bigquery.v2.cs
-    startLine: 3306
+    startLine: 3448
   assemblies:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
@@ -1234,8 +1077,6 @@ items:
       type: System.String
     content.vb: Public Overridable Property ETag As String
   overload: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.ETag*
-  implements:
-  - Google.Apis.Requests.IDirectResponseSchema.ETag
   modifiers.csharp:
   - public
   - virtual
@@ -1258,304 +1099,12 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: Google.Apis.Requests.IDirectResponseSchema
-  commentId: T:Google.Apis.Requests.IDirectResponseSchema
-  parent: Google.Apis.Requests
-  isExternal: true
-  name: IDirectResponseSchema
-  nameWithType: IDirectResponseSchema
-  fullName: Google.Apis.Requests.IDirectResponseSchema
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
-- uid: Google.Apis.Requests
-  commentId: N:Google.Apis.Requests
-  isExternal: false
-  name: Google.Apis.Requests
-  nameWithType: Google.Apis.Requests
-  fullName: Google.Apis.Requests
 - uid: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowJaggedRows*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.AllowJaggedRows
   isExternal: false
@@ -1670,6 +1219,19 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationEncryptionConfiguration*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationEncryptionConfiguration
+  isExternal: false
+  name: DestinationEncryptionConfiguration
+  nameWithType: JobConfigurationLoad.DestinationEncryptionConfiguration
+  fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationEncryptionConfiguration
+- uid: Google.Apis.Bigquery.v2.Data.EncryptionConfiguration
+  commentId: T:Google.Apis.Bigquery.v2.Data.EncryptionConfiguration
+  parent: Google.Apis.Bigquery.v2.Data
+  isExternal: false
+  name: EncryptionConfiguration
+  nameWithType: EncryptionConfiguration
+  fullName: Google.Apis.Bigquery.v2.Data.EncryptionConfiguration
 - uid: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationTable*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.DestinationTable
   isExternal: false
@@ -1907,6 +1469,19 @@ references:
   name: SourceUris
   nameWithType: JobConfigurationLoad.SourceUris
   fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.SourceUris
+- uid: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.TimePartitioning*
+  commentId: Overload:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.TimePartitioning
+  isExternal: false
+  name: TimePartitioning
+  nameWithType: JobConfigurationLoad.TimePartitioning
+  fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.TimePartitioning
+- uid: Google.Apis.Bigquery.v2.Data.TimePartitioning
+  commentId: T:Google.Apis.Bigquery.v2.Data.TimePartitioning
+  parent: Google.Apis.Bigquery.v2.Data
+  isExternal: false
+  name: TimePartitioning
+  nameWithType: TimePartitioning
+  fullName: Google.Apis.Bigquery.v2.Data.TimePartitioning
 - uid: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.WriteDisposition*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.WriteDisposition
   isExternal: false
@@ -1919,10 +1494,3 @@ references:
   name: ETag
   nameWithType: JobConfigurationLoad.ETag
   fullName: Google.Apis.Bigquery.v2.Data.JobConfigurationLoad.ETag
-- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
-  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
-  parent: Google.Apis.Requests.IDirectResponseSchema
-  isExternal: true
-  name: ETag
-  nameWithType: IDirectResponseSchema.ETag
-  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag

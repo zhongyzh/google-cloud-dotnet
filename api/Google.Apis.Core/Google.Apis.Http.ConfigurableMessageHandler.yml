@@ -5,7 +5,7 @@ items:
   id: ConfigurableMessageHandler
   parent: Google.Apis.Http
   children:
-  - Google.Apis.Http.ConfigurableMessageHandler.#ctor(System.Net.Http.HttpMessageHandler)
+  - Google.Apis.Http.ConfigurableMessageHandler.#ctor(HttpMessageHandler)
   - Google.Apis.Http.ConfigurableMessageHandler.AddExceptionHandler(Google.Apis.Http.IHttpExceptionHandler)
   - Google.Apis.Http.ConfigurableMessageHandler.AddExecuteInterceptor(Google.Apis.Http.IHttpExecuteInterceptor)
   - Google.Apis.Http.ConfigurableMessageHandler.AddUnsuccessfulResponseHandler(Google.Apis.Http.IHttpUnsuccessfulResponseHandler)
@@ -21,7 +21,7 @@ items:
   - Google.Apis.Http.ConfigurableMessageHandler.RemoveExceptionHandler(Google.Apis.Http.IHttpExceptionHandler)
   - Google.Apis.Http.ConfigurableMessageHandler.RemoveExecuteInterceptor(Google.Apis.Http.IHttpExecuteInterceptor)
   - Google.Apis.Http.ConfigurableMessageHandler.RemoveUnsuccessfulResponseHandler(Google.Apis.Http.IHttpUnsuccessfulResponseHandler)
-  - Google.Apis.Http.ConfigurableMessageHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  - Google.Apis.Http.ConfigurableMessageHandler.SendAsync(HttpRequestMessage,System.Threading.CancellationToken)
   - Google.Apis.Http.ConfigurableMessageHandler.UnsuccessfulResponseHandlers
   langs:
   - csharp
@@ -44,28 +44,12 @@ items:
   summary: "\nA message handler which contains the main logic of our HTTP requests. It contains a list of \n<xref href=\"Google.Apis.Http.IHttpUnsuccessfulResponseHandler\" data-throw-if-not-resolved=\"false\"></xref>s for handling abnormal responses, a list of \n<xref href=\"Google.Apis.Http.IHttpExceptionHandler\" data-throw-if-not-resolved=\"false\"></xref>s for handling exception in a request and a list of \n<xref href=\"Google.Apis.Http.IHttpExecuteInterceptor\" data-throw-if-not-resolved=\"false\"></xref>s for intercepting a request before it has been sent to the server.\nIt also contains important properties like number of tries, follow redirect, etc.\n"
   example: []
   syntax:
-    content: 'public class ConfigurableMessageHandler : DelegatingHandler, IDisposable'
+    content: 'public class ConfigurableMessageHandler : DelegatingHandler'
     content.vb: >-
       Public Class ConfigurableMessageHandler
           Inherits DelegatingHandler
-          Implements IDisposable
   inheritance:
   - System.Object
-  - System.Net.Http.HttpMessageHandler
-  - System.Net.Http.DelegatingHandler
-  implements:
-  - System.IDisposable
-  inheritedMembers:
-  - System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
-  - System.Net.Http.DelegatingHandler.InnerHandler
-  - System.Net.Http.HttpMessageHandler.Dispose
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
   extensionMethods:
   - Google.Apis.Http.ConfigurableMessageHandler.Google.Apis.Util.Utilities.ThrowIfNull``1(System.String)
   modifiers.csharp:
@@ -688,16 +672,16 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: Google.Apis.Http.ConfigurableMessageHandler.#ctor(System.Net.Http.HttpMessageHandler)
-  commentId: M:Google.Apis.Http.ConfigurableMessageHandler.#ctor(System.Net.Http.HttpMessageHandler)
-  id: '#ctor(System.Net.Http.HttpMessageHandler)'
+- uid: Google.Apis.Http.ConfigurableMessageHandler.#ctor(HttpMessageHandler)
+  commentId: M:Google.Apis.Http.ConfigurableMessageHandler.#ctor(HttpMessageHandler)
+  id: '#ctor(HttpMessageHandler)'
   parent: Google.Apis.Http.ConfigurableMessageHandler
   langs:
   - csharp
   - vb
   name: ConfigurableMessageHandler(HttpMessageHandler)
   nameWithType: ConfigurableMessageHandler.ConfigurableMessageHandler(HttpMessageHandler)
-  fullName: Google.Apis.Http.ConfigurableMessageHandler.ConfigurableMessageHandler(System.Net.Http.HttpMessageHandler)
+  fullName: Google.Apis.Http.ConfigurableMessageHandler.ConfigurableMessageHandler(HttpMessageHandler)
   type: Constructor
   source:
     remote:
@@ -716,23 +700,23 @@ items:
     content: public ConfigurableMessageHandler(HttpMessageHandler httpMessageHandler)
     parameters:
     - id: httpMessageHandler
-      type: System.Net.Http.HttpMessageHandler
+      type: HttpMessageHandler
     content.vb: Public Sub New(httpMessageHandler As HttpMessageHandler)
   overload: Google.Apis.Http.ConfigurableMessageHandler.#ctor*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-- uid: Google.Apis.Http.ConfigurableMessageHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  commentId: M:Google.Apis.Http.ConfigurableMessageHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  id: SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+- uid: Google.Apis.Http.ConfigurableMessageHandler.SendAsync(HttpRequestMessage,System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Http.ConfigurableMessageHandler.SendAsync(HttpRequestMessage,System.Threading.CancellationToken)
+  id: SendAsync(HttpRequestMessage,System.Threading.CancellationToken)
   parent: Google.Apis.Http.ConfigurableMessageHandler
   langs:
   - csharp
   - vb
   name: SendAsync(HttpRequestMessage, CancellationToken)
   nameWithType: ConfigurableMessageHandler.SendAsync(HttpRequestMessage, CancellationToken)
-  fullName: Google.Apis.Http.ConfigurableMessageHandler.SendAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
+  fullName: Google.Apis.Http.ConfigurableMessageHandler.SendAsync(HttpRequestMessage, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -751,13 +735,12 @@ items:
     content: protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     parameters:
     - id: request
-      type: System.Net.Http.HttpRequestMessage
+      type: HttpRequestMessage
     - id: cancellationToken
       type: System.Threading.CancellationToken
     return:
-      type: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+      type: System.Threading.Tasks.Task{HttpResponseMessage}
     content.vb: Protected Overrides Function SendAsync(request As HttpRequestMessage, cancellationToken As CancellationToken) As Task(Of HttpResponseMessage)
-  overridden: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   overload: Google.Apis.Http.ConfigurableMessageHandler.SendAsync*
   modifiers.csharp:
   - protected
@@ -800,385 +783,6 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: System.Net.Http.HttpMessageHandler
-  commentId: T:System.Net.Http.HttpMessageHandler
-  parent: System.Net.Http
-  isExternal: true
-  name: HttpMessageHandler
-  nameWithType: HttpMessageHandler
-  fullName: System.Net.Http.HttpMessageHandler
-- uid: System.Net.Http.DelegatingHandler
-  commentId: T:System.Net.Http.DelegatingHandler
-  parent: System.Net.Http
-  isExternal: true
-  name: DelegatingHandler
-  nameWithType: DelegatingHandler
-  fullName: System.Net.Http.DelegatingHandler
-- uid: System.IDisposable
-  commentId: T:System.IDisposable
-  parent: System
-  isExternal: true
-  name: IDisposable
-  nameWithType: IDisposable
-  fullName: System.IDisposable
-- uid: System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
-  commentId: M:System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
-  parent: System.Net.Http.DelegatingHandler
-  isExternal: true
-  name: Dispose(Boolean)
-  nameWithType: DelegatingHandler.Dispose(Boolean)
-  fullName: System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
-  spec.csharp:
-  - uid: System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
-    name: Dispose
-    nameWithType: DelegatingHandler.Dispose
-    fullName: System.Net.Http.DelegatingHandler.Dispose
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Net.Http.DelegatingHandler.Dispose(System.Boolean)
-    name: Dispose
-    nameWithType: DelegatingHandler.Dispose
-    fullName: System.Net.Http.DelegatingHandler.Dispose
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Net.Http.DelegatingHandler.InnerHandler
-  commentId: P:System.Net.Http.DelegatingHandler.InnerHandler
-  parent: System.Net.Http.DelegatingHandler
-  isExternal: true
-  name: InnerHandler
-  nameWithType: DelegatingHandler.InnerHandler
-  fullName: System.Net.Http.DelegatingHandler.InnerHandler
-- uid: System.Net.Http.HttpMessageHandler.Dispose
-  commentId: M:System.Net.Http.HttpMessageHandler.Dispose
-  parent: System.Net.Http.HttpMessageHandler
-  isExternal: true
-  name: Dispose()
-  nameWithType: HttpMessageHandler.Dispose()
-  fullName: System.Net.Http.HttpMessageHandler.Dispose()
-  spec.csharp:
-  - uid: System.Net.Http.HttpMessageHandler.Dispose
-    name: Dispose
-    nameWithType: HttpMessageHandler.Dispose
-    fullName: System.Net.Http.HttpMessageHandler.Dispose
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Net.Http.HttpMessageHandler.Dispose
-    name: Dispose
-    nameWithType: HttpMessageHandler.Dispose
-    fullName: System.Net.Http.HttpMessageHandler.Dispose
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Apis.Http.ConfigurableMessageHandler.Google.Apis.Util.Utilities.ThrowIfNull``1(System.String)
   commentId: M:Google.Apis.Util.Utilities.ThrowIfNull``1(``0,System.String)
   parent: Google.Apis.Util.Utilities
@@ -1227,12 +831,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Net.Http
-  commentId: N:System.Net.Http
-  isExternal: false
-  name: System.Net.Http
-  nameWithType: System.Net.Http
-  fullName: System.Net.Http
 - uid: Google.Apis.Util.Utilities.ThrowIfNull``1(``0,System.String)
   commentId: M:Google.Apis.Util.Utilities.ThrowIfNull``1(``0,System.String)
   isExternal: true
@@ -1610,78 +1208,24 @@ references:
   name: ConfigurableMessageHandler
   nameWithType: ConfigurableMessageHandler.ConfigurableMessageHandler
   fullName: Google.Apis.Http.ConfigurableMessageHandler.ConfigurableMessageHandler
+- uid: HttpMessageHandler
+  isExternal: true
+  name: HttpMessageHandler
+  nameWithType: HttpMessageHandler
+  fullName: HttpMessageHandler
 - uid: Google.Apis.Http.ConfigurableMessageHandler.ApplicationName
   commentId: P:Google.Apis.Http.ConfigurableMessageHandler.ApplicationName
-- uid: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  commentId: M:System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  parent: System.Net.Http.DelegatingHandler
-  isExternal: true
-  name: SendAsync(HttpRequestMessage, CancellationToken)
-  nameWithType: DelegatingHandler.SendAsync(HttpRequestMessage, CancellationToken)
-  fullName: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
-  spec.csharp:
-  - uid: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-    name: SendAsync
-    nameWithType: DelegatingHandler.SendAsync
-    fullName: System.Net.Http.DelegatingHandler.SendAsync
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Net.Http.HttpRequestMessage
-    name: HttpRequestMessage
-    nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Net.Http.DelegatingHandler.SendAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-    name: SendAsync
-    nameWithType: DelegatingHandler.SendAsync
-    fullName: System.Net.Http.DelegatingHandler.SendAsync
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Net.Http.HttpRequestMessage
-    name: HttpRequestMessage
-    nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Threading.CancellationToken
-    name: CancellationToken
-    nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: Google.Apis.Http.ConfigurableMessageHandler.SendAsync*
   commentId: Overload:Google.Apis.Http.ConfigurableMessageHandler.SendAsync
   isExternal: false
   name: SendAsync
   nameWithType: ConfigurableMessageHandler.SendAsync
   fullName: Google.Apis.Http.ConfigurableMessageHandler.SendAsync
-- uid: System.Net.Http.HttpRequestMessage
-  commentId: T:System.Net.Http.HttpRequestMessage
-  parent: System.Net.Http
+- uid: HttpRequestMessage
   isExternal: true
   name: HttpRequestMessage
   nameWithType: HttpRequestMessage
-  fullName: System.Net.Http.HttpRequestMessage
+  fullName: HttpRequestMessage
 - uid: System.Threading.CancellationToken
   commentId: T:System.Threading.CancellationToken
   parent: System.Threading
@@ -1689,15 +1233,15 @@ references:
   name: CancellationToken
   nameWithType: CancellationToken
   fullName: System.Threading.CancellationToken
-- uid: System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
-  commentId: T:System.Threading.Tasks.Task{System.Net.Http.HttpResponseMessage}
+- uid: System.Threading.Tasks.Task{HttpResponseMessage}
+  commentId: T:System.Threading.Tasks.Task{HttpResponseMessage}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   name: Task<HttpResponseMessage>
   nameWithType: Task<HttpResponseMessage>
-  fullName: System.Threading.Tasks.Task<System.Net.Http.HttpResponseMessage>
+  fullName: System.Threading.Tasks.Task<HttpResponseMessage>
   nameWithType.vb: Task(Of HttpResponseMessage)
-  fullName.vb: System.Threading.Tasks.Task(Of System.Net.Http.HttpResponseMessage)
+  fullName.vb: System.Threading.Tasks.Task(Of HttpResponseMessage)
   name.vb: Task(Of HttpResponseMessage)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
@@ -1708,10 +1252,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Net.Http.HttpResponseMessage
+  - uid: HttpResponseMessage
     name: HttpResponseMessage
     nameWithType: HttpResponseMessage
-    fullName: System.Net.Http.HttpResponseMessage
+    fullName: HttpResponseMessage
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1725,10 +1269,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Net.Http.HttpResponseMessage
+  - uid: HttpResponseMessage
     name: HttpResponseMessage
     nameWithType: HttpResponseMessage
-    fullName: System.Net.Http.HttpResponseMessage
+    fullName: HttpResponseMessage
     isExternal: true
   - name: )
     nameWithType: )

@@ -6,8 +6,10 @@ items:
   parent: Grpc.Core
   children:
   - Grpc.Core.RpcException.#ctor(Grpc.Core.Status)
+  - Grpc.Core.RpcException.#ctor(Grpc.Core.Status,Grpc.Core.Metadata)
   - Grpc.Core.RpcException.#ctor(Grpc.Core.Status,System.String)
   - Grpc.Core.RpcException.Status
+  - Grpc.Core.RpcException.Trailers
   langs:
   - csharp
   - vb
@@ -18,11 +20,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/RpcException.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: RpcException
     path: src/csharp/Grpc.Core/RpcException.cs
-    startLine: 40
+    startLine: 26
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -79,11 +81,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/RpcException.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: .ctor
     path: src/csharp/Grpc.Core/RpcException.cs
-    startLine: 48
+    startLine: 35
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -115,11 +117,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/RpcException.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: .ctor
     path: src/csharp/Grpc.Core/RpcException.cs
-    startLine: 58
+    startLine: 46
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -140,6 +142,45 @@ items:
   - public
   modifiers.vb:
   - Public
+- uid: Grpc.Core.RpcException.#ctor(Grpc.Core.Status,Grpc.Core.Metadata)
+  commentId: M:Grpc.Core.RpcException.#ctor(Grpc.Core.Status,Grpc.Core.Metadata)
+  id: '#ctor(Grpc.Core.Status,Grpc.Core.Metadata)'
+  parent: Grpc.Core.RpcException
+  langs:
+  - csharp
+  - vb
+  name: RpcException(Status, Metadata)
+  nameWithType: RpcException.RpcException(Status, Metadata)
+  fullName: Grpc.Core.RpcException.RpcException(Grpc.Core.Status, Grpc.Core.Metadata)
+  type: Constructor
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/RpcException.cs
+      branch: v1.6.x
+      repo: https://github.com/grpc/grpc
+    id: .ctor
+    path: src/csharp/Grpc.Core/RpcException.cs
+    startLine: 57
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nCreates a new <code>RpcException</code> associated with given status and trailing response metadata.\n"
+  example: []
+  syntax:
+    content: public RpcException(Status status, Metadata trailers)
+    parameters:
+    - id: status
+      type: Grpc.Core.Status
+      description: Resulting status of a call.
+    - id: trailers
+      type: Grpc.Core.Metadata
+      description: Response trailing metadata.
+    content.vb: Public Sub New(status As Status, trailers As Metadata)
+  overload: Grpc.Core.RpcException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: Grpc.Core.RpcException.Status
   commentId: P:Grpc.Core.RpcException.Status
   id: Status
@@ -154,7 +195,7 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/RpcException.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: Status
     path: src/csharp/Grpc.Core/RpcException.cs
@@ -171,6 +212,43 @@ items:
       type: Grpc.Core.Status
     content.vb: Public ReadOnly Property Status As Status
   overload: Grpc.Core.RpcException.Status*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: Grpc.Core.RpcException.Trailers
+  commentId: P:Grpc.Core.RpcException.Trailers
+  id: Trailers
+  parent: Grpc.Core.RpcException
+  langs:
+  - csharp
+  - vb
+  name: Trailers
+  nameWithType: RpcException.Trailers
+  fullName: Grpc.Core.RpcException.Trailers
+  type: Property
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/RpcException.cs
+      branch: v1.6.x
+      repo: https://github.com/grpc/grpc
+    id: Trailers
+    path: src/csharp/Grpc.Core/RpcException.cs
+    startLine: 79
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nGets the call trailing metadata.\nTrailers only have meaningful content for client-side calls (in which case they represent the trailing metadata sent by the server when closing the call).\nInstances of <code>RpcException</code> thrown by the server-side part of the stack will have trailers always set to empty.\n"
+  example: []
+  syntax:
+    content: public Metadata Trailers { get; }
+    parameters: []
+    return:
+      type: Grpc.Core.Metadata
+    content.vb: Public ReadOnly Property Trailers As Metadata
+  overload: Grpc.Core.RpcException.Trailers*
   modifiers.csharp:
   - public
   - get
@@ -682,9 +760,22 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Grpc.Core.Metadata
+  commentId: T:Grpc.Core.Metadata
+  parent: Grpc.Core
+  isExternal: false
+  name: Metadata
+  nameWithType: Metadata
+  fullName: Grpc.Core.Metadata
 - uid: Grpc.Core.RpcException.Status*
   commentId: Overload:Grpc.Core.RpcException.Status
   isExternal: false
   name: Status
   nameWithType: RpcException.Status
   fullName: Grpc.Core.RpcException.Status
+- uid: Grpc.Core.RpcException.Trailers*
+  commentId: Overload:Grpc.Core.RpcException.Trailers
+  isExternal: false
+  name: Trailers
+  nameWithType: RpcException.Trailers
+  fullName: Grpc.Core.RpcException.Trailers

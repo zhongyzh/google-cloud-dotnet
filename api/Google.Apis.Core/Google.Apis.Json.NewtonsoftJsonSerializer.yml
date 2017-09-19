@@ -6,7 +6,7 @@ items:
   parent: Google.Apis.Json
   children:
   - Google.Apis.Json.NewtonsoftJsonSerializer.#ctor
-  - Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)
+  - Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(JsonSerializerSettings)
   - Google.Apis.Json.NewtonsoftJsonSerializer.CreateDefaultSettings
   - Google.Apis.Json.NewtonsoftJsonSerializer.Deserialize(System.String,System.Type)
   - Google.Apis.Json.NewtonsoftJsonSerializer.Deserialize``1(System.IO.Stream)
@@ -29,7 +29,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: NewtonsoftJsonSerializer
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 78
+    startLine: 108
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
@@ -79,7 +79,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Instance
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 84
+    startLine: 114
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
@@ -118,7 +118,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: .ctor
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 89
+    startLine: 119
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
@@ -132,16 +132,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)
-  commentId: M:Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)
-  id: '#ctor(Newtonsoft.Json.JsonSerializerSettings)'
+- uid: Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(JsonSerializerSettings)
+  commentId: M:Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(JsonSerializerSettings)
+  id: '#ctor(JsonSerializerSettings)'
   parent: Google.Apis.Json.NewtonsoftJsonSerializer
   langs:
   - csharp
   - vb
   name: NewtonsoftJsonSerializer(JsonSerializerSettings)
   nameWithType: NewtonsoftJsonSerializer.NewtonsoftJsonSerializer(JsonSerializerSettings)
-  fullName: Google.Apis.Json.NewtonsoftJsonSerializer.NewtonsoftJsonSerializer(Newtonsoft.Json.JsonSerializerSettings)
+  fullName: Google.Apis.Json.NewtonsoftJsonSerializer.NewtonsoftJsonSerializer(JsonSerializerSettings)
   type: Constructor
   source:
     remote:
@@ -150,7 +150,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: .ctor
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 97
+    startLine: 127
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
@@ -160,7 +160,7 @@ items:
     content: public NewtonsoftJsonSerializer(JsonSerializerSettings settings)
     parameters:
     - id: settings
-      type: Newtonsoft.Json.JsonSerializerSettings
+      type: JsonSerializerSettings
       description: The settings to apply when serializing and deserializing. Must not be null.
     content.vb: Public Sub New(settings As JsonSerializerSettings)
   overload: Google.Apis.Json.NewtonsoftJsonSerializer.#ctor*
@@ -186,16 +186,16 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: CreateDefaultSettings
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 110
+    startLine: 140
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
-  summary: "\nCreates a new instance of <xref href=\"Newtonsoft.Json.JsonSerializerSettings\" data-throw-if-not-resolved=\"false\"></xref> with the same behavior\nas the ones used in <xref href=\"Google.Apis.Json.NewtonsoftJsonSerializer.Instance\" data-throw-if-not-resolved=\"false\"></xref>. This method is expected to be used to construct\nsettings which are then passed to <xref href=\"Google.Apis.Json.NewtonsoftJsonSerializer.%23ctor(Newtonsoft.Json.JsonSerializerSettings)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  summary: "\nCreates a new instance of <see cref=\"!:JsonSerializerSettings\"></see> with the same behavior\nas the ones used in <xref href=\"Google.Apis.Json.NewtonsoftJsonSerializer.Instance\" data-throw-if-not-resolved=\"false\"></xref>. This method is expected to be used to construct\nsettings which are then passed to <xref href=\"Google.Apis.Json.NewtonsoftJsonSerializer.%23ctor(JsonSerializerSettings)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: public static JsonSerializerSettings CreateDefaultSettings()
     return:
-      type: Newtonsoft.Json.JsonSerializerSettings
+      type: JsonSerializerSettings
       description: A new set of default settings.
     content.vb: Public Shared Function CreateDefaultSettings As JsonSerializerSettings
   overload: Google.Apis.Json.NewtonsoftJsonSerializer.CreateDefaultSettings*
@@ -223,7 +223,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Format
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 119
+    startLine: 149
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
@@ -262,7 +262,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Serialize
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 122
+    startLine: 152
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
@@ -301,7 +301,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Serialize
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 135
+    startLine: 165
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
@@ -340,7 +340,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Deserialize
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 149
+    startLine: 179
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
@@ -384,7 +384,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Deserialize
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 159
+    startLine: 189
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
@@ -425,7 +425,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Deserialize
     path: Src/Support/Google.Apis.Core/Json/NewtonsoftJsonSerializer.cs
-    startLine: 169
+    startLine: 199
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
@@ -899,21 +899,13 @@ references:
   name: NewtonsoftJsonSerializer
   nameWithType: NewtonsoftJsonSerializer.NewtonsoftJsonSerializer
   fullName: Google.Apis.Json.NewtonsoftJsonSerializer.NewtonsoftJsonSerializer
-- uid: Newtonsoft.Json.JsonSerializerSettings
-  commentId: T:Newtonsoft.Json.JsonSerializerSettings
-  parent: Newtonsoft.Json
+- uid: JsonSerializerSettings
   isExternal: true
   name: JsonSerializerSettings
   nameWithType: JsonSerializerSettings
-  fullName: Newtonsoft.Json.JsonSerializerSettings
-- uid: Newtonsoft.Json
-  commentId: N:Newtonsoft.Json
-  isExternal: false
-  name: Newtonsoft.Json
-  nameWithType: Newtonsoft.Json
-  fullName: Newtonsoft.Json
-- uid: Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)
-  commentId: M:Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)
+  fullName: JsonSerializerSettings
+- uid: Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(JsonSerializerSettings)
+  commentId: M:Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(JsonSerializerSettings)
 - uid: Google.Apis.Json.NewtonsoftJsonSerializer.CreateDefaultSettings*
   commentId: Overload:Google.Apis.Json.NewtonsoftJsonSerializer.CreateDefaultSettings
   isExternal: false

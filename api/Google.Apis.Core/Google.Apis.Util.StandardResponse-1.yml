@@ -80,24 +80,12 @@ items:
   summary: May be null if call failed.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("data")]
-
-      public InnerType Data { get; set; }
+    content: public InnerType Data { get; set; }
     parameters: []
     return:
       type: '{InnerType}'
-    content.vb: >-
-      <JsonProperty("data")>
-
-      Public Property Data As InnerType
+    content.vb: Public Property Data As InnerType
   overload: Google.Apis.Util.StandardResponse`1.Data*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: data
   nameWithType.vb: StandardResponse(Of InnerType).Data
   modifiers.csharp:
   - public
@@ -131,24 +119,12 @@ items:
   summary: May be null if call succedded.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("error")]
-
-      public RequestError Error { get; set; }
+    content: public RequestError Error { get; set; }
     parameters: []
     return:
       type: Google.Apis.Requests.RequestError
-    content.vb: >-
-      <JsonProperty("error")>
-
-      Public Property Error As RequestError
+    content.vb: Public Property Error As RequestError
   overload: Google.Apis.Util.StandardResponse`1.Error*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: error
   nameWithType.vb: StandardResponse(Of InnerType).Error
   modifiers.csharp:
   - public

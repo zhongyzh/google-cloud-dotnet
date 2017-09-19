@@ -37,19 +37,9 @@ items:
       description: The resource type contained within the response.
     content.vb: >-
       Public MustInherit Class PagedAsyncEnumerable(Of TResponse, TResource)
-          Implements IAsyncEnumerable(Of TResource)
+          Inherits IAsyncEnumerable(Of TResource)
   inheritance:
   - System.Object
-  implements:
-  - System.Collections.Generic.IAsyncEnumerable{{TResource}}
-  inheritedMembers:
-  - System.Object.ToString
-  - System.Object.Equals(System.Object)
-  - System.Object.Equals(System.Object,System.Object)
-  - System.Object.ReferenceEquals(System.Object,System.Object)
-  - System.Object.GetHashCode
-  - System.Object.GetType
-  - System.Object.MemberwiseClone
   nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource)
   modifiers.csharp:
   - public
@@ -88,7 +78,7 @@ items:
   syntax:
     content: public virtual IAsyncEnumerable<TResponse> AsRawResponses()
     return:
-      type: System.Collections.Generic.IAsyncEnumerable{{TResponse}}
+      type: IAsyncEnumerable{{TResponse}}
       description: An asynchronous sequence of raw API responses, each containing a page of resources.
     content.vb: Public Overridable Function AsRawResponses As IAsyncEnumerable(Of TResponse)
   overload: Google.Api.Gax.PagedAsyncEnumerable`2.AsRawResponses*
@@ -126,7 +116,7 @@ items:
   remarks: "\n&quot;Natural&quot; pages returned by the API may contain a smaller number of resources than requested.\nFor example, a request for a page with 100 resources may return a page with 80 resources but\na next page token for more to be retrieved. This is suitable for batch-processing, but not\nfor user-visible paging such as in a web application, where fixed-size pages are expected.\nThis method may make more than one API call in order to fill the page, but after the page has been\nreturned, all the data will have been loaded. (In particular, iterating over the items in the page\nmultiple times will not make any further requests.)\n"
   example: []
   syntax:
-    content: public virtual Task<Page<TResource>> ReadPageAsync(int pageSize, CancellationToken cancellationToken = null)
+    content: public virtual Task<Page<TResource>> ReadPageAsync(int pageSize, CancellationToken cancellationToken = default (CancellationToken))
     parameters:
     - id: pageSize
       type: System.Int32
@@ -173,11 +163,9 @@ items:
   syntax:
     content: public virtual IAsyncEnumerator<TResource> GetEnumerator()
     return:
-      type: System.Collections.Generic.IAsyncEnumerator{{TResource}}
+      type: IAsyncEnumerator{{TResource}}
     content.vb: Public Overridable Function GetEnumerator As IAsyncEnumerator(Of TResource)
   overload: Google.Api.Gax.PagedAsyncEnumerable`2.GetEnumerator*
-  implements:
-  - System.Collections.Generic.IAsyncEnumerable{{TResource}}.GetEnumerator
   nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator()
   modifiers.csharp:
   - public
@@ -202,376 +190,12 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
-- uid: System.Collections.Generic.IAsyncEnumerable{{TResource}}
-  commentId: T:System.Collections.Generic.IAsyncEnumerable{`1}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IAsyncEnumerable`1
-  name: IAsyncEnumerable<TResource>
-  nameWithType: IAsyncEnumerable<TResource>
-  fullName: System.Collections.Generic.IAsyncEnumerable<TResource>
-  nameWithType.vb: IAsyncEnumerable(Of TResource)
-  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of TResource)
-  name.vb: IAsyncEnumerable(Of TResource)
-  spec.csharp:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1
-    name: IAsyncEnumerable
-    nameWithType: IAsyncEnumerable
-    fullName: System.Collections.Generic.IAsyncEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: TResource
-    nameWithType: TResource
-    fullName: TResource
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1
-    name: IAsyncEnumerable
-    nameWithType: IAsyncEnumerable
-    fullName: System.Collections.Generic.IAsyncEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: TResource
-    nameWithType: TResource
-    fullName: TResource
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ToString
-  commentId: M:System.Object.ToString
-  parent: System.Object
-  isExternal: true
-  name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
-  spec.csharp:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ToString
-    name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object)
-  commentId: M:System.Object.Equals(System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.Equals(System.Object,System.Object)
-  commentId: M:System.Object.Equals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.Equals(System.Object,System.Object)
-    name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.ReferenceEquals(System.Object,System.Object)
-  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
-  parent: System.Object
-  isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
-  spec.csharp:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
-    name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetHashCode
-  commentId: M:System.Object.GetHashCode
-  parent: System.Object
-  isExternal: true
-  name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
-  spec.csharp:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetHashCode
-    name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.GetType
-  commentId: M:System.Object.GetType
-  parent: System.Object
-  isExternal: true
-  name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
-  spec.csharp:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.GetType
-    name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Object.MemberwiseClone
-  commentId: M:System.Object.MemberwiseClone
-  parent: System.Object
-  isExternal: true
-  name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
-  spec.csharp:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Object.MemberwiseClone
-    name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
-- uid: System.Collections.Generic.IAsyncEnumerable`1
-  commentId: T:System.Collections.Generic.IAsyncEnumerable`1
-  isExternal: true
-  name: IAsyncEnumerable<T>
-  nameWithType: IAsyncEnumerable<T>
-  fullName: System.Collections.Generic.IAsyncEnumerable<T>
-  nameWithType.vb: IAsyncEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of T)
-  name.vb: IAsyncEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1
-    name: IAsyncEnumerable
-    nameWithType: IAsyncEnumerable
-    fullName: System.Collections.Generic.IAsyncEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1
-    name: IAsyncEnumerable
-    nameWithType: IAsyncEnumerable
-    fullName: System.Collections.Generic.IAsyncEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: false
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
 - uid: Google.Api.Gax.PagedAsyncEnumerable`2.AsRawResponses*
   commentId: Overload:Google.Api.Gax.PagedAsyncEnumerable`2.AsRawResponses
   isExternal: false
@@ -580,21 +204,20 @@ references:
   fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.AsRawResponses
   nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource).AsRawResponses
   fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).AsRawResponses
-- uid: System.Collections.Generic.IAsyncEnumerable{{TResponse}}
-  commentId: T:System.Collections.Generic.IAsyncEnumerable{`0}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IAsyncEnumerable`1
+- uid: IAsyncEnumerable{{TResponse}}
+  commentId: '!:IAsyncEnumerable{`0}'
+  definition: IAsyncEnumerable`1
   name: IAsyncEnumerable<TResponse>
   nameWithType: IAsyncEnumerable<TResponse>
-  fullName: System.Collections.Generic.IAsyncEnumerable<TResponse>
+  fullName: IAsyncEnumerable<TResponse>
   nameWithType.vb: IAsyncEnumerable(Of TResponse)
-  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of TResponse)
+  fullName.vb: IAsyncEnumerable(Of TResponse)
   name.vb: IAsyncEnumerable(Of TResponse)
   spec.csharp:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1
+  - uid: IAsyncEnumerable`1
     name: IAsyncEnumerable
     nameWithType: IAsyncEnumerable
-    fullName: System.Collections.Generic.IAsyncEnumerable
+    fullName: IAsyncEnumerable
     isExternal: true
   - name: <
     nameWithType: <
@@ -606,10 +229,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1
+  - uid: IAsyncEnumerable`1
     name: IAsyncEnumerable
     nameWithType: IAsyncEnumerable
-    fullName: System.Collections.Generic.IAsyncEnumerable
+    fullName: IAsyncEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -617,6 +240,45 @@ references:
   - name: TResponse
     nameWithType: TResponse
     fullName: TResponse
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IAsyncEnumerable`1
+  commentId: '!:IAsyncEnumerable`1'
+  isExternal: true
+  name: IAsyncEnumerable<>
+  nameWithType: IAsyncEnumerable<>
+  fullName: IAsyncEnumerable<>
+  nameWithType.vb: IAsyncEnumerable(Of )
+  fullName.vb: IAsyncEnumerable(Of )
+  name.vb: IAsyncEnumerable(Of )
+  spec.csharp:
+  - uid: IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: IAsyncEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IAsyncEnumerable`1
+    name: IAsyncEnumerable
+    nameWithType: IAsyncEnumerable
+    fullName: IAsyncEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: )
     nameWithType: )
     fullName: )
@@ -761,54 +423,20 @@ references:
   fullName: Google.Api.Gax.PagedAsyncEnumerable<TResponse, TResource>.GetEnumerator
   nameWithType.vb: PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator
   fullName.vb: Google.Api.Gax.PagedAsyncEnumerable(Of TResponse, TResource).GetEnumerator
-- uid: System.Collections.Generic.IAsyncEnumerable{{TResource}}.GetEnumerator
-  commentId: M:System.Collections.Generic.IAsyncEnumerable{`1}.GetEnumerator
-  parent: System.Collections.Generic.IAsyncEnumerable{{TResource}}
-  definition: System.Collections.Generic.IAsyncEnumerable`1.GetEnumerator
-  name: GetEnumerator()
-  nameWithType: IAsyncEnumerable<TResource>.GetEnumerator()
-  fullName: System.Collections.Generic.IAsyncEnumerable<TResource>.GetEnumerator()
-  nameWithType.vb: IAsyncEnumerable(Of TResource).GetEnumerator()
-  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of TResource).GetEnumerator()
-  spec.csharp:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1.GetEnumerator
-    name: GetEnumerator
-    nameWithType: IAsyncEnumerable<TResource>.GetEnumerator
-    fullName: System.Collections.Generic.IAsyncEnumerable<TResource>.GetEnumerator
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1.GetEnumerator
-    name: GetEnumerator
-    nameWithType: IAsyncEnumerable(Of TResource).GetEnumerator
-    fullName: System.Collections.Generic.IAsyncEnumerable(Of TResource).GetEnumerator
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.IAsyncEnumerator{{TResource}}
-  commentId: T:System.Collections.Generic.IAsyncEnumerator{`1}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IAsyncEnumerator`1
+- uid: IAsyncEnumerator{{TResource}}
+  commentId: '!:IAsyncEnumerator{`1}'
+  definition: IAsyncEnumerator`1
   name: IAsyncEnumerator<TResource>
   nameWithType: IAsyncEnumerator<TResource>
-  fullName: System.Collections.Generic.IAsyncEnumerator<TResource>
+  fullName: IAsyncEnumerator<TResource>
   nameWithType.vb: IAsyncEnumerator(Of TResource)
-  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of TResource)
+  fullName.vb: IAsyncEnumerator(Of TResource)
   name.vb: IAsyncEnumerator(Of TResource)
   spec.csharp:
-  - uid: System.Collections.Generic.IAsyncEnumerator`1
+  - uid: IAsyncEnumerator`1
     name: IAsyncEnumerator
     nameWithType: IAsyncEnumerator
-    fullName: System.Collections.Generic.IAsyncEnumerator
+    fullName: IAsyncEnumerator
     isExternal: true
   - name: <
     nameWithType: <
@@ -820,10 +448,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IAsyncEnumerator`1
+  - uid: IAsyncEnumerator`1
     name: IAsyncEnumerator
     nameWithType: IAsyncEnumerator
-    fullName: System.Collections.Generic.IAsyncEnumerator
+    fullName: IAsyncEnumerator
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -834,74 +462,42 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic.IAsyncEnumerable`1.GetEnumerator
-  commentId: M:System.Collections.Generic.IAsyncEnumerable`1.GetEnumerator
+- uid: IAsyncEnumerator`1
+  commentId: '!:IAsyncEnumerator`1'
   isExternal: true
-  name: GetEnumerator()
-  nameWithType: IAsyncEnumerable<T>.GetEnumerator()
-  fullName: System.Collections.Generic.IAsyncEnumerable<T>.GetEnumerator()
-  nameWithType.vb: IAsyncEnumerable(Of T).GetEnumerator()
-  fullName.vb: System.Collections.Generic.IAsyncEnumerable(Of T).GetEnumerator()
+  name: IAsyncEnumerator<>
+  nameWithType: IAsyncEnumerator<>
+  fullName: IAsyncEnumerator<>
+  nameWithType.vb: IAsyncEnumerator(Of )
+  fullName.vb: IAsyncEnumerator(Of )
+  name.vb: IAsyncEnumerator(Of )
   spec.csharp:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1.GetEnumerator
-    name: GetEnumerator
-    nameWithType: IAsyncEnumerable<T>.GetEnumerator
-    fullName: System.Collections.Generic.IAsyncEnumerable<T>.GetEnumerator
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Collections.Generic.IAsyncEnumerable`1.GetEnumerator
-    name: GetEnumerator
-    nameWithType: IAsyncEnumerable(Of T).GetEnumerator
-    fullName: System.Collections.Generic.IAsyncEnumerable(Of T).GetEnumerator
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.IAsyncEnumerator`1
-  commentId: T:System.Collections.Generic.IAsyncEnumerator`1
-  isExternal: true
-  name: IAsyncEnumerator<T>
-  nameWithType: IAsyncEnumerator<T>
-  fullName: System.Collections.Generic.IAsyncEnumerator<T>
-  nameWithType.vb: IAsyncEnumerator(Of T)
-  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of T)
-  name.vb: IAsyncEnumerator(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IAsyncEnumerator`1
+  - uid: IAsyncEnumerator`1
     name: IAsyncEnumerator
     nameWithType: IAsyncEnumerator
-    fullName: System.Collections.Generic.IAsyncEnumerator
+    fullName: IAsyncEnumerator
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Collections.Generic.IAsyncEnumerator`1
+  - uid: IAsyncEnumerator`1
     name: IAsyncEnumerator
     nameWithType: IAsyncEnumerator
-    fullName: System.Collections.Generic.IAsyncEnumerator
+    fullName: IAsyncEnumerator
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
+  - name: ''
+    nameWithType: ''
+    fullName: ''
   - name: )
     nameWithType: )
     fullName: )

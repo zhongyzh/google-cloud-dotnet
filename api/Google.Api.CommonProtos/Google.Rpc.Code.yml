@@ -76,22 +76,9 @@ items:
   summary: "\nNot an error; returned on success\n\nHTTP Mapping: 200 OK\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("OK")]
-
-      Ok = 0
+    content: Ok = 0
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("OK")>
-
-      Ok = 0
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: OK
   modifiers.csharp:
   - public
   - const
@@ -123,22 +110,9 @@ items:
   summary: "\nThe operation was cancelled, typically by the caller.\n\nHTTP Mapping: 499 Client Closed Request\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("CANCELLED")]
-
-      Cancelled = 1
+    content: Cancelled = 1
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("CANCELLED")>
-
-      Cancelled = 1
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: CANCELLED
   modifiers.csharp:
   - public
   - const
@@ -170,22 +144,9 @@ items:
   summary: "\nUnknown error.  For example, this error may be returned when\na `Status` value received from another address space belongs to\nan error space that is not known in this address space.  Also\nerrors raised by APIs that do not return enough error information\nmay be converted to this error.\n\nHTTP Mapping: 500 Internal Server Error\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("UNKNOWN")]
-
-      Unknown = 2
+    content: Unknown = 2
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("UNKNOWN")>
-
-      Unknown = 2
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: UNKNOWN
   modifiers.csharp:
   - public
   - const
@@ -217,22 +178,9 @@ items:
   summary: "\nThe client specified an invalid argument.  Note that this differs\nfrom `FAILED_PRECONDITION`.  `INVALID_ARGUMENT` indicates arguments\nthat are problematic regardless of the state of the system\n(e.g., a malformed file name).\n\nHTTP Mapping: 400 Bad Request\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("INVALID_ARGUMENT")]
-
-      InvalidArgument = 3
+    content: InvalidArgument = 3
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("INVALID_ARGUMENT")>
-
-      InvalidArgument = 3
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: INVALID_ARGUMENT
   modifiers.csharp:
   - public
   - const
@@ -264,22 +212,9 @@ items:
   summary: "\nThe deadline expired before the operation could complete. For operations\nthat change the state of the system, this error may be returned\neven if the operation has completed successfully.  For example, a\nsuccessful response from a server could have been delayed long\nenough for the deadline to expire.\n\nHTTP Mapping: 504 Gateway Timeout\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("DEADLINE_EXCEEDED")]
-
-      DeadlineExceeded = 4
+    content: DeadlineExceeded = 4
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("DEADLINE_EXCEEDED")>
-
-      DeadlineExceeded = 4
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: DEADLINE_EXCEEDED
   modifiers.csharp:
   - public
   - const
@@ -311,22 +246,9 @@ items:
   summary: "\nSome requested entity (e.g., file or directory) was not found.\nFor privacy reasons, this code *may* be returned when the client\ndoes not have the access rights to the entity, though such usage is\ndiscouraged.\n\nHTTP Mapping: 404 Not Found\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("NOT_FOUND")]
-
-      NotFound = 5
+    content: NotFound = 5
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("NOT_FOUND")>
-
-      NotFound = 5
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: NOT_FOUND
   modifiers.csharp:
   - public
   - const
@@ -358,22 +280,9 @@ items:
   summary: "\nThe entity that a client attempted to create (e.g., file or directory)\nalready exists.\n\nHTTP Mapping: 409 Conflict\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("ALREADY_EXISTS")]
-
-      AlreadyExists = 6
+    content: AlreadyExists = 6
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("ALREADY_EXISTS")>
-
-      AlreadyExists = 6
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: ALREADY_EXISTS
   modifiers.csharp:
   - public
   - const
@@ -405,22 +314,9 @@ items:
   summary: "\nThe caller does not have permission to execute the specified\noperation. `PERMISSION_DENIED` must not be used for rejections\ncaused by exhausting some resource (use `RESOURCE_EXHAUSTED`\ninstead for those errors). `PERMISSION_DENIED` must not be\nused if the caller can not be identified (use `UNAUTHENTICATED`\ninstead for those errors).\n\nHTTP Mapping: 403 Forbidden\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("PERMISSION_DENIED")]
-
-      PermissionDenied = 7
+    content: PermissionDenied = 7
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("PERMISSION_DENIED")>
-
-      PermissionDenied = 7
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: PERMISSION_DENIED
   modifiers.csharp:
   - public
   - const
@@ -452,22 +348,9 @@ items:
   summary: "\nThe request does not have valid authentication credentials for the\noperation.\n\nHTTP Mapping: 401 Unauthorized\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("UNAUTHENTICATED")]
-
-      Unauthenticated = 16
+    content: Unauthenticated = 16
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("UNAUTHENTICATED")>
-
-      Unauthenticated = 16
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: UNAUTHENTICATED
   modifiers.csharp:
   - public
   - const
@@ -499,22 +382,9 @@ items:
   summary: "\nSome resource has been exhausted, perhaps a per-user quota, or\nperhaps the entire file system is out of space.\n\nHTTP Mapping: 429 Too Many Requests\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("RESOURCE_EXHAUSTED")]
-
-      ResourceExhausted = 8
+    content: ResourceExhausted = 8
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("RESOURCE_EXHAUSTED")>
-
-      ResourceExhausted = 8
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: RESOURCE_EXHAUSTED
   modifiers.csharp:
   - public
   - const
@@ -546,22 +416,9 @@ items:
   summary: "\nThe operation was rejected because the system is not in a state\nrequired for the operation&apos;s execution.  For example, the directory\nto be deleted is non-empty, an rmdir operation is applied to\na non-directory, etc.\n\nService implementors can use the following guidelines to decide\nbetween `FAILED_PRECONDITION`, `ABORTED`, and `UNAVAILABLE`:\n(a) Use `UNAVAILABLE` if the client can retry just the failing call.\n(b) Use `ABORTED` if the client should retry at a higher level\n(e.g., restarting a read-modify-write sequence).\n(c) Use `FAILED_PRECONDITION` if the client should not retry until\nthe system state has been explicitly fixed.  E.g., if an &quot;rmdir&quot;\nfails because the directory is non-empty, `FAILED_PRECONDITION`\nshould be returned since the client should not retry unless\nthe files are deleted from the directory.\n\nHTTP Mapping: 400 Bad Request\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("FAILED_PRECONDITION")]
-
-      FailedPrecondition = 9
+    content: FailedPrecondition = 9
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("FAILED_PRECONDITION")>
-
-      FailedPrecondition = 9
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: FAILED_PRECONDITION
   modifiers.csharp:
   - public
   - const
@@ -593,22 +450,9 @@ items:
   summary: "\nThe operation was aborted, typically due to a concurrency issue such as\na sequencer check failure or transaction abort.\n\nSee the guidelines above for deciding between `FAILED_PRECONDITION`,\n`ABORTED`, and `UNAVAILABLE`.\n\nHTTP Mapping: 409 Conflict\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("ABORTED")]
-
-      Aborted = 10
+    content: Aborted = 10
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("ABORTED")>
-
-      Aborted = 10
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: ABORTED
   modifiers.csharp:
   - public
   - const
@@ -640,22 +484,9 @@ items:
   summary: "\nThe operation was attempted past the valid range.  E.g., seeking or\nreading past end-of-file.\n\nUnlike `INVALID_ARGUMENT`, this error indicates a problem that may\nbe fixed if the system state changes. For example, a 32-bit file\nsystem will generate `INVALID_ARGUMENT` if asked to read at an\noffset that is not in the range [0,2^32-1], but it will generate\n`OUT_OF_RANGE` if asked to read from an offset past the current\nfile size.\n\nThere is a fair bit of overlap between `FAILED_PRECONDITION` and\n`OUT_OF_RANGE`.  We recommend using `OUT_OF_RANGE` (the more specific\nerror) when it applies so that callers who are iterating through\na space can easily look for an `OUT_OF_RANGE` error to detect when\nthey are done.\n\nHTTP Mapping: 400 Bad Request\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("OUT_OF_RANGE")]
-
-      OutOfRange = 11
+    content: OutOfRange = 11
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("OUT_OF_RANGE")>
-
-      OutOfRange = 11
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: OUT_OF_RANGE
   modifiers.csharp:
   - public
   - const
@@ -687,22 +518,9 @@ items:
   summary: "\nThe operation is not implemented or is not supported/enabled in this\nservice.\n\nHTTP Mapping: 501 Not Implemented\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("UNIMPLEMENTED")]
-
-      Unimplemented = 12
+    content: Unimplemented = 12
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("UNIMPLEMENTED")>
-
-      Unimplemented = 12
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: UNIMPLEMENTED
   modifiers.csharp:
   - public
   - const
@@ -734,22 +552,9 @@ items:
   summary: "\nInternal errors.  This means that some invariants expected by the\nunderlying system have been broken.  This error code is reserved\nfor serious errors.\n\nHTTP Mapping: 500 Internal Server Error\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("INTERNAL")]
-
-      Internal = 13
+    content: Internal = 13
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("INTERNAL")>
-
-      Internal = 13
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: INTERNAL
   modifiers.csharp:
   - public
   - const
@@ -781,22 +586,9 @@ items:
   summary: "\nThe service is currently unavailable.  This is most likely a\ntransient condition, which can be corrected by retrying with\na backoff.\n\nSee the guidelines above for deciding between `FAILED_PRECONDITION`,\n`ABORTED`, and `UNAVAILABLE`.\n\nHTTP Mapping: 503 Service Unavailable\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("UNAVAILABLE")]
-
-      Unavailable = 14
+    content: Unavailable = 14
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("UNAVAILABLE")>
-
-      Unavailable = 14
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: UNAVAILABLE
   modifiers.csharp:
   - public
   - const
@@ -828,22 +620,9 @@ items:
   summary: "\nUnrecoverable data loss or corruption.\n\nHTTP Mapping: 500 Internal Server Error\n"
   example: []
   syntax:
-    content: >-
-      [OriginalName("DATA_LOSS")]
-
-      DataLoss = 15
+    content: DataLoss = 15
     return:
       type: Google.Rpc.Code
-    content.vb: >-
-      <OriginalName("DATA_LOSS")>
-
-      DataLoss = 15
-  attributes:
-  - type: Google.Protobuf.Reflection.OriginalNameAttribute
-    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: DATA_LOSS
   modifiers.csharp:
   - public
   - const

@@ -20,7 +20,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: LifecycleData
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7145
+    startLine: 7201
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -63,7 +63,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Rule
     path: Src/Generated/Google.Apis.Storage.v1/Google.Apis.Storage.v1.cs
-    startLine: 7149
+    startLine: 7205
   assemblies:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
@@ -73,24 +73,12 @@ items:
     which the action will be taken.
   example: []
   syntax:
-    content: >-
-      [JsonProperty("rule")]
-
-      public virtual IList<Bucket.LifecycleData.RuleData> Rule { get; set; }
+    content: public virtual IList<Bucket.LifecycleData.RuleData> Rule { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData}
-    content.vb: >-
-      <JsonProperty("rule")>
-
-      Public Overridable Property Rule As IList(Of Bucket.LifecycleData.RuleData)
+    content.vb: Public Overridable Property Rule As IList(Of Bucket.LifecycleData.RuleData)
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.Rule*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: rule
   modifiers.csharp:
   - public
   - virtual

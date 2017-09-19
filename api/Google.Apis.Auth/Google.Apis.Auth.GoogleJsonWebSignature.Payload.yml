@@ -5,6 +5,14 @@ items:
   id: GoogleJsonWebSignature.Payload
   parent: Google.Apis.Auth
   children:
+  - Google.Apis.Auth.GoogleJsonWebSignature.Payload.Email
+  - Google.Apis.Auth.GoogleJsonWebSignature.Payload.EmailVerified
+  - Google.Apis.Auth.GoogleJsonWebSignature.Payload.FamilyName
+  - Google.Apis.Auth.GoogleJsonWebSignature.Payload.GivenName
+  - Google.Apis.Auth.GoogleJsonWebSignature.Payload.HostedDomain
+  - Google.Apis.Auth.GoogleJsonWebSignature.Payload.Locale
+  - Google.Apis.Auth.GoogleJsonWebSignature.Payload.Name
+  - Google.Apis.Auth.GoogleJsonWebSignature.Payload.Picture
   - Google.Apis.Auth.GoogleJsonWebSignature.Payload.Prn
   - Google.Apis.Auth.GoogleJsonWebSignature.Payload.Scope
   langs:
@@ -21,11 +29,11 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Payload
     path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
-    startLine: 218
+    startLine: 306
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth
-  summary: "\nThe payload as specified in \nhttps://developers.google.com/accounts/docs/OAuth2ServiceAccount#formingclaimset.\n"
+  summary: "\nThe payload as specified in \nhttps://developers.google.com/accounts/docs/OAuth2ServiceAccount#formingclaimset,\nhttps://developers.google.com/identity/protocols/OpenIDConnect, and\nhttps://openid.net/specs/openid-connect-core-1_0.html#StandardClaims\n"
   example: []
   syntax:
     content: 'public class Payload : JsonWebSignature.Payload'
@@ -77,31 +85,19 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Scope
     path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
-    startLine: 223
+    startLine: 311
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth
-  summary: "\na space-delimited list of the permissions the application requests or <code>null</code>.\n"
+  summary: "\nA space-delimited list of the permissions the application requests or <code>null</code>.\n"
   example: []
   syntax:
-    content: >-
-      [JsonProperty("scope")]
-
-      public string Scope { get; set; }
+    content: public string Scope { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("scope")>
-
-      Public Property Scope As String
+    content.vb: Public Property Scope As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Scope*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: scope
   modifiers.csharp:
   - public
   - get
@@ -126,31 +122,315 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Prn
     path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
-    startLine: 229
+    startLine: 317
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth
   summary: "\nThe email address of the user for which the application is requesting delegated access.\n"
   example: []
   syntax:
-    content: >-
-      [JsonProperty("prn")]
-
-      public string Prn { get; set; }
+    content: public string Prn { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: >-
-      <JsonProperty("prn")>
-
-      Public Property Prn As String
+    content.vb: Public Property Prn As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Prn*
-  attributes:
-  - type: Newtonsoft.Json.JsonPropertyAttribute
-    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
-    arguments:
-    - type: System.String
-      value: prn
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.HostedDomain
+  commentId: P:Google.Apis.Auth.GoogleJsonWebSignature.Payload.HostedDomain
+  id: HostedDomain
+  parent: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+  langs:
+  - csharp
+  - vb
+  name: HostedDomain
+  nameWithType: GoogleJsonWebSignature.Payload.HostedDomain
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.HostedDomain
+  type: Property
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: HostedDomain
+    path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+    startLine: 323
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth
+  summary: "\nThe hosted GSuite domain of the user. Provided only if the user belongs to a hosted domain.\n"
+  example: []
+  syntax:
+    content: public string HostedDomain { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property HostedDomain As String
+  overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.HostedDomain*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Email
+  commentId: P:Google.Apis.Auth.GoogleJsonWebSignature.Payload.Email
+  id: Email
+  parent: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+  langs:
+  - csharp
+  - vb
+  name: Email
+  nameWithType: GoogleJsonWebSignature.Payload.Email
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Email
+  type: Property
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: Email
+    path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+    startLine: 330
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth
+  summary: "\nThe user&apos;s email address. This may not be unique and is not suitable for use as a primary key.\nProvided only if your scope included the string &quot;email&quot;.\n"
+  example: []
+  syntax:
+    content: public string Email { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Email As String
+  overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Email*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.EmailVerified
+  commentId: P:Google.Apis.Auth.GoogleJsonWebSignature.Payload.EmailVerified
+  id: EmailVerified
+  parent: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+  langs:
+  - csharp
+  - vb
+  name: EmailVerified
+  nameWithType: GoogleJsonWebSignature.Payload.EmailVerified
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.EmailVerified
+  type: Property
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: EmailVerified
+    path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+    startLine: 336
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth
+  summary: "\nTrue if the user&apos;s e-mail address has been verified; otherwise false.\n"
+  example: []
+  syntax:
+    content: public bool EmailVerified { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property EmailVerified As Boolean
+  overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.EmailVerified*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Name
+  commentId: P:Google.Apis.Auth.GoogleJsonWebSignature.Payload.Name
+  id: Name
+  parent: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: GoogleJsonWebSignature.Payload.Name
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Name
+  type: Property
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: Name
+    path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+    startLine: 346
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth
+  summary: "\nThe user&apos;s full name, in a displayable form. Might be provided when:\n(1) The request scope included the string &quot;profile&quot;; or\n(2) The ID token is returned from a token refresh.\nWhen name claims are present, you can use them to update your app&apos;s user records.\nNote that this claim is never guaranteed to be present.\n"
+  example: []
+  syntax:
+    content: public string Name { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Name As String
+  overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Name*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.GivenName
+  commentId: P:Google.Apis.Auth.GoogleJsonWebSignature.Payload.GivenName
+  id: GivenName
+  parent: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+  langs:
+  - csharp
+  - vb
+  name: GivenName
+  nameWithType: GoogleJsonWebSignature.Payload.GivenName
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.GivenName
+  type: Property
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: GivenName
+    path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+    startLine: 353
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth
+  summary: "\nGiven name(s) or first name(s) of the End-User. Note that in some cultures, people can have multiple given names;\nall can be present, with the names being separated by space characters.\n"
+  example: []
+  syntax:
+    content: public string GivenName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property GivenName As String
+  overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.GivenName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.FamilyName
+  commentId: P:Google.Apis.Auth.GoogleJsonWebSignature.Payload.FamilyName
+  id: FamilyName
+  parent: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+  langs:
+  - csharp
+  - vb
+  name: FamilyName
+  nameWithType: GoogleJsonWebSignature.Payload.FamilyName
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.FamilyName
+  type: Property
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: FamilyName
+    path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+    startLine: 361
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth
+  summary: "\nSurname(s) or last name(s) of the End-User. Note that in some cultures,\npeople can have multiple family names or no family name;\nall can be present, with the names being separated by space characters.\n"
+  example: []
+  syntax:
+    content: public string FamilyName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property FamilyName As String
+  overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.FamilyName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Picture
+  commentId: P:Google.Apis.Auth.GoogleJsonWebSignature.Payload.Picture
+  id: Picture
+  parent: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+  langs:
+  - csharp
+  - vb
+  name: Picture
+  nameWithType: GoogleJsonWebSignature.Payload.Picture
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Picture
+  type: Property
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: Picture
+    path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+    startLine: 371
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth
+  summary: "\nThe URL of the user&apos;s profile picture. Might be provided when:\n(1) The request scope included the string &quot;profile&quot;; or\n(2) The ID token is returned from a token refresh.\nWhen picture claims are present, you can use them to update your app&apos;s user records.\nNote that this claim is never guaranteed to be present.\n"
+  example: []
+  syntax:
+    content: public string Picture { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Picture As String
+  overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Picture*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Locale
+  commentId: P:Google.Apis.Auth.GoogleJsonWebSignature.Payload.Locale
+  id: Locale
+  parent: Google.Apis.Auth.GoogleJsonWebSignature.Payload
+  langs:
+  - csharp
+  - vb
+  name: Locale
+  nameWithType: GoogleJsonWebSignature.Payload.Locale
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Locale
+  type: Property
+  source:
+    remote:
+      path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+      branch: master
+      repo: https://github.com/google/google-api-dotnet-client
+    id: Locale
+    path: Src/Support/Google.Apis.Auth/GoogleJsonWebSignature.cs
+    startLine: 380
+  assemblies:
+  - Google.Apis.Auth
+  namespace: Google.Apis.Auth
+  summary: "\nEnd-User&apos;s locale, represented as a BCP47 [RFC5646] language tag.\nThis is typically an ISO 639-1 Alpha-2 [ISO639‑1] language code in lowercase and an\nISO 3166-1 Alpha-2 [ISO3166‑1] country code in uppercase, separated by a dash.\nFor example, en-US or fr-CA.\n"
+  example: []
+  syntax:
+    content: public string Locale { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Locale As String
+  overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Locale*
   modifiers.csharp:
   - public
   - get
@@ -552,3 +832,58 @@ references:
   name: Prn
   nameWithType: GoogleJsonWebSignature.Payload.Prn
   fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Prn
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.HostedDomain*
+  commentId: Overload:Google.Apis.Auth.GoogleJsonWebSignature.Payload.HostedDomain
+  isExternal: false
+  name: HostedDomain
+  nameWithType: GoogleJsonWebSignature.Payload.HostedDomain
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.HostedDomain
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Email*
+  commentId: Overload:Google.Apis.Auth.GoogleJsonWebSignature.Payload.Email
+  isExternal: false
+  name: Email
+  nameWithType: GoogleJsonWebSignature.Payload.Email
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Email
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.EmailVerified*
+  commentId: Overload:Google.Apis.Auth.GoogleJsonWebSignature.Payload.EmailVerified
+  isExternal: false
+  name: EmailVerified
+  nameWithType: GoogleJsonWebSignature.Payload.EmailVerified
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.EmailVerified
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Name*
+  commentId: Overload:Google.Apis.Auth.GoogleJsonWebSignature.Payload.Name
+  isExternal: false
+  name: Name
+  nameWithType: GoogleJsonWebSignature.Payload.Name
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Name
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.GivenName*
+  commentId: Overload:Google.Apis.Auth.GoogleJsonWebSignature.Payload.GivenName
+  isExternal: false
+  name: GivenName
+  nameWithType: GoogleJsonWebSignature.Payload.GivenName
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.GivenName
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.FamilyName*
+  commentId: Overload:Google.Apis.Auth.GoogleJsonWebSignature.Payload.FamilyName
+  isExternal: false
+  name: FamilyName
+  nameWithType: GoogleJsonWebSignature.Payload.FamilyName
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.FamilyName
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Picture*
+  commentId: Overload:Google.Apis.Auth.GoogleJsonWebSignature.Payload.Picture
+  isExternal: false
+  name: Picture
+  nameWithType: GoogleJsonWebSignature.Payload.Picture
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Picture
+- uid: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Locale*
+  commentId: Overload:Google.Apis.Auth.GoogleJsonWebSignature.Payload.Locale
+  isExternal: false
+  name: Locale
+  nameWithType: GoogleJsonWebSignature.Payload.Locale
+  fullName: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Locale

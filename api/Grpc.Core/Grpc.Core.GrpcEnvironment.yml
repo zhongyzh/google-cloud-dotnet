@@ -8,9 +8,11 @@ items:
   - Grpc.Core.GrpcEnvironment.KillServersAsync
   - Grpc.Core.GrpcEnvironment.Logger
   - Grpc.Core.GrpcEnvironment.SetCompletionQueueCount(System.Int32)
+  - Grpc.Core.GrpcEnvironment.SetHandlerInlining(System.Boolean)
   - Grpc.Core.GrpcEnvironment.SetLogger(Grpc.Core.Logging.ILogger)
   - Grpc.Core.GrpcEnvironment.SetThreadPoolSize(System.Int32)
   - Grpc.Core.GrpcEnvironment.ShutdownChannelsAsync
+  - Grpc.Core.GrpcEnvironment.ShuttingDown
   langs:
   - csharp
   - vb
@@ -21,11 +23,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: GrpcEnvironment
     path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-    startLine: 47
+    startLine: 32
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -64,11 +66,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: ShutdownChannelsAsync
     path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-    startLine: 156
+    startLine: 142
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -100,11 +102,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: KillServersAsync
     path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-    startLine: 169
+    startLine: 155
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -136,11 +138,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: Logger
     path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-    startLine: 183
+    startLine: 169
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -176,11 +178,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: SetLogger
     path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-    startLine: 194
+    startLine: 180
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -213,11 +215,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: SetThreadPoolSize
     path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-    startLine: 207
+    startLine: 193
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -250,11 +252,11 @@ items:
   source:
     remote:
       path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-      branch: v1.4.x
+      branch: v1.6.x
       repo: https://github.com/grpc/grpc
     id: SetCompletionQueueCount
     path: src/csharp/Grpc.Core/GrpcEnvironment.cs
-    startLine: 224
+    startLine: 210
   assemblies:
   - Grpc.Core
   namespace: Grpc.Core
@@ -267,6 +269,78 @@ items:
       type: System.Int32
     content.vb: Public Shared Sub SetCompletionQueueCount(completionQueueCount As Integer)
   overload: Grpc.Core.GrpcEnvironment.SetCompletionQueueCount*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Grpc.Core.GrpcEnvironment.SetHandlerInlining(System.Boolean)
+  commentId: M:Grpc.Core.GrpcEnvironment.SetHandlerInlining(System.Boolean)
+  id: SetHandlerInlining(System.Boolean)
+  parent: Grpc.Core.GrpcEnvironment
+  langs:
+  - csharp
+  - vb
+  name: SetHandlerInlining(Boolean)
+  nameWithType: GrpcEnvironment.SetHandlerInlining(Boolean)
+  fullName: Grpc.Core.GrpcEnvironment.SetHandlerInlining(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+      branch: v1.6.x
+      repo: https://github.com/grpc/grpc
+    id: SetHandlerInlining
+    path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+    startLine: 230
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nBy default, gRPC&apos;s internal event handlers get offloaded to .NET default thread pool thread (<code>inlineHandlers=false</code>).\nSetting <code>inlineHandlers</code> to <code>true</code> will allow scheduling the event handlers directly to\n<code>GrpcThreadPool</code> internal threads. That can lead to significant performance gains in some situations,\nbut requires user to never block in async code (incorrectly written code can easily lead to deadlocks).\nInlining handlers is an advanced setting and you should only use it if you know what you are doing.\nMost users should rely on the default value provided by gRPC library.\nNote: this method is part of an experimental API that can change or be removed without any prior notice.\nNote: <code>inlineHandlers=true</code> was the default in gRPC C# v1.4.x and earlier.\n"
+  example: []
+  syntax:
+    content: public static void SetHandlerInlining(bool inlineHandlers)
+    parameters:
+    - id: inlineHandlers
+      type: System.Boolean
+    content.vb: Public Shared Sub SetHandlerInlining(inlineHandlers As Boolean)
+  overload: Grpc.Core.GrpcEnvironment.SetHandlerInlining*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: Grpc.Core.GrpcEnvironment.ShuttingDown
+  commentId: E:Grpc.Core.GrpcEnvironment.ShuttingDown
+  id: ShuttingDown
+  parent: Grpc.Core.GrpcEnvironment
+  langs:
+  - csharp
+  - vb
+  name: ShuttingDown
+  nameWithType: GrpcEnvironment.ShuttingDown
+  fullName: Grpc.Core.GrpcEnvironment.ShuttingDown
+  type: Event
+  source:
+    remote:
+      path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+      branch: v1.6.x
+      repo: https://github.com/grpc/grpc
+    id: ShuttingDown
+    path: src/csharp/Grpc.Core/GrpcEnvironment.cs
+    startLine: 243
+  assemblies:
+  - Grpc.Core
+  namespace: Grpc.Core
+  summary: "\nOccurs when <code>GrpcEnvironment</code> is about the start the shutdown logic.\nIf <code>GrpcEnvironment</code> is later initialized and shutdown, the event will be fired again (unless unregistered first).\n"
+  example: []
+  syntax:
+    content: public static event EventHandler ShuttingDown
+    return:
+      type: System.EventHandler
+    content.vb: Public Shared Event ShuttingDown As EventHandler
   modifiers.csharp:
   - public
   - static
@@ -641,3 +715,23 @@ references:
   name: SetCompletionQueueCount
   nameWithType: GrpcEnvironment.SetCompletionQueueCount
   fullName: Grpc.Core.GrpcEnvironment.SetCompletionQueueCount
+- uid: Grpc.Core.GrpcEnvironment.SetHandlerInlining*
+  commentId: Overload:Grpc.Core.GrpcEnvironment.SetHandlerInlining
+  isExternal: false
+  name: SetHandlerInlining
+  nameWithType: GrpcEnvironment.SetHandlerInlining
+  fullName: Grpc.Core.GrpcEnvironment.SetHandlerInlining
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: System.EventHandler
+  commentId: T:System.EventHandler
+  parent: System
+  isExternal: true
+  name: EventHandler
+  nameWithType: EventHandler
+  fullName: System.EventHandler

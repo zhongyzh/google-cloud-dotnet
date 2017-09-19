@@ -5,7 +5,7 @@ items:
   id: IHttpExecuteInterceptor
   parent: Google.Apis.Http
   children:
-  - Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  - Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -24,7 +24,7 @@ items:
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Http
-  summary: "\nHTTP request execute interceptor to intercept a <xref href=\"System.Net.Http.HttpRequestMessage\" data-throw-if-not-resolved=\"false\"></xref> before it has\nbeen sent. Sample usage is attaching &quot;Authorization&quot; header to a request.\n"
+  summary: "\nHTTP request execute interceptor to intercept a <see cref=\"!:System.Net.Http.HttpRequestMessage\"></see> before it has\nbeen sent. Sample usage is attaching &quot;Authorization&quot; header to a request.\n"
   example: []
   syntax:
     content: public interface IHttpExecuteInterceptor
@@ -37,16 +37,16 @@ items:
   modifiers.vb:
   - Public
   - Interface
-- uid: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  commentId: M:Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
-  id: InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+- uid: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
+  id: InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
   parent: Google.Apis.Http.IHttpExecuteInterceptor
   langs:
   - csharp
   - vb
   name: InterceptAsync(HttpRequestMessage, CancellationToken)
   nameWithType: IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage, CancellationToken)
-  fullName: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
+  fullName: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -65,7 +65,7 @@ items:
     content: Task InterceptAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     parameters:
     - id: request
-      type: System.Net.Http.HttpRequestMessage
+      type: HttpRequestMessage
       description: The HTTP request message.
     - id: cancellationToken
       type: System.Threading.CancellationToken
@@ -75,13 +75,6 @@ items:
     content.vb: Function InterceptAsync(request As HttpRequestMessage, cancellationToken As CancellationToken) As Task
   overload: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync*
 references:
-- uid: System.Net.Http.HttpRequestMessage
-  commentId: T:System.Net.Http.HttpRequestMessage
-  parent: System.Net.Http
-  isExternal: true
-  name: HttpRequestMessage
-  nameWithType: HttpRequestMessage
-  fullName: System.Net.Http.HttpRequestMessage
 - uid: Google.Apis.Http
   commentId: N:Google.Apis.Http
   isExternal: false
@@ -130,12 +123,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Net.Http
-  commentId: N:System.Net.Http
-  isExternal: false
-  name: System.Net.Http
-  nameWithType: System.Net.Http
-  fullName: System.Net.Http
 - uid: Google.Apis.Util.Utilities.ThrowIfNull``1(``0,System.String)
   commentId: M:Google.Apis.Util.Utilities.ThrowIfNull``1(``0,System.String)
   isExternal: true
@@ -208,6 +195,11 @@ references:
   name: InterceptAsync
   nameWithType: IHttpExecuteInterceptor.InterceptAsync
   fullName: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync
+- uid: HttpRequestMessage
+  isExternal: true
+  name: HttpRequestMessage
+  nameWithType: HttpRequestMessage
+  fullName: HttpRequestMessage
 - uid: System.Threading.CancellationToken
   commentId: T:System.Threading.CancellationToken
   parent: System.Threading

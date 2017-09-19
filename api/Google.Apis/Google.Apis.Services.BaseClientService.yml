@@ -14,8 +14,8 @@ items:
   - Google.Apis.Services.BaseClientService.BatchUri
   - Google.Apis.Services.BaseClientService.CreateBackOffHandler
   - Google.Apis.Services.BaseClientService.DefaultMaxUrlLength
-  - Google.Apis.Services.BaseClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
-  - Google.Apis.Services.BaseClientService.DeserializeResponse``1(System.Net.Http.HttpResponseMessage)
+  - Google.Apis.Services.BaseClientService.DeserializeError(HttpResponseMessage)
+  - Google.Apis.Services.BaseClientService.DeserializeResponse``1(HttpResponseMessage)
   - Google.Apis.Services.BaseClientService.Dispose
   - Google.Apis.Services.BaseClientService.Features
   - Google.Apis.Services.BaseClientService.GZipEnabled
@@ -24,7 +24,7 @@ items:
   - Google.Apis.Services.BaseClientService.Name
   - Google.Apis.Services.BaseClientService.SerializeObject(System.Object)
   - Google.Apis.Services.BaseClientService.Serializer
-  - Google.Apis.Services.BaseClientService.SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage,System.Object)
+  - Google.Apis.Services.BaseClientService.SetRequestSerailizedContent(HttpRequestMessage,System.Object)
   langs:
   - csharp
   - vb
@@ -39,7 +39,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BaseClientService
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 48
+    startLine: 49
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -89,7 +89,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DefaultMaxUrlLength
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 55
+    startLine: 56
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -124,7 +124,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: .ctor
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 126
+    startLine: 133
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -159,7 +159,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: CreateBackOffHandler
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 187
+    startLine: 194
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -195,7 +195,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: HttpClient
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 196
+    startLine: 203
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -234,7 +234,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: HttpClientInitializer
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 199
+    startLine: 206
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -273,7 +273,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: GZipEnabled
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 202
+    startLine: 209
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -312,7 +312,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ApiKey
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 205
+    startLine: 212
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -351,7 +351,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ApplicationName
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 208
+    startLine: 215
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -372,16 +372,16 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: Google.Apis.Services.BaseClientService.SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage,System.Object)
-  commentId: M:Google.Apis.Services.BaseClientService.SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage,System.Object)
-  id: SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage,System.Object)
+- uid: Google.Apis.Services.BaseClientService.SetRequestSerailizedContent(HttpRequestMessage,System.Object)
+  commentId: M:Google.Apis.Services.BaseClientService.SetRequestSerailizedContent(HttpRequestMessage,System.Object)
+  id: SetRequestSerailizedContent(HttpRequestMessage,System.Object)
   parent: Google.Apis.Services.BaseClientService
   langs:
   - csharp
   - vb
   name: SetRequestSerailizedContent(HttpRequestMessage, Object)
   nameWithType: BaseClientService.SetRequestSerailizedContent(HttpRequestMessage, Object)
-  fullName: Google.Apis.Services.BaseClientService.SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage, System.Object)
+  fullName: Google.Apis.Services.BaseClientService.SetRequestSerailizedContent(HttpRequestMessage, System.Object)
   type: Method
   source:
     remote:
@@ -390,7 +390,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SetRequestSerailizedContent
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 211
+    startLine: 218
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -400,13 +400,13 @@ items:
     content: public void SetRequestSerailizedContent(HttpRequestMessage request, object body)
     parameters:
     - id: request
-      type: System.Net.Http.HttpRequestMessage
+      type: HttpRequestMessage
     - id: body
       type: System.Object
     content.vb: Public Sub SetRequestSerailizedContent(request As HttpRequestMessage, body As Object)
   overload: Google.Apis.Services.BaseClientService.SetRequestSerailizedContent*
   implements:
-  - Google.Apis.Services.IClientService.SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage,System.Object)
+  - Google.Apis.Services.IClientService.SetRequestSerailizedContent(HttpRequestMessage,System.Object)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -429,7 +429,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Serializer
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 219
+    startLine: 226
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -468,7 +468,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: SerializeObject
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 222
+    startLine: 229
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -491,16 +491,16 @@ items:
   modifiers.vb:
   - Public
   - Overridable
-- uid: Google.Apis.Services.BaseClientService.DeserializeResponse``1(System.Net.Http.HttpResponseMessage)
-  commentId: M:Google.Apis.Services.BaseClientService.DeserializeResponse``1(System.Net.Http.HttpResponseMessage)
-  id: DeserializeResponse``1(System.Net.Http.HttpResponseMessage)
+- uid: Google.Apis.Services.BaseClientService.DeserializeResponse``1(HttpResponseMessage)
+  commentId: M:Google.Apis.Services.BaseClientService.DeserializeResponse``1(HttpResponseMessage)
+  id: DeserializeResponse``1(HttpResponseMessage)
   parent: Google.Apis.Services.BaseClientService
   langs:
   - csharp
   - vb
   name: DeserializeResponse<T>(HttpResponseMessage)
   nameWithType: BaseClientService.DeserializeResponse<T>(HttpResponseMessage)
-  fullName: Google.Apis.Services.BaseClientService.DeserializeResponse<T>(System.Net.Http.HttpResponseMessage)
+  fullName: Google.Apis.Services.BaseClientService.DeserializeResponse<T>(HttpResponseMessage)
   type: Method
   source:
     remote:
@@ -509,7 +509,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DeserializeResponse
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 234
+    startLine: 241
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -519,7 +519,7 @@ items:
     content: public virtual Task<T> DeserializeResponse<T>(HttpResponseMessage response)
     parameters:
     - id: response
-      type: System.Net.Http.HttpResponseMessage
+      type: HttpResponseMessage
     typeParameters:
     - id: T
     return:
@@ -527,7 +527,7 @@ items:
     content.vb: Public Overridable Function DeserializeResponse(Of T)(response As HttpResponseMessage) As Task(Of T)
   overload: Google.Apis.Services.BaseClientService.DeserializeResponse*
   implements:
-  - Google.Apis.Services.IClientService.DeserializeResponse``1(System.Net.Http.HttpResponseMessage)
+  - Google.Apis.Services.IClientService.DeserializeResponse``1(HttpResponseMessage)
   nameWithType.vb: BaseClientService.DeserializeResponse(Of T)(HttpResponseMessage)
   modifiers.csharp:
   - public
@@ -535,18 +535,18 @@ items:
   modifiers.vb:
   - Public
   - Overridable
-  fullName.vb: Google.Apis.Services.BaseClientService.DeserializeResponse(Of T)(System.Net.Http.HttpResponseMessage)
+  fullName.vb: Google.Apis.Services.BaseClientService.DeserializeResponse(Of T)(HttpResponseMessage)
   name.vb: DeserializeResponse(Of T)(HttpResponseMessage)
-- uid: Google.Apis.Services.BaseClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
-  commentId: M:Google.Apis.Services.BaseClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
-  id: DeserializeError(System.Net.Http.HttpResponseMessage)
+- uid: Google.Apis.Services.BaseClientService.DeserializeError(HttpResponseMessage)
+  commentId: M:Google.Apis.Services.BaseClientService.DeserializeError(HttpResponseMessage)
+  id: DeserializeError(HttpResponseMessage)
   parent: Google.Apis.Services.BaseClientService
   langs:
   - csharp
   - vb
   name: DeserializeError(HttpResponseMessage)
   nameWithType: BaseClientService.DeserializeError(HttpResponseMessage)
-  fullName: Google.Apis.Services.BaseClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
+  fullName: Google.Apis.Services.BaseClientService.DeserializeError(HttpResponseMessage)
   type: Method
   source:
     remote:
@@ -555,7 +555,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: DeserializeError
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 297
+    startLine: 304
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -565,7 +565,7 @@ items:
     content: public virtual Task<RequestError> DeserializeError(HttpResponseMessage response)
     parameters:
     - id: response
-      type: System.Net.Http.HttpResponseMessage
+      type: HttpResponseMessage
     return:
       type: System.Threading.Tasks.Task{Google.Apis.Requests.RequestError}
     content.vb: Public Overridable Function DeserializeError(response As HttpResponseMessage) As Task(Of RequestError)
@@ -575,7 +575,7 @@ items:
     commentId: T:Google.GoogleApiException
     description: If no error is found in the response.
   implements:
-  - Google.Apis.Services.IClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
+  - Google.Apis.Services.IClientService.DeserializeError(HttpResponseMessage)
   modifiers.csharp:
   - public
   - virtual
@@ -600,7 +600,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Name
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 325
+    startLine: 332
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -641,7 +641,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BaseUri
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 328
+    startLine: 335
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -682,7 +682,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BasePath
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 331
+    startLine: 338
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -723,7 +723,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BatchUri
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 334
+    startLine: 341
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -762,7 +762,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: BatchPath
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 337
+    startLine: 344
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -801,7 +801,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Features
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 340
+    startLine: 347
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -842,7 +842,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Dispose
     path: Src/Support/Google.Apis/Services/BaseClientService.cs
-    startLine: 347
+    startLine: 354
   assemblies:
   - Google.Apis
   namespace: Google.Apis.Services
@@ -1320,25 +1320,25 @@ references:
   name: SetRequestSerailizedContent
   nameWithType: BaseClientService.SetRequestSerailizedContent
   fullName: Google.Apis.Services.BaseClientService.SetRequestSerailizedContent
-- uid: Google.Apis.Services.IClientService.SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage,System.Object)
-  commentId: M:Google.Apis.Services.IClientService.SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage,System.Object)
+- uid: Google.Apis.Services.IClientService.SetRequestSerailizedContent(HttpRequestMessage,System.Object)
+  commentId: M:Google.Apis.Services.IClientService.SetRequestSerailizedContent(HttpRequestMessage,System.Object)
   parent: Google.Apis.Services.IClientService
   isExternal: true
   name: SetRequestSerailizedContent(HttpRequestMessage, Object)
   nameWithType: IClientService.SetRequestSerailizedContent(HttpRequestMessage, Object)
-  fullName: Google.Apis.Services.IClientService.SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage, System.Object)
+  fullName: Google.Apis.Services.IClientService.SetRequestSerailizedContent(HttpRequestMessage, System.Object)
   spec.csharp:
-  - uid: Google.Apis.Services.IClientService.SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage,System.Object)
+  - uid: Google.Apis.Services.IClientService.SetRequestSerailizedContent(HttpRequestMessage,System.Object)
     name: SetRequestSerailizedContent
     nameWithType: IClientService.SetRequestSerailizedContent
     fullName: Google.Apis.Services.IClientService.SetRequestSerailizedContent
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpRequestMessage
+  - uid: HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
+    fullName: HttpRequestMessage
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1352,17 +1352,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: Google.Apis.Services.IClientService.SetRequestSerailizedContent(System.Net.Http.HttpRequestMessage,System.Object)
+  - uid: Google.Apis.Services.IClientService.SetRequestSerailizedContent(HttpRequestMessage,System.Object)
     name: SetRequestSerailizedContent
     nameWithType: IClientService.SetRequestSerailizedContent
     fullName: Google.Apis.Services.IClientService.SetRequestSerailizedContent
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpRequestMessage
+  - uid: HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: System.Net.Http.HttpRequestMessage
+    fullName: HttpRequestMessage
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1375,19 +1375,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Net.Http.HttpRequestMessage
-  commentId: T:System.Net.Http.HttpRequestMessage
-  parent: System.Net.Http
+- uid: HttpRequestMessage
   isExternal: true
   name: HttpRequestMessage
   nameWithType: HttpRequestMessage
-  fullName: System.Net.Http.HttpRequestMessage
-- uid: System.Net.Http
-  commentId: N:System.Net.Http
-  isExternal: false
-  name: System.Net.Http
-  nameWithType: System.Net.Http
-  fullName: System.Net.Http
+  fullName: HttpRequestMessage
 - uid: Google.Apis.Services.BaseClientService.Serializer*
   commentId: Overload:Google.Apis.Services.BaseClientService.Serializer
   isExternal: false
@@ -1465,55 +1457,53 @@ references:
   name: DeserializeResponse
   nameWithType: BaseClientService.DeserializeResponse
   fullName: Google.Apis.Services.BaseClientService.DeserializeResponse
-- uid: Google.Apis.Services.IClientService.DeserializeResponse``1(System.Net.Http.HttpResponseMessage)
-  commentId: M:Google.Apis.Services.IClientService.DeserializeResponse``1(System.Net.Http.HttpResponseMessage)
+- uid: Google.Apis.Services.IClientService.DeserializeResponse``1(HttpResponseMessage)
+  commentId: M:Google.Apis.Services.IClientService.DeserializeResponse``1(HttpResponseMessage)
   parent: Google.Apis.Services.IClientService
   isExternal: true
   name: DeserializeResponse<T>(HttpResponseMessage)
   nameWithType: IClientService.DeserializeResponse<T>(HttpResponseMessage)
-  fullName: Google.Apis.Services.IClientService.DeserializeResponse<T>(System.Net.Http.HttpResponseMessage)
+  fullName: Google.Apis.Services.IClientService.DeserializeResponse<T>(HttpResponseMessage)
   nameWithType.vb: IClientService.DeserializeResponse(Of T)(HttpResponseMessage)
-  fullName.vb: Google.Apis.Services.IClientService.DeserializeResponse(Of T)(System.Net.Http.HttpResponseMessage)
+  fullName.vb: Google.Apis.Services.IClientService.DeserializeResponse(Of T)(HttpResponseMessage)
   name.vb: DeserializeResponse(Of T)(HttpResponseMessage)
   spec.csharp:
-  - uid: Google.Apis.Services.IClientService.DeserializeResponse``1(System.Net.Http.HttpResponseMessage)
+  - uid: Google.Apis.Services.IClientService.DeserializeResponse``1(HttpResponseMessage)
     name: DeserializeResponse<T>
     nameWithType: IClientService.DeserializeResponse<T>
     fullName: Google.Apis.Services.IClientService.DeserializeResponse<T>
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpResponseMessage
+  - uid: HttpResponseMessage
     name: HttpResponseMessage
     nameWithType: HttpResponseMessage
-    fullName: System.Net.Http.HttpResponseMessage
+    fullName: HttpResponseMessage
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: Google.Apis.Services.IClientService.DeserializeResponse``1(System.Net.Http.HttpResponseMessage)
+  - uid: Google.Apis.Services.IClientService.DeserializeResponse``1(HttpResponseMessage)
     name: DeserializeResponse(Of T)
     nameWithType: IClientService.DeserializeResponse(Of T)
     fullName: Google.Apis.Services.IClientService.DeserializeResponse(Of T)
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpResponseMessage
+  - uid: HttpResponseMessage
     name: HttpResponseMessage
     nameWithType: HttpResponseMessage
-    fullName: System.Net.Http.HttpResponseMessage
+    fullName: HttpResponseMessage
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Net.Http.HttpResponseMessage
-  commentId: T:System.Net.Http.HttpResponseMessage
-  parent: System.Net.Http
+- uid: HttpResponseMessage
   isExternal: true
   name: HttpResponseMessage
   nameWithType: HttpResponseMessage
-  fullName: System.Net.Http.HttpResponseMessage
+  fullName: HttpResponseMessage
 - uid: System.Threading.Tasks.Task{{T}}
   commentId: T:System.Threading.Tasks.Task{``0}
   parent: System.Threading.Tasks
@@ -1605,41 +1595,41 @@ references:
   name: DeserializeError
   nameWithType: BaseClientService.DeserializeError
   fullName: Google.Apis.Services.BaseClientService.DeserializeError
-- uid: Google.Apis.Services.IClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
-  commentId: M:Google.Apis.Services.IClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
+- uid: Google.Apis.Services.IClientService.DeserializeError(HttpResponseMessage)
+  commentId: M:Google.Apis.Services.IClientService.DeserializeError(HttpResponseMessage)
   parent: Google.Apis.Services.IClientService
   isExternal: true
   name: DeserializeError(HttpResponseMessage)
   nameWithType: IClientService.DeserializeError(HttpResponseMessage)
-  fullName: Google.Apis.Services.IClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
+  fullName: Google.Apis.Services.IClientService.DeserializeError(HttpResponseMessage)
   spec.csharp:
-  - uid: Google.Apis.Services.IClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
+  - uid: Google.Apis.Services.IClientService.DeserializeError(HttpResponseMessage)
     name: DeserializeError
     nameWithType: IClientService.DeserializeError
     fullName: Google.Apis.Services.IClientService.DeserializeError
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpResponseMessage
+  - uid: HttpResponseMessage
     name: HttpResponseMessage
     nameWithType: HttpResponseMessage
-    fullName: System.Net.Http.HttpResponseMessage
+    fullName: HttpResponseMessage
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: Google.Apis.Services.IClientService.DeserializeError(System.Net.Http.HttpResponseMessage)
+  - uid: Google.Apis.Services.IClientService.DeserializeError(HttpResponseMessage)
     name: DeserializeError
     nameWithType: IClientService.DeserializeError
     fullName: Google.Apis.Services.IClientService.DeserializeError
   - name: (
     nameWithType: (
     fullName: (
-  - uid: System.Net.Http.HttpResponseMessage
+  - uid: HttpResponseMessage
     name: HttpResponseMessage
     nameWithType: HttpResponseMessage
-    fullName: System.Net.Http.HttpResponseMessage
+    fullName: HttpResponseMessage
     isExternal: true
   - name: )
     nameWithType: )

@@ -24,11 +24,12 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: GoogleWebAuthorizationBroker
     path: Src/Support/Google.Apis.Auth/OAuth2/GoogleWebAuthorizationBroker.cs
-    startLine: 28
+    startLine: 34
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
   summary: A helper utility to manage the authorization code flow.
+  remarks: "\nThis class is only suitable for client-side use, as it starts a local browser that requires\nuser interaction.\nDo not use this class when executing on a web server, or any cases where the authenticating\nend-user is not able to do directly interact with a launched browser.\n"
   example: []
   syntax:
     content: public class GoogleWebAuthorizationBroker
@@ -67,7 +68,7 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: Folder
     path: Src/Support/Google.Apis.Auth/OAuth2/GoogleWebAuthorizationBroker.cs
-    startLine: 36
+    startLine: 42
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
@@ -103,11 +104,11 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: AuthorizeAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/GoogleWebAuthorizationBroker.cs
-    startLine: 52
+    startLine: 61
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
-  summary: Asynchronously authorizes the specified user.
+  summary: "\nAsynchronously authorizes the specified user.\nRequires user interaction; see <xref href=\"Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker\" data-throw-if-not-resolved=\"false\"></xref> remarks for more details.\n"
   remarks: "\nIn case no data store is specified, <xref href=\"Google.Apis.Util.Store.FileDataStore\" data-throw-if-not-resolved=\"false\"></xref> will be used by \ndefault.\n"
   example: []
   syntax:
@@ -163,11 +164,11 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: AuthorizeAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/GoogleWebAuthorizationBroker.cs
-    startLine: 80
+    startLine: 92
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
-  summary: Asynchronously authorizes the specified user.
+  summary: "\nAsynchronously authorizes the specified user.\nRequires user interaction; see <xref href=\"Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker\" data-throw-if-not-resolved=\"false\"></xref> remarks for more details.\n"
   remarks: "\nIn case no data store is specified, <xref href=\"Google.Apis.Util.Store.FileDataStore\" data-throw-if-not-resolved=\"false\"></xref> will be used by \ndefault.\n"
   example: []
   syntax:
@@ -223,11 +224,11 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: ReauthorizeAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/GoogleWebAuthorizationBroker.cs
-    startLine: 100
+    startLine: 113
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
-  summary: "\nAsynchronously reauthorizes the user. This method should be called if the users want to authorize after \nthey revoked the token.\n"
+  summary: "\nAsynchronously reauthorizes the user. This method should be called if the users want to authorize after \nthey revoked the token.\nRequires user interaction; see <xref href=\"Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker\" data-throw-if-not-resolved=\"false\"></xref> remarks for more details.\n"
   example: []
   syntax:
     content: public static Task ReauthorizeAsync(UserCredential userCredential, CancellationToken taskCancellationToken, ICodeReceiver codeReceiver = null)
@@ -269,11 +270,11 @@ items:
       repo: https://github.com/google/google-api-dotnet-client
     id: AuthorizeAsync
     path: Src/Support/Google.Apis.Auth/OAuth2/GoogleWebAuthorizationBroker.cs
-    startLine: 122
+    startLine: 138
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2
-  summary: The core logic for asynchronously authorizing the specified user.
+  summary: "\nThe core logic for asynchronously authorizing the specified user.\nRequires user interaction; see <xref href=\"Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker\" data-throw-if-not-resolved=\"false\"></xref> remarks for more details.\n"
   example: []
   syntax:
     content: public static Task<UserCredential> AuthorizeAsync(GoogleAuthorizationCodeFlow.Initializer initializer, IEnumerable<string> scopes, string user, CancellationToken taskCancellationToken, IDataStore dataStore = null, ICodeReceiver codeReceiver = null)
@@ -618,6 +619,12 @@ references:
   name: String
   nameWithType: String
   fullName: System.String
+- uid: Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker
+  commentId: T:Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker
+  isExternal: false
+  name: GoogleWebAuthorizationBroker
+  nameWithType: GoogleWebAuthorizationBroker
+  fullName: Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker
 - uid: Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker.AuthorizeAsync*
   commentId: Overload:Google.Apis.Auth.OAuth2.GoogleWebAuthorizationBroker.AuthorizeAsync
   isExternal: false

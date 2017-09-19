@@ -5,15 +5,15 @@ items:
   id: CallSettings
   parent: Google.Api.Gax.Grpc
   children:
-  - Google.Api.Gax.Grpc.CallSettings.#ctor(System.Nullable{System.Threading.CancellationToken},Grpc.Core.CallCredentials,Google.Api.Gax.Grpc.CallTiming,System.Action{Grpc.Core.Metadata},Grpc.Core.WriteOptions,Grpc.Core.ContextPropagationToken)
+  - Google.Api.Gax.Grpc.CallSettings.#ctor(System.Nullable{System.Threading.CancellationToken},CallCredentials,Google.Api.Gax.Grpc.CallTiming,System.Action{Metadata},WriteOptions,ContextPropagationToken)
   - Google.Api.Gax.Grpc.CallSettings.CancellationToken
   - Google.Api.Gax.Grpc.CallSettings.Credentials
-  - Google.Api.Gax.Grpc.CallSettings.FromCallCredentials(Grpc.Core.CallCredentials)
+  - Google.Api.Gax.Grpc.CallSettings.FromCallCredentials(CallCredentials)
   - Google.Api.Gax.Grpc.CallSettings.FromCallTiming(Google.Api.Gax.Grpc.CallTiming)
   - Google.Api.Gax.Grpc.CallSettings.FromCancellationToken(System.Threading.CancellationToken)
   - Google.Api.Gax.Grpc.CallSettings.FromFieldMask(System.String)
   - Google.Api.Gax.Grpc.CallSettings.FromHeader(System.String,System.String)
-  - Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action{Grpc.Core.Metadata})
+  - Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action{Metadata})
   - Google.Api.Gax.Grpc.CallSettings.HeaderMutation
   - Google.Api.Gax.Grpc.CallSettings.PropagationToken
   - Google.Api.Gax.Grpc.CallSettings.Timing
@@ -54,10 +54,11 @@ items:
   extensionMethods:
   - Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.MergedWith(Google.Api.Gax.Grpc.CallSettings)
   - Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.WithCancellationToken(System.Threading.CancellationToken)
-  - Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Grpc.Core.CallCredentials)
+  - Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(CallCredentials)
   - Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallTiming(Google.Api.Gax.Grpc.CallTiming)
   - Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.WithHeader(System.String,System.String)
   - Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.WithEarlierDeadline(System.Nullable{System.DateTime},Google.Api.Gax.IClock)
+  - Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Expiration)
   modifiers.csharp:
   - public
   - sealed
@@ -66,16 +67,16 @@ items:
   - Public
   - NotInheritable
   - Class
-- uid: Google.Api.Gax.Grpc.CallSettings.#ctor(System.Nullable{System.Threading.CancellationToken},Grpc.Core.CallCredentials,Google.Api.Gax.Grpc.CallTiming,System.Action{Grpc.Core.Metadata},Grpc.Core.WriteOptions,Grpc.Core.ContextPropagationToken)
-  commentId: M:Google.Api.Gax.Grpc.CallSettings.#ctor(System.Nullable{System.Threading.CancellationToken},Grpc.Core.CallCredentials,Google.Api.Gax.Grpc.CallTiming,System.Action{Grpc.Core.Metadata},Grpc.Core.WriteOptions,Grpc.Core.ContextPropagationToken)
-  id: '#ctor(System.Nullable{System.Threading.CancellationToken},Grpc.Core.CallCredentials,Google.Api.Gax.Grpc.CallTiming,System.Action{Grpc.Core.Metadata},Grpc.Core.WriteOptions,Grpc.Core.ContextPropagationToken)'
+- uid: Google.Api.Gax.Grpc.CallSettings.#ctor(System.Nullable{System.Threading.CancellationToken},CallCredentials,Google.Api.Gax.Grpc.CallTiming,System.Action{Metadata},WriteOptions,ContextPropagationToken)
+  commentId: M:Google.Api.Gax.Grpc.CallSettings.#ctor(System.Nullable{System.Threading.CancellationToken},CallCredentials,Google.Api.Gax.Grpc.CallTiming,System.Action{Metadata},WriteOptions,ContextPropagationToken)
+  id: '#ctor(System.Nullable{System.Threading.CancellationToken},CallCredentials,Google.Api.Gax.Grpc.CallTiming,System.Action{Metadata},WriteOptions,ContextPropagationToken)'
   parent: Google.Api.Gax.Grpc.CallSettings
   langs:
   - csharp
   - vb
   name: CallSettings(Nullable<CancellationToken>, CallCredentials, CallTiming, Action<Metadata>, WriteOptions, ContextPropagationToken)
   nameWithType: CallSettings.CallSettings(Nullable<CancellationToken>, CallCredentials, CallTiming, Action<Metadata>, WriteOptions, ContextPropagationToken)
-  fullName: Google.Api.Gax.Grpc.CallSettings.CallSettings(System.Nullable<System.Threading.CancellationToken>, Grpc.Core.CallCredentials, Google.Api.Gax.Grpc.CallTiming, System.Action<Grpc.Core.Metadata>, Grpc.Core.WriteOptions, Grpc.Core.ContextPropagationToken)
+  fullName: Google.Api.Gax.Grpc.CallSettings.CallSettings(System.Nullable<System.Threading.CancellationToken>, CallCredentials, Google.Api.Gax.Grpc.CallTiming, System.Action<Metadata>, WriteOptions, ContextPropagationToken)
   type: Constructor
   source:
     remote:
@@ -97,20 +98,20 @@ items:
       type: System.Nullable{System.Threading.CancellationToken}
       description: Cancellation token that can be used for cancelling the call.
     - id: credentials
-      type: Grpc.Core.CallCredentials
+      type: CallCredentials
       description: Credentials to use for the call.
     - id: timing
       type: Google.Api.Gax.Grpc.CallTiming
       description: <xref href="Google.Api.Gax.Grpc.CallTiming" data-throw-if-not-resolved="false"></xref> to use, or null for default retry/expiration behavior.
     - id: headerMutation
-      type: System.Action{Grpc.Core.Metadata}
+      type: System.Action{Metadata}
       description: Action to modify the headers to send at the beginning of the call.
     - id: writeOptions
-      type: Grpc.Core.WriteOptions
-      description: <xref href="Grpc.Core.WriteOptions" data-throw-if-not-resolved="false"></xref> that will be used for the call.
+      type: WriteOptions
+      description: <see cref="!:global::Grpc.Core.WriteOptions"></see> that will be used for the call.
     - id: propagationToken
-      type: Grpc.Core.ContextPropagationToken
-      description: <xref href="Grpc.Core.ContextPropagationToken" data-throw-if-not-resolved="false"></xref> for propagating settings from a parent call.
+      type: ContextPropagationToken
+      description: <see cref="!:ContextPropagationToken"></see> for propagating settings from a parent call.
     content.vb: Public Sub New(cancellationToken As CancellationToken?, credentials As CallCredentials, timing As CallTiming, headerMutation As Action(Of Metadata), writeOptions As WriteOptions, propagationToken As ContextPropagationToken)
   overload: Google.Api.Gax.Grpc.CallSettings.#ctor*
   nameWithType.vb: CallSettings.CallSettings(Nullable(Of CancellationToken), CallCredentials, CallTiming, Action(Of Metadata), WriteOptions, ContextPropagationToken)
@@ -118,7 +119,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: Google.Api.Gax.Grpc.CallSettings.CallSettings(System.Nullable(Of System.Threading.CancellationToken), Grpc.Core.CallCredentials, Google.Api.Gax.Grpc.CallTiming, System.Action(Of Grpc.Core.Metadata), Grpc.Core.WriteOptions, Grpc.Core.ContextPropagationToken)
+  fullName.vb: Google.Api.Gax.Grpc.CallSettings.CallSettings(System.Nullable(Of System.Threading.CancellationToken), CallCredentials, Google.Api.Gax.Grpc.CallTiming, System.Action(Of Metadata), WriteOptions, ContextPropagationToken)
   name.vb: CallSettings(Nullable(Of CancellationToken), CallCredentials, CallTiming, Action(Of Metadata), WriteOptions, ContextPropagationToken)
 - uid: Google.Api.Gax.Grpc.CallSettings.HeaderMutation
   commentId: P:Google.Api.Gax.Grpc.CallSettings.HeaderMutation
@@ -148,7 +149,7 @@ items:
     content: public Action<Metadata> HeaderMutation { get; }
     parameters: []
     return:
-      type: System.Action{Grpc.Core.Metadata}
+      type: System.Action{Metadata}
     content.vb: Public ReadOnly Property HeaderMutation As Action(Of Metadata)
   overload: Google.Api.Gax.Grpc.CallSettings.HeaderMutation*
   modifiers.csharp:
@@ -216,13 +217,13 @@ items:
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
-  summary: "\n<xref href=\"Grpc.Core.WriteOptions\" data-throw-if-not-resolved=\"false\"></xref> that will be used for the call.\n"
+  summary: "\n<see cref=\"!:global::Grpc.Core.WriteOptions\"></see> that will be used for the call.\n"
   example: []
   syntax:
     content: public WriteOptions WriteOptions { get; }
     parameters: []
     return:
-      type: Grpc.Core.WriteOptions
+      type: WriteOptions
     content.vb: Public ReadOnly Property WriteOptions As WriteOptions
   overload: Google.Api.Gax.Grpc.CallSettings.WriteOptions*
   modifiers.csharp:
@@ -253,13 +254,13 @@ items:
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
-  summary: "\n<xref href=\"Grpc.Core.ContextPropagationToken\" data-throw-if-not-resolved=\"false\"></xref> for propagating settings from a parent call.\n"
+  summary: "\n<see cref=\"!:ContextPropagationToken\"></see> for propagating settings from a parent call.\n"
   example: []
   syntax:
     content: public ContextPropagationToken PropagationToken { get; }
     parameters: []
     return:
-      type: Grpc.Core.ContextPropagationToken
+      type: ContextPropagationToken
     content.vb: Public ReadOnly Property PropagationToken As ContextPropagationToken
   overload: Google.Api.Gax.Grpc.CallSettings.PropagationToken*
   modifiers.csharp:
@@ -296,7 +297,7 @@ items:
     content: public CallCredentials Credentials { get; }
     parameters: []
     return:
-      type: Grpc.Core.CallCredentials
+      type: CallCredentials
     content.vb: Public ReadOnly Property Credentials As CallCredentials
   overload: Google.Api.Gax.Grpc.CallSettings.Credentials*
   modifiers.csharp:
@@ -384,16 +385,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: Google.Api.Gax.Grpc.CallSettings.FromCallCredentials(Grpc.Core.CallCredentials)
-  commentId: M:Google.Api.Gax.Grpc.CallSettings.FromCallCredentials(Grpc.Core.CallCredentials)
-  id: FromCallCredentials(Grpc.Core.CallCredentials)
+- uid: Google.Api.Gax.Grpc.CallSettings.FromCallCredentials(CallCredentials)
+  commentId: M:Google.Api.Gax.Grpc.CallSettings.FromCallCredentials(CallCredentials)
+  id: FromCallCredentials(CallCredentials)
   parent: Google.Api.Gax.Grpc.CallSettings
   langs:
   - csharp
   - vb
   name: FromCallCredentials(CallCredentials)
   nameWithType: CallSettings.FromCallCredentials(CallCredentials)
-  fullName: Google.Api.Gax.Grpc.CallSettings.FromCallCredentials(Grpc.Core.CallCredentials)
+  fullName: Google.Api.Gax.Grpc.CallSettings.FromCallCredentials(CallCredentials)
   type: Method
   source:
     remote:
@@ -406,17 +407,17 @@ items:
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
-  summary: "\nCreates a <xref href=\"Google.Api.Gax.Grpc.CallSettings\" data-throw-if-not-resolved=\"false\"></xref> for the specified call credentials, or returns null\nif <span class=\"paramref\">credentials</span> is null.\n"
+  summary: "\nCreates a <xref href=\"Google.Api.Gax.Grpc.CallSettings\" data-throw-if-not-resolved=\"false\"></xref> for the specified call credentials, or returns null\nif <code data-dev-comment-type=\"paramref\" class=\"paramref\">credentials</code> is null.\n"
   example: []
   syntax:
     content: public static CallSettings FromCallCredentials(CallCredentials credentials)
     parameters:
     - id: credentials
-      type: Grpc.Core.CallCredentials
+      type: CallCredentials
       description: The call credentials for the new settings.
     return:
       type: Google.Api.Gax.Grpc.CallSettings
-      description: A new instance, or null if <span class="paramref">credentials</span> is null.
+      description: A new instance, or null if <code data-dev-comment-type="paramref" class="paramref">credentials</code> is null.
     content.vb: Public Shared Function FromCallCredentials(credentials As CallCredentials) As CallSettings
   overload: Google.Api.Gax.Grpc.CallSettings.FromCallCredentials*
   modifiers.csharp:
@@ -447,7 +448,7 @@ items:
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
-  summary: "\nCreates a <xref href=\"Google.Api.Gax.Grpc.CallSettings\" data-throw-if-not-resolved=\"false\"></xref> for the specified call timing, or returns null\nif <span class=\"paramref\">timing</span> is null.\n"
+  summary: "\nCreates a <xref href=\"Google.Api.Gax.Grpc.CallSettings\" data-throw-if-not-resolved=\"false\"></xref> for the specified call timing, or returns null\nif <code data-dev-comment-type=\"paramref\" class=\"paramref\">timing</code> is null.\n"
   example: []
   syntax:
     content: public static CallSettings FromCallTiming(CallTiming timing)
@@ -457,7 +458,7 @@ items:
       description: The call timing for the new settings.
     return:
       type: Google.Api.Gax.Grpc.CallSettings
-      description: A new instance or null if <span class="paramref">timing</span> is null..
+      description: A new instance or null if <code data-dev-comment-type="paramref" class="paramref">timing</code> is null..
     content.vb: Public Shared Function FromCallTiming(timing As CallTiming) As CallSettings
   overload: Google.Api.Gax.Grpc.CallSettings.FromCallTiming*
   modifiers.csharp:
@@ -466,16 +467,16 @@ items:
   modifiers.vb:
   - Public
   - Shared
-- uid: Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action{Grpc.Core.Metadata})
-  commentId: M:Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action{Grpc.Core.Metadata})
-  id: FromHeaderMutation(System.Action{Grpc.Core.Metadata})
+- uid: Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action{Metadata})
+  commentId: M:Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action{Metadata})
+  id: FromHeaderMutation(System.Action{Metadata})
   parent: Google.Api.Gax.Grpc.CallSettings
   langs:
   - csharp
   - vb
   name: FromHeaderMutation(Action<Metadata>)
   nameWithType: CallSettings.FromHeaderMutation(Action<Metadata>)
-  fullName: Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action<Grpc.Core.Metadata>)
+  fullName: Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action<Metadata>)
   type: Method
   source:
     remote:
@@ -488,17 +489,17 @@ items:
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
-  summary: "\nCreates a <xref href=\"Google.Api.Gax.Grpc.CallSettings\" data-throw-if-not-resolved=\"false\"></xref> for the specified header mutation, or returns null\nif <span class=\"paramref\">headerMutation</span> is null.\n"
+  summary: "\nCreates a <xref href=\"Google.Api.Gax.Grpc.CallSettings\" data-throw-if-not-resolved=\"false\"></xref> for the specified header mutation, or returns null\nif <code data-dev-comment-type=\"paramref\" class=\"paramref\">headerMutation</code> is null.\n"
   example: []
   syntax:
     content: public static CallSettings FromHeaderMutation(Action<Metadata> headerMutation)
     parameters:
     - id: headerMutation
-      type: System.Action{Grpc.Core.Metadata}
+      type: System.Action{Metadata}
       description: Action to modify the headers to send at the beginning of the call.
     return:
       type: Google.Api.Gax.Grpc.CallSettings
-      description: A new instance, or null if <span class="paramref">headerMutation</span> is null..
+      description: A new instance, or null if <code data-dev-comment-type="paramref" class="paramref">headerMutation</code> is null..
     content.vb: Public Shared Function FromHeaderMutation(headerMutation As Action(Of Metadata)) As CallSettings
   overload: Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation*
   nameWithType.vb: CallSettings.FromHeaderMutation(Action(Of Metadata))
@@ -508,7 +509,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action(Of Grpc.Core.Metadata))
+  fullName.vb: Google.Api.Gax.Grpc.CallSettings.FromHeaderMutation(System.Action(Of Metadata))
   name.vb: FromHeaderMutation(Action(Of Metadata))
 - uid: Google.Api.Gax.Grpc.CallSettings.FromHeader(System.String,System.String)
   commentId: M:Google.Api.Gax.Grpc.CallSettings.FromHeader(System.String,System.String)
@@ -965,41 +966,41 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Grpc.Core.CallCredentials)
-  commentId: M:Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,Grpc.Core.CallCredentials)
+- uid: Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(CallCredentials)
+  commentId: M:Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,CallCredentials)
   parent: Google.Api.Gax.Grpc.CallSettingsExtensions
-  definition: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,Grpc.Core.CallCredentials)
+  definition: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,CallCredentials)
   name: WithCallCredentials(CallCredentials)
   nameWithType: CallSettingsExtensions.WithCallCredentials(CallCredentials)
-  fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Grpc.Core.CallCredentials)
+  fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(CallCredentials)
   spec.csharp:
-  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Grpc.Core.CallCredentials)
+  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(CallCredentials)
     name: WithCallCredentials
     nameWithType: CallSettingsExtensions.WithCallCredentials
     fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Grpc.Core.CallCredentials
+  - uid: CallCredentials
     name: CallCredentials
     nameWithType: CallCredentials
-    fullName: Grpc.Core.CallCredentials
+    fullName: CallCredentials
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Grpc.Core.CallCredentials)
+  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(CallCredentials)
     name: WithCallCredentials
     nameWithType: CallSettingsExtensions.WithCallCredentials
     fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials
   - name: (
     nameWithType: (
     fullName: (
-  - uid: Grpc.Core.CallCredentials
+  - uid: CallCredentials
     name: CallCredentials
     nameWithType: CallCredentials
-    fullName: Grpc.Core.CallCredentials
+    fullName: CallCredentials
     isExternal: true
   - name: )
     nameWithType: )
@@ -1174,6 +1175,43 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Google.Api.Gax.Grpc.CallSettings.Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Expiration)
+  commentId: M:Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Expiration)
+  parent: Google.Api.Gax.Grpc.CallSettingsExtensions
+  definition: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Expiration)
+  name: WithExpiration(Expiration)
+  nameWithType: CallSettingsExtensions.WithExpiration(Expiration)
+  fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Expiration)
+  spec.csharp:
+  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Expiration)
+    name: WithExpiration
+    nameWithType: CallSettingsExtensions.WithExpiration
+    fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Gax.Expiration
+    name: Expiration
+    nameWithType: Expiration
+    fullName: Google.Api.Gax.Expiration
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Expiration)
+    name: WithExpiration
+    nameWithType: CallSettingsExtensions.WithExpiration
+    fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Gax.Expiration
+    name: Expiration
+    nameWithType: Expiration
+    fullName: Google.Api.Gax.Expiration
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
@@ -1289,14 +1327,14 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,Grpc.Core.CallCredentials)
-  commentId: M:Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,Grpc.Core.CallCredentials)
+- uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,CallCredentials)
+  commentId: M:Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,CallCredentials)
   isExternal: true
   name: WithCallCredentials(CallSettings, CallCredentials)
   nameWithType: CallSettingsExtensions.WithCallCredentials(CallSettings, CallCredentials)
-  fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings, Grpc.Core.CallCredentials)
+  fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings, CallCredentials)
   spec.csharp:
-  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,Grpc.Core.CallCredentials)
+  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,CallCredentials)
     name: WithCallCredentials
     nameWithType: CallSettingsExtensions.WithCallCredentials
     fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials
@@ -1310,16 +1348,16 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Grpc.Core.CallCredentials
+  - uid: CallCredentials
     name: CallCredentials
     nameWithType: CallCredentials
-    fullName: Grpc.Core.CallCredentials
+    fullName: CallCredentials
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,Grpc.Core.CallCredentials)
+  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials(Google.Api.Gax.Grpc.CallSettings,CallCredentials)
     name: WithCallCredentials
     nameWithType: CallSettingsExtensions.WithCallCredentials
     fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithCallCredentials
@@ -1333,10 +1371,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: Grpc.Core.CallCredentials
+  - uid: CallCredentials
     name: CallCredentials
     nameWithType: CallCredentials
-    fullName: Grpc.Core.CallCredentials
+    fullName: CallCredentials
     isExternal: true
   - name: )
     nameWithType: )
@@ -1550,6 +1588,56 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Expiration)
+  commentId: M:Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Expiration)
+  isExternal: false
+  name: WithExpiration(CallSettings, Expiration)
+  nameWithType: CallSettingsExtensions.WithExpiration(CallSettings, Expiration)
+  fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Grpc.CallSettings, Google.Api.Gax.Expiration)
+  spec.csharp:
+  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Expiration)
+    name: WithExpiration
+    nameWithType: CallSettingsExtensions.WithExpiration
+    fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Gax.Grpc.CallSettings
+    name: CallSettings
+    nameWithType: CallSettings
+    fullName: Google.Api.Gax.Grpc.CallSettings
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Api.Gax.Expiration
+    name: Expiration
+    nameWithType: Expiration
+    fullName: Google.Api.Gax.Expiration
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration(Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Expiration)
+    name: WithExpiration
+    nameWithType: CallSettingsExtensions.WithExpiration
+    fullName: Google.Api.Gax.Grpc.CallSettingsExtensions.WithExpiration
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Gax.Grpc.CallSettings
+    name: CallSettings
+    nameWithType: CallSettings
+    fullName: Google.Api.Gax.Grpc.CallSettings
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: Google.Api.Gax.Expiration
+    name: Expiration
+    nameWithType: Expiration
+    fullName: Google.Api.Gax.Expiration
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.Gax.Grpc.CallTiming
   commentId: T:Google.Api.Gax.Grpc.CallTiming
   parent: Google.Api.Gax.Grpc
@@ -1557,20 +1645,6 @@ references:
   name: CallTiming
   nameWithType: CallTiming
   fullName: Google.Api.Gax.Grpc.CallTiming
-- uid: Grpc.Core.WriteOptions
-  commentId: T:Grpc.Core.WriteOptions
-  parent: Grpc.Core
-  isExternal: true
-  name: WriteOptions
-  nameWithType: WriteOptions
-  fullName: Grpc.Core.WriteOptions
-- uid: Grpc.Core.ContextPropagationToken
-  commentId: T:Grpc.Core.ContextPropagationToken
-  parent: Grpc.Core
-  isExternal: true
-  name: ContextPropagationToken
-  nameWithType: ContextPropagationToken
-  fullName: Grpc.Core.ContextPropagationToken
 - uid: Google.Api.Gax.Grpc.CallSettings.#ctor*
   commentId: Overload:Google.Api.Gax.Grpc.CallSettings.#ctor
   isExternal: false
@@ -1621,22 +1695,20 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: Grpc.Core.CallCredentials
-  commentId: T:Grpc.Core.CallCredentials
-  parent: Grpc.Core
+- uid: CallCredentials
   isExternal: true
   name: CallCredentials
   nameWithType: CallCredentials
-  fullName: Grpc.Core.CallCredentials
-- uid: System.Action{Grpc.Core.Metadata}
-  commentId: T:System.Action{Grpc.Core.Metadata}
+  fullName: CallCredentials
+- uid: System.Action{Metadata}
+  commentId: T:System.Action{Metadata}
   parent: System
   definition: System.Action`1
   name: Action<Metadata>
   nameWithType: Action<Metadata>
-  fullName: System.Action<Grpc.Core.Metadata>
+  fullName: System.Action<Metadata>
   nameWithType.vb: Action(Of Metadata)
-  fullName.vb: System.Action(Of Grpc.Core.Metadata)
+  fullName.vb: System.Action(Of Metadata)
   name.vb: Action(Of Metadata)
   spec.csharp:
   - uid: System.Action`1
@@ -1647,10 +1719,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Grpc.Core.Metadata
+  - uid: Metadata
     name: Metadata
     nameWithType: Metadata
-    fullName: Grpc.Core.Metadata
+    fullName: Metadata
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1664,20 +1736,24 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Grpc.Core.Metadata
+  - uid: Metadata
     name: Metadata
     nameWithType: Metadata
-    fullName: Grpc.Core.Metadata
+    fullName: Metadata
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: Grpc.Core
-  commentId: N:Grpc.Core
-  isExternal: false
-  name: Grpc.Core
-  nameWithType: Grpc.Core
-  fullName: Grpc.Core
+- uid: WriteOptions
+  isExternal: true
+  name: WriteOptions
+  nameWithType: WriteOptions
+  fullName: WriteOptions
+- uid: ContextPropagationToken
+  isExternal: true
+  name: ContextPropagationToken
+  nameWithType: ContextPropagationToken
+  fullName: ContextPropagationToken
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true
