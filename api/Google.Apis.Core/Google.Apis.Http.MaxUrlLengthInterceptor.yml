@@ -6,7 +6,7 @@ items:
   parent: Google.Apis.Http
   children:
   - Google.Apis.Http.MaxUrlLengthInterceptor.#ctor(System.UInt32)
-  - Google.Apis.Http.MaxUrlLengthInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
+  - Google.Apis.Http.MaxUrlLengthInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   langs:
   - csharp
   - vb
@@ -87,16 +87,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Google.Apis.Http.MaxUrlLengthInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
-  commentId: M:Google.Apis.Http.MaxUrlLengthInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
-  id: InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
+- uid: Google.Apis.Http.MaxUrlLengthInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Http.MaxUrlLengthInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  id: InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   parent: Google.Apis.Http.MaxUrlLengthInterceptor
   langs:
   - csharp
   - vb
   name: InterceptAsync(HttpRequestMessage, CancellationToken)
   nameWithType: MaxUrlLengthInterceptor.InterceptAsync(HttpRequestMessage, CancellationToken)
-  fullName: Google.Apis.Http.MaxUrlLengthInterceptor.InterceptAsync(HttpRequestMessage, System.Threading.CancellationToken)
+  fullName: Google.Apis.Http.MaxUrlLengthInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -115,7 +115,7 @@ items:
     content: public Task InterceptAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     parameters:
     - id: request
-      type: HttpRequestMessage
+      type: System.Net.Http.HttpRequestMessage
       description: The HTTP request message.
     - id: cancellationToken
       type: System.Threading.CancellationToken
@@ -125,7 +125,7 @@ items:
     content.vb: Public Function InterceptAsync(request As HttpRequestMessage, cancellationToken As CancellationToken) As Task
   overload: Google.Apis.Http.MaxUrlLengthInterceptor.InterceptAsync*
   implements:
-  - Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
+  - Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -563,25 +563,25 @@ references:
   name: InterceptAsync
   nameWithType: MaxUrlLengthInterceptor.InterceptAsync
   fullName: Google.Apis.Http.MaxUrlLengthInterceptor.InterceptAsync
-- uid: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
-  commentId: M:Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
+- uid: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
+  commentId: M:Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
   parent: Google.Apis.Http.IHttpExecuteInterceptor
   isExternal: true
   name: InterceptAsync(HttpRequestMessage, CancellationToken)
   nameWithType: IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage, CancellationToken)
-  fullName: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage, System.Threading.CancellationToken)
+  fullName: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage, System.Threading.CancellationToken)
   spec.csharp:
-  - uid: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
+  - uid: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
     name: InterceptAsync
     nameWithType: IHttpExecuteInterceptor.InterceptAsync
     fullName: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync
   - name: (
     nameWithType: (
     fullName: (
-  - uid: HttpRequestMessage
+  - uid: System.Net.Http.HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: HttpRequestMessage
+    fullName: System.Net.Http.HttpRequestMessage
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -595,17 +595,17 @@ references:
     nameWithType: )
     fullName: )
   spec.vb:
-  - uid: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(HttpRequestMessage,System.Threading.CancellationToken)
+  - uid: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync(System.Net.Http.HttpRequestMessage,System.Threading.CancellationToken)
     name: InterceptAsync
     nameWithType: IHttpExecuteInterceptor.InterceptAsync
     fullName: Google.Apis.Http.IHttpExecuteInterceptor.InterceptAsync
   - name: (
     nameWithType: (
     fullName: (
-  - uid: HttpRequestMessage
+  - uid: System.Net.Http.HttpRequestMessage
     name: HttpRequestMessage
     nameWithType: HttpRequestMessage
-    fullName: HttpRequestMessage
+    fullName: System.Net.Http.HttpRequestMessage
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -618,11 +618,13 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: HttpRequestMessage
+- uid: System.Net.Http.HttpRequestMessage
+  commentId: T:System.Net.Http.HttpRequestMessage
+  parent: System.Net.Http
   isExternal: true
   name: HttpRequestMessage
   nameWithType: HttpRequestMessage
-  fullName: HttpRequestMessage
+  fullName: System.Net.Http.HttpRequestMessage
 - uid: System.Threading.CancellationToken
   commentId: T:System.Threading.CancellationToken
   parent: System.Threading
@@ -637,6 +639,12 @@ references:
   name: Task
   nameWithType: Task
   fullName: System.Threading.Tasks.Task
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: false
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
 - uid: System.Threading
   commentId: N:System.Threading
   isExternal: false

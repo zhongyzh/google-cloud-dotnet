@@ -33,6 +33,7 @@ items:
   - Google.Api.Service.Experimental
   - Google.Api.Service.ExperimentalFieldNumber
   - Google.Api.Service.GetHashCode
+  - Google.Api.Service.Google#Protobuf#IMessage#Descriptor
   - Google.Api.Service.Http
   - Google.Api.Service.HttpFieldNumber
   - Google.Api.Service.Id
@@ -89,12 +90,22 @@ items:
   summary: "\n`Service` is the root object of Google service configuration schema. It\ndescribes basic information about a service, such as the name and the\ntitle, and delegates other aspects to sub-sections. Each sub-section is\neither a proto message or a repeated proto message that configures a\nspecific aspect, such as auth. See each proto message definition for details.\n\nExample:\n\ntype: google.api.Service\nconfig_version: 3\nname: calendar.googleapis.com\ntitle: Google Calendar API\napis:\n- name: google.calendar.v3.Calendar\nauthentication:\n providers:\n - id: google_calendar_auth\n   jwks_uri: https://www.googleapis.com/oauth2/v1/certs\n   issuer: https://securetoken.google.com\n rules:\n - selector: &quot;*&quot;\n   requirements:\n     provider_id: google_calendar_auth\n"
   example: []
   syntax:
-    content: 'public sealed class Service : Protobuf.IMessage<Service>'
+    content: 'public sealed class Service : IMessage<Service>, IMessage, IEquatable<Service>, IDeepCloneable<Service>'
     content.vb: >-
       Public NotInheritable Class Service
-          Inherits Protobuf.IMessage(Of Service)
+          Implements IMessage(Of Service), IMessage, IEquatable(Of Service), IDeepCloneable(Of Service)
   inheritance:
   - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.Service}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Api.Service}
+  - Google.Protobuf.IDeepCloneable{Google.Api.Service}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - sealed
@@ -126,11 +137,11 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public static Protobuf.MessageParser<Service> Parser { get; }
+    content: public static MessageParser<Service> Parser { get; }
     parameters: []
     return:
       type: Google.Protobuf.MessageParser{Google.Api.Service}
-    content.vb: Public Shared ReadOnly Property Parser As Protobuf.MessageParser(Of Service)
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of Service)
   overload: Google.Api.Service.Parser*
   modifiers.csharp:
   - public
@@ -163,11 +174,11 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public static Protobuf.Reflection.MessageDescriptor Descriptor { get; }
+    content: public static MessageDescriptor Descriptor { get; }
     parameters: []
     return:
       type: Google.Protobuf.Reflection.MessageDescriptor
-    content.vb: Public Shared ReadOnly Property Descriptor As Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
   overload: Google.Api.Service.Descriptor*
   modifiers.csharp:
   - public
@@ -177,6 +188,45 @@ items:
   - Public
   - Shared
   - ReadOnly
+- uid: Google.Api.Service.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Api.Service.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Api.Service
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: Service.IMessage.Descriptor
+  fullName: Google.Api.Service.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Service.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Api/Service.cs
+    startLine: 116
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Api.Service.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Service.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Api.Service.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
 - uid: Google.Api.Service.#ctor
   commentId: M:Google.Api.Service.#ctor
   id: '#ctor'
@@ -268,6 +318,8 @@ items:
       type: Google.Api.Service
     content.vb: Public Function Clone As Service
   overload: Google.Api.Service.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Api.Service}.Clone
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -692,11 +744,11 @@ items:
   summary: "\nA list of API interfaces exported by this service. Only the `name` field\nof the [google.protobuf.Api][google.protobuf.Api] needs to be provided by the configuration\nauthor, as the remaining fields will be derived from the IDL during the\nnormalization process. It is an error to specify an API interface here\nwhich cannot be resolved against the associated IDL files.\n"
   example: []
   syntax:
-    content: public Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Api> Apis { get; }
+    content: public RepeatedField<Api> Apis { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Api}
-    content.vb: Public ReadOnly Property Apis As Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Api)
+    content.vb: Public ReadOnly Property Apis As RepeatedField(Of Api)
   overload: Google.Api.Service.Apis*
   modifiers.csharp:
   - public
@@ -764,11 +816,11 @@ items:
   summary: "\nA list of all proto message types included in this API service.\nTypes referenced directly or indirectly by the `apis` are\nautomatically included.  Messages which are not referenced but\nshall be included, such as types used by the `google.protobuf.Any` type,\nshould be listed here by name. Example:\n\ntypes:\n- name: google.protobuf.Int32\n"
   example: []
   syntax:
-    content: public Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Type> Types_ { get; }
+    content: public RepeatedField<Type> Types_ { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Type}
-    content.vb: Public ReadOnly Property Types_ As Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Type)
+    content.vb: Public ReadOnly Property Types_ As RepeatedField(Of Type)
   overload: Google.Api.Service.Types_*
   modifiers.csharp:
   - public
@@ -836,11 +888,11 @@ items:
   summary: "\nA list of all enum types included in this API service.  Enums\nreferenced directly or indirectly by the `apis` are automatically\nincluded.  Enums which are not referenced but shall be included\nshould be listed here by name. Example:\n\nenums:\n- name: google.someapi.v1.SomeEnum\n"
   example: []
   syntax:
-    content: public Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Enum> Enums { get; }
+    content: public RepeatedField<Enum> Enums { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Enum}
-    content.vb: Public ReadOnly Property Enums As Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Enum)
+    content.vb: Public ReadOnly Property Enums As RepeatedField(Of  Enum)
   overload: Google.Api.Service.Enums*
   modifiers.csharp:
   - public
@@ -1412,11 +1464,11 @@ items:
   summary: "\nConfiguration for network endpoints.  If this is empty, then an endpoint\nwith the same name as the service is automatically generated to service all\ndefined APIs.\n"
   example: []
   syntax:
-    content: public Protobuf.Collections.RepeatedField<Endpoint> Endpoints { get; }
+    content: public RepeatedField<Endpoint> Endpoints { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{Google.Api.Endpoint}
-    content.vb: Public ReadOnly Property Endpoints As Protobuf.Collections.RepeatedField(Of Endpoint)
+    content.vb: Public ReadOnly Property Endpoints As RepeatedField(Of Endpoint)
   overload: Google.Api.Service.Endpoints*
   modifiers.csharp:
   - public
@@ -1556,11 +1608,11 @@ items:
   summary: "\nDefines the logs used by this service.\n"
   example: []
   syntax:
-    content: public Protobuf.Collections.RepeatedField<LogDescriptor> Logs { get; }
+    content: public RepeatedField<LogDescriptor> Logs { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{Google.Api.LogDescriptor}
-    content.vb: Public ReadOnly Property Logs As Protobuf.Collections.RepeatedField(Of LogDescriptor)
+    content.vb: Public ReadOnly Property Logs As RepeatedField(Of LogDescriptor)
   overload: Google.Api.Service.Logs*
   modifiers.csharp:
   - public
@@ -1628,11 +1680,11 @@ items:
   summary: "\nDefines the metrics used by this service.\n"
   example: []
   syntax:
-    content: public Protobuf.Collections.RepeatedField<MetricDescriptor> Metrics { get; }
+    content: public RepeatedField<MetricDescriptor> Metrics { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{Google.Api.MetricDescriptor}
-    content.vb: Public ReadOnly Property Metrics As Protobuf.Collections.RepeatedField(Of MetricDescriptor)
+    content.vb: Public ReadOnly Property Metrics As RepeatedField(Of MetricDescriptor)
   overload: Google.Api.Service.Metrics*
   modifiers.csharp:
   - public
@@ -1700,11 +1752,11 @@ items:
   summary: "\nDefines the monitored resources used by this service. This is required\nby the [Service.monitoring][google.api.Service.monitoring] and [Service.logging][google.api.Service.logging] configurations.\n"
   example: []
   syntax:
-    content: public Protobuf.Collections.RepeatedField<MonitoredResourceDescriptor> MonitoredResources { get; }
+    content: public RepeatedField<MonitoredResourceDescriptor> MonitoredResources { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{Google.Api.MonitoredResourceDescriptor}
-    content.vb: Public ReadOnly Property MonitoredResources As Protobuf.Collections.RepeatedField(Of MonitoredResourceDescriptor)
+    content.vb: Public ReadOnly Property MonitoredResources As RepeatedField(Of MonitoredResourceDescriptor)
   overload: Google.Api.Service.MonitoredResources*
   modifiers.csharp:
   - public
@@ -2102,6 +2154,7 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
   overload: Google.Api.Service.Equals*
   modifiers.csharp:
   - public
@@ -2140,6 +2193,8 @@ items:
       type: System.Boolean
     content.vb: Public Function Equals(other As Service) As Boolean
   overload: Google.Api.Service.Equals*
+  implements:
+  - System.IEquatable{Google.Api.Service}.Equals(Google.Api.Service)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2171,6 +2226,7 @@ items:
     return:
       type: System.Int32
     content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
   overload: Google.Api.Service.GetHashCode*
   modifiers.csharp:
   - public
@@ -2205,6 +2261,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
   overload: Google.Api.Service.ToString*
   modifiers.csharp:
   - public
@@ -2219,8 +2276,8 @@ items:
   langs:
   - csharp
   - vb
-  name: WriteTo(Protobuf.CodedOutputStream)
-  nameWithType: Service.WriteTo(Protobuf.CodedOutputStream)
+  name: WriteTo(CodedOutputStream)
+  nameWithType: Service.WriteTo(CodedOutputStream)
   fullName: Google.Api.Service.WriteTo(Google.Protobuf.CodedOutputStream)
   type: Method
   source:
@@ -2235,12 +2292,14 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public void WriteTo(Protobuf.CodedOutputStream output)
+    content: public void WriteTo(CodedOutputStream output)
     parameters:
     - id: output
       type: Google.Protobuf.CodedOutputStream
-    content.vb: Public Sub WriteTo(output As Protobuf.CodedOutputStream)
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
   overload: Google.Api.Service.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2273,6 +2332,8 @@ items:
       type: System.Int32
     content.vb: Public Function CalculateSize As Integer
   overload: Google.Api.Service.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2306,6 +2367,8 @@ items:
       type: Google.Api.Service
     content.vb: Public Sub MergeFrom(other As Service)
   overload: Google.Api.Service.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.Service}.MergeFrom(Google.Api.Service)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2317,8 +2380,8 @@ items:
   langs:
   - csharp
   - vb
-  name: MergeFrom(Protobuf.CodedInputStream)
-  nameWithType: Service.MergeFrom(Protobuf.CodedInputStream)
+  name: MergeFrom(CodedInputStream)
+  nameWithType: Service.MergeFrom(CodedInputStream)
   fullName: Google.Api.Service.MergeFrom(Google.Protobuf.CodedInputStream)
   type: Method
   source:
@@ -2333,12 +2396,14 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public void MergeFrom(Protobuf.CodedInputStream input)
+    content: public void MergeFrom(CodedInputStream input)
     parameters:
     - id: input
       type: Google.Protobuf.CodedInputStream
-    content.vb: Public Sub MergeFrom(input As Protobuf.CodedInputStream)
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
   overload: Google.Api.Service.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -2357,12 +2422,444 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Api.Service}
+  commentId: T:Google.Protobuf.IMessage{Google.Api.Service}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<Service>
+  nameWithType: IMessage<Service>
+  fullName: Google.Protobuf.IMessage<Google.Api.Service>
+  nameWithType.vb: IMessage(Of Service)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.Service)
+  name.vb: IMessage(Of Service)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Service
+    name: Service
+    nameWithType: Service
+    fullName: Google.Api.Service
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Service
+    name: Service
+    nameWithType: Service
+    fullName: Google.Api.Service
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Api.Service}
+  commentId: T:System.IEquatable{Google.Api.Service}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<Service>
+  nameWithType: IEquatable<Service>
+  fullName: System.IEquatable<Google.Api.Service>
+  nameWithType.vb: IEquatable(Of Service)
+  fullName.vb: System.IEquatable(Of Google.Api.Service)
+  name.vb: IEquatable(Of Service)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Service
+    name: Service
+    nameWithType: Service
+    fullName: Google.Api.Service
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Service
+    name: Service
+    nameWithType: Service
+    fullName: Google.Api.Service
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.Service}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Api.Service}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<Service>
+  nameWithType: IDeepCloneable<Service>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.Service>
+  nameWithType.vb: IDeepCloneable(Of Service)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.Service)
+  name.vb: IDeepCloneable(Of Service)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.Service
+    name: Service
+    nameWithType: Service
+    fullName: Google.Api.Service
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.Service
+    name: Service
+    nameWithType: Service
+    fullName: Google.Api.Service
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.Service.Parser*
   commentId: Overload:Google.Api.Service.Parser
   isExternal: false
@@ -2370,18 +2867,19 @@ references:
   nameWithType: Service.Parser
   fullName: Google.Api.Service.Parser
 - uid: Google.Protobuf.MessageParser{Google.Api.Service}
-  commentId: '!:Google.Protobuf.MessageParser{Google.Api.Service}'
+  commentId: T:Google.Protobuf.MessageParser{Google.Api.Service}
+  parent: Google.Protobuf
   definition: Google.Protobuf.MessageParser`1
-  name: Protobuf.MessageParser<Service>
-  nameWithType: Protobuf.MessageParser<Service>
+  name: MessageParser<Service>
+  nameWithType: MessageParser<Service>
   fullName: Google.Protobuf.MessageParser<Google.Api.Service>
-  nameWithType.vb: Protobuf.MessageParser(Of Service)
+  nameWithType.vb: MessageParser(Of Service)
   fullName.vb: Google.Protobuf.MessageParser(Of Google.Api.Service)
-  name.vb: Protobuf.MessageParser(Of Service)
+  name.vb: MessageParser(Of Service)
   spec.csharp:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: <
@@ -2396,8 +2894,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: '(Of '
@@ -2411,40 +2909,41 @@ references:
     nameWithType: )
     fullName: )
 - uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
   isExternal: true
-  name: Protobuf.MessageParser<>
-  nameWithType: Protobuf.MessageParser<>
-  fullName: Google.Protobuf.MessageParser<>
-  nameWithType.vb: Protobuf.MessageParser(Of )
-  fullName.vb: Google.Protobuf.MessageParser(Of )
-  name.vb: Protobuf.MessageParser(Of )
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
   spec.csharp:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -2455,10 +2954,34 @@ references:
   nameWithType: Service.Descriptor
   fullName: Google.Api.Service.Descriptor
 - uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
   isExternal: true
-  name: Protobuf.Reflection.MessageDescriptor
-  nameWithType: Protobuf.Reflection.MessageDescriptor
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
   fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Api.Service.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Api.Service.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: Service.IMessage.Descriptor
+  fullName: Google.Api.Service.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: Service.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Api.Service.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
 - uid: Google.Api.Service.#ctor*
   commentId: Overload:Google.Api.Service.#ctor
   isExternal: false
@@ -2478,6 +3001,71 @@ references:
   name: Clone
   nameWithType: Service.Clone
   fullName: Google.Api.Service.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.Service}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Api.Service}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Api.Service}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<Service>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.Service>.Clone()
+  nameWithType.vb: IDeepCloneable(Of Service).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.Service).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<Service>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Api.Service>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of Service).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Api.Service).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -2612,26 +3200,27 @@ references:
   nameWithType: Service.Apis
   fullName: Google.Api.Service.Apis
 - uid: Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Api}
-  commentId: '!:Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Api}'
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Api}
+  parent: Google.Protobuf.Collections
   definition: Google.Protobuf.Collections.RepeatedField`1
-  name: Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Api>
-  nameWithType: Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Api>
+  name: RepeatedField<Api>
+  nameWithType: RepeatedField<Api>
   fullName: Google.Protobuf.Collections.RepeatedField<Google.Protobuf.WellKnownTypes.Api>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Api)
+  nameWithType.vb: RepeatedField(Of Api)
   fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Protobuf.WellKnownTypes.Api)
-  name.vb: Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Api)
+  name.vb: RepeatedField(Of Api)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
   - uid: Google.Protobuf.WellKnownTypes.Api
-    name: Protobuf.WellKnownTypes.Api
-    nameWithType: Protobuf.WellKnownTypes.Api
+    name: Api
+    nameWithType: Api
     fullName: Google.Protobuf.WellKnownTypes.Api
     isExternal: true
   - name: '>'
@@ -2639,59 +3228,66 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
   - uid: Google.Protobuf.WellKnownTypes.Api
-    name: Protobuf.WellKnownTypes.Api
-    nameWithType: Protobuf.WellKnownTypes.Api
+    name: Api
+    nameWithType: Api
     fullName: Google.Protobuf.WellKnownTypes.Api
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
 - uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
   isExternal: true
-  name: Protobuf.Collections.RepeatedField<>
-  nameWithType: Protobuf.Collections.RepeatedField<>
-  fullName: Google.Protobuf.Collections.RepeatedField<>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of )
-  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of )
-  name.vb: Protobuf.Collections.RepeatedField(Of )
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
 - uid: Google.Api.Service.Types_*
   commentId: Overload:Google.Api.Service.Types_
   isExternal: false
@@ -2699,26 +3295,27 @@ references:
   nameWithType: Service.Types_
   fullName: Google.Api.Service.Types_
 - uid: Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Type}
-  commentId: '!:Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Type}'
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Type}
+  parent: Google.Protobuf.Collections
   definition: Google.Protobuf.Collections.RepeatedField`1
-  name: Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Type>
-  nameWithType: Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Type>
+  name: RepeatedField<Type>
+  nameWithType: RepeatedField<Type>
   fullName: Google.Protobuf.Collections.RepeatedField<Google.Protobuf.WellKnownTypes.Type>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Type)
+  nameWithType.vb: RepeatedField(Of Type)
   fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Protobuf.WellKnownTypes.Type)
-  name.vb: Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Type)
+  name.vb: RepeatedField(Of Type)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
   - uid: Google.Protobuf.WellKnownTypes.Type
-    name: Protobuf.WellKnownTypes.Type
-    nameWithType: Protobuf.WellKnownTypes.Type
+    name: Type
+    nameWithType: Type
     fullName: Google.Protobuf.WellKnownTypes.Type
     isExternal: true
   - name: '>'
@@ -2726,16 +3323,16 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
   - uid: Google.Protobuf.WellKnownTypes.Type
-    name: Protobuf.WellKnownTypes.Type
-    nameWithType: Protobuf.WellKnownTypes.Type
+    name: Type
+    nameWithType: Type
     fullName: Google.Protobuf.WellKnownTypes.Type
     isExternal: true
   - name: )
@@ -2748,26 +3345,27 @@ references:
   nameWithType: Service.Enums
   fullName: Google.Api.Service.Enums
 - uid: Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Enum}
-  commentId: '!:Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Enum}'
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Enum}
+  parent: Google.Protobuf.Collections
   definition: Google.Protobuf.Collections.RepeatedField`1
-  name: Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Enum>
-  nameWithType: Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Enum>
+  name: RepeatedField<Enum>
+  nameWithType: RepeatedField<Enum>
   fullName: Google.Protobuf.Collections.RepeatedField<Google.Protobuf.WellKnownTypes.Enum>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Enum)
+  nameWithType.vb: RepeatedField(Of Enum)
   fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Protobuf.WellKnownTypes.Enum)
-  name.vb: Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Enum)
+  name.vb: RepeatedField(Of Enum)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
   - uid: Google.Protobuf.WellKnownTypes.Enum
-    name: Protobuf.WellKnownTypes.Enum
-    nameWithType: Protobuf.WellKnownTypes.Enum
+    name: Enum
+    nameWithType: Enum
     fullName: Google.Protobuf.WellKnownTypes.Enum
     isExternal: true
   - name: '>'
@@ -2775,16 +3373,16 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
   - uid: Google.Protobuf.WellKnownTypes.Enum
-    name: Protobuf.WellKnownTypes.Enum
-    nameWithType: Protobuf.WellKnownTypes.Enum
+    name: Enum
+    nameWithType: Enum
     fullName: Google.Protobuf.WellKnownTypes.Enum
     isExternal: true
   - name: )
@@ -2888,18 +3486,19 @@ references:
   nameWithType: Service.Endpoints
   fullName: Google.Api.Service.Endpoints
 - uid: Google.Protobuf.Collections.RepeatedField{Google.Api.Endpoint}
-  commentId: '!:Google.Protobuf.Collections.RepeatedField{Google.Api.Endpoint}'
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Api.Endpoint}
+  parent: Google.Protobuf.Collections
   definition: Google.Protobuf.Collections.RepeatedField`1
-  name: Protobuf.Collections.RepeatedField<Endpoint>
-  nameWithType: Protobuf.Collections.RepeatedField<Endpoint>
+  name: RepeatedField<Endpoint>
+  nameWithType: RepeatedField<Endpoint>
   fullName: Google.Protobuf.Collections.RepeatedField<Google.Api.Endpoint>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of Endpoint)
+  nameWithType.vb: RepeatedField(Of Endpoint)
   fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Api.Endpoint)
-  name.vb: Protobuf.Collections.RepeatedField(Of Endpoint)
+  name.vb: RepeatedField(Of Endpoint)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
@@ -2914,8 +3513,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
@@ -2948,18 +3547,19 @@ references:
   nameWithType: Service.Logs
   fullName: Google.Api.Service.Logs
 - uid: Google.Protobuf.Collections.RepeatedField{Google.Api.LogDescriptor}
-  commentId: '!:Google.Protobuf.Collections.RepeatedField{Google.Api.LogDescriptor}'
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Api.LogDescriptor}
+  parent: Google.Protobuf.Collections
   definition: Google.Protobuf.Collections.RepeatedField`1
-  name: Protobuf.Collections.RepeatedField<LogDescriptor>
-  nameWithType: Protobuf.Collections.RepeatedField<LogDescriptor>
+  name: RepeatedField<LogDescriptor>
+  nameWithType: RepeatedField<LogDescriptor>
   fullName: Google.Protobuf.Collections.RepeatedField<Google.Api.LogDescriptor>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of LogDescriptor)
+  nameWithType.vb: RepeatedField(Of LogDescriptor)
   fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Api.LogDescriptor)
-  name.vb: Protobuf.Collections.RepeatedField(Of LogDescriptor)
+  name.vb: RepeatedField(Of LogDescriptor)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
@@ -2974,8 +3574,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
@@ -2995,18 +3595,19 @@ references:
   nameWithType: Service.Metrics
   fullName: Google.Api.Service.Metrics
 - uid: Google.Protobuf.Collections.RepeatedField{Google.Api.MetricDescriptor}
-  commentId: '!:Google.Protobuf.Collections.RepeatedField{Google.Api.MetricDescriptor}'
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Api.MetricDescriptor}
+  parent: Google.Protobuf.Collections
   definition: Google.Protobuf.Collections.RepeatedField`1
-  name: Protobuf.Collections.RepeatedField<MetricDescriptor>
-  nameWithType: Protobuf.Collections.RepeatedField<MetricDescriptor>
+  name: RepeatedField<MetricDescriptor>
+  nameWithType: RepeatedField<MetricDescriptor>
   fullName: Google.Protobuf.Collections.RepeatedField<Google.Api.MetricDescriptor>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of MetricDescriptor)
+  nameWithType.vb: RepeatedField(Of MetricDescriptor)
   fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Api.MetricDescriptor)
-  name.vb: Protobuf.Collections.RepeatedField(Of MetricDescriptor)
+  name.vb: RepeatedField(Of MetricDescriptor)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
@@ -3021,8 +3622,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
@@ -3042,18 +3643,19 @@ references:
   nameWithType: Service.MonitoredResources
   fullName: Google.Api.Service.MonitoredResources
 - uid: Google.Protobuf.Collections.RepeatedField{Google.Api.MonitoredResourceDescriptor}
-  commentId: '!:Google.Protobuf.Collections.RepeatedField{Google.Api.MonitoredResourceDescriptor}'
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Api.MonitoredResourceDescriptor}
+  parent: Google.Protobuf.Collections
   definition: Google.Protobuf.Collections.RepeatedField`1
-  name: Protobuf.Collections.RepeatedField<MonitoredResourceDescriptor>
-  nameWithType: Protobuf.Collections.RepeatedField<MonitoredResourceDescriptor>
+  name: RepeatedField<MonitoredResourceDescriptor>
+  nameWithType: RepeatedField<MonitoredResourceDescriptor>
   fullName: Google.Protobuf.Collections.RepeatedField<Google.Api.MonitoredResourceDescriptor>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of MonitoredResourceDescriptor)
+  nameWithType.vb: RepeatedField(Of MonitoredResourceDescriptor)
   fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Api.MonitoredResourceDescriptor)
-  name.vb: Protobuf.Collections.RepeatedField(Of MonitoredResourceDescriptor)
+  name.vb: RepeatedField(Of MonitoredResourceDescriptor)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
@@ -3068,8 +3670,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
@@ -3147,6 +3749,47 @@ references:
   name: Experimental
   nameWithType: Experimental
   fullName: Google.Api.Experimental
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.Service.Equals*
   commentId: Overload:Google.Api.Service.Equals
   isExternal: false
@@ -3160,12 +3803,153 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: System.IEquatable{Google.Api.Service}.Equals(Google.Api.Service)
+  commentId: M:System.IEquatable{Google.Api.Service}.Equals(Google.Api.Service)
+  parent: System.IEquatable{Google.Api.Service}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(Service)
+  nameWithType: IEquatable<Service>.Equals(Service)
+  fullName: System.IEquatable<Google.Api.Service>.Equals(Google.Api.Service)
+  nameWithType.vb: IEquatable(Of Service).Equals(Service)
+  fullName.vb: System.IEquatable(Of Google.Api.Service).Equals(Google.Api.Service)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<Service>.Equals
+    fullName: System.IEquatable<Google.Api.Service>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Service
+    name: Service
+    nameWithType: Service
+    fullName: Google.Api.Service
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of Service).Equals
+    fullName: System.IEquatable(Of Google.Api.Service).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Service
+    name: Service
+    nameWithType: Service
+    fullName: Google.Api.Service
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.Service.GetHashCode*
   commentId: Overload:Google.Api.Service.GetHashCode
   isExternal: false
   name: GetHashCode
   nameWithType: Service.GetHashCode
   fullName: Google.Api.Service.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.Service.ToString*
   commentId: Overload:Google.Api.Service.ToString
   isExternal: false
@@ -3178,10 +3962,53 @@ references:
   name: WriteTo
   nameWithType: Service.WriteTo
   fullName: Google.Api.Service.WriteTo
-- uid: Google.Protobuf.CodedOutputStream
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
   isExternal: true
-  name: Protobuf.CodedOutputStream
-  nameWithType: Protobuf.CodedOutputStream
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
   fullName: Google.Protobuf.CodedOutputStream
 - uid: Google.Api.Service.CalculateSize*
   commentId: Overload:Google.Api.Service.CalculateSize
@@ -3189,14 +4016,167 @@ references:
   name: CalculateSize
   nameWithType: Service.CalculateSize
   fullName: Google.Api.Service.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.Service.MergeFrom*
   commentId: Overload:Google.Api.Service.MergeFrom
   isExternal: false
   name: MergeFrom
   nameWithType: Service.MergeFrom
   fullName: Google.Api.Service.MergeFrom
-- uid: Google.Protobuf.CodedInputStream
+- uid: Google.Protobuf.IMessage{Google.Api.Service}.MergeFrom(Google.Api.Service)
+  commentId: M:Google.Protobuf.IMessage{Google.Api.Service}.MergeFrom(Google.Api.Service)
+  parent: Google.Protobuf.IMessage{Google.Api.Service}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(Service)
+  nameWithType: IMessage<Service>.MergeFrom(Service)
+  fullName: Google.Protobuf.IMessage<Google.Api.Service>.MergeFrom(Google.Api.Service)
+  nameWithType.vb: IMessage(Of Service).MergeFrom(Service)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.Service).MergeFrom(Google.Api.Service)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<Service>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Api.Service>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Service
+    name: Service
+    nameWithType: Service
+    fullName: Google.Api.Service
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of Service).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Api.Service).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.Service
+    name: Service
+    nameWithType: Service
+    fullName: Google.Api.Service
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
   isExternal: true
-  name: Protobuf.CodedInputStream
-  nameWithType: Protobuf.CodedInputStream
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
   fullName: Google.Protobuf.CodedInputStream

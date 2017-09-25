@@ -71,12 +71,24 @@ items:
   summary: The project number.
   example: []
   syntax:
-    content: public virtual string ProjectNumber { get; set; }
+    content: >-
+      [JsonProperty("projectNumber")]
+
+      public virtual string ProjectNumber { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property ProjectNumber As String
+    content.vb: >-
+      <JsonProperty("projectNumber")>
+
+      Public Overridable Property ProjectNumber As String
   overload: Google.Apis.Storage.v1.Data.BucketAccessControl.ProjectTeamData.ProjectNumber*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: projectNumber
   modifiers.csharp:
   - public
   - virtual
@@ -110,12 +122,24 @@ items:
   summary: The team.
   example: []
   syntax:
-    content: public virtual string Team { get; set; }
+    content: >-
+      [JsonProperty("team")]
+
+      public virtual string Team { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Team As String
+    content.vb: >-
+      <JsonProperty("team")>
+
+      Public Overridable Property Team As String
   overload: Google.Apis.Storage.v1.Data.BucketAccessControl.ProjectTeamData.Team*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: team
   modifiers.csharp:
   - public
   - virtual

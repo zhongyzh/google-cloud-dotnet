@@ -6,9 +6,9 @@ items:
   parent: Google.Api.Gax.Grpc
   children:
   - Google.Api.Gax.Grpc.ClientHelper.#ctor(Google.Api.Gax.Grpc.ServiceSettingsBase)
-  - Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,CallOptions,AsyncServerStreamingCall{``1}},Google.Api.Gax.Grpc.CallSettings)
-  - Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,CallOptions,AsyncUnaryCall{``1}},System.Func{``0,CallOptions,``1},Google.Api.Gax.Grpc.CallSettings)
-  - Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{CallOptions,AsyncDuplexStreamingCall{``0,``1}},Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
+  - Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,Grpc.Core.CallOptions,Grpc.Core.AsyncServerStreamingCall{``1}},Google.Api.Gax.Grpc.CallSettings)
+  - Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,Grpc.Core.CallOptions,Grpc.Core.AsyncUnaryCall{``1}},System.Func{``0,Grpc.Core.CallOptions,``1},Google.Api.Gax.Grpc.CallSettings)
+  - Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{Grpc.Core.CallOptions,Grpc.Core.AsyncDuplexStreamingCall{``0,``1}},Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
   - Google.Api.Gax.Grpc.ClientHelper.Clock
   - Google.Api.Gax.Grpc.ClientHelper.Scheduler
   langs:
@@ -160,16 +160,16 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,CallOptions,AsyncUnaryCall{``1}},System.Func{``0,CallOptions,``1},Google.Api.Gax.Grpc.CallSettings)
-  commentId: M:Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,CallOptions,AsyncUnaryCall{``1}},System.Func{``0,CallOptions,``1},Google.Api.Gax.Grpc.CallSettings)
-  id: BuildApiCall``2(System.Func{``0,CallOptions,AsyncUnaryCall{``1}},System.Func{``0,CallOptions,``1},Google.Api.Gax.Grpc.CallSettings)
+- uid: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,Grpc.Core.CallOptions,Grpc.Core.AsyncUnaryCall{``1}},System.Func{``0,Grpc.Core.CallOptions,``1},Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,Grpc.Core.CallOptions,Grpc.Core.AsyncUnaryCall{``1}},System.Func{``0,Grpc.Core.CallOptions,``1},Google.Api.Gax.Grpc.CallSettings)
+  id: BuildApiCall``2(System.Func{``0,Grpc.Core.CallOptions,Grpc.Core.AsyncUnaryCall{``1}},System.Func{``0,Grpc.Core.CallOptions,``1},Google.Api.Gax.Grpc.CallSettings)
   parent: Google.Api.Gax.Grpc.ClientHelper
   langs:
   - csharp
   - vb
   name: BuildApiCall<TRequest, TResponse>(Func<TRequest, CallOptions, AsyncUnaryCall<TResponse>>, Func<TRequest, CallOptions, TResponse>, CallSettings)
   nameWithType: ClientHelper.BuildApiCall<TRequest, TResponse>(Func<TRequest, CallOptions, AsyncUnaryCall<TResponse>>, Func<TRequest, CallOptions, TResponse>, CallSettings)
-  fullName: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall<TRequest, TResponse>(System.Func<TRequest, CallOptions, AsyncUnaryCall<TResponse>>, System.Func<TRequest, CallOptions, TResponse>, Google.Api.Gax.Grpc.CallSettings)
+  fullName: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall<TRequest, TResponse>(System.Func<TRequest, Grpc.Core.CallOptions, Grpc.Core.AsyncUnaryCall<TResponse>>, System.Func<TRequest, Grpc.Core.CallOptions, TResponse>, Google.Api.Gax.Grpc.CallSettings)
   type: Method
   source:
     remote:
@@ -188,10 +188,10 @@ items:
     content: 'public ApiCall<TRequest, TResponse> BuildApiCall<TRequest, TResponse>(Func<TRequest, CallOptions, AsyncUnaryCall<TResponse>> asyncGrpcCall, Func<TRequest, CallOptions, TResponse> syncGrpcCall, CallSettings perMethodCallSettings)where TRequest : class, IMessage<TRequest> where TResponse : class, IMessage<TResponse>'
     parameters:
     - id: asyncGrpcCall
-      type: System.Func{{TRequest},CallOptions,AsyncUnaryCall{{TResponse}}}
+      type: System.Func{{TRequest},Grpc.Core.CallOptions,Grpc.Core.AsyncUnaryCall{{TResponse}}}
       description: The underlying synchronous gRPC call.
     - id: syncGrpcCall
-      type: System.Func{{TRequest},CallOptions,{TResponse}}
+      type: System.Func{{TRequest},Grpc.Core.CallOptions,{TResponse}}
       description: The underlying asynchronous gRPC call.
     - id: perMethodCallSettings
       type: Google.Api.Gax.Grpc.CallSettings
@@ -211,18 +211,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall(Of TRequest, TResponse)(System.Func(Of TRequest, CallOptions, AsyncUnaryCall(Of TResponse)), System.Func(Of TRequest, CallOptions, TResponse), Google.Api.Gax.Grpc.CallSettings)
+  fullName.vb: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall(Of TRequest, TResponse)(System.Func(Of TRequest, Grpc.Core.CallOptions, Grpc.Core.AsyncUnaryCall(Of TResponse)), System.Func(Of TRequest, Grpc.Core.CallOptions, TResponse), Google.Api.Gax.Grpc.CallSettings)
   name.vb: BuildApiCall(Of TRequest, TResponse)(Func(Of TRequest, CallOptions, AsyncUnaryCall(Of TResponse)), Func(Of TRequest, CallOptions, TResponse), CallSettings)
-- uid: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,CallOptions,AsyncServerStreamingCall{``1}},Google.Api.Gax.Grpc.CallSettings)
-  commentId: M:Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,CallOptions,AsyncServerStreamingCall{``1}},Google.Api.Gax.Grpc.CallSettings)
-  id: BuildApiCall``2(System.Func{``0,CallOptions,AsyncServerStreamingCall{``1}},Google.Api.Gax.Grpc.CallSettings)
+- uid: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,Grpc.Core.CallOptions,Grpc.Core.AsyncServerStreamingCall{``1}},Google.Api.Gax.Grpc.CallSettings)
+  commentId: M:Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{``0,Grpc.Core.CallOptions,Grpc.Core.AsyncServerStreamingCall{``1}},Google.Api.Gax.Grpc.CallSettings)
+  id: BuildApiCall``2(System.Func{``0,Grpc.Core.CallOptions,Grpc.Core.AsyncServerStreamingCall{``1}},Google.Api.Gax.Grpc.CallSettings)
   parent: Google.Api.Gax.Grpc.ClientHelper
   langs:
   - csharp
   - vb
   name: BuildApiCall<TRequest, TResponse>(Func<TRequest, CallOptions, AsyncServerStreamingCall<TResponse>>, CallSettings)
   nameWithType: ClientHelper.BuildApiCall<TRequest, TResponse>(Func<TRequest, CallOptions, AsyncServerStreamingCall<TResponse>>, CallSettings)
-  fullName: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall<TRequest, TResponse>(System.Func<TRequest, CallOptions, AsyncServerStreamingCall<TResponse>>, Google.Api.Gax.Grpc.CallSettings)
+  fullName: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall<TRequest, TResponse>(System.Func<TRequest, Grpc.Core.CallOptions, Grpc.Core.AsyncServerStreamingCall<TResponse>>, Google.Api.Gax.Grpc.CallSettings)
   type: Method
   source:
     remote:
@@ -241,7 +241,7 @@ items:
     content: 'public ApiServerStreamingCall<TRequest, TResponse> BuildApiCall<TRequest, TResponse>(Func<TRequest, CallOptions, AsyncServerStreamingCall<TResponse>> grpcCall, CallSettings perMethodCallSettings)where TRequest : class, IMessage<TRequest> where TResponse : class, IMessage<TResponse>'
     parameters:
     - id: grpcCall
-      type: System.Func{{TRequest},CallOptions,AsyncServerStreamingCall{{TResponse}}}
+      type: System.Func{{TRequest},Grpc.Core.CallOptions,Grpc.Core.AsyncServerStreamingCall{{TResponse}}}
       description: The underlying gRPC duplex streaming call.
     - id: perMethodCallSettings
       type: Google.Api.Gax.Grpc.CallSettings
@@ -261,18 +261,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall(Of TRequest, TResponse)(System.Func(Of TRequest, CallOptions, AsyncServerStreamingCall(Of TResponse)), Google.Api.Gax.Grpc.CallSettings)
+  fullName.vb: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall(Of TRequest, TResponse)(System.Func(Of TRequest, Grpc.Core.CallOptions, Grpc.Core.AsyncServerStreamingCall(Of TResponse)), Google.Api.Gax.Grpc.CallSettings)
   name.vb: BuildApiCall(Of TRequest, TResponse)(Func(Of TRequest, CallOptions, AsyncServerStreamingCall(Of TResponse)), CallSettings)
-- uid: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{CallOptions,AsyncDuplexStreamingCall{``0,``1}},Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
-  commentId: M:Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{CallOptions,AsyncDuplexStreamingCall{``0,``1}},Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
-  id: BuildApiCall``2(System.Func{CallOptions,AsyncDuplexStreamingCall{``0,``1}},Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
+- uid: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{Grpc.Core.CallOptions,Grpc.Core.AsyncDuplexStreamingCall{``0,``1}},Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
+  commentId: M:Google.Api.Gax.Grpc.ClientHelper.BuildApiCall``2(System.Func{Grpc.Core.CallOptions,Grpc.Core.AsyncDuplexStreamingCall{``0,``1}},Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
+  id: BuildApiCall``2(System.Func{Grpc.Core.CallOptions,Grpc.Core.AsyncDuplexStreamingCall{``0,``1}},Google.Api.Gax.Grpc.CallSettings,Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
   parent: Google.Api.Gax.Grpc.ClientHelper
   langs:
   - csharp
   - vb
   name: BuildApiCall<TRequest, TResponse>(Func<CallOptions, AsyncDuplexStreamingCall<TRequest, TResponse>>, CallSettings, BidirectionalStreamingSettings)
   nameWithType: ClientHelper.BuildApiCall<TRequest, TResponse>(Func<CallOptions, AsyncDuplexStreamingCall<TRequest, TResponse>>, CallSettings, BidirectionalStreamingSettings)
-  fullName: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall<TRequest, TResponse>(System.Func<CallOptions, AsyncDuplexStreamingCall<TRequest, TResponse>>, Google.Api.Gax.Grpc.CallSettings, Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
+  fullName: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall<TRequest, TResponse>(System.Func<Grpc.Core.CallOptions, Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>>, Google.Api.Gax.Grpc.CallSettings, Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
   type: Method
   source:
     remote:
@@ -291,7 +291,7 @@ items:
     content: 'public ApiBidirectionalStreamingCall<TRequest, TResponse> BuildApiCall<TRequest, TResponse>(Func<CallOptions, AsyncDuplexStreamingCall<TRequest, TResponse>> grpcCall, CallSettings perMethodCallSettings, BidirectionalStreamingSettings streamingSettings)where TRequest : class, IMessage<TRequest> where TResponse : class, IMessage<TResponse>'
     parameters:
     - id: grpcCall
-      type: System.Func{CallOptions,AsyncDuplexStreamingCall{{TRequest},{TResponse}}}
+      type: System.Func{Grpc.Core.CallOptions,Grpc.Core.AsyncDuplexStreamingCall{{TRequest},{TResponse}}}
       description: The underlying gRPC duplex streaming call.
     - id: perMethodCallSettings
       type: Google.Api.Gax.Grpc.CallSettings
@@ -314,7 +314,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall(Of TRequest, TResponse)(System.Func(Of CallOptions, AsyncDuplexStreamingCall(Of TRequest, TResponse)), Google.Api.Gax.Grpc.CallSettings, Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
+  fullName.vb: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall(Of TRequest, TResponse)(System.Func(Of Grpc.Core.CallOptions, Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse)), Google.Api.Gax.Grpc.CallSettings, Google.Api.Gax.Grpc.BidirectionalStreamingSettings)
   name.vb: BuildApiCall(Of TRequest, TResponse)(Func(Of CallOptions, AsyncDuplexStreamingCall(Of TRequest, TResponse)), CallSettings, BidirectionalStreamingSettings)
 references:
 - uid: Google.Api.Gax.Grpc
@@ -672,15 +672,15 @@ references:
   name: BuildApiCall
   nameWithType: ClientHelper.BuildApiCall
   fullName: Google.Api.Gax.Grpc.ClientHelper.BuildApiCall
-- uid: System.Func{{TRequest},CallOptions,AsyncUnaryCall{{TResponse}}}
-  commentId: T:System.Func{``0,CallOptions,AsyncUnaryCall{``1}}
+- uid: System.Func{{TRequest},Grpc.Core.CallOptions,Grpc.Core.AsyncUnaryCall{{TResponse}}}
+  commentId: T:System.Func{``0,Grpc.Core.CallOptions,Grpc.Core.AsyncUnaryCall{``1}}
   parent: System
   definition: System.Func`3
   name: Func<TRequest, CallOptions, AsyncUnaryCall<TResponse>>
   nameWithType: Func<TRequest, CallOptions, AsyncUnaryCall<TResponse>>
-  fullName: System.Func<TRequest, CallOptions, AsyncUnaryCall<TResponse>>
+  fullName: System.Func<TRequest, Grpc.Core.CallOptions, Grpc.Core.AsyncUnaryCall<TResponse>>
   nameWithType.vb: Func(Of TRequest, CallOptions, AsyncUnaryCall(Of TResponse))
-  fullName.vb: System.Func(Of TRequest, CallOptions, AsyncUnaryCall(Of TResponse))
+  fullName.vb: System.Func(Of TRequest, Grpc.Core.CallOptions, Grpc.Core.AsyncUnaryCall(Of TResponse))
   name.vb: Func(Of TRequest, CallOptions, AsyncUnaryCall(Of TResponse))
   spec.csharp:
   - uid: System.Func`3
@@ -697,18 +697,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: CallOptions
+  - uid: Grpc.Core.CallOptions
     name: CallOptions
     nameWithType: CallOptions
-    fullName: CallOptions
+    fullName: Grpc.Core.CallOptions
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: AsyncUnaryCall`1
+  - uid: Grpc.Core.AsyncUnaryCall`1
     name: AsyncUnaryCall
     nameWithType: AsyncUnaryCall
-    fullName: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
     isExternal: true
   - name: <
     nameWithType: <
@@ -737,18 +737,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: CallOptions
+  - uid: Grpc.Core.CallOptions
     name: CallOptions
     nameWithType: CallOptions
-    fullName: CallOptions
+    fullName: Grpc.Core.CallOptions
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: AsyncUnaryCall`1
+  - uid: Grpc.Core.AsyncUnaryCall`1
     name: AsyncUnaryCall
     nameWithType: AsyncUnaryCall
-    fullName: AsyncUnaryCall
+    fullName: Grpc.Core.AsyncUnaryCall
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -762,15 +762,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Func{{TRequest},CallOptions,{TResponse}}
-  commentId: T:System.Func{``0,CallOptions,``1}
+- uid: System.Func{{TRequest},Grpc.Core.CallOptions,{TResponse}}
+  commentId: T:System.Func{``0,Grpc.Core.CallOptions,``1}
   parent: System
   definition: System.Func`3
   name: Func<TRequest, CallOptions, TResponse>
   nameWithType: Func<TRequest, CallOptions, TResponse>
-  fullName: System.Func<TRequest, CallOptions, TResponse>
+  fullName: System.Func<TRequest, Grpc.Core.CallOptions, TResponse>
   nameWithType.vb: Func(Of TRequest, CallOptions, TResponse)
-  fullName.vb: System.Func(Of TRequest, CallOptions, TResponse)
+  fullName.vb: System.Func(Of TRequest, Grpc.Core.CallOptions, TResponse)
   name.vb: Func(Of TRequest, CallOptions, TResponse)
   spec.csharp:
   - uid: System.Func`3
@@ -787,10 +787,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: CallOptions
+  - uid: Grpc.Core.CallOptions
     name: CallOptions
     nameWithType: CallOptions
-    fullName: CallOptions
+    fullName: Grpc.Core.CallOptions
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -816,10 +816,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: CallOptions
+  - uid: Grpc.Core.CallOptions
     name: CallOptions
     nameWithType: CallOptions
-    fullName: CallOptions
+    fullName: Grpc.Core.CallOptions
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1001,15 +1001,15 @@ references:
     fullName: )
 - uid: Google.Api.Gax.Grpc.ApiServerStreamingCall
   commentId: T:Google.Api.Gax.Grpc.ApiServerStreamingCall
-- uid: System.Func{{TRequest},CallOptions,AsyncServerStreamingCall{{TResponse}}}
-  commentId: T:System.Func{``0,CallOptions,AsyncServerStreamingCall{``1}}
+- uid: System.Func{{TRequest},Grpc.Core.CallOptions,Grpc.Core.AsyncServerStreamingCall{{TResponse}}}
+  commentId: T:System.Func{``0,Grpc.Core.CallOptions,Grpc.Core.AsyncServerStreamingCall{``1}}
   parent: System
   definition: System.Func`3
   name: Func<TRequest, CallOptions, AsyncServerStreamingCall<TResponse>>
   nameWithType: Func<TRequest, CallOptions, AsyncServerStreamingCall<TResponse>>
-  fullName: System.Func<TRequest, CallOptions, AsyncServerStreamingCall<TResponse>>
+  fullName: System.Func<TRequest, Grpc.Core.CallOptions, Grpc.Core.AsyncServerStreamingCall<TResponse>>
   nameWithType.vb: Func(Of TRequest, CallOptions, AsyncServerStreamingCall(Of TResponse))
-  fullName.vb: System.Func(Of TRequest, CallOptions, AsyncServerStreamingCall(Of TResponse))
+  fullName.vb: System.Func(Of TRequest, Grpc.Core.CallOptions, Grpc.Core.AsyncServerStreamingCall(Of TResponse))
   name.vb: Func(Of TRequest, CallOptions, AsyncServerStreamingCall(Of TResponse))
   spec.csharp:
   - uid: System.Func`3
@@ -1026,18 +1026,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: CallOptions
+  - uid: Grpc.Core.CallOptions
     name: CallOptions
     nameWithType: CallOptions
-    fullName: CallOptions
+    fullName: Grpc.Core.CallOptions
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: AsyncServerStreamingCall`1
+  - uid: Grpc.Core.AsyncServerStreamingCall`1
     name: AsyncServerStreamingCall
     nameWithType: AsyncServerStreamingCall
-    fullName: AsyncServerStreamingCall
+    fullName: Grpc.Core.AsyncServerStreamingCall
     isExternal: true
   - name: <
     nameWithType: <
@@ -1066,18 +1066,18 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: CallOptions
+  - uid: Grpc.Core.CallOptions
     name: CallOptions
     nameWithType: CallOptions
-    fullName: CallOptions
+    fullName: Grpc.Core.CallOptions
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: AsyncServerStreamingCall`1
+  - uid: Grpc.Core.AsyncServerStreamingCall`1
     name: AsyncServerStreamingCall
     nameWithType: AsyncServerStreamingCall
-    fullName: AsyncServerStreamingCall
+    fullName: Grpc.Core.AsyncServerStreamingCall
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -1192,15 +1192,15 @@ references:
     fullName: )
 - uid: Google.Api.Gax.Grpc.ApiBidirectionalStreamingCall
   commentId: T:Google.Api.Gax.Grpc.ApiBidirectionalStreamingCall
-- uid: System.Func{CallOptions,AsyncDuplexStreamingCall{{TRequest},{TResponse}}}
-  commentId: T:System.Func{CallOptions,AsyncDuplexStreamingCall{``0,``1}}
+- uid: System.Func{Grpc.Core.CallOptions,Grpc.Core.AsyncDuplexStreamingCall{{TRequest},{TResponse}}}
+  commentId: T:System.Func{Grpc.Core.CallOptions,Grpc.Core.AsyncDuplexStreamingCall{``0,``1}}
   parent: System
   definition: System.Func`2
   name: Func<CallOptions, AsyncDuplexStreamingCall<TRequest, TResponse>>
   nameWithType: Func<CallOptions, AsyncDuplexStreamingCall<TRequest, TResponse>>
-  fullName: System.Func<CallOptions, AsyncDuplexStreamingCall<TRequest, TResponse>>
+  fullName: System.Func<Grpc.Core.CallOptions, Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>>
   nameWithType.vb: Func(Of CallOptions, AsyncDuplexStreamingCall(Of TRequest, TResponse))
-  fullName.vb: System.Func(Of CallOptions, AsyncDuplexStreamingCall(Of TRequest, TResponse))
+  fullName.vb: System.Func(Of Grpc.Core.CallOptions, Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse))
   name.vb: Func(Of CallOptions, AsyncDuplexStreamingCall(Of TRequest, TResponse))
   spec.csharp:
   - uid: System.Func`2
@@ -1211,18 +1211,18 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: CallOptions
+  - uid: Grpc.Core.CallOptions
     name: CallOptions
     nameWithType: CallOptions
-    fullName: CallOptions
+    fullName: Grpc.Core.CallOptions
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: AsyncDuplexStreamingCall`2
+  - uid: Grpc.Core.AsyncDuplexStreamingCall`2
     name: AsyncDuplexStreamingCall
     nameWithType: AsyncDuplexStreamingCall
-    fullName: AsyncDuplexStreamingCall
+    fullName: Grpc.Core.AsyncDuplexStreamingCall
     isExternal: true
   - name: <
     nameWithType: <
@@ -1251,18 +1251,18 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: CallOptions
+  - uid: Grpc.Core.CallOptions
     name: CallOptions
     nameWithType: CallOptions
-    fullName: CallOptions
+    fullName: Grpc.Core.CallOptions
     isExternal: true
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: AsyncDuplexStreamingCall`2
+  - uid: Grpc.Core.AsyncDuplexStreamingCall`2
     name: AsyncDuplexStreamingCall
     nameWithType: AsyncDuplexStreamingCall
-    fullName: AsyncDuplexStreamingCall
+    fullName: Grpc.Core.AsyncDuplexStreamingCall
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '

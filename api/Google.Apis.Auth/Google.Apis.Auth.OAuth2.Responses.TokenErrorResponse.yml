@@ -74,12 +74,24 @@ items:
   summary: "\nGets or sets error code (e.g. &quot;invalid_request&quot;, &quot;invalid_client&quot;, &quot;invalid_grant&quot;, &quot;unauthorized_client&quot;, \n&quot;unsupported_grant_type&quot;, &quot;invalid_scope&quot;) as specified in http://tools.ietf.org/html/rfc6749#section-5.2.\n"
   example: []
   syntax:
-    content: public string Error { get; set; }
+    content: >-
+      [JsonProperty("error")]
+
+      public string Error { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Error As String
+    content.vb: >-
+      <JsonProperty("error")>
+
+      Public Property Error As String
   overload: Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse.Error*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: error
   modifiers.csharp:
   - public
   - get
@@ -111,12 +123,24 @@ items:
   summary: "\nGets or sets a human-readable text which provides additional information used to assist the client \ndeveloper in understanding the error occurred.\n"
   example: []
   syntax:
-    content: public string ErrorDescription { get; set; }
+    content: >-
+      [JsonProperty("error_description")]
+
+      public string ErrorDescription { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property ErrorDescription As String
+    content.vb: >-
+      <JsonProperty("error_description")>
+
+      Public Property ErrorDescription As String
   overload: Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse.ErrorDescription*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: error_description
   modifiers.csharp:
   - public
   - get
@@ -148,12 +172,24 @@ items:
   summary: "\nGets or sets the URI identifying a human-readable web page with provides information about the error.\n"
   example: []
   syntax:
-    content: public string ErrorUri { get; set; }
+    content: >-
+      [JsonProperty("error_uri")]
+
+      public string ErrorUri { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property ErrorUri As String
+    content.vb: >-
+      <JsonProperty("error_uri")>
+
+      Public Property ErrorUri As String
   overload: Google.Apis.Auth.OAuth2.Responses.TokenErrorResponse.ErrorUri*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: error_uri
   modifiers.csharp:
   - public
   - get

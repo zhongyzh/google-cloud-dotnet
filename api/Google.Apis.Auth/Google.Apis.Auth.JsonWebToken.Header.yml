@@ -73,12 +73,24 @@ items:
   summary: "\nGets or sets type header parameter used to declare the type of this object or <code>null</code>.\n"
   example: []
   syntax:
-    content: public string Type { get; set; }
+    content: >-
+      [JsonProperty("typ")]
+
+      public string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Type As String
+    content.vb: >-
+      <JsonProperty("typ")>
+
+      Public Property Type As String
   overload: Google.Apis.Auth.JsonWebToken.Header.Type*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: typ
   modifiers.csharp:
   - public
   - get
@@ -110,12 +122,24 @@ items:
   summary: "\nGets or sets content type header parameter used to declare structural information about the JWT or \n<code>null</code>.\n"
   example: []
   syntax:
-    content: public string ContentType { get; set; }
+    content: >-
+      [JsonProperty("cty")]
+
+      public string ContentType { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property ContentType As String
+    content.vb: >-
+      <JsonProperty("cty")>
+
+      Public Property ContentType As String
   overload: Google.Apis.Auth.JsonWebToken.Header.ContentType*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: cty
   modifiers.csharp:
   - public
   - get

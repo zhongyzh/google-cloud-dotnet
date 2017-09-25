@@ -75,12 +75,24 @@ items:
     project ID or dataset ID.
   example: []
   syntax:
-    content: public virtual DatasetReference DatasetReference { get; set; }
+    content: >-
+      [JsonProperty("datasetReference")]
+
+      public virtual DatasetReference DatasetReference { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.DatasetReference
-    content.vb: Public Overridable Property DatasetReference As DatasetReference
+    content.vb: >-
+      <JsonProperty("datasetReference")>
+
+      Public Overridable Property DatasetReference As DatasetReference
   overload: Google.Apis.Bigquery.v2.Data.DatasetList.DatasetsData.DatasetReference*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: datasetReference
   modifiers.csharp:
   - public
   - virtual
@@ -114,12 +126,24 @@ items:
   summary: A descriptive name for the dataset, if one exists.
   example: []
   syntax:
-    content: public virtual string FriendlyName { get; set; }
+    content: >-
+      [JsonProperty("friendlyName")]
+
+      public virtual string FriendlyName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property FriendlyName As String
+    content.vb: >-
+      <JsonProperty("friendlyName")>
+
+      Public Overridable Property FriendlyName As String
   overload: Google.Apis.Bigquery.v2.Data.DatasetList.DatasetsData.FriendlyName*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: friendlyName
   modifiers.csharp:
   - public
   - virtual
@@ -153,12 +177,24 @@ items:
   summary: The fully-qualified, unique, opaque ID of the dataset.
   example: []
   syntax:
-    content: public virtual string Id { get; set; }
+    content: >-
+      [JsonProperty("id")]
+
+      public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Id As String
+    content.vb: >-
+      <JsonProperty("id")>
+
+      Public Overridable Property Id As String
   overload: Google.Apis.Bigquery.v2.Data.DatasetList.DatasetsData.Id*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -192,12 +228,24 @@ items:
   summary: The resource type. This property always returns the value &quot;bigquery#dataset&quot;.
   example: []
   syntax:
-    content: public virtual string Kind { get; set; }
+    content: >-
+      [JsonProperty("kind")]
+
+      public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Kind As String
+    content.vb: >-
+      <JsonProperty("kind")>
+
+      Public Overridable Property Kind As String
   overload: Google.Apis.Bigquery.v2.Data.DatasetList.DatasetsData.Kind*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -234,12 +282,24 @@ items:
     datasets.
   example: []
   syntax:
-    content: public virtual IDictionary<string, string> Labels { get; set; }
+    content: >-
+      [JsonProperty("labels")]
+
+      public virtual IDictionary<string, string> Labels { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IDictionary{System.String,System.String}
-    content.vb: Public Overridable Property Labels As IDictionary(Of String, String)
+    content.vb: >-
+      <JsonProperty("labels")>
+
+      Public Overridable Property Labels As IDictionary(Of String, String)
   overload: Google.Apis.Bigquery.v2.Data.DatasetList.DatasetsData.Labels*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: labels
   modifiers.csharp:
   - public
   - virtual

@@ -39,12 +39,22 @@ items:
   summary: An access-control entry.
   example: []
   syntax:
-    content: 'public class ObjectAccessControl : Requests.IDirectResponseSchema'
+    content: 'public class ObjectAccessControl : IDirectResponseSchema'
     content.vb: >-
       Public Class ObjectAccessControl
-          Inherits Requests.IDirectResponseSchema
+          Implements IDirectResponseSchema
   inheritance:
   - System.Object
+  implements:
+  - Google.Apis.Requests.IDirectResponseSchema
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -76,12 +86,24 @@ items:
   summary: The name of the bucket.
   example: []
   syntax:
-    content: public virtual string Bucket { get; set; }
+    content: >-
+      [JsonProperty("bucket")]
+
+      public virtual string Bucket { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Bucket As String
+    content.vb: >-
+      <JsonProperty("bucket")>
+
+      Public Overridable Property Bucket As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.Bucket*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: bucket
   modifiers.csharp:
   - public
   - virtual
@@ -115,12 +137,24 @@ items:
   summary: The domain associated with the entity, if any.
   example: []
   syntax:
-    content: public virtual string Domain { get; set; }
+    content: >-
+      [JsonProperty("domain")]
+
+      public virtual string Domain { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Domain As String
+    content.vb: >-
+      <JsonProperty("domain")>
+
+      Public Overridable Property Domain As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.Domain*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: domain
   modifiers.csharp:
   - public
   - virtual
@@ -154,12 +188,24 @@ items:
   summary: The email address associated with the entity, if any.
   example: []
   syntax:
-    content: public virtual string Email { get; set; }
+    content: >-
+      [JsonProperty("email")]
+
+      public virtual string Email { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Email As String
+    content.vb: >-
+      <JsonProperty("email")>
+
+      Public Overridable Property Email As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.Email*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: email
   modifiers.csharp:
   - public
   - virtual
@@ -202,12 +248,24 @@ items:
     example.com, the entity would be domain-example.com.
   example: []
   syntax:
-    content: public virtual string Entity { get; set; }
+    content: >-
+      [JsonProperty("entity")]
+
+      public virtual string Entity { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Entity As String
+    content.vb: >-
+      <JsonProperty("entity")>
+
+      Public Overridable Property Entity As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.Entity*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: entity
   modifiers.csharp:
   - public
   - virtual
@@ -241,12 +299,24 @@ items:
   summary: The ID for the entity, if any.
   example: []
   syntax:
-    content: public virtual string EntityId { get; set; }
+    content: >-
+      [JsonProperty("entityId")]
+
+      public virtual string EntityId { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property EntityId As String
+    content.vb: >-
+      <JsonProperty("entityId")>
+
+      Public Overridable Property EntityId As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.EntityId*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: entityId
   modifiers.csharp:
   - public
   - virtual
@@ -280,12 +350,26 @@ items:
   summary: HTTP 1.1 Entity tag for the access-control entry.
   example: []
   syntax:
-    content: public virtual string ETag { get; set; }
+    content: >-
+      [JsonProperty("etag")]
+
+      public virtual string ETag { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property ETag As String
+    content.vb: >-
+      <JsonProperty("etag")>
+
+      Public Overridable Property ETag As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.ETag*
+  implements:
+  - Google.Apis.Requests.IDirectResponseSchema.ETag
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: etag
   modifiers.csharp:
   - public
   - virtual
@@ -319,12 +403,24 @@ items:
   summary: The content generation of the object, if applied to an object.
   example: []
   syntax:
-    content: public virtual long ? Generation { get; set; }
+    content: >-
+      [JsonProperty("generation")]
+
+      public virtual long ? Generation { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property Generation As Long?
+    content.vb: >-
+      <JsonProperty("generation")>
+
+      Public Overridable Property Generation As Long?
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.Generation*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: generation
   modifiers.csharp:
   - public
   - virtual
@@ -358,12 +454,24 @@ items:
   summary: The ID of the access-control entry.
   example: []
   syntax:
-    content: public virtual string Id { get; set; }
+    content: >-
+      [JsonProperty("id")]
+
+      public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Id As String
+    content.vb: >-
+      <JsonProperty("id")>
+
+      Public Overridable Property Id As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.Id*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -400,12 +508,24 @@ items:
     storage#objectAccessControl.
   example: []
   syntax:
-    content: public virtual string Kind { get; set; }
+    content: >-
+      [JsonProperty("kind")]
+
+      public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Kind As String
+    content.vb: >-
+      <JsonProperty("kind")>
+
+      Public Overridable Property Kind As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.Kind*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -439,12 +559,24 @@ items:
   summary: The name of the object, if applied to an object.
   example: []
   syntax:
-    content: public virtual string Object__ { get; set; }
+    content: >-
+      [JsonProperty("object")]
+
+      public virtual string Object__ { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Object__ As String
+    content.vb: >-
+      <JsonProperty("object")>
+
+      Public Overridable Property Object__ As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.Object__*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: object
   modifiers.csharp:
   - public
   - virtual
@@ -478,12 +610,24 @@ items:
   summary: The project team associated with the entity, if any.
   example: []
   syntax:
-    content: public virtual ObjectAccessControl.ProjectTeamData ProjectTeam { get; set; }
+    content: >-
+      [JsonProperty("projectTeam")]
+
+      public virtual ObjectAccessControl.ProjectTeamData ProjectTeam { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.ObjectAccessControl.ProjectTeamData
-    content.vb: Public Overridable Property ProjectTeam As ObjectAccessControl.ProjectTeamData
+    content.vb: >-
+      <JsonProperty("projectTeam")>
+
+      Public Overridable Property ProjectTeam As ObjectAccessControl.ProjectTeamData
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.ProjectTeam*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: projectTeam
   modifiers.csharp:
   - public
   - virtual
@@ -517,12 +661,24 @@ items:
   summary: The access permission for the entity.
   example: []
   syntax:
-    content: public virtual string Role { get; set; }
+    content: >-
+      [JsonProperty("role")]
+
+      public virtual string Role { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Role As String
+    content.vb: >-
+      <JsonProperty("role")>
+
+      Public Overridable Property Role As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.Role*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: role
   modifiers.csharp:
   - public
   - virtual
@@ -556,12 +712,24 @@ items:
   summary: The link to this access-control entry.
   example: []
   syntax:
-    content: public virtual string SelfLink { get; set; }
+    content: >-
+      [JsonProperty("selfLink")]
+
+      public virtual string SelfLink { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property SelfLink As String
+    content.vb: >-
+      <JsonProperty("selfLink")>
+
+      Public Overridable Property SelfLink As String
   overload: Google.Apis.Storage.v1.Data.ObjectAccessControl.SelfLink*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: selfLink
   modifiers.csharp:
   - public
   - virtual
@@ -584,12 +752,304 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Apis.Requests.IDirectResponseSchema
+  commentId: T:Google.Apis.Requests.IDirectResponseSchema
+  parent: Google.Apis.Requests
+  isExternal: true
+  name: IDirectResponseSchema
+  nameWithType: IDirectResponseSchema
+  fullName: Google.Apis.Requests.IDirectResponseSchema
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
+- uid: Google.Apis.Requests
+  commentId: N:Google.Apis.Requests
+  isExternal: false
+  name: Google.Apis.Requests
+  nameWithType: Google.Apis.Requests
+  fullName: Google.Apis.Requests
 - uid: Google.Apis.Storage.v1.Data.ObjectAccessControl.Bucket*
   commentId: Overload:Google.Apis.Storage.v1.Data.ObjectAccessControl.Bucket
   isExternal: false
@@ -633,6 +1093,13 @@ references:
   name: ETag
   nameWithType: ObjectAccessControl.ETag
   fullName: Google.Apis.Storage.v1.Data.ObjectAccessControl.ETag
+- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
+  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
+  parent: Google.Apis.Requests.IDirectResponseSchema
+  isExternal: true
+  name: ETag
+  nameWithType: IDirectResponseSchema.ETag
+  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag
 - uid: Google.Apis.Storage.v1.Data.ObjectAccessControl.Generation*
   commentId: Overload:Google.Apis.Storage.v1.Data.ObjectAccessControl.Generation
   isExternal: false

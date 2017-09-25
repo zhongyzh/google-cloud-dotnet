@@ -6,7 +6,7 @@ items:
   parent: Google.Apis.Json
   children:
   - Google.Apis.Json.NewtonsoftJsonSerializer.#ctor
-  - Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(JsonSerializerSettings)
+  - Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)
   - Google.Apis.Json.NewtonsoftJsonSerializer.CreateDefaultSettings
   - Google.Apis.Json.NewtonsoftJsonSerializer.Deserialize(System.String,System.Type)
   - Google.Apis.Json.NewtonsoftJsonSerializer.Deserialize``1(System.IO.Stream)
@@ -132,16 +132,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(JsonSerializerSettings)
-  commentId: M:Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(JsonSerializerSettings)
-  id: '#ctor(JsonSerializerSettings)'
+- uid: Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)
+  commentId: M:Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)
+  id: '#ctor(Newtonsoft.Json.JsonSerializerSettings)'
   parent: Google.Apis.Json.NewtonsoftJsonSerializer
   langs:
   - csharp
   - vb
   name: NewtonsoftJsonSerializer(JsonSerializerSettings)
   nameWithType: NewtonsoftJsonSerializer.NewtonsoftJsonSerializer(JsonSerializerSettings)
-  fullName: Google.Apis.Json.NewtonsoftJsonSerializer.NewtonsoftJsonSerializer(JsonSerializerSettings)
+  fullName: Google.Apis.Json.NewtonsoftJsonSerializer.NewtonsoftJsonSerializer(Newtonsoft.Json.JsonSerializerSettings)
   type: Constructor
   source:
     remote:
@@ -160,7 +160,7 @@ items:
     content: public NewtonsoftJsonSerializer(JsonSerializerSettings settings)
     parameters:
     - id: settings
-      type: JsonSerializerSettings
+      type: Newtonsoft.Json.JsonSerializerSettings
       description: The settings to apply when serializing and deserializing. Must not be null.
     content.vb: Public Sub New(settings As JsonSerializerSettings)
   overload: Google.Apis.Json.NewtonsoftJsonSerializer.#ctor*
@@ -190,12 +190,12 @@ items:
   assemblies:
   - Google.Apis.Core
   namespace: Google.Apis.Json
-  summary: "\nCreates a new instance of <see cref=\"!:JsonSerializerSettings\"></see> with the same behavior\nas the ones used in <xref href=\"Google.Apis.Json.NewtonsoftJsonSerializer.Instance\" data-throw-if-not-resolved=\"false\"></xref>. This method is expected to be used to construct\nsettings which are then passed to <xref href=\"Google.Apis.Json.NewtonsoftJsonSerializer.%23ctor(JsonSerializerSettings)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  summary: "\nCreates a new instance of <xref href=\"Newtonsoft.Json.JsonSerializerSettings\" data-throw-if-not-resolved=\"false\"></xref> with the same behavior\nas the ones used in <xref href=\"Google.Apis.Json.NewtonsoftJsonSerializer.Instance\" data-throw-if-not-resolved=\"false\"></xref>. This method is expected to be used to construct\nsettings which are then passed to <xref href=\"Google.Apis.Json.NewtonsoftJsonSerializer.%23ctor(Newtonsoft.Json.JsonSerializerSettings)\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: public static JsonSerializerSettings CreateDefaultSettings()
     return:
-      type: JsonSerializerSettings
+      type: Newtonsoft.Json.JsonSerializerSettings
       description: A new set of default settings.
     content.vb: Public Shared Function CreateDefaultSettings As JsonSerializerSettings
   overload: Google.Apis.Json.NewtonsoftJsonSerializer.CreateDefaultSettings*
@@ -899,13 +899,21 @@ references:
   name: NewtonsoftJsonSerializer
   nameWithType: NewtonsoftJsonSerializer.NewtonsoftJsonSerializer
   fullName: Google.Apis.Json.NewtonsoftJsonSerializer.NewtonsoftJsonSerializer
-- uid: JsonSerializerSettings
+- uid: Newtonsoft.Json.JsonSerializerSettings
+  commentId: T:Newtonsoft.Json.JsonSerializerSettings
+  parent: Newtonsoft.Json
   isExternal: true
   name: JsonSerializerSettings
   nameWithType: JsonSerializerSettings
-  fullName: JsonSerializerSettings
-- uid: Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(JsonSerializerSettings)
-  commentId: M:Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(JsonSerializerSettings)
+  fullName: Newtonsoft.Json.JsonSerializerSettings
+- uid: Newtonsoft.Json
+  commentId: N:Newtonsoft.Json
+  isExternal: false
+  name: Newtonsoft.Json
+  nameWithType: Newtonsoft.Json
+  fullName: Newtonsoft.Json
+- uid: Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)
+  commentId: M:Google.Apis.Json.NewtonsoftJsonSerializer.#ctor(Newtonsoft.Json.JsonSerializerSettings)
 - uid: Google.Apis.Json.NewtonsoftJsonSerializer.CreateDefaultSettings*
   commentId: Overload:Google.Apis.Json.NewtonsoftJsonSerializer.CreateDefaultSettings
   isExternal: false

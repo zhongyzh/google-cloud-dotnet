@@ -84,12 +84,24 @@ items:
   summary: "\nGets or set the algorithm header parameter that identifies the cryptographic algorithm used to secure \nthe JWS or <code>null</code>.\n"
   example: []
   syntax:
-    content: public string Algorithm { get; set; }
+    content: >-
+      [JsonProperty("alg")]
+
+      public string Algorithm { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Algorithm As String
+    content.vb: >-
+      <JsonProperty("alg")>
+
+      Public Property Algorithm As String
   overload: Google.Apis.Auth.JsonWebSignature.Header.Algorithm*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: alg
   modifiers.csharp:
   - public
   - get
@@ -121,12 +133,24 @@ items:
   summary: "\nGets or sets the JSON Web Key URL header parameter that is an absolute URL that refers to a resource \nfor a set of JSON-encoded public keys, one of which corresponds to the key that was used to digitally \nsign the JWS or <code>null</code>.\n"
   example: []
   syntax:
-    content: public string JwkUrl { get; set; }
+    content: >-
+      [JsonProperty("jku")]
+
+      public string JwkUrl { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property JwkUrl As String
+    content.vb: >-
+      <JsonProperty("jku")>
+
+      Public Property JwkUrl As String
   overload: Google.Apis.Auth.JsonWebSignature.Header.JwkUrl*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: jku
   modifiers.csharp:
   - public
   - get
@@ -158,12 +182,24 @@ items:
   summary: "\nGets or sets JSON Web Key header parameter that is a public key that corresponds to the key used to \ndigitally sign the JWS or <code>null</code>.\n"
   example: []
   syntax:
-    content: public string Jwk { get; set; }
+    content: >-
+      [JsonProperty("jwk")]
+
+      public string Jwk { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Jwk As String
+    content.vb: >-
+      <JsonProperty("jwk")>
+
+      Public Property Jwk As String
   overload: Google.Apis.Auth.JsonWebSignature.Header.Jwk*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: jwk
   modifiers.csharp:
   - public
   - get
@@ -195,12 +231,24 @@ items:
   summary: "\nGets or sets key ID header parameter that is a hint indicating which specific key owned by the signer \nshould be used to validate the digital signature or <code>null</code>.\n"
   example: []
   syntax:
-    content: public string KeyId { get; set; }
+    content: >-
+      [JsonProperty("kid")]
+
+      public string KeyId { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property KeyId As String
+    content.vb: >-
+      <JsonProperty("kid")>
+
+      Public Property KeyId As String
   overload: Google.Apis.Auth.JsonWebSignature.Header.KeyId*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: kid
   modifiers.csharp:
   - public
   - get
@@ -232,12 +280,24 @@ items:
   summary: "\nGets or sets X.509 URL header parameter that is an absolute URL that refers to a resource for the X.509\npublic key certificate or certificate chain corresponding to the key used to digitally sign the JWS or \n<code>null</code>.\n"
   example: []
   syntax:
-    content: public string X509Url { get; set; }
+    content: >-
+      [JsonProperty("x5u")]
+
+      public string X509Url { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property X509Url As String
+    content.vb: >-
+      <JsonProperty("x5u")>
+
+      Public Property X509Url As String
   overload: Google.Apis.Auth.JsonWebSignature.Header.X509Url*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x5u
   modifiers.csharp:
   - public
   - get
@@ -269,12 +329,24 @@ items:
   summary: "\nGets or sets X.509 certificate thumb print header parameter that provides a base64url encoded SHA-1 \nthumb-print (a.k.a. digest) of the DER encoding of an X.509 certificate that can be used to match the \ncertificate or <code>null</code>.\n"
   example: []
   syntax:
-    content: public string X509Thumbprint { get; set; }
+    content: >-
+      [JsonProperty("x5t")]
+
+      public string X509Thumbprint { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property X509Thumbprint As String
+    content.vb: >-
+      <JsonProperty("x5t")>
+
+      Public Property X509Thumbprint As String
   overload: Google.Apis.Auth.JsonWebSignature.Header.X509Thumbprint*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x5t
   modifiers.csharp:
   - public
   - get
@@ -306,12 +378,24 @@ items:
   summary: "\nGets or sets X.509 certificate chain header parameter contains the X.509 public key certificate or \ncertificate chain corresponding to the key used to digitally sign the JWS or <code>null</code>.\n"
   example: []
   syntax:
-    content: public string X509Certificate { get; set; }
+    content: >-
+      [JsonProperty("x5c")]
+
+      public string X509Certificate { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property X509Certificate As String
+    content.vb: >-
+      <JsonProperty("x5c")>
+
+      Public Property X509Certificate As String
   overload: Google.Apis.Auth.JsonWebSignature.Header.X509Certificate*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: x5c
   modifiers.csharp:
   - public
   - get
@@ -343,12 +427,24 @@ items:
   summary: "\nGets or sets array listing the header parameter names that define extensions that are used in the JWS \nheader that MUST be understood and processed or <code>null</code>.\n"
   example: []
   syntax:
-    content: public IList<string> critical { get; set; }
+    content: >-
+      [JsonProperty("crit")]
+
+      public IList<string> critical { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{System.String}
-    content.vb: Public Property critical As IList(Of String)
+    content.vb: >-
+      <JsonProperty("crit")>
+
+      Public Property critical As IList(Of String)
   overload: Google.Apis.Auth.JsonWebSignature.Header.critical*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: crit
   modifiers.csharp:
   - public
   - get

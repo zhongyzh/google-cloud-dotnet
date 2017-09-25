@@ -13,6 +13,7 @@ items:
   - Google.Type.TimeOfDay.Equals(Google.Type.TimeOfDay)
   - Google.Type.TimeOfDay.Equals(System.Object)
   - Google.Type.TimeOfDay.GetHashCode
+  - Google.Type.TimeOfDay.Google#Protobuf#IMessage#Descriptor
   - Google.Type.TimeOfDay.Hours
   - Google.Type.TimeOfDay.HoursFieldNumber
   - Google.Type.TimeOfDay.MergeFrom(Google.Protobuf.CodedInputStream)
@@ -47,12 +48,22 @@ items:
   summary: "\nRepresents a time of day. The date and time zone are either not significant\nor are specified elsewhere. An API may chose to allow leap seconds. Related\ntypes are [google.type.Date][google.type.Date] and `google.protobuf.Timestamp`.\n"
   example: []
   syntax:
-    content: 'public sealed class TimeOfDay : Protobuf.IMessage<TimeOfDay>'
+    content: 'public sealed class TimeOfDay : IMessage<TimeOfDay>, IMessage, IEquatable<TimeOfDay>, IDeepCloneable<TimeOfDay>'
     content.vb: >-
       Public NotInheritable Class TimeOfDay
-          Inherits Protobuf.IMessage(Of TimeOfDay)
+          Implements IMessage(Of TimeOfDay), IMessage, IEquatable(Of TimeOfDay), IDeepCloneable(Of TimeOfDay)
   inheritance:
   - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Type.TimeOfDay}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Type.TimeOfDay}
+  - Google.Protobuf.IDeepCloneable{Google.Type.TimeOfDay}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - sealed
@@ -84,11 +95,11 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Type
   syntax:
-    content: public static Protobuf.MessageParser<TimeOfDay> Parser { get; }
+    content: public static MessageParser<TimeOfDay> Parser { get; }
     parameters: []
     return:
       type: Google.Protobuf.MessageParser{Google.Type.TimeOfDay}
-    content.vb: Public Shared ReadOnly Property Parser As Protobuf.MessageParser(Of TimeOfDay)
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of TimeOfDay)
   overload: Google.Type.TimeOfDay.Parser*
   modifiers.csharp:
   - public
@@ -121,11 +132,11 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Type
   syntax:
-    content: public static Protobuf.Reflection.MessageDescriptor Descriptor { get; }
+    content: public static MessageDescriptor Descriptor { get; }
     parameters: []
     return:
       type: Google.Protobuf.Reflection.MessageDescriptor
-    content.vb: Public Shared ReadOnly Property Descriptor As Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
   overload: Google.Type.TimeOfDay.Descriptor*
   modifiers.csharp:
   - public
@@ -135,6 +146,45 @@ items:
   - Public
   - Shared
   - ReadOnly
+- uid: Google.Type.TimeOfDay.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Type.TimeOfDay.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Type.TimeOfDay
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: TimeOfDay.IMessage.Descriptor
+  fullName: Google.Type.TimeOfDay.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Type/Timeofday.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Type/Timeofday.cs
+    startLine: 62
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Type
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Type.TimeOfDay.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: TimeOfDay.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Type.TimeOfDay.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
 - uid: Google.Type.TimeOfDay.#ctor
   commentId: M:Google.Type.TimeOfDay.#ctor
   id: '#ctor'
@@ -226,6 +276,8 @@ items:
       type: Google.Type.TimeOfDay
     content.vb: Public Function Clone As TimeOfDay
   overload: Google.Type.TimeOfDay.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Type.TimeOfDay}.Clone
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -548,6 +600,7 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
   overload: Google.Type.TimeOfDay.Equals*
   modifiers.csharp:
   - public
@@ -586,6 +639,8 @@ items:
       type: System.Boolean
     content.vb: Public Function Equals(other As TimeOfDay) As Boolean
   overload: Google.Type.TimeOfDay.Equals*
+  implements:
+  - System.IEquatable{Google.Type.TimeOfDay}.Equals(Google.Type.TimeOfDay)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -617,6 +672,7 @@ items:
     return:
       type: System.Int32
     content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
   overload: Google.Type.TimeOfDay.GetHashCode*
   modifiers.csharp:
   - public
@@ -651,6 +707,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
   overload: Google.Type.TimeOfDay.ToString*
   modifiers.csharp:
   - public
@@ -665,8 +722,8 @@ items:
   langs:
   - csharp
   - vb
-  name: WriteTo(Protobuf.CodedOutputStream)
-  nameWithType: TimeOfDay.WriteTo(Protobuf.CodedOutputStream)
+  name: WriteTo(CodedOutputStream)
+  nameWithType: TimeOfDay.WriteTo(CodedOutputStream)
   fullName: Google.Type.TimeOfDay.WriteTo(Google.Protobuf.CodedOutputStream)
   type: Method
   source:
@@ -681,12 +738,14 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Type
   syntax:
-    content: public void WriteTo(Protobuf.CodedOutputStream output)
+    content: public void WriteTo(CodedOutputStream output)
     parameters:
     - id: output
       type: Google.Protobuf.CodedOutputStream
-    content.vb: Public Sub WriteTo(output As Protobuf.CodedOutputStream)
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
   overload: Google.Type.TimeOfDay.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -719,6 +778,8 @@ items:
       type: System.Int32
     content.vb: Public Function CalculateSize As Integer
   overload: Google.Type.TimeOfDay.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -752,6 +813,8 @@ items:
       type: Google.Type.TimeOfDay
     content.vb: Public Sub MergeFrom(other As TimeOfDay)
   overload: Google.Type.TimeOfDay.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Type.TimeOfDay}.MergeFrom(Google.Type.TimeOfDay)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -763,8 +826,8 @@ items:
   langs:
   - csharp
   - vb
-  name: MergeFrom(Protobuf.CodedInputStream)
-  nameWithType: TimeOfDay.MergeFrom(Protobuf.CodedInputStream)
+  name: MergeFrom(CodedInputStream)
+  nameWithType: TimeOfDay.MergeFrom(CodedInputStream)
   fullName: Google.Type.TimeOfDay.MergeFrom(Google.Protobuf.CodedInputStream)
   type: Method
   source:
@@ -779,12 +842,14 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Type
   syntax:
-    content: public void MergeFrom(Protobuf.CodedInputStream input)
+    content: public void MergeFrom(CodedInputStream input)
     parameters:
     - id: input
       type: Google.Protobuf.CodedInputStream
-    content.vb: Public Sub MergeFrom(input As Protobuf.CodedInputStream)
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
   overload: Google.Type.TimeOfDay.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -803,12 +868,444 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Type.TimeOfDay}
+  commentId: T:Google.Protobuf.IMessage{Google.Type.TimeOfDay}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<TimeOfDay>
+  nameWithType: IMessage<TimeOfDay>
+  fullName: Google.Protobuf.IMessage<Google.Type.TimeOfDay>
+  nameWithType.vb: IMessage(Of TimeOfDay)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Type.TimeOfDay)
+  name.vb: IMessage(Of TimeOfDay)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Type.TimeOfDay
+    name: TimeOfDay
+    nameWithType: TimeOfDay
+    fullName: Google.Type.TimeOfDay
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Type.TimeOfDay
+    name: TimeOfDay
+    nameWithType: TimeOfDay
+    fullName: Google.Type.TimeOfDay
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Type.TimeOfDay}
+  commentId: T:System.IEquatable{Google.Type.TimeOfDay}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<TimeOfDay>
+  nameWithType: IEquatable<TimeOfDay>
+  fullName: System.IEquatable<Google.Type.TimeOfDay>
+  nameWithType.vb: IEquatable(Of TimeOfDay)
+  fullName.vb: System.IEquatable(Of Google.Type.TimeOfDay)
+  name.vb: IEquatable(Of TimeOfDay)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Type.TimeOfDay
+    name: TimeOfDay
+    nameWithType: TimeOfDay
+    fullName: Google.Type.TimeOfDay
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Type.TimeOfDay
+    name: TimeOfDay
+    nameWithType: TimeOfDay
+    fullName: Google.Type.TimeOfDay
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Type.TimeOfDay}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Type.TimeOfDay}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<TimeOfDay>
+  nameWithType: IDeepCloneable<TimeOfDay>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Type.TimeOfDay>
+  nameWithType.vb: IDeepCloneable(Of TimeOfDay)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Type.TimeOfDay)
+  name.vb: IDeepCloneable(Of TimeOfDay)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Type.TimeOfDay
+    name: TimeOfDay
+    nameWithType: TimeOfDay
+    fullName: Google.Type.TimeOfDay
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Type.TimeOfDay
+    name: TimeOfDay
+    nameWithType: TimeOfDay
+    fullName: Google.Type.TimeOfDay
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Type.TimeOfDay.Parser*
   commentId: Overload:Google.Type.TimeOfDay.Parser
   isExternal: false
@@ -816,18 +1313,19 @@ references:
   nameWithType: TimeOfDay.Parser
   fullName: Google.Type.TimeOfDay.Parser
 - uid: Google.Protobuf.MessageParser{Google.Type.TimeOfDay}
-  commentId: '!:Google.Protobuf.MessageParser{Google.Type.TimeOfDay}'
+  commentId: T:Google.Protobuf.MessageParser{Google.Type.TimeOfDay}
+  parent: Google.Protobuf
   definition: Google.Protobuf.MessageParser`1
-  name: Protobuf.MessageParser<TimeOfDay>
-  nameWithType: Protobuf.MessageParser<TimeOfDay>
+  name: MessageParser<TimeOfDay>
+  nameWithType: MessageParser<TimeOfDay>
   fullName: Google.Protobuf.MessageParser<Google.Type.TimeOfDay>
-  nameWithType.vb: Protobuf.MessageParser(Of TimeOfDay)
+  nameWithType.vb: MessageParser(Of TimeOfDay)
   fullName.vb: Google.Protobuf.MessageParser(Of Google.Type.TimeOfDay)
-  name.vb: Protobuf.MessageParser(Of TimeOfDay)
+  name.vb: MessageParser(Of TimeOfDay)
   spec.csharp:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: <
@@ -842,8 +1340,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: '(Of '
@@ -857,40 +1355,41 @@ references:
     nameWithType: )
     fullName: )
 - uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
   isExternal: true
-  name: Protobuf.MessageParser<>
-  nameWithType: Protobuf.MessageParser<>
-  fullName: Google.Protobuf.MessageParser<>
-  nameWithType.vb: Protobuf.MessageParser(Of )
-  fullName.vb: Google.Protobuf.MessageParser(Of )
-  name.vb: Protobuf.MessageParser(Of )
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
   spec.csharp:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -901,10 +1400,34 @@ references:
   nameWithType: TimeOfDay.Descriptor
   fullName: Google.Type.TimeOfDay.Descriptor
 - uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
   isExternal: true
-  name: Protobuf.Reflection.MessageDescriptor
-  nameWithType: Protobuf.Reflection.MessageDescriptor
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
   fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Type.TimeOfDay.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Type.TimeOfDay.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: TimeOfDay.IMessage.Descriptor
+  fullName: Google.Type.TimeOfDay.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: TimeOfDay.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Type.TimeOfDay.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
 - uid: Google.Type.TimeOfDay.#ctor*
   commentId: Overload:Google.Type.TimeOfDay.#ctor
   isExternal: false
@@ -924,6 +1447,71 @@ references:
   name: Clone
   nameWithType: TimeOfDay.Clone
   fullName: Google.Type.TimeOfDay.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Type.TimeOfDay}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Type.TimeOfDay}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Type.TimeOfDay}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<TimeOfDay>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Type.TimeOfDay>.Clone()
+  nameWithType.vb: IDeepCloneable(Of TimeOfDay).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Type.TimeOfDay).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<TimeOfDay>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Type.TimeOfDay>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of TimeOfDay).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Type.TimeOfDay).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -955,6 +1543,47 @@ references:
   name: Nanos
   nameWithType: TimeOfDay.Nanos
   fullName: Google.Type.TimeOfDay.Nanos
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Type.TimeOfDay.Equals*
   commentId: Overload:Google.Type.TimeOfDay.Equals
   isExternal: false
@@ -968,12 +1597,153 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: System.IEquatable{Google.Type.TimeOfDay}.Equals(Google.Type.TimeOfDay)
+  commentId: M:System.IEquatable{Google.Type.TimeOfDay}.Equals(Google.Type.TimeOfDay)
+  parent: System.IEquatable{Google.Type.TimeOfDay}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(TimeOfDay)
+  nameWithType: IEquatable<TimeOfDay>.Equals(TimeOfDay)
+  fullName: System.IEquatable<Google.Type.TimeOfDay>.Equals(Google.Type.TimeOfDay)
+  nameWithType.vb: IEquatable(Of TimeOfDay).Equals(TimeOfDay)
+  fullName.vb: System.IEquatable(Of Google.Type.TimeOfDay).Equals(Google.Type.TimeOfDay)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<TimeOfDay>.Equals
+    fullName: System.IEquatable<Google.Type.TimeOfDay>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Type.TimeOfDay
+    name: TimeOfDay
+    nameWithType: TimeOfDay
+    fullName: Google.Type.TimeOfDay
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of TimeOfDay).Equals
+    fullName: System.IEquatable(Of Google.Type.TimeOfDay).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Type.TimeOfDay
+    name: TimeOfDay
+    nameWithType: TimeOfDay
+    fullName: Google.Type.TimeOfDay
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Type.TimeOfDay.GetHashCode*
   commentId: Overload:Google.Type.TimeOfDay.GetHashCode
   isExternal: false
   name: GetHashCode
   nameWithType: TimeOfDay.GetHashCode
   fullName: Google.Type.TimeOfDay.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Type.TimeOfDay.ToString*
   commentId: Overload:Google.Type.TimeOfDay.ToString
   isExternal: false
@@ -993,10 +1763,53 @@ references:
   name: WriteTo
   nameWithType: TimeOfDay.WriteTo
   fullName: Google.Type.TimeOfDay.WriteTo
-- uid: Google.Protobuf.CodedOutputStream
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
   isExternal: true
-  name: Protobuf.CodedOutputStream
-  nameWithType: Protobuf.CodedOutputStream
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
   fullName: Google.Protobuf.CodedOutputStream
 - uid: Google.Type.TimeOfDay.CalculateSize*
   commentId: Overload:Google.Type.TimeOfDay.CalculateSize
@@ -1004,14 +1817,167 @@ references:
   name: CalculateSize
   nameWithType: TimeOfDay.CalculateSize
   fullName: Google.Type.TimeOfDay.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Type.TimeOfDay.MergeFrom*
   commentId: Overload:Google.Type.TimeOfDay.MergeFrom
   isExternal: false
   name: MergeFrom
   nameWithType: TimeOfDay.MergeFrom
   fullName: Google.Type.TimeOfDay.MergeFrom
-- uid: Google.Protobuf.CodedInputStream
+- uid: Google.Protobuf.IMessage{Google.Type.TimeOfDay}.MergeFrom(Google.Type.TimeOfDay)
+  commentId: M:Google.Protobuf.IMessage{Google.Type.TimeOfDay}.MergeFrom(Google.Type.TimeOfDay)
+  parent: Google.Protobuf.IMessage{Google.Type.TimeOfDay}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(TimeOfDay)
+  nameWithType: IMessage<TimeOfDay>.MergeFrom(TimeOfDay)
+  fullName: Google.Protobuf.IMessage<Google.Type.TimeOfDay>.MergeFrom(Google.Type.TimeOfDay)
+  nameWithType.vb: IMessage(Of TimeOfDay).MergeFrom(TimeOfDay)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Type.TimeOfDay).MergeFrom(Google.Type.TimeOfDay)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<TimeOfDay>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Type.TimeOfDay>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Type.TimeOfDay
+    name: TimeOfDay
+    nameWithType: TimeOfDay
+    fullName: Google.Type.TimeOfDay
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of TimeOfDay).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Type.TimeOfDay).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Type.TimeOfDay
+    name: TimeOfDay
+    nameWithType: TimeOfDay
+    fullName: Google.Type.TimeOfDay
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
   isExternal: true
-  name: Protobuf.CodedInputStream
-  nameWithType: Protobuf.CodedInputStream
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
   fullName: Google.Protobuf.CodedInputStream

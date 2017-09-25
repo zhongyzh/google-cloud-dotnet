@@ -70,12 +70,24 @@ items:
   summary: While set to true, versioning is fully enabled for this bucket.
   example: []
   syntax:
-    content: public virtual bool ? Enabled { get; set; }
+    content: >-
+      [JsonProperty("enabled")]
+
+      public virtual bool ? Enabled { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property Enabled As Boolean?
+    content.vb: >-
+      <JsonProperty("enabled")>
+
+      Public Overridable Property Enabled As Boolean?
   overload: Google.Apis.Storage.v1.Data.Bucket.VersioningData.Enabled*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: enabled
   modifiers.csharp:
   - public
   - virtual

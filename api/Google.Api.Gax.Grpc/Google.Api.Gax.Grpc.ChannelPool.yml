@@ -155,7 +155,7 @@ items:
       type: Google.Api.Gax.Grpc.ServiceEndpoint
       description: The endpoint to connect to. Must not be null.
     return:
-      type: Channel
+      type: Grpc.Core.Channel
       description: A channel for the specified endpoint.
     content.vb: Public Function GetChannel(endpoint As ServiceEndpoint) As Channel
   overload: Google.Api.Gax.Grpc.ChannelPool.GetChannel*
@@ -194,7 +194,7 @@ items:
       type: Google.Api.Gax.Grpc.ServiceEndpoint
       description: The endpoint to connect to. Must not be null.
     return:
-      type: System.Threading.Tasks.Task{Channel}
+      type: System.Threading.Tasks.Task{Grpc.Core.Channel}
       description: >-
         A task representing the asynchronous operation. The value of the completed
 
@@ -631,27 +631,34 @@ references:
   name: ServiceEndpoint
   nameWithType: ServiceEndpoint
   fullName: Google.Api.Gax.Grpc.ServiceEndpoint
-- uid: Channel
-  commentId: '!:Channel'
+- uid: Grpc.Core.Channel
+  commentId: T:Grpc.Core.Channel
+  parent: Grpc.Core
   isExternal: true
   name: Channel
   nameWithType: Channel
-  fullName: Channel
+  fullName: Grpc.Core.Channel
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
 - uid: Google.Api.Gax.Grpc.ChannelPool.GetChannelAsync*
   commentId: Overload:Google.Api.Gax.Grpc.ChannelPool.GetChannelAsync
   isExternal: false
   name: GetChannelAsync
   nameWithType: ChannelPool.GetChannelAsync
   fullName: Google.Api.Gax.Grpc.ChannelPool.GetChannelAsync
-- uid: System.Threading.Tasks.Task{Channel}
-  commentId: T:System.Threading.Tasks.Task{Channel}
+- uid: System.Threading.Tasks.Task{Grpc.Core.Channel}
+  commentId: T:System.Threading.Tasks.Task{Grpc.Core.Channel}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
   name: Task<Channel>
   nameWithType: Task<Channel>
-  fullName: System.Threading.Tasks.Task<Channel>
+  fullName: System.Threading.Tasks.Task<Grpc.Core.Channel>
   nameWithType.vb: Task(Of Channel)
-  fullName.vb: System.Threading.Tasks.Task(Of Channel)
+  fullName.vb: System.Threading.Tasks.Task(Of Grpc.Core.Channel)
   name.vb: Task(Of Channel)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
@@ -662,10 +669,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: Channel
+  - uid: Grpc.Core.Channel
     name: Channel
     nameWithType: Channel
-    fullName: Channel
+    fullName: Grpc.Core.Channel
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -679,10 +686,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: Channel
+  - uid: Grpc.Core.Channel
     name: Channel
     nameWithType: Channel
-    fullName: Channel
+    fullName: Grpc.Core.Channel
     isExternal: true
   - name: )
     nameWithType: )

@@ -92,12 +92,24 @@ items:
   summary: "\nA space-delimited list of the permissions the application requests or <code>null</code>.\n"
   example: []
   syntax:
-    content: public string Scope { get; set; }
+    content: >-
+      [JsonProperty("scope")]
+
+      public string Scope { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Scope As String
+    content.vb: >-
+      <JsonProperty("scope")>
+
+      Public Property Scope As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Scope*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: scope
   modifiers.csharp:
   - public
   - get
@@ -129,12 +141,24 @@ items:
   summary: "\nThe email address of the user for which the application is requesting delegated access.\n"
   example: []
   syntax:
-    content: public string Prn { get; set; }
+    content: >-
+      [JsonProperty("prn")]
+
+      public string Prn { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Prn As String
+    content.vb: >-
+      <JsonProperty("prn")>
+
+      Public Property Prn As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Prn*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: prn
   modifiers.csharp:
   - public
   - get
@@ -166,12 +190,24 @@ items:
   summary: "\nThe hosted GSuite domain of the user. Provided only if the user belongs to a hosted domain.\n"
   example: []
   syntax:
-    content: public string HostedDomain { get; set; }
+    content: >-
+      [JsonProperty("hd")]
+
+      public string HostedDomain { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property HostedDomain As String
+    content.vb: >-
+      <JsonProperty("hd")>
+
+      Public Property HostedDomain As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.HostedDomain*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: hd
   modifiers.csharp:
   - public
   - get
@@ -203,12 +239,24 @@ items:
   summary: "\nThe user&apos;s email address. This may not be unique and is not suitable for use as a primary key.\nProvided only if your scope included the string &quot;email&quot;.\n"
   example: []
   syntax:
-    content: public string Email { get; set; }
+    content: >-
+      [JsonProperty("email")]
+
+      public string Email { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Email As String
+    content.vb: >-
+      <JsonProperty("email")>
+
+      Public Property Email As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Email*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: email
   modifiers.csharp:
   - public
   - get
@@ -240,12 +288,24 @@ items:
   summary: "\nTrue if the user&apos;s e-mail address has been verified; otherwise false.\n"
   example: []
   syntax:
-    content: public bool EmailVerified { get; set; }
+    content: >-
+      [JsonProperty("email_verified")]
+
+      public bool EmailVerified { get; set; }
     parameters: []
     return:
       type: System.Boolean
-    content.vb: Public Property EmailVerified As Boolean
+    content.vb: >-
+      <JsonProperty("email_verified")>
+
+      Public Property EmailVerified As Boolean
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.EmailVerified*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: email_verified
   modifiers.csharp:
   - public
   - get
@@ -277,12 +337,24 @@ items:
   summary: "\nThe user&apos;s full name, in a displayable form. Might be provided when:\n(1) The request scope included the string &quot;profile&quot;; or\n(2) The ID token is returned from a token refresh.\nWhen name claims are present, you can use them to update your app&apos;s user records.\nNote that this claim is never guaranteed to be present.\n"
   example: []
   syntax:
-    content: public string Name { get; set; }
+    content: >-
+      [JsonProperty("name")]
+
+      public string Name { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Name As String
+    content.vb: >-
+      <JsonProperty("name")>
+
+      Public Property Name As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Name*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: name
   modifiers.csharp:
   - public
   - get
@@ -314,12 +386,24 @@ items:
   summary: "\nGiven name(s) or first name(s) of the End-User. Note that in some cultures, people can have multiple given names;\nall can be present, with the names being separated by space characters.\n"
   example: []
   syntax:
-    content: public string GivenName { get; set; }
+    content: >-
+      [JsonProperty("given_name")]
+
+      public string GivenName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property GivenName As String
+    content.vb: >-
+      <JsonProperty("given_name")>
+
+      Public Property GivenName As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.GivenName*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: given_name
   modifiers.csharp:
   - public
   - get
@@ -351,12 +435,24 @@ items:
   summary: "\nSurname(s) or last name(s) of the End-User. Note that in some cultures,\npeople can have multiple family names or no family name;\nall can be present, with the names being separated by space characters.\n"
   example: []
   syntax:
-    content: public string FamilyName { get; set; }
+    content: >-
+      [JsonProperty("family_name")]
+
+      public string FamilyName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property FamilyName As String
+    content.vb: >-
+      <JsonProperty("family_name")>
+
+      Public Property FamilyName As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.FamilyName*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: family_name
   modifiers.csharp:
   - public
   - get
@@ -388,12 +484,24 @@ items:
   summary: "\nThe URL of the user&apos;s profile picture. Might be provided when:\n(1) The request scope included the string &quot;profile&quot;; or\n(2) The ID token is returned from a token refresh.\nWhen picture claims are present, you can use them to update your app&apos;s user records.\nNote that this claim is never guaranteed to be present.\n"
   example: []
   syntax:
-    content: public string Picture { get; set; }
+    content: >-
+      [JsonProperty("picture")]
+
+      public string Picture { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Picture As String
+    content.vb: >-
+      <JsonProperty("picture")>
+
+      Public Property Picture As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Picture*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: picture
   modifiers.csharp:
   - public
   - get
@@ -425,12 +533,24 @@ items:
   summary: "\nEnd-User&apos;s locale, represented as a BCP47 [RFC5646] language tag.\nThis is typically an ISO 639-1 Alpha-2 [ISO639‑1] language code in lowercase and an\nISO 3166-1 Alpha-2 [ISO3166‑1] country code in uppercase, separated by a dash.\nFor example, en-US or fr-CA.\n"
   example: []
   syntax:
-    content: public string Locale { get; set; }
+    content: >-
+      [JsonProperty("locale")]
+
+      public string Locale { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Locale As String
+    content.vb: >-
+      <JsonProperty("locale")>
+
+      Public Property Locale As String
   overload: Google.Apis.Auth.GoogleJsonWebSignature.Payload.Locale*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: locale
   modifiers.csharp:
   - public
   - get

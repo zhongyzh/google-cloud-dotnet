@@ -64,9 +64,22 @@ items:
   summary: Include all properties.
   example: []
   syntax:
-    content: Full = 0
+    content: >-
+      [StringValue("full")]
+
+      Full = 0
     return:
       type: Google.Apis.Storage.v1.ObjectsResource.InsertRequest.ProjectionEnum
+    content.vb: >-
+      <StringValue("full")>
+
+      Full = 0
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: full
   modifiers.csharp:
   - public
   - const
@@ -98,9 +111,22 @@ items:
   summary: Omit the owner, acl property.
   example: []
   syntax:
-    content: NoAcl = 1
+    content: >-
+      [StringValue("noAcl")]
+
+      NoAcl = 1
     return:
       type: Google.Apis.Storage.v1.ObjectsResource.InsertRequest.ProjectionEnum
+    content.vb: >-
+      <StringValue("noAcl")>
+
+      NoAcl = 1
+  attributes:
+  - type: Google.Apis.Util.StringValueAttribute
+    ctor: Google.Apis.Util.StringValueAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: noAcl
   modifiers.csharp:
   - public
   - const

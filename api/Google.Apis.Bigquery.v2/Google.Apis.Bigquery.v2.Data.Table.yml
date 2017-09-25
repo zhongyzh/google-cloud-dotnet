@@ -46,12 +46,22 @@ items:
   - Google.Apis.Bigquery.v2
   namespace: Google.Apis.Bigquery.v2.Data
   syntax:
-    content: 'public class Table : Requests.IDirectResponseSchema'
+    content: 'public class Table : IDirectResponseSchema'
     content.vb: >-
       Public Class Table
-          Inherits Requests.IDirectResponseSchema
+          Implements IDirectResponseSchema
   inheritance:
   - System.Object
+  implements:
+  - Google.Apis.Requests.IDirectResponseSchema
+  inheritedMembers:
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - class
@@ -83,12 +93,24 @@ items:
   summary: '[Output-only] The time when this table was created, in milliseconds since the epoch.'
   example: []
   syntax:
-    content: public virtual long ? CreationTime { get; set; }
+    content: >-
+      [JsonProperty("creationTime")]
+
+      public virtual long ? CreationTime { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property CreationTime As Long?
+    content.vb: >-
+      <JsonProperty("creationTime")>
+
+      Public Overridable Property CreationTime As Long?
   overload: Google.Apis.Bigquery.v2.Data.Table.CreationTime*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: creationTime
   modifiers.csharp:
   - public
   - virtual
@@ -122,12 +144,24 @@ items:
   summary: '[Optional] A user-friendly description of this table.'
   example: []
   syntax:
-    content: public virtual string Description { get; set; }
+    content: >-
+      [JsonProperty("description")]
+
+      public virtual string Description { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Description As String
+    content.vb: >-
+      <JsonProperty("description")>
+
+      Public Overridable Property Description As String
   overload: Google.Apis.Bigquery.v2.Data.Table.Description*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: description
   modifiers.csharp:
   - public
   - virtual
@@ -161,12 +195,24 @@ items:
   summary: '[Experimental] Custom encryption configuration (e.g., Cloud KMS keys).'
   example: []
   syntax:
-    content: public virtual EncryptionConfiguration EncryptionConfiguration { get; set; }
+    content: >-
+      [JsonProperty("encryptionConfiguration")]
+
+      public virtual EncryptionConfiguration EncryptionConfiguration { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.EncryptionConfiguration
-    content.vb: Public Overridable Property EncryptionConfiguration As EncryptionConfiguration
+    content.vb: >-
+      <JsonProperty("encryptionConfiguration")>
+
+      Public Overridable Property EncryptionConfiguration As EncryptionConfiguration
   overload: Google.Apis.Bigquery.v2.Data.Table.EncryptionConfiguration*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: encryptionConfiguration
   modifiers.csharp:
   - public
   - virtual
@@ -200,12 +246,26 @@ items:
   summary: '[Output-only] A hash of this resource.'
   example: []
   syntax:
-    content: public virtual string ETag { get; set; }
+    content: >-
+      [JsonProperty("etag")]
+
+      public virtual string ETag { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property ETag As String
+    content.vb: >-
+      <JsonProperty("etag")>
+
+      Public Overridable Property ETag As String
   overload: Google.Apis.Bigquery.v2.Data.Table.ETag*
+  implements:
+  - Google.Apis.Requests.IDirectResponseSchema.ETag
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: etag
   modifiers.csharp:
   - public
   - virtual
@@ -242,12 +302,24 @@ items:
     table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
   example: []
   syntax:
-    content: public virtual long ? ExpirationTime { get; set; }
+    content: >-
+      [JsonProperty("expirationTime")]
+
+      public virtual long ? ExpirationTime { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property ExpirationTime As Long?
+    content.vb: >-
+      <JsonProperty("expirationTime")>
+
+      Public Overridable Property ExpirationTime As Long?
   overload: Google.Apis.Bigquery.v2.Data.Table.ExpirationTime*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: expirationTime
   modifiers.csharp:
   - public
   - virtual
@@ -286,12 +358,24 @@ items:
     BigQuery table.
   example: []
   syntax:
-    content: public virtual ExternalDataConfiguration ExternalDataConfiguration { get; set; }
+    content: >-
+      [JsonProperty("externalDataConfiguration")]
+
+      public virtual ExternalDataConfiguration ExternalDataConfiguration { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.ExternalDataConfiguration
-    content.vb: Public Overridable Property ExternalDataConfiguration As ExternalDataConfiguration
+    content.vb: >-
+      <JsonProperty("externalDataConfiguration")>
+
+      Public Overridable Property ExternalDataConfiguration As ExternalDataConfiguration
   overload: Google.Apis.Bigquery.v2.Data.Table.ExternalDataConfiguration*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: externalDataConfiguration
   modifiers.csharp:
   - public
   - virtual
@@ -325,12 +409,24 @@ items:
   summary: '[Optional] A descriptive name for this table.'
   example: []
   syntax:
-    content: public virtual string FriendlyName { get; set; }
+    content: >-
+      [JsonProperty("friendlyName")]
+
+      public virtual string FriendlyName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property FriendlyName As String
+    content.vb: >-
+      <JsonProperty("friendlyName")>
+
+      Public Overridable Property FriendlyName As String
   overload: Google.Apis.Bigquery.v2.Data.Table.FriendlyName*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: friendlyName
   modifiers.csharp:
   - public
   - virtual
@@ -364,12 +460,24 @@ items:
   summary: '[Output-only] An opaque ID uniquely identifying the table.'
   example: []
   syntax:
-    content: public virtual string Id { get; set; }
+    content: >-
+      [JsonProperty("id")]
+
+      public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Id As String
+    content.vb: >-
+      <JsonProperty("id")>
+
+      Public Overridable Property Id As String
   overload: Google.Apis.Bigquery.v2.Data.Table.Id*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -403,12 +511,24 @@ items:
   summary: '[Output-only] The type of the resource.'
   example: []
   syntax:
-    content: public virtual string Kind { get; set; }
+    content: >-
+      [JsonProperty("kind")]
+
+      public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Kind As String
+    content.vb: >-
+      <JsonProperty("kind")>
+
+      Public Overridable Property Kind As String
   overload: Google.Apis.Bigquery.v2.Data.Table.Kind*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -449,12 +569,24 @@ items:
     Label keys must start with a letter and each label in the list must have a different key.
   example: []
   syntax:
-    content: public virtual IDictionary<string, string> Labels { get; set; }
+    content: >-
+      [JsonProperty("labels")]
+
+      public virtual IDictionary<string, string> Labels { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IDictionary{System.String,System.String}
-    content.vb: Public Overridable Property Labels As IDictionary(Of String, String)
+    content.vb: >-
+      <JsonProperty("labels")>
+
+      Public Overridable Property Labels As IDictionary(Of String, String)
   overload: Google.Apis.Bigquery.v2.Data.Table.Labels*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: labels
   modifiers.csharp:
   - public
   - virtual
@@ -491,12 +623,24 @@ items:
     epoch.
   example: []
   syntax:
-    content: public virtual ulong ? LastModifiedTime { get; set; }
+    content: >-
+      [JsonProperty("lastModifiedTime")]
+
+      public virtual ulong ? LastModifiedTime { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.UInt64}
-    content.vb: Public Overridable Property LastModifiedTime As ULong?
+    content.vb: >-
+      <JsonProperty("lastModifiedTime")>
+
+      Public Overridable Property LastModifiedTime As ULong?
   overload: Google.Apis.Bigquery.v2.Data.Table.LastModifiedTime*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: lastModifiedTime
   modifiers.csharp:
   - public
   - virtual
@@ -533,12 +677,24 @@ items:
     dataset.
   example: []
   syntax:
-    content: public virtual string Location { get; set; }
+    content: >-
+      [JsonProperty("location")]
+
+      public virtual string Location { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Location As String
+    content.vb: >-
+      <JsonProperty("location")>
+
+      Public Overridable Property Location As String
   overload: Google.Apis.Bigquery.v2.Data.Table.Location*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: location
   modifiers.csharp:
   - public
   - virtual
@@ -575,12 +731,24 @@ items:
     buffer.
   example: []
   syntax:
-    content: public virtual long ? NumBytes { get; set; }
+    content: >-
+      [JsonProperty("numBytes")]
+
+      public virtual long ? NumBytes { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property NumBytes As Long?
+    content.vb: >-
+      <JsonProperty("numBytes")>
+
+      Public Overridable Property NumBytes As Long?
   overload: Google.Apis.Bigquery.v2.Data.Table.NumBytes*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: numBytes
   modifiers.csharp:
   - public
   - virtual
@@ -614,12 +782,24 @@ items:
   summary: '[Output-only] The number of bytes in the table that are considered &quot;long-term storage&quot;.'
   example: []
   syntax:
-    content: public virtual long ? NumLongTermBytes { get; set; }
+    content: >-
+      [JsonProperty("numLongTermBytes")]
+
+      public virtual long ? NumLongTermBytes { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property NumLongTermBytes As Long?
+    content.vb: >-
+      <JsonProperty("numLongTermBytes")>
+
+      Public Overridable Property NumLongTermBytes As Long?
   overload: Google.Apis.Bigquery.v2.Data.Table.NumLongTermBytes*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: numLongTermBytes
   modifiers.csharp:
   - public
   - virtual
@@ -656,12 +836,24 @@ items:
     buffer.
   example: []
   syntax:
-    content: public virtual ulong ? NumRows { get; set; }
+    content: >-
+      [JsonProperty("numRows")]
+
+      public virtual ulong ? NumRows { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.UInt64}
-    content.vb: Public Overridable Property NumRows As ULong?
+    content.vb: >-
+      <JsonProperty("numRows")>
+
+      Public Overridable Property NumRows As ULong?
   overload: Google.Apis.Bigquery.v2.Data.Table.NumRows*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: numRows
   modifiers.csharp:
   - public
   - virtual
@@ -695,12 +887,24 @@ items:
   summary: '[Optional] Describes the schema of this table.'
   example: []
   syntax:
-    content: public virtual TableSchema Schema { get; set; }
+    content: >-
+      [JsonProperty("schema")]
+
+      public virtual TableSchema Schema { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableSchema
-    content.vb: Public Overridable Property Schema As TableSchema
+    content.vb: >-
+      <JsonProperty("schema")>
+
+      Public Overridable Property Schema As TableSchema
   overload: Google.Apis.Bigquery.v2.Data.Table.Schema*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: schema
   modifiers.csharp:
   - public
   - virtual
@@ -734,12 +938,24 @@ items:
   summary: '[Output-only] A URL that can be used to access this resource again.'
   example: []
   syntax:
-    content: public virtual string SelfLink { get; set; }
+    content: >-
+      [JsonProperty("selfLink")]
+
+      public virtual string SelfLink { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property SelfLink As String
+    content.vb: >-
+      <JsonProperty("selfLink")>
+
+      Public Overridable Property SelfLink As String
   overload: Google.Apis.Bigquery.v2.Data.Table.SelfLink*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: selfLink
   modifiers.csharp:
   - public
   - virtual
@@ -778,12 +994,24 @@ items:
     buffer.
   example: []
   syntax:
-    content: public virtual Streamingbuffer StreamingBuffer { get; set; }
+    content: >-
+      [JsonProperty("streamingBuffer")]
+
+      public virtual Streamingbuffer StreamingBuffer { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.Streamingbuffer
-    content.vb: Public Overridable Property StreamingBuffer As Streamingbuffer
+    content.vb: >-
+      <JsonProperty("streamingBuffer")>
+
+      Public Overridable Property StreamingBuffer As Streamingbuffer
   overload: Google.Apis.Bigquery.v2.Data.Table.StreamingBuffer*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: streamingBuffer
   modifiers.csharp:
   - public
   - virtual
@@ -817,12 +1045,24 @@ items:
   summary: '[Required] Reference describing the ID of this table.'
   example: []
   syntax:
-    content: public virtual TableReference TableReference { get; set; }
+    content: >-
+      [JsonProperty("tableReference")]
+
+      public virtual TableReference TableReference { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableReference
-    content.vb: Public Overridable Property TableReference As TableReference
+    content.vb: >-
+      <JsonProperty("tableReference")>
+
+      Public Overridable Property TableReference As TableReference
   overload: Google.Apis.Bigquery.v2.Data.Table.TableReference*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: tableReference
   modifiers.csharp:
   - public
   - virtual
@@ -856,12 +1096,24 @@ items:
   summary: '[Experimental] If specified, configures time-based partitioning for this table.'
   example: []
   syntax:
-    content: public virtual TimePartitioning TimePartitioning { get; set; }
+    content: >-
+      [JsonProperty("timePartitioning")]
+
+      public virtual TimePartitioning TimePartitioning { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TimePartitioning
-    content.vb: Public Overridable Property TimePartitioning As TimePartitioning
+    content.vb: >-
+      <JsonProperty("timePartitioning")>
+
+      Public Overridable Property TimePartitioning As TimePartitioning
   overload: Google.Apis.Bigquery.v2.Data.Table.TimePartitioning*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: timePartitioning
   modifiers.csharp:
   - public
   - virtual
@@ -900,12 +1152,24 @@ items:
     in an external storage system, such as Google Cloud Storage. The default value is TABLE.
   example: []
   syntax:
-    content: public virtual string Type { get; set; }
+    content: >-
+      [JsonProperty("type")]
+
+      public virtual string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Type As String
+    content.vb: >-
+      <JsonProperty("type")>
+
+      Public Overridable Property Type As String
   overload: Google.Apis.Bigquery.v2.Data.Table.Type*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: type
   modifiers.csharp:
   - public
   - virtual
@@ -939,12 +1203,24 @@ items:
   summary: '[Optional] The view definition.'
   example: []
   syntax:
-    content: public virtual ViewDefinition View { get; set; }
+    content: >-
+      [JsonProperty("view")]
+
+      public virtual ViewDefinition View { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.ViewDefinition
-    content.vb: Public Overridable Property View As ViewDefinition
+    content.vb: >-
+      <JsonProperty("view")>
+
+      Public Overridable Property View As ViewDefinition
   overload: Google.Apis.Bigquery.v2.Data.Table.View*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: view
   modifiers.csharp:
   - public
   - virtual
@@ -967,12 +1243,304 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Apis.Requests.IDirectResponseSchema
+  commentId: T:Google.Apis.Requests.IDirectResponseSchema
+  parent: Google.Apis.Requests
+  isExternal: true
+  name: IDirectResponseSchema
+  nameWithType: IDirectResponseSchema
+  fullName: Google.Apis.Requests.IDirectResponseSchema
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
+- uid: Google.Apis.Requests
+  commentId: N:Google.Apis.Requests
+  isExternal: false
+  name: Google.Apis.Requests
+  nameWithType: Google.Apis.Requests
+  fullName: Google.Apis.Requests
 - uid: Google.Apis.Bigquery.v2.Data.Table.CreationTime*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.Table.CreationTime
   isExternal: false
@@ -1094,6 +1662,13 @@ references:
   name: ETag
   nameWithType: Table.ETag
   fullName: Google.Apis.Bigquery.v2.Data.Table.ETag
+- uid: Google.Apis.Requests.IDirectResponseSchema.ETag
+  commentId: P:Google.Apis.Requests.IDirectResponseSchema.ETag
+  parent: Google.Apis.Requests.IDirectResponseSchema
+  isExternal: true
+  name: ETag
+  nameWithType: IDirectResponseSchema.ETag
+  fullName: Google.Apis.Requests.IDirectResponseSchema.ETag
 - uid: Google.Apis.Bigquery.v2.Data.Table.ExpirationTime*
   commentId: Overload:Google.Apis.Bigquery.v2.Data.Table.ExpirationTime
   isExternal: false

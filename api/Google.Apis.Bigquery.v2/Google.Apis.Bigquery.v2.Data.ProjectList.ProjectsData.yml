@@ -72,12 +72,24 @@ items:
   summary: A descriptive name for this project.
   example: []
   syntax:
-    content: public virtual string FriendlyName { get; set; }
+    content: >-
+      [JsonProperty("friendlyName")]
+
+      public virtual string FriendlyName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property FriendlyName As String
+    content.vb: >-
+      <JsonProperty("friendlyName")>
+
+      Public Overridable Property FriendlyName As String
   overload: Google.Apis.Bigquery.v2.Data.ProjectList.ProjectsData.FriendlyName*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: friendlyName
   modifiers.csharp:
   - public
   - virtual
@@ -111,12 +123,24 @@ items:
   summary: An opaque ID of this project.
   example: []
   syntax:
-    content: public virtual string Id { get; set; }
+    content: >-
+      [JsonProperty("id")]
+
+      public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Id As String
+    content.vb: >-
+      <JsonProperty("id")>
+
+      Public Overridable Property Id As String
   overload: Google.Apis.Bigquery.v2.Data.ProjectList.ProjectsData.Id*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -150,12 +174,24 @@ items:
   summary: The resource type.
   example: []
   syntax:
-    content: public virtual string Kind { get; set; }
+    content: >-
+      [JsonProperty("kind")]
+
+      public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Kind As String
+    content.vb: >-
+      <JsonProperty("kind")>
+
+      Public Overridable Property Kind As String
   overload: Google.Apis.Bigquery.v2.Data.ProjectList.ProjectsData.Kind*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -189,12 +225,24 @@ items:
   summary: The numeric ID of this project.
   example: []
   syntax:
-    content: public virtual ulong ? NumericId { get; set; }
+    content: >-
+      [JsonProperty("numericId")]
+
+      public virtual ulong ? NumericId { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.UInt64}
-    content.vb: Public Overridable Property NumericId As ULong?
+    content.vb: >-
+      <JsonProperty("numericId")>
+
+      Public Overridable Property NumericId As ULong?
   overload: Google.Apis.Bigquery.v2.Data.ProjectList.ProjectsData.NumericId*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: numericId
   modifiers.csharp:
   - public
   - virtual
@@ -228,12 +276,24 @@ items:
   summary: A unique reference to this project.
   example: []
   syntax:
-    content: public virtual ProjectReference ProjectReference { get; set; }
+    content: >-
+      [JsonProperty("projectReference")]
+
+      public virtual ProjectReference ProjectReference { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.ProjectReference
-    content.vb: Public Overridable Property ProjectReference As ProjectReference
+    content.vb: >-
+      <JsonProperty("projectReference")>
+
+      Public Overridable Property ProjectReference As ProjectReference
   overload: Google.Apis.Bigquery.v2.Data.ProjectList.ProjectsData.ProjectReference*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: projectReference
   modifiers.csharp:
   - public
   - virtual

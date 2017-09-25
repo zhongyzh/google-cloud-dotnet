@@ -71,12 +71,24 @@ items:
   summary: The entity, in the form user-userId.
   example: []
   syntax:
-    content: public virtual string Entity { get; set; }
+    content: >-
+      [JsonProperty("entity")]
+
+      public virtual string Entity { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Entity As String
+    content.vb: >-
+      <JsonProperty("entity")>
+
+      Public Overridable Property Entity As String
   overload: Google.Apis.Storage.v1.Data.Object.OwnerData.Entity*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: entity
   modifiers.csharp:
   - public
   - virtual
@@ -110,12 +122,24 @@ items:
   summary: The ID for the entity.
   example: []
   syntax:
-    content: public virtual string EntityId { get; set; }
+    content: >-
+      [JsonProperty("entityId")]
+
+      public virtual string EntityId { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property EntityId As String
+    content.vb: >-
+      <JsonProperty("entityId")>
+
+      Public Overridable Property EntityId As String
   overload: Google.Apis.Storage.v1.Data.Object.OwnerData.EntityId*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: entityId
   modifiers.csharp:
   - public
   - virtual

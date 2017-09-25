@@ -73,12 +73,24 @@ items:
     which the action will be taken.
   example: []
   syntax:
-    content: public virtual IList<Bucket.LifecycleData.RuleData> Rule { get; set; }
+    content: >-
+      [JsonProperty("rule")]
+
+      public virtual IList<Bucket.LifecycleData.RuleData> Rule { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData}
-    content.vb: Public Overridable Property Rule As IList(Of Bucket.LifecycleData.RuleData)
+    content.vb: >-
+      <JsonProperty("rule")>
+
+      Public Overridable Property Rule As IList(Of Bucket.LifecycleData.RuleData)
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.Rule*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: rule
   modifiers.csharp:
   - public
   - virtual

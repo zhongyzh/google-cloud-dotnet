@@ -75,12 +75,24 @@ items:
     or the call will fail.
   example: []
   syntax:
-    content: public virtual long ? IfGenerationMatch { get; set; }
+    content: >-
+      [JsonProperty("ifGenerationMatch")]
+
+      public virtual long ? IfGenerationMatch { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property IfGenerationMatch As Long?
+    content.vb: >-
+      <JsonProperty("ifGenerationMatch")>
+
+      Public Overridable Property IfGenerationMatch As Long?
   overload: Google.Apis.Storage.v1.Data.ComposeRequest.SourceObjectsData.ObjectPreconditionsData.IfGenerationMatch*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: ifGenerationMatch
   modifiers.csharp:
   - public
   - virtual

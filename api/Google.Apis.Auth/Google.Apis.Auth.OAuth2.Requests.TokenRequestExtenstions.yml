@@ -5,7 +5,7 @@ items:
   id: TokenRequestExtenstions
   parent: Google.Apis.Auth.OAuth2.Requests
   children:
-  - Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions.ExecuteAsync(Google.Apis.Auth.OAuth2.Requests.TokenRequest,HttpClient,System.String,System.Threading.CancellationToken,Google.Apis.Util.IClock)
+  - Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions.ExecuteAsync(Google.Apis.Auth.OAuth2.Requests.TokenRequest,System.Net.Http.HttpClient,System.String,System.Threading.CancellationToken,Google.Apis.Util.IClock)
   langs:
   - csharp
   - vb
@@ -46,9 +46,9 @@ items:
   modifiers.vb:
   - Public
   - Module
-- uid: Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions.ExecuteAsync(Google.Apis.Auth.OAuth2.Requests.TokenRequest,HttpClient,System.String,System.Threading.CancellationToken,Google.Apis.Util.IClock)
-  commentId: M:Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions.ExecuteAsync(Google.Apis.Auth.OAuth2.Requests.TokenRequest,HttpClient,System.String,System.Threading.CancellationToken,Google.Apis.Util.IClock)
-  id: ExecuteAsync(Google.Apis.Auth.OAuth2.Requests.TokenRequest,HttpClient,System.String,System.Threading.CancellationToken,Google.Apis.Util.IClock)
+- uid: Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions.ExecuteAsync(Google.Apis.Auth.OAuth2.Requests.TokenRequest,System.Net.Http.HttpClient,System.String,System.Threading.CancellationToken,Google.Apis.Util.IClock)
+  commentId: M:Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions.ExecuteAsync(Google.Apis.Auth.OAuth2.Requests.TokenRequest,System.Net.Http.HttpClient,System.String,System.Threading.CancellationToken,Google.Apis.Util.IClock)
+  id: ExecuteAsync(Google.Apis.Auth.OAuth2.Requests.TokenRequest,System.Net.Http.HttpClient,System.String,System.Threading.CancellationToken,Google.Apis.Util.IClock)
   isExtensionMethod: true
   parent: Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions
   langs:
@@ -56,7 +56,7 @@ items:
   - vb
   name: ExecuteAsync(TokenRequest, HttpClient, String, CancellationToken, IClock)
   nameWithType: TokenRequestExtenstions.ExecuteAsync(TokenRequest, HttpClient, String, CancellationToken, IClock)
-  fullName: Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions.ExecuteAsync(Google.Apis.Auth.OAuth2.Requests.TokenRequest, HttpClient, System.String, System.Threading.CancellationToken, Google.Apis.Util.IClock)
+  fullName: Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions.ExecuteAsync(Google.Apis.Auth.OAuth2.Requests.TokenRequest, System.Net.Http.HttpClient, System.String, System.Threading.CancellationToken, Google.Apis.Util.IClock)
   type: Method
   source:
     remote:
@@ -78,7 +78,7 @@ items:
       type: Google.Apis.Auth.OAuth2.Requests.TokenRequest
       description: The token request.
     - id: httpClient
-      type: HttpClient
+      type: System.Net.Http.HttpClient
       description: The HTTP client used to create an HTTP request.
     - id: tokenServerUrl
       type: System.String
@@ -430,12 +430,13 @@ references:
   name: ExecuteAsync
   nameWithType: TokenRequestExtenstions.ExecuteAsync
   fullName: Google.Apis.Auth.OAuth2.Requests.TokenRequestExtenstions.ExecuteAsync
-- uid: HttpClient
-  commentId: '!:HttpClient'
+- uid: System.Net.Http.HttpClient
+  commentId: T:System.Net.Http.HttpClient
+  parent: System.Net.Http
   isExternal: true
   name: HttpClient
   nameWithType: HttpClient
-  fullName: HttpClient
+  fullName: System.Net.Http.HttpClient
 - uid: System.String
   commentId: T:System.String
   parent: System
@@ -505,6 +506,12 @@ references:
   name: Google.Apis.Auth.OAuth2.Responses
   nameWithType: Google.Apis.Auth.OAuth2.Responses
   fullName: Google.Apis.Auth.OAuth2.Responses
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: false
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
 - uid: System.Threading
   commentId: N:System.Threading
   isExternal: false

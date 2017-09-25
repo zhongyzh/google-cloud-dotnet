@@ -8,10 +8,10 @@ items:
   - Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.GrpcCall
   - Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.ResponseStream
   - Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0)
-  - Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0,WriteOptions)
+  - Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0,Grpc.Core.WriteOptions)
   - Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteCompleteAsync
   - Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0)
-  - Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0,WriteOptions)
+  - Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0,Grpc.Core.WriteOptions)
   - Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteCompleteAsync
   langs:
   - csharp
@@ -84,13 +84,13 @@ items:
   assemblies:
   - Google.Api.Gax.Grpc
   namespace: Google.Api.Gax.Grpc
-  summary: "\nThe underlying gRPC duplex streaming call.\nWarning: DO NOT USE <code>GrpcCall.RequestStream</code> at all if using\n<xref href=\"Google.Api.Gax.Grpc.BidirectionalStreamingBase%602.TryWriteAsync(%600)\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"Google.Api.Gax.Grpc.BidirectionalStreamingBase%602.WriteAsync(%600)\" data-throw-if-not-resolved=\"false\"></xref>,\n<xref href=\"Google.Api.Gax.Grpc.BidirectionalStreamingBase%602.TryWriteAsync(%600%2cWriteOptions)\" data-throw-if-not-resolved=\"false\"></xref> , or <xref href=\"Google.Api.Gax.Grpc.BidirectionalStreamingBase%602.WriteAsync(%600%2cWriteOptions)\" data-throw-if-not-resolved=\"false\"></xref>.\nDoing so will cause conflict with the write-buffer used within the <code>[Try]WriteAsync</code> methods.\n"
+  summary: "\nThe underlying gRPC duplex streaming call.\nWarning: DO NOT USE <code>GrpcCall.RequestStream</code> at all if using\n<xref href=\"Google.Api.Gax.Grpc.BidirectionalStreamingBase%602.TryWriteAsync(%600)\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"Google.Api.Gax.Grpc.BidirectionalStreamingBase%602.WriteAsync(%600)\" data-throw-if-not-resolved=\"false\"></xref>,\n<xref href=\"Google.Api.Gax.Grpc.BidirectionalStreamingBase%602.TryWriteAsync(%600%2cGrpc.Core.WriteOptions)\" data-throw-if-not-resolved=\"false\"></xref> , or <xref href=\"Google.Api.Gax.Grpc.BidirectionalStreamingBase%602.WriteAsync(%600%2cGrpc.Core.WriteOptions)\" data-throw-if-not-resolved=\"false\"></xref>.\nDoing so will cause conflict with the write-buffer used within the <code>[Try]WriteAsync</code> methods.\n"
   example: []
   syntax:
     content: public virtual AsyncDuplexStreamingCall<TRequest, TResponse> GrpcCall { get; }
     parameters: []
     return:
-      type: AsyncDuplexStreamingCall{{TRequest},{TResponse}}
+      type: Grpc.Core.AsyncDuplexStreamingCall{{TRequest},{TResponse}}
     content.vb: Public Overridable ReadOnly Property GrpcCall As AsyncDuplexStreamingCall(Of TRequest, TResponse)
   overload: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.GrpcCall*
   nameWithType.vb: BidirectionalStreamingBase(Of TRequest, TResponse).GrpcCall
@@ -198,16 +198,16 @@ items:
   - Public
   - Overridable
   fullName.vb: Google.Api.Gax.Grpc.BidirectionalStreamingBase(Of TRequest, TResponse).WriteAsync(TRequest)
-- uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0,WriteOptions)
-  commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0,WriteOptions)
-  id: TryWriteAsync(`0,WriteOptions)
+- uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0,Grpc.Core.WriteOptions)
+  commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0,Grpc.Core.WriteOptions)
+  id: TryWriteAsync(`0,Grpc.Core.WriteOptions)
   parent: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2
   langs:
   - csharp
   - vb
   name: TryWriteAsync(TRequest, WriteOptions)
   nameWithType: BidirectionalStreamingBase<TRequest, TResponse>.TryWriteAsync(TRequest, WriteOptions)
-  fullName: Google.Api.Gax.Grpc.BidirectionalStreamingBase<TRequest, TResponse>.TryWriteAsync(TRequest, WriteOptions)
+  fullName: Google.Api.Gax.Grpc.BidirectionalStreamingBase<TRequest, TResponse>.TryWriteAsync(TRequest, Grpc.Core.WriteOptions)
   type: Method
   source:
     remote:
@@ -229,7 +229,7 @@ items:
       type: '{TRequest}'
       description: The message to write.
     - id: options
-      type: WriteOptions
+      type: Grpc.Core.WriteOptions
       description: The write options to use for this message.
     return:
       type: System.Threading.Tasks.Task
@@ -243,17 +243,17 @@ items:
   modifiers.vb:
   - Public
   - Overridable
-  fullName.vb: Google.Api.Gax.Grpc.BidirectionalStreamingBase(Of TRequest, TResponse).TryWriteAsync(TRequest, WriteOptions)
-- uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0,WriteOptions)
-  commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0,WriteOptions)
-  id: WriteAsync(`0,WriteOptions)
+  fullName.vb: Google.Api.Gax.Grpc.BidirectionalStreamingBase(Of TRequest, TResponse).TryWriteAsync(TRequest, Grpc.Core.WriteOptions)
+- uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0,Grpc.Core.WriteOptions)
+  commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0,Grpc.Core.WriteOptions)
+  id: WriteAsync(`0,Grpc.Core.WriteOptions)
   parent: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2
   langs:
   - csharp
   - vb
   name: WriteAsync(TRequest, WriteOptions)
   nameWithType: BidirectionalStreamingBase<TRequest, TResponse>.WriteAsync(TRequest, WriteOptions)
-  fullName: Google.Api.Gax.Grpc.BidirectionalStreamingBase<TRequest, TResponse>.WriteAsync(TRequest, WriteOptions)
+  fullName: Google.Api.Gax.Grpc.BidirectionalStreamingBase<TRequest, TResponse>.WriteAsync(TRequest, Grpc.Core.WriteOptions)
   type: Method
   source:
     remote:
@@ -275,7 +275,7 @@ items:
       type: '{TRequest}'
       description: The message to write.
     - id: options
-      type: WriteOptions
+      type: Grpc.Core.WriteOptions
       description: The write options to use for this message.
     return:
       type: System.Threading.Tasks.Task
@@ -296,7 +296,7 @@ items:
   modifiers.vb:
   - Public
   - Overridable
-  fullName.vb: Google.Api.Gax.Grpc.BidirectionalStreamingBase(Of TRequest, TResponse).WriteAsync(TRequest, WriteOptions)
+  fullName.vb: Google.Api.Gax.Grpc.BidirectionalStreamingBase(Of TRequest, TResponse).WriteAsync(TRequest, Grpc.Core.WriteOptions)
 - uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteCompleteAsync
   commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteCompleteAsync
   id: TryWriteCompleteAsync
@@ -410,7 +410,7 @@ items:
     content: public virtual IAsyncEnumerator<TResponse> ResponseStream { get; }
     parameters: []
     return:
-      type: IAsyncEnumerator{{TResponse}}
+      type: System.Collections.Generic.IAsyncEnumerator{{TResponse}}
     content.vb: Public Overridable ReadOnly Property ResponseStream As IAsyncEnumerator(Of TResponse)
   overload: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.ResponseStream*
   nameWithType.vb: BidirectionalStreamingBase(Of TRequest, TResponse).ResponseStream
@@ -726,10 +726,10 @@ references:
   commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0)
 - uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0)
   commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0)
-- uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0,WriteOptions)
-  commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0,WriteOptions)
-- uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0,WriteOptions)
-  commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0,WriteOptions)
+- uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0,Grpc.Core.WriteOptions)
+  commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteAsync(`0,Grpc.Core.WriteOptions)
+- uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0,Grpc.Core.WriteOptions)
+  commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteAsync(`0,Grpc.Core.WriteOptions)
 - uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.GrpcCall*
   commentId: Overload:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.GrpcCall
   isExternal: false
@@ -738,20 +738,21 @@ references:
   fullName: Google.Api.Gax.Grpc.BidirectionalStreamingBase<TRequest, TResponse>.GrpcCall
   nameWithType.vb: BidirectionalStreamingBase(Of TRequest, TResponse).GrpcCall
   fullName.vb: Google.Api.Gax.Grpc.BidirectionalStreamingBase(Of TRequest, TResponse).GrpcCall
-- uid: AsyncDuplexStreamingCall{{TRequest},{TResponse}}
-  commentId: '!:AsyncDuplexStreamingCall{`0,`1}'
-  definition: AsyncDuplexStreamingCall`2
+- uid: Grpc.Core.AsyncDuplexStreamingCall{{TRequest},{TResponse}}
+  commentId: T:Grpc.Core.AsyncDuplexStreamingCall{`0,`1}
+  parent: Grpc.Core
+  definition: Grpc.Core.AsyncDuplexStreamingCall`2
   name: AsyncDuplexStreamingCall<TRequest, TResponse>
   nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>
-  fullName: AsyncDuplexStreamingCall<TRequest, TResponse>
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>
   nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
-  fullName.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse)
   name.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
   spec.csharp:
-  - uid: AsyncDuplexStreamingCall`2
+  - uid: Grpc.Core.AsyncDuplexStreamingCall`2
     name: AsyncDuplexStreamingCall
     nameWithType: AsyncDuplexStreamingCall
-    fullName: AsyncDuplexStreamingCall
+    fullName: Grpc.Core.AsyncDuplexStreamingCall
     isExternal: true
   - name: <
     nameWithType: <
@@ -769,10 +770,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: AsyncDuplexStreamingCall`2
+  - uid: Grpc.Core.AsyncDuplexStreamingCall`2
     name: AsyncDuplexStreamingCall
     nameWithType: AsyncDuplexStreamingCall
-    fullName: AsyncDuplexStreamingCall
+    fullName: Grpc.Core.AsyncDuplexStreamingCall
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -789,56 +790,63 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: AsyncDuplexStreamingCall`2
+- uid: Grpc.Core.AsyncDuplexStreamingCall`2
+  commentId: T:Grpc.Core.AsyncDuplexStreamingCall`2
   isExternal: true
-  name: AsyncDuplexStreamingCall<, >
-  nameWithType: AsyncDuplexStreamingCall<, >
-  fullName: AsyncDuplexStreamingCall<, >
-  nameWithType.vb: AsyncDuplexStreamingCall(Of , )
-  fullName.vb: AsyncDuplexStreamingCall(Of , )
-  name.vb: AsyncDuplexStreamingCall(Of , )
+  name: AsyncDuplexStreamingCall<TRequest, TResponse>
+  nameWithType: AsyncDuplexStreamingCall<TRequest, TResponse>
+  fullName: Grpc.Core.AsyncDuplexStreamingCall<TRequest, TResponse>
+  nameWithType.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  fullName.vb: Grpc.Core.AsyncDuplexStreamingCall(Of TRequest, TResponse)
+  name.vb: AsyncDuplexStreamingCall(Of TRequest, TResponse)
   spec.csharp:
-  - uid: AsyncDuplexStreamingCall`2
+  - uid: Grpc.Core.AsyncDuplexStreamingCall`2
     name: AsyncDuplexStreamingCall
     nameWithType: AsyncDuplexStreamingCall
-    fullName: AsyncDuplexStreamingCall
+    fullName: Grpc.Core.AsyncDuplexStreamingCall
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: AsyncDuplexStreamingCall`2
+  - uid: Grpc.Core.AsyncDuplexStreamingCall`2
     name: AsyncDuplexStreamingCall
     nameWithType: AsyncDuplexStreamingCall
-    fullName: AsyncDuplexStreamingCall
+    fullName: Grpc.Core.AsyncDuplexStreamingCall
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TRequest
+    nameWithType: TRequest
+    fullName: TRequest
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: TResponse
+    nameWithType: TResponse
+    fullName: TResponse
   - name: )
     nameWithType: )
     fullName: )
+- uid: Grpc.Core
+  commentId: N:Grpc.Core
+  isExternal: false
+  name: Grpc.Core
+  nameWithType: Grpc.Core
+  fullName: Grpc.Core
 - uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteCompleteAsync
   commentId: M:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.WriteCompleteAsync
 - uid: System.Threading.Tasks.Task
@@ -883,11 +891,13 @@ references:
   fullName.vb: Google.Api.Gax.Grpc.BidirectionalStreamingBase(Of TRequest, TResponse).WriteAsync
 - uid: System.InvalidOperationException
   commentId: T:System.InvalidOperationException
-- uid: WriteOptions
+- uid: Grpc.Core.WriteOptions
+  commentId: T:Grpc.Core.WriteOptions
+  parent: Grpc.Core
   isExternal: true
   name: WriteOptions
   nameWithType: WriteOptions
-  fullName: WriteOptions
+  fullName: Grpc.Core.WriteOptions
 - uid: Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteCompleteAsync*
   commentId: Overload:Google.Api.Gax.Grpc.BidirectionalStreamingBase`2.TryWriteCompleteAsync
   isExternal: false
@@ -912,20 +922,21 @@ references:
   fullName: Google.Api.Gax.Grpc.BidirectionalStreamingBase<TRequest, TResponse>.ResponseStream
   nameWithType.vb: BidirectionalStreamingBase(Of TRequest, TResponse).ResponseStream
   fullName.vb: Google.Api.Gax.Grpc.BidirectionalStreamingBase(Of TRequest, TResponse).ResponseStream
-- uid: IAsyncEnumerator{{TResponse}}
-  commentId: '!:IAsyncEnumerator{`1}'
-  definition: IAsyncEnumerator`1
+- uid: System.Collections.Generic.IAsyncEnumerator{{TResponse}}
+  commentId: T:System.Collections.Generic.IAsyncEnumerator{`1}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IAsyncEnumerator`1
   name: IAsyncEnumerator<TResponse>
   nameWithType: IAsyncEnumerator<TResponse>
-  fullName: IAsyncEnumerator<TResponse>
+  fullName: System.Collections.Generic.IAsyncEnumerator<TResponse>
   nameWithType.vb: IAsyncEnumerator(Of TResponse)
-  fullName.vb: IAsyncEnumerator(Of TResponse)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of TResponse)
   name.vb: IAsyncEnumerator(Of TResponse)
   spec.csharp:
-  - uid: IAsyncEnumerator`1
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
     name: IAsyncEnumerator
     nameWithType: IAsyncEnumerator
-    fullName: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
     isExternal: true
   - name: <
     nameWithType: <
@@ -937,10 +948,10 @@ references:
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IAsyncEnumerator`1
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
     name: IAsyncEnumerator
     nameWithType: IAsyncEnumerator
-    fullName: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -951,41 +962,48 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: IAsyncEnumerator`1
+- uid: System.Collections.Generic.IAsyncEnumerator`1
+  commentId: T:System.Collections.Generic.IAsyncEnumerator`1
   isExternal: true
-  name: IAsyncEnumerator<>
-  nameWithType: IAsyncEnumerator<>
-  fullName: IAsyncEnumerator<>
-  nameWithType.vb: IAsyncEnumerator(Of )
-  fullName.vb: IAsyncEnumerator(Of )
-  name.vb: IAsyncEnumerator(Of )
+  name: IAsyncEnumerator<T>
+  nameWithType: IAsyncEnumerator<T>
+  fullName: System.Collections.Generic.IAsyncEnumerator<T>
+  nameWithType.vb: IAsyncEnumerator(Of T)
+  fullName.vb: System.Collections.Generic.IAsyncEnumerator(Of T)
+  name.vb: IAsyncEnumerator(Of T)
   spec.csharp:
-  - uid: IAsyncEnumerator`1
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
     name: IAsyncEnumerator
     nameWithType: IAsyncEnumerator
-    fullName: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: IAsyncEnumerator`1
+  - uid: System.Collections.Generic.IAsyncEnumerator`1
     name: IAsyncEnumerator
     nameWithType: IAsyncEnumerator
-    fullName: IAsyncEnumerator
+    fullName: System.Collections.Generic.IAsyncEnumerator
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: false
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic

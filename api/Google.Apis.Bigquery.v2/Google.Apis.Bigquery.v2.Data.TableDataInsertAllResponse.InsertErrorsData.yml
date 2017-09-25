@@ -69,12 +69,24 @@ items:
   summary: Error information for the row indicated by the index property.
   example: []
   syntax:
-    content: public virtual IList<ErrorProto> Errors { get; set; }
+    content: >-
+      [JsonProperty("errors")]
+
+      public virtual IList<ErrorProto> Errors { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{Google.Apis.Bigquery.v2.Data.ErrorProto}
-    content.vb: Public Overridable Property Errors As IList(Of ErrorProto)
+    content.vb: >-
+      <JsonProperty("errors")>
+
+      Public Overridable Property Errors As IList(Of ErrorProto)
   overload: Google.Apis.Bigquery.v2.Data.TableDataInsertAllResponse.InsertErrorsData.Errors*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: errors
   modifiers.csharp:
   - public
   - virtual
@@ -108,12 +120,24 @@ items:
   summary: The index of the row that error applies to.
   example: []
   syntax:
-    content: public virtual long ? Index { get; set; }
+    content: >-
+      [JsonProperty("index")]
+
+      public virtual long ? Index { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property Index As Long?
+    content.vb: >-
+      <JsonProperty("index")>
+
+      Public Overridable Property Index As Long?
   overload: Google.Apis.Bigquery.v2.Data.TableDataInsertAllResponse.InsertErrorsData.Index*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: index
   modifiers.csharp:
   - public
   - virtual

@@ -77,12 +77,24 @@ items:
     specified age.
   example: []
   syntax:
-    content: public virtual int ? Age { get; set; }
+    content: >-
+      [JsonProperty("age")]
+
+      public virtual int ? Age { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int32}
-    content.vb: Public Overridable Property Age As Integer?
+    content.vb: >-
+      <JsonProperty("age")>
+
+      Public Overridable Property Age As Integer?
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.ConditionData.Age*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: age
   modifiers.csharp:
   - public
   - virtual
@@ -121,12 +133,24 @@ items:
     UTC.
   example: []
   syntax:
-    content: public virtual string CreatedBefore { get; set; }
+    content: >-
+      [JsonProperty("createdBefore")]
+
+      public virtual string CreatedBefore { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property CreatedBefore As String
+    content.vb: >-
+      <JsonProperty("createdBefore")>
+
+      Public Overridable Property CreatedBefore As String
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.ConditionData.CreatedBefore*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: createdBefore
   modifiers.csharp:
   - public
   - virtual
@@ -163,12 +187,24 @@ items:
     objects; if the value is false, it matches archived objects.
   example: []
   syntax:
-    content: public virtual bool ? IsLive { get; set; }
+    content: >-
+      [JsonProperty("isLive")]
+
+      public virtual bool ? IsLive { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property IsLive As Boolean?
+    content.vb: >-
+      <JsonProperty("isLive")>
+
+      Public Overridable Property IsLive As Boolean?
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.ConditionData.IsLive*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: isLive
   modifiers.csharp:
   - public
   - virtual
@@ -207,12 +243,24 @@ items:
     DURABLE_REDUCED_AVAILABILITY.
   example: []
   syntax:
-    content: public virtual IList<string> MatchesStorageClass { get; set; }
+    content: >-
+      [JsonProperty("matchesStorageClass")]
+
+      public virtual IList<string> MatchesStorageClass { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IList{System.String}
-    content.vb: Public Overridable Property MatchesStorageClass As IList(Of String)
+    content.vb: >-
+      <JsonProperty("matchesStorageClass")>
+
+      Public Overridable Property MatchesStorageClass As IList(Of String)
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.ConditionData.MatchesStorageClass*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: matchesStorageClass
   modifiers.csharp:
   - public
   - virtual
@@ -251,12 +299,24 @@ items:
     object.
   example: []
   syntax:
-    content: public virtual int ? NumNewerVersions { get; set; }
+    content: >-
+      [JsonProperty("numNewerVersions")]
+
+      public virtual int ? NumNewerVersions { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int32}
-    content.vb: Public Overridable Property NumNewerVersions As Integer?
+    content.vb: >-
+      <JsonProperty("numNewerVersions")>
+
+      Public Overridable Property NumNewerVersions As Integer?
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.ConditionData.NumNewerVersions*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: numNewerVersions
   modifiers.csharp:
   - public
   - virtual

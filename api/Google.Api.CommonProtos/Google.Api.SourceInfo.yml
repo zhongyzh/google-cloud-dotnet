@@ -13,6 +13,7 @@ items:
   - Google.Api.SourceInfo.Equals(Google.Api.SourceInfo)
   - Google.Api.SourceInfo.Equals(System.Object)
   - Google.Api.SourceInfo.GetHashCode
+  - Google.Api.SourceInfo.Google#Protobuf#IMessage#Descriptor
   - Google.Api.SourceInfo.MergeFrom(Google.Api.SourceInfo)
   - Google.Api.SourceInfo.MergeFrom(Google.Protobuf.CodedInputStream)
   - Google.Api.SourceInfo.Parser
@@ -41,12 +42,22 @@ items:
   summary: "\nSource information used to create a Service Config\n"
   example: []
   syntax:
-    content: 'public sealed class SourceInfo : Protobuf.IMessage<SourceInfo>'
+    content: 'public sealed class SourceInfo : IMessage<SourceInfo>, IMessage, IEquatable<SourceInfo>, IDeepCloneable<SourceInfo>'
     content.vb: >-
       Public NotInheritable Class SourceInfo
-          Inherits Protobuf.IMessage(Of SourceInfo)
+          Implements IMessage(Of SourceInfo), IMessage, IEquatable(Of SourceInfo), IDeepCloneable(Of SourceInfo)
   inheritance:
   - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.SourceInfo}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Api.SourceInfo}
+  - Google.Protobuf.IDeepCloneable{Google.Api.SourceInfo}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - sealed
@@ -78,11 +89,11 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public static Protobuf.MessageParser<SourceInfo> Parser { get; }
+    content: public static MessageParser<SourceInfo> Parser { get; }
     parameters: []
     return:
       type: Google.Protobuf.MessageParser{Google.Api.SourceInfo}
-    content.vb: Public Shared ReadOnly Property Parser As Protobuf.MessageParser(Of SourceInfo)
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of SourceInfo)
   overload: Google.Api.SourceInfo.Parser*
   modifiers.csharp:
   - public
@@ -115,11 +126,11 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public static Protobuf.Reflection.MessageDescriptor Descriptor { get; }
+    content: public static MessageDescriptor Descriptor { get; }
     parameters: []
     return:
       type: Google.Protobuf.Reflection.MessageDescriptor
-    content.vb: Public Shared ReadOnly Property Descriptor As Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
   overload: Google.Api.SourceInfo.Descriptor*
   modifiers.csharp:
   - public
@@ -129,6 +140,45 @@ items:
   - Public
   - Shared
   - ReadOnly
+- uid: Google.Api.SourceInfo.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Api.SourceInfo.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Api.SourceInfo
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: SourceInfo.IMessage.Descriptor
+  fullName: Google.Api.SourceInfo.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/SourceInfo.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Api/SourceInfo.cs
+    startLine: 60
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Api.SourceInfo.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: SourceInfo.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Api.SourceInfo.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
 - uid: Google.Api.SourceInfo.#ctor
   commentId: M:Google.Api.SourceInfo.#ctor
   id: '#ctor'
@@ -220,6 +270,8 @@ items:
       type: Google.Api.SourceInfo
     content.vb: Public Function Clone As SourceInfo
   overload: Google.Api.SourceInfo.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Api.SourceInfo}.Clone
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -284,11 +336,11 @@ items:
   summary: "\nAll files used during config generation.\n"
   example: []
   syntax:
-    content: public Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Any> SourceFiles { get; }
+    content: public RepeatedField<Any> SourceFiles { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Any}
-    content.vb: Public ReadOnly Property SourceFiles As Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Any)
+    content.vb: Public ReadOnly Property SourceFiles As RepeatedField(Of Any)
   overload: Google.Api.SourceInfo.SourceFiles*
   modifiers.csharp:
   - public
@@ -326,6 +378,7 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
   overload: Google.Api.SourceInfo.Equals*
   modifiers.csharp:
   - public
@@ -364,6 +417,8 @@ items:
       type: System.Boolean
     content.vb: Public Function Equals(other As SourceInfo) As Boolean
   overload: Google.Api.SourceInfo.Equals*
+  implements:
+  - System.IEquatable{Google.Api.SourceInfo}.Equals(Google.Api.SourceInfo)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -395,6 +450,7 @@ items:
     return:
       type: System.Int32
     content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
   overload: Google.Api.SourceInfo.GetHashCode*
   modifiers.csharp:
   - public
@@ -429,6 +485,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
   overload: Google.Api.SourceInfo.ToString*
   modifiers.csharp:
   - public
@@ -443,8 +500,8 @@ items:
   langs:
   - csharp
   - vb
-  name: WriteTo(Protobuf.CodedOutputStream)
-  nameWithType: SourceInfo.WriteTo(Protobuf.CodedOutputStream)
+  name: WriteTo(CodedOutputStream)
+  nameWithType: SourceInfo.WriteTo(CodedOutputStream)
   fullName: Google.Api.SourceInfo.WriteTo(Google.Protobuf.CodedOutputStream)
   type: Method
   source:
@@ -459,12 +516,14 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public void WriteTo(Protobuf.CodedOutputStream output)
+    content: public void WriteTo(CodedOutputStream output)
     parameters:
     - id: output
       type: Google.Protobuf.CodedOutputStream
-    content.vb: Public Sub WriteTo(output As Protobuf.CodedOutputStream)
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
   overload: Google.Api.SourceInfo.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -497,6 +556,8 @@ items:
       type: System.Int32
     content.vb: Public Function CalculateSize As Integer
   overload: Google.Api.SourceInfo.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -530,6 +591,8 @@ items:
       type: Google.Api.SourceInfo
     content.vb: Public Sub MergeFrom(other As SourceInfo)
   overload: Google.Api.SourceInfo.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.SourceInfo}.MergeFrom(Google.Api.SourceInfo)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -541,8 +604,8 @@ items:
   langs:
   - csharp
   - vb
-  name: MergeFrom(Protobuf.CodedInputStream)
-  nameWithType: SourceInfo.MergeFrom(Protobuf.CodedInputStream)
+  name: MergeFrom(CodedInputStream)
+  nameWithType: SourceInfo.MergeFrom(CodedInputStream)
   fullName: Google.Api.SourceInfo.MergeFrom(Google.Protobuf.CodedInputStream)
   type: Method
   source:
@@ -557,12 +620,14 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public void MergeFrom(Protobuf.CodedInputStream input)
+    content: public void MergeFrom(CodedInputStream input)
     parameters:
     - id: input
       type: Google.Protobuf.CodedInputStream
-    content.vb: Public Sub MergeFrom(input As Protobuf.CodedInputStream)
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
   overload: Google.Api.SourceInfo.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -581,12 +646,444 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Api.SourceInfo}
+  commentId: T:Google.Protobuf.IMessage{Google.Api.SourceInfo}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<SourceInfo>
+  nameWithType: IMessage<SourceInfo>
+  fullName: Google.Protobuf.IMessage<Google.Api.SourceInfo>
+  nameWithType.vb: IMessage(Of SourceInfo)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.SourceInfo)
+  name.vb: IMessage(Of SourceInfo)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.SourceInfo
+    name: SourceInfo
+    nameWithType: SourceInfo
+    fullName: Google.Api.SourceInfo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.SourceInfo
+    name: SourceInfo
+    nameWithType: SourceInfo
+    fullName: Google.Api.SourceInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Api.SourceInfo}
+  commentId: T:System.IEquatable{Google.Api.SourceInfo}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<SourceInfo>
+  nameWithType: IEquatable<SourceInfo>
+  fullName: System.IEquatable<Google.Api.SourceInfo>
+  nameWithType.vb: IEquatable(Of SourceInfo)
+  fullName.vb: System.IEquatable(Of Google.Api.SourceInfo)
+  name.vb: IEquatable(Of SourceInfo)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.SourceInfo
+    name: SourceInfo
+    nameWithType: SourceInfo
+    fullName: Google.Api.SourceInfo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.SourceInfo
+    name: SourceInfo
+    nameWithType: SourceInfo
+    fullName: Google.Api.SourceInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.SourceInfo}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Api.SourceInfo}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<SourceInfo>
+  nameWithType: IDeepCloneable<SourceInfo>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.SourceInfo>
+  nameWithType.vb: IDeepCloneable(Of SourceInfo)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.SourceInfo)
+  name.vb: IDeepCloneable(Of SourceInfo)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.SourceInfo
+    name: SourceInfo
+    nameWithType: SourceInfo
+    fullName: Google.Api.SourceInfo
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.SourceInfo
+    name: SourceInfo
+    nameWithType: SourceInfo
+    fullName: Google.Api.SourceInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.SourceInfo.Parser*
   commentId: Overload:Google.Api.SourceInfo.Parser
   isExternal: false
@@ -594,18 +1091,19 @@ references:
   nameWithType: SourceInfo.Parser
   fullName: Google.Api.SourceInfo.Parser
 - uid: Google.Protobuf.MessageParser{Google.Api.SourceInfo}
-  commentId: '!:Google.Protobuf.MessageParser{Google.Api.SourceInfo}'
+  commentId: T:Google.Protobuf.MessageParser{Google.Api.SourceInfo}
+  parent: Google.Protobuf
   definition: Google.Protobuf.MessageParser`1
-  name: Protobuf.MessageParser<SourceInfo>
-  nameWithType: Protobuf.MessageParser<SourceInfo>
+  name: MessageParser<SourceInfo>
+  nameWithType: MessageParser<SourceInfo>
   fullName: Google.Protobuf.MessageParser<Google.Api.SourceInfo>
-  nameWithType.vb: Protobuf.MessageParser(Of SourceInfo)
+  nameWithType.vb: MessageParser(Of SourceInfo)
   fullName.vb: Google.Protobuf.MessageParser(Of Google.Api.SourceInfo)
-  name.vb: Protobuf.MessageParser(Of SourceInfo)
+  name.vb: MessageParser(Of SourceInfo)
   spec.csharp:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: <
@@ -620,8 +1118,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: '(Of '
@@ -635,40 +1133,41 @@ references:
     nameWithType: )
     fullName: )
 - uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
   isExternal: true
-  name: Protobuf.MessageParser<>
-  nameWithType: Protobuf.MessageParser<>
-  fullName: Google.Protobuf.MessageParser<>
-  nameWithType.vb: Protobuf.MessageParser(Of )
-  fullName.vb: Google.Protobuf.MessageParser(Of )
-  name.vb: Protobuf.MessageParser(Of )
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
   spec.csharp:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -679,10 +1178,34 @@ references:
   nameWithType: SourceInfo.Descriptor
   fullName: Google.Api.SourceInfo.Descriptor
 - uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
   isExternal: true
-  name: Protobuf.Reflection.MessageDescriptor
-  nameWithType: Protobuf.Reflection.MessageDescriptor
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
   fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Api.SourceInfo.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Api.SourceInfo.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: SourceInfo.IMessage.Descriptor
+  fullName: Google.Api.SourceInfo.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: SourceInfo.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Api.SourceInfo.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
 - uid: Google.Api.SourceInfo.#ctor*
   commentId: Overload:Google.Api.SourceInfo.#ctor
   isExternal: false
@@ -702,6 +1225,71 @@ references:
   name: Clone
   nameWithType: SourceInfo.Clone
   fullName: Google.Api.SourceInfo.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.SourceInfo}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Api.SourceInfo}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Api.SourceInfo}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<SourceInfo>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.SourceInfo>.Clone()
+  nameWithType.vb: IDeepCloneable(Of SourceInfo).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.SourceInfo).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<SourceInfo>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Api.SourceInfo>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of SourceInfo).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Api.SourceInfo).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -716,26 +1304,27 @@ references:
   nameWithType: SourceInfo.SourceFiles
   fullName: Google.Api.SourceInfo.SourceFiles
 - uid: Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Any}
-  commentId: '!:Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Any}'
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Protobuf.WellKnownTypes.Any}
+  parent: Google.Protobuf.Collections
   definition: Google.Protobuf.Collections.RepeatedField`1
-  name: Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Any>
-  nameWithType: Protobuf.Collections.RepeatedField<Protobuf.WellKnownTypes.Any>
+  name: RepeatedField<Any>
+  nameWithType: RepeatedField<Any>
   fullName: Google.Protobuf.Collections.RepeatedField<Google.Protobuf.WellKnownTypes.Any>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Any)
+  nameWithType.vb: RepeatedField(Of Any)
   fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Protobuf.WellKnownTypes.Any)
-  name.vb: Protobuf.Collections.RepeatedField(Of Protobuf.WellKnownTypes.Any)
+  name.vb: RepeatedField(Of Any)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
   - uid: Google.Protobuf.WellKnownTypes.Any
-    name: Protobuf.WellKnownTypes.Any
-    nameWithType: Protobuf.WellKnownTypes.Any
+    name: Any
+    nameWithType: Any
     fullName: Google.Protobuf.WellKnownTypes.Any
     isExternal: true
   - name: '>'
@@ -743,56 +1332,104 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
   - uid: Google.Protobuf.WellKnownTypes.Any
-    name: Protobuf.WellKnownTypes.Any
-    nameWithType: Protobuf.WellKnownTypes.Any
+    name: Any
+    nameWithType: Any
     fullName: Google.Protobuf.WellKnownTypes.Any
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
 - uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
   isExternal: true
-  name: Protobuf.Collections.RepeatedField<>
-  nameWithType: Protobuf.Collections.RepeatedField<>
-  fullName: Google.Protobuf.Collections.RepeatedField<>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of )
-  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of )
-  name.vb: Protobuf.Collections.RepeatedField(Of )
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
@@ -809,12 +1446,153 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: System.IEquatable{Google.Api.SourceInfo}.Equals(Google.Api.SourceInfo)
+  commentId: M:System.IEquatable{Google.Api.SourceInfo}.Equals(Google.Api.SourceInfo)
+  parent: System.IEquatable{Google.Api.SourceInfo}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(SourceInfo)
+  nameWithType: IEquatable<SourceInfo>.Equals(SourceInfo)
+  fullName: System.IEquatable<Google.Api.SourceInfo>.Equals(Google.Api.SourceInfo)
+  nameWithType.vb: IEquatable(Of SourceInfo).Equals(SourceInfo)
+  fullName.vb: System.IEquatable(Of Google.Api.SourceInfo).Equals(Google.Api.SourceInfo)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<SourceInfo>.Equals
+    fullName: System.IEquatable<Google.Api.SourceInfo>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.SourceInfo
+    name: SourceInfo
+    nameWithType: SourceInfo
+    fullName: Google.Api.SourceInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of SourceInfo).Equals
+    fullName: System.IEquatable(Of Google.Api.SourceInfo).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.SourceInfo
+    name: SourceInfo
+    nameWithType: SourceInfo
+    fullName: Google.Api.SourceInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.SourceInfo.GetHashCode*
   commentId: Overload:Google.Api.SourceInfo.GetHashCode
   isExternal: false
   name: GetHashCode
   nameWithType: SourceInfo.GetHashCode
   fullName: Google.Api.SourceInfo.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.SourceInfo.ToString*
   commentId: Overload:Google.Api.SourceInfo.ToString
   isExternal: false
@@ -834,10 +1612,53 @@ references:
   name: WriteTo
   nameWithType: SourceInfo.WriteTo
   fullName: Google.Api.SourceInfo.WriteTo
-- uid: Google.Protobuf.CodedOutputStream
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
   isExternal: true
-  name: Protobuf.CodedOutputStream
-  nameWithType: Protobuf.CodedOutputStream
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
   fullName: Google.Protobuf.CodedOutputStream
 - uid: Google.Api.SourceInfo.CalculateSize*
   commentId: Overload:Google.Api.SourceInfo.CalculateSize
@@ -845,14 +1666,167 @@ references:
   name: CalculateSize
   nameWithType: SourceInfo.CalculateSize
   fullName: Google.Api.SourceInfo.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.SourceInfo.MergeFrom*
   commentId: Overload:Google.Api.SourceInfo.MergeFrom
   isExternal: false
   name: MergeFrom
   nameWithType: SourceInfo.MergeFrom
   fullName: Google.Api.SourceInfo.MergeFrom
-- uid: Google.Protobuf.CodedInputStream
+- uid: Google.Protobuf.IMessage{Google.Api.SourceInfo}.MergeFrom(Google.Api.SourceInfo)
+  commentId: M:Google.Protobuf.IMessage{Google.Api.SourceInfo}.MergeFrom(Google.Api.SourceInfo)
+  parent: Google.Protobuf.IMessage{Google.Api.SourceInfo}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(SourceInfo)
+  nameWithType: IMessage<SourceInfo>.MergeFrom(SourceInfo)
+  fullName: Google.Protobuf.IMessage<Google.Api.SourceInfo>.MergeFrom(Google.Api.SourceInfo)
+  nameWithType.vb: IMessage(Of SourceInfo).MergeFrom(SourceInfo)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.SourceInfo).MergeFrom(Google.Api.SourceInfo)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<SourceInfo>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Api.SourceInfo>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.SourceInfo
+    name: SourceInfo
+    nameWithType: SourceInfo
+    fullName: Google.Api.SourceInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of SourceInfo).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Api.SourceInfo).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.SourceInfo
+    name: SourceInfo
+    nameWithType: SourceInfo
+    fullName: Google.Api.SourceInfo
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
   isExternal: true
-  name: Protobuf.CodedInputStream
-  nameWithType: Protobuf.CodedInputStream
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
   fullName: Google.Protobuf.CodedInputStream

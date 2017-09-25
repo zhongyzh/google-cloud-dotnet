@@ -70,12 +70,24 @@ items:
   summary: '[Optional] Human-oriented description of the field.'
   example: []
   syntax:
-    content: public virtual string Description { get; set; }
+    content: >-
+      [JsonProperty("description")]
+
+      public virtual string Description { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Description As String
+    content.vb: >-
+      <JsonProperty("description")>
+
+      Public Overridable Property Description As String
   overload: Google.Apis.Bigquery.v2.Data.QueryParameterType.StructTypesData.Description*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: description
   modifiers.csharp:
   - public
   - virtual
@@ -109,12 +121,24 @@ items:
   summary: '[Optional] The name of this field.'
   example: []
   syntax:
-    content: public virtual string Name { get; set; }
+    content: >-
+      [JsonProperty("name")]
+
+      public virtual string Name { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Name As String
+    content.vb: >-
+      <JsonProperty("name")>
+
+      Public Overridable Property Name As String
   overload: Google.Apis.Bigquery.v2.Data.QueryParameterType.StructTypesData.Name*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: name
   modifiers.csharp:
   - public
   - virtual
@@ -148,12 +172,24 @@ items:
   summary: '[Required] The type of this field.'
   example: []
   syntax:
-    content: public virtual QueryParameterType Type { get; set; }
+    content: >-
+      [JsonProperty("type")]
+
+      public virtual QueryParameterType Type { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.QueryParameterType
-    content.vb: Public Overridable Property Type As QueryParameterType
+    content.vb: >-
+      <JsonProperty("type")>
+
+      Public Overridable Property Type As QueryParameterType
   overload: Google.Apis.Bigquery.v2.Data.QueryParameterType.StructTypesData.Type*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: type
   modifiers.csharp:
   - public
   - virtual

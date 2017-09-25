@@ -24,6 +24,7 @@ items:
   - Google.Api.HttpRule.Get
   - Google.Api.HttpRule.GetFieldNumber
   - Google.Api.HttpRule.GetHashCode
+  - Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor
   - Google.Api.HttpRule.MergeFrom(Google.Api.HttpRule)
   - Google.Api.HttpRule.MergeFrom(Google.Protobuf.CodedInputStream)
   - Google.Api.HttpRule.Parser
@@ -59,12 +60,22 @@ items:
   summary: "\n`HttpRule` defines the mapping of an RPC method to one or more HTTP\nREST APIs.  The mapping determines what portions of the request\nmessage are populated from the path, query parameters, or body of\nthe HTTP request.  The mapping is typically specified as an\n`google.api.http` annotation, see &quot;google/api/annotations.proto&quot;\nfor details.\n\nThe mapping consists of a field specifying the path template and\nmethod kind.  The path template can refer to fields in the request\nmessage, as in the example below which describes a REST GET\noperation on a resource collection of messages:\n\nservice Messaging {\n rpc GetMessage(GetMessageRequest) returns (Message) {\n   option (google.api.http).get = &quot;/v1/messages/{message_id}/{sub.subfield}&quot;;\n }\n}\nmessage GetMessageRequest {\n message SubMessage {\n   string subfield = 1;\n }\n string message_id = 1; // mapped to the URL\n SubMessage sub = 2;    // `sub.subfield` is url-mapped\n}\nmessage Message {\n string text = 1; // content of the resource\n}\n\nThe same http annotation can alternatively be expressed inside the\n`GRPC API Configuration` YAML file.\n\nhttp:\n rules:\n   - selector: &lt;proto_package_name>.Messaging.GetMessage\n     get: /v1/messages/{message_id}/{sub.subfield}\n\nThis definition enables an automatic, bidrectional mapping of HTTP\nJSON to RPC. Example:\n\nHTTP | RPC\n-----|-----\n`GET /v1/messages/123456/foo`  | `GetMessage(message_id: &quot;123456&quot; sub: SubMessage(subfield: &quot;foo&quot;))`\n\nIn general, not only fields but also field paths can be referenced\nfrom a path pattern. Fields mapped to the path pattern cannot be\nrepeated and must have a primitive (non-message) type.\n\nAny fields in the request message which are not bound by the path\npattern automatically become (optional) HTTP query\nparameters. Assume the following definition of the request message:\n\nmessage GetMessageRequest {\n message SubMessage {\n   string subfield = 1;\n }\n string message_id = 1; // mapped to the URL\n int64 revision = 2;    // becomes a parameter\n SubMessage sub = 3;    // `sub.subfield` becomes a parameter\n}\n\nThis enables a HTTP JSON to RPC mapping as below:\n\nHTTP | RPC\n-----|-----\n`GET /v1/messages/123456?revision=2&amp;sub.subfield=foo` | `GetMessage(message_id: &quot;123456&quot; revision: 2 sub: SubMessage(subfield: &quot;foo&quot;))`\n\nNote that fields which are mapped to HTTP parameters must have a\nprimitive type or a repeated primitive type. Message types are not\nallowed. In the case of a repeated type, the parameter can be\nrepeated in the URL, as in `...?param=A&amp;param=B`.\n\nFor HTTP method kinds which allow a request body, the `body` field\nspecifies the mapping. Consider a REST update method on the\nmessage resource collection:\n\nservice Messaging {\n rpc UpdateMessage(UpdateMessageRequest) returns (Message) {\n   option (google.api.http) = {\n     put: &quot;/v1/messages/{message_id}&quot;\n     body: &quot;message&quot;\n   };\n }\n}\nmessage UpdateMessageRequest {\n string message_id = 1; // mapped to the URL\n Message message = 2;   // mapped to the body\n}\n\nThe following HTTP JSON to RPC mapping is enabled, where the\nrepresentation of the JSON in the request body is determined by\nprotos JSON encoding:\n\nHTTP | RPC\n-----|-----\n`PUT /v1/messages/123456 { &quot;text&quot;: &quot;Hi!&quot; }` | `UpdateMessage(message_id: &quot;123456&quot; message { text: &quot;Hi!&quot; })`\n\nThe special name `*` can be used in the body mapping to define that\nevery field not bound by the path template should be mapped to the\nrequest body.  This enables the following alternative definition of\nthe update method:\n\nservice Messaging {\n rpc UpdateMessage(Message) returns (Message) {\n   option (google.api.http) = {\n     put: &quot;/v1/messages/{message_id}&quot;\n     body: &quot;*&quot;\n   };\n }\n}\nmessage Message {\n string message_id = 1;\n string text = 2;\n}\n\nThe following HTTP JSON to RPC mapping is enabled:\n\nHTTP | RPC\n-----|-----\n`PUT /v1/messages/123456 { &quot;text&quot;: &quot;Hi!&quot; }` | `UpdateMessage(message_id: &quot;123456&quot; text: &quot;Hi!&quot;)`\n\nNote that when using `*` in the body mapping, it is not possible to\nhave HTTP parameters, as all fields not bound by the path end in\nthe body. This makes this option more rarely used in practice of\ndefining REST APIs. The common usage of `*` is in custom methods\nwhich don&apos;t use the URL at all for transferring data.\n\nIt is possible to define multiple HTTP methods for one RPC by using\nthe `additional_bindings` option. Example:\n\nservice Messaging {\n rpc GetMessage(GetMessageRequest) returns (Message) {\n   option (google.api.http) = {\n     get: &quot;/v1/messages/{message_id}&quot;\n     additional_bindings {\n       get: &quot;/v1/users/{user_id}/messages/{message_id}&quot;\n     }\n   };\n }\n}\nmessage GetMessageRequest {\n string message_id = 1;\n string user_id = 2;\n}\n\nThis enables the following two alternative HTTP JSON to RPC\nmappings:\n\nHTTP | RPC\n-----|-----\n`GET /v1/messages/123456` | `GetMessage(message_id: &quot;123456&quot;)`\n`GET /v1/users/me/messages/123456` | `GetMessage(user_id: &quot;me&quot; message_id: &quot;123456&quot;)`\n\n# Rules for HTTP mapping\n\nThe rules for mapping HTTP path, query parameters, and body fields\nto the request message are as follows:\n\n1. The `body` field specifies either `*` or a field path, or is\nomitted. If omitted, it assumes there is no HTTP body.\n2. Leaf fields (recursive expansion of nested messages in the\nrequest) can be classified into three types:\n(a) Matched in the URL template.\n(b) Covered by body (if body is `*`, everything except (a) fields;\n   else everything under the body field)\n(c) All other fields.\n3. URL query parameters found in the HTTP request are mapped to (c) fields.\n4. Any body sent with an HTTP request can contain only (b) fields.\n\nThe syntax of the path template is as follows:\n\nTemplate = &quot;/&quot; Segments [ Verb ] ;\nSegments = Segment { &quot;/&quot; Segment } ;\nSegment  = &quot;*&quot; | &quot;**&quot; | LITERAL | Variable ;\nVariable = &quot;{&quot; FieldPath [ &quot;=&quot; Segments ] &quot;}&quot; ;\nFieldPath = IDENT { &quot;.&quot; IDENT } ;\nVerb     = &quot;:&quot; LITERAL ;\n\nThe syntax `*` matches a single path segment. It follows the semantics of\n[RFC 6570](https://tools.ietf.org/html/rfc6570) Section 3.2.2 Simple String\nExpansion.\n\nThe syntax `**` matches zero or more path segments. It follows the semantics\nof [RFC 6570](https://tools.ietf.org/html/rfc6570) Section 3.2.3 Reserved\nExpansion. NOTE: it must be the last segment in the path except the Verb.\n\nThe syntax `LITERAL` matches literal text in the URL path.\n\nThe syntax `Variable` matches the entire path as specified by its template;\nthis nested template must not contain further variables. If a variable\nmatches a single path segment, its template may be omitted, e.g. `{var}`\nis equivalent to `{var=*}`.\n\nNOTE: the field paths in variables and in the `body` must not refer to\nrepeated fields or map fields.\n\nUse CustomHttpPattern to specify any HTTP method that is not included in the\n`pattern` field, such as HEAD, or &quot;*&quot; to leave the HTTP method unspecified for\na given URL path rule. The wild-card rule is useful for services that provide\ncontent to Web (HTML) clients.\n"
   example: []
   syntax:
-    content: 'public sealed class HttpRule : Protobuf.IMessage<HttpRule>'
+    content: 'public sealed class HttpRule : IMessage<HttpRule>, IMessage, IEquatable<HttpRule>, IDeepCloneable<HttpRule>'
     content.vb: >-
       Public NotInheritable Class HttpRule
-          Inherits Protobuf.IMessage(Of HttpRule)
+          Implements IMessage(Of HttpRule), IMessage, IEquatable(Of HttpRule), IDeepCloneable(Of HttpRule)
   inheritance:
   - System.Object
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.HttpRule}
+  - Google.Protobuf.IMessage
+  - System.IEquatable{Google.Api.HttpRule}
+  - Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
   modifiers.csharp:
   - public
   - sealed
@@ -96,11 +107,11 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public static Protobuf.MessageParser<HttpRule> Parser { get; }
+    content: public static MessageParser<HttpRule> Parser { get; }
     parameters: []
     return:
       type: Google.Protobuf.MessageParser{Google.Api.HttpRule}
-    content.vb: Public Shared ReadOnly Property Parser As Protobuf.MessageParser(Of HttpRule)
+    content.vb: Public Shared ReadOnly Property Parser As MessageParser(Of HttpRule)
   overload: Google.Api.HttpRule.Parser*
   modifiers.csharp:
   - public
@@ -133,11 +144,11 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public static Protobuf.Reflection.MessageDescriptor Descriptor { get; }
+    content: public static MessageDescriptor Descriptor { get; }
     parameters: []
     return:
       type: Google.Protobuf.Reflection.MessageDescriptor
-    content.vb: Public Shared ReadOnly Property Descriptor As Protobuf.Reflection.MessageDescriptor
+    content.vb: Public Shared ReadOnly Property Descriptor As MessageDescriptor
   overload: Google.Api.HttpRule.Descriptor*
   modifiers.csharp:
   - public
@@ -147,6 +158,45 @@ items:
   - Public
   - Shared
   - ReadOnly
+- uid: Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor
+  commentId: P:Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor
+  id: Google#Protobuf#IMessage#Descriptor
+  isEii: true
+  parent: Google.Api.HttpRule
+  langs:
+  - csharp
+  - vb
+  name: IMessage.Descriptor
+  nameWithType: HttpRule.IMessage.Descriptor
+  fullName: Google.Api.HttpRule.Google.Protobuf.IMessage.Descriptor
+  type: Property
+  source:
+    remote:
+      path: src/Google.Api.CommonProtos/Api/Http.cs
+      branch: master
+      repo: https://github.com/googleapis/gax-dotnet
+    id: pb::Google.Protobuf.IMessage.Descriptor
+    path: src/Google.Api.CommonProtos/Api/Http.cs
+    startLine: 384
+  assemblies:
+  - Google.Api.CommonProtos
+  namespace: Google.Api
+  syntax:
+    content: MessageDescriptor IMessage.Descriptor { get; }
+    parameters: []
+    return:
+      type: Google.Protobuf.Reflection.MessageDescriptor
+    content.vb: ReadOnly WriteOnly Property pb::Google.Protobuf.IMessage.Descriptor As MessageDescriptor Implements IMessage.Descriptor
+  overload: Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor*
+  implements:
+  - Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: HttpRule.pb::Google.Protobuf.IMessage.Descriptor
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: Google.Api.HttpRule.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
 - uid: Google.Api.HttpRule.#ctor
   commentId: M:Google.Api.HttpRule.#ctor
   id: '#ctor'
@@ -238,6 +288,8 @@ items:
       type: Google.Api.HttpRule
     content.vb: Public Function Clone As HttpRule
   overload: Google.Api.HttpRule.Clone*
+  implements:
+  - Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}.Clone
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -878,11 +930,11 @@ items:
   summary: "\nAdditional HTTP bindings for the selector. Nested bindings must\nnot contain an `additional_bindings` field themselves (that is,\nthe nesting may only be one level deep).\n"
   example: []
   syntax:
-    content: public Protobuf.Collections.RepeatedField<HttpRule> AdditionalBindings { get; }
+    content: public RepeatedField<HttpRule> AdditionalBindings { get; }
     parameters: []
     return:
       type: Google.Protobuf.Collections.RepeatedField{Google.Api.HttpRule}
-    content.vb: Public ReadOnly Property AdditionalBindings As Protobuf.Collections.RepeatedField(Of HttpRule)
+    content.vb: Public ReadOnly Property AdditionalBindings As RepeatedField(Of HttpRule)
   overload: Google.Api.HttpRule.AdditionalBindings*
   modifiers.csharp:
   - public
@@ -985,6 +1037,7 @@ items:
     return:
       type: System.Boolean
     content.vb: Public Overrides Function Equals(other As Object) As Boolean
+  overridden: System.Object.Equals(System.Object)
   overload: Google.Api.HttpRule.Equals*
   modifiers.csharp:
   - public
@@ -1023,6 +1076,8 @@ items:
       type: System.Boolean
     content.vb: Public Function Equals(other As HttpRule) As Boolean
   overload: Google.Api.HttpRule.Equals*
+  implements:
+  - System.IEquatable{Google.Api.HttpRule}.Equals(Google.Api.HttpRule)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1054,6 +1109,7 @@ items:
     return:
       type: System.Int32
     content.vb: Public Overrides Function GetHashCode As Integer
+  overridden: System.Object.GetHashCode
   overload: Google.Api.HttpRule.GetHashCode*
   modifiers.csharp:
   - public
@@ -1088,6 +1144,7 @@ items:
     return:
       type: System.String
     content.vb: Public Overrides Function ToString As String
+  overridden: System.Object.ToString
   overload: Google.Api.HttpRule.ToString*
   modifiers.csharp:
   - public
@@ -1102,8 +1159,8 @@ items:
   langs:
   - csharp
   - vb
-  name: WriteTo(Protobuf.CodedOutputStream)
-  nameWithType: HttpRule.WriteTo(Protobuf.CodedOutputStream)
+  name: WriteTo(CodedOutputStream)
+  nameWithType: HttpRule.WriteTo(CodedOutputStream)
   fullName: Google.Api.HttpRule.WriteTo(Google.Protobuf.CodedOutputStream)
   type: Method
   source:
@@ -1118,12 +1175,14 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public void WriteTo(Protobuf.CodedOutputStream output)
+    content: public void WriteTo(CodedOutputStream output)
     parameters:
     - id: output
       type: Google.Protobuf.CodedOutputStream
-    content.vb: Public Sub WriteTo(output As Protobuf.CodedOutputStream)
+    content.vb: Public Sub WriteTo(output As CodedOutputStream)
   overload: Google.Api.HttpRule.WriteTo*
+  implements:
+  - Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1156,6 +1215,8 @@ items:
       type: System.Int32
     content.vb: Public Function CalculateSize As Integer
   overload: Google.Api.HttpRule.CalculateSize*
+  implements:
+  - Google.Protobuf.IMessage.CalculateSize
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1189,6 +1250,8 @@ items:
       type: Google.Api.HttpRule
     content.vb: Public Sub MergeFrom(other As HttpRule)
   overload: Google.Api.HttpRule.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage{Google.Api.HttpRule}.MergeFrom(Google.Api.HttpRule)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1200,8 +1263,8 @@ items:
   langs:
   - csharp
   - vb
-  name: MergeFrom(Protobuf.CodedInputStream)
-  nameWithType: HttpRule.MergeFrom(Protobuf.CodedInputStream)
+  name: MergeFrom(CodedInputStream)
+  nameWithType: HttpRule.MergeFrom(CodedInputStream)
   fullName: Google.Api.HttpRule.MergeFrom(Google.Protobuf.CodedInputStream)
   type: Method
   source:
@@ -1216,12 +1279,14 @@ items:
   - Google.Api.CommonProtos
   namespace: Google.Api
   syntax:
-    content: public void MergeFrom(Protobuf.CodedInputStream input)
+    content: public void MergeFrom(CodedInputStream input)
     parameters:
     - id: input
       type: Google.Protobuf.CodedInputStream
-    content.vb: Public Sub MergeFrom(input As Protobuf.CodedInputStream)
+    content.vb: Public Sub MergeFrom(input As CodedInputStream)
   overload: Google.Api.HttpRule.MergeFrom*
+  implements:
+  - Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
   modifiers.csharp:
   - public
   modifiers.vb:
@@ -1240,12 +1305,444 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: Google.Protobuf.IMessage{Google.Api.HttpRule}
+  commentId: T:Google.Protobuf.IMessage{Google.Api.HttpRule}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IMessage`1
+  name: IMessage<HttpRule>
+  nameWithType: IMessage<HttpRule>
+  fullName: Google.Protobuf.IMessage<Google.Api.HttpRule>
+  nameWithType.vb: IMessage(Of HttpRule)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.HttpRule)
+  name.vb: IMessage(Of HttpRule)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage
+  commentId: T:Google.Protobuf.IMessage
+  parent: Google.Protobuf
+  isExternal: true
+  name: IMessage
+  nameWithType: IMessage
+  fullName: Google.Protobuf.IMessage
+- uid: System.IEquatable{Google.Api.HttpRule}
+  commentId: T:System.IEquatable{Google.Api.HttpRule}
+  parent: System
+  definition: System.IEquatable`1
+  name: IEquatable<HttpRule>
+  nameWithType: IEquatable<HttpRule>
+  fullName: System.IEquatable<Google.Api.HttpRule>
+  nameWithType.vb: IEquatable(Of HttpRule)
+  fullName.vb: System.IEquatable(Of Google.Api.HttpRule)
+  name.vb: IEquatable(Of HttpRule)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}
+  commentId: T:Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}
+  parent: Google.Protobuf
+  definition: Google.Protobuf.IDeepCloneable`1
+  name: IDeepCloneable<HttpRule>
+  nameWithType: IDeepCloneable<HttpRule>
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.HttpRule>
+  nameWithType.vb: IDeepCloneable(Of HttpRule)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.HttpRule)
+  name.vb: IDeepCloneable(Of HttpRule)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System
   commentId: N:System
   isExternal: false
   name: System
   nameWithType: System
   fullName: System
+- uid: Google.Protobuf.IMessage`1
+  commentId: T:Google.Protobuf.IMessage`1
+  isExternal: true
+  name: IMessage<T>
+  nameWithType: IMessage<T>
+  fullName: Google.Protobuf.IMessage<T>
+  nameWithType.vb: IMessage(Of T)
+  fullName.vb: Google.Protobuf.IMessage(Of T)
+  name.vb: IMessage(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1
+    name: IMessage
+    nameWithType: IMessage
+    fullName: Google.Protobuf.IMessage
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf
+  commentId: N:Google.Protobuf
+  isExternal: false
+  name: Google.Protobuf
+  nameWithType: Google.Protobuf
+  fullName: Google.Protobuf
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1
+  commentId: T:Google.Protobuf.IDeepCloneable`1
+  isExternal: true
+  name: IDeepCloneable<T>
+  nameWithType: IDeepCloneable<T>
+  fullName: Google.Protobuf.IDeepCloneable<T>
+  nameWithType.vb: IDeepCloneable(Of T)
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T)
+  name.vb: IDeepCloneable(Of T)
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1
+    name: IDeepCloneable
+    nameWithType: IDeepCloneable
+    fullName: Google.Protobuf.IDeepCloneable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.HttpRule.Parser*
   commentId: Overload:Google.Api.HttpRule.Parser
   isExternal: false
@@ -1253,18 +1750,19 @@ references:
   nameWithType: HttpRule.Parser
   fullName: Google.Api.HttpRule.Parser
 - uid: Google.Protobuf.MessageParser{Google.Api.HttpRule}
-  commentId: '!:Google.Protobuf.MessageParser{Google.Api.HttpRule}'
+  commentId: T:Google.Protobuf.MessageParser{Google.Api.HttpRule}
+  parent: Google.Protobuf
   definition: Google.Protobuf.MessageParser`1
-  name: Protobuf.MessageParser<HttpRule>
-  nameWithType: Protobuf.MessageParser<HttpRule>
+  name: MessageParser<HttpRule>
+  nameWithType: MessageParser<HttpRule>
   fullName: Google.Protobuf.MessageParser<Google.Api.HttpRule>
-  nameWithType.vb: Protobuf.MessageParser(Of HttpRule)
+  nameWithType.vb: MessageParser(Of HttpRule)
   fullName.vb: Google.Protobuf.MessageParser(Of Google.Api.HttpRule)
-  name.vb: Protobuf.MessageParser(Of HttpRule)
+  name.vb: MessageParser(Of HttpRule)
   spec.csharp:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: <
@@ -1279,8 +1777,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: '(Of '
@@ -1294,40 +1792,41 @@ references:
     nameWithType: )
     fullName: )
 - uid: Google.Protobuf.MessageParser`1
+  commentId: T:Google.Protobuf.MessageParser`1
   isExternal: true
-  name: Protobuf.MessageParser<>
-  nameWithType: Protobuf.MessageParser<>
-  fullName: Google.Protobuf.MessageParser<>
-  nameWithType.vb: Protobuf.MessageParser(Of )
-  fullName.vb: Google.Protobuf.MessageParser(Of )
-  name.vb: Protobuf.MessageParser(Of )
+  name: MessageParser<T>
+  nameWithType: MessageParser<T>
+  fullName: Google.Protobuf.MessageParser<T>
+  nameWithType.vb: MessageParser(Of T)
+  fullName.vb: Google.Protobuf.MessageParser(Of T)
+  name.vb: MessageParser(Of T)
   spec.csharp:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.MessageParser`1
-    name: Protobuf.MessageParser
-    nameWithType: Protobuf.MessageParser
+    name: MessageParser
+    nameWithType: MessageParser
     fullName: Google.Protobuf.MessageParser
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
@@ -1338,10 +1837,34 @@ references:
   nameWithType: HttpRule.Descriptor
   fullName: Google.Api.HttpRule.Descriptor
 - uid: Google.Protobuf.Reflection.MessageDescriptor
+  commentId: T:Google.Protobuf.Reflection.MessageDescriptor
+  parent: Google.Protobuf.Reflection
   isExternal: true
-  name: Protobuf.Reflection.MessageDescriptor
-  nameWithType: Protobuf.Reflection.MessageDescriptor
+  name: MessageDescriptor
+  nameWithType: MessageDescriptor
   fullName: Google.Protobuf.Reflection.MessageDescriptor
+- uid: Google.Protobuf.Reflection
+  commentId: N:Google.Protobuf.Reflection
+  isExternal: false
+  name: Google.Protobuf.Reflection
+  nameWithType: Google.Protobuf.Reflection
+  fullName: Google.Protobuf.Reflection
+- uid: Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor*
+  commentId: Overload:Google.Api.HttpRule.Google#Protobuf#IMessage#Descriptor
+  isExternal: false
+  name: IMessage.Descriptor
+  nameWithType: HttpRule.IMessage.Descriptor
+  fullName: Google.Api.HttpRule.Google.Protobuf.IMessage.Descriptor
+  nameWithType.vb: HttpRule.pb::Google.Protobuf.IMessage.Descriptor
+  fullName.vb: Google.Api.HttpRule.pb::Google.Protobuf.IMessage.Descriptor
+  name.vb: pb::Google.Protobuf.IMessage.Descriptor
+- uid: Google.Protobuf.IMessage.Descriptor
+  commentId: P:Google.Protobuf.IMessage.Descriptor
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: Descriptor
+  nameWithType: IMessage.Descriptor
+  fullName: Google.Protobuf.IMessage.Descriptor
 - uid: Google.Api.HttpRule.#ctor*
   commentId: Overload:Google.Api.HttpRule.#ctor
   isExternal: false
@@ -1361,6 +1884,71 @@ references:
   name: Clone
   nameWithType: HttpRule.Clone
   fullName: Google.Api.HttpRule.Clone
+- uid: Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}.Clone
+  parent: Google.Protobuf.IDeepCloneable{Google.Api.HttpRule}
+  definition: Google.Protobuf.IDeepCloneable`1.Clone
+  name: Clone()
+  nameWithType: IDeepCloneable<HttpRule>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<Google.Api.HttpRule>.Clone()
+  nameWithType.vb: IDeepCloneable(Of HttpRule).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of Google.Api.HttpRule).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<HttpRule>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<Google.Api.HttpRule>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of HttpRule).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of Google.Api.HttpRule).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IDeepCloneable`1.Clone
+  commentId: M:Google.Protobuf.IDeepCloneable`1.Clone
+  isExternal: true
+  name: Clone()
+  nameWithType: IDeepCloneable<T>.Clone()
+  fullName: Google.Protobuf.IDeepCloneable<T>.Clone()
+  nameWithType.vb: IDeepCloneable(Of T).Clone()
+  fullName.vb: Google.Protobuf.IDeepCloneable(Of T).Clone()
+  spec.csharp:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable<T>.Clone
+    fullName: Google.Protobuf.IDeepCloneable<T>.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IDeepCloneable`1.Clone
+    name: Clone
+    nameWithType: IDeepCloneable(Of T).Clone
+    fullName: Google.Protobuf.IDeepCloneable(Of T).Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
@@ -1437,18 +2025,19 @@ references:
   nameWithType: HttpRule.AdditionalBindings
   fullName: Google.Api.HttpRule.AdditionalBindings
 - uid: Google.Protobuf.Collections.RepeatedField{Google.Api.HttpRule}
-  commentId: '!:Google.Protobuf.Collections.RepeatedField{Google.Api.HttpRule}'
+  commentId: T:Google.Protobuf.Collections.RepeatedField{Google.Api.HttpRule}
+  parent: Google.Protobuf.Collections
   definition: Google.Protobuf.Collections.RepeatedField`1
-  name: Protobuf.Collections.RepeatedField<HttpRule>
-  nameWithType: Protobuf.Collections.RepeatedField<HttpRule>
+  name: RepeatedField<HttpRule>
+  nameWithType: RepeatedField<HttpRule>
   fullName: Google.Protobuf.Collections.RepeatedField<Google.Api.HttpRule>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of HttpRule)
+  nameWithType.vb: RepeatedField(Of HttpRule)
   fullName.vb: Google.Protobuf.Collections.RepeatedField(Of Google.Api.HttpRule)
-  name.vb: Protobuf.Collections.RepeatedField(Of HttpRule)
+  name.vb: RepeatedField(Of HttpRule)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
@@ -1463,8 +2052,8 @@ references:
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
@@ -1478,43 +2067,50 @@ references:
     nameWithType: )
     fullName: )
 - uid: Google.Protobuf.Collections.RepeatedField`1
+  commentId: T:Google.Protobuf.Collections.RepeatedField`1
   isExternal: true
-  name: Protobuf.Collections.RepeatedField<>
-  nameWithType: Protobuf.Collections.RepeatedField<>
-  fullName: Google.Protobuf.Collections.RepeatedField<>
-  nameWithType.vb: Protobuf.Collections.RepeatedField(Of )
-  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of )
-  name.vb: Protobuf.Collections.RepeatedField(Of )
+  name: RepeatedField<T>
+  nameWithType: RepeatedField<T>
+  fullName: Google.Protobuf.Collections.RepeatedField<T>
+  nameWithType.vb: RepeatedField(Of T)
+  fullName.vb: Google.Protobuf.Collections.RepeatedField(Of T)
+  name.vb: RepeatedField(Of T)
   spec.csharp:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
   - uid: Google.Protobuf.Collections.RepeatedField`1
-    name: Protobuf.Collections.RepeatedField
-    nameWithType: Protobuf.Collections.RepeatedField
+    name: RepeatedField
+    nameWithType: RepeatedField
     fullName: Google.Protobuf.Collections.RepeatedField
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - name: ''
-    nameWithType: ''
-    fullName: ''
+  - name: T
+    nameWithType: T
+    fullName: T
   - name: )
     nameWithType: )
     fullName: )
+- uid: Google.Protobuf.Collections
+  commentId: N:Google.Protobuf.Collections
+  isExternal: false
+  name: Google.Protobuf.Collections
+  nameWithType: Google.Protobuf.Collections
+  fullName: Google.Protobuf.Collections
 - uid: Google.Api.HttpRule.PatternCase*
   commentId: Overload:Google.Api.HttpRule.PatternCase
   isExternal: false
@@ -1534,6 +2130,47 @@ references:
   name: ClearPattern
   nameWithType: HttpRule.ClearPattern
   fullName: Google.Api.HttpRule.ClearPattern
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.HttpRule.Equals*
   commentId: Overload:Google.Api.HttpRule.Equals
   isExternal: false
@@ -1547,12 +2184,153 @@ references:
   name: Boolean
   nameWithType: Boolean
   fullName: System.Boolean
+- uid: System.IEquatable{Google.Api.HttpRule}.Equals(Google.Api.HttpRule)
+  commentId: M:System.IEquatable{Google.Api.HttpRule}.Equals(Google.Api.HttpRule)
+  parent: System.IEquatable{Google.Api.HttpRule}
+  definition: System.IEquatable`1.Equals(`0)
+  name: Equals(HttpRule)
+  nameWithType: IEquatable<HttpRule>.Equals(HttpRule)
+  fullName: System.IEquatable<Google.Api.HttpRule>.Equals(Google.Api.HttpRule)
+  nameWithType.vb: IEquatable(Of HttpRule).Equals(HttpRule)
+  fullName.vb: System.IEquatable(Of Google.Api.HttpRule).Equals(Google.Api.HttpRule)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<HttpRule>.Equals
+    fullName: System.IEquatable<Google.Api.HttpRule>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of HttpRule).Equals
+    fullName: System.IEquatable(Of Google.Api.HttpRule).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable<T>.Equals
+    fullName: System.IEquatable<T>.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    nameWithType: IEquatable(Of T).Equals
+    fullName: System.IEquatable(Of T).Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.HttpRule.GetHashCode*
   commentId: Overload:Google.Api.HttpRule.GetHashCode
   isExternal: false
   name: GetHashCode
   nameWithType: HttpRule.GetHashCode
   fullName: Google.Api.HttpRule.GetHashCode
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.HttpRule.ToString*
   commentId: Overload:Google.Api.HttpRule.ToString
   isExternal: false
@@ -1565,10 +2343,53 @@ references:
   name: WriteTo
   nameWithType: HttpRule.WriteTo
   fullName: Google.Api.HttpRule.WriteTo
-- uid: Google.Protobuf.CodedOutputStream
+- uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  commentId: M:Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  parent: Google.Protobuf.IMessage
   isExternal: true
-  name: Protobuf.CodedOutputStream
-  nameWithType: Protobuf.CodedOutputStream
+  name: WriteTo(CodedOutputStream)
+  nameWithType: IMessage.WriteTo(CodedOutputStream)
+  fullName: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.WriteTo(Google.Protobuf.CodedOutputStream)
+    name: WriteTo
+    nameWithType: IMessage.WriteTo
+    fullName: Google.Protobuf.IMessage.WriteTo
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedOutputStream
+    name: CodedOutputStream
+    nameWithType: CodedOutputStream
+    fullName: Google.Protobuf.CodedOutputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedOutputStream
+  commentId: T:Google.Protobuf.CodedOutputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedOutputStream
+  nameWithType: CodedOutputStream
   fullName: Google.Protobuf.CodedOutputStream
 - uid: Google.Api.HttpRule.CalculateSize*
   commentId: Overload:Google.Api.HttpRule.CalculateSize
@@ -1576,14 +2397,167 @@ references:
   name: CalculateSize
   nameWithType: HttpRule.CalculateSize
   fullName: Google.Api.HttpRule.CalculateSize
+- uid: Google.Protobuf.IMessage.CalculateSize
+  commentId: M:Google.Protobuf.IMessage.CalculateSize
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: CalculateSize()
+  nameWithType: IMessage.CalculateSize()
+  fullName: Google.Protobuf.IMessage.CalculateSize()
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.CalculateSize
+    name: CalculateSize
+    nameWithType: IMessage.CalculateSize
+    fullName: Google.Protobuf.IMessage.CalculateSize
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: Google.Api.HttpRule.MergeFrom*
   commentId: Overload:Google.Api.HttpRule.MergeFrom
   isExternal: false
   name: MergeFrom
   nameWithType: HttpRule.MergeFrom
   fullName: Google.Api.HttpRule.MergeFrom
-- uid: Google.Protobuf.CodedInputStream
+- uid: Google.Protobuf.IMessage{Google.Api.HttpRule}.MergeFrom(Google.Api.HttpRule)
+  commentId: M:Google.Protobuf.IMessage{Google.Api.HttpRule}.MergeFrom(Google.Api.HttpRule)
+  parent: Google.Protobuf.IMessage{Google.Api.HttpRule}
+  definition: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  name: MergeFrom(HttpRule)
+  nameWithType: IMessage<HttpRule>.MergeFrom(HttpRule)
+  fullName: Google.Protobuf.IMessage<Google.Api.HttpRule>.MergeFrom(Google.Api.HttpRule)
+  nameWithType.vb: IMessage(Of HttpRule).MergeFrom(HttpRule)
+  fullName.vb: Google.Protobuf.IMessage(Of Google.Api.HttpRule).MergeFrom(Google.Api.HttpRule)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<HttpRule>.MergeFrom
+    fullName: Google.Protobuf.IMessage<Google.Api.HttpRule>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of HttpRule).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of Google.Api.HttpRule).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Api.HttpRule
+    name: HttpRule
+    nameWithType: HttpRule
+    fullName: Google.Api.HttpRule
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+  commentId: M:Google.Protobuf.IMessage`1.MergeFrom(`0)
   isExternal: true
-  name: Protobuf.CodedInputStream
-  nameWithType: Protobuf.CodedInputStream
+  name: MergeFrom(T)
+  nameWithType: IMessage<T>.MergeFrom(T)
+  fullName: Google.Protobuf.IMessage<T>.MergeFrom(T)
+  nameWithType.vb: IMessage(Of T).MergeFrom(T)
+  fullName.vb: Google.Protobuf.IMessage(Of T).MergeFrom(T)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage<T>.MergeFrom
+    fullName: Google.Protobuf.IMessage<T>.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage`1.MergeFrom(`0)
+    name: MergeFrom
+    nameWithType: IMessage(Of T).MergeFrom
+    fullName: Google.Protobuf.IMessage(Of T).MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  commentId: M:Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  parent: Google.Protobuf.IMessage
+  isExternal: true
+  name: MergeFrom(CodedInputStream)
+  nameWithType: IMessage.MergeFrom(CodedInputStream)
+  fullName: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+  spec.csharp:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: Google.Protobuf.IMessage.MergeFrom(Google.Protobuf.CodedInputStream)
+    name: MergeFrom
+    nameWithType: IMessage.MergeFrom
+    fullName: Google.Protobuf.IMessage.MergeFrom
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: Google.Protobuf.CodedInputStream
+    name: CodedInputStream
+    nameWithType: CodedInputStream
+    fullName: Google.Protobuf.CodedInputStream
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Google.Protobuf.CodedInputStream
+  commentId: T:Google.Protobuf.CodedInputStream
+  parent: Google.Protobuf
+  isExternal: true
+  name: CodedInputStream
+  nameWithType: CodedInputStream
   fullName: Google.Protobuf.CodedInputStream

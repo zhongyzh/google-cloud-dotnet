@@ -69,12 +69,24 @@ items:
   summary: The action to take.
   example: []
   syntax:
-    content: public virtual Bucket.LifecycleData.RuleData.ActionData Action { get; set; }
+    content: >-
+      [JsonProperty("action")]
+
+      public virtual Bucket.LifecycleData.RuleData.ActionData Action { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.ActionData
-    content.vb: Public Overridable Property Action As Bucket.LifecycleData.RuleData.ActionData
+    content.vb: >-
+      <JsonProperty("action")>
+
+      Public Overridable Property Action As Bucket.LifecycleData.RuleData.ActionData
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.Action*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: action
   modifiers.csharp:
   - public
   - virtual
@@ -108,12 +120,24 @@ items:
   summary: The condition(s) under which the action will be taken.
   example: []
   syntax:
-    content: public virtual Bucket.LifecycleData.RuleData.ConditionData Condition { get; set; }
+    content: >-
+      [JsonProperty("condition")]
+
+      public virtual Bucket.LifecycleData.RuleData.ConditionData Condition { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.ConditionData
-    content.vb: Public Overridable Property Condition As Bucket.LifecycleData.RuleData.ConditionData
+    content.vb: >-
+      <JsonProperty("condition")>
+
+      Public Overridable Property Condition As Bucket.LifecycleData.RuleData.ConditionData
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.Condition*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: condition
   modifiers.csharp:
   - public
   - virtual

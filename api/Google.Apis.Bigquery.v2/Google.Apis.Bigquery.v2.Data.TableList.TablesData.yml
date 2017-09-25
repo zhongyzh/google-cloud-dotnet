@@ -75,12 +75,24 @@ items:
   summary: The user-friendly name for this table.
   example: []
   syntax:
-    content: public virtual string FriendlyName { get; set; }
+    content: >-
+      [JsonProperty("friendlyName")]
+
+      public virtual string FriendlyName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property FriendlyName As String
+    content.vb: >-
+      <JsonProperty("friendlyName")>
+
+      Public Overridable Property FriendlyName As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.FriendlyName*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: friendlyName
   modifiers.csharp:
   - public
   - virtual
@@ -114,12 +126,24 @@ items:
   summary: An opaque ID of the table
   example: []
   syntax:
-    content: public virtual string Id { get; set; }
+    content: >-
+      [JsonProperty("id")]
+
+      public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Id As String
+    content.vb: >-
+      <JsonProperty("id")>
+
+      Public Overridable Property Id As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Id*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -153,12 +177,24 @@ items:
   summary: The resource type.
   example: []
   syntax:
-    content: public virtual string Kind { get; set; }
+    content: >-
+      [JsonProperty("kind")]
+
+      public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Kind As String
+    content.vb: >-
+      <JsonProperty("kind")>
+
+      Public Overridable Property Kind As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Kind*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -195,12 +231,24 @@ items:
     your tables.
   example: []
   syntax:
-    content: public virtual IDictionary<string, string> Labels { get; set; }
+    content: >-
+      [JsonProperty("labels")]
+
+      public virtual IDictionary<string, string> Labels { get; set; }
     parameters: []
     return:
       type: System.Collections.Generic.IDictionary{System.String,System.String}
-    content.vb: Public Overridable Property Labels As IDictionary(Of String, String)
+    content.vb: >-
+      <JsonProperty("labels")>
+
+      Public Overridable Property Labels As IDictionary(Of String, String)
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Labels*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: labels
   modifiers.csharp:
   - public
   - virtual
@@ -234,12 +282,24 @@ items:
   summary: A reference uniquely identifying the table.
   example: []
   syntax:
-    content: public virtual TableReference TableReference { get; set; }
+    content: >-
+      [JsonProperty("tableReference")]
+
+      public virtual TableReference TableReference { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableReference
-    content.vb: Public Overridable Property TableReference As TableReference
+    content.vb: >-
+      <JsonProperty("tableReference")>
+
+      Public Overridable Property TableReference As TableReference
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.TableReference*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: tableReference
   modifiers.csharp:
   - public
   - virtual
@@ -273,12 +333,24 @@ items:
   summary: '[Experimental] The time-based partitioning for this table.'
   example: []
   syntax:
-    content: public virtual TimePartitioning TimePartitioning { get; set; }
+    content: >-
+      [JsonProperty("timePartitioning")]
+
+      public virtual TimePartitioning TimePartitioning { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TimePartitioning
-    content.vb: Public Overridable Property TimePartitioning As TimePartitioning
+    content.vb: >-
+      <JsonProperty("timePartitioning")>
+
+      Public Overridable Property TimePartitioning As TimePartitioning
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.TimePartitioning*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: timePartitioning
   modifiers.csharp:
   - public
   - virtual
@@ -312,12 +384,24 @@ items:
   summary: 'The type of table. Possible values are: TABLE, VIEW.'
   example: []
   syntax:
-    content: public virtual string Type { get; set; }
+    content: >-
+      [JsonProperty("type")]
+
+      public virtual string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Type As String
+    content.vb: >-
+      <JsonProperty("type")>
+
+      Public Overridable Property Type As String
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.Type*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: type
   modifiers.csharp:
   - public
   - virtual
@@ -351,12 +435,24 @@ items:
   summary: Additional details for a view.
   example: []
   syntax:
-    content: public virtual TableList.TablesData.ViewData View { get; set; }
+    content: >-
+      [JsonProperty("view")]
+
+      public virtual TableList.TablesData.ViewData View { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.TableList.TablesData.ViewData
-    content.vb: Public Overridable Property View As TableList.TablesData.ViewData
+    content.vb: >-
+      <JsonProperty("view")>
+
+      Public Overridable Property View As TableList.TablesData.ViewData
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.View*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: view
   modifiers.csharp:
   - public
   - virtual

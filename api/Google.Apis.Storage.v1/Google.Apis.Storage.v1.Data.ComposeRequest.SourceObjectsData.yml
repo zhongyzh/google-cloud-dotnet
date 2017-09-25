@@ -70,12 +70,24 @@ items:
   summary: The generation of this object to use as the source.
   example: []
   syntax:
-    content: public virtual long ? Generation { get; set; }
+    content: >-
+      [JsonProperty("generation")]
+
+      public virtual long ? Generation { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Overridable Property Generation As Long?
+    content.vb: >-
+      <JsonProperty("generation")>
+
+      Public Overridable Property Generation As Long?
   overload: Google.Apis.Storage.v1.Data.ComposeRequest.SourceObjectsData.Generation*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: generation
   modifiers.csharp:
   - public
   - virtual
@@ -112,12 +124,24 @@ items:
     bucket.
   example: []
   syntax:
-    content: public virtual string Name { get; set; }
+    content: >-
+      [JsonProperty("name")]
+
+      public virtual string Name { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Name As String
+    content.vb: >-
+      <JsonProperty("name")>
+
+      Public Overridable Property Name As String
   overload: Google.Apis.Storage.v1.Data.ComposeRequest.SourceObjectsData.Name*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: name
   modifiers.csharp:
   - public
   - virtual
@@ -151,12 +175,24 @@ items:
   summary: Conditions that must be met for this operation to execute.
   example: []
   syntax:
-    content: public virtual ComposeRequest.SourceObjectsData.ObjectPreconditionsData ObjectPreconditions { get; set; }
+    content: >-
+      [JsonProperty("objectPreconditions")]
+
+      public virtual ComposeRequest.SourceObjectsData.ObjectPreconditionsData ObjectPreconditions { get; set; }
     parameters: []
     return:
       type: Google.Apis.Storage.v1.Data.ComposeRequest.SourceObjectsData.ObjectPreconditionsData
-    content.vb: Public Overridable Property ObjectPreconditions As ComposeRequest.SourceObjectsData.ObjectPreconditionsData
+    content.vb: >-
+      <JsonProperty("objectPreconditions")>
+
+      Public Overridable Property ObjectPreconditions As ComposeRequest.SourceObjectsData.ObjectPreconditionsData
   overload: Google.Apis.Storage.v1.Data.ComposeRequest.SourceObjectsData.ObjectPreconditions*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: objectPreconditions
   modifiers.csharp:
   - public
   - virtual

@@ -63,9 +63,22 @@ items:
   summary: "\nDo not use this default value.\n"
   example: []
   syntax:
-    content: Unspecified = 0
+    content: >-
+      [OriginalName("METRIC_KIND_UNSPECIFIED")]
+
+      Unspecified = 0
     return:
       type: Google.Api.MetricDescriptor.Types.MetricKind
+    content.vb: >-
+      <OriginalName("METRIC_KIND_UNSPECIFIED")>
+
+      Unspecified = 0
+  attributes:
+  - type: Google.Protobuf.Reflection.OriginalNameAttribute
+    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: METRIC_KIND_UNSPECIFIED
   modifiers.csharp:
   - public
   - const
@@ -97,9 +110,22 @@ items:
   summary: "\nAn instantaneous measurement of a value.\n"
   example: []
   syntax:
-    content: Gauge = 1
+    content: >-
+      [OriginalName("GAUGE")]
+
+      Gauge = 1
     return:
       type: Google.Api.MetricDescriptor.Types.MetricKind
+    content.vb: >-
+      <OriginalName("GAUGE")>
+
+      Gauge = 1
+  attributes:
+  - type: Google.Protobuf.Reflection.OriginalNameAttribute
+    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: GAUGE
   modifiers.csharp:
   - public
   - const
@@ -131,9 +157,22 @@ items:
   summary: "\nThe change in a value during a time interval.\n"
   example: []
   syntax:
-    content: Delta = 2
+    content: >-
+      [OriginalName("DELTA")]
+
+      Delta = 2
     return:
       type: Google.Api.MetricDescriptor.Types.MetricKind
+    content.vb: >-
+      <OriginalName("DELTA")>
+
+      Delta = 2
+  attributes:
+  - type: Google.Protobuf.Reflection.OriginalNameAttribute
+    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: DELTA
   modifiers.csharp:
   - public
   - const
@@ -165,9 +204,22 @@ items:
   summary: "\nA value accumulated over a time interval.  Cumulative\nmeasurements in a time series should have the same start time\nand increasing end times, until an event resets the cumulative\nvalue to zero and sets a new start time for the following\npoints.\n"
   example: []
   syntax:
-    content: Cumulative = 3
+    content: >-
+      [OriginalName("CUMULATIVE")]
+
+      Cumulative = 3
     return:
       type: Google.Api.MetricDescriptor.Types.MetricKind
+    content.vb: >-
+      <OriginalName("CUMULATIVE")>
+
+      Cumulative = 3
+  attributes:
+  - type: Google.Protobuf.Reflection.OriginalNameAttribute
+    ctor: Google.Protobuf.Reflection.OriginalNameAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: CUMULATIVE
   modifiers.csharp:
   - public
   - const

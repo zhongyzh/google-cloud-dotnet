@@ -79,12 +79,24 @@ items:
     objects to represent directory pages.
   example: []
   syntax:
-    content: public virtual string MainPageSuffix { get; set; }
+    content: >-
+      [JsonProperty("mainPageSuffix")]
+
+      public virtual string MainPageSuffix { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property MainPageSuffix As String
+    content.vb: >-
+      <JsonProperty("mainPageSuffix")>
+
+      Public Overridable Property MainPageSuffix As String
   overload: Google.Apis.Storage.v1.Data.Bucket.WebsiteData.MainPageSuffix*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: mainPageSuffix
   modifiers.csharp:
   - public
   - virtual
@@ -123,12 +135,24 @@ items:
     result.
   example: []
   syntax:
-    content: public virtual string NotFoundPage { get; set; }
+    content: >-
+      [JsonProperty("notFoundPage")]
+
+      public virtual string NotFoundPage { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property NotFoundPage As String
+    content.vb: >-
+      <JsonProperty("notFoundPage")>
+
+      Public Overridable Property NotFoundPage As String
   overload: Google.Apis.Storage.v1.Data.Bucket.WebsiteData.NotFoundPage*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: notFoundPage
   modifiers.csharp:
   - public
   - virtual

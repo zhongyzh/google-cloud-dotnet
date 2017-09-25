@@ -70,12 +70,24 @@ items:
   summary: True if view is defined in legacy SQL dialect, false if in standard SQL.
   example: []
   syntax:
-    content: public virtual bool ? UseLegacySql { get; set; }
+    content: >-
+      [JsonProperty("useLegacySql")]
+
+      public virtual bool ? UseLegacySql { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Boolean}
-    content.vb: Public Overridable Property UseLegacySql As Boolean?
+    content.vb: >-
+      <JsonProperty("useLegacySql")>
+
+      Public Overridable Property UseLegacySql As Boolean?
   overload: Google.Apis.Bigquery.v2.Data.TableList.TablesData.ViewData.UseLegacySql*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: useLegacySql
   modifiers.csharp:
   - public
   - virtual

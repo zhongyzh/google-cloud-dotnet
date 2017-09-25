@@ -71,12 +71,24 @@ items:
   - Google.Apis.Storage.v1
   namespace: Google.Apis.Storage.v1.Data
   syntax:
-    content: public virtual string DefaultKmsKeyName { get; set; }
+    content: >-
+      [JsonProperty("defaultKmsKeyName")]
+
+      public virtual string DefaultKmsKeyName { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property DefaultKmsKeyName As String
+    content.vb: >-
+      <JsonProperty("defaultKmsKeyName")>
+
+      Public Overridable Property DefaultKmsKeyName As String
   overload: Google.Apis.Storage.v1.Data.Bucket.EncryptionData.DefaultKmsKeyName*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: defaultKmsKeyName
   modifiers.csharp:
   - public
   - virtual

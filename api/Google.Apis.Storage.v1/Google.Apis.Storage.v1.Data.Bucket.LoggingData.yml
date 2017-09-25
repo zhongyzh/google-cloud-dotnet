@@ -74,12 +74,24 @@ items:
   summary: The destination bucket where the current bucket&apos;s logs should be placed.
   example: []
   syntax:
-    content: public virtual string LogBucket { get; set; }
+    content: >-
+      [JsonProperty("logBucket")]
+
+      public virtual string LogBucket { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property LogBucket As String
+    content.vb: >-
+      <JsonProperty("logBucket")>
+
+      Public Overridable Property LogBucket As String
   overload: Google.Apis.Storage.v1.Data.Bucket.LoggingData.LogBucket*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: logBucket
   modifiers.csharp:
   - public
   - virtual
@@ -113,12 +125,24 @@ items:
   summary: A prefix for log object names.
   example: []
   syntax:
-    content: public virtual string LogObjectPrefix { get; set; }
+    content: >-
+      [JsonProperty("logObjectPrefix")]
+
+      public virtual string LogObjectPrefix { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property LogObjectPrefix As String
+    content.vb: >-
+      <JsonProperty("logObjectPrefix")>
+
+      Public Overridable Property LogObjectPrefix As String
   overload: Google.Apis.Storage.v1.Data.Bucket.LoggingData.LogObjectPrefix*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: logObjectPrefix
   modifiers.csharp:
   - public
   - virtual

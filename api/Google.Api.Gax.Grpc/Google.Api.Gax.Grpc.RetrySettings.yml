@@ -6,12 +6,12 @@ items:
   parent: Google.Api.Gax.Grpc
   children:
   - Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration)
-  - Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{RpcException})
-  - Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{RpcException},Google.Api.Gax.Grpc.RetrySettings.IJitter)
+  - Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{Grpc.Core.RpcException})
+  - Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{Grpc.Core.RpcException},Google.Api.Gax.Grpc.RetrySettings.IJitter)
   - Google.Api.Gax.Grpc.RetrySettings.DefaultFilter
   - Google.Api.Gax.Grpc.RetrySettings.DelayJitter
-  - Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(StatusCode[])
-  - Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(System.Collections.Generic.IEnumerable{StatusCode})
+  - Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(Grpc.Core.StatusCode[])
+  - Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(System.Collections.Generic.IEnumerable{Grpc.Core.StatusCode})
   - Google.Api.Gax.Grpc.RetrySettings.NoJitter
   - Google.Api.Gax.Grpc.RetrySettings.RandomJitter
   - Google.Api.Gax.Grpc.RetrySettings.RetryBackoff
@@ -200,7 +200,7 @@ items:
     content: public Predicate<RpcException> RetryFilter { get; }
     parameters: []
     return:
-      type: System.Predicate{RpcException}
+      type: System.Predicate{Grpc.Core.RpcException}
     content.vb: Public ReadOnly Property RetryFilter As Predicate(Of RpcException)
   overload: Google.Api.Gax.Grpc.RetrySettings.RetryFilter*
   modifiers.csharp:
@@ -289,16 +289,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{RpcException})
-  commentId: M:Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{RpcException})
-  id: '#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{RpcException})'
+- uid: Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{Grpc.Core.RpcException})
+  commentId: M:Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{Grpc.Core.RpcException})
+  id: '#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{Grpc.Core.RpcException})'
   parent: Google.Api.Gax.Grpc.RetrySettings
   langs:
   - csharp
   - vb
   name: RetrySettings(BackoffSettings, BackoffSettings, Expiration, Predicate<RpcException>)
   nameWithType: RetrySettings.RetrySettings(BackoffSettings, BackoffSettings, Expiration, Predicate<RpcException>)
-  fullName: Google.Api.Gax.Grpc.RetrySettings.RetrySettings(Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Expiration, System.Predicate<RpcException>)
+  fullName: Google.Api.Gax.Grpc.RetrySettings.RetrySettings(Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Expiration, System.Predicate<Grpc.Core.RpcException>)
   type: Constructor
   source:
     remote:
@@ -326,7 +326,7 @@ items:
       type: Google.Api.Gax.Expiration
       description: The total expiration, across all retries. Must not be null.
     - id: retryFilter
-      type: System.Predicate{RpcException}
+      type: System.Predicate{Grpc.Core.RpcException}
       description: >-
         A predicate to determine whether or not a particular exception should cause the operation to be retried,
 
@@ -338,18 +338,18 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: Google.Api.Gax.Grpc.RetrySettings.RetrySettings(Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Expiration, System.Predicate(Of RpcException))
+  fullName.vb: Google.Api.Gax.Grpc.RetrySettings.RetrySettings(Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Expiration, System.Predicate(Of Grpc.Core.RpcException))
   name.vb: RetrySettings(BackoffSettings, BackoffSettings, Expiration, Predicate(Of RpcException))
-- uid: Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{RpcException},Google.Api.Gax.Grpc.RetrySettings.IJitter)
-  commentId: M:Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{RpcException},Google.Api.Gax.Grpc.RetrySettings.IJitter)
-  id: '#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{RpcException},Google.Api.Gax.Grpc.RetrySettings.IJitter)'
+- uid: Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{Grpc.Core.RpcException},Google.Api.Gax.Grpc.RetrySettings.IJitter)
+  commentId: M:Google.Api.Gax.Grpc.RetrySettings.#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{Grpc.Core.RpcException},Google.Api.Gax.Grpc.RetrySettings.IJitter)
+  id: '#ctor(Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Grpc.BackoffSettings,Google.Api.Gax.Expiration,System.Predicate{Grpc.Core.RpcException},Google.Api.Gax.Grpc.RetrySettings.IJitter)'
   parent: Google.Api.Gax.Grpc.RetrySettings
   langs:
   - csharp
   - vb
   name: RetrySettings(BackoffSettings, BackoffSettings, Expiration, Predicate<RpcException>, RetrySettings.IJitter)
   nameWithType: RetrySettings.RetrySettings(BackoffSettings, BackoffSettings, Expiration, Predicate<RpcException>, RetrySettings.IJitter)
-  fullName: Google.Api.Gax.Grpc.RetrySettings.RetrySettings(Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Expiration, System.Predicate<RpcException>, Google.Api.Gax.Grpc.RetrySettings.IJitter)
+  fullName: Google.Api.Gax.Grpc.RetrySettings.RetrySettings(Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Expiration, System.Predicate<Grpc.Core.RpcException>, Google.Api.Gax.Grpc.RetrySettings.IJitter)
   type: Constructor
   source:
     remote:
@@ -377,7 +377,7 @@ items:
       type: Google.Api.Gax.Expiration
       description: The total expiration, across all retries. Must not be null.
     - id: retryFilter
-      type: System.Predicate{RpcException}
+      type: System.Predicate{Grpc.Core.RpcException}
       description: >-
         A predicate to determine whether or not a particular exception should cause the operation to be retried,
 
@@ -392,7 +392,7 @@ items:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: Google.Api.Gax.Grpc.RetrySettings.RetrySettings(Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Expiration, System.Predicate(Of RpcException), Google.Api.Gax.Grpc.RetrySettings.IJitter)
+  fullName.vb: Google.Api.Gax.Grpc.RetrySettings.RetrySettings(Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Grpc.BackoffSettings, Google.Api.Gax.Expiration, System.Predicate(Of Grpc.Core.RpcException), Google.Api.Gax.Grpc.RetrySettings.IJitter)
   name.vb: RetrySettings(BackoffSettings, BackoffSettings, Expiration, Predicate(Of RpcException), RetrySettings.IJitter)
 - uid: Google.Api.Gax.Grpc.RetrySettings.RandomJitter
   commentId: P:Google.Api.Gax.Grpc.RetrySettings.RandomJitter
@@ -500,7 +500,7 @@ items:
     content: public static Predicate<RpcException> DefaultFilter { get; }
     parameters: []
     return:
-      type: System.Predicate{RpcException}
+      type: System.Predicate{Grpc.Core.RpcException}
     content.vb: Public Shared ReadOnly Property DefaultFilter As Predicate(Of RpcException)
   overload: Google.Api.Gax.Grpc.RetrySettings.DefaultFilter*
   modifiers.csharp:
@@ -511,16 +511,16 @@ items:
   - Public
   - Shared
   - ReadOnly
-- uid: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(StatusCode[])
-  commentId: M:Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(StatusCode[])
-  id: FilterForStatusCodes(StatusCode[])
+- uid: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(Grpc.Core.StatusCode[])
+  commentId: M:Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(Grpc.Core.StatusCode[])
+  id: FilterForStatusCodes(Grpc.Core.StatusCode[])
   parent: Google.Api.Gax.Grpc.RetrySettings
   langs:
   - csharp
   - vb
   name: FilterForStatusCodes(StatusCode[])
   nameWithType: RetrySettings.FilterForStatusCodes(StatusCode[])
-  fullName: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(StatusCode[])
+  fullName: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(Grpc.Core.StatusCode[])
   type: Method
   source:
     remote:
@@ -539,10 +539,10 @@ items:
     content: public static Predicate<RpcException> FilterForStatusCodes(params StatusCode[] statusCodes)
     parameters:
     - id: statusCodes
-      type: StatusCode[]
+      type: Grpc.Core.StatusCode[]
       description: The status codes to retry. Must not be null.
     return:
-      type: System.Predicate{RpcException}
+      type: System.Predicate{Grpc.Core.RpcException}
       description: A retry filter based on status codes.
     content.vb: Public Shared Function FilterForStatusCodes(ParamArray statusCodes As StatusCode()) As Predicate(Of RpcException)
   overload: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes*
@@ -553,18 +553,18 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(StatusCode())
+  fullName.vb: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(Grpc.Core.StatusCode())
   name.vb: FilterForStatusCodes(StatusCode())
-- uid: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(System.Collections.Generic.IEnumerable{StatusCode})
-  commentId: M:Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(System.Collections.Generic.IEnumerable{StatusCode})
-  id: FilterForStatusCodes(System.Collections.Generic.IEnumerable{StatusCode})
+- uid: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(System.Collections.Generic.IEnumerable{Grpc.Core.StatusCode})
+  commentId: M:Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(System.Collections.Generic.IEnumerable{Grpc.Core.StatusCode})
+  id: FilterForStatusCodes(System.Collections.Generic.IEnumerable{Grpc.Core.StatusCode})
   parent: Google.Api.Gax.Grpc.RetrySettings
   langs:
   - csharp
   - vb
   name: FilterForStatusCodes(IEnumerable<StatusCode>)
   nameWithType: RetrySettings.FilterForStatusCodes(IEnumerable<StatusCode>)
-  fullName: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(System.Collections.Generic.IEnumerable<StatusCode>)
+  fullName: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(System.Collections.Generic.IEnumerable<Grpc.Core.StatusCode>)
   type: Method
   source:
     remote:
@@ -583,10 +583,10 @@ items:
     content: public static Predicate<RpcException> FilterForStatusCodes(IEnumerable<StatusCode> statusCodes)
     parameters:
     - id: statusCodes
-      type: System.Collections.Generic.IEnumerable{StatusCode}
+      type: System.Collections.Generic.IEnumerable{Grpc.Core.StatusCode}
       description: The status codes to retry. Must not be null.
     return:
-      type: System.Predicate{RpcException}
+      type: System.Predicate{Grpc.Core.RpcException}
       description: A retry filter based on status codes.
     content.vb: Public Shared Function FilterForStatusCodes(statusCodes As IEnumerable(Of StatusCode)) As Predicate(Of RpcException)
   overload: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes*
@@ -597,7 +597,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(System.Collections.Generic.IEnumerable(Of StatusCode))
+  fullName.vb: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes(System.Collections.Generic.IEnumerable(Of Grpc.Core.StatusCode))
   name.vb: FilterForStatusCodes(IEnumerable(Of StatusCode))
 - uid: Google.Api.Gax.Grpc.RetrySettings.WithTotalExpiration(Google.Api.Gax.Expiration)
   commentId: M:Google.Api.Gax.Grpc.RetrySettings.WithTotalExpiration(Google.Api.Gax.Expiration)
@@ -982,15 +982,15 @@ references:
   name: RetryFilter
   nameWithType: RetrySettings.RetryFilter
   fullName: Google.Api.Gax.Grpc.RetrySettings.RetryFilter
-- uid: System.Predicate{RpcException}
-  commentId: T:System.Predicate{RpcException}
+- uid: System.Predicate{Grpc.Core.RpcException}
+  commentId: T:System.Predicate{Grpc.Core.RpcException}
   parent: System
   definition: System.Predicate`1
   name: Predicate<RpcException>
   nameWithType: Predicate<RpcException>
-  fullName: System.Predicate<RpcException>
+  fullName: System.Predicate<Grpc.Core.RpcException>
   nameWithType.vb: Predicate(Of RpcException)
-  fullName.vb: System.Predicate(Of RpcException)
+  fullName.vb: System.Predicate(Of Grpc.Core.RpcException)
   name.vb: Predicate(Of RpcException)
   spec.csharp:
   - uid: System.Predicate`1
@@ -1001,10 +1001,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: RpcException
+  - uid: Grpc.Core.RpcException
     name: RpcException
     nameWithType: RpcException
-    fullName: RpcException
+    fullName: Grpc.Core.RpcException
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1018,10 +1018,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: RpcException
+  - uid: Grpc.Core.RpcException
     name: RpcException
     nameWithType: RpcException
-    fullName: RpcException
+    fullName: Grpc.Core.RpcException
     isExternal: true
   - name: )
     nameWithType: )
@@ -1110,40 +1110,40 @@ references:
   name: FilterForStatusCodes
   nameWithType: RetrySettings.FilterForStatusCodes
   fullName: Google.Api.Gax.Grpc.RetrySettings.FilterForStatusCodes
-- uid: StatusCode[]
+- uid: Grpc.Core.StatusCode[]
   name: StatusCode[]
   nameWithType: StatusCode[]
-  fullName: StatusCode[]
+  fullName: Grpc.Core.StatusCode[]
   nameWithType.vb: StatusCode()
-  fullName.vb: StatusCode()
+  fullName.vb: Grpc.Core.StatusCode()
   name.vb: StatusCode()
   spec.csharp:
-  - uid: StatusCode
+  - uid: Grpc.Core.StatusCode
     name: StatusCode
     nameWithType: StatusCode
-    fullName: StatusCode
+    fullName: Grpc.Core.StatusCode
     isExternal: true
   - name: '[]'
     nameWithType: '[]'
     fullName: '[]'
   spec.vb:
-  - uid: StatusCode
+  - uid: Grpc.Core.StatusCode
     name: StatusCode
     nameWithType: StatusCode
-    fullName: StatusCode
+    fullName: Grpc.Core.StatusCode
     isExternal: true
   - name: ()
     nameWithType: ()
     fullName: ()
-- uid: System.Collections.Generic.IEnumerable{StatusCode}
-  commentId: T:System.Collections.Generic.IEnumerable{StatusCode}
+- uid: System.Collections.Generic.IEnumerable{Grpc.Core.StatusCode}
+  commentId: T:System.Collections.Generic.IEnumerable{Grpc.Core.StatusCode}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
   name: IEnumerable<StatusCode>
   nameWithType: IEnumerable<StatusCode>
-  fullName: System.Collections.Generic.IEnumerable<StatusCode>
+  fullName: System.Collections.Generic.IEnumerable<Grpc.Core.StatusCode>
   nameWithType.vb: IEnumerable(Of StatusCode)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of StatusCode)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Grpc.Core.StatusCode)
   name.vb: IEnumerable(Of StatusCode)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
@@ -1154,10 +1154,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: StatusCode
+  - uid: Grpc.Core.StatusCode
     name: StatusCode
     nameWithType: StatusCode
-    fullName: StatusCode
+    fullName: Grpc.Core.StatusCode
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -1171,10 +1171,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: StatusCode
+  - uid: Grpc.Core.StatusCode
     name: StatusCode
     nameWithType: StatusCode
-    fullName: StatusCode
+    fullName: Grpc.Core.StatusCode
     isExternal: true
   - name: )
     nameWithType: )

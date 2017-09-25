@@ -76,12 +76,24 @@ items:
   summary: '[Full-projection-only] Specifies the job configuration.'
   example: []
   syntax:
-    content: public virtual JobConfiguration Configuration { get; set; }
+    content: >-
+      [JsonProperty("configuration")]
+
+      public virtual JobConfiguration Configuration { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.JobConfiguration
-    content.vb: Public Overridable Property Configuration As JobConfiguration
+    content.vb: >-
+      <JsonProperty("configuration")>
+
+      Public Overridable Property Configuration As JobConfiguration
   overload: Google.Apis.Bigquery.v2.Data.JobList.JobsData.Configuration*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: configuration
   modifiers.csharp:
   - public
   - virtual
@@ -115,12 +127,24 @@ items:
   summary: A result object that will be present only if the job has failed.
   example: []
   syntax:
-    content: public virtual ErrorProto ErrorResult { get; set; }
+    content: >-
+      [JsonProperty("errorResult")]
+
+      public virtual ErrorProto ErrorResult { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.ErrorProto
-    content.vb: Public Overridable Property ErrorResult As ErrorProto
+    content.vb: >-
+      <JsonProperty("errorResult")>
+
+      Public Overridable Property ErrorResult As ErrorProto
   overload: Google.Apis.Bigquery.v2.Data.JobList.JobsData.ErrorResult*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: errorResult
   modifiers.csharp:
   - public
   - virtual
@@ -154,12 +178,24 @@ items:
   summary: Unique opaque ID of the job.
   example: []
   syntax:
-    content: public virtual string Id { get; set; }
+    content: >-
+      [JsonProperty("id")]
+
+      public virtual string Id { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Id As String
+    content.vb: >-
+      <JsonProperty("id")>
+
+      Public Overridable Property Id As String
   overload: Google.Apis.Bigquery.v2.Data.JobList.JobsData.Id*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: id
   modifiers.csharp:
   - public
   - virtual
@@ -193,12 +229,24 @@ items:
   summary: Job reference uniquely identifying the job.
   example: []
   syntax:
-    content: public virtual JobReference JobReference { get; set; }
+    content: >-
+      [JsonProperty("jobReference")]
+
+      public virtual JobReference JobReference { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.JobReference
-    content.vb: Public Overridable Property JobReference As JobReference
+    content.vb: >-
+      <JsonProperty("jobReference")>
+
+      Public Overridable Property JobReference As JobReference
   overload: Google.Apis.Bigquery.v2.Data.JobList.JobsData.JobReference*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: jobReference
   modifiers.csharp:
   - public
   - virtual
@@ -232,12 +280,24 @@ items:
   summary: The resource type.
   example: []
   syntax:
-    content: public virtual string Kind { get; set; }
+    content: >-
+      [JsonProperty("kind")]
+
+      public virtual string Kind { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Kind As String
+    content.vb: >-
+      <JsonProperty("kind")>
+
+      Public Overridable Property Kind As String
   overload: Google.Apis.Bigquery.v2.Data.JobList.JobsData.Kind*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: kind
   modifiers.csharp:
   - public
   - virtual
@@ -274,12 +334,24 @@ items:
     whether the job succeeded or failed.
   example: []
   syntax:
-    content: public virtual string State { get; set; }
+    content: >-
+      [JsonProperty("state")]
+
+      public virtual string State { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property State As String
+    content.vb: >-
+      <JsonProperty("state")>
+
+      Public Overridable Property State As String
   overload: Google.Apis.Bigquery.v2.Data.JobList.JobsData.State*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: state
   modifiers.csharp:
   - public
   - virtual
@@ -316,12 +388,24 @@ items:
     job.
   example: []
   syntax:
-    content: public virtual JobStatistics Statistics { get; set; }
+    content: >-
+      [JsonProperty("statistics")]
+
+      public virtual JobStatistics Statistics { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.JobStatistics
-    content.vb: Public Overridable Property Statistics As JobStatistics
+    content.vb: >-
+      <JsonProperty("statistics")>
+
+      Public Overridable Property Statistics As JobStatistics
   overload: Google.Apis.Bigquery.v2.Data.JobList.JobsData.Statistics*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: statistics
   modifiers.csharp:
   - public
   - virtual
@@ -355,12 +439,24 @@ items:
   summary: '[Full-projection-only] Describes the state of the job.'
   example: []
   syntax:
-    content: public virtual JobStatus Status { get; set; }
+    content: >-
+      [JsonProperty("status")]
+
+      public virtual JobStatus Status { get; set; }
     parameters: []
     return:
       type: Google.Apis.Bigquery.v2.Data.JobStatus
-    content.vb: Public Overridable Property Status As JobStatus
+    content.vb: >-
+      <JsonProperty("status")>
+
+      Public Overridable Property Status As JobStatus
   overload: Google.Apis.Bigquery.v2.Data.JobList.JobsData.Status*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: status
   modifiers.csharp:
   - public
   - virtual
@@ -394,12 +490,24 @@ items:
   summary: '[Full-projection-only] Email address of the user who ran the job.'
   example: []
   syntax:
-    content: public virtual string UserEmail { get; set; }
+    content: >-
+      [JsonProperty("user_email")]
+
+      public virtual string UserEmail { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property UserEmail As String
+    content.vb: >-
+      <JsonProperty("user_email")>
+
+      Public Overridable Property UserEmail As String
   overload: Google.Apis.Bigquery.v2.Data.JobList.JobsData.UserEmail*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: user_email
   modifiers.csharp:
   - public
   - virtual

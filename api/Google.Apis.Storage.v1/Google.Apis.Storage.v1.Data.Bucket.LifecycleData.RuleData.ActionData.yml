@@ -71,12 +71,24 @@ items:
   summary: Target storage class. Required iff the type of the action is SetStorageClass.
   example: []
   syntax:
-    content: public virtual string StorageClass { get; set; }
+    content: >-
+      [JsonProperty("storageClass")]
+
+      public virtual string StorageClass { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property StorageClass As String
+    content.vb: >-
+      <JsonProperty("storageClass")>
+
+      Public Overridable Property StorageClass As String
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.ActionData.StorageClass*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: storageClass
   modifiers.csharp:
   - public
   - virtual
@@ -110,12 +122,24 @@ items:
   summary: Type of the action. Currently, only Delete and SetStorageClass are supported.
   example: []
   syntax:
-    content: public virtual string Type { get; set; }
+    content: >-
+      [JsonProperty("type")]
+
+      public virtual string Type { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Overridable Property Type As String
+    content.vb: >-
+      <JsonProperty("type")>
+
+      Public Overridable Property Type As String
   overload: Google.Apis.Storage.v1.Data.Bucket.LifecycleData.RuleData.ActionData.Type*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: type
   modifiers.csharp:
   - public
   - virtual

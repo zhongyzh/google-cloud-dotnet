@@ -7,7 +7,7 @@ items:
   children:
   - Google.Apis.Auth.OAuth2.Responses.TokenResponse.AccessToken
   - Google.Apis.Auth.OAuth2.Responses.TokenResponse.ExpiresInSeconds
-  - Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync(HttpResponseMessage,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger)
+  - Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync(System.Net.Http.HttpResponseMessage,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger)
   - Google.Apis.Auth.OAuth2.Responses.TokenResponse.IdToken
   - Google.Apis.Auth.OAuth2.Responses.TokenResponse.IsExpired(Google.Apis.Util.IClock)
   - Google.Apis.Auth.OAuth2.Responses.TokenResponse.Issued
@@ -79,12 +79,24 @@ items:
   summary: Gets or sets the access token issued by the authorization server.
   example: []
   syntax:
-    content: public string AccessToken { get; set; }
+    content: >-
+      [JsonProperty("access_token")]
+
+      public string AccessToken { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property AccessToken As String
+    content.vb: >-
+      <JsonProperty("access_token")>
+
+      Public Property AccessToken As String
   overload: Google.Apis.Auth.OAuth2.Responses.TokenResponse.AccessToken*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: access_token
   modifiers.csharp:
   - public
   - get
@@ -116,12 +128,24 @@ items:
   summary: "\nGets or sets the token type as specified in http://tools.ietf.org/html/rfc6749#section-7.1.\n"
   example: []
   syntax:
-    content: public string TokenType { get; set; }
+    content: >-
+      [JsonProperty("token_type")]
+
+      public string TokenType { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property TokenType As String
+    content.vb: >-
+      <JsonProperty("token_type")>
+
+      Public Property TokenType As String
   overload: Google.Apis.Auth.OAuth2.Responses.TokenResponse.TokenType*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: token_type
   modifiers.csharp:
   - public
   - get
@@ -153,12 +177,24 @@ items:
   summary: Gets or sets the lifetime in seconds of the access token.
   example: []
   syntax:
-    content: public long ? ExpiresInSeconds { get; set; }
+    content: >-
+      [JsonProperty("expires_in")]
+
+      public long ? ExpiresInSeconds { get; set; }
     parameters: []
     return:
       type: System.Nullable{System.Int64}
-    content.vb: Public Property ExpiresInSeconds As Long?
+    content.vb: >-
+      <JsonProperty("expires_in")>
+
+      Public Property ExpiresInSeconds As Long?
   overload: Google.Apis.Auth.OAuth2.Responses.TokenResponse.ExpiresInSeconds*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: expires_in
   modifiers.csharp:
   - public
   - get
@@ -190,12 +226,24 @@ items:
   summary: "\nGets or sets the refresh token which can be used to obtain a new access token.\nFor example, the value &quot;3600&quot; denotes that the access token will expire in one hour from the time the \nresponse was generated.\n"
   example: []
   syntax:
-    content: public string RefreshToken { get; set; }
+    content: >-
+      [JsonProperty("refresh_token")]
+
+      public string RefreshToken { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property RefreshToken As String
+    content.vb: >-
+      <JsonProperty("refresh_token")>
+
+      Public Property RefreshToken As String
   overload: Google.Apis.Auth.OAuth2.Responses.TokenResponse.RefreshToken*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: refresh_token
   modifiers.csharp:
   - public
   - get
@@ -227,12 +275,24 @@ items:
   summary: "\nGets or sets the scope of the access token as specified in http://tools.ietf.org/html/rfc6749#section-3.3.\n"
   example: []
   syntax:
-    content: public string Scope { get; set; }
+    content: >-
+      [JsonProperty("scope")]
+
+      public string Scope { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property Scope As String
+    content.vb: >-
+      <JsonProperty("scope")>
+
+      Public Property Scope As String
   overload: Google.Apis.Auth.OAuth2.Responses.TokenResponse.Scope*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: scope
   modifiers.csharp:
   - public
   - get
@@ -264,12 +324,24 @@ items:
   summary: "\nGets or sets the id_token, which is a JSON Web Token (JWT) as specified in http://tools.ietf.org/html/draft-ietf-oauth-json-web-token\n"
   example: []
   syntax:
-    content: public string IdToken { get; set; }
+    content: >-
+      [JsonProperty("id_token")]
+
+      public string IdToken { get; set; }
     parameters: []
     return:
       type: System.String
-    content.vb: Public Property IdToken As String
+    content.vb: >-
+      <JsonProperty("id_token")>
+
+      Public Property IdToken As String
   overload: Google.Apis.Auth.OAuth2.Responses.TokenResponse.IdToken*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor(System.String)
+    arguments:
+    - type: System.String
+      value: id_token
   modifiers.csharp:
   - public
   - get
@@ -304,12 +376,16 @@ items:
     content: >-
       [Obsolete("Use IssuedUtc instead")]
 
+      [JsonProperty(Order = 1)]
+
       public DateTime Issued { get; set; }
     parameters: []
     return:
       type: System.DateTime
     content.vb: >-
       <Obsolete("Use IssuedUtc instead")>
+
+      <JsonProperty(Order:=1)>
 
       Public Property Issued As Date
   overload: Google.Apis.Auth.OAuth2.Responses.TokenResponse.Issued*
@@ -319,6 +395,13 @@ items:
     arguments:
     - type: System.String
       value: Use IssuedUtc instead
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Order
+      type: System.Int32
+      value: 1
   modifiers.csharp:
   - public
   - get
@@ -351,12 +434,26 @@ items:
   remarks: "\nThis should be set by the CLIENT after the token was received from the server.\n"
   example: []
   syntax:
-    content: public DateTime IssuedUtc { get; set; }
+    content: >-
+      [JsonProperty(Order = 2)]
+
+      public DateTime IssuedUtc { get; set; }
     parameters: []
     return:
       type: System.DateTime
-    content.vb: Public Property IssuedUtc As Date
+    content.vb: >-
+      <JsonProperty(Order:=2)>
+
+      Public Property IssuedUtc As Date
   overload: Google.Apis.Auth.OAuth2.Responses.TokenResponse.IssuedUtc*
+  attributes:
+  - type: Newtonsoft.Json.JsonPropertyAttribute
+    ctor: Newtonsoft.Json.JsonPropertyAttribute.#ctor
+    arguments: []
+    namedArguments:
+    - name: Order
+      type: System.Int32
+      value: 2
   modifiers.csharp:
   - public
   - get
@@ -400,16 +497,16 @@ items:
   - public
   modifiers.vb:
   - Public
-- uid: Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync(HttpResponseMessage,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger)
-  commentId: M:Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync(HttpResponseMessage,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger)
-  id: FromHttpResponseAsync(HttpResponseMessage,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger)
+- uid: Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync(System.Net.Http.HttpResponseMessage,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger)
+  commentId: M:Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync(System.Net.Http.HttpResponseMessage,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger)
+  id: FromHttpResponseAsync(System.Net.Http.HttpResponseMessage,Google.Apis.Util.IClock,Google.Apis.Logging.ILogger)
   parent: Google.Apis.Auth.OAuth2.Responses.TokenResponse
   langs:
   - csharp
   - vb
   name: FromHttpResponseAsync(HttpResponseMessage, IClock, ILogger)
   nameWithType: TokenResponse.FromHttpResponseAsync(HttpResponseMessage, IClock, ILogger)
-  fullName: Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync(HttpResponseMessage, Google.Apis.Util.IClock, Google.Apis.Logging.ILogger)
+  fullName: Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync(System.Net.Http.HttpResponseMessage, Google.Apis.Util.IClock, Google.Apis.Logging.ILogger)
   type: Method
   source:
     remote:
@@ -422,13 +519,13 @@ items:
   assemblies:
   - Google.Apis.Auth
   namespace: Google.Apis.Auth.OAuth2.Responses
-  summary: "\nAsynchronously parses a <xref href=\"Google.Apis.Auth.OAuth2.Responses.TokenResponse\" data-throw-if-not-resolved=\"false\"></xref> instance from the specified <see cref=\"!:HttpResponseMessage\"></see>.\n"
+  summary: "\nAsynchronously parses a <xref href=\"Google.Apis.Auth.OAuth2.Responses.TokenResponse\" data-throw-if-not-resolved=\"false\"></xref> instance from the specified <xref href=\"System.Net.Http.HttpResponseMessage\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: public static Task<TokenResponse> FromHttpResponseAsync(HttpResponseMessage response, IClock clock, ILogger logger)
     parameters:
     - id: response
-      type: HttpResponseMessage
+      type: System.Net.Http.HttpResponseMessage
       description: The http response from which to parse the token.
     - id: clock
       type: Google.Apis.Util.IClock
@@ -928,6 +1025,13 @@ references:
   name: TokenResponse
   nameWithType: TokenResponse
   fullName: Google.Apis.Auth.OAuth2.Responses.TokenResponse
+- uid: System.Net.Http.HttpResponseMessage
+  commentId: T:System.Net.Http.HttpResponseMessage
+  parent: System.Net.Http
+  isExternal: true
+  name: HttpResponseMessage
+  nameWithType: HttpResponseMessage
+  fullName: System.Net.Http.HttpResponseMessage
 - uid: Google.Apis.Auth.OAuth2.Responses.TokenResponse.Issued
   commentId: P:Google.Apis.Auth.OAuth2.Responses.TokenResponse.Issued
 - uid: Google.Apis.Auth.OAuth2.Responses.TokenResponse.FromHttpResponseAsync*
@@ -942,12 +1046,6 @@ references:
   name: TokenResponseException
   nameWithType: TokenResponseException
   fullName: Google.Apis.Auth.OAuth2.Responses.TokenResponseException
-- uid: HttpResponseMessage
-  commentId: '!:HttpResponseMessage'
-  isExternal: true
-  name: HttpResponseMessage
-  nameWithType: HttpResponseMessage
-  fullName: HttpResponseMessage
 - uid: Google.Apis.Logging.ILogger
   commentId: T:Google.Apis.Logging.ILogger
   parent: Google.Apis.Logging
@@ -997,6 +1095,12 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Net.Http
+  commentId: N:System.Net.Http
+  isExternal: false
+  name: System.Net.Http
+  nameWithType: System.Net.Http
+  fullName: System.Net.Http
 - uid: Google.Apis.Logging
   commentId: N:Google.Apis.Logging
   isExternal: false
