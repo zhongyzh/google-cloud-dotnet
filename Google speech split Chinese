@@ -1,0 +1,51 @@
+We use CPP call Google Speech and works fine. There a one issue: for sentense split is not good for Chinese but for English is very good. 
+Is there any methods or APIs to improve?
+
+Our codes are:
+void Run()
+{
+	auto creds = grpc::GoogleDefaultCredentials();
+	auto channel = grpc::CreateChannel("speech.googleapis.com", creds);
+
+	std::unique_ptr<Speech::Stub> speech(Speech::NewStub(channel));
+
+	StreamingRecognizeRequest request;
+	auto * streaming_config = request.mutable_streaming_config();
+	
+	streaming_config->mutable_config()->set_language_code("zh");
+	streaming_config->mutable_config()->set_sample_rate_hertz(RATE);
+	streaming_config->mutable_config()->set_encoding(RecognitionConfig::LINEAR16);
+	streaming_config->set_interim_results(true);
+	streaming_config->set_single_utterance(false);
+
+	grpc::ClientContext context;
+	auto streamer = speech->StreamingRecognize(&context);
+	streamer->Write(request);
+
+	std::thread wavein_thread(&CSpeechClient::waveIn_Proc, streamer.get(), this);
+
+	StreamingRecognizeResponse response;
+	while (streamer->Read(&response))
+	{
+		for (int i = 0; i < response.results_size(); ++i)
+		{
+			auto result = response.results(i);
+			std::cout << "Result stability: " << result.stability() << ", " << result.is_final()  << std::endl;
+			for (int a = 0; a < result.alternatives_size(); ++a)
+			{
+				auto alternative = result.alternatives(a);
+				if (result.stability() > 0.1 || alternative.confidence() > 0.1)
+				{
+					std::cout << alternative.confidence() << "\t" << alternative.transcript() << std::endl;
+				}
+			}
+		}
+	}
+	grpc::Status status = streamer->Finish();
+	wavein_thread.join();
+
+	if (!status.ok())
+	{
+		std::cerr << status.error_message() << std::endl;
+	}
+};
